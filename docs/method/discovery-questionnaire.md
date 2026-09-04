@@ -45,9 +45,9 @@ Routing: executive sponsor, Finance and procurement answer Sections 1, 5B and 6;
 | # | Question | Type | Options |
 |---|---|---|---|
 | 5 | Delivery teams or applications in potential scope | Single range + optional text | 1-5; 6-20; 21-50; More than 50; Scope not yet defined |
-| 6 | Share of in-scope applications that are modern cloud or API systems with automated pipelines | Single range | Under 20%; 20-40%; 41-60%; 61-80%; Over 80%; Unknown |
+| 6 | Share of in-scope applications that are modern cloud or API systems with automated pipelines | Single range | Under 20%; 20-40%; Over 40% to 60%; Over 60% to 80%; Over 80%; Unknown |
 | 7 | Typical squad composition by role | Text table | Developers; Manual QA analysts; Automation engineers / SDETs / QEs; BAs and product owners; AppSec resources |
-| 8 | Share of QA headcount that is external, offshore or managed service | Single range | Under 10%; 10-25%; 26-50%; 51-75%; Over 75%; Unknown |
+| 8 | Share of QA headcount that is external, offshore or managed service | Single range | Under 10%; 10-25%; Over 25% to 50%; Over 50% to 75%; Over 75%; Unknown |
 | 9 | Operating-model descriptions | Multi | Centralized; Embedded; Managed service; Hybrid; Dedicated automation/SDET capability; Business-led UAT; Varies by business unit; Being redesigned |
 | 10 | Where QA spends the most human effort | Top 3 | Requirements review and acceptance criteria; Test planning and test-case creation; Building automated tests; Maintaining or repairing automated tests; Preparing test data; Environments; Manual functional execution; Regression execution; Failed-test triage and root cause; Defect creation, routing, retest and closure; UAT coordination; Quality reporting, traceability and release evidence |
 
@@ -55,10 +55,10 @@ Routing: executive sponsor, Finance and procurement answer Sections 1, 5B and 6;
 
 | # | Question | Type | Options |
 |---|---|---|---|
-| 11 | Share of regression test cases that execute automatically without human intervention | Single range | Under 20%; 20-40%; 41-60%; 61-80%; Over 80%; Varies; Unknown |
+| 11 | Share of regression test cases that execute automatically without human intervention | Single range | Under 20%; 20-40%; Over 40% to 60%; Over 60% to 80%; Over 80%; Varies; Unknown |
 | 12 | Test types consistently automated in CI/CD | Multi | Unit; Component; API; Contract; Integration; UI/end-to-end; Regression; Performance; Accessibility; Security; Few or none; Varies |
-| 13 | Typical elapsed regression duration for a major release | Single range | Up to 1 day; 2-3 days; 4-5 days; 6-10 days; More than 2 weeks; Varies; Unknown |
-| 14 | Active human hours per full regression cycle | Single range | Under 8; 8-40; 41-120; 121-400; Over 400; Unknown |
+| 13 | Typical elapsed regression duration for a major release (calendar days) | Single range | Up to 1 calendar day; Over 1 to 3 calendar days; Over 3 to 5 calendar days; Over 5 to 10 calendar days; Over 10 to 14 calendar days; More than 14 calendar days; Varies; Unknown |
+| 14 | Active human hours per full regression cycle | Single range | Under 8; 8-40; Over 40 to 120; Over 120 to 400; Over 400; Unknown |
 | 15 | Issues that most frequently delay testing or releases | Up to 3 | Requirements; Unit/component testing gaps; Manual test-case creation; Manual regression; Flaky automation; Test data; Environments; Downstream dependencies; Legacy or mainframe integration; Defect triage and ownership; Security findings; UAT, evidence or approvals |
 | 16 | Mandatory quality and security release gates | Multi | Unit pass rate or coverage; API/integration/regression pass rate; Defect thresholds; SAST; SCA/CVE; DAST or penetration testing; Performance or resilience; Accessibility; UAT or business approval; Production-readiness or change approval; Traceability or control evidence |
 
@@ -84,8 +84,8 @@ Routing: executive sponsor, Finance and procurement answer Sections 1, 5B and 6;
 | # | Question | Type | Options |
 |---|---|---|---|
 | 24 | Spending or capacity that could realistically be reduced, avoided or redeployed within 12 months | Multi | Contractor renewals due within 12 months; Managed-service scope or volumes; Planned QA or security hiring; Overtime or surge; Tool licences; Test infrastructure or execution cost; Rework and incident effort; Capacity redeployed to delivery; No capture mechanism identified; Not my decision |
-| 25 | Annual addressable QA and testing spend in scope | Single range | Under $5M; $5-15M; $16-40M; $41-100M; Over $100M; Prefer not to say; Unknown |
-| 26 | Share of that spend that is variable (contractors, offshore, managed services) | Single range | Under 20%; 20-40%; 41-60%; Over 60%; Unknown |
+| 25 | Annual addressable QA and testing spend in scope | Single range | Under $5M; $5-15M; Over $15M to $40M; Over $40M to $100M; Over $100M; Prefer not to say; Unknown |
+| 26 | Share of that spend that is variable (contractors, offshore, managed services) | Single range | Under 20%; 20-40%; Over 40% to 60%; Over 60%; Unknown |
 | 27 | If QA capacity were released, what would most likely happen to it? | Single | Absorbed by backlog and demand growth; Redeployed to other work; Reduced through contractor or service changes; Not decided; Unknown |
 | 28 | Minimum evidence Finance would accept to recognize a saving | Single | Measured reduction in contractor or service invoices; Approved reduction in a budget line; Avoided hiring or renewal documented against plan; Measured effort reduction alone; Not defined yet |
 
@@ -98,7 +98,7 @@ Routing: executive sponsor, Finance and procurement answer Sections 1, 5B and 6;
 | 31 | Minimum net reduction in targeted human effort that would justify a second phase | Single | At least 10%; At least 20%; At least 30%; Effort alone is not sufficient; Not sure |
 | 32 | Other outcomes that would justify further investment | Up to 2 | Regression duration; Failure-triage time; Automation-maintenance effort; No deterioration in escaped defects or change-failure rate; Vulnerability-remediation time; Demonstrated contractor reduction or hiring avoidance; Credible payback within 12-18 months |
 | 33 | Conditions that should stop or prevent expansion | Multi | Insufficient measurable savings; High implementation cost; High ongoing licence or model cost; Poor accuracy or excessive rework; Security, privacy, residency or audit concerns; Cannot integrate with toolchain; Quality or stability deterioration; Low adoption; No credible financial-capture mechanism |
-| 34-36 | Open text (optional): most expensive or frustrating workflow; the question the executive most wants answered; a representative application, team or release and its delivery lead | Text | |
+| 34-36 | Open text (optional, up to 1,000 characters each): most expensive or frustrating workflow; the question the executive most wants answered; a representative application, team or release and its delivery lead | Text | |
 
 ## Timing check
 
