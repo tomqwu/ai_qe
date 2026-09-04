@@ -1,0 +1,12 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.DS_Store
+tools/__pycache__/
+
+# Cowork session deliverables (not part of the site)
+Claude outputs/
+_to_delete/
+_incoming/
