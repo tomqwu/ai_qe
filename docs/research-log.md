@@ -9,6 +9,18 @@ description: Dated entries recording what was verified, when, what changed, and 
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+## 2026-09-04: Review corrections and usability fixes
+
+**Checked.** METR's February 2026 follow-up and OSFI's Integrity and Security implementation letter; consistency between benchmark records and executive summaries; zero-capture savings arithmetic; published PDF field limits and response ranges; desktop and mobile evidence readability.
+
+**Corrections.** METR's follow-up has speedup point estimates, confidence intervals crossing zero and substantial selection bias. OSFI set 31 January 2025 and 31 July 2025 deadlines for new expectations and background checks respectively. Executive summaries now distinguish surveys, telemetry and randomized studies without claiming a universal effect size. Preliminary net impact includes estimated costs even when gross captured savings are zero.
+
+**Usability and checks.** Evidence records show findings, supported claims and caveats together, with expandable methodology. The navigation title is shortened. Questionnaire response intervals are continuous and explicitly labelled; narrative answers allow 1,000 characters. Build, internal-link and PDF-field checks run before deployment and on pull requests. The remote theme is pinned to a commit.
+
+**Sources.** [METR follow-up](https://metr.org/blog/2026-02-24-uplift-update/); [OSFI implementation letter](https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/integrity-security-letter).
+
+Earlier entries below record the initial review; this entry supersedes their statements about the METR follow-up, evidence synthesis and closed questionnaire ranges.
+
 ## 2026-09-04: Initial evidence base
 
 **Question.** Are the planning ranges commonly used in AI-QE business cases (10-20% productivity, 20-35% targeted task, 5-10% capacity, 3-7% first-year hard-dollar, 8-15% mature) defensible?

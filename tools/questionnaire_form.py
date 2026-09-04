@@ -24,7 +24,7 @@ TEXT_W = W - ML - MR
 
 ORG = os.environ.get('ORG_NAME', '').strip()
 PREPARED_BY = os.environ.get('PREPARED_BY', '').strip()
-OUT = sys.argv[1] if len(sys.argv) > 1 else 'ai-qe-appsec-discovery-questionnaire-v2.pdf'
+OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), '..', 'assets', 'pdf', 'ai-qe-appsec-discovery-questionnaire-v2.pdf')
 HEADER_L = (ORG + ' ' if ORG else '') + 'AI-Enabled Quality Engineering & Application Security'
 HEADER_R = 'Executive discovery questionnaire (v2)'
 FOOTER = (('Prepared by ' + PREPARED_BY + '  |  ') if PREPARED_BY else '') + 'Save the completed PDF before closing'
@@ -235,7 +235,8 @@ class Form:
         self.form.textfield(name=name, tooltip=tooltip or label or name, x=x, y=self.y - height, width=width, height=height,
                             fontName='Helvetica', fontSize=8.5, borderColor=FIELD_BORDER, fillColor=FIELD_BG,
                             textColor=black, borderWidth=0.8, forceBorder=True,
-                            fieldFlags='multiline' if height > 20 else '')
+                            fieldFlags='multiline' if height > 20 else '',
+                            maxlen=1000 if height > 20 else 250)
         if advance:
             self.y -= height + 6
 
@@ -366,13 +367,13 @@ f.dropdown(q, ['1-5', '6-20', '21-50', 'More than 50', 'Scope not yet defined'])
 f.textfield(f'Q{q:02d}_Target_area', 'Target business area, portfolio, or application type (optional):')
 f.rule()
 q = f.question('Roughly what share of in-scope applications are modern cloud or API-based systems with automated build and deployment pipelines?', 'Select one range.')
-f.dropdown(q, ['Less than 20%', '20-40%', '41-60%', '61-80%', 'More than 80%', 'Unknown'])
+f.dropdown(q, ['Less than 20%', '20-40%', 'Over 40% to 60%', 'Over 60% to 80%', 'More than 80%', 'Unknown'])
 f.rule()
 q = f.question('For a typical delivery squad, provide the approximate number of resources by role.', 'Enter approximate numbers for a typical or median squad; ranges are acceptable (for example 6 / 2 / 1 / 1 / shared).')
 f.table_text(q, ['Developers', 'Manual QA analysts', 'Automation engineers / SDETs / QEs', 'Business analysts and product owners', 'AppSec or security resources (embedded or shared)'])
 f.rule()
 q = f.question('Approximately what percentage of QA headcount is external, offshore, or delivered through a managed service?', 'Select one range (by headcount, not spend).')
-f.dropdown(q, ['Less than 10%', '10-25%', '26-50%', '51-75%', 'More than 75%', 'Unknown'])
+f.dropdown(q, ['Less than 10%', '10-25%', 'Over 25% to 50%', 'Over 50% to 75%', 'More than 75%', 'Unknown'])
 f.rule()
 q = f.question('Which descriptions apply to the current quality-engineering operating model?', 'Select all that apply.')
 f.checkboxes(q, ['Centralized QA organization', 'QA / QE embedded in delivery squads', 'Managed-service model', 'Hybrid centralized and embedded model', 'Dedicated automation / SDET capability', 'Business-led UAT outside the QA organization', 'Model varies significantly by business unit', 'Operating model is being redesigned'])
@@ -383,16 +384,16 @@ f.checkboxes(q, ['Requirements review and acceptance-criteria refinement', 'Test
 # ---------- Section 3 ----------
 f.section_bar('3. Testing maturity and workflow', 'Engineering, delivery and QE route. Identify where human effort, wait time, rework, and quality risk are concentrated today.')
 q = f.question('Roughly what share of regression test cases execute automatically without human intervention?', 'Select one range.')
-f.dropdown(q, ['Less than 20%', '20-40%', '41-60%', '61-80%', 'More than 80%', 'Varies significantly by application', 'Unknown'])
+f.dropdown(q, ['Less than 20%', '20-40%', 'Over 40% to 60%', 'Over 60% to 80%', 'More than 80%', 'Varies significantly by application', 'Unknown'])
 f.rule()
 q = f.question('Which test types are consistently automated within CI/CD?', 'Select all that apply.')
 f.checkboxes(q, ['Unit', 'Component', 'API', 'Contract', 'Integration', 'UI / end-to-end', 'Regression', 'Performance', 'Accessibility', 'Security', 'Few or none', 'Varies significantly by application'], cols=3)
 f.rule()
-q = f.question('What is the typical elapsed regression-testing duration for a major release?', 'Select one range.')
-f.dropdown(q, ['Up to 1 day', '2-3 days', '4-5 days', '6-10 days', 'More than 2 weeks', 'Varies significantly by application', 'Unknown'])
+q = f.question('What is the typical elapsed regression-testing duration for a major release?', 'Select one range, measured in calendar days.')
+f.dropdown(q, ['Up to 1 calendar day', 'Over 1 to 3 calendar days', 'Over 3 to 5 calendar days', 'Over 5 to 10 calendar days', 'Over 10 to 14 calendar days', 'More than 14 calendar days', 'Varies significantly by application', 'Unknown'])
 f.rule()
 q = f.question('Approximately how many active human hours does a full regression cycle require?', 'Select one range. Count hands-on time across all people, not elapsed time.')
-f.dropdown(q, ['Less than 8 hours', '8-40 hours', '41-120 hours', '121-400 hours', 'More than 400 hours', 'Unknown'])
+f.dropdown(q, ['Less than 8 hours', '8-40 hours', 'Over 40 to 120 hours', 'Over 120 to 400 hours', 'More than 400 hours', 'Unknown'])
 f.rule()
 q = f.question('Which issues most frequently delay testing or releases?', 'Select up to three.')
 f.checkboxes(q, ['Incomplete or changing requirements', 'Insufficient unit or component testing', 'Manual test-case creation', 'Manual regression execution', 'Unstable automation or flaky tests', 'Test-data availability', 'Test-environment availability or instability', 'Downstream-system dependencies', 'Legacy or mainframe integration', 'Defect triage and ownership', 'Security findings or remediation', 'UAT, release evidence, or approval requirements'])
@@ -432,10 +433,10 @@ q = f.question('Which forms of spending or capacity could realistically be reduc
 f.checkboxes(q, ['Contractor renewals falling due in the next 12 months', 'Managed-service scope or unit volumes', 'Planned QA or security hiring', 'Overtime or surge capacity', 'Testing or security-tool licenses', 'Test infrastructure or execution cost', 'Defect rework and production-incident effort', 'Capacity redeployed to additional delivery work', 'No capture mechanism has yet been identified', 'Not my decision'])
 f.rule()
 q = f.question('Approximately what is the annual addressable QA and testing spend in scope (internal labour plus external services and tooling)?', 'Select one range. Prefer not to say is acceptable.')
-f.dropdown(q, ['Less than $5M', '$5M-$15M', '$16M-$40M', '$41M-$100M', 'More than $100M', 'Prefer not to say', 'Unknown'])
+f.dropdown(q, ['Less than $5M', '$5M-$15M', 'Over $15M to $40M', 'Over $40M to $100M', 'More than $100M', 'Prefer not to say', 'Unknown'])
 f.rule()
 q = f.question('Roughly what share of that spend is variable (contractors, offshore, managed services) rather than employees?', 'Select one range.')
-f.dropdown(q, ['Less than 20%', '20-40%', '41-60%', 'More than 60%', 'Unknown'])
+f.dropdown(q, ['Less than 20%', '20-40%', 'Over 40% to 60%', 'More than 60%', 'Unknown'])
 f.rule()
 q = f.question('If QA capacity were released, what would most likely happen to it?', 'Select one.')
 f.dropdown(q, ['Absorbed by existing backlog and demand growth', 'Redeployed to other quality or engineering work', 'Reduced through contractor or managed-service changes', 'Not decided', 'Unknown'])
@@ -460,12 +461,12 @@ f.rule()
 q = f.question('What conditions should stop or prevent expansion of the pilot?', 'Select all that apply.')
 f.checkboxes(q, ['Insufficient measurable savings', 'High implementation or integration cost', 'High ongoing license or model-consumption cost', 'Poor accuracy or excessive human rework', 'Security, privacy, residency, or audit concerns', 'Inability to integrate with the existing toolchain', 'Quality or release-stability deterioration', 'Low adoption or workflow abandonment', 'No credible mechanism to capture the value financially'])
 f.rule()
-q = f.question('What is the single most expensive or frustrating part of the current QA or AppSec workflow?', 'Optional.')
-f.textfield(f'Q{q:02d}_Text', height=44)
-q = f.question('What question would the EVP most want the presentation to answer?', 'Optional.')
-f.textfield(f'Q{q:02d}_Text', height=44)
-q = f.question('Is there a representative application, team, or recent release that should be used as an illustrative case, and who is the delivery lead we may contact?', 'Optional.')
-f.textfield(f'Q{q:02d}_Text', height=44)
+q = f.question('What is the single most expensive or frustrating part of the current QA or AppSec workflow?', 'Optional. Up to 1,000 characters; scroll within the field to read longer answers.')
+f.textfield(f'Q{q:02d}_Text', height=96)
+q = f.question('What question would the EVP most want the presentation to answer?', 'Optional. Up to 1,000 characters; scroll within the field to read longer answers.')
+f.textfield(f'Q{q:02d}_Text', height=96)
+q = f.question('Is there a representative application, team, or recent release that should be used as an illustrative case, and who is the delivery lead we may contact?', 'Optional. Up to 1,000 characters; scroll within the field to read longer answers.')
+f.textfield(f'Q{q:02d}_Text', height=96)
 
 f.need(40)
 f.y -= 4

@@ -1,4 +1,4 @@
-title: AI-Enabled Quality Engineering & AppSec Research Base
+title: AI-QE & AppSec
 description: >-
   An evidence base for AI-assisted quality engineering and application security in regulated
   financial services: verified benchmarks, governance context, a conservative savings model,
@@ -14,7 +14,7 @@ defaults:
       layout: default
 url: "https://tomqwu.github.io"
 
-remote_theme: just-the-docs/just-the-docs
+remote_theme: just-the-docs/just-the-docs@9c8baebfe4413de430b66884c1a9da893ee236bc
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag

@@ -15,7 +15,7 @@ description: Exact wording that can be used on an executive slide about AI-QE sa
 - "Capacity released is not a saving until Finance confirms how it is captured."
 - "External evidence supports task-level gains and warns of quality degradation without discipline."
 - "Every phase has a cost ceiling and a stop rule."
-- "Organizations report 10-20% perceived gains; the one independent randomized study found experienced developers were slower."
+- "Organizations report 10-20% perceived gains; METR found experienced developers were slower in early 2025, while its later follow-up is inconclusive."
 - "Humans approve every code change and every production-impacting action in the pilot."
 
 ## Avoid

@@ -1,0 +1,26 @@
+// Evidence summaries retain the source, supported claim and caveats at every width.
+.study {
+  border-top: 1px solid $border-color;
+  padding: 1.5rem 0;
+  overflow-wrap: anywhere;
+}
+.main-content .study-title {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-top: 0;
+}
+.study p { margin: 0.75rem 0; }
+.study details { margin-top: 1rem; }
+.study summary {
+  color: $link-color;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+.study summary:focus-visible {
+  outline: 2px solid $link-color;
+  outline-offset: 4px;
+}
+@media print {
+  .study { break-inside: avoid; }
+  .study details > * { display: block; }
+}

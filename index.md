@@ -18,14 +18,14 @@ Verified benchmarks, governance context, a conservative savings model, discovery
 
 ## What this site is for
 
-This is a working research base, not a proposal. It exists so that future studies and executive presentations on AI in QE and AppSec start from verified evidence rather than from vendor decks or remembered percentages. Every page is written to be reused: the benchmark tables carry the date, sample, method, unit of measurement, sponsorship and the claim each source can legitimately support; the savings model is a structure with explicit placeholder assumptions; the questionnaire and pilot designs are role-routed and measurement-first.
+This is a working research base, not a proposal. It exists so that future studies and executive presentations on AI in QE and AppSec start from verified evidence rather than from vendor decks or remembered percentages. Every page is written to be reused: the benchmark records carry the date, sample, method, unit of measurement, sponsorship and the claim each source can legitimately support; the savings model is a structure with explicit placeholder assumptions; the questionnaire and pilot designs are role-routed and measurement-first.
 
 {: .note }
 Client, partner and engagement names have been deliberately removed. Where an engagement is referred to, it is "the bank", "the sponsor" or "the advisory team". Research sources are cited by name because the citation is the evidence; no vendor or product is endorsed.
 
 ## The position the evidence supports
 
-External evidence supports three modest claims: task-level time reductions exist for well-specified generation tasks (test scaffolds, unit-test extension, documentation, fix drafting); triage-type tasks (failed-test classification, static-analysis false-positive filtering) show high agreement with human judgement in vendor and academic settings; and adoption is now near-universal. It does not support a whole-budget productivity figure, a capacity figure for QA specifically, or any audited hard-dollar saving. It carries a consistent warning that individual output gains coincide with more code churn, longer reviews, higher defect rates and lower delivery stability unless batch size, review discipline and testing are strengthened at the same time.
+External evidence supports three modest claims: task-level time reductions exist for well-specified generation tasks (test scaffolds, unit-test extension, documentation, fix drafting); triage-type tasks (failed-test classification, static-analysis false-positive filtering) show high agreement with human judgement in vendor and academic settings; and adoption is widespread in surveyed populations. It does not support a whole-budget productivity figure, a capacity figure for QA specifically, or any audited hard-dollar saving. It carries a consistent warning that individual output gains coincide with more code churn, longer reviews, higher defect rates and lower delivery stability unless batch size, review discipline and testing are strengthened at the same time.
 
 The practical consequence is that a pilot exists precisely because the external number cannot be borrowed. See [What the evidence supports](docs/evidence/reading-the-evidence/).
 
