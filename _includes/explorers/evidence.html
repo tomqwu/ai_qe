@@ -1,0 +1,12 @@
+<div class="qe-explorer evidence-explorer {% if include.compact %}explore-compact{% endif %}" data-evidence>
+  <p class="explorer-caption">METR estimates · Change in task completion time with AI · Dots show estimates; lines show reported confidence intervals.</p>
+  <div class="evidence-plot" data-evidence-plot></div>
+  <div class="evidence-choices" role="group" aria-label="Inspect a study cohort">
+    <button type="button" data-study="0" aria-pressed="true"><strong>Early 2025</strong><span>+19% · interval +2% to +39%</span></button>
+    <button type="button" data-study="1" aria-pressed="false"><strong>Late 2025 / returning</strong><span>−18% · interval −38% to +9%</span></button>
+    <button type="button" data-study="2" aria-pressed="false"><strong>Late 2025 / new</strong><span>−4% · interval −15% to +9%</span></button>
+  </div>
+  <p class="evidence-detail" aria-live="polite" aria-atomic="true" data-evidence-detail>Early 2025: 16 developers, 246 issues in familiar repositories. This setting showed a slowdown; it does not represent all software work.</p>
+  <p class="explorer-note">Different cohorts and tool periods; no pooled estimate. The follow-up intervals cross zero and selection bias limits interpretation.</p>
+  <p class="explorer-source">Primary sources: <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">July 2025 RCT ↗</a> · <a href="https://metr.org/blog/2026-02-24-uplift-update/" target="_blank" rel="noopener">February 2026 follow-up ↗</a></p>
+</div>

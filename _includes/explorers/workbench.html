@@ -1,0 +1,10 @@
+<div class="explorer-workbench" data-workbench>
+  <div class="explorer-tabs" role="tablist" aria-label="Explore AI quality engineering">
+    <button id="explore-architecture-tab" type="button" role="tab" aria-selected="true" aria-controls="explore-architecture">01 <strong>Delivery flow</strong><span>Follow a task through the controls</span></button>
+    <button id="explore-value-tab" type="button" role="tab" aria-selected="false" aria-controls="explore-value">02 <strong>Value simulator</strong><span>Change assumptions, see the impact</span></button>
+    <button id="explore-evidence-tab" type="button" role="tab" aria-selected="false" aria-controls="explore-evidence">03 <strong>Evidence lens</strong><span>Inspect estimates and uncertainty</span></button>
+  </div>
+  <section id="explore-architecture" role="tabpanel" aria-labelledby="explore-architecture-tab">{% include explorers/architecture.html %}</section>
+  <section id="explore-value" role="tabpanel" aria-labelledby="explore-value-tab">{% include explorers/value.html %}</section>
+  <section id="explore-evidence" role="tabpanel" aria-labelledby="explore-evidence-tab">{% include explorers/evidence.html %}</section>
+</div>

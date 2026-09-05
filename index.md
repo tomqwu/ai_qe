@@ -9,10 +9,14 @@ has_toc: false
 
 <section class="home-hero" aria-labelledby="home-title">
   <p class="eyebrow">Quality engineering / Application security</p>
-  <h1 id="home-title">Make AI part of a<br class="desktop-break"> stronger delivery system.</h1>
-  <p class="hero-lead">A strategic vision and practical architecture for AI-assisted quality engineering and application security in regulated financial services.</p>
-  <div class="hero-actions"><a class="btn btn-primary" href="#briefings">Explore the briefings ↓</a><a class="text-link" href="{{ '/docs/evidence/' | relative_url }}">Browse the evidence →</a></div>
-  <div class="hero-principles" aria-label="Operating principles"><span>Evidence before claims</span><span>Human accountability</span><span>Value proven in delivery</span></div>
+  <h1 id="home-title">AI assistance. Delivery value.</h1>
+  <p class="hero-lead">Explore AI-assisted quality engineering and AppSec for regulated financial services.</p>
+  <div class="hero-actions"><a class="btn btn-primary" href="#explore">Explore the model ↓</a><a class="text-link" href="#briefings">View audience briefings →</a></div>
+</section>
+
+<section class="home-section explorer-section" id="explore" aria-labelledby="explore-title">
+  <div class="section-heading"><div><h2 id="explore-title">See how the model works.</h2></div><p>Trace a task. Test the economics.<br>Understand the uncertainty.</p></div>
+  {% include explorers/workbench.html %}
 </section>
 
 <section class="home-section" id="briefings" aria-labelledby="briefings-title">

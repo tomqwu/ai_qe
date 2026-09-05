@@ -138,3 +138,10 @@ footer { color: #596b73; }
   .resource-grid { grid-template-columns: 1fr 1fr; }
   .resource-link, .evidence-position { break-inside: avoid; }
 }
+
+// Keep the first interactive diagram close to the opening message.
+.home-hero { padding-top: .4rem; }
+.main-content .home-hero h1 { font-size: clamp(2.3rem, 3.7vw, 3.25rem) !important; margin: .8rem 0 1rem; }
+.hero-actions { margin: 1.2rem 0 0; }
+.explorer-section { margin-top: 2rem; }
+.explorer-section .section-heading { margin-bottom: 1.2rem; }
