@@ -54,6 +54,7 @@ exclude:
   - vendor/
   - tools/
   - README.md
+  - research
   - node_modules/
   - Claude outputs/
   - _to_delete/

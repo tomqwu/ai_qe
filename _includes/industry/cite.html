@@ -1,0 +1,1 @@
+<span class="industry-cites">{% assign ids = include.ids | split: ',' %}{% for id in ids %}<a href="{{ '/docs/industry/library/' | relative_url }}#{{ id | strip }}">[{{ id | strip }}]</a>{% unless forloop.last %} {% endunless %}{% endfor %}</span>

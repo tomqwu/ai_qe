@@ -10,15 +10,15 @@ has_toc: false
 
 # Audience briefings
 
-Start with the strategic vision or go deeper into the delivery architecture. Each deck links to the detailed research, economics and pilot design behind it.
+Start with the strategic vision or go deeper into the delivery architecture. The September 2026 edition draws on the [industry research]({{ "/docs/industry/" | relative_url }}) and its 30-source document library. Each deck links to the research, economics and pilot design behind it.
 
 {% include briefing-embed.html %}
 
 ## What each briefing covers
 
-**EVP · Strategic vision.** The ambition for quality engineering, where AI assistance can fit, how capacity becomes value, the trust model, and a path to responsible scale.
+**EVP · Strategic vision.** The industry outlook, dual quality mandate, organizational constraints, value logic, ownership and capability roadmap.
 
-**Technical SDs & leads · Delivery architecture.** A proposed reference architecture, context and access boundaries, two initial workflows, control evidence, telemetry, and promotion gates.
+**Technical SDs & leads · Delivery architecture.** An agent control boundary, test-generation pipeline, AI evaluation lifecycle, adversarial coverage, telemetry, technology layers and promotion gates.
 
 These are research-informed perspectives and a proposed pilot architecture. They do not report a deployed bank solution or measured bank results. The [research log]({{ '/docs/research-log/' | relative_url }}) records verification dates; [reading the evidence]({{ '/docs/evidence/reading-the-evidence/' | relative_url }}) explains the limits of external benchmarks.
 

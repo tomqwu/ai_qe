@@ -1,0 +1,11 @@
+<figure class="system-figure authority-figure">
+  <p class="diagram-label">Application boundary · proposed reference design</p>
+  <div class="authority-flow">
+    <div class="authority-context"><strong>Approved context</strong><p>Code · specifications<br>Test results · knowledge</p><small>Classify · minimize · version</small></div>
+    <div class="authority-agent"><strong>AI workflow</strong><p>Model + prompts<br>Retrieval + memory</p><small>Proposes an artifact or action</small></div>
+    <div class="authority-gate"><strong>Policy gateway</strong><p>Identity · scope · budget<br>Approval where required</p><small>Allow / deny before execution</small></div>
+    <div class="authority-tools"><strong>Bounded tools</strong><p>Sandbox · test runner<br>Draft pull request</p><small>Short-lived credentials</small></div>
+  </div>
+  <div class="authority-rails"><div><strong>Independent verification</strong><span>Contract tests · security checks · human review → release decision</span></div><div><strong>Evidence &amp; recovery</strong><span>Versions · tool calls · decisions · cost → alert, stop or fallback</span></div></div>
+  <figcaption>Permissions live outside the model. Retrieved content and tool output remain untrusted inputs. {% include industry/cite.html ids="A03,A05,R01" %}</figcaption>
+</figure>

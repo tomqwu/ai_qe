@@ -1,0 +1,32 @@
+---
+title: Document library
+parent: Industry research
+nav_order: 6
+permalink: /docs/industry/library/
+has_toc: false
+description: A filterable source register for AI and quality engineering, including original documents, evidence methods and access limitations.
+---
+<p class="eyebrow">Research library / Reviewed 5 September 2026</p>
+<h1>Documents behind the research</h1>
+<p>Search {{ site.data.industry_sources.size }} curated sources. Each record identifies what was accessible, what it supports and what it cannot establish. Publisher links open the originals.</p>
+<p><a href="{{ '/assets/data/industry-sources.csv' | relative_url }}" download>Download register (CSV)</a> · <a href="{{ '/assets/data/industry-sources.json' | relative_url }}">JSON</a> · <a href="{{ '/assets/pdf/ai-qe-industry-research-2026.pdf' | relative_url }}">Research brief (PDF)</a></p>
+<div data-source-library>
+<div class="source-controls" data-source-controls hidden>
+<label>Search sources<input type="search" data-source-query placeholder="Publisher, topic or source ID…" autocomplete="off"></label>
+<label>Evidence type<select data-source-kind><option value="">All types</option>{% assign kinds = site.data.industry_sources | map: 'kind' | uniq | sort %}{% for kind in kinds %}<option>{{ kind }}</option>{% endfor %}</select></label>
+<label>Topic<select data-source-scope><option value="">All topics</option>{% assign scopes = site.data.industry_sources | map: 'scope' | uniq | sort %}{% for scope in scopes %}<option>{{ scope }}</option>{% endfor %}</select></label>
+<button type="button" data-source-reset>Clear</button>
+</div>
+<p class="source-count" data-source-count aria-live="polite">{{ site.data.industry_sources.size }} sources</p>
+{% for source in site.data.industry_sources %}
+<article class="source-record" id="{{ source.id }}" data-source-record data-kind="{{ source.kind | escape }}" data-scope="{{ source.scope | escape }}">
+<div class="source-meta">{{ source.id }} / {{ source.kind }} / {{ source.scope }}</div>
+<h2 class="no_anchor">{{ source.title }}</h2>
+<p><strong>{{ source.publisher }}</strong> · {{ source.date }} · Reviewed {{ source.reviewed }}</p>
+<p>{{ source.takeaway }}</p>
+<details><summary>Method, limits and access</summary><p>{{ source.caveat }}</p><p><strong>Access:</strong> {{ source.access }}</p></details>
+<p class="source-links"><a href="{{ source.url }}" target="_blank" rel="noopener">Publisher source ↗</a>{% if source.document_url %}<a href="{{ source.document_url }}" target="_blank" rel="noopener">Public document ↗</a>{% endif %}<a href="#{{ source.id }}">Link to record</a></p>
+</article>
+{% endfor %}
+</div>
+<p>The local archive contains the successfully retrieved public PDFs and a checksum manifest. Gated reports were not downloaded. This site links publisher originals and publishes its own synthesis; it does not rehost third-party reports.</p>

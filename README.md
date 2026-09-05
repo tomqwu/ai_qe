@@ -8,12 +8,30 @@ security in regulated financial services.
 
 The homepage includes two audience presentations:
 
-- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): seven slides on
-  ambition, focus, value, trust and responsible scale.
+- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 10 slides on
+  industry outlook, strategic vision, value, ownership and capability expansion.
 - [Technical delivery architecture](https://tomqwu.github.io/ai_qe/briefings/technical/):
-  eight slides on system boundaries, workflows, controls, telemetry and pilot gates.
+  11 slides on agent boundaries, AI evaluation, test validity, technology layers and pilot gates.
 
 These are research-informed perspectives and a proposed architecture, not measured bank results.
+
+## Industry research edition (September 2026)
+
+The [industry research section](https://tomqwu.github.io/ai_qe/docs/industry/) adds a research overview, five
+topic pages and a filterable library backed by `_data/industry_sources.json`.
+It distinguishes forecasts, surveys, experiments, cases, frameworks and product docs.
+Public Gartner abstracts are labeled; no licensed findings or vendor rankings are implied.
+
+- `assets/pdf/ai-qe-industry-research-2026.pdf`: original 13-page brief.
+- `tools/build_industry_brief.py`: rebuild with reportlab and Pillow.
+- `tools/gather_industry_docs.py`: gather public PDFs into ignored `research/downloads/`.
+- `research/document-manifest.json`: retrieval status, provenance and SHA-256 hashes.
+- `research/visual-provenance.md`: exact ImageGen prompts and final image paths.
+- `assets/data/industry-sources.csv`: portable source register; JSON renders from Jekyll data.
+
+Publisher documents remain local and excluded from Pages. Their original URLs are linked
+in the public library. Update CSV when changing the source JSON. Research figures use
+explicit units and caveats; diagrams are authored proposed designs, not measured rankings.
 
 ## Maintaining the briefings
 
@@ -72,6 +90,8 @@ path can be passed as its first argument. Update the question descriptions in
 ```bash
 bundle exec jekyll build
 python tools/verify_site.py _site
+python tools/verify_industry.py _site
+node --test tools/qe-model.test.cjs
 python tools/verify_pdf.py
 ```
 

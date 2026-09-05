@@ -9,6 +9,14 @@ description: Dated entries recording what was verified, when, what changed, and 
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+## 2026-09-05 — Industry synthesis and source library
+
+Added an independent AI × QE review covering AI-assisted testing and assurance of AI applications, with 30 source records, a dated [document library]({{ '/docs/industry/library/' | relative_url }}), public document links and original visual briefings. The review includes public Gartner material, McKinsey research, WQR, DORA, experimental and enterprise evidence, NIST, OWASP, OSFI and representative product documentation.
+
+Public abstracts are distinguished from full documents. Surveys, forecasts, experiments, cases and product capabilities retain separate labels. New research covers the July 2026 OSFI AI bulletin and the linked OWASP LLM 2026 edition and ACS. E-23's May 2027 effective date remains explicit. Original publisher PDFs are gathered locally with provenance and hashes; the public site hosts only our synthesis and links to originals.
+
+The [research overview]({{ '/docs/industry/' | relative_url }}) explains the method, scope and evidence gaps. Native diagrams represent proposed designs; generated illustrations are conceptual. No vendor ranking, bank deployment result or enterprise savings benchmark is implied.
+
 ## 2026-09-04: Review corrections and usability fixes
 
 **Checked.** METR's February 2026 follow-up and OSFI's Integrity and Security implementation letter; consistency between benchmark records and executive summaries; zero-capture savings arithmetic; published PDF field limits and response ranges; desktop and mobile evidence readability.

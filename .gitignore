@@ -10,3 +10,6 @@ tools/__pycache__/
 Claude outputs/
 _to_delete/
 _incoming/
+
+# Locally gathered publisher documents; originals remain with their publishers
+research/downloads/
