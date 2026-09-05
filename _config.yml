@@ -1,9 +1,7 @@
 title: AI-QE & AppSec
 description: >-
-  An evidence base for AI-assisted quality engineering and application security in regulated
-  financial services: verified benchmarks, governance context, a conservative savings model,
-  discovery-questionnaire design, phased pilot design and executive-presentation guidance.
-  Client, partner and engagement names are deliberately removed.
+  Strategic vision, delivery architecture and an inspectable evidence base for AI-assisted
+  quality engineering and application security in regulated financial services.
 baseurl: "/ai_qe"
 permalink: pretty
 
@@ -30,9 +28,8 @@ heading_anchors: true
 back_to_top: true
 back_to_top_text: "Back to top"
 footer_content: >-
-  Research base for AI-enabled QE and AppSec. Benchmark figures are provisional and were verified
-  against publicly accessible sources on the dates stated in each page. Regulatory summaries are
-  not legal advice. Client, partner and engagement names have been removed.
+  Research for AI-assisted QE and AppSec. Sources and verification dates are recorded on each
+  research page. Regulatory summaries are not legal advice.
 last_edit_timestamp: true
 last_edit_time_format: "%b %e, %Y"
 nav_sort: case_insensitive
