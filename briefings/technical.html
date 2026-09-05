@@ -14,16 +14,10 @@ permalink: /briefings/technical/
   <div class="cover-grid"><div><h2 id="title-1">Assistance inside<br>the delivery system.</h2><p class="cover-tag">A proposed reference architecture for a governed pilot</p></div><p class="cover-note">Scoped context in.<br>Reviewable artifacts out.<br>Existing controls throughout.<small>Technology-neutral design derived from the pilot requirements. It is not a deployed solution.</small></p></div>
   {% include slide-footer.html n="01" source="/docs/method/phased-pilot/" label="Pilot design and technical scope" %}
 </section>
-<section class="slide" id="slide-2" aria-labelledby="title-2">
-  <p class="kicker">02 / Proposed reference architecture</p>
-  <h2 id="title-2">A bounded path from context<br>to reviewed change.</h2>
-  <div class="slide-content">
-    <div class="boundary"><p class="boundary-label">Approved pilot boundary · non-production context</p><div class="arch-flow">
-      <article class="arch-node"><h3>1. Context adapters</h3><p>Read scoped repository, API specification, CI and finding data.</p></article>
-      <article class="arch-node"><h3>2. Task workflow</h3><p>Assemble approved context and versioned prompts for one use case.</p></article>
-      <article class="arch-node"><h3>3. Approved AI platform</h3><p>Use an approved model, project, region and spending ceiling.</p></article>
-    </div><div class="arch-gate"><div><h3>↓ Draft artifact + evidence</h3><p>Classification, proposed test or draft fix. Record provenance.</p></div><div><h3>→ Human review + deterministic CI</h3><p>Existing approval and change controls govern merge and release.</p></div></div><p class="arch-rail">Across every step: scoped identity · traceable activity · cost and quality telemetry</p></div>
-  </div>
+<section class="slide interactive-slide" id="slide-2" aria-labelledby="title-2">
+  <p class="kicker">02 / Explore the reference architecture</p>
+  <h2 id="title-2">From context to reviewed change.</h2>
+  <div class="slide-content">{% include explorers/architecture.html compact=true %}</div>
   {% include slide-footer.html n="02" source="/docs/method/phased-pilot/" label="Derived from pilot data, access and control requirements" %}
 </section>
 <section class="slide" id="slide-3" aria-labelledby="title-3">

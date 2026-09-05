@@ -1,0 +1,22 @@
+<div class="qe-explorer flow-explorer {% if include.compact %}explore-compact{% endif %}" data-flow>
+  <div class="explorer-controls" data-enhanced hidden>
+    <label>Walk through a use case <select data-use-case aria-label="Architecture use case"><option value="triage">Failed-test triage</option><option value="tests">API test generation</option><option value="security">AppSec finding triage</option></select></label>
+    <button type="button" data-flow-next>Next stage →</button>
+  </div>
+  <p class="explorer-caption">Proposed architecture · Select a stage to inspect its input, output and control.</p>
+  <div class="flow-map" data-flow-map>
+    <svg class="flow-connections" aria-hidden="true"></svg>
+    <button class="flow-node" type="button" data-stage="0" aria-pressed="true"><span>01 / Read</span><strong>Source context</strong><small>Repo · CI · specifications</small></button>
+    <button class="flow-node" type="button" data-stage="1" aria-pressed="false"><span>02 / Prepare</span><strong>Task workflow</strong><small>Scoped, versioned prompt</small></button>
+    <button class="flow-node" type="button" data-stage="2" aria-pressed="false"><span>03 / Assist</span><strong>Approved AI</strong><small>Model · region · spend cap</small></button>
+    <button class="flow-node" type="button" data-stage="3" aria-pressed="false"><span>04 / Propose</span><strong>Draft artifact</strong><small>Output with provenance</small></button>
+    <button class="flow-node" type="button" data-stage="4" aria-pressed="false"><span>05 / Validate</span><strong>Review &amp; CI</strong><small>Human + deterministic gates</small></button>
+  </div>
+  <div class="flow-inspector" aria-live="polite" aria-atomic="true">
+    <div class="inspector-heading"><strong data-flow-title>01 / Read the failure context</strong><span data-flow-count>Stage 1 of 5</span></div>
+    <div class="flow-facts"><p><span>Input → output</span><b data-flow-artifact>Failed CI job → scoped failure evidence</b></p><p><span>Control at this boundary</span><b data-flow-control>Read-only access to the pilot repository and CI logs. No production data.</b></p></div>
+    <button type="button" data-flow-failure hidden>Simulate a failed check</button>
+  </div>
+  <p class="explorer-note">Illustrative walkthrough. Every artifact stays traceable; existing approval and release controls retain authority.</p>
+  {% unless include.compact %}<a class="explorer-source" href="{{ '/docs/method/phased-pilot/' | relative_url }}">Scope, access and controls behind this architecture ↗</a>{% endunless %}
+</div>

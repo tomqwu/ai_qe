@@ -30,6 +30,8 @@ jobs:
           cache-dependency-path: tools/requirements.txt
       - name: Install PDF verification dependencies
         run: python -m pip install -r tools/requirements.txt
+      - name: Check interactive model arithmetic
+        run: node --test tools/qe-model.test.cjs
       - name: Build with Jekyll
         run: bundle exec jekyll build
         env:
