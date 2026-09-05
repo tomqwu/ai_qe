@@ -1,0 +1,109 @@
+[
+  {
+    "id": "M02",
+    "url": "https://www.mckinsey.com/~/media/mckinsey/business%20functions/tech%20and%20ai/our%20insights/the%20ai%20revolution%20in%20software%20development/the-ai-revolution-in-software-development_final.pdf",
+    "retrieved": "2026-09-05",
+    "status": "unavailable",
+    "reason": "The read operation timed out"
+  },
+  {
+    "id": "W01",
+    "url": "https://www.capgemini.com/fi-en/wp-content/uploads/sites/26/2025/11/2025_11_13_World_Quality_Report_2025_.pdf",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://www.capgemini.com/fi-en/wp-content/uploads/sites/26/2025/11/2025_11_13_World_Quality_Report_2025_.pdf",
+    "status": "downloaded",
+    "local_path": "research/downloads/W01.pdf",
+    "bytes": 230374,
+    "sha256": "e9bee90b7bac894d2cf1dad35b5b8db7e3e0f04fc0bd6bb2d0c37aba2718d68b"
+  },
+  {
+    "id": "D01",
+    "url": "https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_report_state_of_ai_assisted_software_development_2025.pdf",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_report_state_of_ai_assisted_software_development_2025.pdf",
+    "status": "downloaded",
+    "local_path": "research/downloads/D01.pdf",
+    "bytes": 15479474,
+    "sha256": "b403c537496ba97e6cf3fff14d5b172f69fd483b173450bd4b7186c7d56f53f8"
+  },
+  {
+    "id": "E01",
+    "url": "https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf",
+    "status": "downloaded",
+    "local_path": "research/downloads/E01.pdf",
+    "bytes": 5509970,
+    "sha256": "b6d4a8e7d8aeed20cc9a4545e485fdc5496b5cc48470338d2d7662b1953e5765"
+  },
+  {
+    "id": "E03",
+    "url": "https://economics.mit.edu/sites/default/files/inline-files/draft_copilot_experiments.pdf",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://economics.mit.edu/sites/default/files/inline-files/draft_copilot_experiments.pdf",
+    "status": "downloaded",
+    "local_path": "research/downloads/E03.pdf",
+    "bytes": 2565567,
+    "sha256": "d21397eabe8b36916003e5f5fdb99c1b45f61a4b79b8e8f8ad976929bdaf5686"
+  },
+  {
+    "id": "E04",
+    "url": "https://arxiv.org/pdf/2402.09171",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://arxiv.org/pdf/2402.09171",
+    "status": "downloaded",
+    "local_path": "research/downloads/E04.pdf",
+    "bytes": 667103,
+    "sha256": "8334ccf3de0555abd0153d01f684f68a76d4bc96b07f0dd07b78a821ae70a45e"
+  },
+  {
+    "id": "E06",
+    "url": "https://arxiv.org/pdf/2604.12108",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://arxiv.org/pdf/2604.12108",
+    "status": "downloaded",
+    "local_path": "research/downloads/E06.pdf",
+    "bytes": 1192368,
+    "sha256": "83ae548040e188fad13ad2f7fd98c4231f77249d6f17fa9d52ed8d8166047296"
+  },
+  {
+    "id": "E07",
+    "url": "https://arxiv.org/pdf/2511.14002",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://arxiv.org/pdf/2511.14002",
+    "status": "downloaded",
+    "local_path": "research/downloads/E07.pdf",
+    "bytes": 823193,
+    "sha256": "f61801135dc8423cde2175cadd6c5137eb4be84ceef18c47cfa2a333527181bb"
+  },
+  {
+    "id": "A01",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+    "status": "downloaded",
+    "local_path": "research/downloads/A01.pdf",
+    "bytes": 1174643,
+    "sha256": "6e73620ab6b64e90ef2c04bf0e0d6246185a2f4b1b13cab0df494496cff89b6a"
+  },
+  {
+    "id": "A03",
+    "url": "https://genai.owasp.org/download/52117/?tmstv=1765059207",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://genai.owasp.org/download/52117/?tmstv=1765059207",
+    "status": "downloaded",
+    "local_path": "research/downloads/A03.pdf",
+    "bytes": 1274186,
+    "sha256": "a2db94cd00b08e0b3a5e5b619afe024bdbcd74503111085705e4f3dd886fcb5c"
+  },
+  {
+    "id": "A04",
+    "url": "https://genai.owasp.org/download/56857/?tmstv=1785822482",
+    "retrieved": "2026-09-05",
+    "resolved_url": "https://genai.owasp.org/download/56857/?tmstv=1785822482",
+    "status": "downloaded",
+    "local_path": "research/downloads/A04.pdf",
+    "bytes": 2402520,
+    "sha256": "ef87993a4e50ae9d83b41ff7a3d3e6320a82dfa8d4ec6bf98d0ce264b2e6108e"
+  }
+]

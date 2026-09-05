@@ -1,87 +1,77 @@
 ---
 layout: deck
-title: Delivery architecture
-description: A proposed architecture for governed AI assistance in quality engineering and application security pilots.
+title: Assurance architecture
+description: Research-informed AI and quality engineering — Technical SDs & leads · Architecture.
 audience: Technical SDs & leads · Architecture
 deck_class: technical-deck
-slide_count: 8
+slide_count: 11
 nav_exclude: true
 search_exclude: true
 permalink: /briefings/technical/
 ---
-<section class="slide slide-dark cover" id="slide-1" aria-labelledby="title-1">
-  <p class="kicker">Technical SDs &amp; leads / Architecture</p>
-  <div class="cover-grid"><div><h2 id="title-1">Assistance inside<br>the delivery system.</h2><p class="cover-tag">A proposed reference architecture for a governed pilot</p></div><p class="cover-note">Scoped context in.<br>Reviewable artifacts out.<br>Existing controls throughout.<small>Technology-neutral design derived from the pilot requirements. It is not a deployed solution.</small></p></div>
-  {% include slide-footer.html n="01" source="/docs/method/phased-pilot/" label="Pilot design and technical scope" %}
+<section class="slide illustrated-cover" id="slide-1" aria-labelledby="title-1">
+<p class="kicker">Technical SDs &amp; leads · Architecture / September 2026</p><h2 id="title-1">Assurance across<br>the AI lifecycle</h2>
+<p class="cover-tag">AI × quality engineering · Industry research</p>
+<img class="cover-visual" src="{{ '/assets/images/industry/assurance-lab.webp' | relative_url }}" alt="Conceptual AI assurance laboratory with evaluation and human oversight" width="1536" height="1024">
+{% include slide-footer.html n="01" source="/docs/industry/" label="Research scope and sources" %}
 </section>
 <section class="slide interactive-slide" id="slide-2" aria-labelledby="title-2">
-  <p class="kicker">02 / Explore the reference architecture</p>
-  <h2 id="title-2">From context to reviewed change.</h2>
-  <div class="slide-content">{% include explorers/architecture.html compact=true %}</div>
-  {% include slide-footer.html n="02" source="/docs/method/phased-pilot/" label="Derived from pilot data, access and control requirements" %}
+<p class="kicker">02 / Interactive delivery workflow</p><h2 id="title-2">Context to reviewed change</h2>
+
+<div class="slide-content">{% include explorers/architecture.html compact=true %}</div>
+{% include slide-footer.html n="02" source="/docs/method/phased-pilot/" label="Pilot integration requirements" %}
 </section>
-<section class="slide" id="slide-3" aria-labelledby="title-3">
-  <p class="kicker">03 / Context and access contract</p>
-  <h2 id="title-3">Constrain what the workflow<br>can read, send and change.</h2>
-  <div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Boundary</th><th scope="col">Pilot design</th><th scope="col">Evidence to retain</th></tr></thead><tbody>
-    <tr><th scope="row">Inputs</th><td data-label="Pilot design">Scoped code, test results, API specs and finding exports. Synthetic or de-identified test data.</td><td data-label="Evidence to retain">Source references and approved data classification.</td></tr>
-    <tr><th scope="row">Identity</th><td data-label="Pilot design">Dedicated service identity per integration; least privilege and short-lived credentials.</td><td data-label="Evidence to retain">Access grants, tool activity and recertification.</td></tr>
-    <tr><th scope="row">Model boundary</th><td data-label="Pilot design">Approved enterprise platform, project, region and spend cap. No customer data in prompts.</td><td data-label="Evidence to retain">Prompt / model versions and usage records under the logging standard.</td></tr>
-    <tr><th scope="row">Outputs</th><td data-label="Pilot design">Draft artifacts enter human review. No production data access or production write access.</td><td data-label="Evidence to retain">Artifact, reviewer, decision and downstream CI results.</td></tr>
-  </tbody></table></div>
-  {% include slide-footer.html n="03" source="/docs/method/phased-pilot/" label="Minimum data and access requirements" %}
+<section class="slide " id="slide-3" aria-labelledby="title-3">
+<p class="kicker">03 / Agent control boundary</p><h2 id="title-3">Agent permission boundary</h2>
+
+<div class="slide-content">{% include industry/authority.html %}</div>
+{% include slide-footer.html n="03" source="/docs/industry/architecture/" label="Boundary design and sources" %}
 </section>
-<section class="slide" id="slide-4" aria-labelledby="title-4">
-  <p class="kicker">04 / Two initial workflow integrations</p>
-  <h2 id="title-4">Build thin integrations around<br>existing systems of record.</h2>
-  <div class="slide-content two-up">
-    <article class="workflow"><p class="small-label">Workflow A / Failed-test triage</p><h3>From failure to a reviewed cause</h3><ol><li>Collect scoped CI failure context.</li><li>Draft a cause classification with evidence.</li><li>Have a reviewer accept or correct it.</li><li>Record active effort and classification accuracy.</li></ol></article>
-    <article class="workflow"><p class="small-label">Workflow B / Test generation</p><h3>From specification to a tested draft</h3><ol><li>Read API specs and existing test patterns.</li><li>Generate candidate component or API tests.</li><li>Run tests and security checks; review changes.</li><li>Record acceptance, coverage and later rework.</li></ol></article>
-  </div>
-  <div class="takeaway">Optional AppSec extension: contextual SAST/SCA triage and draft fixes, with sampled audits of dismissed findings.</div>
-  {% include slide-footer.html n="04" source="/docs/method/phased-pilot/" label="Use cases and measurement design" %}
+<section class="slide " id="slide-4" aria-labelledby="title-4">
+<p class="kicker">04 / AI for quality engineering</p><h2 id="title-4">Validation of generated tests</h2>
+<p class="lede">Compile and pass are necessary checks. Fault detection and test meaning still need evaluation.</p>
+<div class="slide-content">{% include industry/test-pipeline.html %}</div>
+{% include slide-footer.html n="04" source="/docs/industry/evidence/" label="Industrial test-generation evidence" %}
 </section>
-<section class="slide" id="slide-5" aria-labelledby="title-5">
-  <p class="kicker">05 / Controls in the execution path</p>
-  <h2 id="title-5">Every control should leave<br>evidence a reviewer can inspect.</h2>
-  <div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Control point</th><th scope="col">Enforcement</th><th scope="col">Reviewable evidence</th></tr></thead><tbody>
-    <tr><th scope="row">Before inference</th><td data-label="Enforcement">Validate permitted data and access; use the approved platform.</td><td data-label="Reviewable evidence">Source scope, service identity and model configuration.</td></tr>
-    <tr><th scope="row">Before merge</th><td data-label="Enforcement">Human approval plus test and security gates in the existing pipeline.</td><td data-label="Reviewable evidence">Pull request review, CI runs, scan results and approvals.</td></tr>
-    <tr><th scope="row">During operation</th><td data-label="Enforcement">Monitor quality floors, cost ceilings and control incidents.</td><td data-label="Reviewable evidence">Control log, spending record and incident trail.</td></tr>
-    <tr><th scope="row">On failure or change</th><td data-label="Enforcement">Pause on a floor breach; use manual fallback and existing change control.</td><td data-label="Reviewable evidence">Incident review, version history and restart decision.</td></tr>
-  </tbody></table></div>
-  {% include slide-footer.html n="05" source="/docs/governance/control-mapping/" label="Controls and supervisory context" %}
+<section class="slide " id="slide-5" aria-labelledby="title-5">
+<p class="kicker">05 / Quality engineering for AI</p><h2 id="title-5">The application evaluation loop</h2>
+<p class="lede">Model, prompts, retrieval, tools and permissions form the tested system.</p>
+<div class="slide-content">{% include industry/assurance-loop.html %}</div>
+{% include slide-footer.html n="05" source="/docs/industry/architecture/" label="Evaluation and release lifecycle" %}
 </section>
-<section class="slide" id="slide-6" aria-labelledby="title-6">
-  <p class="kicker">06 / Measurement architecture</p>
-  <h2 id="title-6">Instrument the human work<br>as well as the model call.</h2>
-  <div class="slide-content measure-stack">
-    <div class="measure-row"><h3>Establish the baseline</h3><p>Capture activity effort and two quarters of delivery, defect and security data. Record task complexity and developer experience.</p></div>
-    <div class="measure-row"><h3>Link the workflow events</h3><p>Connect each task to source context, prompt / model version, draft artifact, reviewer decision, CI result and AI cost.</p></div>
-    <div class="measure-row"><h3>Compare like with like</h3><p>Alternate sprints or squads where feasible. Otherwise compare the same squad to its baseline and record confounders.</p></div>
-  </div>
-  <div class="takeaway">Measure active effort separately from elapsed time. Include preparation, review, correction and controls.</div>
-  {% include slide-footer.html n="06" source="/docs/method/phased-pilot/" label="Baseline and pilot measurement design" %}
+<section class="slide " id="slide-6" aria-labelledby="title-6">
+<p class="kicker">06 / Evaluation contract</p><h2 id="title-6">Application evaluation contract</h2>
+
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Layer</th><th scope="col">Evidence</th><th scope="col">Validity check</th></tr></thead><tbody><tr><th scope="row">Task outcome</th><td data-label="Evidence">Representative cases and expected results</td><td data-label="Validity check">Held-out examples; results by scenario</td></tr><tr><th scope="row">Retrieval</th><td data-label="Evidence">Relevant, permitted and grounded evidence</td><td data-label="Validity check">Correct citations and access scope</td></tr><tr><th scope="row">Agent actions</th><td data-label="Evidence">Tool choice, arguments and termination</td><td data-label="Validity check">Denied-action and recovery tests</td></tr><tr><th scope="row">Model judges</th><td data-label="Evidence">Scores against a defined rubric</td><td data-label="Validity check">Calibration against expert labels</td></tr><tr><th scope="row">Operation</th><td data-label="Evidence">Latency, cost, drift and escalation</td><td data-label="Validity check">Tail failures and tested fallback</td></tr></tbody></table></div>
+{% include slide-footer.html n="06" source="/docs/industry/architecture/" label="Evaluation design and limitations" %}
 </section>
-<section class="slide" id="slide-7" aria-labelledby="title-7">
-  <p class="kicker">07 / Proposed pilot promotion gate</p>
-  <h2 id="title-7">Promote on measured value<br>within the control boundary.</h2>
-  <div class="slide-content"><div class="three-up">
-    <article class="pillar"><span class="metric">≥15%</span><h3>Net effort saving</h3><p>On at least one selected use case, after review and control effort.</p></article>
-    <article class="pillar"><span class="metric">≥50%</span><h3>Actual adoption</h3><p>Share of eligible tasks using the capability during the pilot.</p></article>
-    <article class="pillar"><span class="metric">Within cap</span><h3>Operating cost</h3><p>AI cost remains under its ceiling, with a Finance-confirmed capture route.</p></article>
-  </div><div class="gate-floors"><strong>All floors must hold</strong><p>Quality and security remain within agreed baseline limits. A floor breach pauses the pilot; a control incident, no capture route or &lt;10% saving on both use cases is a stop signal.</p></div></div>
-  <div class="takeaway">Pilot criteria, not achieved results. Savings from 10% to below 15% require sponsor review.</div>
-  {% include slide-footer.html n="07" source="/docs/method/phased-pilot/" label="Phase 2 go / no-go and quality floors" %}
+<section class="slide " id="slide-7" aria-labelledby="title-7">
+<p class="kicker">07 / Adversarial assurance</p><h2 id="title-7">Threat coverage for agents</h2>
+
+<div class="slide-content"><div class="loop-flow"><div><span class="diagram-index">Input</span><strong>Poisoned context</strong><p>Untrusted documents<br>Tool output<br>Persistent memory</p></div><div><span class="diagram-index">Decision</span><strong>Unsafe requests</strong><p>Incorrect tool<br>Wrong resource<br>Excessive scope</p></div><div><span class="diagram-index">Enforcement</span><strong>Denied actions</strong><p>Gateway policy<br>Approval boundary<br>Credential limits</p></div><div><span class="diagram-index">Recovery</span><strong>Bounded failure</strong><p>Stop and escalate<br>Safe fallback<br>Traceable incident</p></div></div><div class="takeaway">Proposed test coverage. A finite adversarial suite cannot prove absence of vulnerabilities.</div><p class="figure-note">Threat references: OWASP LLM and Agentic 2026; OSFI July 2026. {% include industry/cite.html ids="A03,A04,R01" %}</p></div>
+{% include slide-footer.html n="07" source="/docs/industry/architecture/" label="Agent threats and control boundary" %}
 </section>
-<section class="slide slide-dark" id="slide-8" aria-labelledby="title-8">
-  <p class="kicker">08 / Architecture to delivery</p>
-  <h2 id="title-8">Implement the smallest<br>complete, measurable workflow.</h2>
-  <div class="slide-content three-up">
-    <article class="pillar"><span class="step">First / Define</span><h3>Agree the contracts</h3><p>Select applications and use cases. Confirm data, identity, approved platform, owners and baseline.</p></article>
-    <article class="pillar"><span class="step">Then / Integrate</span><h3>Connect one vertical slice</h3><p>Carry a task from scoped context to a reviewed artifact, with CI evidence and telemetry.</p></article>
-    <article class="pillar"><span class="step">Next / Validate</span><h3>Earn the expansion</h3><p>Test net value and floors. Revalidate successful capabilities across teams and releases.</p></article>
-  </div>
-  <div class="takeaway">Architecture review output: a boundary diagram, workflow owner, control evidence plan and measurement contract.</div>
-  {% include slide-footer.html n="08" source="/docs/method/phased-pilot/" label="Full pilot plan and deliverables" %}
+<section class="slide " id="slide-8" aria-labelledby="title-8">
+<p class="kicker">08 / Measurement architecture</p><h2 id="title-8">A joined record of work and outcomes</h2>
+
+<div class="slide-content"><div class="value-chain"><article class="value-step"><h3>Task</h3><p>ID, complexity, user cohort and baseline effort.</p></article><article class="value-step"><h3>Run</h3><p>Context, model, prompts, tools, runtime and cost.</p></article><article class="value-step"><h3>Review</h3><p>Checks, decision, correction and active human effort.</p></article><article class="value-step"><h3>Outcome</h3><p>Rework, defects, delivery time and realized benefit.</p></article></div><div class="takeaway">Version and join these records under the logging standard. Minimize sensitive payload retention.</div></div>
+{% include slide-footer.html n="08" source="/docs/industry/operating-model/" label="Balanced measurement contract" %}
+</section>
+<section class="slide " id="slide-9" aria-labelledby="title-9">
+<p class="kicker">09 / Technology composition</p><h2 id="title-9">Tools occupy different assurance layers</h2>
+
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Layer</th><th scope="col">Representative tools</th><th scope="col">Local proof</th></tr></thead><tbody><tr><th scope="row">Test assets</th><td data-label="Representative tools">Tosca · Applitools</td><td data-label="Local proof">Test validity; baseline quality</td></tr><tr><th scope="row">Change review</th><td data-label="Representative tools">GitHub Copilot</td><td data-label="Local proof">Issues found and missed; reviewer effort</td></tr><tr><th scope="row">AI evaluation</th><td data-label="Representative tools">LangSmith · Microsoft Foundry</td><td data-label="Local proof">Dataset fit; judge calibration; exportability</td></tr><tr><th scope="row">Adversarial testing</th><td data-label="Representative tools">Promptfoo</td><td data-label="Local proof">Coverage of actual tool authority</td></tr></tbody></table><p class="figure-note">Representative documentation, reviewed September 2026. Not a ranking or independent product benchmark. {% include industry/cite.html ids="T01,T02,T03,T04,T05,T06" %}</p></div>
+{% include slide-footer.html n="09" source="/docs/industry/landscape/" label="Product sources and selection criteria" %}
+</section>
+<section class="slide " id="slide-10" aria-labelledby="title-10">
+<p class="kicker">10 / Proposed pilot promotion</p><h2 id="title-10">Value within quality and control floors</h2>
+
+<div class="slide-content"><div class="three-up"><article class="pillar"><span class="metric">≥15%</span><h3>Net effort saving</h3><p>On at least one selected use case, after review and control work.</p></article><article class="pillar"><span class="metric">≥50%</span><h3>Eligible-task adoption</h3><p>Actual workflow use, with acceptance and abandonment recorded.</p></article><article class="pillar"><span class="metric">Within cap</span><h3>Operating cost</h3><p>Agreed ceiling and a Finance-confirmed capture mechanism.</p></article></div><div class="gate-floors"><strong>All floors must hold</strong><p>Quality, security and control requirements remain satisfied. A breach pauses the pilot and triggers review.</p></div><p class="figure-note">Proposed criteria from the existing pilot plan, not achieved results. The plan specifies stop signals and the 10–15% review band.</p></div>
+{% include slide-footer.html n="10" source="/docs/method/phased-pilot/" label="Full gate definitions and stop rules" %}
+</section>
+<section class="slide " id="slide-11" aria-labelledby="title-11">
+<p class="kicker">11 / Implementation sequence</p><h2 id="title-11">One complete workflow, then repeat</h2>
+
+<div class="slide-content"><div class="roadmap"><article><span class="step">Define</span><h3>Task and boundary</h3><p>Owners, context, identity, acceptance and baseline.</p></article><article><span class="step">Integrate</span><h3>Artifact and checks</h3><p>Model, sandbox, test runner and reviewed change.</p></article><article><span class="step">Evaluate</span><h3>Evidence and recovery</h3><p>Held-out cases, adversarial tests, telemetry and fallback.</p></article><article><span class="step">Validate</span><h3>Repeatable value</h3><p>Compare effort and quality across teams and releases.</p></article></div><div class="takeaway">Architecture review deliverables: boundary diagram, evaluation contract, ownership map and linked evidence record.</div></div>
+{% include slide-footer.html n="11" source="/docs/industry/library/" label="Research documents and methods" %}
 </section>

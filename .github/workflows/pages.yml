@@ -38,6 +38,8 @@ jobs:
           JEKYLL_ENV: production
       - name: Check site links and search index
         run: python tools/verify_site.py _site
+      - name: Check research provenance and briefing completeness
+        run: python tools/verify_industry.py _site
       - name: Check questionnaire fields and response ranges
         run: python tools/verify_pdf.py
       - uses: actions/upload-pages-artifact@v3

@@ -8,7 +8,7 @@
   const openLink = player.querySelector('[data-deck-link]');
   const labels = {
     evp: ['EVP strategic vision presentation', 'Open strategic vision ↗'],
-    technical: ['Technical delivery architecture presentation', 'Open delivery architecture ↗']
+    technical: ['Technical assurance architecture presentation', 'Open assurance architecture ↗']
   };
   function selectTab(tab) {
     if (tab.getAttribute('aria-selected') === 'true') return;
