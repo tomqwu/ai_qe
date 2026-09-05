@@ -1,0 +1,17 @@
+<div class="briefing-player" data-briefing-player>
+  <div class="audience-tabs" role="tablist" aria-label="Presentation audience">
+    <a id="tab-evp" class="audience-tab" role="tab" aria-selected="true" aria-controls="briefing-panel" href="{{ '/briefings/evp/' | relative_url }}" data-audience="evp">
+      <span class="audience-label">01 / EVP</span><strong>Strategic vision</strong><span>7 slides · 10–15 minute briefing</span>
+    </a>
+    <a id="tab-technical" class="audience-tab" role="tab" aria-selected="false" aria-controls="briefing-panel" href="{{ '/briefings/technical/' | relative_url }}" data-audience="technical">
+      <span class="audience-label">02 / Technical SDs &amp; leads</span><strong>Delivery architecture</strong><span>8 slides · 15–20 minute briefing</span>
+    </a>
+  </div>
+  <div id="briefing-panel" role="tabpanel" aria-labelledby="tab-evp">
+    <iframe id="briefing-frame" src="{{ '/briefings/evp/' | relative_url }}" title="EVP strategic vision presentation" loading="lazy" allow="fullscreen"></iframe>
+  </div>
+  <div class="briefing-actions">
+    <p>Browse here, or open the deck for a full presentation view.</p>
+    <a data-deck-link href="{{ '/briefings/evp/' | relative_url }}" target="_blank" rel="noopener">Open strategic vision ↗</a>
+  </div>
+</div>

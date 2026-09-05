@@ -1,0 +1,93 @@
+---
+layout: deck
+title: Delivery architecture
+description: A proposed architecture for governed AI assistance in quality engineering and application security pilots.
+audience: Technical SDs & leads · Architecture
+deck_class: technical-deck
+slide_count: 8
+nav_exclude: true
+search_exclude: true
+permalink: /briefings/technical/
+---
+<section class="slide slide-dark cover" id="slide-1" aria-labelledby="title-1">
+  <p class="kicker">Technical SDs &amp; leads / Architecture</p>
+  <div class="cover-grid"><div><h2 id="title-1">Assistance inside<br>the delivery system.</h2><p class="cover-tag">A proposed reference architecture for a governed pilot</p></div><p class="cover-note">Scoped context in.<br>Reviewable artifacts out.<br>Existing controls throughout.<small>Technology-neutral design derived from the pilot requirements. It is not a deployed solution.</small></p></div>
+  {% include slide-footer.html n="01" source="/docs/method/phased-pilot/" label="Pilot design and technical scope" %}
+</section>
+<section class="slide" id="slide-2" aria-labelledby="title-2">
+  <p class="kicker">02 / Proposed reference architecture</p>
+  <h2 id="title-2">A bounded path from context<br>to reviewed change.</h2>
+  <div class="slide-content">
+    <div class="boundary"><p class="boundary-label">Approved pilot boundary · non-production context</p><div class="arch-flow">
+      <article class="arch-node"><h3>1. Context adapters</h3><p>Read scoped repository, API specification, CI and finding data.</p></article>
+      <article class="arch-node"><h3>2. Task workflow</h3><p>Assemble approved context and versioned prompts for one use case.</p></article>
+      <article class="arch-node"><h3>3. Approved AI platform</h3><p>Use an approved model, project, region and spending ceiling.</p></article>
+    </div><div class="arch-gate"><div><h3>↓ Draft artifact + evidence</h3><p>Classification, proposed test or draft fix. Record provenance.</p></div><div><h3>→ Human review + deterministic CI</h3><p>Existing approval and change controls govern merge and release.</p></div></div><p class="arch-rail">Across every step: scoped identity · traceable activity · cost and quality telemetry</p></div>
+  </div>
+  {% include slide-footer.html n="02" source="/docs/method/phased-pilot/" label="Derived from pilot data, access and control requirements" %}
+</section>
+<section class="slide" id="slide-3" aria-labelledby="title-3">
+  <p class="kicker">03 / Context and access contract</p>
+  <h2 id="title-3">Constrain what the workflow<br>can read, send and change.</h2>
+  <div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Boundary</th><th scope="col">Pilot design</th><th scope="col">Evidence to retain</th></tr></thead><tbody>
+    <tr><th scope="row">Inputs</th><td data-label="Pilot design">Scoped code, test results, API specs and finding exports. Synthetic or de-identified test data.</td><td data-label="Evidence to retain">Source references and approved data classification.</td></tr>
+    <tr><th scope="row">Identity</th><td data-label="Pilot design">Dedicated service identity per integration; least privilege and short-lived credentials.</td><td data-label="Evidence to retain">Access grants, tool activity and recertification.</td></tr>
+    <tr><th scope="row">Model boundary</th><td data-label="Pilot design">Approved enterprise platform, project, region and spend cap. No customer data in prompts.</td><td data-label="Evidence to retain">Prompt / model versions and usage records under the logging standard.</td></tr>
+    <tr><th scope="row">Outputs</th><td data-label="Pilot design">Draft artifacts enter human review. No production data access or production write access.</td><td data-label="Evidence to retain">Artifact, reviewer, decision and downstream CI results.</td></tr>
+  </tbody></table></div>
+  {% include slide-footer.html n="03" source="/docs/method/phased-pilot/" label="Minimum data and access requirements" %}
+</section>
+<section class="slide" id="slide-4" aria-labelledby="title-4">
+  <p class="kicker">04 / Two initial workflow integrations</p>
+  <h2 id="title-4">Build thin integrations around<br>existing systems of record.</h2>
+  <div class="slide-content two-up">
+    <article class="workflow"><p class="small-label">Workflow A / Failed-test triage</p><h3>From failure to a reviewed cause</h3><ol><li>Collect scoped CI failure context.</li><li>Draft a cause classification with evidence.</li><li>Have a reviewer accept or correct it.</li><li>Record active effort and classification accuracy.</li></ol></article>
+    <article class="workflow"><p class="small-label">Workflow B / Test generation</p><h3>From specification to a tested draft</h3><ol><li>Read API specs and existing test patterns.</li><li>Generate candidate component or API tests.</li><li>Run tests and security checks; review changes.</li><li>Record acceptance, coverage and later rework.</li></ol></article>
+  </div>
+  <div class="takeaway">Optional AppSec extension: contextual SAST/SCA triage and draft fixes, with sampled audits of dismissed findings.</div>
+  {% include slide-footer.html n="04" source="/docs/method/phased-pilot/" label="Use cases and measurement design" %}
+</section>
+<section class="slide" id="slide-5" aria-labelledby="title-5">
+  <p class="kicker">05 / Controls in the execution path</p>
+  <h2 id="title-5">Every control should leave<br>evidence a reviewer can inspect.</h2>
+  <div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Control point</th><th scope="col">Enforcement</th><th scope="col">Reviewable evidence</th></tr></thead><tbody>
+    <tr><th scope="row">Before inference</th><td data-label="Enforcement">Validate permitted data and access; use the approved platform.</td><td data-label="Reviewable evidence">Source scope, service identity and model configuration.</td></tr>
+    <tr><th scope="row">Before merge</th><td data-label="Enforcement">Human approval plus test and security gates in the existing pipeline.</td><td data-label="Reviewable evidence">Pull request review, CI runs, scan results and approvals.</td></tr>
+    <tr><th scope="row">During operation</th><td data-label="Enforcement">Monitor quality floors, cost ceilings and control incidents.</td><td data-label="Reviewable evidence">Control log, spending record and incident trail.</td></tr>
+    <tr><th scope="row">On failure or change</th><td data-label="Enforcement">Pause on a floor breach; use manual fallback and existing change control.</td><td data-label="Reviewable evidence">Incident review, version history and restart decision.</td></tr>
+  </tbody></table></div>
+  {% include slide-footer.html n="05" source="/docs/governance/control-mapping/" label="Controls and supervisory context" %}
+</section>
+<section class="slide" id="slide-6" aria-labelledby="title-6">
+  <p class="kicker">06 / Measurement architecture</p>
+  <h2 id="title-6">Instrument the human work<br>as well as the model call.</h2>
+  <div class="slide-content measure-stack">
+    <div class="measure-row"><h3>Establish the baseline</h3><p>Capture activity effort and two quarters of delivery, defect and security data. Record task complexity and developer experience.</p></div>
+    <div class="measure-row"><h3>Link the workflow events</h3><p>Connect each task to source context, prompt / model version, draft artifact, reviewer decision, CI result and AI cost.</p></div>
+    <div class="measure-row"><h3>Compare like with like</h3><p>Alternate sprints or squads where feasible. Otherwise compare the same squad to its baseline and record confounders.</p></div>
+  </div>
+  <div class="takeaway">Measure active effort separately from elapsed time. Include preparation, review, correction and controls.</div>
+  {% include slide-footer.html n="06" source="/docs/method/phased-pilot/" label="Baseline and pilot measurement design" %}
+</section>
+<section class="slide" id="slide-7" aria-labelledby="title-7">
+  <p class="kicker">07 / Proposed pilot promotion gate</p>
+  <h2 id="title-7">Promote on measured value<br>within the control boundary.</h2>
+  <div class="slide-content"><div class="three-up">
+    <article class="pillar"><span class="metric">≥15%</span><h3>Net effort saving</h3><p>On at least one selected use case, after review and control effort.</p></article>
+    <article class="pillar"><span class="metric">≥50%</span><h3>Actual adoption</h3><p>Share of eligible tasks using the capability during the pilot.</p></article>
+    <article class="pillar"><span class="metric">Within cap</span><h3>Operating cost</h3><p>AI cost remains under its ceiling, with a Finance-confirmed capture route.</p></article>
+  </div><div class="gate-floors"><strong>All floors must hold</strong><p>Quality and security remain within agreed baseline limits. A floor breach pauses the pilot; a control incident, no capture route or &lt;10% saving on both use cases is a stop signal.</p></div></div>
+  <div class="takeaway">Pilot criteria, not achieved results. Savings from 10% to below 15% require sponsor review.</div>
+  {% include slide-footer.html n="07" source="/docs/method/phased-pilot/" label="Phase 2 go / no-go and quality floors" %}
+</section>
+<section class="slide slide-dark" id="slide-8" aria-labelledby="title-8">
+  <p class="kicker">08 / Architecture to delivery</p>
+  <h2 id="title-8">Implement the smallest<br>complete, measurable workflow.</h2>
+  <div class="slide-content three-up">
+    <article class="pillar"><span class="step">First / Define</span><h3>Agree the contracts</h3><p>Select applications and use cases. Confirm data, identity, approved platform, owners and baseline.</p></article>
+    <article class="pillar"><span class="step">Then / Integrate</span><h3>Connect one vertical slice</h3><p>Carry a task from scoped context to a reviewed artifact, with CI evidence and telemetry.</p></article>
+    <article class="pillar"><span class="step">Next / Validate</span><h3>Earn the expansion</h3><p>Test net value and floors. Revalidate successful capabilities across teams and releases.</p></article>
+  </div>
+  <div class="takeaway">Architecture review output: a boundary diagram, workflow owner, control evidence plan and measurement contract.</div>
+  {% include slide-footer.html n="08" source="/docs/method/phased-pilot/" label="Full pilot plan and deliverables" %}
+</section>

@@ -6,7 +6,35 @@ security in regulated financial services.
 
 [Browse the research site](https://tomqwu.github.io/ai_qe/).
 
-Conventions:
+The homepage includes two audience presentations:
+
+- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): seven slides on
+  ambition, focus, value, trust and responsible scale.
+- [Technical delivery architecture](https://tomqwu.github.io/ai_qe/briefings/technical/):
+  eight slides on system boundaries, workflows, controls, telemetry and pilot gates.
+
+These are research-informed perspectives and a proposed architecture, not measured bank results.
+
+## Maintaining the briefings
+
+Edit the slide sections in `briefings/evp.html` and `briefings/technical.html`. Keep the
+numbered slide IDs, descriptive headings and source links. Update `slide_count` and the
+audience selector in `_includes/briefing-embed.html` when adding or removing slides.
+
+`_layouts/deck.html`, `assets/css/decks.css` and `assets/js/decks.js` provide a shared
+player. It supports previous/next, arrow and Page Up/Down keys, Home/End, direct slide
+links, full screen, continuous reading and browser printing. With JavaScript disabled,
+all slides remain visible. The iframe adjusts its height to each slide; on narrow
+screens, diagrams and columns flow vertically for reading.
+
+`assets/js/briefing-embed.js` switches audiences on the homepage and briefing index.
+The site and decks share a self-hosted Source Sans 3 font, licensed under the SIL Open
+Font License in `assets/fonts/OFL.md`. No external presentation service is required.
+
+Before publishing, review every slide at desktop and mobile widths, exercise audience
+switching, keyboard navigation and reading mode, then run the verification below.
+
+## Research conventions
 
 - No client, partner or engagement names. Use "the bank", "the sponsor", "the advisory team".
 - Research sources (academic papers, regulators, analyst and consultancy reports, vendor studies)
