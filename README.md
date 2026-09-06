@@ -33,6 +33,16 @@ Publisher documents remain local and excluded from Pages. Their original URLs ar
 in the public library. Update CSV when changing the source JSON. Research figures use
 explicit units and caveats; diagrams are authored proposed designs, not measured rankings.
 
+## Site version and latest change
+
+`_data/release.yml` is the shared release record for every site page and both audience decks.
+For each published update, increment `version`, set `updated` to the publication date in
+America/Toronto, and write one concise `latest_change` sentence. Version 1.0.0 is the first
+numbered edition; earlier iterations were unversioned. Use patch increments for corrections,
+minor increments for substantive content or features, and major increments for a changed scope.
+The page banner and slide footers render from this record. The publication date identifies
+the site edition; source review dates remain attached to their individual research entries.
+
 ## Maintaining the briefings
 
 Edit the slide sections in `briefings/evp.html` and `briefings/technical.html`. Keep the

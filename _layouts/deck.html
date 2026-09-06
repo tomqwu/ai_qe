@@ -17,6 +17,7 @@
   <script src="{{ "/assets/js/industry.js" | relative_url }}" defer></script>
 <link rel="stylesheet" href="{{ '/assets/css/diagrams.css' | relative_url }}">
 <script src="{{ '/assets/js/diagrams.js' | relative_url }}" defer></script>
+<link rel="stylesheet" href="{{ "/assets/css/release.css" | relative_url }}">
 </head>
 <body class="deck-page {{ page.deck_class }}">
   <a class="skip-link" href="#slides">Skip to slides</a>
@@ -31,6 +32,7 @@
     <p class="slide-status" aria-live="polite" aria-atomic="true"></p>
     <label class="slide-picker-label">Go to slide <select aria-label="Go to slide"></select></label>
   </nav>
+  {% include release-banner.html %}
   <p class="deck-message" role="status"></p>
   <noscript><p class="no-script">All slides are shown in reading order. Use your browser’s print command to save a copy.</p></noscript>
 </body>

@@ -1,0 +1,18 @@
+.release-banner { color: #405563; background: #edf3ef; border-bottom: 1px solid #cfdbd9; padding: .7rem 3rem; font-size: .82rem; line-height: 1.45; }
+.release-banner p { margin: 0; }
+.release-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: .45rem; }
+.release-meta strong { color: #096d69; font-weight: 650; }
+.release-note { margin-top: .2rem !important; }
+.release-note strong { color: #152e40; font-weight: 600; margin-right: .35rem; }
+.deck-page > .release-banner { width: calc(100% - 40px); max-width: 1360px; margin: .9rem auto; padding: .65rem 1rem; border: 1px solid #cfdbd9; }
+.slide-version { white-space: nowrap; }
+@media (max-width: 49.99rem) {
+  .release-banner { padding: .65rem 1.25rem; font-size: .78rem; }
+}
+@media (max-width: 700px) {
+  .deck-page > .release-banner { width: calc(100% - 24px); }
+}
+@media print {
+  .release-banner { background: none; break-inside: avoid; }
+  .deck-page > .release-banner { display: none; }
+}
