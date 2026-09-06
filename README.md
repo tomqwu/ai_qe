@@ -118,3 +118,19 @@ theme is pinned in `_config.yml`; update it deliberately and check desktop/mobil
 ### Visual research briefings
 
 The audience decks embed native SVG architecture and research charts from `_includes/diagrams/`. Run `python3 tools/build_research_diagrams.py` to regenerate geometry; edit shared styling in `assets/css/diagrams.css`. Research findings, design implications, citations and text descriptions live in `_data/diagram_research.json`. The platform diagram supports keyboard and pointer inspection. On narrow screens, the diagram canvas pans horizontally while the explanatory text reflows.
+
+### Presentation motion
+
+`assets/js/motion.js` and `assets/css/motion.css` add directional light pulses to the existing
+SVG arrows, guided platform playback, chart reveals and gentle illustration movement.
+`_data/architecture_flow.json` supplies the six walkthrough stages; the diagram generator
+keeps component connections in `data-from` / `data-to` attributes. Animations indicate
+direction in a proposed workflow, not live telemetry or measured execution timing.
+
+Present mode adds a dark architecture stage with illuminated paths. The Motion control pauses effects across same-origin site and deck windows. The preference
+is stored locally when storage is available. Reduced-motion settings, hidden tabs, offscreen
+figures and printing suspend animation; Next step remains available for a static walkthrough.
+
+Browser API references: [SVG motion](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animateMotion),
+[pausing SVG animation](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/pauseAnimations),
+and [visibility observation](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
