@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+Start with permitted context. The engineer supplies a task; delivery systems provide approved, versioned source material.
+
+00:00:05.000 --> 00:00:10.000
+Generate a candidate. The QE runtime receives scoped context and drafts a test. Generation creates a proposal, not release authority.
+
+00:00:10.000 --> 00:00:15.000
+Enforce the action boundary. The gateway independently checks who may run which tool, on which resource, before execution.
+
+00:00:15.000 --> 00:00:20.000
+Prove useful behavior. Run in the sandbox: the original must pass, and a relevant seeded fault must fail.
+
+00:00:20.000 --> 00:00:25.000
+Keep approval independent. Evidence reaches the existing reviewer and release gate. The generating agent cannot approve itself.
+
+00:00:25.000 --> 00:00:30.000
+Retain the evidence. Join the run, artifact and decision. Runtime traces also accumulate during execution.
+
+00:00:30.000 --> 00:00:35.000
+Learn for the next release. Reviewed failures become regression cases. They challenge future evaluations; they do not retroactively approve this run.
+

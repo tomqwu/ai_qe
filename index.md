@@ -24,6 +24,7 @@ has_toc: false
 <section class="home-section explorer-section" id="explore" aria-labelledby="explore-title">
   <div class="section-heading"><div><h2 id="explore-title">Explore the assurance system.</h2></div><p>Inspect the architecture. Test the economics.<br>Understand the uncertainty.</p></div>
   {% include explorers/workbench.html %}
+  <a class="architecture-demo-feature" href="{{ '/demos/architecture/' | relative_url }}"><img src="{{ '/assets/images/architecture-3d-poster.jpg' | relative_url }}" width="1920" height="1080" loading="lazy" alt="Three-dimensional assurance platform with a gateway, verification chambers and independent release authority"><span><span class="eyebrow">Architecture in motion</span><strong>Explore the platform in 3D ↗</strong><span>Orbit the model. Follow a candidate. See where an unsafe action or failed quality check stops.</span><small>Four scenarios · interactive demo + short film</small></span></a>
 </section>
 
 <section class="home-section" id="briefings" aria-labelledby="briefings-title">

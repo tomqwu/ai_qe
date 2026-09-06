@@ -1,0 +1,646 @@
+{
+  "title": "Inside the assurance platform",
+  "version": "1.0",
+  "nodes": [
+    {
+      "id": "experience",
+      "title": "Team workflow",
+      "subtitle": "Task and scope",
+      "position": [
+        -7,
+        0,
+        -4.8
+      ],
+      "detail": "An engineer supplies an approved task. Existing delivery controls retain ownership.",
+      "sources": "A01,R01"
+    },
+    {
+      "id": "delivery",
+      "title": "Delivery systems",
+      "subtitle": "Versioned sources",
+      "position": [
+        -2.35,
+        0,
+        -4.8
+      ],
+      "detail": "Repositories and CI supply approved source material with identity and version information.",
+      "sources": "A03,R01"
+    },
+    {
+      "id": "application",
+      "title": "AI applications",
+      "subtitle": "Configuration versions",
+      "position": [
+        6.9,
+        0,
+        -4.8
+      ],
+      "detail": "An AI application configuration is evaluated as a separate branch from generated-test execution.",
+      "sources": "A01,T03"
+    },
+    {
+      "id": "context",
+      "title": "Context service",
+      "subtitle": "Permitted evidence",
+      "position": [
+        -7,
+        0,
+        0
+      ],
+      "detail": "Retrieve permitted, versioned context. Source text cannot grant permissions.",
+      "sources": "A03,R01"
+    },
+    {
+      "id": "runtime",
+      "title": "QE runtime",
+      "subtitle": "Bounded generation",
+      "position": [
+        -2.35,
+        0,
+        0
+      ],
+      "detail": "The model proposes a candidate and requested action within a bounded task. It cannot approve its own work.",
+      "sources": "A01,R01"
+    },
+    {
+      "id": "gateway",
+      "title": "Action gateway",
+      "subtitle": "Independent authority",
+      "position": [
+        2.3,
+        0,
+        0
+      ],
+      "detail": "Check identity, resource scope, expiry and approval before a tool runs. Denied requests have no tool side effect.",
+      "sources": "A03,R01"
+    },
+    {
+      "id": "checks",
+      "title": "Sandbox checks",
+      "subtitle": "Independent proof",
+      "position": [
+        6.9,
+        0,
+        0
+      ],
+      "detail": "The original implementation passes and a relevant seeded fault fails. A passing test alone does not establish usefulness.",
+      "sources": "E04,E05"
+    },
+    {
+      "id": "evidence",
+      "title": "Evidence store",
+      "subtitle": "Run / artifact / decision",
+      "position": [
+        -7,
+        0,
+        4.8
+      ],
+      "detail": "Join task, run, artifact, evaluation and human decision. Traces are retained during execution as well as at the release decision.",
+      "sources": "D02,A01"
+    },
+    {
+      "id": "corpus",
+      "title": "Regression corpus",
+      "subtitle": "Reviewed failure cases",
+      "position": [
+        -2.35,
+        0,
+        4.8
+      ],
+      "detail": "Curate reviewed failures and approved expectations into versioned cases for future evaluations.",
+      "sources": "A01,T03"
+    },
+    {
+      "id": "release",
+      "title": "Release authority",
+      "subtitle": "Human review and gates",
+      "position": [
+        2.3,
+        0,
+        4.8
+      ],
+      "detail": "Independent reviewers and existing delivery gates decide approve or hold; the generator never self-approves.",
+      "sources": "A01,R01"
+    },
+    {
+      "id": "evaluation",
+      "title": "Evaluation service",
+      "subtitle": "Held-out / adversarial",
+      "position": [
+        6.9,
+        0,
+        4.8
+      ],
+      "detail": "Run held-out and adversarial cases, deterministic checks and calibrated human or model judges.",
+      "sources": "A01,T03"
+    }
+  ],
+  "routes": [
+    {
+      "id": "experience:runtime",
+      "points": [
+        [
+          -7,
+          0.32,
+          -3.6
+        ],
+        [
+          -7,
+          0.32,
+          -2.7
+        ],
+        [
+          -2.35,
+          0.32,
+          -2.7
+        ],
+        [
+          -2.35,
+          0.32,
+          -1.2
+        ]
+      ]
+    },
+    {
+      "id": "delivery:context",
+      "points": [
+        [
+          -2.35,
+          0.32,
+          -3.6
+        ],
+        [
+          -2.35,
+          0.32,
+          -2.2
+        ],
+        [
+          -7,
+          0.32,
+          -2.2
+        ],
+        [
+          -7,
+          0.32,
+          -1.2
+        ]
+      ]
+    },
+    {
+      "id": "context:runtime",
+      "points": [
+        [
+          -5.35,
+          0.32,
+          0
+        ],
+        [
+          -4.0,
+          0.32,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "runtime:gateway",
+      "points": [
+        [
+          -0.7,
+          0.32,
+          0
+        ],
+        [
+          0.65,
+          0.32,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "gateway:checks",
+      "points": [
+        [
+          3.95,
+          0.32,
+          0
+        ],
+        [
+          5.25,
+          0.32,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "application:evaluation",
+      "points": [
+        [
+          8.55,
+          0.32,
+          -4.8
+        ],
+        [
+          9.65,
+          0.32,
+          -4.8
+        ],
+        [
+          9.65,
+          0.32,
+          4.8
+        ],
+        [
+          8.55,
+          0.32,
+          4.8
+        ]
+      ]
+    },
+    {
+      "id": "checks:release",
+      "points": [
+        [
+          6.9,
+          0.32,
+          1.2
+        ],
+        [
+          6.9,
+          0.32,
+          2.25
+        ],
+        [
+          2.3,
+          0.32,
+          2.25
+        ],
+        [
+          2.3,
+          0.32,
+          3.6
+        ]
+      ]
+    },
+    {
+      "id": "evaluation:release",
+      "points": [
+        [
+          5.25,
+          0.32,
+          4.8
+        ],
+        [
+          3.95,
+          0.32,
+          4.8
+        ]
+      ]
+    },
+    {
+      "id": "gateway:evidence",
+      "points": [
+        [
+          2.3,
+          0.32,
+          1.2
+        ],
+        [
+          2.3,
+          0.32,
+          2.9
+        ],
+        [
+          -7,
+          0.32,
+          2.9
+        ],
+        [
+          -7,
+          0.32,
+          3.6
+        ]
+      ]
+    },
+    {
+      "id": "release:evidence",
+      "points": [
+        [
+          2.3,
+          0.32,
+          6.0
+        ],
+        [
+          2.3,
+          0.32,
+          6.7
+        ],
+        [
+          -7,
+          0.32,
+          6.7
+        ],
+        [
+          -7,
+          0.32,
+          6.0
+        ]
+      ]
+    },
+    {
+      "id": "evidence:corpus",
+      "points": [
+        [
+          -5.35,
+          0.32,
+          4.8
+        ],
+        [
+          -4.0,
+          0.32,
+          4.8
+        ]
+      ]
+    },
+    {
+      "id": "corpus:evaluation",
+      "points": [
+        [
+          -2.35,
+          0.32,
+          3.6
+        ],
+        [
+          -2.35,
+          0.32,
+          1.85
+        ],
+        [
+          8.9,
+          0.32,
+          1.85
+        ],
+        [
+          8.9,
+          0.32,
+          3.0
+        ],
+        [
+          6.9,
+          0.32,
+          3.0
+        ],
+        [
+          6.9,
+          0.32,
+          3.6
+        ]
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "generate",
+      "title": "Generate & verify",
+      "subtitle": "From an approved task to independent proof",
+      "steps": [
+        {
+          "title": "Start with permitted context",
+          "body": "The engineer supplies a task; delivery systems provide approved, versioned source material.",
+          "node": "context",
+          "routes": [
+            "experience:runtime",
+            "delivery:context"
+          ],
+          "state": "active",
+          "artifact": "Task PAY-042 \u00b7 approved contract",
+          "duration": 5
+        },
+        {
+          "title": "Generate a candidate",
+          "body": "The QE runtime receives scoped context and drafts a test. Generation creates a proposal, not release authority.",
+          "node": "runtime",
+          "routes": [
+            "context:runtime"
+          ],
+          "state": "active",
+          "artifact": "Candidate test \u00b7 source hashes",
+          "duration": 5
+        },
+        {
+          "title": "Enforce the action boundary",
+          "body": "The gateway independently checks who may run which tool, on which resource, before execution.",
+          "node": "gateway",
+          "routes": [
+            "runtime:gateway"
+          ],
+          "state": "active",
+          "artifact": "DEC-042 \u00b7 sandbox-only permission",
+          "duration": 5
+        },
+        {
+          "title": "Prove useful behavior",
+          "body": "Run in the sandbox: the original must pass, and a relevant seeded fault must fail.",
+          "node": "checks",
+          "routes": [
+            "gateway:checks"
+          ],
+          "state": "active",
+          "artifact": "Original passes \u00b7 mutant fails",
+          "duration": 5
+        },
+        {
+          "title": "Keep approval independent",
+          "body": "Evidence reaches the existing reviewer and release gate. The generating agent cannot approve itself.",
+          "node": "release",
+          "routes": [
+            "checks:release"
+          ],
+          "state": "review",
+          "artifact": "Human decision \u00b7 approve or hold",
+          "duration": 5
+        },
+        {
+          "title": "Retain the evidence",
+          "body": "Join the run, artifact and decision. Runtime traces also accumulate during execution.",
+          "node": "evidence",
+          "routes": [
+            "gateway:evidence",
+            "release:evidence"
+          ],
+          "state": "active",
+          "artifact": "RUN-042 \u00b7 artifact and decision joins",
+          "duration": 5
+        },
+        {
+          "title": "Learn for the next release",
+          "body": "Reviewed failures become regression cases. They challenge future evaluations; they do not retroactively approve this run.",
+          "node": "corpus",
+          "routes": [
+            "evidence:corpus",
+            "corpus:evaluation"
+          ],
+          "state": "active",
+          "artifact": "Versioned cases \u00b7 next evaluation",
+          "duration": 5
+        }
+      ]
+    },
+    {
+      "id": "evaluate",
+      "title": "Evaluate AI",
+      "subtitle": "A separate application-assurance branch",
+      "steps": [
+        {
+          "title": "Version the AI application",
+          "body": "Treat model, prompt, retrieval, tools and permissions as one evaluated configuration.",
+          "node": "application",
+          "routes": [],
+          "state": "active",
+          "artifact": "Configuration manifest \u00b7 candidate version",
+          "duration": 5
+        },
+        {
+          "title": "Evaluate application behavior",
+          "body": "The application enters held-out, adversarial and calibrated evaluation. This branch is separate from generated-test execution.",
+          "node": "evaluation",
+          "routes": [
+            "application:evaluation"
+          ],
+          "state": "active",
+          "artifact": "Task quality \u00b7 tool behavior \u00b7 latency",
+          "duration": 5
+        },
+        {
+          "title": "Challenge with reviewed failures",
+          "body": "Versioned regression cases provide evidence against the candidate configuration.",
+          "node": "evaluation",
+          "routes": [
+            "corpus:evaluation"
+          ],
+          "state": "active",
+          "artifact": "Held-out cases \u00b7 corpus version",
+          "duration": 5
+        },
+        {
+          "title": "Decide at the release boundary",
+          "body": "Relevant evaluation results reach an independent release owner. Mandatory failures mean hold.",
+          "node": "release",
+          "routes": [
+            "evaluation:release"
+          ],
+          "state": "review",
+          "artifact": "Approve / hold \u00b7 accountable owner",
+          "duration": 5
+        },
+        {
+          "title": "Preserve the decision trail",
+          "body": "Keep the configuration, evaluation version and reviewer decision together.",
+          "node": "evidence",
+          "routes": [
+            "release:evidence"
+          ],
+          "state": "active",
+          "artifact": "Versioned release evidence",
+          "duration": 5
+        }
+      ]
+    },
+    {
+      "id": "deny",
+      "title": "Deny unsafe action",
+      "subtitle": "A failed authorization leaves no tool side effect",
+      "steps": [
+        {
+          "title": "An unsafe action is requested",
+          "body": "A sandbox-only task proposes a production write. Retrieved text cannot expand the task\u2019s permissions.",
+          "node": "gateway",
+          "routes": [
+            "runtime:gateway"
+          ],
+          "state": "active",
+          "artifact": "Requested resource: production",
+          "duration": 5
+        },
+        {
+          "title": "Deny before execution",
+          "body": "The gateway rejects the action. No packet reaches the sandbox or a production tool.",
+          "node": "gateway",
+          "routes": [],
+          "state": "denied",
+          "artifact": "DENY \u00b7 scope mismatch \u00b7 no tool call",
+          "duration": 6
+        },
+        {
+          "title": "Record the denied request",
+          "body": "Retain identity, requested resource, policy version and denial reason.",
+          "node": "evidence",
+          "routes": [
+            "gateway:evidence"
+          ],
+          "state": "denied",
+          "artifact": "Denied-action receipt",
+          "duration": 5
+        },
+        {
+          "title": "Hold and escalate",
+          "body": "The workflow remains held. Any broader action needs a separate authorized request; the agent cannot grant its own access.",
+          "node": "release",
+          "routes": [],
+          "state": "hold",
+          "artifact": "Human escalation \u00b7 no automatic retry",
+          "duration": 5
+        }
+      ]
+    },
+    {
+      "id": "hold",
+      "title": "Hold failed proof",
+      "subtitle": "Generation succeeds; independent quality checks fail",
+      "steps": [
+        {
+          "title": "Execute within approved scope",
+          "body": "Authorization allows the candidate test into the sandbox. Permission is not proof of quality.",
+          "node": "checks",
+          "routes": [
+            "gateway:checks"
+          ],
+          "state": "active",
+          "artifact": "Sandbox execution \u00b7 scoped identity",
+          "duration": 5
+        },
+        {
+          "title": "The candidate misses the fault",
+          "body": "A seeded faulty implementation still passes. The test does not establish the required fault detection.",
+          "node": "checks",
+          "routes": [],
+          "state": "failed",
+          "artifact": "Mutation check failed",
+          "duration": 6
+        },
+        {
+          "title": "Hold the release",
+          "body": "The failed result reaches the independent release owner. No approval or promotion is implied.",
+          "node": "release",
+          "routes": [
+            "checks:release"
+          ],
+          "state": "hold",
+          "artifact": "HOLD \u00b7 mandatory quality floor",
+          "duration": 5
+        },
+        {
+          "title": "Retain and improve the case",
+          "body": "Record the failure and curate a reviewed case. A revised candidate must pass a new evaluation before approval.",
+          "node": "corpus",
+          "routes": [
+            "release:evidence",
+            "evidence:corpus"
+          ],
+          "state": "review",
+          "artifact": "Failure record \u00b7 revised test case",
+          "duration": 5
+        }
+      ]
+    }
+  ]
+}
