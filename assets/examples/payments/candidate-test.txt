@@ -1,0 +1,3 @@
+// Illustrative test contract; adapt to the actual framework and approved API.
+assert(response.status === 422);
+assert(createdPayments.length === 0);

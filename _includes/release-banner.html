@@ -1,4 +1,4 @@
 <aside class="release-banner" aria-label="Publication version">
-  <p class="release-meta"><strong>Version {{ site.data.release.version | escape }}</strong><span aria-hidden="true">·</span><time datetime="{{ site.data.release.updated | escape }}">Updated {{ site.data.release.updated | date: '%-d %B %Y' }}</time></p>
+  <p class="release-meta"><strong>Version {{ site.data.release.version | escape }}</strong><span aria-hidden="true">·</span><time datetime="{{ site.data.release.updated | escape }}">Updated {{ site.data.release.updated | date: '%-d %B %Y' }}</time> <a href="{{ "/releases/" | relative_url }}">Release history →</a></p>
   <p class="release-note"><strong>Latest change</strong> {{ site.data.release.latest_change | escape }}</p>
 </aside>

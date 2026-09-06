@@ -4,7 +4,7 @@ title: Assurance architecture
 description: Research-informed AI and quality engineering — Technical SDs & leads · Architecture.
 audience: Technical SDs & leads · Architecture
 deck_class: technical-deck
-slide_count: 26
+slide_count: 29
 nav_exclude: true
 search_exclude: true
 permalink: /briefings/technical/
@@ -133,7 +133,7 @@ briefing_minutes: "40–55"
 <section class="slide " id="slide-24" data-chapter="Integration and delivery" aria-labelledby="title-24">
 <p class="kicker">24 / Proposed pilot promotion</p><h2 id="title-24">Value within quality and control floors</h2>
 
-<div class="slide-content"><div class="three-up"><article class="pillar"><span class="metric">≥15%</span><h3>Net effort saving</h3><p>On at least one selected use case, after review and control work.</p></article><article class="pillar"><span class="metric">≥50%</span><h3>Eligible-task adoption</h3><p>Actual workflow use, with acceptance and abandonment recorded.</p></article><article class="pillar"><span class="metric">Within cap</span><h3>Operating cost</h3><p>Agreed ceiling and a Finance-confirmed capture mechanism.</p></article></div><div class="gate-floors"><strong>All floors must hold</strong><p>Quality, security and control requirements remain satisfied. A breach pauses the pilot and triggers review.</p></div><p class="figure-note">Proposed criteria from the existing pilot plan, not achieved results. The plan specifies stop signals and the 10–15% review band.</p></div>
+<div class="slide-content">{% include pilot-gates.html %}</div>
 {% include slide-footer.html n="24" source="/docs/method/phased-pilot/" label="Full gate definitions and stop rules" %}
 </section>
 <section class="slide" id="slide-25" data-chapter="Integration and delivery" aria-labelledby="title-25">
@@ -146,4 +146,22 @@ briefing_minutes: "40–55"
 <p class="kicker">26 / Research to implementation</p><h2 id="title-26">Architecture decisions with evidence</h2>
 <div class="slide-content">{% include diagrams/figure.html name="research-decisions" label="Architecture decisions with evidence" %}</div>
 {% include slide-footer.html n="26" source="/docs/industry/library/" label="Research documents and methods" %}
+</section>
+
+<section class="slide diagram-slide" id="slide-27" data-chapter="Worked design" aria-labelledby="title-27">
+<p class="kicker">27 / Worked design</p><h2 id="title-27">A payment test has four joined contracts</h2>
+<div class="slide-content">{% include diagrams/figure.html name="contract-chain" label="A payment test has four joined contracts" %}</div>
+{% include slide-footer.html n="27" source="/docs/industry/reference-contracts/" label="Research and implementation detail" %}
+</section>
+
+<section class="slide " id="slide-28" data-chapter="Worked design" aria-labelledby="title-28">
+<p class="kicker">28 / Worked design</p><h2 id="title-28">Failure semantics are part of the contract</h2>
+<div class="slide-content"><table class="spec-table"><thead><tr><th>Failure</th><th>Required behavior</th><th>Payment example</th></tr></thead><tbody><tr><th>Timeout / unknown result</th><td data-label="Required behavior">Cancel new actions; query status by idempotency key before retry.</td><td data-label="Example">Reuse RUN-042; never launch duplicate runners blindly.</td></tr><tr><th>Stale policy / auth outage</th><td data-label="Required behavior">Deny execution; renew policy and re-authorize.</td><td data-label="Example">Expired DEC-042 cannot authorize a test run.</td></tr><tr><th>Evidence unavailable</th><td data-label="Required behavior">Hold promotion; bounded durable outbox or halt.</td><td data-label="Example">No complete evidence receipt means no review-ready change.</td></tr><tr><th>Digest / oracle mismatch</th><td data-label="Required behavior">Invalidate results; regenerate evidence against the new artifact.</td><td data-label="Example">Changed payment assertion cannot reuse EVAL-042.</td></tr><tr><th>Recovery</th><td data-label="Required behavior">Human queue; exercise the failing case before an owner resumes.</td><td data-label="Example">Model rollback does not undo completed external actions.</td></tr></tbody></table></div>
+{% include slide-footer.html n="28" source="/docs/industry/reference-contracts/" label="Research and implementation detail" %}
+</section>
+
+<section class="slide diagram-slide" id="slide-29" data-chapter="AppSec assurance" aria-labelledby="title-29">
+<p class="kicker">29 / AppSec assurance</p><h2 id="title-29">A finding must end in a verified disposition</h2>
+<div class="slide-content">{% include diagrams/figure.html name="appsec-loop" label="A finding must end in a verified disposition" %}</div>
+{% include slide-footer.html n="29" source="/docs/industry/coverage/" label="Research and implementation detail" %}
 </section>

@@ -27,11 +27,11 @@ These are the studies that matter for pilot design because they report acceptanc
 ### [Meta, "Automated Unit Test Improvement using Large Language Models at Meta" (TestGen-LLM)](https://arxiv.org/abs/2402.09171), Feb 2024, FSE 2024 industry track
 {: .no_toc .study-title }
 
-**Finding:** 75% of generated tests built, 57% passed reliably, 25% raised coverage; 73% of filtered recommendations accepted for production; 11.5% of classes improved
+**Finding:** {% include claims/testgen.html %}
 
 **Sponsor and caveats:** Vendor-internal; improves existing tests, does not create suites from scratch
 
-**Pilot use:** Reference acceptance rate for test-generation use cases: expect roughly half to three quarters of filtered candidates to be accepted
+**Pilot use:** Use cumulative build, pass and useful-test gates; measure acceptance on the bank’s own candidate and class denominators. Do not transfer the Meta acceptance rate as a pilot expectation.
 
 <details markdown="block">
 <summary>Sample and method details</summary>

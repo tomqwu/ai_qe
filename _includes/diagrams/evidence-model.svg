@@ -18,12 +18,12 @@
 <text x="900" y="60" class="node-title" text-anchor="start">Review</text>
 <text x="900" y="83" class="node-text" text-anchor="start">review_id → run_id</text>
 <text x="900" y="103" class="node-text" text-anchor="start">Decision + active human effort</text>
-<text x="900" y="123" class="node-text" text-anchor="start">Corrections + independent checks</text>
+<text x="900" y="123" class="node-text" text-anchor="start">Rework + independent checks</text>
 </g>
 <g class="diagram-node ">
 <rect x="884" y="283" width="296" height="133" rx="8" class="node"/>
 <text x="900" y="311" class="node-title" text-anchor="start">Outcome</text>
-<text x="900" y="334" class="node-text" text-anchor="start">outcome_id → task_id / artifact_id</text>
+<text x="900" y="334" class="node-text" text-anchor="start">outcome → task / artifact IDs</text>
 <text x="900" y="354" class="node-text" text-anchor="start">Rework · defects · cycle time</text>
 <text x="900" y="374" class="node-text" text-anchor="start">Observed period + capture basis</text>
 </g>
@@ -31,7 +31,7 @@
 <rect x="449" y="283" width="304" height="133" rx="8" class="node node-navy"/>
 <text x="465" y="311" class="node-title" text-anchor="start">Cohort comparison</text>
 <text x="465" y="334" class="node-text" text-anchor="start">Comparable tasks + quality floors</text>
-<text x="465" y="354" class="node-text" text-anchor="start">Prep + execution + review + rework</text>
+<text x="465" y="354" class="node-text" text-anchor="start">Prep + run + review + rework</text>
 <text x="465" y="374" class="node-text" text-anchor="start">Net effort, cost and uncertainty</text>
 </g>
 <path d="M 314 99 H 447" class="edge" marker-end="url(#evidence-model-arrow)"/>

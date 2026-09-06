@@ -1,0 +1,14 @@
+{
+  "evaluation_id": "EVAL-042",
+  "task_id": "PAY-042",
+  "run_id": "RUN-042",
+  "artifact_sha256": "8920ad34245adc0c36376a6d656cadd7e9f73e4826cc101d47a30b7dd859ae2a",
+  "contract_sha256": "94f1a99fcd8161f26dcdf20d92ddf3088ba6100f8d005098669e95ac2cc22b73",
+  "configuration": "payments-testgen@1.3.0",
+  "corpus": "payment-boundaries@3",
+  "runner": "sandbox@4",
+  "original_pass": true,
+  "repeat_runs": 3,
+  "mutant_killed": true,
+  "security_pass": true
+}

@@ -418,5 +418,33 @@
     "access": "Public text",
     "document_url": null,
     "reviewed": "2026-09-05"
+  },
+  {
+    "id": "E08",
+    "title": "Secure code more than three times faster with Copilot Autofix",
+    "publisher": "GitHub",
+    "date": "2024-08-14",
+    "kind": "Vendor study",
+    "url": "https://github.blog/news-insights/product-news/secure-code-more-than-three-times-faster-with-copilot-autofix/",
+    "takeaway": "Reports median PR-alert remediation time of 28 minutes with Autofix versus 1.5 hours manually.",
+    "caveat": "Vendor workflow observation; cohort size and causal assignment not disclosed here. Not a bank savings forecast. Page updated January 2025.",
+    "scope": "AppSec",
+    "access": "Public text",
+    "document_url": null,
+    "reviewed": "2026-09-06"
+  },
+  {
+    "id": "E09",
+    "title": "ZeroFalse: Improving Precision in Static Analysis with LLMs",
+    "publisher": "Iranmanesh et al.",
+    "date": "2025-10-02",
+    "kind": "Research paper",
+    "url": "https://arxiv.org/abs/2510.02534",
+    "takeaway": "Uses structured static-analysis traces and CWE context to adjudicate findings; evaluates ten models on Java benchmark and real-world cases.",
+    "caveat": "Preprint and model-dependent benchmark evidence. High F1 does not justify unsupervised dismissal; local recall and dismissed-finding audits remain necessary.",
+    "scope": "AppSec",
+    "access": "Public paper",
+    "document_url": "https://arxiv.org/pdf/2510.02534",
+    "reviewed": "2026-09-06"
   }
 ]

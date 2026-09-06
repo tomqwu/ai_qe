@@ -1,0 +1,47 @@
+{
+  "downside": {
+    "share": 45,
+    "eligible": 50,
+    "adoption": 30,
+    "saving": 10,
+    "capture": 25,
+    "cost": 1.5,
+    "risk": 0.5
+  },
+  "base": {
+    "share": 55,
+    "eligible": 60,
+    "adoption": 50,
+    "saving": 20,
+    "capture": 50,
+    "cost": 1,
+    "risk": 0.2
+  },
+  "upside": {
+    "share": 60,
+    "eligible": 70,
+    "adoption": 70,
+    "saving": 30,
+    "capture": 70,
+    "cost": 0.8,
+    "risk": 0
+  },
+  "noCapture": {
+    "share": 55,
+    "eligible": 60,
+    "adoption": 50,
+    "saving": 20,
+    "capture": 0,
+    "cost": 1,
+    "risk": 0.2
+  },
+  "slowdown": {
+    "share": 55,
+    "eligible": 60,
+    "adoption": 50,
+    "saving": -20,
+    "capture": 50,
+    "cost": 1,
+    "risk": 0.2
+  }
+}

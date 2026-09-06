@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI-QE payment reference bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task",
+    "policy",
+    "evaluation",
+    "evidence",
+    "request_time"
+  ],
+  "properties": {
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_id",
+        "run_id",
+        "kind",
+        "resource",
+        "contract_sha256",
+        "context_refs",
+        "deadline",
+        "budget_usd",
+        "configuration"
+      ],
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "enum": [
+            "payment-api-test"
+          ]
+        },
+        "resource": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "context_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "budget_usd": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "configuration": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_id",
+        "task_id",
+        "run_id",
+        "identity",
+        "policy_version",
+        "decision",
+        "action",
+        "resource",
+        "issued_at",
+        "expires_at",
+        "idempotency_key"
+      ],
+      "properties": {
+        "decision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "type": "string",
+          "minLength": 1,
+          "enum": [
+            "allow",
+            "deny"
+          ]
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "enum": [
+            "sandbox.test"
+          ]
+        },
+        "resource": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluation_id",
+        "task_id",
+        "run_id",
+        "artifact_sha256",
+        "contract_sha256",
+        "configuration",
+        "corpus",
+        "runner",
+        "original_pass",
+        "repeat_runs",
+        "mutant_killed",
+        "security_pass"
+      ],
+      "properties": {
+        "evaluation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "contract_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "configuration": {
+          "type": "string",
+          "minLength": 1
+        },
+        "corpus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_pass": {
+          "type": "boolean"
+        },
+        "repeat_runs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mutant_killed": {
+          "type": "boolean"
+        },
+        "security_pass": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "task_id",
+        "run_id",
+        "decision_id",
+        "evaluation_id",
+        "artifact_sha256",
+        "durable_receipt",
+        "status",
+        "reviewer"
+      ],
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "durable_receipt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1,
+          "enum": [
+            "held-for-human-review",
+            "approved",
+            "rejected"
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "request_time": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -10,7 +10,7 @@
   let printing = false;
   try { preference = localStorage.getItem(storageKey) || 'on'; } catch (_) { /* Storage is optional. */ }
   const enabled = () => preference !== 'off' && !reduce.matches && !printing;
-  const canRun = record => enabled() && !record.flowPaused && !document.hidden && record.visible && !record.host.closest('[hidden]');
+  const canRun = record => enabled() && !record.flowPaused && !document.hidden && record.visible && !record.host.closest('[hidden]') && !record.svg?.closest('[hidden]');
 
   function svgElement(tag, attrs) {
     const element = document.createElementNS(ns, tag);
@@ -27,6 +27,7 @@
       marker.after(focusMarker);
     }
     [...svg.querySelectorAll('path.edge[marker-end]')].forEach((path, index) => {
+      if (!path.dataset.from) { path.dataset.from = 'edge'; path.dataset.to = String(index); }
       const d = path.getAttribute('d');
       const length = path.getTotalLength();
       if (!d || !Number.isFinite(length) || length < 4) return;
@@ -81,7 +82,9 @@
     const host = record.host;
     const toolbar = host.querySelector('[data-diagram-tour]');
     if (!toolbar) return;
-    const steps = JSON.parse(toolbar.querySelector('[data-tour-steps]').textContent);
+    const allSteps = JSON.parse(toolbar.querySelector('[data-tour-steps]').textContent);
+    const branch = toolbar.querySelector('[data-tour-branch]');
+    let steps = branch ? allSteps.filter((step, i) => [0, 1, 2, 4].includes(i)) : allSteps;
     const play = toolbar.querySelector('[data-tour-play]');
     const next = toolbar.querySelector('[data-tour-next]');
     const reset = toolbar.querySelector('[data-tour-reset]');
@@ -108,7 +111,7 @@
       const mode = host.dataset.flowMode;
       const moving = enabled() && !record.flowPaused;
       if (mode === 'overview') {
-        legend.textContent = moving ? 'Pulses = direction. Play flow follows the architecture step by step.' : 'Motion off · all connections and direction arrows remain visible.';
+        legend.textContent = moving ? 'Static arrows = relationships. Play flow highlights only the current step.' : 'All connections remain visible. Next step works with motion off.';
       } else {
         legend.textContent = `${mode === 'tour' ? 'Gold = current step.' : 'Gold = direct connections.'} Teal = static context.${moving ? '' : ' Motion paused.'}`;
       }
@@ -118,6 +121,9 @@
       remaining = 3200;
       index = number;
       const step = steps[index];
+      if (host.dataset.diagram === 'fallback-state') {
+        host.querySelectorAll('.diagram-node').forEach((node, i) => node.classList.toggle('state-current', i === (index + 1) % 4));
+      }
       status.replaceChildren();
       const heading = document.createElement('strong');
       heading.textContent = `${playing ? '' : 'Paused · '}${step.title}`;
@@ -139,6 +145,7 @@
       completed = finished;
       record.flowPaused = false;
       clear();
+      host.querySelectorAll('.state-current').forEach(node => node.classList.remove('state-current'));
       setRoutes(record, 'overview');
       host.dispatchEvent(new CustomEvent('qe:overview'));
       status.textContent = finished ? 'Flow complete · overview restored.' : 'Overview · all connections have equal emphasis.';
@@ -172,6 +179,10 @@
       syncRecord(record);
     });
     reset.addEventListener('click', () => overview());
+    branch?.addEventListener('change', () => {
+      steps = allSteps.filter((step, i) => (branch.value === 'fix' ? [0, 1, 2, 4] : [0, 3, 5]).includes(i));
+      overview();
+    });
     host.addEventListener('qe:component-selected', event => {
       if (event.detail.source === 'manual') {
         playing = false;
@@ -221,13 +232,15 @@
   document.querySelectorAll('.research-figure').forEach(host => {
     const svg = host.querySelector('.research-diagram');
     if (!svg || typeof svg.pauseAnimations !== 'function') return;
-    const flows = addFlow(svg);
+    const flows = host.querySelector('[data-diagram-tour]') ? addFlow(svg) : [];
+    host.dataset.flowMode = 'overview';
     host.querySelectorAll('.bar-teal, .bar-navy').forEach((node, index) => node.style.setProperty('--reveal-delay', `${Math.min(index * 55, 385)}ms`));
     const caption = host.querySelector('.motion-caption');
     if (caption && svg.querySelector('.flow-effect')) caption.hidden = false;
     const record = { host, svg, flows, visible: false, flowPaused: false };
     records.push(record);
     attachTour(record);
+    host.addEventListener('qe:view-changed', () => syncRecord(record));
   });
   document.querySelectorAll('.illustrated-cover, .home-hero').forEach(host => records.push({ host, visible: false }));
   document.querySelectorAll('.industry-chart').forEach(host => {

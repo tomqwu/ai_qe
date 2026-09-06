@@ -2,15 +2,15 @@
 <g class="diagram-node ">
 <rect x="20" y="55" width="240" height="124" rx="8" class="node"/>
 <text x="36" y="83" class="node-title" text-anchor="start">Approved sources</text>
-<text x="36" y="106" class="node-text" text-anchor="start">Contracts and source code</text>
+<text x="36" y="106" class="node-text" text-anchor="start">Contracts + source code</text>
 <text x="36" y="126" class="node-text" text-anchor="start">Synthetic fixtures</text>
-<text x="36" y="146" class="node-text" text-anchor="start">Access and retention labels</text>
+<text x="36" y="146" class="node-text" text-anchor="start">Access + retention labels</text>
 </g>
 <g class="diagram-node ">
 <rect x="325" y="55" width="240" height="124" rx="8" class="node node-teal"/>
 <text x="341" y="83" class="node-title" text-anchor="start">Retrieval service</text>
 <text x="341" y="106" class="node-text" text-anchor="start">User and agent scope</text>
-<text x="341" y="126" class="node-text" text-anchor="start">Filter by current permissions</text>
+<text x="341" y="126" class="node-text" text-anchor="start">Filter by current access</text>
 <text x="341" y="146" class="node-text" text-anchor="start">Select relevant passages</text>
 </g>
 <g class="diagram-node ">

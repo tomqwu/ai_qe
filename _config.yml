@@ -59,3 +59,8 @@ exclude:
   - Claude outputs/
   - _to_delete/
   - _incoming/
+  - package.json
+  - package-lock.json
+  - playwright.config.cjs
+  - test-results/
+  - playwright-report/

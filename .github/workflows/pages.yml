@@ -30,16 +30,35 @@ jobs:
           cache-dependency-path: tools/requirements.txt
       - name: Install PDF verification dependencies
         run: python -m pip install -r tools/requirements.txt
-      - name: Check interactive model arithmetic
-        run: node --test tools/qe-model.test.cjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Check economics, pilot gates and reference contracts
+        run: |
+          node --test tools/qe-model.test.cjs tools/pilot-decision.test.cjs
+          node tools/build_scenario_data.cjs --check
+          python tools/validate_contracts.py
       - name: Build with Jekyll
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+      - name: Index slide anchors
+        run: python tools/finalize_site.py _site
+      - name: Browser navigation and viewport regression checks
+        run: |
+          mkdir -p /tmp/qe-preview
+          ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
+          python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
+          node tools/browser-smoke.cjs
       - name: Check site links and search index
         run: python tools/verify_site.py _site
       - name: Check research provenance and briefing completeness
         run: python tools/verify_industry.py _site
+      - name: Check publication agreement and PDF editions
+        run: python tools/verify_publication.py _site
       - name: Check questionnaire fields and response ranges
         run: python tools/verify_pdf.py
       - uses: actions/upload-pages-artifact@v3

@@ -11,13 +11,13 @@
 <rect x="40" y="237" width="238" height="100" rx="8" class="node"/>
 <text x="56" y="265" class="node-title" text-anchor="start">Tool output / memory</text>
 <text x="56" y="288" class="node-text" text-anchor="start">Poisoned observations</text>
-<text x="56" y="308" class="node-text" text-anchor="start">Persistent injected context</text>
+<text x="56" y="308" class="node-text" text-anchor="start">Persisted injected text</text>
 </g>
 <g class="diagram-node ">
 <rect x="358" y="163" width="240" height="125" rx="8" class="node"/>
 <text x="374" y="191" class="node-title" text-anchor="start">Agent runtime</text>
-<text x="374" y="214" class="node-text" text-anchor="start">Interprets task and context</text>
-<text x="374" y="234" class="node-text" text-anchor="start">Proposes tool + arguments</text>
+<text x="374" y="214" class="node-text" text-anchor="start">Interprets task + context</text>
+<text x="374" y="234" class="node-text" text-anchor="start">Proposes tool arguments</text>
 <text x="374" y="254" class="node-text" text-anchor="start">Cannot grant itself access</text>
 </g>
 <path d="M 278 137 H 320 V 208 H 356" class="edge" marker-end="url(#threat-boundary-arrow)"/>

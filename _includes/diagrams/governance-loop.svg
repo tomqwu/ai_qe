@@ -2,7 +2,7 @@
 <g class="diagram-node ">
 <rect x="20" y="70" width="290" height="113" rx="8" class="node node-teal"/>
 <text x="36" y="98" class="node-title" text-anchor="start">System inventory</text>
-<text x="36" y="121" class="node-text" text-anchor="start">Purpose and critical dependencies</text>
+<text x="36" y="121" class="node-text" text-anchor="start">Purpose + critical dependencies</text>
 <text x="36" y="141" class="node-text" text-anchor="start">Named accountable owner</text>
 </g>
 <g class="diagram-node ">

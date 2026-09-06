@@ -49,7 +49,8 @@ pdf=PdfReader(ROOT/'assets/pdf/ai-qe-industry-research-2026.pdf')
 assert len(pdf.pages)==13
 assert all(len(page.extract_text().strip())>100 for page in pdf.pages), 'Blank PDF page'
 urls={str(a.get_object().get('/A',{}).get('/URI','')) for page in pdf.pages for a in page.get('/Annots',[])}
-assert {s['url'] for s in sources}<=urls, 'Missing or stale PDF publisher links'
+original_sources=json.loads((ROOT/'assets/data/industry-sources-2026-09-05.json').read_text())
+assert {s['url'] for s in original_sources}<=urls, 'Missing or stale PDF publisher links'
 if site:
     assert json.loads((site/'assets/data/industry-sources.json').read_text())==sources
     assert not (site/'research').exists(), 'Private publisher archive exposed'

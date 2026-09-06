@@ -1,0 +1,9 @@
+{
+  "testgen": {
+    "source": "E04",
+    "cohort": "86 Kotlin test classes (31 Stories, 55 Reels), §3.3",
+    "claim": "75% of target test classes had at least one generated test that built; 57% had one that also passed; 25% had one that also increased coverage. These are cumulative class-level yields, not percentages of individual generated tests.",
+    "separate_cohort": "In separate Instagram/Facebook test-a-thons, engineers accepted 73% of recommendations; 11.5% of all classes to which the tool was applied were improved.",
+    "limit": "The cohorts and denominators differ. Neither acceptance rate is a predicted result for a bank pilot."
+  }
+}

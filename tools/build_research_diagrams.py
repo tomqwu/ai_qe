@@ -80,9 +80,9 @@ s.text(22,453,'Meta / FSE 2024 · §3.3 · 86 Kotlin components with existing te
 s.text(22,477,'Denominator is target test classes, not individual generated tests. Coverage is a proxy for test improvement.','small')
 s.save()
 
-s=SVG('evaluation-system','Proposed AI evaluation architecture with versioned application configurations, held-out cases, independent evaluation, release decisions, monitoring and feedback',1200,575)
+s=SVG('evaluation-system','Proposed AI evaluation architecture with versioned application configurations, held-out cases, independent evaluation, release decisions, monitoring and feedback',1200,530)
 s.node(20,20,298,103,'Versioned application',('Model · prompt · retrieval','Tools · permissions · memory'),'node node-navy')
-s.node(20,185,298,105,'Evaluation corpus',('Representative + adversarial cases','Held-out set · human labels'),'node')
+s.node(20,185,298,105,'Evaluation corpus',('Typical + adversarial cases','Held-out set · human labels'),'node')
 s.node(388,20,358,103,'Baseline and candidate runs',('Same tasks and test conditions','Record outputs AND tool actions'),'node node-teal')
 s.node(388,185,358,132,'Independent scoring',('Deterministic contracts','Calibrated judges + expert review','Quality by scenario; cost and latency'),'node')
 s.path('M 318 72 H 386');s.path('M 318 233 H 351 V 78 H 386');s.path('M 567 123 V 183');s.text(585,156,'versioned traces','edge-label')
@@ -90,15 +90,15 @@ s.parts.append('<polygon points="978,166 1153,249 978,332 803,249" class="decisi
 s.text(978,237,'Release gate','node-title','middle');s.text(978,263,'Agreed floors hold?','node-text','middle')
 s.path('M 746 249 H 801');s.node(868,19,288,100,'Hold + investigate',('Failed case → diagnosis','Revise configuration or control'),'node node-sand')
 s.path('M 978 167 V 121','edge edge-amber');s.text(995,146,'no','edge-label')
-s.node(856,399,302,104,'Controlled deployment',('Canary / bounded exposure','Human escalation + rollback'),'node node-teal')
-s.path('M 978 332 V 397');s.text(994,371,'yes','edge-label')
-s.node(388,399,358,104,'Production monitoring',('Task outcomes · drift · denied actions','Sampled traces · incidents · corrections'),'node')
-s.path('M 856 451 H 748');s.node(20,399,298,104,'Case curation',('Review expectations and privacy','Add failures to regression suite'),'node')
-s.path('M 388 451 H 320');s.path('M 169 399 V 292','edge edge-dashed');s.text(183,359,'new cases','edge-label')
-s.text(22,553,'Proposed application-level assurance · evaluate again when context, behavior or authority changes','small')
+s.node(856,365,302,104,'Controlled deployment',('Canary / bounded exposure','Human escalation + rollback'),'node node-teal')
+s.path('M 978 332 V 363');s.text(994,351,'yes','edge-label')
+s.node(388,365,358,104,'Production monitoring',('Task outcomes · drift · denied actions','Sampled traces · incidents · corrections'),'node')
+s.path('M 856 417 H 748');s.node(20,365,298,104,'Case curation',('Review expectations and privacy','Add failures to regression suite'),'node')
+s.path('M 388 417 H 320');s.path('M 169 365 V 292','edge edge-dashed');s.text(183,339,'new cases','edge-label')
+s.text(22,510,'Proposed application-level assurance · evaluate again when context, behavior or authority changes','small')
 s.save()
 
-s=SVG('test-sequence','Illustrative payment API test-generation sequence: contract, scoped context, candidate, policy-mediated execution, independent mutation test and reviewer approval',1200,540)
+s=SVG('test-sequence','Illustrative payment API test-generation sequence: contract, scoped context, candidate, policy-mediated execution, independent mutation test and reviewer approval',1200,530)
 actors=[(115,'Engineer / QE'),(355,'QE agent'),(595,'Policy gateway'),(835,'Sandbox / CI'),(1080,'Reviewer')]
 for x,t in actors:
  s.rect(x-106,15,212,53,'actor',4);s.text(x,47,t,'node-title','middle');s.path(f'M {x} 68 V 476','lifeline',False)
@@ -108,7 +108,7 @@ for y,x1,x2,t in rows:
  # Put each short annotation above its message; span across available lanes when needed.
  labelx=25 if y==106 else (280 if y in (164,214,266) else (570 if y in(318,372) else (560 if y==420 else 240)))
  s.text(labelx,y-10,t,'sequence-label')
-s.text(22,526,'Illustrative workflow · approved contract defines the oracle; generated tests cannot silently weaken it','small');s.save()
+s.text(22,518,'Illustrative workflow · approved contract defines the oracle; generated tests cannot silently weaken it','small');s.save()
 
 s=SVG('research-decisions','Research-to-design map connecting DORA, Meta, NIST and OSFI findings with architecture decisions',1200,530)
 s.text(24,28,'RESEARCH OBSERVATION','lane-title');s.text(430,28,'DESIGN RESPONSE','lane-title');s.text(884,28,'EVIDENCE TO RETAIN','lane-title')
@@ -137,8 +137,8 @@ s.path('M 300 365 V 398 H 900 V 365','edge',False);s.text(600,439,'The unit, tas
 s=SVG('threat-boundary','Agent threat model: untrusted context reaches the model, but a policy gateway controls tools and resource access, with denied-action tests and bounded recovery',1200,490)
 s.rect(20,30,278,370,'lane lane-sand');s.text(40,60,'UNTRUSTED INPUT','lane-title')
 s.node(40,88,238,100,'Retrieved content',('Documents · web · code','May contain instructions'))
-s.node(40,237,238,100,'Tool output / memory',('Poisoned observations','Persistent injected context'))
-s.node(358,163,240,125,'Agent runtime',('Interprets task and context','Proposes tool + arguments','Cannot grant itself access'))
+s.node(40,237,238,100,'Tool output / memory',('Poisoned observations','Persisted injected text'))
+s.node(358,163,240,125,'Agent runtime',('Interprets task + context','Proposes tool arguments','Cannot grant itself access'))
 s.path('M 278 137 H 320 V 208 H 356');s.path('M 278 287 H 320 V 250 H 356')
 s.path('M 641 36 V 417','lifeline',False);s.text(648,31,'AUTHORITY BOUNDARY','lane-title')
 s.node(687,162,234,126,'Policy gateway',('Agent identity + resource','Allowlist + approval rule','Deny outside scope'),'node node-navy')
@@ -152,9 +152,9 @@ s=SVG('evidence-model','Measurement data model joining task, run, review and out
 for x,y,w,title,lines,cls in [
  (20,32,294,'Task',('task_id · task type · complexity','Eligible cohort + baseline effort','Preparation + active execution'),'node'),
  (449,32,304,'Run',('run_id → task_id','Model / prompt / context versions','Tool calls · cost · elapsed time'),'node node-teal'),
- (884,32,296,'Review',('review_id → run_id','Decision + active human effort','Corrections + independent checks'),'node'),
- (884,283,296,'Outcome',('outcome_id → task_id / artifact_id','Rework · defects · cycle time','Observed period + capture basis'),'node'),
- (449,283,304,'Cohort comparison',('Comparable tasks + quality floors','Prep + execution + review + rework','Net effort, cost and uncertainty'),'node node-navy')]:s.node(x,y,w,133,title,lines,cls)
+ (884,32,296,'Review',('review_id → run_id','Decision + active human effort','Rework + independent checks'),'node'),
+ (884,283,296,'Outcome',('outcome → task / artifact IDs','Rework · defects · cycle time','Observed period + capture basis'),'node'),
+ (449,283,304,'Cohort comparison',('Comparable tasks + quality floors','Prep + run + review + rework','Net effort, cost and uncertainty'),'node node-navy')]:s.node(x,y,w,133,title,lines,cls)
 s.path('M 314 99 H 447');s.text(381,85,'1 : many','edge-label','middle');s.path('M 753 99 H 882');s.text(818,85,'1 : many','edge-label','middle')
 s.path('M 1032 165 V 281');s.text(1048,255,'artifact link','edge-label');s.path('M 1032 215 H 789 V 312 H 755','edge edge-dashed');s.text(812,205,'review effort','edge-label')
 s.path('M 168 165 V 349 H 447');s.path('M 601 165 V 281');s.path('M 884 349 H 755')

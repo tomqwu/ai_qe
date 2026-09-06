@@ -3,7 +3,7 @@
 <rect x="20" y="60" width="275" height="133" rx="8" class="node"/>
 <text x="36" y="88" class="node-title" text-anchor="start">Comparable runs</text>
 <text x="36" y="111" class="node-text" text-anchor="start">Same held-out corpus</text>
-<text x="36" y="131" class="node-text" text-anchor="start">Recorded configuration versions</text>
+<text x="36" y="131" class="node-text" text-anchor="start">Configuration versions</text>
 <text x="36" y="151" class="node-text" text-anchor="start">Repeated runs where needed</text>
 </g>
 <g class="diagram-node ">

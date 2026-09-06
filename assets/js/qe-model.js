@@ -1,17 +1,21 @@
 /* The single source of arithmetic for the interactive scenarios. Percent inputs. */
 ((root) => {
   'use strict';
-  const presets = {
-    downside: { share: 45, eligible: 50, adoption: 30, saving: 10, capture: 25, cost: 1.5, risk: .5 },
-    base: { share: 55, eligible: 60, adoption: 50, saving: 20, capture: 50, cost: 1, risk: .2 },
-    upside: { share: 60, eligible: 70, adoption: 70, saving: 30, capture: 70, cost: .8, risk: 0 },
-    noCapture: { share: 55, eligible: 60, adoption: 50, saving: 20, capture: 0, cost: 1, risk: .2 }
-  };
+  const presets = typeof module !== 'undefined' && module.exports
+    ? require('../../_data/scenarios.json')
+    : JSON.parse(document.querySelector('[data-qe-scenarios]')?.textContent || '{}');
   function calculate(p) {
-    const capacity = p.share / 100 * p.eligible / 100 * p.adoption / 100 * p.saving / 100;
+    for (const key of ['share', 'eligible', 'adoption', 'saving', 'capture', 'cost', 'risk']) {
+      if (!Number.isFinite(p[key]) || p[key] < (key === 'saving' ? -100 : 0) || p[key] > 100) throw new RangeError(`Invalid percentage: ${key}`);
+    }
+    const taskImpact = p.share / 100 * p.eligible / 100 * p.adoption / 100 * p.saving / 100;
+    const capacity = Math.max(0, taskImpact), extraEffort = Math.max(0, -taskImpact);
     const captured = capacity * p.capture / 100;
     const costs = (p.cost + p.risk) / 100;
-    return { capacity, captured, uncaptured: capacity - captured, costs, net: captured - costs };
+    const cashNet = captured - costs;
+    // Additional effort is an economic burden at the blended labour rate. It is
+    // not automatically incremental payroll. Never discount it by cash capture.
+    return { taskImpact, capacity, extraEffort, captured, uncaptured: capacity - captured, costs, cashNet, net: cashNet - extraEffort };
   }
   const studies = [
     { label: 'Early 2025', value: 19, low: 2, high: 39, detail: 'Early 2025: 16 developers, 246 issues in familiar repositories. This setting showed a slowdown; it does not represent all software work.' },

@@ -8,25 +8,26 @@
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="preload" href="{{ '/assets/fonts/source-sans-3.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/decks.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/explorers.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/decks.css' | relative_url }}?v={{ site.data.release.version }}">
+  <link rel="stylesheet" href="{{ '/assets/css/explorers.css' | relative_url }}?v={{ site.data.release.version }}">
   <script src="{{ '/assets/js/decks.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
-  <script src="{{ '/assets/js/qe-model.js' | relative_url }}" defer></script>
-  <script src="{{ '/assets/js/explorers.js' | relative_url }}" defer></script>
-  <link rel="stylesheet" href="{{ "/assets/css/industry.css" | relative_url }}">
-  <script src="{{ "/assets/js/industry.js" | relative_url }}" defer></script>
-<link rel="stylesheet" href="{{ '/assets/css/diagrams.css' | relative_url }}">
+  <script src="{{ '/assets/js/qe-model.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+  <script src="{{ '/assets/js/explorers.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+  <link rel="stylesheet" href="{{ "/assets/css/industry.css" | relative_url }}?v={{ site.data.release.version }}">
+  <script src="{{ "/assets/js/industry.js" | relative_url }}?v={{ site.data.release.version }}" defer></script>
+<link rel="stylesheet" href="{{ '/assets/css/diagrams.css' | relative_url }}?v={{ site.data.release.version }}">
 <script src="{{ '/assets/js/diagrams.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
-<link rel="stylesheet" href="{{ "/assets/css/release.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/release.css" | relative_url }}?v={{ site.data.release.version }}">
 <link rel="stylesheet" href="{{ '/assets/css/motion.css' | relative_url }}?v={{ site.data.release.version }}">
 <script src="{{ '/assets/js/motion.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+<link rel="stylesheet" href="{{ "/assets/css/slide-master.css" | relative_url }}?v={{ site.data.release.version }}">
 </head>
 <body class="deck-page {{ page.deck_class }}">
   <a class="skip-link" href="#slides">Skip to slides</a>
   <header class="deck-header">
     <a href="{{ '/' | relative_url }}" target="_top" class="deck-brand">AI-QE <span>&amp; AppSec</span></a>
     <span class="deck-audience">{{ page.audience }}</span>
-    <div class="deck-tools" hidden>{% include motion-toggle.html %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-fullscreen>Present ↗</button></div>
+    <div class="deck-tools" hidden>{% include motion-toggle.html %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-diagram-tools hidden aria-expanded="false">Diagram controls</button><button type="button" data-notes>Sources &amp; notes</button><button type="button" data-edition>v{{ site.data.release.version }}</button><button type="button" data-fullscreen>Present ↗</button></div>
   </header>
   <main id="slides" class="slides" aria-label="{{ page.title }}" tabindex="-1"><h1 class="sr-only">{{ page.title }}</h1>{{ content }}</main>
   <nav class="deck-navigation" aria-label="Slide navigation" hidden>
@@ -34,7 +35,9 @@
     <p class="slide-status" aria-live="polite" aria-atomic="true"></p>
     <label class="slide-picker-label">Go to slide <select aria-label="Go to slide"></select></label>
   </nav>
-  {% include release-banner.html %}
+  <aside class="deck-diagram-panel" aria-label="Diagram view and flow controls" hidden></aside>
+  <dialog class="deck-drawer" aria-labelledby="drawer-title"><div class="drawer-heading"><h2 id="drawer-title">Slide notes</h2><button type="button" data-close-drawer aria-label="Close notes">Close ×</button></div><div data-drawer-content></div></dialog>
+  <template data-edition-content>{% include release-banner.html %}<p><a href="{{ '/releases/' | relative_url }}" target="_top">Full release history and downloads →</a></p></template>
   <p class="deck-message" role="status"></p>
   <noscript><p class="no-script">All slides are shown in reading order. Use your browser’s print command to save a copy.</p></noscript>
 </body>

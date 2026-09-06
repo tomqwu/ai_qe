@@ -1,0 +1,7 @@
+{% assign g = site.data.pilot_gates %}
+<table class="spec-table"><thead><tr><th>Decision</th><th>Rule, applied in this order</th><th>Owner / action</th></tr></thead><tbody>
+<tr><th>Stop / hold</th><td data-label="Rule">Any quality, security or authorization breach; or adequate evidence shows both use cases below {{ g.review_saving }}% saving.</td><td data-label="Owner">Control owner holds access; sponsor stops or re-scopes.</td></tr>
+<tr><th>Insufficient evidence</th><td data-label="Rule">Missing baseline, exposure, review hours or sample; uncertainty crosses a decision boundary.</td><td data-label="Owner">Measurement lead reports unknown; collect evidence within a capped extension.</td></tr>
+<tr><th>Go, limited scope</th><td data-label="Rule">At least one case ≥{{ g.go_saving }}%, adoption ≥{{ g.adoption }}%, floors and cost cap hold. Finance validates any cash claim.</td><td data-label="Owner">Sponsor + control owner authorize only the supported use case.</td></tr>
+<tr><th>Extend / redesign</th><td data-label="Rule">Best case ≥{{ g.review_saving }}% but &lt;{{ g.go_saving }}%, or adoption/cost criteria miss without a breach.</td><td data-label="Owner">Delivery lead changes one hypothesis; one extension ≤{{ g.max_extension_weeks }} weeks.</td></tr>
+</tbody></table>

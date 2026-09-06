@@ -1,0 +1,1 @@
+POST /payments with amount=-1 must return 422 and create no payment.

@@ -1,0 +1,4 @@
+<table class="scenario-table"><caption>Illustrative inputs and exact calculated results · per $10M annual QA spend</caption><thead><tr><th>Scenario</th><th>Share × eligible × adoption × net task saving</th><th>Capacity</th><th>Capture factor</th><th>AI + risk cost</th><th>Extra effort equivalent</th><th>Net economic impact</th></tr></thead><tbody>
+{% for item in site.data.scenario_results %}{% assign s = item[1] %}
+<tr data-scenario="{{ item[0] }}"><th>{{ item[0] }}</th><td>{{ s.share }}% × {{ s.eligible }}% × {{ s.adoption }}% × {{ s.saving }}%</td><td>{{ s.capacity | times: 100 | round: 4 }}%</td><td>{{ s.capture }}%</td><td>{{ s.costs | times: 100 | round: 4 }}%</td><td>${{ s.extraEffort | times: 10000000 | round: 0 }}</td><td data-scenario-net="{{ s.net }}">${{ s.net | times: 10000000 | round: 0 }} ({{ s.net | times: 100 | round: 4 }}%)</td></tr>
+{% endfor %}</tbody></table>

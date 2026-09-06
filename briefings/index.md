@@ -16,9 +16,9 @@ Start with the strategic vision or go deeper into the delivery architecture. The
 
 ## What each briefing covers
 
-**EVP · Strategic vision — 18 slides.** The industry outlook, dual quality mandate, value logic, industrial cases, portfolio choices, ownership, skills, shared investment and leadership evidence. Allow 25–35 minutes with discussion.
+**EVP · Strategic vision — 21 slides.** The industry outlook, dual quality mandate, value logic, industrial cases, portfolio choices, ownership, skills, shared investment and leadership evidence. Allow 25–35 minutes with discussion.
 
-**Technical SDs & leads · Assurance architecture — 26 slides.** Context and configuration boundaries, test oracles, mutation testing, diagnosis and repair, evaluation datasets, judge calibration, tool enforcement, isolation, release, recovery, observability and integration contracts. Allow 40–55 minutes with discussion.
+**Technical SDs & leads · Assurance architecture — 29 slides.** Context and configuration boundaries, test oracles, mutation testing, diagnosis and repair, evaluation datasets, judge calibration, tool enforcement, isolation, release, recovery, observability and integration contracts. Allow 40–55 minutes with discussion.
 
 ## Jump into a chapter
 

@@ -2,7 +2,7 @@
 <g class="diagram-node ">
 <rect x="20" y="60" width="280" height="141" rx="8" class="node"/>
 <text x="36" y="88" class="node-title" text-anchor="start">Candidate cases</text>
-<text x="36" y="111" class="node-text" text-anchor="start">User tasks and approved examples</text>
+<text x="36" y="111" class="node-text" text-anchor="start">Tasks + approved examples</text>
 <text x="36" y="131" class="node-text" text-anchor="start">Reviewed production failures</text>
 <text x="36" y="151" class="node-text" text-anchor="start">Synthetic edge cases</text>
 </g>

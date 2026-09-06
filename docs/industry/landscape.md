@@ -42,3 +42,7 @@ The criteria above are our synthesis. Gartner's platform-selection document is i
 Buy commodity services when their controls and integration meet requirements. Build the task-specific contracts, evaluation cases and ownership model that express institutional needs. Integrate around portable evidence and versioned interfaces so that switching a model does not require abandoning the quality system.
 
 The most durable asset is often the curated evaluation set and the workflow evidence around it. Treat those as maintained engineering assets, with owners and change history.
+
+## Coverage and comparable deployment requirements
+
+See the [research coverage matrix]({{ "/docs/industry/coverage/" | relative_url }}) for eight quality workflows, supported and weak evidence, inclusion/exclusion decisions, and comparison requirements for existing CI, managed platforms and institution-operated runners. No vendor score is implied by a documented capability.

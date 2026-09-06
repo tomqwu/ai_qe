@@ -13,3 +13,7 @@ _incoming/
 
 # Locally gathered publisher documents; originals remain with their publishers
 research/downloads/
+
+node_modules/
+test-results/
+playwright-report/

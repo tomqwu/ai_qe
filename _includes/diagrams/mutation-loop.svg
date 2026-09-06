@@ -2,13 +2,13 @@
 <g class="diagram-node ">
 <rect x="20" y="58" width="270" height="121" rx="8" class="node node-sand"/>
 <text x="36" y="86" class="node-title" text-anchor="start">Fault concern</text>
-<text x="36" y="109" class="node-text" text-anchor="start">Fault: negative amount accepted</text>
-<text x="36" y="129" class="node-text" text-anchor="start">Select a relevant code mutation</text>
+<text x="36" y="109" class="node-text" text-anchor="start">Fault: accepts negative value</text>
+<text x="36" y="129" class="node-text" text-anchor="start">Select a relevant mutation</text>
 </g>
 <g class="diagram-node ">
 <rect x="390" y="58" width="310" height="121" rx="8" class="node node-teal"/>
 <text x="406" y="86" class="node-title" text-anchor="start">Candidate test</text>
-<text x="406" y="109" class="node-text" text-anchor="start">Generate against the stated concern</text>
+<text x="406" y="109" class="node-text" text-anchor="start">Generate for the stated concern</text>
 <text x="406" y="129" class="node-text" text-anchor="start">Preserve the intended assertion</text>
 </g>
 <path d="M 290 119 H 388" class="edge" marker-end="url(#mutation-loop-arrow)"/>
@@ -22,7 +22,7 @@
 <rect x="860" y="210" width="320" height="110" rx="8" class="node"/>
 <text x="876" y="238" class="node-title" text-anchor="start">Mutated implementation</text>
 <text x="876" y="261" class="node-text" text-anchor="start">Candidate fails for the target fault</text>
-<text x="876" y="281" class="node-text" text-anchor="start">Exclude equivalent / invalid mutants</text>
+<text x="876" y="281" class="node-text" text-anchor="start">Exclude invalid / equivalent faults</text>
 </g>
 <path d="M 700 103 H 780 V 80 H 858" class="edge" marker-end="url(#mutation-loop-arrow)"/>
 <path d="M 700 147 H 780 V 265 H 858" class="edge" marker-end="url(#mutation-loop-arrow)"/>

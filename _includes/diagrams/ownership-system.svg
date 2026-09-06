@@ -7,8 +7,8 @@
 <g class="diagram-node ">
 <rect x="20" y="213" width="330" height="123" rx="8" class="node"/>
 <text x="36" y="241" class="node-title" text-anchor="start">Shared platform team</text>
-<text x="36" y="264" class="node-text" text-anchor="start">Context, identity and runtime services</text>
-<text x="36" y="284" class="node-text" text-anchor="start">Service reliability and evidence exports</text>
+<text x="36" y="264" class="node-text" text-anchor="start">Context, identity and runtime</text>
+<text x="36" y="284" class="node-text" text-anchor="start">Reliable service + evidence export</text>
 </g>
 <g class="diagram-node on-dark">
 <rect x="435" y="213" width="330" height="123" rx="8" class="node node-navy"/>
@@ -19,7 +19,7 @@
 <g class="diagram-node ">
 <rect x="850" y="213" width="330" height="123" rx="8" class="node node-sand"/>
 <text x="866" y="241" class="node-title" text-anchor="start">Security and risk partners</text>
-<text x="866" y="264" class="node-text" text-anchor="start">Threat scenarios and control challenge</text>
+<text x="866" y="264" class="node-text" text-anchor="start">Threat cases + control challenge</text>
 <text x="866" y="284" class="node-text" text-anchor="start">Applicability and escalation advice</text>
 </g>
 <path d="M 600 113 V 211" class="edge" marker-end="url(#ownership-system-arrow)"/>

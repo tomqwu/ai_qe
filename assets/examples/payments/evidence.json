@@ -1,0 +1,11 @@
+{
+  "record_id": "REC-042",
+  "task_id": "PAY-042",
+  "run_id": "RUN-042",
+  "decision_id": "DEC-042",
+  "evaluation_id": "EVAL-042",
+  "artifact_sha256": "8920ad34245adc0c36376a6d656cadd7e9f73e4826cc101d47a30b7dd859ae2a",
+  "durable_receipt": "receipt:REC-042",
+  "status": "held-for-human-review",
+  "reviewer": null
+}

@@ -78,10 +78,5 @@
 .architecture-inspector summary { cursor: pointer; color: #152e40; font-weight: 600; }
 .architecture-inspector[open] summary { margin-bottom: .4rem; }
 .architecture-inspector summary:focus-visible { outline: 3px solid #ba7128; outline-offset: 3px; }
-@media screen and (min-width: 701px) {
-  .deck-ready:not(.embedded):not(.reading-view):has(.diagram-slide:not([hidden])) .slides,
-  .deck-ready:not(.embedded):not(.reading-view):has(.diagram-slide:not([hidden])) .deck-navigation {
-    width: min(calc(100% - 40px), calc((100svh - 145px) * 1.5));
-  }
-}
 .explorer-workbench > section > .research-figure { padding: 1rem; }
+.diagram-tour.summary-hidden { display: none !important; }

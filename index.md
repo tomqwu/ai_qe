@@ -13,7 +13,7 @@ has_toc: false
   <p class="hero-lead">A strategic vision and assurance architecture for AI-assisted delivery, AI applications and the teams accountable for quality.</p>
   <div class="hero-actions"><a class="btn btn-primary" href="{{ "/docs/industry/" | relative_url }}">Explore the research →</a><a class="text-link" href="#briefings">View audience briefings →</a></div>
   <img class="industry-cover" src="{{ "/assets/images/industry/quality-studio.webp" | relative_url }}" alt="Conceptual quality engineering studio connecting specification, AI generation, testing, human review and release" width="1536" height="1024">
-  <div class="research-edition"><span>30 curated sources</span><span>Gartner · McKinsey · DORA · primary studies</span><span>Reviewed 5 September 2026</span></div>
+  <div class="research-edition"><span>{{ site.data.industry_sources | size }} curated sources</span><span>Gartner · McKinsey · DORA · primary studies</span><span>Reviewed 6 September 2026</span></div>
 </section>
 
 <section class="home-section" id="capabilities" aria-labelledby="capabilities-title">

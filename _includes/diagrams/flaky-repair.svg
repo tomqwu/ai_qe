@@ -3,7 +3,7 @@
 <rect x="20" y="65" width="250" height="118" rx="8" class="node"/>
 <text x="36" y="93" class="node-title" text-anchor="start">Reproduce the flake</text>
 <text x="36" y="116" class="node-text" text-anchor="start">Capture failure conditions</text>
-<text x="36" y="136" class="node-text" text-anchor="start">Retain the original test intent</text>
+<text x="36" y="136" class="node-text" text-anchor="start">Retain original test intent</text>
 </g>
 <g class="diagram-node ">
 <rect x="330" y="65" width="250" height="118" rx="8" class="node"/>
@@ -15,13 +15,13 @@
 <rect x="640" y="65" width="250" height="118" rx="8" class="node node-teal"/>
 <text x="656" y="93" class="node-title" text-anchor="start">Candidate repair</text>
 <text x="656" y="116" class="node-text" text-anchor="start">Fix the failure mechanism</text>
-<text x="656" y="136" class="node-text" text-anchor="start">Keep assertions meaningful</text>
+<text x="656" y="136" class="node-text" text-anchor="start">Preserve valid assertions</text>
 </g>
 <g class="diagram-node ">
 <rect x="950" y="65" width="230" height="118" rx="8" class="node"/>
 <text x="966" y="93" class="node-title" text-anchor="start">Validation</text>
 <text x="966" y="116" class="node-text" text-anchor="start">Repeat across conditions</text>
-<text x="966" y="136" class="node-text" text-anchor="start">Review semantic changes</text>
+<text x="966" y="136" class="node-text" text-anchor="start">Review behavior change</text>
 </g>
 <path d="M 270 124 H 328" class="edge" marker-end="url(#flaky-repair-arrow)"/>
 <path d="M 580 124 H 638" class="edge" marker-end="url(#flaky-repair-arrow)"/>

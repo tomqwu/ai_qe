@@ -1,0 +1,13 @@
+{
+  "decision_id": "DEC-042",
+  "task_id": "PAY-042",
+  "run_id": "RUN-042",
+  "identity": "qe-payments-sandbox",
+  "policy_version": "7",
+  "decision": "allow",
+  "action": "sandbox.test",
+  "resource": "repo:payments-api/tests",
+  "issued_at": "2026-09-06T12:00:00Z",
+  "expires_at": "2026-09-06T12:00:30Z",
+  "idempotency_key": "RUN-042:sandbox.test:1"
+}
