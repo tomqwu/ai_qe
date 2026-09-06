@@ -47,11 +47,11 @@
 <text x="530" y="303" class="node-text" text-anchor="start">Budget + approval rules</text>
 </g>
 </g>
-<path d="M 246 283 H 274" class="edge" marker-end="url(#platform-arrow)"/>
-<path d="M 484 283 H 512" class="edge" marker-end="url(#platform-arrow)"/>
-<path d="M 380 113 V 210" class="edge" marker-end="url(#platform-arrow)"/>
+<path d="M 246 283 H 274" class="edge" marker-end="url(#platform-arrow)" data-from="context" data-to="runtime"/>
+<path d="M 484 283 H 512" class="edge" marker-end="url(#platform-arrow)" data-from="runtime" data-to="gateway"/>
+<path d="M 380 113 V 210" class="edge" marker-end="url(#platform-arrow)" data-from="experience" data-to="runtime"/>
 <text x="295" y="153" class="edge-label" text-anchor="start">task + scope</text>
-<path d="M 710 113 V 140 H 138 V 212" class="edge edge-dashed" marker-end="url(#platform-arrow)"/>
+<path d="M 710 113 V 140 H 138 V 212" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="delivery" data-to="context"/>
 <text x="444" y="155" class="edge-label" text-anchor="start">approved context</text>
 <rect x="772" y="165" width="414" height="233" rx="8" class="lane lane-sand"/>
 <text x="790" y="193" class="lane-title" text-anchor="start">INDEPENDENT ASSURANCE</text>
@@ -69,9 +69,9 @@
 <text x="808" y="344" class="node-text" text-anchor="start">Held-out cases · judges · human labels</text>
 </g>
 </g>
-<path d="M 724 244 H 790" class="edge" marker-end="url(#platform-arrow)"/>
+<path d="M 724 244 H 790" class="edge" marker-end="url(#platform-arrow)" data-from="gateway" data-to="checks"/>
 <text x="738" y="231" class="edge-label" text-anchor="middle">allow</text>
-<path d="M 1028 113 V 155 H 1169 V 325 H 1166" class="edge edge-dashed" marker-end="url(#platform-arrow)"/>
+<path d="M 1028 113 V 155 H 1169 V 325 H 1166" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="application" data-to="evaluation"/>
 <text x="927" y="149" class="edge-label" text-anchor="start">application versions</text>
 <text x="34" y="382" class="small" text-anchor="start">Repository text and tool output cannot grant permissions.</text>
 <rect x="14" y="432" width="730" height="148" rx="8" class="lane"/>
@@ -90,8 +90,8 @@
 <text x="404" y="528" class="node-text" text-anchor="start">Accepted failures + reviewed expectations</text>
 <text x="404" y="548" class="node-text" text-anchor="start">New cases challenge the next release</text>
 </g>
-<path d="M 360 516 H 386" class="edge" marker-end="url(#platform-arrow)"/>
-<path d="M 620 357 V 417 H 196 V 475" class="edge edge-dashed" marker-end="url(#platform-arrow)"/>
+<path d="M 360 516 H 386" class="edge" marker-end="url(#platform-arrow)" data-from="evidence" data-to="corpus"/>
+<path d="M 620 357 V 417 H 196 V 475" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="gateway" data-to="evidence"/>
 <text x="634" y="417" class="edge-label" text-anchor="start">run traces</text>
 <g role="button" tabindex="0" aria-label="Inspect Release authority" data-architecture-node="release" aria-pressed="false">
 <g class="diagram-node ">
@@ -102,10 +102,10 @@
 <text x="808" y="539" class="node-text" text-anchor="start">The generating agent cannot approve itself</text>
 </g>
 </g>
-<path d="M 1128 277 V 410 H 1040 V 446" class="edge" marker-end="url(#platform-arrow)"/>
-<path d="M 898 358 V 446" class="edge" marker-end="url(#platform-arrow)"/>
+<path d="M 1128 277 V 410 H 1040 V 446" class="edge" marker-end="url(#platform-arrow)" data-from="checks" data-to="release"/>
+<path d="M 898 358 V 446" class="edge" marker-end="url(#platform-arrow)" data-from="evaluation" data-to="release"/>
 <text x="806" y="431" class="edge-label" text-anchor="start">checks + evaluation evidence</text>
-<path d="M 979 557 V 570 H 196 V 558" class="edge edge-dashed" marker-end="url(#platform-arrow)"/>
-<path d="M 724 517 H 757 V 379 H 979 V 360" class="edge edge-dashed" marker-end="url(#platform-arrow)"/>
+<path d="M 979 557 V 570 H 196 V 558" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="release" data-to="evidence"/>
+<path d="M 724 517 H 757 V 379 H 979 V 360" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="corpus" data-to="evaluation"/>
 <text x="32" y="590" class="small" text-anchor="start">Proposed logical architecture · dashed paths carry evidence or feedback</text>
 </svg>

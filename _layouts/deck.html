@@ -10,21 +10,23 @@
   <link rel="preload" href="{{ '/assets/fonts/source-sans-3.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/decks.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/explorers.css' | relative_url }}">
-  <script src="{{ '/assets/js/decks.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/decks.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
   <script src="{{ '/assets/js/qe-model.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/explorers.js' | relative_url }}" defer></script>
   <link rel="stylesheet" href="{{ "/assets/css/industry.css" | relative_url }}">
   <script src="{{ "/assets/js/industry.js" | relative_url }}" defer></script>
 <link rel="stylesheet" href="{{ '/assets/css/diagrams.css' | relative_url }}">
-<script src="{{ '/assets/js/diagrams.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/diagrams.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 <link rel="stylesheet" href="{{ "/assets/css/release.css" | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/motion.css' | relative_url }}?v={{ site.data.release.version }}">
+<script src="{{ '/assets/js/motion.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 </head>
 <body class="deck-page {{ page.deck_class }}">
   <a class="skip-link" href="#slides">Skip to slides</a>
   <header class="deck-header">
     <a href="{{ '/' | relative_url }}" target="_top" class="deck-brand">AI-QE <span>&amp; AppSec</span></a>
     <span class="deck-audience">{{ page.audience }}</span>
-    <div class="deck-tools" hidden><button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-fullscreen>Present ↗</button></div>
+    <div class="deck-tools" hidden>{% include motion-toggle.html %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-fullscreen>Present ↗</button></div>
   </header>
   <main id="slides" class="slides" aria-label="{{ page.title }}" tabindex="-1"><h1 class="sr-only">{{ page.title }}</h1>{{ content }}</main>
   <nav class="deck-navigation" aria-label="Slide navigation" hidden>

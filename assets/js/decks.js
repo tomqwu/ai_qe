@@ -23,7 +23,7 @@
   function notifyHeight() {
     if (window.parent === window || document.fullscreenElement) return;
     // Measure content, not the iframe viewport, so shorter slides can shrink again.
-    const bottom = Math.max(navigation.getBoundingClientRect().bottom, message.getBoundingClientRect().bottom) + window.scrollY + 20;
+    const bottom = Math.max(navigation.getBoundingClientRect().bottom, message.getBoundingClientRect().bottom, document.querySelector('.release-banner')?.getBoundingClientRect().bottom || 0) + window.scrollY + 20;
     window.parent.postMessage({ type: 'ai-qe:deck-height', height: Math.ceil(bottom) }, location.origin);
   }
   function render(updateHash = true) {

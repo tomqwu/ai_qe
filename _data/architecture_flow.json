@@ -1,0 +1,32 @@
+[
+  {
+    "node": "context",
+    "title": "01 / Approved context",
+    "detail": "Retrieve permitted sources and preserve the input version."
+  },
+  {
+    "node": "runtime",
+    "title": "02 / Generate a candidate",
+    "detail": "Use the task contract to propose a test or reviewed change."
+  },
+  {
+    "node": "gateway",
+    "title": "03 / Enforce authority",
+    "detail": "Check identity, resource scope and approval before executing a tool."
+  },
+  {
+    "node": "checks",
+    "title": "04 / Verify independently",
+    "detail": "Run in the sandbox; check stability and relevant fault detection."
+  },
+  {
+    "node": "release",
+    "title": "05 / Human release decision",
+    "detail": "Review the evidence through existing CI and change controls."
+  },
+  {
+    "node": "evidence",
+    "title": "06 / Learn from the outcome",
+    "detail": "Retain decisions and effort; curate failures into future evaluations."
+  }
+]
