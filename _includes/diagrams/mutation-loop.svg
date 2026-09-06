@@ -2,7 +2,7 @@
 <g class="diagram-node ">
 <rect x="20" y="58" width="270" height="121" rx="8" class="node node-sand"/>
 <text x="36" y="86" class="node-title" text-anchor="start">Fault concern</text>
-<text x="36" y="109" class="node-text" text-anchor="start">Fault: accepts negative value</text>
+<text x="36" y="109" class="node-text" text-anchor="start">Fault: accepts negatives</text>
 <text x="36" y="129" class="node-text" text-anchor="start">Select a relevant mutation</text>
 </g>
 <g class="diagram-node ">
@@ -29,8 +29,8 @@
 <g class="diagram-node ">
 <rect x="390" y="358" width="310" height="99" rx="8" class="node node-teal"/>
 <text x="406" y="386" class="node-title" text-anchor="start">Reviewable test evidence</text>
-<text x="406" y="409" class="node-text" text-anchor="start">Both results + mutation rationale</text>
-<text x="406" y="429" class="node-text" text-anchor="start">Human review before integration</text>
+<text x="406" y="409" class="node-text" text-anchor="start">Results + fault rationale</text>
+<text x="406" y="429" class="node-text" text-anchor="start">Human review before merge</text>
 </g>
 <path d="M 1180 80 H 1190 V 408 H 702" class="edge" marker-end="url(#mutation-loop-arrow)"/>
 <path d="M 1020 320 V 347 H 545 V 356" class="edge" marker-end="url(#mutation-loop-arrow)"/>

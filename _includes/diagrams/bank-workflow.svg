@@ -3,31 +3,31 @@
 <g class="diagram-node ">
 <rect x="20" y="65" width="245" height="94" rx="8" class="node"/>
 <text x="36" y="93" class="node-title" text-anchor="start">Interpret requirement</text>
-<text x="36" y="116" class="node-text" text-anchor="start">Individuals translate intent</text>
+<text x="36" y="116" class="node-text" text-anchor="start">Interpret intent</text>
 </g>
 <path d="M 265 112 H 323" class="edge" marker-end="url(#bank-workflow-arrow)"/>
 <g class="diagram-node ">
 <rect x="325" y="65" width="245" height="94" rx="8" class="node"/>
 <text x="341" y="93" class="node-title" text-anchor="start">Write tests</text>
-<text x="341" y="116" class="node-text" text-anchor="start">Local prompts + patterns</text>
+<text x="341" y="116" class="node-text" text-anchor="start">Local prompts</text>
 </g>
 <path d="M 570 112 H 628" class="edge" marker-end="url(#bank-workflow-arrow)"/>
 <g class="diagram-node ">
 <rect x="630" y="65" width="245" height="94" rx="8" class="node"/>
 <text x="646" y="93" class="node-title" text-anchor="start">Review change</text>
-<text x="646" y="116" class="node-text" text-anchor="start">Reconstruct the evidence</text>
+<text x="646" y="116" class="node-text" text-anchor="start">Rebuild evidence</text>
 </g>
 <path d="M 875 112 H 933" class="edge" marker-end="url(#bank-workflow-arrow)"/>
 <g class="diagram-node ">
 <rect x="935" y="65" width="245" height="94" rx="8" class="node"/>
 <text x="951" y="93" class="node-title" text-anchor="start">Release</text>
-<text x="951" y="116" class="node-text" text-anchor="start">Evidence assembled late</text>
+<text x="951" y="116" class="node-text" text-anchor="start">Late evidence assembly</text>
 </g>
 <text x="20" y="222" class="lane-title" text-anchor="start">PROPOSED TARGET · NEGATIVE PAYMENT AMOUNTS MUST BE REJECTED</text>
 <g class="diagram-node ">
 <rect x="20" y="250" width="245" height="126" rx="8" class="node node-teal"/>
 <text x="36" y="278" class="node-title" text-anchor="start">Domain contract</text>
-<text x="36" y="301" class="node-text" text-anchor="start">Owner approves behavior</text>
+<text x="36" y="301" class="node-text" text-anchor="start">Owner-approved behavior</text>
 <text x="36" y="321" class="node-text" text-anchor="start">Versioned test oracle</text>
 </g>
 <path d="M 265 310 H 323" class="edge" marker-end="url(#bank-workflow-arrow)"/>
@@ -41,15 +41,16 @@
 <g class="diagram-node ">
 <rect x="630" y="250" width="245" height="126" rx="8" class="node node-teal"/>
 <text x="646" y="278" class="node-title" text-anchor="start">Independent proof</text>
-<text x="646" y="301" class="node-text" text-anchor="start">Original pass / mutant fail</text>
-<text x="646" y="321" class="node-text" text-anchor="start">Reviewer owns acceptance</text>
+<text x="646" y="301" class="node-text" text-anchor="start">Original passes</text>
+<text x="646" y="321" class="node-text" text-anchor="start">Mutant fails</text>
+<text x="646" y="341" class="node-text" text-anchor="start">Reviewer decides</text>
 </g>
 <path d="M 875 310 H 933" class="edge" marker-end="url(#bank-workflow-arrow)"/>
 <g class="diagram-node ">
 <rect x="935" y="250" width="245" height="126" rx="8" class="node node-teal"/>
 <text x="951" y="278" class="node-title" text-anchor="start">Evidence-led release</text>
-<text x="951" y="301" class="node-text" text-anchor="start">Existing change authority</text>
-<text x="951" y="321" class="node-text" text-anchor="start">Failure → regression case</text>
+<text x="951" y="301" class="node-text" text-anchor="start">Existing release owner</text>
+<text x="951" y="321" class="node-text" text-anchor="start">Failure → new test case</text>
 </g>
 <text x="20" y="435" class="small" text-anchor="start">Shared: identity, evaluation runners, evidence schema. Domain: payment rules, test cases, acceptance and service outcomes.</text>
 </svg>

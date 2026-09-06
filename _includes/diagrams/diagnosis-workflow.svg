@@ -2,7 +2,7 @@
 <g class="diagram-node ">
 <rect x="20" y="55" width="260" height="112" rx="8" class="node"/>
 <text x="36" y="83" class="node-title" text-anchor="start">Failing integration test</text>
-<text x="36" y="106" class="node-text" text-anchor="start">Sanitized logs and trace IDs</text>
+<text x="36" y="106" class="node-text" text-anchor="start">Safe logs + trace IDs</text>
 <text x="36" y="126" class="node-text" text-anchor="start">Relevant change context</text>
 </g>
 <g class="diagram-node ">

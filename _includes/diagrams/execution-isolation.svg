@@ -36,7 +36,7 @@
 <rect x="850" y="251" width="310" height="106" rx="8" class="node"/>
 <text x="866" y="279" class="node-title" text-anchor="start">Reviewed artifact</text>
 <text x="866" y="302" class="node-text" text-anchor="start">Signed or verified provenance</text>
-<text x="866" y="322" class="node-text" text-anchor="start">Independent acceptance evidence</text>
+<text x="866" y="322" class="node-text" text-anchor="start">Independent approval evidence</text>
 </g>
 <path d="M 755 303 H 848" class="edge" marker-end="url(#execution-isolation-arrow)"/>
 <text x="790" y="287" class="edge-label" text-anchor="middle">review</text>

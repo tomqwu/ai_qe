@@ -2,20 +2,20 @@
 <g class="diagram-node ">
 <rect x="20" y="70" width="290" height="113" rx="8" class="node node-teal"/>
 <text x="36" y="98" class="node-title" text-anchor="start">System inventory</text>
-<text x="36" y="121" class="node-text" text-anchor="start">Purpose + critical dependencies</text>
+<text x="36" y="121" class="node-text" text-anchor="start">Purpose + dependencies</text>
 <text x="36" y="141" class="node-text" text-anchor="start">Named accountable owner</text>
 </g>
 <g class="diagram-node ">
 <rect x="455" y="70" width="290" height="113" rx="8" class="node"/>
 <text x="471" y="98" class="node-title" text-anchor="start">Authority and appetite</text>
 <text x="471" y="121" class="node-text" text-anchor="start">Allowed data and actions</text>
-<text x="471" y="141" class="node-text" text-anchor="start">Escalation and stop conditions</text>
+<text x="471" y="141" class="node-text" text-anchor="start">Escalation + stop rules</text>
 </g>
 <g class="diagram-node ">
 <rect x="890" y="70" width="290" height="113" rx="8" class="node"/>
 <text x="906" y="98" class="node-title" text-anchor="start">Evidence review</text>
 <text x="906" y="121" class="node-text" text-anchor="start">Evaluation and control results</text>
-<text x="906" y="141" class="node-text" text-anchor="start">Exceptions and unresolved risks</text>
+<text x="906" y="141" class="node-text" text-anchor="start">Exceptions + open risks</text>
 </g>
 <path d="M 310 126 H 453" class="edge" marker-end="url(#governance-loop-arrow)"/>
 <path d="M 745 126 H 888" class="edge" marker-end="url(#governance-loop-arrow)"/>

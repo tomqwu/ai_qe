@@ -88,12 +88,12 @@ s.node(388,185,358,132,'Independent scoring',('Deterministic contracts','Calibra
 s.path('M 318 72 H 386');s.path('M 318 233 H 351 V 78 H 386');s.path('M 567 123 V 183');s.text(585,156,'versioned traces','edge-label')
 s.parts.append('<polygon points="978,166 1153,249 978,332 803,249" class="decision"/>')
 s.text(978,237,'Release gate','node-title','middle');s.text(978,263,'Agreed floors hold?','node-text','middle')
-s.path('M 746 249 H 801');s.node(868,19,288,100,'Hold + investigate',('Failed case → diagnosis','Revise configuration or control'),'node node-sand')
+s.path('M 746 249 H 801');s.node(868,19,288,100,'Hold + investigate',('Failed case → diagnosis','Revise config or control'),'node node-sand')
 s.path('M 978 167 V 121','edge edge-amber');s.text(995,146,'no','edge-label')
 s.node(856,365,302,104,'Controlled deployment',('Canary / bounded exposure','Human escalation + rollback'),'node node-teal')
 s.path('M 978 332 V 363');s.text(994,351,'yes','edge-label')
-s.node(388,365,358,104,'Production monitoring',('Task outcomes · drift · denied actions','Sampled traces · incidents · corrections'),'node')
-s.path('M 856 417 H 748');s.node(20,365,298,104,'Case curation',('Review expectations and privacy','Add failures to regression suite'),'node')
+s.node(388,365,358,104,'Production monitoring',('Task outcomes · drift · denied actions','Trace samples · incidents · rework'),'node')
+s.path('M 856 417 H 748');s.node(20,365,298,104,'Case curation',('Review oracle + privacy','Add failures to regression suite'),'node')
 s.path('M 388 417 H 320');s.path('M 169 365 V 292','edge edge-dashed');s.text(183,339,'new cases','edge-label')
 s.text(22,510,'Proposed application-level assurance · evaluate again when context, behavior or authority changes','small')
 s.save()
@@ -136,12 +136,12 @@ s.path('M 300 365 V 398 H 900 V 365','edge',False);s.text(600,439,'The unit, tas
 
 s=SVG('threat-boundary','Agent threat model: untrusted context reaches the model, but a policy gateway controls tools and resource access, with denied-action tests and bounded recovery',1200,490)
 s.rect(20,30,278,370,'lane lane-sand');s.text(40,60,'UNTRUSTED INPUT','lane-title')
-s.node(40,88,238,100,'Retrieved content',('Documents · web · code','May contain instructions'))
-s.node(40,237,238,100,'Tool output / memory',('Poisoned observations','Persisted injected text'))
-s.node(358,163,240,125,'Agent runtime',('Interprets task + context','Proposes tool arguments','Cannot grant itself access'))
+s.node(40,88,238,100,'Retrieved content',('Documents · web · code','Can contain instructions'))
+s.node(40,237,238,100,'Tool results / memory',('Poisoned observations','Persisted injected text'))
+s.node(358,163,240,125,'Agent runtime',('Uses task + context','Proposes arguments','Cannot grant own access'))
 s.path('M 278 137 H 320 V 208 H 356');s.path('M 278 287 H 320 V 250 H 356')
 s.path('M 641 36 V 417','lifeline',False);s.text(648,31,'AUTHORITY BOUNDARY','lane-title')
-s.node(687,162,234,126,'Policy gateway',('Agent identity + resource','Allowlist + approval rule','Deny outside scope'),'node node-navy')
+s.node(687,162,234,126,'Policy gateway',('Identity + resource','Allowlist + approval','Deny outside scope'),'node node-navy')
 s.path('M 598 225 H 685');s.text(609,203,'request','edge-label')
 s.node(972,67,208,105,'Allowed tools',('Scoped credentials','Bounded execution'),'node node-teal');s.path('M 921 205 H 946 V 119 H 970')
 s.node(972,291,208,105,'Denied action',('No side effect','Stop / escalate'),'node node-sand');s.path('M 921 249 H 946 V 343 H 970','edge edge-amber')
@@ -150,11 +150,11 @@ s.text(25,477,'Proposed negative test · test recovery as well as refusal · fin
 
 s=SVG('evidence-model','Measurement data model joining task, run, review and outcome records to measure net effort and quality by comparable task cohort',1200,500)
 for x,y,w,title,lines,cls in [
- (20,32,294,'Task',('task_id · task type · complexity','Eligible cohort + baseline effort','Preparation + active execution'),'node'),
- (449,32,304,'Run',('run_id → task_id','Model / prompt / context versions','Tool calls · cost · elapsed time'),'node node-teal'),
+ (20,32,294,'Task',('Task ID · type · complexity','Eligible cohort + baseline','Preparation + active execution'),'node'),
+ (449,32,304,'Run',('run_id → task_id','Model / prompt / context IDs','Tool calls · cost · elapsed time'),'node node-teal'),
  (884,32,296,'Review',('review_id → run_id','Decision + active human effort','Rework + independent checks'),'node'),
- (884,283,296,'Outcome',('outcome → task / artifact IDs','Rework · defects · cycle time','Observed period + capture basis'),'node'),
- (449,283,304,'Cohort comparison',('Comparable tasks + quality floors','Prep + run + review + rework','Net effort, cost and uncertainty'),'node node-navy')]:s.node(x,y,w,133,title,lines,cls)
+ (884,283,296,'Outcome',('outcome → task / artifact IDs','Rework · defects · cycle time','Period + capture basis'),'node'),
+ (449,283,304,'Cohort comparison',('Matched tasks + quality floors','Prep + run + review + rework','Net effort, cost and uncertainty'),'node node-navy')]:s.node(x,y,w,133,title,lines,cls)
 s.path('M 314 99 H 447');s.text(381,85,'1 : many','edge-label','middle');s.path('M 753 99 H 882');s.text(818,85,'1 : many','edge-label','middle')
 s.path('M 1032 165 V 281');s.text(1048,255,'artifact link','edge-label');s.path('M 1032 215 H 789 V 312 H 755','edge edge-dashed');s.text(812,205,'review effort','edge-label')
 s.path('M 168 165 V 349 H 447');s.path('M 601 165 V 281');s.path('M 884 349 H 755')

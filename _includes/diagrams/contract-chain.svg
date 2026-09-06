@@ -3,7 +3,7 @@
 <rect x="20" y="80" width="245" height="180" rx="8" class="node"/>
 <text x="36" y="108" class="node-title" text-anchor="start">Task envelope</text>
 <text x="36" y="131" class="node-text" text-anchor="start">PAY-042 · payments-api</text>
-<text x="36" y="151" class="node-text" text-anchor="start">Contract + context hashes</text>
+<text x="36" y="151" class="node-text" text-anchor="start">Contract / context hashes</text>
 <text x="36" y="171" class="node-text" text-anchor="start">Scope, deadline, budget</text>
 </g>
 <path d="M 265 169 H 323" class="edge" marker-end="url(#contract-chain-arrow)"/>
@@ -19,14 +19,15 @@
 <rect x="630" y="80" width="245" height="180" rx="8" class="node"/>
 <text x="646" y="108" class="node-title" text-anchor="start">Evaluation manifest</text>
 <text x="646" y="131" class="node-text" text-anchor="start">EVAL-042 · corpus v3</text>
-<text x="646" y="151" class="node-text" text-anchor="start">Original pass / mutant fail</text>
-<text x="646" y="171" class="node-text" text-anchor="start">Artifact + runner hashes</text>
+<text x="646" y="151" class="node-text" text-anchor="start">Original passes</text>
+<text x="646" y="171" class="node-text" text-anchor="start">Mutant fails</text>
+<text x="646" y="191" class="node-text" text-anchor="start">Artifact + runner hashes</text>
 </g>
 <path d="M 875 169 H 933" class="edge" marker-end="url(#contract-chain-arrow)"/>
 <g class="diagram-node ">
 <rect x="935" y="80" width="245" height="180" rx="8" class="node node-teal"/>
 <text x="951" y="108" class="node-title" text-anchor="start">Evidence record</text>
-<text x="951" y="131" class="node-text" text-anchor="start">RUN-042 · held for review</text>
+<text x="951" y="131" class="node-text" text-anchor="start">RUN-042 · review pending</text>
 <text x="951" y="151" class="node-text" text-anchor="start">Links all three artifacts</text>
 <text x="951" y="171" class="node-text" text-anchor="start">No self-approval</text>
 </g>

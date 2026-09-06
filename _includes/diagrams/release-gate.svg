@@ -4,14 +4,14 @@
 <text x="36" y="88" class="node-title" text-anchor="start">Comparable runs</text>
 <text x="36" y="111" class="node-text" text-anchor="start">Same held-out corpus</text>
 <text x="36" y="131" class="node-text" text-anchor="start">Configuration versions</text>
-<text x="36" y="151" class="node-text" text-anchor="start">Repeated runs where needed</text>
+<text x="36" y="151" class="node-text" text-anchor="start">Repeat runs as needed</text>
 </g>
 <g class="diagram-node ">
 <rect x="385" y="60" width="340" height="133" rx="8" class="node node-teal"/>
 <text x="401" y="88" class="node-title" text-anchor="start">Mandatory floors</text>
 <text x="401" y="111" class="node-text" text-anchor="start">Critical behavior and security tests</text>
-<text x="401" y="131" class="node-text" text-anchor="start">Denied actions and privacy scenarios</text>
-<text x="401" y="151" class="node-text" text-anchor="start">Latency / cost limits for the workflow</text>
+<text x="401" y="131" class="node-text" text-anchor="start">Denial + privacy scenarios</text>
+<text x="401" y="151" class="node-text" text-anchor="start">Workflow latency / cost limits</text>
 </g>
 <g class="diagram-node ">
 <rect x="830" y="25" width="350" height="106" rx="8" class="node node-sand"/>
@@ -23,7 +23,7 @@
 <rect x="830" y="236" width="350" height="124" rx="8" class="node"/>
 <text x="846" y="264" class="node-title" text-anchor="start">Release review</text>
 <text x="846" y="287" class="node-text" text-anchor="start">Inspect scenario-level regressions</text>
-<text x="846" y="307" class="node-text" text-anchor="start">Weigh gains and remaining uncertainty</text>
+<text x="846" y="307" class="node-text" text-anchor="start">Weigh gains + uncertainty</text>
 <text x="846" y="327" class="node-text" text-anchor="start">Approve a bounded rollout</text>
 </g>
 <path d="M 295 127 H 383" class="edge" marker-end="url(#release-gate-arrow)"/>

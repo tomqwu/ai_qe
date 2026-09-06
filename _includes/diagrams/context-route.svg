@@ -4,28 +4,28 @@
 <text x="36" y="83" class="node-title" text-anchor="start">Approved sources</text>
 <text x="36" y="106" class="node-text" text-anchor="start">Contracts + source code</text>
 <text x="36" y="126" class="node-text" text-anchor="start">Synthetic fixtures</text>
-<text x="36" y="146" class="node-text" text-anchor="start">Access + retention labels</text>
+<text x="36" y="146" class="node-text" text-anchor="start">Access + retention</text>
 </g>
 <g class="diagram-node ">
 <rect x="325" y="55" width="240" height="124" rx="8" class="node node-teal"/>
 <text x="341" y="83" class="node-title" text-anchor="start">Retrieval service</text>
 <text x="341" y="106" class="node-text" text-anchor="start">User and agent scope</text>
 <text x="341" y="126" class="node-text" text-anchor="start">Filter by current access</text>
-<text x="341" y="146" class="node-text" text-anchor="start">Select relevant passages</text>
+<text x="341" y="146" class="node-text" text-anchor="start">Relevant passages</text>
 </g>
 <g class="diagram-node ">
 <rect x="630" y="55" width="240" height="124" rx="8" class="node"/>
 <text x="646" y="83" class="node-title" text-anchor="start">Context snapshot</text>
 <text x="646" y="106" class="node-text" text-anchor="start">Source IDs and versions</text>
 <text x="646" y="126" class="node-text" text-anchor="start">Minimal task evidence</text>
-<text x="646" y="146" class="node-text" text-anchor="start">Classified, traceable input</text>
+<text x="646" y="146" class="node-text" text-anchor="start">Classified + traceable</text>
 </g>
 <g class="diagram-node on-dark">
 <rect x="935" y="55" width="245" height="124" rx="8" class="node node-navy"/>
 <text x="951" y="83" class="node-title" text-anchor="start">Agent runtime</text>
 <text x="951" y="106" class="node-text" text-anchor="start">Read as task evidence</text>
-<text x="951" y="126" class="node-text" text-anchor="start">Separate from instructions</text>
-<text x="951" y="146" class="node-text" text-anchor="start">Propose bounded actions</text>
+<text x="951" y="126" class="node-text" text-anchor="start">Treat text as data</text>
+<text x="951" y="146" class="node-text" text-anchor="start">Bounded action proposals</text>
 </g>
 <path d="M 260 118 H 323" class="edge" marker-end="url(#context-route-arrow)"/>
 <path d="M 565 118 H 628" class="edge" marker-end="url(#context-route-arrow)"/>
