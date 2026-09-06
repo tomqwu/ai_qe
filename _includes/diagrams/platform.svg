@@ -51,7 +51,7 @@
 <path d="M 484 283 H 512" class="edge" marker-end="url(#platform-arrow)" data-from="runtime" data-to="gateway"/>
 <path d="M 380 113 V 210" class="edge" marker-end="url(#platform-arrow)" data-from="experience" data-to="runtime"/>
 <text x="295" y="153" class="edge-label" text-anchor="start">task + scope</text>
-<path d="M 710 113 V 140 H 138 V 212" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="delivery" data-to="context"/>
+<path d="M 710 113 V 140 H 25 V 283 H 30" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="delivery" data-to="context"/>
 <text x="444" y="155" class="edge-label" text-anchor="start">approved context</text>
 <rect x="772" y="165" width="414" height="233" rx="8" class="lane lane-sand"/>
 <text x="790" y="193" class="lane-title" text-anchor="start">INDEPENDENT ASSURANCE</text>
@@ -84,14 +84,16 @@
 <text x="48" y="548" class="node-text" text-anchor="start">Quality · effort · cost · incidents</text>
 </g>
 </g>
+<g role="button" tabindex="0" aria-label="Inspect Curated regression corpus" data-architecture-node="corpus" aria-pressed="false">
 <g class="diagram-node ">
 <rect x="388" y="477" width="336" height="79" rx="8" class="node"/>
 <text x="404" y="505" class="node-title" text-anchor="start">Curated regression corpus</text>
 <text x="404" y="528" class="node-text" text-anchor="start">Accepted failures + reviewed expectations</text>
 <text x="404" y="548" class="node-text" text-anchor="start">New cases challenge the next release</text>
 </g>
+</g>
 <path d="M 360 516 H 386" class="edge" marker-end="url(#platform-arrow)" data-from="evidence" data-to="corpus"/>
-<path d="M 620 357 V 417 H 196 V 475" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="gateway" data-to="evidence"/>
+<path d="M 620 357 V 417 H 25 V 516 H 30" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="gateway" data-to="evidence"/>
 <text x="634" y="417" class="edge-label" text-anchor="start">run traces</text>
 <g role="button" tabindex="0" aria-label="Inspect Release authority" data-architecture-node="release" aria-pressed="false">
 <g class="diagram-node ">
@@ -107,5 +109,5 @@
 <text x="806" y="431" class="edge-label" text-anchor="start">checks + evaluation evidence</text>
 <path d="M 979 557 V 570 H 196 V 558" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="release" data-to="evidence"/>
 <path d="M 724 517 H 757 V 379 H 979 V 360" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="corpus" data-to="evaluation"/>
-<text x="32" y="590" class="small" text-anchor="start">Proposed logical architecture · dashed paths carry evidence or feedback</text>
+<text x="32" y="590" class="small" text-anchor="start">Proposed logical architecture · dashed paths carry context, evidence or feedback</text>
 </svg>

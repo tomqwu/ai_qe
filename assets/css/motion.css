@@ -14,25 +14,26 @@
 .diagram-tour button:disabled { opacity: .5; cursor: default; }
 .diagram-tour .tour-status, .slide .diagram-tour .tour-status { margin: 0; font-size: .8rem; line-height: 1.3; }
 .tour-status strong { display: block; color: #152e40; }
+.tour-copy { min-width: 0; }
+.diagram-tour .flow-legend, .slide .diagram-tour .flow-legend { margin: .3rem 0 0; font-size: .75rem; line-height: 1.3; color: #4a626b; }
+.research-figure { --flow-active: #9b651e; }
 .research-diagram .flow-effect { opacity: 0; pointer-events: none; }
-.research-diagram .flow-trail { fill: none; stroke: #70cabc; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 12 88; }
+.research-diagram .flow-trail { fill: none; stroke: #70cabc; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 12 100; }
 .research-diagram .packet-halo { fill: #e9b65f; opacity: .2; }
 .research-diagram .packet-core { fill: #d49b36; stroke: #fffdf2; stroke-width: 1.5; }
-.motion-inview .flow-effect { opacity: .9; }
-.motion-inview.has-route-focus .flow-effect { opacity: .24; }
-.motion-inview.has-route-focus .flow-effect.route-focus { opacity: 1; }
-.research-diagram .edge.route-focus { stroke-width: 2.8; }
-.motion-inview .flow-trail { animation: path-current 4s linear infinite; }
+.motion-inview .flow-effect { opacity: 1; }
+/* Context paths stay fully legible; only the explicitly selected paths move. */
+.research-figure[data-flow-mode='tour'] .flow-effect:not(.route-focus),
+.research-figure[data-flow-mode='inspect'] .flow-effect:not(.route-focus) { display: none; }
+.research-figure .research-diagram .edge.route-focus { stroke: var(--flow-active); stroke-width: 3; }
+.research-figure .research-diagram .flow-focus-arrow path { stroke: var(--flow-active); }
 .motion-inview .flow-effect.route-focus .packet-core { filter: drop-shadow(0 0 3px #d2a252); }
-.motion-inview .diagram-node { animation: node-arrival .65s cubic-bezier(.2,.8,.2,1) var(--reveal-delay,0ms) both; }
 .motion-inview [data-architecture-node][aria-pressed='true'] .node { filter: drop-shadow(0 2px 6px #d6b36880); }
 .motion-inview .bar-teal, .motion-inview .bar-navy { transform-box: fill-box; transform-origin: left center; animation: bar-arrival .8s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms) both; }
 .motion-inview .industry-bar > div > i { transform-origin: left center; animation: bar-arrival .8s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms) both; }
 .motion-inview.illustrated-cover .cover-visual, .motion-inview.home-hero .industry-cover { animation: illustration-arrival 1.2s ease-out both, illustration-float 14s ease-in-out 1.2s infinite alternate; transform-origin: center; }
 .motion-inview.illustrated-cover h2, .motion-inview.home-hero h1 { animation: title-arrival .75s cubic-bezier(.2,.8,.2,1) both; }
 .motion-inview.illustrated-cover .cover-tag { animation: title-arrival .8s .12s both; }
-@keyframes path-current { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
-@keyframes node-arrival { from { opacity: .35; } to { opacity: 1; } }
 @keyframes bar-arrival { from { transform: scaleX(.05); } to { transform: scaleX(1); } }
 @keyframes title-arrival { from { opacity: .35; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes illustration-arrival { from { opacity: .45; transform: translateY(12px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -83,13 +84,14 @@ html[data-motion='off'] .motion-inview * { animation: none !important; }
 .presentation-mode .motion-inview [aria-pressed='true'] .node { stroke: #eccb8c; stroke-width: 3.5; filter: drop-shadow(0 0 9px #d5ac6266); }
 .presentation-mode .diagram-tour { background: #163c48; border-color: #45646b; }
 .presentation-mode .diagram-tour .tour-status, .presentation-mode .tour-status strong { color: #e0efeb; }
+.presentation-mode .diagram-tour .flow-legend { color: #c6dcd9; }
+.presentation-mode .research-figure { --flow-active: #e7b668; }
+.presentation-mode .research-diagram [data-architecture-node][aria-pressed='true'] .node { stroke: var(--flow-active); stroke-width: 3.5; }
+.research-figure .flow-effect.route-focus .flow-trail { stroke: var(--flow-active); }
 .presentation-mode .architecture-inspector { background: #193b46; border-color: #c49c5f; }
 .presentation-mode .architecture-inspector summary, .presentation-mode .architecture-inspector strong { color: #e5f1eb; }
 .presentation-mode .diagram-pan-hint { color: #bdd9d1; }
 .presentation-mode .slide-status, .presentation-mode .slide-picker-label { color: #d0dfdf; }
-.diagram-slide:has(.motion-inview) h2 { animation: title-arrival .65s cubic-bezier(.2,.8,.2,1) both; }
-html[data-motion='off'] .diagram-slide h2 { animation: none; }
-@media (prefers-reduced-motion: reduce) { .diagram-slide h2 { animation: none !important; } }
 @media print { .diagram-slide h2 { animation: none !important; } .presentation-mode .diagram-slide { background: #0c2534; box-shadow: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
 .slide .diagram-tour .tour-status { font-size: clamp(.8rem,1.1cqw,1.05rem); }
 .slide .diagram-tour button { font-size: clamp(.75rem,1.05cqw,1rem); }
