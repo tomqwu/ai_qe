@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" class="research-diagram" role="img" aria-labelledby="capability-horizons-title"><title id="capability-horizons-title">Proposed capability roadmap with three horizons and evidence gates for stronger AI participation</title><defs><marker id="capability-horizons-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<rect x="20" y="284" width="360" height="166" rx="8" class="node"/>
+<text x="38" y="319" class="stat" text-anchor="start">01</text>
+<text x="38" y="357" class="node-title" text-anchor="start">Trusted assistance</text>
+<text x="38" y="391" class="node-text" text-anchor="start">Draft tests + diagnose failures</text>
+<text x="38" y="414" class="node-text" text-anchor="start">Independent checks; human approval</text>
+<rect x="420" y="177" width="360" height="166" rx="8" class="node node-teal"/>
+<text x="438" y="212" class="stat" text-anchor="start">02</text>
+<text x="438" y="250" class="node-title" text-anchor="start">Connected assurance</text>
+<text x="438" y="284" class="node-text" text-anchor="start">Shared evaluation and context services</text>
+<text x="438" y="307" class="node-text" text-anchor="start">Cross-team evidence and feedback</text>
+<rect x="820" y="70" width="360" height="166" rx="8" class="node"/>
+<text x="838" y="105" class="stat" text-anchor="start">03</text>
+<text x="838" y="143" class="node-title" text-anchor="start">Controlled agents</text>
+<text x="838" y="177" class="node-text" text-anchor="start">Multi-step work with bounded authority</text>
+<text x="838" y="200" class="node-text" text-anchor="start">Action-level controls and recovery</text>
+<path d="M 380 359 H 399 V 255 H 417" class="edge" marker-end="url(#capability-horizons-arrow)"/>
+<path d="M 780 252 H 799 V 147 H 817" class="edge" marker-end="url(#capability-horizons-arrow)"/>
+<text x="28" y="249" class="small" text-anchor="start">Gate: local quality + net effort</text>
+<text x="430" y="142" class="small" text-anchor="start">Gate: repeatable outcomes across teams</text>
+<text x="827" y="35" class="small" text-anchor="start">Gate: safe actions + tested resilience</text>
+<text x="28" y="481" class="small" text-anchor="start">Proposed horizons, not a dated forecast or measured maturity score</text>
+</svg>

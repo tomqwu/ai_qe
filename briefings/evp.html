@@ -15,10 +15,9 @@ permalink: /briefings/evp/
 <img class="cover-visual" src="{{ '/assets/images/industry/quality-studio.webp' | relative_url }}" alt="Conceptual connected quality studio with human review and a release gate" width="1536" height="1024">
 {% include slide-footer.html n="01" source="/docs/industry/" label="Research scope and sources" %}
 </section>
-<section class="slide " id="slide-2" aria-labelledby="title-2">
-<p class="kicker">02 / Strategic scope</p><h2 id="title-2">A broader quality mandate</h2>
-
-<div class="slide-content">{% include industry/mission-overview.html %}</div>
+<section class="slide diagram-slide" id="slide-2" aria-labelledby="title-2">
+<p class="kicker">02 / Strategic target state</p><h2 id="title-2">A shared quality capability</h2>
+<div class="slide-content">{% include diagrams/figure.html name="strategic-system" label="A shared quality capability" %}</div>
 {% include slide-footer.html n="02" source="/docs/industry/" label="The strategic thesis" %}
 </section>
 <section class="slide " id="slide-3" aria-labelledby="title-3">
@@ -27,10 +26,9 @@ permalink: /briefings/evp/
 <div class="slide-content">{% include industry/barriers.html %}</div>
 {% include slide-footer.html n="03" source="/docs/industry/outlook/" label="Adoption, method and limitations" %}
 </section>
-<section class="slide " id="slide-4" aria-labelledby="title-4">
-<p class="kicker">04 / Evidence in context</p><h2 id="title-4">Different evidence answers different questions</h2>
-
-<div class="slide-content"><div class="evidence-strips"><div><strong>Gartner</strong><p>Forecasts wider AI participation and evolving team structures.</p></div><div><strong>McKinsey</strong><p>Connects value with changes across the product lifecycle and operating model.</p></div><div><strong>DORA</strong><p>Examines how AI interacts with the surrounding engineering system.</p></div><div><strong>Experiments</strong><p>Find different task outcomes across people, tools and settings.</p></div></div><p class="figure-note">Forecasts, surveys and local experiments are not interchangeable savings benchmarks. {% include industry/cite.html ids="G01,G04,M01,D01,E01,E03" %}</p></div>
+<section class="slide diagram-slide" id="slide-4" aria-labelledby="title-4">
+<p class="kicker">04 / Evidence in context</p><h2 id="title-4">Task gains depend on the setting</h2>
+<div class="slide-content">{% include diagrams/figure.html name="evidence-contrasts" label="Task gains depend on the setting" %}</div>
 {% include slide-footer.html n="04" source="/docs/industry/evidence/" label="Evidence and transferability" %}
 </section>
 <section class="slide interactive-slide" id="slide-5" aria-labelledby="title-5">
@@ -39,29 +37,25 @@ permalink: /briefings/evp/
 <div class="slide-content">{% include explorers/value.html compact=true %}</div>
 {% include slide-footer.html n="05" source="/docs/economics/savings-model/" label="Scenario assumptions and definitions" %}
 </section>
-<section class="slide " id="slide-6" aria-labelledby="title-6">
-<p class="kicker">06 / Operating model</p><h2 id="title-6">Shared capability, explicit ownership</h2>
-
-<div class="slide-content">{% include industry/operating-model.html %}</div>
-{% include slide-footer.html n="06" source="/docs/industry/operating-model/" label="Ownership and decision rights" %}
+<section class="slide diagram-slide" id="slide-6" aria-labelledby="title-6">
+<p class="kicker">06 / Research to strategy</p><h2 id="title-6">What the findings change</h2>
+<div class="slide-content">{% include diagrams/figure.html name="research-decisions" label="What the findings change" %}</div>
+{% include slide-footer.html n="06" source="/docs/industry/" label="Research-to-design synthesis" %}
 </section>
-<section class="slide " id="slide-7" aria-labelledby="title-7">
-<p class="kicker">07 / Continuous assurance</p><h2 id="title-7">Quality evidence improves with use</h2>
-<p class="lede">The ambition is a reusable system of evaluation, release evidence and operational learning.</p>
-<div class="slide-content">{% include industry/assurance-loop.html %}</div>
+<section class="slide diagram-slide" id="slide-7" aria-labelledby="title-7">
+<p class="kicker">07 / Continuous assurance</p><h2 id="title-7">Quality improves through feedback</h2>
+<div class="slide-content">{% include diagrams/figure.html name="evaluation-system" label="Quality improves through feedback" %}</div>
 {% include slide-footer.html n="07" source="/docs/industry/architecture/" label="Lifecycle assurance architecture" %}
 </section>
-<section class="slide " id="slide-8" aria-labelledby="title-8">
-<p class="kicker">08 / Capability roadmap</p><h2 id="title-8">Expansion follows repeatable evidence</h2>
-
-<div class="slide-content"><div class="roadmap"><article><span class="step">Foundations</span><h3>Reliable inputs</h3><p>Classified context, repeatable tests, baseline and owners.</p></article><article><span class="step">Bounded assistance</span><h3>Useful workflows</h3><p>Test drafts and failure diagnosis with independent checks.</p></article><article><span class="step">Connected assurance</span><h3>Shared evidence</h3><p>Versioned evaluations, telemetry and tested fallback.</p></article><article><span class="step">Broader authority</span><h3>Controlled agents</h3><p>More complex work with action-level evidence and clear limits.</p></article></div><div class="takeaway">Proposed capability stages. Timing depends on the starting system and consequences of failure.</div></div>
+<section class="slide diagram-slide" id="slide-8" aria-labelledby="title-8">
+<p class="kicker">08 / Capability roadmap</p><h2 id="title-8">Evidence gates the next horizon</h2>
+<div class="slide-content">{% include diagrams/figure.html name="capability-horizons" label="Evidence gates the next horizon" %}</div>
 {% include slide-footer.html n="08" source="/docs/industry/operating-model/" label="Roadmap and measures" %}
 </section>
-<section class="slide " id="slide-9" aria-labelledby="title-9">
-<p class="kicker">09 / Technology strategy</p><h2 id="title-9">The quality system outlasts a model</h2>
-
-<div class="slide-content"><div class="value-chain"><article class="value-step"><h3>Task contracts</h3><p>Define correct outcomes and important failures.</p></article><article class="value-step"><h3>Evaluation assets</h3><p>Maintain representative cases and trusted labels.</p></article><article class="value-step"><h3>Platform controls</h3><p>Reuse identity, policy and evidence services.</p></article><article class="value-step"><h3>Portable evidence</h3><p>Keep comparisons and history when tools change.</p></article></div><div class="takeaway">Buy and integrate against a common evaluation brief. Product features do not establish local effectiveness.</div></div>
-{% include slide-footer.html n="09" source="/docs/industry/landscape/" label="Capability landscape and selection brief" %}
+<section class="slide diagram-slide" id="slide-9" aria-labelledby="title-9">
+<p class="kicker">09 / Technology strategy</p><h2 id="title-9">The platform outlasts a model</h2>
+<div class="slide-content">{% include diagrams/figure.html name="platform" label="The platform outlasts a model" %}</div>
+{% include slide-footer.html n="09" source="/docs/industry/architecture/" label="Shared assurance architecture" %}
 </section>
 <section class="slide " id="slide-10" aria-labelledby="title-10">
 <p class="kicker">10 / Leadership agenda</p><h2 id="title-10">The strategic choices ahead</h2>

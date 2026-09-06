@@ -43,7 +43,17 @@
       selectTab(tabs[next]);
     });
   });
-  window.addEventListener('message', event => {
+  player.querySelectorAll('[data-visual-audience]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      selectTab(tabs.find(tab => tab.dataset.audience === link.dataset.visualAudience));
+      frame.src = link.href;
+      openLink.href = link.href;
+      panel.scrollIntoView({ block: 'start' });
+    });
+  });
+  window.addEventListener('message' , event => {
     if (event.origin !== location.origin || event.source !== frame.contentWindow) return;
     if (event.data?.type === 'ai-qe:deck-navigated') {
       panel.scrollIntoView({ block: 'start' });

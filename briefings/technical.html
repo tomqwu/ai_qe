@@ -15,28 +15,24 @@ permalink: /briefings/technical/
 <img class="cover-visual" src="{{ '/assets/images/industry/assurance-lab.webp' | relative_url }}" alt="Conceptual AI assurance laboratory with evaluation and human oversight" width="1536" height="1024">
 {% include slide-footer.html n="01" source="/docs/industry/" label="Research scope and sources" %}
 </section>
-<section class="slide interactive-slide" id="slide-2" aria-labelledby="title-2">
-<p class="kicker">02 / Interactive delivery workflow</p><h2 id="title-2">Context to reviewed change</h2>
-
-<div class="slide-content">{% include explorers/architecture.html compact=true %}</div>
-{% include slide-footer.html n="02" source="/docs/method/phased-pilot/" label="Pilot integration requirements" %}
+<section class="slide diagram-slide" id="slide-2" aria-labelledby="title-2">
+<p class="kicker">02 / Interactive platform architecture</p><h2 id="title-2">The enterprise assurance platform</h2>
+<div class="slide-content">{% include diagrams/figure.html name="platform" label="The enterprise assurance platform" %}</div>
+{% include slide-footer.html n="02" source="/docs/industry/architecture/" label="Architecture and research basis" %}
 </section>
-<section class="slide " id="slide-3" aria-labelledby="title-3">
-<p class="kicker">03 / Agent control boundary</p><h2 id="title-3">Agent permission boundary</h2>
-
-<div class="slide-content">{% include industry/authority.html %}</div>
+<section class="slide diagram-slide" id="slide-3" aria-labelledby="title-3">
+<p class="kicker">03 / Runtime sequence</p><h2 id="title-3">A generated payment-API test</h2>
+<div class="slide-content">{% include diagrams/figure.html name="test-sequence" label="A generated payment-API test" %}</div>
 {% include slide-footer.html n="03" source="/docs/industry/architecture/" label="Boundary design and sources" %}
 </section>
-<section class="slide " id="slide-4" aria-labelledby="title-4">
-<p class="kicker">04 / AI for quality engineering</p><h2 id="title-4">Validation of generated tests</h2>
-<p class="lede">Compile and pass are necessary checks. Fault detection and test meaning still need evaluation.</p>
-<div class="slide-content">{% include industry/test-pipeline.html %}</div>
+<section class="slide diagram-slide" id="slide-4" aria-labelledby="title-4">
+<p class="kicker">04 / Industrial evidence</p><h2 id="title-4">Generated tests pass through quality gates</h2>
+<div class="slide-content">{% include diagrams/figure.html name="testgen-evidence" label="Generated tests pass through quality gates" %}</div>
 {% include slide-footer.html n="04" source="/docs/industry/evidence/" label="Industrial test-generation evidence" %}
 </section>
-<section class="slide " id="slide-5" aria-labelledby="title-5">
-<p class="kicker">05 / Quality engineering for AI</p><h2 id="title-5">The application evaluation loop</h2>
-<p class="lede">Model, prompts, retrieval, tools and permissions form the tested system.</p>
-<div class="slide-content">{% include industry/assurance-loop.html %}</div>
+<section class="slide diagram-slide" id="slide-5" aria-labelledby="title-5">
+<p class="kicker">05 / AI application architecture</p><h2 id="title-5">Evaluation, release and feedback</h2>
+<div class="slide-content">{% include diagrams/figure.html name="evaluation-system" label="Evaluation, release and feedback" %}</div>
 {% include slide-footer.html n="05" source="/docs/industry/architecture/" label="Evaluation and release lifecycle" %}
 </section>
 <section class="slide " id="slide-6" aria-labelledby="title-6">
@@ -45,16 +41,14 @@ permalink: /briefings/technical/
 <div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Layer</th><th scope="col">Evidence</th><th scope="col">Validity check</th></tr></thead><tbody><tr><th scope="row">Task outcome</th><td data-label="Evidence">Representative cases and expected results</td><td data-label="Validity check">Held-out examples; results by scenario</td></tr><tr><th scope="row">Retrieval</th><td data-label="Evidence">Relevant, permitted and grounded evidence</td><td data-label="Validity check">Correct citations and access scope</td></tr><tr><th scope="row">Agent actions</th><td data-label="Evidence">Tool choice, arguments and termination</td><td data-label="Validity check">Denied-action and recovery tests</td></tr><tr><th scope="row">Model judges</th><td data-label="Evidence">Scores against a defined rubric</td><td data-label="Validity check">Calibration against expert labels</td></tr><tr><th scope="row">Operation</th><td data-label="Evidence">Latency, cost, drift and escalation</td><td data-label="Validity check">Tail failures and tested fallback</td></tr></tbody></table></div>
 {% include slide-footer.html n="06" source="/docs/industry/architecture/" label="Evaluation design and limitations" %}
 </section>
-<section class="slide " id="slide-7" aria-labelledby="title-7">
-<p class="kicker">07 / Adversarial assurance</p><h2 id="title-7">Threat coverage for agents</h2>
-
-<div class="slide-content"><div class="loop-flow"><div><span class="diagram-index">Input</span><strong>Poisoned context</strong><p>Untrusted documents<br>Tool output<br>Persistent memory</p></div><div><span class="diagram-index">Decision</span><strong>Unsafe requests</strong><p>Incorrect tool<br>Wrong resource<br>Excessive scope</p></div><div><span class="diagram-index">Enforcement</span><strong>Denied actions</strong><p>Gateway policy<br>Approval boundary<br>Credential limits</p></div><div><span class="diagram-index">Recovery</span><strong>Bounded failure</strong><p>Stop and escalate<br>Safe fallback<br>Traceable incident</p></div></div><div class="takeaway">Proposed test coverage. A finite adversarial suite cannot prove absence of vulnerabilities.</div><p class="figure-note">Threat references: OWASP LLM and Agentic 2026; OSFI July 2026. {% include industry/cite.html ids="A03,A04,R01" %}</p></div>
+<section class="slide diagram-slide" id="slide-7" aria-labelledby="title-7">
+<p class="kicker">07 / Agent threat model</p><h2 id="title-7">The tool authority boundary</h2>
+<div class="slide-content">{% include diagrams/figure.html name="threat-boundary" label="The tool authority boundary" %}</div>
 {% include slide-footer.html n="07" source="/docs/industry/architecture/" label="Agent threats and control boundary" %}
 </section>
-<section class="slide " id="slide-8" aria-labelledby="title-8">
-<p class="kicker">08 / Measurement architecture</p><h2 id="title-8">A joined record of work and outcomes</h2>
-
-<div class="slide-content"><div class="value-chain"><article class="value-step"><h3>Task</h3><p>ID, complexity, user cohort and baseline effort.</p></article><article class="value-step"><h3>Run</h3><p>Context, model, prompts, tools, runtime and cost.</p></article><article class="value-step"><h3>Review</h3><p>Checks, decision, correction and active human effort.</p></article><article class="value-step"><h3>Outcome</h3><p>Rework, defects, delivery time and realized benefit.</p></article></div><div class="takeaway">Version and join these records under the logging standard. Minimize sensitive payload retention.</div></div>
+<section class="slide diagram-slide" id="slide-8" aria-labelledby="title-8">
+<p class="kicker">08 / Measurement architecture</p><h2 id="title-8">Link work, review and outcomes</h2>
+<div class="slide-content">{% include diagrams/figure.html name="evidence-model" label="Link work, review and outcomes" %}</div>
 {% include slide-footer.html n="08" source="/docs/industry/operating-model/" label="Balanced measurement contract" %}
 </section>
 <section class="slide " id="slide-9" aria-labelledby="title-9">
@@ -69,9 +63,8 @@ permalink: /briefings/technical/
 <div class="slide-content"><div class="three-up"><article class="pillar"><span class="metric">≥15%</span><h3>Net effort saving</h3><p>On at least one selected use case, after review and control work.</p></article><article class="pillar"><span class="metric">≥50%</span><h3>Eligible-task adoption</h3><p>Actual workflow use, with acceptance and abandonment recorded.</p></article><article class="pillar"><span class="metric">Within cap</span><h3>Operating cost</h3><p>Agreed ceiling and a Finance-confirmed capture mechanism.</p></article></div><div class="gate-floors"><strong>All floors must hold</strong><p>Quality, security and control requirements remain satisfied. A breach pauses the pilot and triggers review.</p></div><p class="figure-note">Proposed criteria from the existing pilot plan, not achieved results. The plan specifies stop signals and the 10–15% review band.</p></div>
 {% include slide-footer.html n="10" source="/docs/method/phased-pilot/" label="Full gate definitions and stop rules" %}
 </section>
-<section class="slide " id="slide-11" aria-labelledby="title-11">
-<p class="kicker">11 / Implementation sequence</p><h2 id="title-11">One complete workflow, then repeat</h2>
-
-<div class="slide-content"><div class="roadmap"><article><span class="step">Define</span><h3>Task and boundary</h3><p>Owners, context, identity, acceptance and baseline.</p></article><article><span class="step">Integrate</span><h3>Artifact and checks</h3><p>Model, sandbox, test runner and reviewed change.</p></article><article><span class="step">Evaluate</span><h3>Evidence and recovery</h3><p>Held-out cases, adversarial tests, telemetry and fallback.</p></article><article><span class="step">Validate</span><h3>Repeatable value</h3><p>Compare effort and quality across teams and releases.</p></article></div><div class="takeaway">Architecture review deliverables: boundary diagram, evaluation contract, ownership map and linked evidence record.</div></div>
+<section class="slide diagram-slide" id="slide-11" aria-labelledby="title-11">
+<p class="kicker">11 / Research to implementation</p><h2 id="title-11">Architecture decisions with evidence</h2>
+<div class="slide-content">{% include diagrams/figure.html name="research-decisions" label="Architecture decisions with evidence" %}</div>
 {% include slide-footer.html n="11" source="/docs/industry/library/" label="Research documents and methods" %}
 </section>

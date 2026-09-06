@@ -45,3 +45,7 @@ The simulator is an authored scenario model. Its defaults are assumptions, not i
 ## What the current evidence does not settle
 
 There is no general bank-wide QE savings rate in this review. Evidence remains limited on sustained escaped-defect reduction, long-term test maintainability, simultaneous-agent human effort, rare operational failures and the economics of assurance itself. Those are explicit measurement questions for the pilot and subsequent production validation.
+
+## Generated tests: the quality filter in practice
+
+{% include diagrams/figure.html name="testgen-evidence" label="Meta TestGen-LLM observed quality filters" %}

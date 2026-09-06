@@ -83,7 +83,7 @@
       return;
     }
     if (readAll || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.defaultPrevented) return;
-    if (event.target.closest('input, select, textarea, [contenteditable="true"], .qe-explorer')) return;
+    if (event.target.closest('input, select, textarea, [contenteditable="true"], .qe-explorer, .research-figure')) return;
     if (event.key === ' ' && event.target.closest('button, a')) return;
     const directions = { ArrowRight: index + 1, PageDown: index + 1, ' ': index + 1, ArrowLeft: index - 1, PageUp: index - 1, Home: 0, End: slides.length - 1 };
     if (!(event.key in directions)) return;

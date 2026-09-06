@@ -104,3 +104,7 @@ that a claim is correct.
 Evidence pages use study summaries with findings and caveats visible and methodology
 in native expandable details. Preserve these fields when adding a study. The remote
 theme is pinned in `_config.yml`; update it deliberately and check desktop/mobile layout.
+
+### Visual research briefings
+
+The audience decks embed native SVG architecture and research charts from `_includes/diagrams/`. Run `python3 tools/build_research_diagrams.py` to regenerate geometry; edit shared styling in `assets/css/diagrams.css`. Research findings, design implications, citations and text descriptions live in `_data/diagram_research.json`. The platform diagram supports keyboard and pointer inspection. On narrow screens, the diagram canvas pans horizontally while the explanatory text reflows.

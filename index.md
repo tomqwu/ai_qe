@@ -22,12 +22,12 @@ has_toc: false
 </section>
 
 <section class="home-section explorer-section" id="explore" aria-labelledby="explore-title">
-  <div class="section-heading"><div><h2 id="explore-title">See how the model works.</h2></div><p>Trace a task. Test the economics.<br>Understand the uncertainty.</p></div>
+  <div class="section-heading"><div><h2 id="explore-title">Explore the assurance system.</h2></div><p>Inspect the architecture. Test the economics.<br>Understand the uncertainty.</p></div>
   {% include explorers/workbench.html %}
 </section>
 
 <section class="home-section" id="briefings" aria-labelledby="briefings-title">
-  <div class="section-heading"><div><p class="eyebrow">Start with your perspective</p><h2 id="briefings-title">The right conversation.<br>The right level of detail.</h2></div><p>Strategy for executive leaders.<br>Architecture for the teams who deliver it.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">Start with your perspective</p><h2 id="briefings-title">Visual briefings for<br>strategy and architecture.</h2></div><p>Strategy for executive leaders.<br>Architecture for the teams who deliver it.</p></div>
   {% include briefing-embed.html %}
 </section>
 

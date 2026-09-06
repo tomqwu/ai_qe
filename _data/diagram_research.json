@@ -1,0 +1,72 @@
+{
+  "platform": {
+    "caption": "Proposed logical architecture · select a component to inspect its role and research basis.",
+    "sources": "A01,A03,R01,E04",
+    "finding": "NIST frames assurance across the lifecycle. OWASP and OSFI identify agent identity, tool authority and traceability as control concerns; Meta separates generation from validation.",
+    "decision": "Separate context, generation, policy enforcement, independent evaluation and release authority. Preserve a shared evidence record across those boundaries.",
+    "words": "Engineers and delivery systems supply tasks and approved context. The runtime proposes actions through a policy gateway. Independent sandbox checks and application evaluations supply evidence to the release authority. Traces and decisions feed the evidence store; curated failures become regression cases."
+  },
+  "strategic-system": {
+    "caption": "Strategic target state · analyst outlook informs the ambition; the capability design is our synthesis.",
+    "sources": "G01,M01,D01,A01",
+    "finding": "Gartner forecasts broader AI assistant use. McKinsey’s survey connects reported impact with changes across delivery and the operating model. DORA describes AI as an amplifier of the surrounding system.",
+    "decision": "Invest in shared evaluation assets, platform controls and operational learning that serve both AI-assisted engineering and AI products. These sources do not establish a bank-specific return.",
+    "words": "AI for QE and QE for AI share testable intent, independent assurance and operational learning. That common capability supports validated delivery, trustworthy AI behavior and reuse across teams."
+  },
+  "testgen-evidence": {
+    "caption": "Observed industrial evaluation · Meta TestGen-LLM, FSE 2024, §3.3. The three bars use the same test-class denominator.",
+    "sources": "E04,E05",
+    "finding": "In Meta’s 86-component Kotlin evaluation, 75% of target test classes gained at least one generated test that built; 57% had one that also passed reliably; 25% had one that also increased line coverage.",
+    "decision": "Treat generation as a candidate factory. Require independent checks for stability and added test value; use fault detection where possible because coverage alone does not establish semantic quality.",
+    "words": "The bars have a common zero-to-100-percent axis. The qualifying share drops from 75% for build success to 57% for reliable passing and 25% for added coverage. These percentages describe test classes, not individual generated tests."
+  },
+  "evaluation-system": {
+    "caption": "Proposed evaluation and release architecture · the unit of assurance is the configured application.",
+    "sources": "A01,A02,T03,T06",
+    "finding": "NIST treats evaluation and risk management as lifecycle activities. Evaluation product documentation supports versioned datasets and comparisons; judge calibration still requires local evidence.",
+    "decision": "Compare baseline and candidate configurations against held-out cases, gate releases on agreed floors, then turn reviewed production failures into regression cases.",
+    "words": "Versioned application configurations and a held-out evaluation corpus feed comparable runs and independent scoring. A failed release gate holds the change for investigation. A passing gate leads to controlled deployment and production monitoring; curated failures refresh the corpus."
+  },
+  "test-sequence": {
+    "caption": "Illustrative payment-API workflow · the approved contract defines correct behavior; all execution stays within the sandbox.",
+    "sources": "E04,E05,A03,R01",
+    "finding": "Meta’s generation work filters candidates through executable checks; mutation-guided testing tests whether a candidate detects a fault. Agent guidance requires authority to be bounded at the action boundary.",
+    "decision": "Generate a negative-amount test from an approved contract, execute it through a scoped gateway, retain the independent fault-detection result and route the evidence to a human reviewer.",
+    "words": "The engineer supplies the contract. The agent requests scoped context and proposes a test. The gateway authorizes sandbox execution. CI checks the candidate against a seeded boundary fault. The reviewer receives assertions and test evidence before using existing merge controls."
+  },
+  "research-decisions": {
+    "caption": "Research → proposed design → evidence to retain. The architecture choices are our synthesis, not publisher endorsements.",
+    "sources": "D02,E04,E05,A01,A02,A03,R01",
+    "finding": "The sources address different failure modes: verification effort, weak generated tests, lifecycle change and the consequences of agent actions.",
+    "decision": "Translate each finding into an observable design requirement. Review burden needs effort telemetry; test generation needs a quality gate; changing AI needs repeatable evaluation; tool use needs enforceable permissions.",
+    "words": "DORA informs joined effort measurement. Meta informs independent test-quality gates. NIST informs versioned evaluation and feedback. OWASP and OSFI inform external permission enforcement. Each design response has an associated evidence record."
+  },
+  "capability-horizons": {
+    "caption": "Proposed capability horizons · progression depends on demonstrated outcomes and authority, rather than calendar dates.",
+    "sources": "M01,D01,A01,R01",
+    "finding": "Industry research places AI adoption within delivery-system and operating-model change. Assurance guidance makes the consequences of actions and ongoing monitoring relevant to expansion.",
+    "decision": "Develop bounded assistance first, connect shared assurance services next and expand agent authority only after local quality, repeatability and recovery evidence supports it.",
+    "words": "Horizon one is trusted assistance, gated by local quality and net effort. Horizon two is connected assurance, gated by repeatability across teams. Horizon three is controlled agents, gated by safe actions and tested resilience."
+  },
+  "evidence-contrasts": {
+    "caption": "Two randomized-study findings · different outcomes and settings; neither percentage is a QE savings benchmark.",
+    "sources": "E01,E02,E03",
+    "finding": "Cui et al. report a 26.08% increase in completed tasks across three field experiments. METR’s early-2025 trial reports a 19% increase in completion time for experienced developers on familiar repositories.",
+    "decision": "Segment pilots by task and user population, retain verification effort, and measure quality alongside throughput. METR’s later follow-up has selection concerns; it does not supply a clean causal time trend.",
+    "words": "Cui: 4,867 developers, completed tasks +26.08%, standard error 10.3 percentage points. METR: 16 developers, 246 tasks, completion time +19%, 95% confidence interval +2% to +39%. The studies measure distinct outcomes and should not be pooled."
+  },
+  "threat-boundary": {
+    "caption": "Proposed threat model · the highlighted test follows an injected request all the way to enforcement and recovery.",
+    "sources": "A03,A04,R01",
+    "finding": "OWASP identifies risks arising from untrusted inputs and agent tool use. OSFI’s July 2026 bulletin discusses agent identity, scoped tool access, traceability and resilience as sound practices.",
+    "decision": "Test the system’s response when poisoned context asks for an unauthorized action. Assert no side effect, a recorded denial and a bounded escalation path—not just a polite refusal in the model’s answer.",
+    "words": "Untrusted documents, code, tool output and memory reach the agent runtime. The agent can request an action, but the gateway checks identity, resource and policy. Permitted calls reach scoped tools. Denied calls cause no side effect and stop or escalate."
+  },
+  "evidence-model": {
+    "caption": "Proposed measurement schema · identifiers link work, execution, review and observed outcomes.",
+    "sources": "D02,E01,E03,M01",
+    "finding": "DORA’s qualitative work highlights verification friction. Experimental findings depend on the task and population; reported AI impact is not a universal savings rate.",
+    "decision": "Compare like tasks and account for preparation, execution, review, correction and rework. Link quality and cost to the same cohort; recognize monetary value only with a confirmed capture mechanism.",
+    "words": "A task has multiple runs; a run may have several review records. Outcomes link through task and artifact identifiers. A cohort comparison joins baseline effort, run and review effort, rework and defects. Version identifiers make changes in tool configuration auditable."
+  }
+}
