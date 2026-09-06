@@ -8,10 +8,10 @@ security in regulated financial services.
 
 The homepage includes two audience presentations:
 
-- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 10 slides on
+- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 18 slides on
   industry outlook, strategic vision, value, ownership and capability expansion.
 - [Technical delivery architecture](https://tomqwu.github.io/ai_qe/briefings/technical/):
-  11 slides on agent boundaries, AI evaluation, test validity, technology layers and pilot gates.
+  26 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
 
 These are research-informed perspectives and a proposed architecture, not measured bank results.
 
@@ -47,7 +47,7 @@ the site edition; source review dates remain attached to their individual resear
 
 Edit the slide sections in `briefings/evp.html` and `briefings/technical.html`. Keep the
 numbered slide IDs, descriptive headings and source links. Update `slide_count` and the
-audience selector in `_includes/briefing-embed.html` when adding or removing slides.
+`briefing_minutes` estimate when adding or removing slides. The audience selector reads the count and duration from each deck.
 
 `_layouts/deck.html`, `assets/css/decks.css` and `assets/js/decks.js` provide a shared
 player. It supports previous/next, arrow and Page Up/Down keys, Home/End, direct slide
@@ -117,7 +117,7 @@ theme is pinned in `_config.yml`; update it deliberately and check desktop/mobil
 
 ### Visual research briefings
 
-The audience decks embed native SVG architecture and research charts from `_includes/diagrams/`. Run `python3 tools/build_research_diagrams.py` to regenerate geometry; edit shared styling in `assets/css/diagrams.css`. Research findings, design implications, citations and text descriptions live in `_data/diagram_research.json`. The platform diagram supports keyboard and pointer inspection. On narrow screens, the diagram canvas pans horizontally while the explanatory text reflows.
+The audience decks embed native SVG architecture and research charts from `_includes/diagrams/`. Run `python3 tools/build_expanded_diagrams.py` to regenerate geometry; edit shared styling in `assets/css/diagrams.css`. Research findings, design implications, citations and text descriptions live in `_data/diagram_research.json`. The platform diagram supports keyboard and pointer inspection. On narrow screens, the diagram canvas pans horizontally while the explanatory text reflows.
 
 ### Presentation motion
 

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" class="research-diagram" role="img" aria-labelledby="trace-pipeline-title"><title id="trace-pipeline-title">Proposed observability pipeline linking operational events to quality, security and evaluation records</title><defs><marker id="trace-pipeline-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="40" width="370" height="117" rx="8" class="node"/>
+<text x="36" y="68" class="node-title" text-anchor="start">Application events</text>
+<text x="36" y="91" class="node-text" text-anchor="start">Task and run IDs</text>
+<text x="36" y="111" class="node-text" text-anchor="start">Timing and model usage</text>
+</g>
+<g class="diagram-node ">
+<rect x="415" y="40" width="370" height="117" rx="8" class="node"/>
+<text x="431" y="68" class="node-title" text-anchor="start">Gateway decisions</text>
+<text x="431" y="91" class="node-text" text-anchor="start">Requested action and resource</text>
+<text x="431" y="111" class="node-text" text-anchor="start">Allow / deny + policy version</text>
+</g>
+<g class="diagram-node ">
+<rect x="810" y="40" width="370" height="117" rx="8" class="node"/>
+<text x="826" y="68" class="node-title" text-anchor="start">Reviewer feedback</text>
+<text x="826" y="91" class="node-text" text-anchor="start">Accepted / corrected result</text>
+<text x="826" y="111" class="node-text" text-anchor="start">Failure reason and effort</text>
+</g>
+<path d="M 205 157 V 211" class="edge" marker-end="url(#trace-pipeline-arrow)"/>
+<path d="M 600 157 V 211" class="edge" marker-end="url(#trace-pipeline-arrow)"/>
+<path d="M 995 157 V 211" class="edge" marker-end="url(#trace-pipeline-arrow)"/>
+<rect x="20" y="214" width="1160" height="100" rx="8" class="lane lane-teal"/>
+<text x="40" y="247" class="lane-title" text-anchor="start">TELEMETRY COLLECTION BOUNDARY</text>
+<text x="40" y="285" class="label" text-anchor="start">Join by run ID · Minimize payloads · Apply access and retention rules · Preserve event integrity</text>
+<g class="diagram-node ">
+<rect x="20" y="374" width="370" height="108" rx="8" class="node"/>
+<text x="36" y="402" class="node-title" text-anchor="start">Operations</text>
+<text x="36" y="425" class="node-text" text-anchor="start">Service errors and tail latency</text>
+<text x="36" y="445" class="node-text" text-anchor="start">Cost or retry-limit alerts</text>
+</g>
+<path d="M 205 314 V 372" class="edge" marker-end="url(#trace-pipeline-arrow)"/>
+<g class="diagram-node ">
+<rect x="415" y="374" width="370" height="108" rx="8" class="node"/>
+<text x="431" y="402" class="node-title" text-anchor="start">Security monitoring</text>
+<text x="431" y="425" class="node-text" text-anchor="start">Unexpected tool patterns</text>
+<text x="431" y="445" class="node-text" text-anchor="start">Denials and incident evidence</text>
+</g>
+<path d="M 600 314 V 372" class="edge" marker-end="url(#trace-pipeline-arrow)"/>
+<g class="diagram-node ">
+<rect x="810" y="374" width="370" height="108" rx="8" class="node"/>
+<text x="826" y="402" class="node-title" text-anchor="start">Evaluation curation</text>
+<text x="826" y="425" class="node-text" text-anchor="start">Reviewed failure cases</text>
+<text x="826" y="445" class="node-text" text-anchor="start">Regression dataset candidates</text>
+</g>
+<path d="M 995 314 V 372" class="edge" marker-end="url(#trace-pipeline-arrow)"/>
+</svg>

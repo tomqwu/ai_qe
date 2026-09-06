@@ -1,13 +1,15 @@
+{% assign evp_deck = site.pages | where: 'deck_class', 'evp-deck' | first %}
+{% assign technical_deck = site.pages | where: 'deck_class', 'technical-deck' | first %}
 <div class="briefing-player" data-briefing-player>
   <div class="audience-tabs" role="tablist" aria-label="Presentation audience">
     <a id="tab-evp" class="audience-tab" role="tab" aria-selected="true" aria-controls="briefing-panel" href="{{ '/briefings/evp/' | relative_url }}" data-audience="evp">
-      <span class="audience-label">01 / EVP</span><strong>Strategic vision</strong><span>10 slides · 15 minute briefing</span>
+      <span class="audience-label">01 / EVP</span><strong>Strategic vision</strong><span>{{ evp_deck.slide_count }} slides · {{ evp_deck.briefing_minutes }} minutes</span>
     </a>
     <a id="tab-technical" class="audience-tab" role="tab" aria-selected="false" aria-controls="briefing-panel" href="{{ '/briefings/technical/' | relative_url }}" data-audience="technical">
-      <span class="audience-label">02 / Technical SDs &amp; leads</span><strong>Assurance architecture</strong><span>11 slides · 20 minute briefing</span>
+      <span class="audience-label">02 / Technical SDs &amp; leads</span><strong>Assurance architecture</strong><span>{{ technical_deck.slide_count }} slides · {{ technical_deck.briefing_minutes }} minutes</span>
     </a>
   </div>
-  <nav class="visual-jumps" aria-label="Featured visual slides"><span>Explore a visual:</span><a href="{{ '/briefings/evp/' | relative_url }}#slide-2" data-visual-audience="evp">Strategic target state</a><a href="{{ '/briefings/technical/' | relative_url }}#slide-2" data-visual-audience="technical">Platform architecture</a><a href="{{ '/briefings/technical/' | relative_url }}#slide-4" data-visual-audience="technical">Meta research chart</a><a href="{{ '/briefings/technical/' | relative_url }}#slide-5" data-visual-audience="technical">Evaluation lifecycle</a></nav>
+  <nav class="visual-jumps" aria-label="Featured visual slides"><span>Explore a visual:</span><a href="{{ '/briefings/evp/' | relative_url }}#slide-2" data-visual-audience="evp">Strategic target state</a><a href="{{ '/briefings/technical/' | relative_url }}#slide-2" data-visual-audience="technical">Platform architecture</a><a href="{{ '/briefings/technical/' | relative_url }}#slide-10" data-visual-audience="technical">Mutation testing</a><a href="{{ '/briefings/technical/' | relative_url }}#slide-16" data-visual-audience="technical">Agent enforcement</a><a href="{{ '/briefings/technical/' | relative_url }}#slide-19" data-visual-audience="technical">Recovery architecture</a></nav>
   <div id="briefing-panel" role="tabpanel" aria-labelledby="tab-evp">
     <iframe id="briefing-frame" src="{{ '/briefings/evp/' | relative_url }}" title="EVP strategic vision presentation" loading="lazy" allow="fullscreen"></iframe>
   </div>

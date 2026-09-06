@@ -9,6 +9,14 @@ description: Dated entries recording what was verified, when, what changed, and 
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+## 2026-09-06 — Deeper audience briefings (v1.2.0)
+
+Expanded the EVP strategic-vision deck from 10 to 18 slides and the technical architecture deck from 11 to 26. Added 17 native diagrams with source findings, design implications and accessible descriptions. The new material covers portfolio choices, operating ownership, skills, investment, leadership measures, context and configuration boundaries, test oracles, mutation, diagnosis, repair, corpus design, agent enforcement, isolation, release, recovery and telemetry. New tables cover analyst signals, industrial cases, judge calibration and integration contracts.
+
+Rechecked the primary Meta ACH report, Google diagnosis and FlakyGuard papers, LangSmith evaluation documentation, McKinsey’s survey and OSFI’s AI bulletin and E-23 page while developing these walkthroughs. The diagnosis accuracy sample remains separate from its deployment population. Proposed architectures and exercise scenarios are labeled as synthesis. No new bank results, savings rate or proprietary analyst model is asserted.
+
+The source register remains the 30-source September research base; the original 13-page research PDF is a companion brief, not an export of the expanded decks. Chapter navigation and direct links expose the added material on the site.
+
 ## 2026-09-05 — Industry synthesis and source library
 
 Added an independent AI × QE review covering AI-assisted testing and assurance of AI applications, with 30 source records, a dated [document library]({{ '/docs/industry/library/' | relative_url }}), public document links and original visual briefings. The review includes public Gartner material, McKinsey research, WQR, DORA, experimental and enterprise evidence, NIST, OWASP, OSFI and representative product documentation.

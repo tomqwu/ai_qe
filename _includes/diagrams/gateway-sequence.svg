@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" class="research-diagram" role="img" aria-labelledby="gateway-sequence-title"><title id="gateway-sequence-title">Proposed sequence for a denied tool action: policy enforcement happens before execution</title><defs><marker id="gateway-sequence-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node on-dark">
+<rect x="20" y="15" width="260" height="70" rx="8" class="node node-navy"/>
+<text x="36" y="43" class="node-title" text-anchor="start">Agent runtime</text>
+</g>
+<path d="M 150 85 V 384" class="lifeline"/>
+<g class="diagram-node on-dark">
+<rect x="320" y="15" width="260" height="70" rx="8" class="node node-navy"/>
+<text x="336" y="43" class="node-title" text-anchor="start">Policy gateway</text>
+</g>
+<path d="M 450 85 V 384" class="lifeline"/>
+<g class="diagram-node on-dark">
+<rect x="620" y="15" width="260" height="70" rx="8" class="node node-navy"/>
+<text x="636" y="43" class="node-title" text-anchor="start">Scoped tool</text>
+</g>
+<path d="M 750 85 V 384" class="lifeline"/>
+<g class="diagram-node on-dark">
+<rect x="920" y="15" width="260" height="70" rx="8" class="node node-navy"/>
+<text x="936" y="43" class="node-title" text-anchor="start">Evidence store</text>
+</g>
+<path d="M 1050 85 V 384" class="lifeline"/>
+<path d="M 150 132 H 450" class="edge" marker-end="url(#gateway-sequence-arrow)"/>
+<text x="162" y="119" class="sequence-label" text-anchor="start">1  Request action + resource + run ID</text>
+<path d="M 450 192 H 510 V 228 H 450" class="edge" marker-end="url(#gateway-sequence-arrow)"/>
+<text x="528" y="210" class="sequence-label" text-anchor="start">2  Check identity, policy and approval</text>
+<path d="M 450 287 H 1050" class="edge" marker-end="url(#gateway-sequence-arrow)"/>
+<text x="462" y="274" class="sequence-label" text-anchor="start">3  Record denial + policy version</text>
+<path d="M 450 364 H 150" class="edge" marker-end="url(#gateway-sequence-arrow)"/>
+<text x="162" y="351" class="sequence-label" text-anchor="start">4  Return denial; stop or escalate</text>
+<text x="656" y="420" class="node-title" text-anchor="start">No tool invocation</text>
+<text x="654" y="445" class="node-text" text-anchor="start">Assert no side effect</text>
+<text x="35" y="496" class="small" text-anchor="start">Negative case: a retrieved document requests a production write, while the agent has sandbox-only authority.</text>
+</svg>

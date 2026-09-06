@@ -18,7 +18,7 @@
 .research-diagram .node-text { font-size: 18px; }
 .research-diagram .small { font-size: 16px; fill: #4a626b; }
 .research-diagram .edge-label { font-size: 16px; fill: #096d69; paint-order: stroke; stroke: #fcfcfa; stroke-width: 5px; stroke-linejoin: round; }
-.research-diagram .edge { fill: none; stroke: #096d69; stroke-width: 2; }
+.research-diagram .edge, .research-diagram .axis-line { fill: none; stroke: #096d69; stroke-width: 2; }
 .research-diagram .edge-dashed { stroke-dasharray: 6 5; }
 .research-diagram .edge-amber { stroke: #9b651e; }
 .research-diagram .bar-track { fill: #edf1ec; }

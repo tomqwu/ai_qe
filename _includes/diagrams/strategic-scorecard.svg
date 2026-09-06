@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" class="research-diagram" role="img" aria-labelledby="strategic-scorecard-title"><title id="strategic-scorecard-title">Proposed leadership evidence contract linking strategic goals, measures and decisions</title><defs><marker id="strategic-scorecard-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<text x="36" y="32" class="lane-title" text-anchor="start">STRATEGIC OUTCOME</text>
+<text x="386" y="32" class="lane-title" text-anchor="start">EVIDENCE TO EXAMINE</text>
+<text x="836" y="32" class="lane-title" text-anchor="start">LEADERSHIP DECISION</text>
+<g class="diagram-node ">
+<rect x="20" y="58" width="310" height="76" rx="8" class="node node-teal"/>
+<text x="36" y="86" class="node-title" text-anchor="start">Delivery capacity</text>
+</g>
+<g class="diagram-node ">
+<rect x="370" y="58" width="405" height="76" rx="8" class="node"/>
+<text x="386" y="86" class="node-title" text-anchor="start">Net effort with review and rework</text>
+</g>
+<g class="diagram-node ">
+<rect x="820" y="58" width="360" height="76" rx="8" class="node node-sand"/>
+<text x="836" y="86" class="node-title" text-anchor="start">Redeploy verified capacity</text>
+</g>
+<path d="M 330 96 H 368" class="edge" marker-end="url(#strategic-scorecard-arrow)"/>
+<path d="M 775 96 H 818" class="edge" marker-end="url(#strategic-scorecard-arrow)"/>
+<g class="diagram-node ">
+<rect x="20" y="157" width="310" height="76" rx="8" class="node node-teal"/>
+<text x="36" y="185" class="node-title" text-anchor="start">Trustworthy outcomes</text>
+</g>
+<g class="diagram-node ">
+<rect x="370" y="157" width="405" height="76" rx="8" class="node"/>
+<text x="386" y="185" class="node-title" text-anchor="start">Fault detection and escaped defects</text>
+</g>
+<g class="diagram-node ">
+<rect x="820" y="157" width="360" height="76" rx="8" class="node node-sand"/>
+<text x="836" y="185" class="node-title" text-anchor="start">Hold the quality floor</text>
+</g>
+<path d="M 330 195 H 368" class="edge" marker-end="url(#strategic-scorecard-arrow)"/>
+<path d="M 775 195 H 818" class="edge" marker-end="url(#strategic-scorecard-arrow)"/>
+<g class="diagram-node ">
+<rect x="20" y="256" width="310" height="76" rx="8" class="node node-teal"/>
+<text x="36" y="284" class="node-title" text-anchor="start">Reusable capability</text>
+</g>
+<g class="diagram-node ">
+<rect x="370" y="256" width="405" height="76" rx="8" class="node"/>
+<text x="386" y="284" class="node-title" text-anchor="start">Results across teams and task cohorts</text>
+</g>
+<g class="diagram-node ">
+<rect x="820" y="256" width="360" height="76" rx="8" class="node node-sand"/>
+<text x="836" y="284" class="node-title" text-anchor="start">Fund the shared service</text>
+</g>
+<path d="M 330 294 H 368" class="edge" marker-end="url(#strategic-scorecard-arrow)"/>
+<path d="M 775 294 H 818" class="edge" marker-end="url(#strategic-scorecard-arrow)"/>
+<g class="diagram-node ">
+<rect x="20" y="355" width="310" height="76" rx="8" class="node node-teal"/>
+<text x="36" y="383" class="node-title" text-anchor="start">Controlled autonomy</text>
+</g>
+<g class="diagram-node ">
+<rect x="370" y="355" width="405" height="76" rx="8" class="node"/>
+<text x="386" y="383" class="node-title" text-anchor="start">Denied actions and recovery exercises</text>
+</g>
+<g class="diagram-node ">
+<rect x="820" y="355" width="360" height="76" rx="8" class="node node-sand"/>
+<text x="836" y="383" class="node-title" text-anchor="start">Set the next authority limit</text>
+</g>
+<path d="M 330 393 H 368" class="edge" marker-end="url(#strategic-scorecard-arrow)"/>
+<path d="M 775 393 H 818" class="edge" marker-end="url(#strategic-scorecard-arrow)"/>
+<text x="36" y="483" class="small" text-anchor="start">Every readout includes task mix, sample, period, costs and uncertainty. No organizational results are claimed here.</text>
+</svg>

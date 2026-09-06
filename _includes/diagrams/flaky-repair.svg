@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" class="research-diagram" role="img" aria-labelledby="flaky-repair-title"><title id="flaky-repair-title">Proposed flaky-test repair loop preserving test semantics and checking repeatability</title><defs><marker id="flaky-repair-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="65" width="250" height="118" rx="8" class="node"/>
+<text x="36" y="93" class="node-title" text-anchor="start">Reproduce the flake</text>
+<text x="36" y="116" class="node-text" text-anchor="start">Capture failure conditions</text>
+<text x="36" y="136" class="node-text" text-anchor="start">Retain the original test intent</text>
+</g>
+<g class="diagram-node ">
+<rect x="330" y="65" width="250" height="118" rx="8" class="node"/>
+<text x="346" y="93" class="node-title" text-anchor="start">Targeted context</text>
+<text x="346" y="116" class="node-text" text-anchor="start">Dynamic call paths</text>
+<text x="346" y="136" class="node-text" text-anchor="start">Timing and shared state</text>
+</g>
+<g class="diagram-node ">
+<rect x="640" y="65" width="250" height="118" rx="8" class="node node-teal"/>
+<text x="656" y="93" class="node-title" text-anchor="start">Candidate repair</text>
+<text x="656" y="116" class="node-text" text-anchor="start">Fix the failure mechanism</text>
+<text x="656" y="136" class="node-text" text-anchor="start">Keep assertions meaningful</text>
+</g>
+<g class="diagram-node ">
+<rect x="950" y="65" width="230" height="118" rx="8" class="node"/>
+<text x="966" y="93" class="node-title" text-anchor="start">Validation</text>
+<text x="966" y="116" class="node-text" text-anchor="start">Repeat across conditions</text>
+<text x="966" y="136" class="node-text" text-anchor="start">Review semantic changes</text>
+</g>
+<path d="M 270 124 H 328" class="edge" marker-end="url(#flaky-repair-arrow)"/>
+<path d="M 580 124 H 638" class="edge" marker-end="url(#flaky-repair-arrow)"/>
+<path d="M 890 124 H 948" class="edge" marker-end="url(#flaky-repair-arrow)"/>
+<g class="diagram-node ">
+<rect x="640" y="315" width="540" height="109" rx="8" class="node node-sand"/>
+<text x="656" y="343" class="node-title" text-anchor="start">Reject misleading stability</text>
+<text x="656" y="366" class="node-text" text-anchor="start">Deleted assertions can hide a faulty repair.</text>
+<text x="656" y="386" class="node-text" text-anchor="start">Review both the repair and the fault-detection capability.</text>
+</g>
+<path d="M 1065 183 V 313" class="edge" marker-end="url(#flaky-repair-arrow)"/>
+<path d="M 640 368 H 145 V 185" class="edge edge-dashed" marker-end="url(#flaky-repair-arrow)"/>
+<text x="42" y="299" class="node-text" text-anchor="start">Failed validation returns to diagnosis</text>
+<text x="35" y="477" class="small" text-anchor="start">Pattern informed by FlakyGuard’s Uber Go case; validate transferability to the local language and test environment.</text>
+</svg>

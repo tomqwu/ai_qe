@@ -68,5 +68,124 @@
     "finding": "DORA’s qualitative work highlights verification friction. Experimental findings depend on the task and population; reported AI impact is not a universal savings rate.",
     "decision": "Compare like tasks and account for preparation, execution, review, correction and rework. Link quality and cost to the same cohort; recognize monetary value only with a confirmed capture mechanism.",
     "words": "A task has multiple runs; a run may have several review records. Outcomes link through task and artifact identifiers. A cohort comparison joins baseline effort, run and review effort, rework and defects. Version identifiers make changes in tool configuration auditable."
+  },
+  "opportunity-map": {
+    "sources": "E04,E06,A01,A03",
+    "caption": "Proposed portfolio screen · qualitative categories, not a scored market ranking.",
+    "finding": "Industrial cases demonstrate bounded test generation and diagnosis. Agent guidance adds the consequences of actions to the evaluation problem.",
+    "decision": "Select an initial workflow with an independent check and limited authority; assess judgment-heavy and consequential workflows separately.",
+    "words": "A two-by-two screen separates easy-to-verify results from expert judgment, and advice from greater action authority. Test drafts and log-linked diagnosis are candidate starting points."
+  },
+  "ownership-system": {
+    "sources": "D01,M01,A01",
+    "caption": "Proposed ownership model · adapt to existing institutional accountability.",
+    "finding": "DORA and McKinsey place AI adoption in the surrounding delivery organization. NIST frames governance across the lifecycle.",
+    "decision": "Assign a product owner for outcomes, a platform owner for services and a separate challenge function; include operations and value capture.",
+    "words": "Product and QE accountability flows to the delivery team. Shared platform services enable delivery; security and risk challenge its evidence. Operations and value owners use the resulting outcomes."
+  },
+  "investment-stack": {
+    "sources": "D01,M01,T03,T06",
+    "caption": "Proposed investment architecture · layer size does not represent budget allocation.",
+    "finding": "Organizational research emphasizes delivery foundations. Evaluation tools expose datasets and run comparisons, but task fit still requires local validation.",
+    "decision": "Fund reusable services centrally while product teams own domain-specific quality assets. Use adapters and evidence export requirements to support substitution.",
+    "words": "Three example domains contribute different quality assets. They use a common assurance layer, which connects through replaceable model and tool adapters."
+  },
+  "strategic-scorecard": {
+    "sources": "D02,E01,E03,A01",
+    "caption": "Proposed leadership scorecard · measures and decisions, with no invented performance values.",
+    "finding": "Studies use different tasks, populations and outcome measures; verification effort can offset generation gains.",
+    "decision": "Tie each strategic objective to observable evidence and an explicit decision. Keep quality and control floors alongside capacity measures.",
+    "words": "Four rows connect delivery capacity, trustworthy outcomes, reusable capability and controlled autonomy to evidence and leadership decisions."
+  },
+  "governance-loop": {
+    "sources": "A01,R01,R02",
+    "caption": "Proposed governance loop · assess applicability through existing risk functions.",
+    "finding": "NIST links governance to lifecycle risk management. OSFI discusses AI accountability and resilience; revised E-23 has a future effective date.",
+    "decision": "Maintain an inventory and an explicit authority boundary, then revisit them after incidents or material changes. This diagram is not a compliance certification.",
+    "words": "Inventory informs authority limits. Evidence review supports an approved scope. Operations feed incidents and service changes back into the inventory and authority decision."
+  },
+  "context-route": {
+    "sources": "A01,A03,R01",
+    "caption": "Proposed context architecture · retrieval improves task evidence; permissions remain separately enforced.",
+    "finding": "Lifecycle guidance covers input provenance; agent risk guidance addresses untrusted context and access scope.",
+    "decision": "Filter retrieval using current authorization, retain a versioned input snapshot and test grounding separately from action permissions.",
+    "words": "Approved sources feed scoped retrieval and a minimal context snapshot. The runtime treats that content as evidence. Retrieval checks evaluate relevance and access; the action gateway retains authority."
+  },
+  "configuration-bundle": {
+    "sources": "A01,T03,T06",
+    "caption": "Proposed release manifest · the model name alone cannot identify the evaluated system.",
+    "finding": "Lifecycle assurance requires tracking changing system components. Evaluation platforms compare configurations and datasets.",
+    "decision": "Bind the code, prompt, retrieval, tool policy and evaluator versions to one release identity; keep the run and decision references with it.",
+    "words": "A manifest contains model and prompt, retrieval and data, tools and memory, and the evaluation contract. A release identity binds those versions to evaluated runs and approval."
+  },
+  "test-oracle": {
+    "sources": "E04,E05",
+    "caption": "Illustrative payment contract · expected behavior is proposed for this example.",
+    "finding": "Meta separates generated tests from executable validation and extends test value beyond code coverage through fault-oriented testing.",
+    "decision": "Review assertions against an approved behavior contract and evaluate side effects. Use relevant faults to challenge a test that merely matches current behavior.",
+    "words": "The approved contract and implementation inform a candidate test. Separate oracle review checks intended behavior; independent execution checks both valid code and a seeded fault."
+  },
+  "mutation-loop": {
+    "sources": "E05",
+    "caption": "Design pattern informed by Meta ACH · detecting selected mutants does not prove all real faults are covered.",
+    "finding": "Meta ACH uses modeled faults to drive test generation and checks generated tests against original and mutated code.",
+    "decision": "Retain both execution results and review mutation relevance. A test gains useful evidence when it distinguishes intended behavior from a meaningful fault.",
+    "words": "A fault concern drives a candidate test. It must pass original code and fail a relevant mutated version. Combined evidence reaches review; weak results lead to refining the concern."
+  },
+  "diagnosis-workflow": {
+    "sources": "E06",
+    "caption": "Google case study (2026) plus a proposed local workflow · populations remain separate.",
+    "finding": "Google reports 90.14% root-cause accuracy on 71 reviewed failures and deployment across 52,635 distinct failing tests.",
+    "decision": "Attach relevant log evidence to a diagnosis, retain reviewer corrections and measure local accuracy separately from reach.",
+    "words": "A failing test feeds an assistant and then an engineer review. The outcome record captures corrections and effort. Separate panels show the small accuracy sample and larger deployment population."
+  },
+  "flaky-repair": {
+    "sources": "E07",
+    "caption": "Proposed repair assurance loop · inspired by a six-month industrial Go case.",
+    "finding": "FlakyGuard combines targeted execution context with LLM-based repair. Its paper discusses the risk of fixes that weaken test semantics.",
+    "decision": "Require reproducibility, preserved assertions and independent repeated validation before proposing a merge.",
+    "words": "The workflow reproduces a flaky failure, gathers targeted context, proposes a repair and validates it. Semantically weak or unstable repairs return to diagnosis."
+  },
+  "corpus-design": {
+    "sources": "A01,T03,T06",
+    "caption": "Proposed corpus design · set sizes depend on the task and consequences of failure.",
+    "finding": "NIST emphasizes representative evaluation. Evaluation tooling supports curated datasets and feedback from operational traces.",
+    "decision": "Separate tuning from release evaluation, group related examples during splitting and preserve adversarial scenarios with explicit expected behavior.",
+    "words": "Candidate cases pass through privacy review, deduplication and labeling. They feed development, held-out and adversarial sets with distinct uses."
+  },
+  "gateway-sequence": {
+    "sources": "A03,R01",
+    "caption": "Proposed denial sequence · the test verifies execution and evidence, beyond the model’s response.",
+    "finding": "Agent risk guidance identifies tool misuse and identity problems. OSFI discusses scoped identities, tool restrictions and activity logs.",
+    "decision": "Check policy at the gateway before invocation. A denial must produce no tool side effect and a traceable reason.",
+    "words": "The runtime requests a production write. The gateway evaluates scope, records a denial and returns it to the runtime. The scoped tool is never invoked."
+  },
+  "execution-isolation": {
+    "sources": "A03,R01,E04",
+    "caption": "Proposed deployment boundaries · zones represent authority, not a specific cloud product.",
+    "finding": "Agent guidance emphasizes scoped tool access and separation of consequential actions. Industrial generation patterns use independent execution checks.",
+    "decision": "Keep workers without production credentials, isolate test execution and allow only reviewed artifacts through existing release controls.",
+    "words": "An orchestration worker invokes an ephemeral sandbox. Controlled artifacts reach review, then protected release systems. Production authority never belongs to the generating worker."
+  },
+  "release-gate": {
+    "sources": "A01,A02,T06",
+    "caption": "Proposed release logic · no universal score threshold is asserted.",
+    "finding": "Lifecycle assurance considers system-specific risks and uncertainty. Evaluation tools support run and case-level comparisons.",
+    "decision": "Use mandatory floors for critical behaviors, then inspect the distribution of changes before authorizing rollout.",
+    "words": "Comparable runs reach a mandatory-floor check. Failure holds the candidate. Passing candidates proceed to review of scenario-level regressions and remaining uncertainty."
+  },
+  "fallback-state": {
+    "sources": "A01,A03,R01",
+    "caption": "Proposed recovery state machine · triggers and fallback capacity require local exercises.",
+    "finding": "Lifecycle and agent guidance make recovery relevant to assurance. OSFI discusses tested AI failure scenarios and continuity measures.",
+    "decision": "Separate containment, fallback and authorized resumption; explicitly handle actions that cannot be reversed by a model rollback.",
+    "words": "A trigger moves normal operation to containment and fallback. Recovery review verifies a fix before an owner authorizes resumption. Completed side effects require separate reconciliation."
+  },
+  "trace-pipeline": {
+    "sources": "A01,T03,A03",
+    "caption": "Proposed event architecture · traces and derived evidence need their own data controls.",
+    "finding": "Evaluation workflows use operational feedback, while agent risk guidance calls attention to tool and action behavior.",
+    "decision": "Join application events, gateway decisions and reviewer corrections without broadly copying sensitive raw prompts into monitoring systems.",
+    "words": "Three event streams enter a controlled telemetry boundary. The joined records support operations, security monitoring and reviewed regression-case curation."
   }
 }

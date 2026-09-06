@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" class="research-diagram" role="img" aria-labelledby="ownership-system-title"><title id="ownership-system-title">Proposed operating responsibilities for product teams, the platform and independent challenge</title><defs><marker id="ownership-system-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="375" y="25" width="450" height="88" rx="8" class="node node-teal"/>
+<text x="391" y="53" class="node-title" text-anchor="start">Product and QE owner</text>
+<text x="391" y="76" class="node-text" text-anchor="start">Owns expected behavior and release outcomes</text>
+</g>
+<g class="diagram-node ">
+<rect x="20" y="213" width="330" height="123" rx="8" class="node"/>
+<text x="36" y="241" class="node-title" text-anchor="start">Shared platform team</text>
+<text x="36" y="264" class="node-text" text-anchor="start">Context, identity and runtime services</text>
+<text x="36" y="284" class="node-text" text-anchor="start">Service reliability and evidence exports</text>
+</g>
+<g class="diagram-node on-dark">
+<rect x="435" y="213" width="330" height="123" rx="8" class="node node-navy"/>
+<text x="451" y="241" class="node-title" text-anchor="start">Delivery team</text>
+<text x="451" y="264" class="node-text" text-anchor="start">Test intent, assertions and review</text>
+<text x="451" y="284" class="node-text" text-anchor="start">Acceptance within existing CI gates</text>
+</g>
+<g class="diagram-node ">
+<rect x="850" y="213" width="330" height="123" rx="8" class="node node-sand"/>
+<text x="866" y="241" class="node-title" text-anchor="start">Security and risk partners</text>
+<text x="866" y="264" class="node-text" text-anchor="start">Threat scenarios and control challenge</text>
+<text x="866" y="284" class="node-text" text-anchor="start">Applicability and escalation advice</text>
+</g>
+<path d="M 600 113 V 211" class="edge" marker-end="url(#ownership-system-arrow)"/>
+<text x="614" y="166" class="edge-label" text-anchor="start">accountability</text>
+<path d="M 350 260 H 433" class="edge" marker-end="url(#ownership-system-arrow)"/>
+<path d="M 850 260 H 767" class="edge" marker-end="url(#ownership-system-arrow)"/>
+<text x="90" y="192" class="lane-title" text-anchor="start">Shared services</text>
+<text x="880" y="192" class="lane-title" text-anchor="start">Independent challenge</text>
+<path d="M 600 336 V 398" class="edge" marker-end="url(#ownership-system-arrow)"/>
+<g class="diagram-node ">
+<rect x="375" y="400" width="450" height="75" rx="8" class="node node-teal"/>
+<text x="391" y="428" class="node-title" text-anchor="start">Operations and value owners</text>
+<text x="391" y="451" class="node-text" text-anchor="start">Incidents, adoption and capacity use</text>
+</g>
+</svg>

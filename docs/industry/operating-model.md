@@ -41,6 +41,10 @@ The stages are an authored roadmap, not a survey-derived maturity score. Timelin
 
 Do not substitute token volume, generated test counts or accepted suggestions for quality outcomes. Report the sample, period, complexity and uncertainty with each result.
 
+## Strategic visual briefings
+
+The expanded EVP briefing makes the operating choices explicit: [workflow portfolio]({{ '/briefings/evp/' | relative_url }}#slide-8), [ownership model]({{ '/briefings/evp/' | relative_url }}#slide-11), [skills agenda]({{ '/briefings/evp/' | relative_url }}#slide-12), [shared investment architecture]({{ '/briefings/evp/' | relative_url }}#slide-14) and [leadership evidence contract]({{ '/briefings/evp/' | relative_url }}#slide-16). Each separates the source findings from the proposed organizational response.
+
 ## Strategic choices for leadership
 
 Choose which quality constraints matter most, which capabilities belong in the shared platform and which decisions stay with delivery teams. Fund the measurement and evaluation work as part of implementation. Expand when value and control evidence hold together; redesign or stop workflows that merely move effort into review.

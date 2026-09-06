@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" class="research-diagram" role="img" aria-labelledby="test-oracle-title"><title id="test-oracle-title">Proposed independent test oracle showing expected behavior, generated assertions and execution evidence</title><defs><marker id="test-oracle-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="46" width="350" height="117" rx="8" class="node node-teal"/>
+<text x="36" y="74" class="node-title" text-anchor="start">Approved behavior contract</text>
+<text x="36" y="97" class="node-text" text-anchor="start">Negative payment amounts are rejected</text>
+<text x="36" y="117" class="node-text" text-anchor="start">No balance or ledger change</text>
+</g>
+<g class="diagram-node ">
+<rect x="20" y="244" width="350" height="117" rx="8" class="node"/>
+<text x="36" y="272" class="node-title" text-anchor="start">Implementation under test</text>
+<text x="36" y="295" class="node-text" text-anchor="start">Current code may contain a defect</text>
+<text x="36" y="315" class="node-text" text-anchor="start">Observed behavior is evidence</text>
+</g>
+<g class="diagram-node ">
+<rect x="465" y="130" width="305" height="124" rx="8" class="node"/>
+<text x="481" y="158" class="node-title" text-anchor="start">Generated candidate test</text>
+<text x="481" y="181" class="node-text" text-anchor="start">Input: a negative amount</text>
+<text x="481" y="201" class="node-text" text-anchor="start">Assertions derived from the contract</text>
+<text x="481" y="221" class="node-text" text-anchor="start">Agent proposes the test</text>
+</g>
+<g class="diagram-node ">
+<rect x="865" y="46" width="315" height="117" rx="8" class="node node-sand"/>
+<text x="881" y="74" class="node-title" text-anchor="start">Oracle review</text>
+<text x="881" y="97" class="node-text" text-anchor="start">Check expected result and side effects</text>
+<text x="881" y="117" class="node-text" text-anchor="start">Challenge weak or missing assertions</text>
+</g>
+<g class="diagram-node ">
+<rect x="865" y="244" width="315" height="117" rx="8" class="node"/>
+<text x="881" y="272" class="node-title" text-anchor="start">Independent execution</text>
+<text x="881" y="295" class="node-text" text-anchor="start">Pass on valid implementation</text>
+<text x="881" y="315" class="node-text" text-anchor="start">Fail on a relevant seeded fault</text>
+</g>
+<path d="M 370 103 H 407 V 180 H 463" class="edge" marker-end="url(#test-oracle-arrow)"/>
+<path d="M 370 303 H 407 V 219 H 463" class="edge edge-dashed" marker-end="url(#test-oracle-arrow)"/>
+<path d="M 770 171 H 817 V 103 H 863" class="edge" marker-end="url(#test-oracle-arrow)"/>
+<path d="M 770 213 H 817 V 303 H 863" class="edge" marker-end="url(#test-oracle-arrow)"/>
+<rect x="20" y="437" width="1160" height="52" rx="8" class="lane lane-teal"/>
+<text x="40" y="470" class="node-text" text-anchor="start">A test can pass because it repeats the implementation’s mistake. The expected behavior needs an independent basis.</text>
+</svg>

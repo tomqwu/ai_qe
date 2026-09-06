@@ -70,7 +70,7 @@ html[data-motion='off'] .motion-inview * { animation: none !important; }
 .presentation-mode .research-diagram .node-navy { fill: #0b2635; stroke: #8da9ab; }
 .presentation-mode .research-diagram .node-sand { fill: #493a2d; stroke: #b89c6d; }
 .presentation-mode .research-diagram .lane-title, .presentation-mode .research-diagram .stat { fill: #99e3d2; }
-.presentation-mode .research-diagram .edge { stroke: #88bcb3; }
+.presentation-mode .research-diagram .edge, .presentation-mode .research-diagram .axis-line { stroke: #88bcb3; }
 .presentation-mode .research-diagram .edge-amber { stroke: #e3b471; }
 .presentation-mode .research-diagram marker path { stroke: #96d5c8; }
 .presentation-mode .research-diagram .edge-label, .presentation-mode .research-diagram .sequence-label { stroke: #0c2534; fill: #d6eee7; }

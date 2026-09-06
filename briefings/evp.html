@@ -4,62 +4,106 @@ title: Strategic vision
 description: Research-informed AI and quality engineering — EVP · Strategic vision.
 audience: EVP · Strategic vision
 deck_class: evp-deck
-slide_count: 10
+slide_count: 18
 nav_exclude: true
 search_exclude: true
 permalink: /briefings/evp/
+briefing_minutes: "25–35"
 ---
-<section class="slide illustrated-cover" id="slide-1" aria-labelledby="title-1">
+<section class="slide illustrated-cover" id="slide-1" data-chapter="Vision and value" aria-labelledby="title-1">
 <p class="kicker">EVP · Strategic vision / September 2026</p><h2 id="title-1">Quality engineering<br>for the AI era</h2>
 <p class="cover-tag">AI × quality engineering · Industry research</p>
 <img class="cover-visual" src="{{ '/assets/images/industry/quality-studio.webp' | relative_url }}" alt="Conceptual connected quality studio with human review and a release gate" width="1536" height="1024">
 {% include slide-footer.html n="01" source="/docs/industry/" label="Research scope and sources" %}
 </section>
-<section class="slide diagram-slide" id="slide-2" aria-labelledby="title-2">
+<section class="slide diagram-slide" id="slide-2" data-chapter="Vision and value" aria-labelledby="title-2">
 <p class="kicker">02 / Strategic target state</p><h2 id="title-2">A shared quality capability</h2>
 <div class="slide-content">{% include diagrams/figure.html name="strategic-system" label="A shared quality capability" %}</div>
 {% include slide-footer.html n="02" source="/docs/industry/" label="The strategic thesis" %}
 </section>
-<section class="slide " id="slide-3" aria-labelledby="title-3">
+<section class="slide " id="slide-3" data-chapter="Vision and value" aria-labelledby="title-3">
 <p class="kicker">03 / Industry adoption</p><h2 id="title-3">The constraints are organizational</h2>
 
 <div class="slide-content">{% include industry/barriers.html %}</div>
 {% include slide-footer.html n="03" source="/docs/industry/outlook/" label="Adoption, method and limitations" %}
 </section>
-<section class="slide diagram-slide" id="slide-4" aria-labelledby="title-4">
+<section class="slide diagram-slide" id="slide-4" data-chapter="Vision and value" aria-labelledby="title-4">
 <p class="kicker">04 / Evidence in context</p><h2 id="title-4">Task gains depend on the setting</h2>
 <div class="slide-content">{% include diagrams/figure.html name="evidence-contrasts" label="Task gains depend on the setting" %}</div>
 {% include slide-footer.html n="04" source="/docs/industry/evidence/" label="Evidence and transferability" %}
 </section>
-<section class="slide interactive-slide" id="slide-5" aria-labelledby="title-5">
+<section class="slide interactive-slide" id="slide-5" data-chapter="Vision and value" aria-labelledby="title-5">
 <p class="kicker">05 / Explore the value logic</p><h2 id="title-5">Capacity and realized value</h2>
 
 <div class="slide-content">{% include explorers/value.html compact=true %}</div>
 {% include slide-footer.html n="05" source="/docs/economics/savings-model/" label="Scenario assumptions and definitions" %}
 </section>
-<section class="slide diagram-slide" id="slide-6" aria-labelledby="title-6">
-<p class="kicker">06 / Research to strategy</p><h2 id="title-6">What the findings change</h2>
+<section class="slide" id="slide-6" data-chapter="Industry and portfolio" aria-labelledby="title-6">
+<p class="kicker">06 / Analyst and industry signals</p><h2 id="title-6">The industry direction and its limits</h2>
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Source / evidence type</th><th scope="col">What it says</th><th scope="col">Strategic implication</th></tr></thead><tbody><tr><th scope="row">Gartner · forecast</th><td data-label="What it says">90% of enterprise software engineers using AI code assistants by 2028.</td><td data-label="Strategic implication">Plan for widespread assisted work; tool use alone does not establish quality or savings.</td></tr><tr><th scope="row">McKinsey · survey</th><td data-label="What it says">Nearly 300 leaders surveyed; 100 assessed impact. Top performers reported broader delivery improvements.</td><td data-label="Strategic implication">Invest in workflow and organizational change. These self-reported outcomes do not isolate causality.</td></tr><tr><th scope="row">DORA · observational research</th><td data-label="What it says">AI interacts with the surrounding engineering system.</td><td data-label="Strategic implication">Improve feedback, testing and platform foundations alongside adoption.</td></tr></tbody></table>
+<p class="figure-note">Public sources, reviewed September 2026. Gartner’s gated testing reports contribute public abstracts only; no proprietary vendor ranking is reproduced. {% include industry/cite.html ids="G01,G02,G03,M01,D01" %}</p></div>
+{% include slide-footer.html n="06" source="/docs/industry/outlook/" label="Research and design basis" %}
+</section>
+<section class="slide" id="slide-7" data-chapter="Industry and portfolio" aria-labelledby="title-7">
+<p class="kicker">07 / Research beyond code generation</p><h2 id="title-7">Industrial cases reveal reusable patterns</h2>
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Industrial example</th><th scope="col">Observed approach</th><th scope="col">Capability to develop</th></tr></thead><tbody><tr><th scope="row">Meta · TestGen-LLM / ACH</th><td data-label="Observed approach">Generated tests face build, reliability and coverage checks; ACH adds fault-oriented validation.</td><td data-label="Capability to develop">An independent test-quality gate, with meaningful assertions.</td></tr><tr><th scope="row">Google · Auto-Diagnose</th><td data-label="Observed approach">Failure summaries link likely causes to relevant log lines in the review workflow.</td><td data-label="Capability to develop">Diagnosis with inspectable evidence and reviewer feedback.</td></tr><tr><th scope="row">Uber / UT Austin · FlakyGuard</th><td data-label="Observed approach">Targeted execution context supports flaky-test repair in an enterprise Go repository.</td><td data-label="Capability to develop">Repair validation that preserves the original test intent.</td></tr></tbody></table>
+<p class="figure-note">Company-specific cases demonstrate mechanisms. They do not establish a transferable bank savings rate or a product comparison. {% include industry/cite.html ids="E04,E05,E06,E07" %}</p></div>
+{% include slide-footer.html n="07" source="/docs/industry/evidence/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-8" data-chapter="Industry and portfolio" aria-labelledby="title-8">
+<p class="kicker">08 / Portfolio choices</p><h2 id="title-8">The first workflows need a clear quality check</h2>
+<div class="slide-content">{% include diagrams/figure.html name="opportunity-map" label="The first workflows need a clear quality check" %}</div>
+{% include slide-footer.html n="08" source="/docs/industry/operating-model/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-9" data-chapter="Capability and ownership" aria-labelledby="title-9">
+<p class="kicker">09 / Research to strategy</p><h2 id="title-9">What the findings change</h2>
 <div class="slide-content">{% include diagrams/figure.html name="research-decisions" label="What the findings change" %}</div>
-{% include slide-footer.html n="06" source="/docs/industry/" label="Research-to-design synthesis" %}
+{% include slide-footer.html n="09" source="/docs/industry/" label="Research-to-design synthesis" %}
 </section>
-<section class="slide diagram-slide" id="slide-7" aria-labelledby="title-7">
-<p class="kicker">07 / Continuous assurance</p><h2 id="title-7">Quality improves through feedback</h2>
+<section class="slide diagram-slide" id="slide-10" data-chapter="Capability and ownership" aria-labelledby="title-10">
+<p class="kicker">10 / Continuous assurance</p><h2 id="title-10">Quality improves through feedback</h2>
 <div class="slide-content">{% include diagrams/figure.html name="evaluation-system" label="Quality improves through feedback" %}</div>
-{% include slide-footer.html n="07" source="/docs/industry/architecture/" label="Lifecycle assurance architecture" %}
+{% include slide-footer.html n="10" source="/docs/industry/architecture/" label="Lifecycle assurance architecture" %}
 </section>
-<section class="slide diagram-slide" id="slide-8" aria-labelledby="title-8">
-<p class="kicker">08 / Capability roadmap</p><h2 id="title-8">Evidence gates the next horizon</h2>
-<div class="slide-content">{% include diagrams/figure.html name="capability-horizons" label="Evidence gates the next horizon" %}</div>
-{% include slide-footer.html n="08" source="/docs/industry/operating-model/" label="Roadmap and measures" %}
+<section class="slide diagram-slide" id="slide-11" data-chapter="Capability and ownership" aria-labelledby="title-11">
+<p class="kicker">11 / Operating model</p><h2 id="title-11">Ownership across the quality lifecycle</h2>
+<div class="slide-content">{% include diagrams/figure.html name="ownership-system" label="Ownership across the quality lifecycle" %}</div>
+{% include slide-footer.html n="11" source="/docs/industry/operating-model/" label="Research and design basis" %}
 </section>
-<section class="slide diagram-slide" id="slide-9" aria-labelledby="title-9">
-<p class="kicker">09 / Technology strategy</p><h2 id="title-9">The platform outlasts a model</h2>
+<section class="slide" id="slide-12" data-chapter="Capability and ownership" aria-labelledby="title-12">
+<p class="kicker">12 / People and capability</p><h2 id="title-12">The quality role gains new disciplines</h2>
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Capability</th><th scope="col">What practitioners need to do</th><th scope="col">Observable learning evidence</th></tr></thead><tbody><tr><th scope="row">Test intent and oracles</th><td data-label="What practitioners need to do">Define expected behavior and challenge plausible but weak assertions.</td><td data-label="Observable learning evidence">A test catches a relevant fault and preserves the contract.</td></tr><tr><th scope="row">Evaluation and curation</th><td data-label="What practitioners need to do">Build representative cases; calibrate expert labels and model judges.</td><td data-label="Observable learning evidence">Evaluation results survive a held-out scenario review.</td></tr><tr><th scope="row">Agent assurance</th><td data-label="What practitioners need to do">Inspect tool authority, context boundaries and recovery behavior.</td><td data-label="Observable learning evidence">A denied-action exercise leaves no unauthorized side effect.</td></tr><tr><th scope="row">Workflow ownership</th><td data-label="What practitioners need to do">Measure review and correction work; coach teams through real tasks.</td><td data-label="Observable learning evidence">Task-level outcomes include the cost of verification.</td></tr></tbody></table>
+<p class="figure-note">Proposed capability agenda informed by research on verification work and lifecycle assurance; it is not a staffing reduction plan. {% include industry/cite.html ids="D02,G04,A01,E05" %}</p></div>
+{% include slide-footer.html n="12" source="/docs/industry/operating-model/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-13" data-chapter="Capability and ownership" aria-labelledby="title-13">
+<p class="kicker">13 / Technology strategy</p><h2 id="title-13">The platform outlasts a model</h2>
 <div class="slide-content">{% include diagrams/figure.html name="platform" label="The platform outlasts a model" %}</div>
-{% include slide-footer.html n="09" source="/docs/industry/architecture/" label="Shared assurance architecture" %}
+{% include slide-footer.html n="13" source="/docs/industry/architecture/" label="Shared assurance architecture" %}
 </section>
-<section class="slide " id="slide-10" aria-labelledby="title-10">
-<p class="kicker">10 / Leadership agenda</p><h2 id="title-10">The strategic choices ahead</h2>
+<section class="slide diagram-slide" id="slide-14" data-chapter="Capability and ownership" aria-labelledby="title-14">
+<p class="kicker">14 / Investment architecture</p><h2 id="title-14">Shared foundations and domain expertise</h2>
+<div class="slide-content">{% include diagrams/figure.html name="investment-stack" label="Shared foundations and domain expertise" %}</div>
+{% include slide-footer.html n="14" source="/docs/industry/operating-model/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-15" data-chapter="Roadmap and leadership" aria-labelledby="title-15">
+<p class="kicker">15 / Capability roadmap</p><h2 id="title-15">Evidence gates the next horizon</h2>
+<div class="slide-content">{% include diagrams/figure.html name="capability-horizons" label="Evidence gates the next horizon" %}</div>
+{% include slide-footer.html n="15" source="/docs/industry/operating-model/" label="Roadmap and measures" %}
+</section>
+<section class="slide diagram-slide" id="slide-16" data-chapter="Roadmap and leadership" aria-labelledby="title-16">
+<p class="kicker">16 / Strategic measures</p><h2 id="title-16">The leadership evidence contract</h2>
+<div class="slide-content">{% include diagrams/figure.html name="strategic-scorecard" label="The leadership evidence contract" %}</div>
+{% include slide-footer.html n="16" source="/docs/industry/operating-model/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-17" data-chapter="Roadmap and leadership" aria-labelledby="title-17">
+<p class="kicker">17 / Risk and accountability</p><h2 id="title-17">Governance follows the system lifecycle</h2>
+<div class="slide-content">{% include diagrams/figure.html name="governance-loop" label="Governance follows the system lifecycle" %}</div>
+{% include slide-footer.html n="17" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide " id="slide-18" data-chapter="Roadmap and leadership" aria-labelledby="title-18">
+<p class="kicker">18 / Leadership agenda</p><h2 id="title-18">The strategic choices ahead</h2>
 
 <div class="slide-content"><div class="three-up"><article class="pillar"><span class="step">Ambition</span><h3>Quality as a shared capability</h3><p>Choose the delivery constraints and AI risks the organization needs to address.</p></article><article class="pillar"><span class="step">Investment</span><h3>Foundations and people</h3><p>Develop evaluation skills, platform integration and accountable ownership.</p></article><article class="pillar"><span class="step">Expansion</span><h3>Value with evidence</h3><p>Grow the capabilities that improve outcomes within their control boundary.</p></article></div><div class="takeaway">Vision: AI contributes more work while the organization strengthens its ability to judge and govern that work.</div></div>
-{% include slide-footer.html n="10" source="/briefings/technical/" label="Continue to the architecture" %}
+{% include slide-footer.html n="18" source="/briefings/technical/" label="Continue to the architecture" %}
 </section>

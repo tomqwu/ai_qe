@@ -61,6 +61,8 @@
     }
     if (event.data?.type !== 'ai-qe:deck-height') return;
     const height = Number(event.data.height);
-    if (Number.isFinite(height) && height >= 200 && height <= 12000) frame.style.height = `${Math.ceil(height)}px`;
+    // Longer decks in mobile reading view can exceed 12,000 px. Bound the
+    // same-origin content height generously so the final slides stay reachable.
+    if (Number.isFinite(height) && height >= 200 && height <= 100000) frame.style.height = `${Math.ceil(height)}px`;
   });
 })();

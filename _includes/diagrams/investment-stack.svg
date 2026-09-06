@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" class="research-diagram" role="img" aria-labelledby="investment-stack-title"><title id="investment-stack-title">Proposed investment split between product-specific quality assets and reusable assurance services</title><defs><marker id="investment-stack-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<text x="30" y="35" class="lane-title" text-anchor="start">PRODUCT-SPECIFIC ASSETS</text>
+<g class="diagram-node ">
+<rect x="20" y="58" width="370" height="118" rx="8" class="node"/>
+<text x="36" y="86" class="node-title" text-anchor="start">Payments</text>
+<text x="36" y="109" class="node-text" text-anchor="start">Transaction invariants</text>
+<text x="36" y="129" class="node-text" text-anchor="start">Failure and recovery cases</text>
+</g>
+<g class="diagram-node ">
+<rect x="415" y="58" width="370" height="118" rx="8" class="node"/>
+<text x="431" y="86" class="node-title" text-anchor="start">Customer service AI</text>
+<text x="431" y="109" class="node-text" text-anchor="start">Grounded response criteria</text>
+<text x="431" y="129" class="node-text" text-anchor="start">Escalation and tool scenarios</text>
+</g>
+<g class="diagram-node ">
+<rect x="810" y="58" width="370" height="118" rx="8" class="node"/>
+<text x="826" y="86" class="node-title" text-anchor="start">Engineering workflows</text>
+<text x="826" y="109" class="node-text" text-anchor="start">Repository test contracts</text>
+<text x="826" y="129" class="node-text" text-anchor="start">Review and rework baselines</text>
+</g>
+<path d="M 205 176 V 231" class="edge" marker-end="url(#investment-stack-arrow)"/>
+<path d="M 600 176 V 231" class="edge" marker-end="url(#investment-stack-arrow)"/>
+<path d="M 995 176 V 231" class="edge" marker-end="url(#investment-stack-arrow)"/>
+<rect x="20" y="235" width="1160" height="106" rx="8" class="lane lane-teal"/>
+<text x="40" y="266" class="lane-title" text-anchor="start">REUSABLE ASSURANCE SERVICES</text>
+<text x="40" y="306" class="label" text-anchor="start">Dataset registry · Evaluation runners · Identity + gateway · Evidence store · Recovery tooling</text>
+<path d="M 600 341 V 390" class="edge" marker-end="url(#investment-stack-arrow)"/>
+<rect x="20" y="393" width="1160" height="76" rx="8" class="lane"/>
+<text x="40" y="425" class="lane-title" text-anchor="start">REPLACEABLE MODEL AND TOOL ADAPTERS</text>
+<text x="40" y="452" class="node-text" text-anchor="start">Procure capabilities against local tests; preserve access to configurations, artifacts and evidence.</text>
+</svg>
