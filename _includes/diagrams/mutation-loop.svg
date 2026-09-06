@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" class="research-diagram" role="img" aria-labelledby="mutation-loop-title"><title id="mutation-loop-title">Proposed mutation-guided test generation: one candidate must pass original code and detect a selected fault</title><defs><marker id="mutation-loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="58" width="270" height="121" rx="8" class="node node-sand"/>
+<text x="36" y="86" class="node-title" text-anchor="start">Fault concern</text>
+<text x="36" y="109" class="node-text" text-anchor="start">Fault: negative amount accepted</text>
+<text x="36" y="129" class="node-text" text-anchor="start">Select a relevant code mutation</text>
+</g>
+<g class="diagram-node ">
+<rect x="390" y="58" width="310" height="121" rx="8" class="node node-teal"/>
+<text x="406" y="86" class="node-title" text-anchor="start">Candidate test</text>
+<text x="406" y="109" class="node-text" text-anchor="start">Generate against the stated concern</text>
+<text x="406" y="129" class="node-text" text-anchor="start">Preserve the intended assertion</text>
+</g>
+<path d="M 290 119 H 388" class="edge" marker-end="url(#mutation-loop-arrow)"/>
+<g class="diagram-node ">
+<rect x="860" y="25" width="320" height="110" rx="8" class="node"/>
+<text x="876" y="53" class="node-title" text-anchor="start">Original implementation</text>
+<text x="876" y="76" class="node-text" text-anchor="start">Candidate passes</text>
+<text x="876" y="96" class="node-text" text-anchor="start">Expected behavior remains intact</text>
+</g>
+<g class="diagram-node ">
+<rect x="860" y="210" width="320" height="110" rx="8" class="node"/>
+<text x="876" y="238" class="node-title" text-anchor="start">Mutated implementation</text>
+<text x="876" y="261" class="node-text" text-anchor="start">Candidate fails for the target fault</text>
+<text x="876" y="281" class="node-text" text-anchor="start">Exclude equivalent / invalid mutants</text>
+</g>
+<path d="M 700 103 H 780 V 80 H 858" class="edge" marker-end="url(#mutation-loop-arrow)"/>
+<path d="M 700 147 H 780 V 265 H 858" class="edge" marker-end="url(#mutation-loop-arrow)"/>
+<g class="diagram-node ">
+<rect x="390" y="358" width="310" height="99" rx="8" class="node node-teal"/>
+<text x="406" y="386" class="node-title" text-anchor="start">Reviewable test evidence</text>
+<text x="406" y="409" class="node-text" text-anchor="start">Both results + mutation rationale</text>
+<text x="406" y="429" class="node-text" text-anchor="start">Human review before integration</text>
+</g>
+<path d="M 1180 80 H 1190 V 408 H 702" class="edge" marker-end="url(#mutation-loop-arrow)"/>
+<path d="M 1020 320 V 347 H 545 V 356" class="edge" marker-end="url(#mutation-loop-arrow)"/>
+<path d="M 390 408 H 335 V 160 H 292" class="edge edge-dashed" marker-end="url(#mutation-loop-arrow)"/>
+<text x="36" y="379" class="node-text" text-anchor="start">Refine the concern</text>
+</svg>

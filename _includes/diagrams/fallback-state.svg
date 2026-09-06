@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" class="research-diagram" role="img" aria-labelledby="fallback-state-title"><title id="fallback-state-title">Proposed recovery state machine for an AI workflow with bounded recovery authority</title><defs><marker id="fallback-state-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="60" width="260" height="120" rx="8" class="node node-teal"/>
+<text x="36" y="88" class="node-title" text-anchor="start">Normal operation</text>
+<text x="36" y="111" class="node-text" text-anchor="start">Approved configuration</text>
+<text x="36" y="131" class="node-text" text-anchor="start">Active monitoring</text>
+</g>
+<g class="diagram-node ">
+<rect x="360" y="60" width="280" height="120" rx="8" class="node node-sand"/>
+<text x="376" y="88" class="node-title" text-anchor="start">Containment</text>
+<text x="376" y="111" class="node-text" text-anchor="start">Stop consequential tool actions</text>
+<text x="376" y="131" class="node-text" text-anchor="start">Preserve relevant evidence</text>
+</g>
+<g class="diagram-node ">
+<rect x="760" y="60" width="420" height="120" rx="8" class="node"/>
+<text x="776" y="88" class="node-title" text-anchor="start">Fallback service</text>
+<text x="776" y="111" class="node-text" text-anchor="start">Use an approved previous route or manual queue</text>
+<text x="776" y="131" class="node-text" text-anchor="start">Protect the underlying business process</text>
+</g>
+<path d="M 280 119 H 358" class="edge" marker-end="url(#fallback-state-arrow)"/>
+<text x="287" y="42" class="edge-label" text-anchor="start">trigger</text>
+<path d="M 640 119 H 758" class="edge" marker-end="url(#fallback-state-arrow)"/>
+<text x="666" y="102" class="edge-label" text-anchor="start">route</text>
+<g class="diagram-node ">
+<rect x="760" y="328" width="420" height="113" rx="8" class="node"/>
+<text x="776" y="356" class="node-title" text-anchor="start">Recovery review</text>
+<text x="776" y="379" class="node-text" text-anchor="start">Diagnose, patch and rerun failure scenarios</text>
+<text x="776" y="399" class="node-text" text-anchor="start">Owner authorizes resumption</text>
+</g>
+<path d="M 970 180 V 326" class="edge" marker-end="url(#fallback-state-arrow)"/>
+<text x="984" y="249" class="edge-label" text-anchor="start">stable fallback</text>
+<path d="M 760 386 H 10 V 120 H 18" class="edge edge-dashed" marker-end="url(#fallback-state-arrow)"/>
+<text x="227" y="369" class="edge-label" text-anchor="start">approved recovery</text>
+<text x="32" y="252" class="lane-title" text-anchor="start">Example triggers</text>
+<text x="32" y="288" class="label" text-anchor="start">Provider outage, policy breach,</text>
+<text x="32" y="320" class="label" text-anchor="start">budget limit or severe regression</text>
+<text x="35" y="490" class="small" text-anchor="start">Reverting a model does not undo a completed side effect. Compensation and reconciliation need their own runbook.</text>
+</svg>

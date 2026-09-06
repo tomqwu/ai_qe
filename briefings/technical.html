@@ -4,67 +4,146 @@ title: Assurance architecture
 description: Research-informed AI and quality engineering — Technical SDs & leads · Architecture.
 audience: Technical SDs & leads · Architecture
 deck_class: technical-deck
-slide_count: 11
+slide_count: 26
 nav_exclude: true
 search_exclude: true
 permalink: /briefings/technical/
+briefing_minutes: "40–55"
 ---
-<section class="slide illustrated-cover" id="slide-1" aria-labelledby="title-1">
+<section class="slide illustrated-cover" id="slide-1" data-chapter="Architecture overview" aria-labelledby="title-1">
 <p class="kicker">Technical SDs &amp; leads · Architecture / September 2026</p><h2 id="title-1">Assurance across<br>the AI lifecycle</h2>
 <p class="cover-tag">AI × quality engineering · Industry research</p>
 <img class="cover-visual" src="{{ '/assets/images/industry/assurance-lab.webp' | relative_url }}" alt="Conceptual AI assurance laboratory with evaluation and human oversight" width="1536" height="1024">
 {% include slide-footer.html n="01" source="/docs/industry/" label="Research scope and sources" %}
 </section>
-<section class="slide diagram-slide" id="slide-2" aria-labelledby="title-2">
+<section class="slide diagram-slide" id="slide-2" data-chapter="Architecture overview" aria-labelledby="title-2">
 <p class="kicker">02 / Interactive platform architecture</p><h2 id="title-2">The enterprise assurance platform</h2>
 <div class="slide-content">{% include diagrams/figure.html name="platform" label="The enterprise assurance platform" %}</div>
 {% include slide-footer.html n="02" source="/docs/industry/architecture/" label="Architecture and research basis" %}
 </section>
-<section class="slide diagram-slide" id="slide-3" aria-labelledby="title-3">
+<section class="slide diagram-slide" id="slide-3" data-chapter="Architecture overview" aria-labelledby="title-3">
 <p class="kicker">03 / Runtime sequence</p><h2 id="title-3">A generated payment-API test</h2>
 <div class="slide-content">{% include diagrams/figure.html name="test-sequence" label="A generated payment-API test" %}</div>
 {% include slide-footer.html n="03" source="/docs/industry/architecture/" label="Boundary design and sources" %}
 </section>
-<section class="slide diagram-slide" id="slide-4" aria-labelledby="title-4">
+<section class="slide diagram-slide" id="slide-4" data-chapter="Architecture overview" aria-labelledby="title-4">
 <p class="kicker">04 / Industrial evidence</p><h2 id="title-4">Generated tests pass through quality gates</h2>
 <div class="slide-content">{% include diagrams/figure.html name="testgen-evidence" label="Generated tests pass through quality gates" %}</div>
 {% include slide-footer.html n="04" source="/docs/industry/evidence/" label="Industrial test-generation evidence" %}
 </section>
-<section class="slide diagram-slide" id="slide-5" aria-labelledby="title-5">
+<section class="slide diagram-slide" id="slide-5" data-chapter="Architecture overview" aria-labelledby="title-5">
 <p class="kicker">05 / AI application architecture</p><h2 id="title-5">Evaluation, release and feedback</h2>
 <div class="slide-content">{% include diagrams/figure.html name="evaluation-system" label="Evaluation, release and feedback" %}</div>
 {% include slide-footer.html n="05" source="/docs/industry/architecture/" label="Evaluation and release lifecycle" %}
 </section>
-<section class="slide " id="slide-6" aria-labelledby="title-6">
+<section class="slide " id="slide-6" data-chapter="Architecture overview" aria-labelledby="title-6">
 <p class="kicker">06 / Evaluation contract</p><h2 id="title-6">Application evaluation contract</h2>
 
 <div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Layer</th><th scope="col">Evidence</th><th scope="col">Validity check</th></tr></thead><tbody><tr><th scope="row">Task outcome</th><td data-label="Evidence">Representative cases and expected results</td><td data-label="Validity check">Held-out examples; results by scenario</td></tr><tr><th scope="row">Retrieval</th><td data-label="Evidence">Relevant, permitted and grounded evidence</td><td data-label="Validity check">Correct citations and access scope</td></tr><tr><th scope="row">Agent actions</th><td data-label="Evidence">Tool choice, arguments and termination</td><td data-label="Validity check">Denied-action and recovery tests</td></tr><tr><th scope="row">Model judges</th><td data-label="Evidence">Scores against a defined rubric</td><td data-label="Validity check">Calibration against expert labels</td></tr><tr><th scope="row">Operation</th><td data-label="Evidence">Latency, cost, drift and escalation</td><td data-label="Validity check">Tail failures and tested fallback</td></tr></tbody></table></div>
 {% include slide-footer.html n="06" source="/docs/industry/architecture/" label="Evaluation design and limitations" %}
 </section>
-<section class="slide diagram-slide" id="slide-7" aria-labelledby="title-7">
-<p class="kicker">07 / Agent threat model</p><h2 id="title-7">The tool authority boundary</h2>
+<section class="slide diagram-slide" id="slide-7" data-chapter="Context and test validity" aria-labelledby="title-7">
+<p class="kicker">07 / Context architecture</p><h2 id="title-7">Approved context and retrieval boundaries</h2>
+<div class="slide-content">{% include diagrams/figure.html name="context-route" label="Approved context and retrieval boundaries" %}</div>
+{% include slide-footer.html n="07" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-8" data-chapter="Context and test validity" aria-labelledby="title-8">
+<p class="kicker">08 / Configuration architecture</p><h2 id="title-8">The evaluated application has a release identity</h2>
+<div class="slide-content">{% include diagrams/figure.html name="configuration-bundle" label="The evaluated application has a release identity" %}</div>
+{% include slide-footer.html n="08" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-9" data-chapter="Context and test validity" aria-labelledby="title-9">
+<p class="kicker">09 / Test validity</p><h2 id="title-9">The source of expected behavior</h2>
+<div class="slide-content">{% include diagrams/figure.html name="test-oracle" label="The source of expected behavior" %}</div>
+{% include slide-footer.html n="09" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-10" data-chapter="Context and test validity" aria-labelledby="title-10">
+<p class="kicker">10 / Fault-detection architecture</p><h2 id="title-10">Mutation-guided test generation</h2>
+<div class="slide-content">{% include diagrams/figure.html name="mutation-loop" label="Mutation-guided test generation" %}</div>
+{% include slide-footer.html n="10" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-11" data-chapter="Context and test validity" aria-labelledby="title-11">
+<p class="kicker">11 / Industrial diagnosis</p><h2 id="title-11">Failure diagnosis with inspectable evidence</h2>
+<div class="slide-content">{% include diagrams/figure.html name="diagnosis-workflow" label="Failure diagnosis with inspectable evidence" %}</div>
+{% include slide-footer.html n="11" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-12" data-chapter="Context and test validity" aria-labelledby="title-12">
+<p class="kicker">12 / Test maintenance</p><h2 id="title-12">Flaky-test repair and semantic checks</h2>
+<div class="slide-content">{% include diagrams/figure.html name="flaky-repair" label="Flaky-test repair and semantic checks" %}</div>
+{% include slide-footer.html n="12" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-13" data-chapter="Evaluation and agent controls" aria-labelledby="title-13">
+<p class="kicker">13 / Dataset architecture</p><h2 id="title-13">The evaluation corpus lifecycle</h2>
+<div class="slide-content">{% include diagrams/figure.html name="corpus-design" label="The evaluation corpus lifecycle" %}</div>
+{% include slide-footer.html n="13" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide" id="slide-14" data-chapter="Evaluation and agent controls" aria-labelledby="title-14">
+<p class="kicker">14 / Evaluator validity</p><h2 id="title-14">Model judges need their own evaluation</h2>
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Check</th><th scope="col">Evaluation design</th><th scope="col">Release implication</th></tr></thead><tbody><tr><th scope="row">Agreement with experts</th><td data-label="Evaluation design">Compare judge decisions with independently reviewed labels, by failure category.</td><td data-label="Release implication">Investigate material disagreements before trusting aggregate scores.</td></tr><tr><th scope="row">False acceptance</th><td data-label="Evaluation design">Review cases where the judge passes an incorrect or unsafe output.</td><td data-label="Release implication">Critical false passes can require a deterministic rule or expert gate.</td></tr><tr><th scope="row">Consistency and bias</th><td data-label="Evaluation design">Repeat ambiguous cases; vary answer order in pairwise comparisons.</td><td data-label="Release implication">Record instability and sensitivity with the rubric version.</td></tr><tr><th scope="row">Separation from tuning</th><td data-label="Evaluation design">Keep calibration examples separate from final evaluation cases.</td><td data-label="Release implication">Recheck validity when the judge, prompt or task population changes.</td></tr></tbody></table>
+<p class="figure-note">Proposed calibration contract. No universal agreement threshold or judge accuracy is assumed. {% include industry/cite.html ids="A01,T03,T06" %}</p></div>
+{% include slide-footer.html n="14" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-15" data-chapter="Evaluation and agent controls" aria-labelledby="title-15">
+<p class="kicker">15 / Agent threat model</p><h2 id="title-15">The tool authority boundary</h2>
 <div class="slide-content">{% include diagrams/figure.html name="threat-boundary" label="The tool authority boundary" %}</div>
-{% include slide-footer.html n="07" source="/docs/industry/architecture/" label="Agent threats and control boundary" %}
+{% include slide-footer.html n="15" source="/docs/industry/architecture/" label="Agent threats and control boundary" %}
 </section>
-<section class="slide diagram-slide" id="slide-8" aria-labelledby="title-8">
-<p class="kicker">08 / Measurement architecture</p><h2 id="title-8">Link work, review and outcomes</h2>
+<section class="slide diagram-slide" id="slide-16" data-chapter="Evaluation and agent controls" aria-labelledby="title-16">
+<p class="kicker">16 / Enforcement sequence</p><h2 id="title-16">A denied action through the gateway</h2>
+<div class="slide-content">{% include diagrams/figure.html name="gateway-sequence" label="A denied action through the gateway" %}</div>
+{% include slide-footer.html n="16" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-17" data-chapter="Deployment and operations" aria-labelledby="title-17">
+<p class="kicker">17 / Deployment architecture</p><h2 id="title-17">Execution zones and production authority</h2>
+<div class="slide-content">{% include diagrams/figure.html name="execution-isolation" label="Execution zones and production authority" %}</div>
+{% include slide-footer.html n="17" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-18" data-chapter="Deployment and operations" aria-labelledby="title-18">
+<p class="kicker">18 / Release architecture</p><h2 id="title-18">Release floors and scenario-level decisions</h2>
+<div class="slide-content">{% include diagrams/figure.html name="release-gate" label="Release floors and scenario-level decisions" %}</div>
+{% include slide-footer.html n="18" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-19" data-chapter="Deployment and operations" aria-labelledby="title-19">
+<p class="kicker">19 / Resilience architecture</p><h2 id="title-19">Containment, fallback and recovery</h2>
+<div class="slide-content">{% include diagrams/figure.html name="fallback-state" label="Containment, fallback and recovery" %}</div>
+{% include slide-footer.html n="19" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-20" data-chapter="Deployment and operations" aria-labelledby="title-20">
+<p class="kicker">20 / Observability architecture</p><h2 id="title-20">Operational evidence and feedback</h2>
+<div class="slide-content">{% include diagrams/figure.html name="trace-pipeline" label="Operational evidence and feedback" %}</div>
+{% include slide-footer.html n="20" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-21" data-chapter="Deployment and operations" aria-labelledby="title-21">
+<p class="kicker">21 / Measurement architecture</p><h2 id="title-21">Link work, review and outcomes</h2>
 <div class="slide-content">{% include diagrams/figure.html name="evidence-model" label="Link work, review and outcomes" %}</div>
-{% include slide-footer.html n="08" source="/docs/industry/operating-model/" label="Balanced measurement contract" %}
+{% include slide-footer.html n="21" source="/docs/industry/operating-model/" label="Balanced measurement contract" %}
 </section>
-<section class="slide " id="slide-9" aria-labelledby="title-9">
-<p class="kicker">09 / Technology composition</p><h2 id="title-9">Tools occupy different assurance layers</h2>
+<section class="slide " id="slide-22" data-chapter="Integration and delivery" aria-labelledby="title-22">
+<p class="kicker">22 / Technology composition</p><h2 id="title-22">Tools occupy different assurance layers</h2>
 
 <div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Layer</th><th scope="col">Representative tools</th><th scope="col">Local proof</th></tr></thead><tbody><tr><th scope="row">Test assets</th><td data-label="Representative tools">Tosca · Applitools</td><td data-label="Local proof">Test validity; baseline quality</td></tr><tr><th scope="row">Change review</th><td data-label="Representative tools">GitHub Copilot</td><td data-label="Local proof">Issues found and missed; reviewer effort</td></tr><tr><th scope="row">AI evaluation</th><td data-label="Representative tools">LangSmith · Microsoft Foundry</td><td data-label="Local proof">Dataset fit; judge calibration; exportability</td></tr><tr><th scope="row">Adversarial testing</th><td data-label="Representative tools">Promptfoo</td><td data-label="Local proof">Coverage of actual tool authority</td></tr></tbody></table><p class="figure-note">Representative documentation, reviewed September 2026. Not a ranking or independent product benchmark. {% include industry/cite.html ids="T01,T02,T03,T04,T05,T06" %}</p></div>
-{% include slide-footer.html n="09" source="/docs/industry/landscape/" label="Product sources and selection criteria" %}
+{% include slide-footer.html n="22" source="/docs/industry/landscape/" label="Product sources and selection criteria" %}
 </section>
-<section class="slide " id="slide-10" aria-labelledby="title-10">
-<p class="kicker">10 / Proposed pilot promotion</p><h2 id="title-10">Value within quality and control floors</h2>
+<section class="slide" id="slide-23" data-chapter="Integration and delivery" aria-labelledby="title-23">
+<p class="kicker">23 / Interface architecture</p><h2 id="title-23">Integration contracts preserve replaceability</h2>
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Boundary</th><th scope="col">Minimum contract</th><th scope="col">Failure to exercise</th></tr></thead><tbody><tr><th scope="row">Task intake → runtime</th><td data-label="Minimum contract">Task ID, approved scope, context references and deadline.</td><td data-label="Failure to exercise">Reject missing scope or an unsupported task type.</td></tr><tr><th scope="row">Runtime → action gateway</th><td data-label="Minimum contract">Agent identity, tool schema, resource and authorization context.</td><td data-label="Failure to exercise">Deny wrong-resource calls and malformed arguments.</td></tr><tr><th scope="row">Runner → evidence store</th><td data-label="Minimum contract">Run ID, artifact hash, check results and configuration references.</td><td data-label="Failure to exercise">Hold incomplete evidence or mismatched artifacts.</td></tr><tr><th scope="row">Evaluation → release owner</th><td data-label="Minimum contract">Scenario results, threshold version, unresolved failures and decision record.</td><td data-label="Failure to exercise">Prevent promotion with stale or missing evaluation evidence.</td></tr></tbody></table>
+<p class="figure-note">Proposed interface requirements. Adapter compatibility and evidence export need local testing; ACS is a newly introduced standard with evolving implementation coverage. {% include industry/cite.html ids="A01,A03,A05,T03" %}</p></div>
+{% include slide-footer.html n="23" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide " id="slide-24" data-chapter="Integration and delivery" aria-labelledby="title-24">
+<p class="kicker">24 / Proposed pilot promotion</p><h2 id="title-24">Value within quality and control floors</h2>
 
 <div class="slide-content"><div class="three-up"><article class="pillar"><span class="metric">≥15%</span><h3>Net effort saving</h3><p>On at least one selected use case, after review and control work.</p></article><article class="pillar"><span class="metric">≥50%</span><h3>Eligible-task adoption</h3><p>Actual workflow use, with acceptance and abandonment recorded.</p></article><article class="pillar"><span class="metric">Within cap</span><h3>Operating cost</h3><p>Agreed ceiling and a Finance-confirmed capture mechanism.</p></article></div><div class="gate-floors"><strong>All floors must hold</strong><p>Quality, security and control requirements remain satisfied. A breach pauses the pilot and triggers review.</p></div><p class="figure-note">Proposed criteria from the existing pilot plan, not achieved results. The plan specifies stop signals and the 10–15% review band.</p></div>
-{% include slide-footer.html n="10" source="/docs/method/phased-pilot/" label="Full gate definitions and stop rules" %}
+{% include slide-footer.html n="24" source="/docs/method/phased-pilot/" label="Full gate definitions and stop rules" %}
 </section>
-<section class="slide diagram-slide" id="slide-11" aria-labelledby="title-11">
-<p class="kicker">11 / Research to implementation</p><h2 id="title-11">Architecture decisions with evidence</h2>
+<section class="slide" id="slide-25" data-chapter="Integration and delivery" aria-labelledby="title-25">
+<p class="kicker">25 / End-to-end architecture walkthrough</p><h2 id="title-25">A poisoned-document exercise</h2>
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Stage</th><th scope="col">Illustrative injected instruction</th><th scope="col">Expected evidence</th></tr></thead><tbody><tr><th scope="row">Context intake</th><td data-label="Illustrative injected instruction">A test specification asks the agent to export customer data to an external endpoint.</td><td data-label="Expected evidence">Source provenance retained; retrieved content has no authority to grant access.</td></tr><tr><th scope="row">Action request</th><td data-label="Illustrative injected instruction">The runtime attempts a tool call outside its approved sandbox scope.</td><td data-label="Expected evidence">Gateway denies the destination and resource before execution.</td></tr><tr><th scope="row">Containment</th><td data-label="Illustrative injected instruction">The denied request reaches the workflow’s escalation rule.</td><td data-label="Expected evidence">No network side effect; bounded termination and a correlated event record.</td></tr><tr><th scope="row">Regression and recovery</th><td data-label="Illustrative injected instruction">Reviewers confirm the scenario and the expected control response.</td><td data-label="Expected evidence">Sanitized case added to the adversarial corpus; recovery verified before retry.</td></tr></tbody></table>
+<p class="figure-note">Illustrative exercise, not an observed incident or a guarantee that all injection paths are covered. {% include industry/cite.html ids="A03,A04,R01" %}</p></div>
+{% include slide-footer.html n="25" source="/docs/industry/architecture/" label="Research and design basis" %}
+</section>
+<section class="slide diagram-slide" id="slide-26" data-chapter="Integration and delivery" aria-labelledby="title-26">
+<p class="kicker">26 / Research to implementation</p><h2 id="title-26">Architecture decisions with evidence</h2>
 <div class="slide-content">{% include diagrams/figure.html name="research-decisions" label="Architecture decisions with evidence" %}</div>
-{% include slide-footer.html n="11" source="/docs/industry/library/" label="Research documents and methods" %}
+{% include slide-footer.html n="26" source="/docs/industry/library/" label="Research documents and methods" %}
 </section>

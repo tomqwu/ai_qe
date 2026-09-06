@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" class="research-diagram" role="img" aria-labelledby="diagnosis-workflow-title"><title id="diagnosis-workflow-title">Proposed failure diagnosis workflow with log citations, review and separate accuracy and deployment populations</title><defs><marker id="diagnosis-workflow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="55" width="260" height="112" rx="8" class="node"/>
+<text x="36" y="83" class="node-title" text-anchor="start">Failing integration test</text>
+<text x="36" y="106" class="node-text" text-anchor="start">Sanitized logs and trace IDs</text>
+<text x="36" y="126" class="node-text" text-anchor="start">Relevant change context</text>
+</g>
+<g class="diagram-node ">
+<rect x="335" y="55" width="260" height="112" rx="8" class="node node-teal"/>
+<text x="351" y="83" class="node-title" text-anchor="start">Diagnostic assistant</text>
+<text x="351" y="106" class="node-text" text-anchor="start">Extract relevant log lines</text>
+<text x="351" y="126" class="node-text" text-anchor="start">Suggest a cause with evidence</text>
+</g>
+<g class="diagram-node ">
+<rect x="650" y="55" width="250" height="112" rx="8" class="node"/>
+<text x="666" y="83" class="node-title" text-anchor="start">Engineer review</text>
+<text x="666" y="106" class="node-text" text-anchor="start">Confirm or correct the cause</text>
+<text x="666" y="126" class="node-text" text-anchor="start">Route the actual remediation</text>
+</g>
+<g class="diagram-node ">
+<rect x="955" y="55" width="225" height="112" rx="8" class="node"/>
+<text x="971" y="83" class="node-title" text-anchor="start">Outcome record</text>
+<text x="971" y="106" class="node-text" text-anchor="start">Accepted / corrected</text>
+<text x="971" y="126" class="node-text" text-anchor="start">Diagnosis effort</text>
+</g>
+<path d="M 280 111 H 333" class="edge" marker-end="url(#diagnosis-workflow-arrow)"/>
+<path d="M 595 111 H 648" class="edge" marker-end="url(#diagnosis-workflow-arrow)"/>
+<path d="M 900 111 H 953" class="edge" marker-end="url(#diagnosis-workflow-arrow)"/>
+<rect x="20" y="245" width="565" height="185" rx="8" class="lane lane-teal"/>
+<text x="42" y="284" class="lane-title" text-anchor="start">GOOGLE: REVIEWED ACCURACY SAMPLE</text>
+<text x="42" y="353" class="big-stat" text-anchor="start">90.14%</text>
+<text x="295" y="339" class="node-text" text-anchor="start">71 manually evaluated failures</text>
+<text x="42" y="397" class="node-text" text-anchor="start">Root-cause accuracy in the reported case study</text>
+<rect x="610" y="245" width="570" height="185" rx="8" class="lane"/>
+<text x="632" y="284" class="lane-title" text-anchor="start">GOOGLE: DEPLOYMENT POPULATION</text>
+<text x="632" y="353" class="big-stat" text-anchor="start">52,635</text>
+<text x="897" y="339" class="node-text" text-anchor="start">distinct failing tests</text>
+<text x="632" y="397" class="node-text" text-anchor="start">A separate population; accuracy was not measured on all of it</text>
+<text x="35" y="478" class="small" text-anchor="start">Local pilot: blinded review of sampled causes, evidence correctness and total diagnosis effort.</text>
+</svg>

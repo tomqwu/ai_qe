@@ -16,9 +16,23 @@ Start with the strategic vision or go deeper into the delivery architecture. The
 
 ## What each briefing covers
 
-**EVP · Strategic vision.** The industry outlook, dual quality mandate, organizational constraints, value logic, ownership and capability roadmap.
+**EVP · Strategic vision — 18 slides.** The industry outlook, dual quality mandate, value logic, industrial cases, portfolio choices, ownership, skills, shared investment and leadership evidence. Allow 25–35 minutes with discussion.
 
-**Technical SDs & leads · Delivery architecture.** An agent control boundary, test-generation pipeline, AI evaluation lifecycle, adversarial coverage, telemetry, technology layers and promotion gates.
+**Technical SDs & leads · Assurance architecture — 26 slides.** Context and configuration boundaries, test oracles, mutation testing, diagnosis and repair, evaluation datasets, judge calibration, tool enforcement, isolation, release, recovery, observability and integration contracts. Allow 40–55 minutes with discussion.
+
+## Jump into a chapter
+
+| Audience | Chapter | Slides |
+|---|---|---|
+| EVP | [Vision and value]({{ '/briefings/evp/' | relative_url }}#slide-1) | 1–5 |
+| EVP | [Industry and portfolio]({{ '/briefings/evp/' | relative_url }}#slide-6) | 6–8 |
+| EVP | [Capability and ownership]({{ '/briefings/evp/' | relative_url }}#slide-9) | 9–14 |
+| EVP | [Roadmap and leadership]({{ '/briefings/evp/' | relative_url }}#slide-15) | 15–18 |
+| Technical | [Architecture overview]({{ '/briefings/technical/' | relative_url }}#slide-1) | 1–6 |
+| Technical | [Context and test validity]({{ '/briefings/technical/' | relative_url }}#slide-7) | 7–12 |
+| Technical | [Evaluation and agent controls]({{ '/briefings/technical/' | relative_url }}#slide-13) | 13–16 |
+| Technical | [Deployment and operations]({{ '/briefings/technical/' | relative_url }}#slide-17) | 17–21 |
+| Technical | [Integration and delivery]({{ '/briefings/technical/' | relative_url }}#slide-22) | 22–26 |
 
 These are research-informed perspectives and a proposed pilot architecture. They do not report a deployed bank solution or measured bank results. The [research log]({{ '/docs/research-log/' | relative_url }}) records verification dates; [reading the evidence]({{ '/docs/evidence/reading-the-evidence/' | relative_url }}) explains the limits of external benchmarks.
 

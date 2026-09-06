@@ -48,6 +48,20 @@ OWASP's 2026 LLM guidance covers the model as an application component; its agen
 
 {% include diagrams/figure.html name="threat-boundary" label="Agent threat model" %}
 
+## Detailed architecture walkthroughs
+
+The expanded technical briefing develops the logical platform into concrete boundaries and failure paths. These are authored designs informed by the source library, not claims that a publisher or institution uses this exact architecture.
+
+| Architecture concern | Visual walkthrough |
+|---|---|
+| Context and reproducibility | [Permission-aware retrieval]({{ '/briefings/technical/' | relative_url }}#slide-7) and [versioned release manifest]({{ '/briefings/technical/' | relative_url }}#slide-8) |
+| Generated-test validity | [Independent expected behavior]({{ '/briefings/technical/' | relative_url }}#slide-9) and [mutation-guided tests]({{ '/briefings/technical/' | relative_url }}#slide-10) |
+| Test operations | [Evidence-linked failure diagnosis]({{ '/briefings/technical/' | relative_url }}#slide-11) and [flaky-test repair]({{ '/briefings/technical/' | relative_url }}#slide-12) |
+| Evaluation assets | [Corpus lifecycle]({{ '/briefings/technical/' | relative_url }}#slide-13) and [judge calibration]({{ '/briefings/technical/' | relative_url }}#slide-14) |
+| Agent authority | [Denied-action sequence]({{ '/briefings/technical/' | relative_url }}#slide-16) and [execution zones]({{ '/briefings/technical/' | relative_url }}#slide-17) |
+| Release and resilience | [Release decision logic]({{ '/briefings/technical/' | relative_url }}#slide-18) and [fallback state machine]({{ '/briefings/technical/' | relative_url }}#slide-19) |
+| Operational evidence | [Telemetry pipeline]({{ '/briefings/technical/' | relative_url }}#slide-20) and [integration contracts]({{ '/briefings/technical/' | relative_url }}#slide-23) |
+
 ## Financial-services context
 
 OSFI's July 2026 Technology Risk Bulletin discusses identity, tool restrictions, testing, traceability and resilience for generative and agentic AI. It complements existing guidelines with sound practices. E-23's revised model-risk guideline is **effective 1 May 2027**; determine system applicability with the institution's model-risk function. {% include industry/cite.html ids="R01,R02" %}

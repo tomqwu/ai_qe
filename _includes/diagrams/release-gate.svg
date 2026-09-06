@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" class="research-diagram" role="img" aria-labelledby="release-gate-title"><title id="release-gate-title">Proposed release decision logic with mandatory floors and scenario-level evaluation</title><defs><marker id="release-gate-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="60" width="275" height="133" rx="8" class="node"/>
+<text x="36" y="88" class="node-title" text-anchor="start">Comparable runs</text>
+<text x="36" y="111" class="node-text" text-anchor="start">Same held-out corpus</text>
+<text x="36" y="131" class="node-text" text-anchor="start">Recorded configuration versions</text>
+<text x="36" y="151" class="node-text" text-anchor="start">Repeated runs where needed</text>
+</g>
+<g class="diagram-node ">
+<rect x="385" y="60" width="340" height="133" rx="8" class="node node-teal"/>
+<text x="401" y="88" class="node-title" text-anchor="start">Mandatory floors</text>
+<text x="401" y="111" class="node-text" text-anchor="start">Critical behavior and security tests</text>
+<text x="401" y="131" class="node-text" text-anchor="start">Denied actions and privacy scenarios</text>
+<text x="401" y="151" class="node-text" text-anchor="start">Latency / cost limits for the workflow</text>
+</g>
+<g class="diagram-node ">
+<rect x="830" y="25" width="350" height="106" rx="8" class="node node-sand"/>
+<text x="846" y="53" class="node-title" text-anchor="start">Hold and investigate</text>
+<text x="846" y="76" class="node-text" text-anchor="start">Any mandatory floor fails</text>
+<text x="846" y="96" class="node-text" text-anchor="start">Retain the failing scenario</text>
+</g>
+<g class="diagram-node ">
+<rect x="830" y="236" width="350" height="124" rx="8" class="node"/>
+<text x="846" y="264" class="node-title" text-anchor="start">Release review</text>
+<text x="846" y="287" class="node-text" text-anchor="start">Inspect scenario-level regressions</text>
+<text x="846" y="307" class="node-text" text-anchor="start">Weigh gains and remaining uncertainty</text>
+<text x="846" y="327" class="node-text" text-anchor="start">Approve a bounded rollout</text>
+</g>
+<path d="M 295 127 H 383" class="edge" marker-end="url(#release-gate-arrow)"/>
+<path d="M 725 100 H 777 V 78 H 828" class="edge" marker-end="url(#release-gate-arrow)"/>
+<text x="738" y="64" class="edge-label" text-anchor="start">fail</text>
+<path d="M 725 159 H 777 V 298 H 828" class="edge" marker-end="url(#release-gate-arrow)"/>
+<text x="739" y="212" class="edge-label" text-anchor="start">pass</text>
+<rect x="20" y="423" width="1160" height="52" rx="8" class="lane lane-teal"/>
+<text x="40" y="456" class="node-text" text-anchor="start">A higher average score cannot override a failed critical scenario. Thresholds are agreed locally.</text>
+</svg>

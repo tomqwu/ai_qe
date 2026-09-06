@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" class="research-diagram" role="img" aria-labelledby="opportunity-map-title"><title id="opportunity-map-title">Proposed portfolio screen by action authority and ease of verifying the result</title><defs><marker id="opportunity-map-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<rect x="180" y="42" width="475" height="185" rx="8" class="lane lane-teal"/>
+<rect x="675" y="42" width="495" height="185" rx="8" class="lane lane-sand"/>
+<rect x="180" y="245" width="475" height="185" rx="8" class="lane"/>
+<rect x="675" y="245" width="495" height="185" rx="8" class="lane lane-sand"/>
+<text x="20" y="97" class="node-title" text-anchor="start">Easy to verify</text>
+<text x="20" y="300" class="node-title" text-anchor="start">Needs expert</text>
+<text x="20" y="327" class="node-title" text-anchor="start">judgment</text>
+<text x="200" y="77" class="lane-title" text-anchor="start">BOUNDED STARTING POINTS</text>
+<text x="200" y="119" class="label" text-anchor="start">Test drafts with an executable contract</text>
+<text x="200" y="153" class="node-text" text-anchor="start">Failure summaries linked to logs</text>
+<text x="695" y="77" class="lane-title" text-anchor="start">CONTROLLED EXECUTION</text>
+<text x="695" y="119" class="label" text-anchor="start">Sandbox test execution</text>
+<text x="695" y="153" class="node-text" text-anchor="start">Draft pull requests through scoped tools</text>
+<text x="200" y="280" class="lane-title" text-anchor="start">BUILD THE EVALUATION CAPABILITY</text>
+<text x="200" y="325" class="label" text-anchor="start">Risk analysis and exploratory test ideas</text>
+<text x="200" y="363" class="node-text" text-anchor="start">Expert review defines useful output</text>
+<text x="695" y="280" class="lane-title" text-anchor="start">SEPARATE AUTHORITY DECISION</text>
+<text x="695" y="325" class="label" text-anchor="start">Production changes and customer actions</text>
+<text x="695" y="363" class="node-text" text-anchor="start">Require action-level evidence and recovery</text>
+<path d="M 180 452 H 1170" class="axis-line" marker-end="url(#opportunity-map-arrow)"/>
+<text x="190" y="488" class="node-text" text-anchor="start">Advice / draft artifacts</text>
+<text x="860" y="488" class="node-text" text-anchor="start">Greater action authority</text>
+</svg>

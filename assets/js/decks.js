@@ -13,11 +13,17 @@
   const message = document.querySelector('.deck-message');
   let index = Math.max(0, slides.findIndex(slide => `#${slide.id}` === location.hash));
   let readAll = false;
+  let chapterGroup;
   slides.forEach((slide, number) => {
+    if (slide.dataset.chapter && chapterGroup?.label !== slide.dataset.chapter) {
+      chapterGroup = document.createElement('optgroup');
+      chapterGroup.label = slide.dataset.chapter;
+      picker.append(chapterGroup);
+    }
     const option = document.createElement('option');
     option.value = String(number);
     option.textContent = `${String(number + 1).padStart(2, '0')} / ${slide.querySelector('h2').innerText.replace(/\s+/g, ' ')}`;
-    picker.append(option);
+    (chapterGroup || picker).append(option);
     slide.setAttribute('aria-roledescription', 'slide');
   });
   function notifyHeight() {

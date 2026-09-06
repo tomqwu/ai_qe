@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" class="research-diagram" role="img" aria-labelledby="governance-loop-title"><title id="governance-loop-title">Proposed governance loop connecting system inventory, authority, evidence and ongoing review</title><defs><marker id="governance-loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="70" width="290" height="113" rx="8" class="node node-teal"/>
+<text x="36" y="98" class="node-title" text-anchor="start">System inventory</text>
+<text x="36" y="121" class="node-text" text-anchor="start">Purpose and critical dependencies</text>
+<text x="36" y="141" class="node-text" text-anchor="start">Named accountable owner</text>
+</g>
+<g class="diagram-node ">
+<rect x="455" y="70" width="290" height="113" rx="8" class="node"/>
+<text x="471" y="98" class="node-title" text-anchor="start">Authority and appetite</text>
+<text x="471" y="121" class="node-text" text-anchor="start">Allowed data and actions</text>
+<text x="471" y="141" class="node-text" text-anchor="start">Escalation and stop conditions</text>
+</g>
+<g class="diagram-node ">
+<rect x="890" y="70" width="290" height="113" rx="8" class="node"/>
+<text x="906" y="98" class="node-title" text-anchor="start">Evidence review</text>
+<text x="906" y="121" class="node-text" text-anchor="start">Evaluation and control results</text>
+<text x="906" y="141" class="node-text" text-anchor="start">Exceptions and unresolved risks</text>
+</g>
+<path d="M 310 126 H 453" class="edge" marker-end="url(#governance-loop-arrow)"/>
+<path d="M 745 126 H 888" class="edge" marker-end="url(#governance-loop-arrow)"/>
+<g class="diagram-node ">
+<rect x="455" y="310" width="290" height="104" rx="8" class="node node-sand"/>
+<text x="471" y="338" class="node-title" text-anchor="start">Operational review</text>
+<text x="471" y="361" class="node-text" text-anchor="start">Incidents and service changes</text>
+<text x="471" y="381" class="node-text" text-anchor="start">Revisit scope and authority</text>
+</g>
+<path d="M 1035 183 V 362 H 747" class="edge" marker-end="url(#governance-loop-arrow)"/>
+<path d="M 455 362 H 165 V 185" class="edge edge-dashed" marker-end="url(#governance-loop-arrow)"/>
+<text x="891" y="240" class="node-text" text-anchor="start">Approved scope</text>
+<text x="24" y="282" class="node-text" text-anchor="start">New evidence</text>
+<rect x="20" y="450" width="1160" height="52" rx="8" class="lane lane-teal"/>
+<text x="40" y="483" class="node-text" text-anchor="start">OSFI context: July 2026 bulletin = sound practices; revised E-23 takes effect 1 May 2027.</text>
+</svg>
