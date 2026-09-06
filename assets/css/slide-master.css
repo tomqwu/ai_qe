@@ -54,11 +54,6 @@ body.deck-page { min-height: 100dvh; padding-bottom: 64px; }
 .deck-page.reading-view .slide { aspect-ratio: auto; min-height: 600px; margin-bottom: 24px; overflow: visible; }
 .deck-page.reading-view .slide-content { overflow: visible; }
 .reading-view .research-figure > figcaption, .reading-view .research-rationale, .reading-view .architecture-inspector { display: block; }
-.diagram-view-controls { display: flex; gap: 8px; margin-bottom: 5px; }
-.diagram-view-controls button { font: inherit; font-size: 13px; padding: 3px 9px; color: #096d69; background: white; border: 1px solid #a5bbb3; border-radius: 4px; cursor: pointer; }
-.diagram-overview { list-style: none; padding: 0; margin: 12px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-.diagram-overview li { background: #eef4ef; border-left: 3px solid #096d69; padding: 12px; }
-.diagram-overview strong { display: block; color: #152e40; margin-bottom: 4px; }
 .deck-page .diagram-view-controls { position: relative; margin-bottom: .2cqw; }
 .deck-page .diagram-view-controls button { font-size: 1.15cqw; }
 .deck-page .illustrated-cover h2 { min-height: 0; font-size: 5cqw; max-width: 16ch; }
