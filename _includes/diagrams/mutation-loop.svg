@@ -8,21 +8,22 @@
 <g class="diagram-node ">
 <rect x="390" y="58" width="310" height="121" rx="8" class="node node-teal"/>
 <text x="406" y="86" class="node-title" text-anchor="start">Candidate test</text>
-<text x="406" y="109" class="node-text" text-anchor="start">Generate for the stated concern</text>
-<text x="406" y="129" class="node-text" text-anchor="start">Preserve the intended assertion</text>
+<text x="406" y="109" class="node-text" text-anchor="start">Generate for stated concern</text>
+<text x="406" y="129" class="node-text" text-anchor="start">Preserve intended assertion</text>
 </g>
 <path d="M 290 119 H 388" class="edge" marker-end="url(#mutation-loop-arrow)"/>
 <g class="diagram-node ">
 <rect x="860" y="25" width="320" height="110" rx="8" class="node"/>
 <text x="876" y="53" class="node-title" text-anchor="start">Original implementation</text>
 <text x="876" y="76" class="node-text" text-anchor="start">Candidate passes</text>
-<text x="876" y="96" class="node-text" text-anchor="start">Expected behavior remains intact</text>
+<text x="876" y="96" class="node-text" text-anchor="start">Preserve expected behavior</text>
 </g>
 <g class="diagram-node ">
 <rect x="860" y="210" width="320" height="110" rx="8" class="node"/>
 <text x="876" y="238" class="node-title" text-anchor="start">Mutated implementation</text>
-<text x="876" y="261" class="node-text" text-anchor="start">Candidate fails for the target fault</text>
-<text x="876" y="281" class="node-text" text-anchor="start">Exclude invalid / equivalent faults</text>
+<text x="876" y="261" class="node-text" text-anchor="start">Test fails for target fault</text>
+<text x="876" y="281" class="node-text" text-anchor="start">Exclude invalid faults</text>
+<text x="876" y="301" class="node-text" text-anchor="start">Exclude equivalent faults</text>
 </g>
 <path d="M 700 103 H 780 V 80 H 858" class="edge" marker-end="url(#mutation-loop-arrow)"/>
 <path d="M 700 147 H 780 V 265 H 858" class="edge" marker-end="url(#mutation-loop-arrow)"/>

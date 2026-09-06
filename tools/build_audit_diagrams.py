@@ -18,13 +18,13 @@ for x,title,line in [(20,'Interpret requirement','Interpret intent'),(325,'Write
  s.node(x,65,245,94,title,(line,));
  if x<935:s.path(f'M {x+245} 112 H {x+303}')
 s.text(20,222,'PROPOSED TARGET · NEGATIVE PAYMENT AMOUNTS MUST BE REJECTED','lane-title')
-for x,title,lines in [(20,'Domain contract',('Owner-approved behavior','Versioned test oracle')),(325,'Bounded generation',('Permitted context only','Sandbox candidate tests')),(630,'Independent proof',('Original passes','Mutant fails','Reviewer decides')),(935,'Evidence-led release',('Existing release owner','Failure → new test case'))]:
+for x,title,lines in [(20,'Domain contract',('Owner-approved rule','Versioned test oracle')),(325,'Bounded generation',('Permitted context only','Sandbox tests')),(630,'Independent proof',('Original passes','Mutant fails','Reviewer decides')),(935,'Evidence-led release',('Existing release owner','Failure → new test case'))]:
  s.node(x,250,245,126,title,lines,'node node-teal')
  if x<935:s.path(f'M {x+245} 310 H {x+303}')
 s.text(20,435,'Shared: identity, evaluation runners, evidence schema. Domain: payment rules, test cases, acceptance and service outcomes.','small')
 finish(s,'E04,E05,D02,A03','Illustrative financial-services workflow · current-state row is a hypothesis, not an observed bank condition.','Test-generation studies use quality gates; verification work remains part of the workflow.','Join a domain-owned payment contract to shared evidence services and existing release authority.','The current-state hypothesis has local interpretation, test writing, review and late evidence assembly. The target versions the approved payment rule, generates tests in a scoped sandbox, independently checks fault detection and retains the reviewer decision and release evidence.')
 s=SVG('contract-chain','Four joined artifacts for payment API test generation',1200,435)
-for x,title,lines in [(20,'Task envelope',('PAY-042 · payments-api','Contract / context hashes','Scope, deadline, budget')),(325,'Policy decision',('DEC-042 · policy v7','Allow sandbox test only','Identity + expiry binding')),(630,'Evaluation manifest',('EVAL-042 · corpus v3','Original passes','Mutant fails','Artifact + runner hashes')),(935,'Evidence record',('RUN-042 · review pending','Links all three artifacts','No self-approval'))]:
+for x,title,lines in [(20,'Task envelope',('PAY-042 · payments-api','Versioned input hashes','Scope · expiry · budget')),(325,'Policy decision',('DEC-042 · policy v7','Allow sandbox test only','Identity + expiry binding')),(630,'Evaluation manifest',('EVAL-042 · corpus v3','Original passes','Mutant fails','Artifact + runner hashes')),(935,'Evidence record',('RUN-042 · review held','Links all three artifacts','No self-approval'))]:
  s.node(x,80,245,180,title,lines,'node node-teal' if x in (325,935) else 'node')
  if x<935:s.path(f'M {x+245} 169 H {x+303}')
 s.rect(20,305,1160,100,'lane');s.text(42,338,'Every boundary verifies identity, versions, expiry, resource scope and the same artifact digest.','label');s.text(42,372,'Mismatch, unavailable authorization or missing durable evidence → hold; no promotion.','node-text')

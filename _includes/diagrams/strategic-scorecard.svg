@@ -36,7 +36,7 @@
 </g>
 <g class="diagram-node ">
 <rect x="370" y="256" width="405" height="76" rx="8" class="node"/>
-<text x="386" y="284" class="node-title" text-anchor="start">Results across teams and task cohorts</text>
+<text x="386" y="284" class="node-title" text-anchor="start">Results by team and task</text>
 </g>
 <g class="diagram-node ">
 <rect x="820" y="256" width="360" height="76" rx="8" class="node node-sand"/>
@@ -50,7 +50,7 @@
 </g>
 <g class="diagram-node ">
 <rect x="370" y="355" width="405" height="76" rx="8" class="node"/>
-<text x="386" y="383" class="node-title" text-anchor="start">Denied actions and recovery exercises</text>
+<text x="386" y="383" class="node-title" text-anchor="start">Denials and recovery tests</text>
 </g>
 <g class="diagram-node ">
 <rect x="820" y="355" width="360" height="76" rx="8" class="node node-sand"/>

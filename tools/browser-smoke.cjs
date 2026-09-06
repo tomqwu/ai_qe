@@ -23,10 +23,15 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
      assert.ok(metrics.navTop>=0 && metrics.navBottom<=metrics.h+1, 'Navigation outside viewport');
      if(viewport.width>700) {assert.ok(metrics.slideBottom<=metrics.navTop+1,`${audience}/${i+1}: slide behind navigation`);assert.ok(metrics.overflow<=3,`${audience}/${i+1} at ${viewport.width}: ${metrics.overflow}px content overflow`);}
      if(viewport.width===1280) {
-      const overflowLabels=await page.locator(`#slide-${i+1}`).evaluate(s=>[...s.querySelectorAll('.diagram-node')].flatMap(node=>{
-       const r=node.querySelector('rect').getBBox();return [...node.querySelectorAll('text')].filter(t=>{const b=t.getBBox();return b.x+b.width>r.x+r.width-3 || b.y+b.height>r.y+r.height-2;}).map(t=>t.textContent);
-      }));
-      assert.deepEqual(overflowLabels,[],`${audience}/${i+1}: labels exceed node boundaries`);
+      // Validate both the bundled font and a wider fallback used while fonts load.
+      for (const font of ['bundled','fallback']) {
+       const override=font==='fallback'?await page.addStyleTag({content:'.research-diagram {font-family: Arial, sans-serif !important}'}):null;
+       const overflowLabels=await page.locator(`#slide-${i+1}`).evaluate(s=>[...s.querySelectorAll('.diagram-node')].flatMap(node=>{
+        const r=node.querySelector('rect').getBBox();return [...node.querySelectorAll('text')].filter(t=>{const b=t.getBBox();return b.x+b.width>r.x+r.width-3 || b.y+b.height>r.y+r.height-2;}).map(t=>t.textContent);
+       }));
+       if(override)await override.evaluate(el=>el.remove());
+       assert.deepEqual(overflowLabels,[],`${audience}/${i+1} (${font}): labels exceed node boundaries`);
+      }
      }
      checked++;
     }

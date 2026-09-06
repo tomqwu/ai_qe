@@ -51,7 +51,7 @@
 <g class="diagram-node ">
 <rect x="388" y="365" width="358" height="104" rx="8" class="node"/>
 <text x="404" y="393" class="node-title" text-anchor="start">Production monitoring</text>
-<text x="404" y="416" class="node-text" text-anchor="start">Task outcomes · drift · denied actions</text>
+<text x="404" y="416" class="node-text" text-anchor="start">Outcomes · drift · denials</text>
 <text x="404" y="436" class="node-text" text-anchor="start">Trace samples · incidents · rework</text>
 </g>
 <path d="M 856 417 H 748" class="edge" marker-end="url(#evaluation-system-arrow)"/>
@@ -59,7 +59,7 @@
 <rect x="20" y="365" width="298" height="104" rx="8" class="node"/>
 <text x="36" y="393" class="node-title" text-anchor="start">Case curation</text>
 <text x="36" y="416" class="node-text" text-anchor="start">Review oracle + privacy</text>
-<text x="36" y="436" class="node-text" text-anchor="start">Add failures to regression suite</text>
+<text x="36" y="436" class="node-text" text-anchor="start">Add failures to regression</text>
 </g>
 <path d="M 388 417 H 320" class="edge" marker-end="url(#evaluation-system-arrow)"/>
 <path d="M 169 365 V 292" class="edge edge-dashed" marker-end="url(#evaluation-system-arrow)"/>

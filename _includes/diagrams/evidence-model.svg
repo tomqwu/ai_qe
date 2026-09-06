@@ -4,7 +4,7 @@
 <text x="36" y="60" class="node-title" text-anchor="start">Task</text>
 <text x="36" y="83" class="node-text" text-anchor="start">Task ID · type · complexity</text>
 <text x="36" y="103" class="node-text" text-anchor="start">Eligible cohort + baseline</text>
-<text x="36" y="123" class="node-text" text-anchor="start">Preparation + active execution</text>
+<text x="36" y="123" class="node-text" text-anchor="start">Preparation + execution</text>
 </g>
 <g class="diagram-node ">
 <rect x="449" y="32" width="304" height="133" rx="8" class="node node-teal"/>
@@ -17,8 +17,8 @@
 <rect x="884" y="32" width="296" height="133" rx="8" class="node"/>
 <text x="900" y="60" class="node-title" text-anchor="start">Review</text>
 <text x="900" y="83" class="node-text" text-anchor="start">review_id → run_id</text>
-<text x="900" y="103" class="node-text" text-anchor="start">Decision + active human effort</text>
-<text x="900" y="123" class="node-text" text-anchor="start">Rework + independent checks</text>
+<text x="900" y="103" class="node-text" text-anchor="start">Decision + human effort</text>
+<text x="900" y="123" class="node-text" text-anchor="start">Rework + checks</text>
 </g>
 <g class="diagram-node ">
 <rect x="884" y="283" width="296" height="133" rx="8" class="node"/>

@@ -27,7 +27,7 @@
 <g class="diagram-node ">
 <rect x="20" y="250" width="245" height="126" rx="8" class="node node-teal"/>
 <text x="36" y="278" class="node-title" text-anchor="start">Domain contract</text>
-<text x="36" y="301" class="node-text" text-anchor="start">Owner-approved behavior</text>
+<text x="36" y="301" class="node-text" text-anchor="start">Owner-approved rule</text>
 <text x="36" y="321" class="node-text" text-anchor="start">Versioned test oracle</text>
 </g>
 <path d="M 265 310 H 323" class="edge" marker-end="url(#bank-workflow-arrow)"/>
@@ -35,7 +35,7 @@
 <rect x="325" y="250" width="245" height="126" rx="8" class="node node-teal"/>
 <text x="341" y="278" class="node-title" text-anchor="start">Bounded generation</text>
 <text x="341" y="301" class="node-text" text-anchor="start">Permitted context only</text>
-<text x="341" y="321" class="node-text" text-anchor="start">Sandbox candidate tests</text>
+<text x="341" y="321" class="node-text" text-anchor="start">Sandbox tests</text>
 </g>
 <path d="M 570 310 H 628" class="edge" marker-end="url(#bank-workflow-arrow)"/>
 <g class="diagram-node ">

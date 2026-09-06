@@ -15,12 +15,12 @@
 <rect x="640" y="65" width="250" height="118" rx="8" class="node node-teal"/>
 <text x="656" y="93" class="node-title" text-anchor="start">Candidate repair</text>
 <text x="656" y="116" class="node-text" text-anchor="start">Fix the failure cause</text>
-<text x="656" y="136" class="node-text" text-anchor="start">Preserve valid assertions</text>
+<text x="656" y="136" class="node-text" text-anchor="start">Keep valid assertions</text>
 </g>
 <g class="diagram-node ">
 <rect x="950" y="65" width="230" height="118" rx="8" class="node"/>
 <text x="966" y="93" class="node-title" text-anchor="start">Validation</text>
-<text x="966" y="116" class="node-text" text-anchor="start">Repeat varied conditions</text>
+<text x="966" y="116" class="node-text" text-anchor="start">Vary conditions</text>
 <text x="966" y="136" class="node-text" text-anchor="start">Review behavior</text>
 </g>
 <path d="M 270 124 H 328" class="edge" marker-end="url(#flaky-repair-arrow)"/>

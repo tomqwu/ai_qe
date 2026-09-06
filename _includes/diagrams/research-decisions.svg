@@ -66,7 +66,7 @@
 <path d="M 384 433 H 428" class="edge" marker-end="url(#research-decisions-arrow)"/>
 <g class="diagram-node ">
 <rect x="875" y="391" width="305" height="84" rx="8" class="node"/>
-<text x="891" y="419" class="node-title" text-anchor="start">Identity · allow/deny · approval</text>
+<text x="891" y="419" class="node-title" text-anchor="start">Identity · decision · approval</text>
 </g>
 <text x="891" y="449" class="node-text" text-anchor="start">A03 · R01</text>
 <path d="M 827 433 H 873" class="edge" marker-end="url(#research-decisions-arrow)"/>

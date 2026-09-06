@@ -4,12 +4,12 @@
 <g class="diagram-node ">
 <rect x="40" y="88" width="238" height="100" rx="8" class="node"/>
 <text x="56" y="116" class="node-title" text-anchor="start">Retrieved content</text>
-<text x="56" y="139" class="node-text" text-anchor="start">Documents · web · code</text>
-<text x="56" y="159" class="node-text" text-anchor="start">Can contain instructions</text>
+<text x="56" y="139" class="node-text" text-anchor="start">Docs · web · code</text>
+<text x="56" y="159" class="node-text" text-anchor="start">May carry instructions</text>
 </g>
 <g class="diagram-node ">
 <rect x="40" y="237" width="238" height="100" rx="8" class="node"/>
-<text x="56" y="265" class="node-title" text-anchor="start">Tool results / memory</text>
+<text x="56" y="265" class="node-title" text-anchor="start">Tool output / memory</text>
 <text x="56" y="288" class="node-text" text-anchor="start">Poisoned observations</text>
 <text x="56" y="308" class="node-text" text-anchor="start">Persisted injected text</text>
 </g>
@@ -18,7 +18,7 @@
 <text x="374" y="191" class="node-title" text-anchor="start">Agent runtime</text>
 <text x="374" y="214" class="node-text" text-anchor="start">Uses task + context</text>
 <text x="374" y="234" class="node-text" text-anchor="start">Proposes arguments</text>
-<text x="374" y="254" class="node-text" text-anchor="start">Cannot grant own access</text>
+<text x="374" y="254" class="node-text" text-anchor="start">No self-granted access</text>
 </g>
 <path d="M 278 137 H 320 V 208 H 356" class="edge" marker-end="url(#threat-boundary-arrow)"/>
 <path d="M 278 287 H 320 V 250 H 356" class="edge" marker-end="url(#threat-boundary-arrow)"/>

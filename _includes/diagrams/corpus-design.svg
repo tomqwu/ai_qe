@@ -29,7 +29,7 @@
 <g class="diagram-node ">
 <rect x="765" y="328" width="415" height="112" rx="8" class="node node-sand"/>
 <text x="781" y="356" class="node-title" text-anchor="start">Adversarial set</text>
-<text x="781" y="379" class="node-text" text-anchor="start">Authority, disclosure and recovery scenarios</text>
+<text x="781" y="379" class="node-text" text-anchor="start">Authority, disclosure, recovery</text>
 </g>
 <path d="M 640 130 H 700 V 384 H 763" class="edge" marker-end="url(#corpus-design-arrow)"/>
 <text x="35" y="296" class="lane-title" text-anchor="start">SPLIT RELATED CASES TOGETHER</text>

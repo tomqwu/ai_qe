@@ -92,8 +92,8 @@ s.path('M 746 249 H 801');s.node(868,19,288,100,'Hold + investigate',('Failed ca
 s.path('M 978 167 V 121','edge edge-amber');s.text(995,146,'no','edge-label')
 s.node(856,365,302,104,'Controlled deployment',('Canary / bounded exposure','Human escalation + rollback'),'node node-teal')
 s.path('M 978 332 V 363');s.text(994,351,'yes','edge-label')
-s.node(388,365,358,104,'Production monitoring',('Task outcomes · drift · denied actions','Trace samples · incidents · rework'),'node')
-s.path('M 856 417 H 748');s.node(20,365,298,104,'Case curation',('Review oracle + privacy','Add failures to regression suite'),'node')
+s.node(388,365,358,104,'Production monitoring',('Outcomes · drift · denials','Trace samples · incidents · rework'),'node')
+s.path('M 856 417 H 748');s.node(20,365,298,104,'Case curation',('Review oracle + privacy','Add failures to regression'),'node')
 s.path('M 388 417 H 320');s.path('M 169 365 V 292','edge edge-dashed');s.text(183,339,'new cases','edge-label')
 s.text(22,510,'Proposed application-level assurance · evaluate again when context, behavior or authority changes','small')
 s.save()
@@ -112,7 +112,7 @@ s.text(22,518,'Illustrative workflow · approved contract defines the oracle; ge
 
 s=SVG('research-decisions','Research-to-design map connecting DORA, Meta, NIST and OSFI findings with architecture decisions',1200,530)
 s.text(24,28,'RESEARCH OBSERVATION','lane-title');s.text(430,28,'DESIGN RESPONSE','lane-title');s.text(884,28,'EVIDENCE TO RETAIN','lane-title')
-rows=[('DORA / verification effort','Generation can shift work into review.','Join effort with run telemetry','Prep · review · correction'),('Meta / filtered test generation','Passing is not proof of added value.','Independent test-quality gate','Stable runs · fault detection'),('NIST / lifecycle assurance','Assurance continues in production.','Version cases; feed failures back','Case history · drift · release'),('OWASP + OSFI / agent actions','Tools expand the impact of failure.','Enforce permissions outside the model','Identity · allow/deny · approval')]
+rows=[('DORA / verification effort','Generation can shift work into review.','Join effort with run telemetry','Prep · review · correction'),('Meta / filtered test generation','Passing is not proof of added value.','Independent test-quality gate','Stable runs · fault detection'),('NIST / lifecycle assurance','Assurance continues in production.','Version cases; feed failures back','Case history · drift · release'),('OWASP + OSFI / agent actions','Tools expand the impact of failure.','Enforce permissions outside the model','Identity · decision · approval')]
 for i,(a,b,c,d) in enumerate(rows):
  y=64+i*109;s.node(20,y,364,84,a,(b,),'node');s.node(430,y,397,84,c,(), 'node node-teal');s.text(447,y+57,['Measure net workflow effort','Protect approved assertions','Re-evaluate configuration changes','Test denied actions and recovery'][i],'node-text');s.path(f'M 384 {y+42} H 428');s.node(875,y,305,84,d,(), 'node');s.text(891,y+58,['D02','E04 · E05','A01 · A02','A03 · R01'][i],'node-text');s.path(f'M 827 {y+42} H 873')
 s.save()
@@ -136,9 +136,9 @@ s.path('M 300 365 V 398 H 900 V 365','edge',False);s.text(600,439,'The unit, tas
 
 s=SVG('threat-boundary','Agent threat model: untrusted context reaches the model, but a policy gateway controls tools and resource access, with denied-action tests and bounded recovery',1200,490)
 s.rect(20,30,278,370,'lane lane-sand');s.text(40,60,'UNTRUSTED INPUT','lane-title')
-s.node(40,88,238,100,'Retrieved content',('Documents · web · code','Can contain instructions'))
-s.node(40,237,238,100,'Tool results / memory',('Poisoned observations','Persisted injected text'))
-s.node(358,163,240,125,'Agent runtime',('Uses task + context','Proposes arguments','Cannot grant own access'))
+s.node(40,88,238,100,'Retrieved content',('Docs · web · code','May carry instructions'))
+s.node(40,237,238,100,'Tool output / memory',('Poisoned observations','Persisted injected text'))
+s.node(358,163,240,125,'Agent runtime',('Uses task + context','Proposes arguments','No self-granted access'))
 s.path('M 278 137 H 320 V 208 H 356');s.path('M 278 287 H 320 V 250 H 356')
 s.path('M 641 36 V 417','lifeline',False);s.text(648,31,'AUTHORITY BOUNDARY','lane-title')
 s.node(687,162,234,126,'Policy gateway',('Identity + resource','Allowlist + approval','Deny outside scope'),'node node-navy')
@@ -150,9 +150,9 @@ s.text(25,477,'Proposed negative test · test recovery as well as refusal · fin
 
 s=SVG('evidence-model','Measurement data model joining task, run, review and outcome records to measure net effort and quality by comparable task cohort',1200,500)
 for x,y,w,title,lines,cls in [
- (20,32,294,'Task',('Task ID · type · complexity','Eligible cohort + baseline','Preparation + active execution'),'node'),
+ (20,32,294,'Task',('Task ID · type · complexity','Eligible cohort + baseline','Preparation + execution'),'node'),
  (449,32,304,'Run',('run_id → task_id','Model / prompt / context IDs','Tool calls · cost · elapsed time'),'node node-teal'),
- (884,32,296,'Review',('review_id → run_id','Decision + active human effort','Rework + independent checks'),'node'),
+ (884,32,296,'Review',('review_id → run_id','Decision + human effort','Rework + checks'),'node'),
  (884,283,296,'Outcome',('outcome → task / artifact IDs','Rework · defects · cycle time','Period + capture basis'),'node'),
  (449,283,304,'Cohort comparison',('Matched tasks + quality floors','Prep + run + review + rework','Net effort, cost and uncertainty'),'node node-navy')]:s.node(x,y,w,133,title,lines,cls)
 s.path('M 314 99 H 447');s.text(381,85,'1 : many','edge-label','middle');s.path('M 753 99 H 882');s.text(818,85,'1 : many','edge-label','middle')
