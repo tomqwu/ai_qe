@@ -12,6 +12,26 @@
   let index = Math.max(0, slides.findIndex(s => `#${s.id}` === location.hash));
   let mode = 'slides', chapter;
   const diagramButton = document.querySelector('[data-diagram-tools]'), diagramPanel = document.querySelector('.deck-diagram-panel');
+  const flowBar = document.querySelector('.deck-flow-bar'), flowStates = new WeakMap();
+  function updateFlowBar() {
+    const figure = slides[index].querySelector('.research-figure');
+    const state = figure && flowStates.get(figure);
+    flowBar.hidden = !figure?.querySelector('[data-diagram-tour]') && !state;
+    body.classList.toggle('has-flow-controls', !flowBar.hidden);
+    if (!state) return;
+    const button = flowBar.querySelector('[data-flow-play]');
+    button.textContent = state.label;
+    button.disabled = !state.enabled;
+    button.setAttribute('aria-pressed', String(state.playing));
+    const status = flowBar.querySelector('[data-flow-status]');
+    status.textContent = state.enabled ? state.status : 'Motion is off · Next step still works';
+    status.title = status.textContent;
+  }
+  document.addEventListener('qe:flow-state', event => { flowStates.set(event.target, event.detail); updateFlowBar(); });
+  for (const action of ['play', 'next', 'reset']) flowBar.querySelector(`[data-flow-${action}]`).addEventListener('click', () => {
+    closeDiagramControls();
+    slides[index].querySelector('.research-figure')?.dispatchEvent(new CustomEvent('qe:flow-command', { detail: { action } }));
+  });
   let controlsHome;
   function closeDiagramControls() {
     if (controlsHome) { [...diagramPanel.children].reverse().forEach(child => controlsHome.prepend(child)); controlsHome = null; }
@@ -39,6 +59,7 @@
   function render(updateHash = true) {
     closeDiagramControls();
     diagramButton.hidden = !slides[index].querySelector('.research-figure');
+    updateFlowBar();
     slides.forEach((s, i) => { s.hidden = mode !== 'reading' && i !== index; });
     body.classList.toggle('reading-view', mode === 'reading');
     body.classList.toggle('presentation-mode', mode === 'present');
@@ -117,7 +138,7 @@
   const readingObserver = new IntersectionObserver(entries => {
     if (mode !== 'reading') return;
     const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) { index = slides.indexOf(visible.target); picker.value = String(index); status.textContent = `${index + 1} / ${slides.length} · ${title(slides[index])}`; previous.disabled = index === 0; next.disabled = index === slides.length - 1; share(); }
+    if (visible) { closeDiagramControls(); index = slides.indexOf(visible.target); diagramButton.hidden = !slides[index].querySelector('.research-figure'); updateFlowBar(); picker.value = String(index); status.textContent = `${index + 1} / ${slides.length} · ${title(slides[index])}`; previous.disabled = index === 0; next.disabled = index === slides.length - 1; share(); }
   }, { threshold: [.25, .5, .75] });
   slides.forEach(slide => readingObserver.observe(slide));
   document.querySelector('.deck-tools').hidden = false; navigation.hidden = false;
