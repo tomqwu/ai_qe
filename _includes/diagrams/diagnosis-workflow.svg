@@ -2,20 +2,20 @@
 <g class="diagram-node ">
 <rect x="20" y="55" width="260" height="112" rx="8" class="node"/>
 <text x="36" y="83" class="node-title" text-anchor="start">Failing integration test</text>
-<text x="36" y="106" class="node-text" text-anchor="start">Sanitized logs and trace IDs</text>
+<text x="36" y="106" class="node-text" text-anchor="start">Safe logs + trace IDs</text>
 <text x="36" y="126" class="node-text" text-anchor="start">Relevant change context</text>
 </g>
 <g class="diagram-node ">
 <rect x="335" y="55" width="260" height="112" rx="8" class="node node-teal"/>
 <text x="351" y="83" class="node-title" text-anchor="start">Diagnostic assistant</text>
 <text x="351" y="106" class="node-text" text-anchor="start">Extract relevant log lines</text>
-<text x="351" y="126" class="node-text" text-anchor="start">Suggest a cause with evidence</text>
+<text x="351" y="126" class="node-text" text-anchor="start">Cause + evidence</text>
 </g>
 <g class="diagram-node ">
 <rect x="650" y="55" width="250" height="112" rx="8" class="node"/>
 <text x="666" y="83" class="node-title" text-anchor="start">Engineer review</text>
-<text x="666" y="106" class="node-text" text-anchor="start">Confirm or correct the cause</text>
-<text x="666" y="126" class="node-text" text-anchor="start">Route the actual remediation</text>
+<text x="666" y="106" class="node-text" text-anchor="start">Confirm or correct cause</text>
+<text x="666" y="126" class="node-text" text-anchor="start">Route remediation</text>
 </g>
 <g class="diagram-node ">
 <rect x="955" y="55" width="225" height="112" rx="8" class="node"/>

@@ -1,0 +1,13 @@
+{
+  "task_id": "PAY-042",
+  "run_id": "RUN-042",
+  "kind": "payment-api-test",
+  "resource": "repo:payments-api/tests",
+  "contract_sha256": "94f1a99fcd8161f26dcdf20d92ddf3088ba6100f8d005098669e95ac2cc22b73",
+  "context_refs": [
+    "approved-contract.txt@94f1a99fcd8161f26dcdf20d92ddf3088ba6100f8d005098669e95ac2cc22b73"
+  ],
+  "deadline": "2026-09-06T12:05:00Z",
+  "budget_usd": 2,
+  "configuration": "payments-testgen@1.3.0"
+}

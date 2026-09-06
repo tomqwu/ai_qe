@@ -1,23 +1,25 @@
+{% assign base_input = site.data.scenarios.base %}{% assign base_result = site.data.scenario_results.base %}
+<script type="application/json" data-qe-scenarios>{{ site.data.scenarios | jsonify }}</script>
 <div class="qe-explorer value-explorer {% if include.compact %}explore-compact{% endif %}" data-value>
   <div class="scenario-presets" data-enhanced hidden role="group" aria-label="Illustrative scenarios">
-    <span>Try a scenario</span><button type="button" data-preset="downside" aria-pressed="false">Downside</button><button type="button" data-preset="base" aria-pressed="true">Base</button><button type="button" data-preset="upside" aria-pressed="false">Upside</button><button type="button" data-preset="noCapture" aria-pressed="false">No capture</button>
+    <span>Try a scenario</span><button type="button" data-preset="downside" aria-pressed="false">Downside</button><button type="button" data-preset="base" aria-pressed="true">Base</button><button type="button" data-preset="upside" aria-pressed="false">Upside</button><button type="button" data-preset="noCapture" aria-pressed="false">No capture</button><button type="button" data-preset="slowdown" aria-pressed="false">Review slowdown</button>
   </div>
   <div class="value-layout">
     <div class="value-inputs" data-enhanced hidden>
-      <label>Adoption <output data-value-label="adoption">50%</output><input type="range" min="0" max="100" step="1" value="50" data-param="adoption" aria-label="Adoption percent"></label>
-      <label title="After prompt preparation, review, correction and controls">Net task saving <output data-value-label="saving">20%</output><input type="range" min="0" max="50" step="1" value="20" data-param="saving" aria-label="Net task saving percent"></label>
-      <label>Capacity captured <output data-value-label="capture">50%</output><input type="range" min="0" max="100" step="1" value="50" data-param="capture" aria-label="Capacity captured percent"></label>
+      <label>Adoption <output data-value-label="adoption">{{ base_input.adoption }}%</output><input type="range" min="0" max="100" step="1" value="{{ base_input.adoption }}" data-param="adoption" aria-label="Adoption percent"></label>
+      <label title="After prompt preparation, review, correction and controls">Net task saving <output data-value-label="saving">{{ base_input.saving }}%</output><input type="range" min="-50" max="50" step="1" value="{{ base_input.saving }}" data-param="saving" aria-label="Net task saving percent"></label>
+      <label>Capacity captured <output data-value-label="capture">{{ base_input.capture }}%</output><input type="range" min="0" max="100" step="1" value="{{ base_input.capture }}" data-param="capture" aria-label="Capacity captured percent"></label>
       <details class="value-assumptions"><summary>Scope &amp; cost assumptions</summary>
-        <label>Activity share <output data-value-label="share">55%</output><input type="range" min="0" max="100" step="1" value="55" data-param="share" aria-label="Activity share percent"></label>
-        <label>Eligible work <output data-value-label="eligible">60%</output><input type="range" min="0" max="100" step="1" value="60" data-param="eligible" aria-label="Eligible work percent"></label>
-        <label>AI &amp; pilot cost <output data-value-label="cost">1.0%</output><input type="range" min="0" max="5" step="0.1" value="1" data-param="cost" aria-label="AI and pilot cost percent of spend"></label>
-        <label>Quality allowance <output data-value-label="risk">0.2%</output><input type="range" min="0" max="2" step="0.1" value="0.2" data-param="risk" aria-label="Quality allowance percent of spend"></label>
+        <label>Activity share <output data-value-label="share">{{ base_input.share }}%</output><input type="range" min="0" max="100" step="1" value="{{ base_input.share }}" data-param="share" aria-label="Activity share percent"></label>
+        <label>Eligible work <output data-value-label="eligible">{{ base_input.eligible }}%</output><input type="range" min="0" max="100" step="1" value="{{ base_input.eligible }}" data-param="eligible" aria-label="Eligible work percent"></label>
+        <label>AI &amp; pilot cost <output data-value-label="cost">{{ base_input.cost }}%</output><input type="range" min="0" max="5" step="0.1" value="{{ base_input.cost }}" data-param="cost" aria-label="AI and pilot cost percent of spend"></label>
+        <label>Quality allowance <output data-value-label="risk">{{ base_input.risk }}%</output><input type="range" min="0" max="2" step="0.1" value="{{ base_input.risk }}" data-param="risk" aria-label="Quality allowance percent of spend"></label>
       </details>
     </div>
     <div class="value-results">
-      <p class="value-headline" aria-live="polite" aria-atomic="true"><strong data-net>$45k</strong><span><b data-net-label>illustrative net annual benefit</b><small><span data-capacity>3.30%</span> capacity released · <span data-net-percent>0.45%</span> of addressable spend</small></span></p>
+      <p class="value-headline" aria-live="polite" aria-atomic="true"><strong data-net>${{ base_result.net | times: 10000 | round: 1 }}k</strong><span><b data-net-label>illustrative net economic impact</b><small><span data-capacity>{{ base_result.capacity | times: 100 | round: 2 }}%</span> capacity released · <span data-net-percent>{{ base_result.net | times: 100 | round: 2 }}%</span> of addressable spend</small></span></p>
       <figure class="explorer-figure"><figcaption>Annual value bridge <span>$ thousands · per $10M addressable QA spend</span></figcaption><div class="model-chart" data-waterfall></div></figure>
-      <table class="model-fallback"><caption>Base assumptions, illustrative annual values</caption><tbody><tr><th>Capacity equivalent</th><td>$330,000</td></tr><tr><th>Uncaptured capacity</th><td>−$165,000</td></tr><tr><th>AI and pilot cost</th><td>−$100,000</td></tr><tr><th>Quality allowance</th><td>−$20,000</td></tr><tr><th>Net benefit</th><td>$45,000</td></tr></tbody></table>
+      <table class="model-fallback"><caption>Base assumptions, illustrative annual values</caption><tbody><tr><th>Capacity equivalent</th><td>${{ base_result.capacity | times: 10000000 | round: 0 }}</td></tr><tr><th>Uncaptured capacity</th><td>−${{ base_result.uncaptured | times: 10000000 | round: 0 }}</td></tr><tr><th>AI and pilot cost</th><td>−${{ base_input.cost | times: 100000 | round: 0 }}</td></tr><tr><th>Quality allowance</th><td>−${{ base_input.risk | times: 100000 | round: 0 }}</td></tr><tr><th>Extra human effort</th><td>$0</td></tr><tr><th>Net economic impact</th><td>${{ base_result.net | times: 10000000 | round: 0 }}</td></tr></tbody></table>
       <figure class="explorer-figure sensitivity-figure"><figcaption>Net benefit vs. adoption <span>All other current assumptions held fixed · $ thousands</span></figcaption><div class="model-chart" data-sensitivity></div></figure>
     </div>
   </div>

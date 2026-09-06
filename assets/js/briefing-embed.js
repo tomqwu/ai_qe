@@ -2,67 +2,46 @@
   'use strict';
   const player = document.querySelector('[data-briefing-player]');
   if (!player) return;
-  const tabs = [...player.querySelectorAll('[role="tab"]')];
-  const frame = player.querySelector('iframe');
-  const panel = player.querySelector('[role="tabpanel"]');
-  const openLink = player.querySelector('[data-deck-link]');
-  const labels = {
-    evp: ['EVP strategic vision presentation', 'Open strategic vision ↗'],
-    technical: ['Technical assurance architecture presentation', 'Open assurance architecture ↗']
-  };
-  function selectTab(tab) {
-    if (tab.getAttribute('aria-selected') === 'true') return;
-    tabs.forEach(item => {
-      const selected = item === tab;
-      item.setAttribute('aria-selected', String(selected));
-      item.tabIndex = selected ? 0 : -1;
-    });
-    const [title, linkText] = labels[tab.dataset.audience];
-    panel.setAttribute('aria-labelledby', tab.id);
-    frame.title = title;
-    frame.src = tab.href;
-    openLink.href = tab.href;
-    openLink.textContent = linkText;
+  const tabs = [...player.querySelectorAll('[role="tab"]')], frame = player.querySelector('iframe');
+  const panel = player.querySelector('[role="tabpanel"]'), openLink = player.querySelector('[data-deck-link]');
+  const positions = { evp: 'slide-1', technical: 'slide-1' };
+  let audience = 'evp';
+  function updateURL(slide) {
+    const url = new URL(location.href); url.searchParams.set('audience', audience); url.searchParams.set('slide', slide); url.hash = 'briefings';
+    history.replaceState(null, '', url);
+    const target = new URL(tabs.find(t => t.dataset.audience === audience).href); target.hash = slide; openLink.href = target.href;
   }
-  tabs.forEach((tab, index) => {
-    tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
+  function selectTab(tab, slide) {
+    if (!tab) return;
+    audience = tab.dataset.audience;
+    tabs.forEach(item => { const active = item === tab; item.setAttribute('aria-selected', String(active)); item.tabIndex = active ? 0 : -1; });
+    panel.setAttribute('aria-labelledby', tab.id);
+    frame.title = audience === 'evp' ? 'EVP strategic vision presentation' : 'Technical assurance architecture presentation';
+    openLink.textContent = audience === 'evp' ? 'Open strategic vision ↗' : 'Open assurance architecture ↗';
+    const target = new URL(tab.href); target.hash = slide || positions[audience]; frame.src = target.href;
+    updateURL(target.hash.slice(1));
+  }
+  tabs.forEach((tab, i) => {
     tab.addEventListener('click', event => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      selectTab(tab);
+      event.preventDefault(); selectTab(tab);
     });
     tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      if (next === undefined) return;
-      event.preventDefault();
-      tabs[next].focus();
-      selectTab(tabs[next]);
+      const keys = { ArrowRight: (i + 1) % tabs.length, ArrowLeft: (i - 1 + tabs.length) % tabs.length, Home: 0, End: tabs.length - 1 };
+      if (!(event.key in keys)) return;
+      event.preventDefault(); tabs[keys[event.key]].focus(); selectTab(tabs[keys[event.key]]);
     });
   });
-  player.querySelectorAll('[data-visual-audience]').forEach(link => {
-    link.addEventListener('click', event => {
-      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      selectTab(tabs.find(tab => tab.dataset.audience === link.dataset.visualAudience));
-      frame.src = link.href;
-      openLink.href = link.href;
-      panel.scrollIntoView({ block: 'start' });
-    });
+  player.querySelectorAll('[data-visual-audience]').forEach(link => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); selectTab(tabs.find(t => t.dataset.audience === link.dataset.visualAudience), new URL(link.href).hash.slice(1));
+    panel.scrollIntoView({block: 'start'});
+  }));
+  window.addEventListener('message', event => {
+    if (event.origin !== location.origin || event.source !== frame.contentWindow || event.data?.type !== 'ai-qe:deck-state') return;
+    if (event.data.audience !== audience || !/^slide-[1-9]\d*$/.test(event.data.slide)) return;
+    positions[audience] = event.data.slide; updateURL(event.data.slide);
   });
-  window.addEventListener('message' , event => {
-    if (event.origin !== location.origin || event.source !== frame.contentWindow) return;
-    if (event.data?.type === 'ai-qe:deck-navigated') {
-      panel.scrollIntoView({ block: 'start' });
-      return;
-    }
-    if (event.data?.type !== 'ai-qe:deck-height') return;
-    const height = Number(event.data.height);
-    // Longer decks in mobile reading view can exceed 12,000 px. Bound the
-    // same-origin content height generously so the final slides stay reachable.
-    if (Number.isFinite(height) && height >= 200 && height <= 100000) frame.style.height = `${Math.ceil(height)}px`;
-  });
+  const params = new URLSearchParams(location.search), requested = params.get('audience'), slide = params.get('slide');
+  if (['evp', 'technical'].includes(requested)) selectTab(tabs.find(t => t.dataset.audience === requested), /^slide-[1-9]\d*$/.test(slide) ? slide : 'slide-1');
 })();

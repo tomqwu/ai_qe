@@ -1,11 +1,11 @@
 ---
-title: Executive presentation
+title: Pilot business-case facilitation guide
 parent: Method
 nav_order: 4
 description: Structure for a 60-90 minute executive session on AI-enabled QE and AppSec, the recommended message, the decisions to request, and where the AI gateway topic belongs.
 ---
 
-# Executive presentation
+# Pilot business-case facilitation guide
 {: .no_toc }
 
 <details open markdown="block">
@@ -14,6 +14,8 @@ description: Structure for a 60-90 minute executive session on AI-enabled QE and
 - TOC
 {:toc}
 </details>
+
+This guide supports a **60–90 minute pilot business-case workshop**. For the current audience presentations, use [EVP strategic vision]({{ '/briefings/evp/' | relative_url }}) and [Technical architecture]({{ '/briefings/technical/' | relative_url }}). The EVP deck addresses strategic choices and shared capabilities; this workshop addresses pilot funding and measurement.
 
 ## Structure for a 60-90 minute session
 
@@ -27,7 +29,7 @@ description: Structure for a 60-90 minute executive session on AI-enabled QE and
 | 6. Conservative savings hypothesis | 10 min | Scenario table in percentages; the base-case waterfall per $10M with assumptions visible; the four-level distinction | Discipline; no dollar forecast |
 | 7. The phased model | 10 min | Phases 0-4 with duration, ceiling, deliverables and stop rules; applications proposed | Minimize upfront spend; show early exit |
 | 8. Controls and regulatory alignment | 5 min | One-page control mapping | Turn caution into a regulatory strength |
-| 9. Supporting architecture note | 3 min | Where an AI gateway or control plane would sit if Phase 4 is reached; not proposed now | Answer the question before it is asked |
+| 9. Supporting architecture note | 3 min | Action authorization now; shared provider routing when scale requires it | Answer the question before it is asked |
 | 10. Decisions requested | 5 min | Named sponsor; Finance partner and recognition rule; one or two applications; approved AI platform and pilot project; Phase 0-1 ceiling; second-line observer | Specific asks |
 | Discussion | 15-30 min | | |
 
@@ -35,10 +37,10 @@ description: Structure for a 60-90 minute executive session on AI-enabled QE and
 
 See the one-paragraph message in [Slide language](../../economics/slide-language/). The decision requested is whether to fund Phases 0 and 1, not whether to transform QA.
 
-## Where the AI gateway or control-plane topic belongs
+## Supporting architecture discussion
 
-Not in this presentation as a proposal. A first pilot must use the approved enterprise AI platform, which already provides the access control, logging and cost visibility a pilot needs. A multi-vendor gateway becomes relevant only when several capabilities, models or vendors are in production and the bank needs central policy, routing, cost allocation and portability. Include one supporting-architecture slide so the sponsor sees the roadmap is coherent, and offer a separate executive conversation on enterprise AI governance and gateway architecture alongside the broader AI security, risk and agentic-autonomy topics. Combining the two in one session dilutes the QA and AppSec economics discussion and reads as a platform sale.
+Distinguish a model-provider router (model selection, cost allocation and portability) from an action authorization boundary (identity, resource scope, approved tools, expiry and human approval). A new shared model router may be deferred until scale. Action authorization must exist from the first tool-using pilot; existing IAM and CI controls can implement it. An approved enterprise model platform does not automatically provide authorization for downstream actions.
 
-## Charts worth drawing
+## Visuals that support the discussion
 
-Six questionnaire charts (segment 2) and the scenario waterfall (segment 6) are the only visuals that earn their place. Everything else is a table or a sentence.
+Use the questionnaire charts when bank responses exist, the canonical scenario waterfall, the shared-assurance strategy diagram, the payment-API current-to-target workflow and the action-denial sequence. Choose each visual to explain a decision or relationship. Show assumptions and uncertainty alongside any quantity; no invented bank results.

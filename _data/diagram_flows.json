@@ -1,0 +1,186 @@
+{
+  "test-sequence": [
+    {
+      "title": "1 / Task contract",
+      "detail": "The domain owner requires rejection of negative payment amounts.",
+      "node": "",
+      "routes": [
+        "edge:0"
+      ]
+    },
+    {
+      "title": "2 / Request context",
+      "detail": "The runtime requests only approved contract and test patterns.",
+      "node": "",
+      "routes": [
+        "edge:1"
+      ]
+    },
+    {
+      "title": "3 / Scoped context",
+      "detail": "The policy boundary returns versioned permitted evidence.",
+      "node": "",
+      "routes": [
+        "edge:2"
+      ]
+    },
+    {
+      "title": "4 / Candidate test",
+      "detail": "The runtime submits a candidate and a requested runner.",
+      "node": "",
+      "routes": [
+        "edge:3"
+      ]
+    },
+    {
+      "title": "5 / Authorize sandbox",
+      "detail": "Authorization is checked before any tool runs.",
+      "node": "",
+      "routes": [
+        "edge:4"
+      ]
+    },
+    {
+      "title": "6 / Independent test",
+      "detail": "The original passes and the seeded faulty behavior fails.",
+      "node": "",
+      "routes": [
+        "edge:5"
+      ]
+    },
+    {
+      "title": "7 / Evidence bundle",
+      "detail": "Checks, versions and artifact digest go to the reviewer.",
+      "node": "",
+      "routes": [
+        "edge:6"
+      ]
+    },
+    {
+      "title": "8 / Human decision",
+      "detail": "Existing repository controls govern approval and merge.",
+      "node": "",
+      "routes": [
+        "edge:7"
+      ]
+    }
+  ],
+  "gateway-sequence": [
+    {
+      "title": "1 / Attempt production write",
+      "detail": "The sandbox-only task requests an unauthorized resource.",
+      "node": "",
+      "routes": [
+        "edge:0"
+      ]
+    },
+    {
+      "title": "2 / Evaluate policy",
+      "detail": "The gateway checks identity, scope and approval before execution.",
+      "node": "",
+      "routes": [
+        "edge:1"
+      ]
+    },
+    {
+      "title": "3 / Record denial",
+      "detail": "Persist reason and policy version. The tool is never invoked.",
+      "node": "",
+      "routes": [
+        "edge:2"
+      ]
+    },
+    {
+      "title": "4 / Return denied",
+      "detail": "Stop this action; escalate through a separate authorized workflow.",
+      "node": "",
+      "routes": [
+        "edge:3"
+      ]
+    }
+  ],
+  "fallback-state": [
+    {
+      "title": "1 / Contain",
+      "detail": "A breach or outage stops consequential agent actions.",
+      "node": "",
+      "routes": [
+        "edge:0"
+      ]
+    },
+    {
+      "title": "2 / Route to fallback",
+      "detail": "Use the approved manual queue or last validated service.",
+      "node": "",
+      "routes": [
+        "edge:1"
+      ]
+    },
+    {
+      "title": "3 / Recovery review",
+      "detail": "Validate the fix and exercise the original failure case.",
+      "node": "",
+      "routes": [
+        "edge:2"
+      ]
+    },
+    {
+      "title": "4 / Authorized resumption",
+      "detail": "An owner authorizes normal service. Reconcile prior side effects separately.",
+      "node": "",
+      "routes": [
+        "edge:3"
+      ]
+    }
+  ],
+  "appsec-loop": [
+    {
+      "title": "1 / Finding \u2192 triage",
+      "detail": "Enrich scanner evidence and identify the responsible owner.",
+      "node": "",
+      "routes": [
+        "edge:0"
+      ]
+    },
+    {
+      "title": "2 / Fix branch",
+      "detail": "A reviewed disposition requests a draft remediation.",
+      "node": "",
+      "routes": [
+        "edge:1"
+      ]
+    },
+    {
+      "title": "3 / Validate fix",
+      "detail": "Rerun security and regression checks; review before merge.",
+      "node": "",
+      "routes": [
+        "edge:2"
+      ]
+    },
+    {
+      "title": "Dismissal branch",
+      "detail": "If triage dismissed the finding, audit it instead of treating it as fixed.",
+      "node": "",
+      "routes": [
+        "edge:3"
+      ]
+    },
+    {
+      "title": "5 / Fix evidence",
+      "detail": "Retain the verified outcome, versions and reviewer.",
+      "node": "",
+      "routes": [
+        "edge:4"
+      ]
+    },
+    {
+      "title": "6 / Dismissal evidence",
+      "detail": "Retain audit results; reopen any missed true positive.",
+      "node": "",
+      "routes": [
+        "edge:5"
+      ]
+    }
+  ]
+}

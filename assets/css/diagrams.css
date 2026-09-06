@@ -78,10 +78,16 @@
 .architecture-inspector summary { cursor: pointer; color: #152e40; font-weight: 600; }
 .architecture-inspector[open] summary { margin-bottom: .4rem; }
 .architecture-inspector summary:focus-visible { outline: 3px solid #ba7128; outline-offset: 3px; }
-@media screen and (min-width: 701px) {
-  .deck-ready:not(.embedded):not(.reading-view):has(.diagram-slide:not([hidden])) .slides,
-  .deck-ready:not(.embedded):not(.reading-view):has(.diagram-slide:not([hidden])) .deck-navigation {
-    width: min(calc(100% - 40px), calc((100svh - 145px) * 1.5));
-  }
-}
 .explorer-workbench > section > .research-figure { padding: 1rem; }
+.diagram-tour.summary-hidden { display: none !important; }
+
+/* Readable diagram views are shared by research pages and embedded decks. */
+.diagram-view-controls { display: flex; gap: 8px; margin-bottom: 5px; }
+.diagram-view-controls button { font: inherit; font-size: 13px; padding: 3px 9px; color: #096d69; background: white; border: 1px solid #a5bbb3; border-radius: 4px; cursor: pointer; }
+.diagram-overview { list-style: none; padding: 0; margin: 12px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.diagram-overview li { background: #eef4ef; border-left: 3px solid #096d69; padding: 12px; }
+.diagram-overview strong { display: block; color: #152e40; margin-bottom: 4px; }
+
+.diagram-view-controls button[aria-pressed="true"] { background: #096d69; color: #fff; border-color: #096d69; }
+.diagram-view-controls button:focus-visible { outline: 3px solid #ba7128; outline-offset: 3px; }
+@media (max-width: 700px) { .diagram-overview { grid-template-columns: 1fr; } }

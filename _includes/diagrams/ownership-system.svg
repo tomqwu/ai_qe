@@ -2,25 +2,25 @@
 <g class="diagram-node ">
 <rect x="375" y="25" width="450" height="88" rx="8" class="node node-teal"/>
 <text x="391" y="53" class="node-title" text-anchor="start">Product and QE owner</text>
-<text x="391" y="76" class="node-text" text-anchor="start">Owns expected behavior and release outcomes</text>
+<text x="391" y="76" class="node-text" text-anchor="start">Owns behavior and release outcomes</text>
 </g>
 <g class="diagram-node ">
 <rect x="20" y="213" width="330" height="123" rx="8" class="node"/>
 <text x="36" y="241" class="node-title" text-anchor="start">Shared platform team</text>
-<text x="36" y="264" class="node-text" text-anchor="start">Context, identity and runtime services</text>
-<text x="36" y="284" class="node-text" text-anchor="start">Service reliability and evidence exports</text>
+<text x="36" y="264" class="node-text" text-anchor="start">Context, identity and runtime</text>
+<text x="36" y="284" class="node-text" text-anchor="start">Service + evidence export</text>
 </g>
 <g class="diagram-node on-dark">
 <rect x="435" y="213" width="330" height="123" rx="8" class="node node-navy"/>
 <text x="451" y="241" class="node-title" text-anchor="start">Delivery team</text>
 <text x="451" y="264" class="node-text" text-anchor="start">Test intent, assertions and review</text>
-<text x="451" y="284" class="node-text" text-anchor="start">Acceptance within existing CI gates</text>
+<text x="451" y="284" class="node-text" text-anchor="start">Accept through existing CI</text>
 </g>
 <g class="diagram-node ">
 <rect x="850" y="213" width="330" height="123" rx="8" class="node node-sand"/>
 <text x="866" y="241" class="node-title" text-anchor="start">Security and risk partners</text>
-<text x="866" y="264" class="node-text" text-anchor="start">Threat scenarios and control challenge</text>
-<text x="866" y="284" class="node-text" text-anchor="start">Applicability and escalation advice</text>
+<text x="866" y="264" class="node-text" text-anchor="start">Threat cases + control challenge</text>
+<text x="866" y="284" class="node-text" text-anchor="start">Scope and escalation advice</text>
 </g>
 <path d="M 600 113 V 211" class="edge" marker-end="url(#ownership-system-arrow)"/>
 <text x="614" y="166" class="edge-label" text-anchor="start">accountability</text>

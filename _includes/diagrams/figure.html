@@ -1,14 +1,15 @@
 {% assign research = site.data.diagram_research[include.name] %}
 <figure data-diagram="{{ include.name }}" class="research-figure{% if include.name == 'platform' %} architecture-map{% endif %}"{% if include.name == 'platform' %} data-architecture-map{% endif %}>
-  {% if include.name == 'platform' %}
+  {% assign flow = site.data.diagram_flows[include.name] %}
+  {% if include.name == 'platform' or flow %}
   <div class="diagram-tour" data-diagram-tour hidden>
-    <div class="tour-actions"><button type="button" data-tour-play aria-pressed="false">▶ Play flow</button><button type="button" data-tour-next>Next step →</button><button type="button" data-tour-reset>Overview</button></div>
+    <div class="tour-actions">{% if include.name == "appsec-loop" %}<label>Path <select data-tour-branch aria-label="AppSec disposition path"><option value="fix">Remediation</option><option value="dismiss">Dismissal audit</option></select></label>{% endif %}<button type="button" data-tour-play aria-pressed="false">▶ Play flow</button><button type="button" data-tour-next>Next step →</button><button type="button" data-tour-reset>Overview</button></div>
     <div class="tour-copy"><p class="tour-status" data-tour-status aria-live="polite" aria-atomic="true">Overview · all connections have equal emphasis.</p><p class="flow-legend" data-flow-legend>Moving pulses show direction. Play flow follows specific paths through the architecture.</p></div>
-    <script type="application/json" data-tour-steps>{{ site.data.architecture_flow | jsonify }}</script>
+    <script type="application/json" data-tour-steps>{% if include.name == "platform" %}{{ site.data.architecture_flow | jsonify }}{% else %}{{ flow | jsonify }}{% endif %}</script>
   </div>
   {% endif %}
   <p class="diagram-pan-hint">Pan horizontally to explore the full diagram. A text description is available below.</p>
-  <div class="diagram-shell" tabindex="0" role="region" aria-label="{{ include.label | default: 'Research diagram' | escape }}">{% assign diagram_path = 'diagrams/' | append: include.name | append: '.svg' %}{% include {{ diagram_path }} %}</div>
+  <div class="diagram-shell" tabindex="0" role="region" aria-label="{{ include.label | default: 'Research diagram' | escape }}">{% assign diagram_path = 'diagrams/' | append: include.name | append: '.svg' %}{% if include.name == 'platform' and page.layout == 'deck' %}{% assign diagram_path = 'diagrams/platform-slide.svg' %}{% endif %}{% include {{ diagram_path }} %}</div>
   {% if include.name == 'platform' %}{% include diagrams/inspector.html %}{% endif %}
   <figcaption><span class="motion-caption" hidden>Animated flow shows direction, not live activity. </span>{{ research.caption }} {% include industry/cite.html ids=research.sources %}</figcaption>
   <details class="research-rationale"><summary>Research behind this design &amp; diagram description</summary><div class="rationale-copy"><div><strong>Finding</strong><p>{{ research.finding }}</p><strong>Design implication</strong><p>{{ research.decision }}</p></div><div><strong>Diagram in words</strong><p>{{ research.words }}</p><a href="{{ '/docs/industry/library/' | relative_url }}">Inspect methods and source documents →</a></div></div></details>

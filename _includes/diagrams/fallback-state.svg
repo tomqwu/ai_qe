@@ -8,13 +8,13 @@
 <g class="diagram-node ">
 <rect x="360" y="60" width="280" height="120" rx="8" class="node node-sand"/>
 <text x="376" y="88" class="node-title" text-anchor="start">Containment</text>
-<text x="376" y="111" class="node-text" text-anchor="start">Stop consequential tool actions</text>
+<text x="376" y="111" class="node-text" text-anchor="start">Stop consequential actions</text>
 <text x="376" y="131" class="node-text" text-anchor="start">Preserve relevant evidence</text>
 </g>
 <g class="diagram-node ">
 <rect x="760" y="60" width="420" height="120" rx="8" class="node"/>
 <text x="776" y="88" class="node-title" text-anchor="start">Fallback service</text>
-<text x="776" y="111" class="node-text" text-anchor="start">Use an approved previous route or manual queue</text>
+<text x="776" y="111" class="node-text" text-anchor="start">Approved prior route or manual queue</text>
 <text x="776" y="131" class="node-text" text-anchor="start">Protect the underlying business process</text>
 </g>
 <path d="M 280 119 H 358" class="edge" marker-end="url(#fallback-state-arrow)"/>

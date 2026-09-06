@@ -187,5 +187,33 @@
     "finding": "Evaluation workflows use operational feedback, while agent risk guidance calls attention to tool and action behavior.",
     "decision": "Join application events, gateway decisions and reviewer corrections without broadly copying sensitive raw prompts into monitoring systems.",
     "words": "Three event streams enter a controlled telemetry boundary. The joined records support operations, security monitoring and reviewed regression-case curation."
+  },
+  "strategy-choices": {
+    "sources": "G01,D01,A01,A03",
+    "caption": "Authored strategic choices · no bank maturity or savings claim.",
+    "finding": "Industry outlook and lifecycle guidance support broader AI participation and independent assurance.",
+    "decision": "Use shared assurance as the strategic center; delegate actions only as boundaries and evidence mature.",
+    "words": "Local assistants accelerate individual tasks. Shared assurance makes expectations, evaluation and evidence reusable. Bounded agents add delegated actions and stronger recovery obligations. These are design choices, not measured maturity scores."
+  },
+  "bank-workflow": {
+    "sources": "E04,E05,D02,A03",
+    "caption": "Illustrative financial-services workflow · current-state row is a hypothesis, not an observed bank condition.",
+    "finding": "Test-generation studies use quality gates; verification work remains part of the workflow.",
+    "decision": "Join a domain-owned payment contract to shared evidence services and existing release authority.",
+    "words": "The current-state hypothesis has local interpretation, test writing, review and late evidence assembly. The target versions the approved payment rule, generates tests in a scoped sandbox, independently checks fault detection and retains the reviewer decision and release evidence."
+  },
+  "contract-chain": {
+    "sources": "A01,A03,R01",
+    "caption": "Runnable reference contracts · synthetic example, not a production integration.",
+    "finding": "Lifecycle and action-risk guidance require versioned evidence and scoped authority.",
+    "decision": "Provide joined artifacts and negative fixtures so the logical design can be exercised.",
+    "words": "A payment test task binds permitted context, resource scope and deadline. A policy decision authorizes only the sandbox action. An evaluation manifest joins artifact and corpus versions. The evidence record links task, policy and evaluation and remains held for human review."
+  },
+  "appsec-loop": {
+    "sources": "E08,E09,A03",
+    "caption": "Proposed AppSec workflow · triage, fix and dismissal are distinct evidence paths.",
+    "finding": "Autofix reports remediation workflow gains; static-analysis research shows model-dependent precision and recall.",
+    "decision": "Validate fixes independently and audit dismissals so reducing alert volume cannot conceal missed vulnerabilities.",
+    "words": "A scanner finding is enriched with trace and contextual evidence. Human triage chooses a draft remediation or a retained dismissal. Fixes rerun the scanner and regression checks. Dismissals enter a sampled audit and missed true positives are reopened. Both paths retain reviewer, versions and outcomes."
   }
 }

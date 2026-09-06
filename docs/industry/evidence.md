@@ -49,3 +49,9 @@ There is no general bank-wide QE savings rate in this review. Evidence remains l
 ## Generated tests: the quality filter in practice
 
 {% include diagrams/figure.html name="testgen-evidence" label="Meta TestGen-LLM observed quality filters" %}
+
+## Canonical TestGen claim and economics
+
+{% include claims/testgen.html %}
+
+The [canonical scenario model]({{ "/docs/economics/savings-model/" | relative_url }}) separates exact calculations, additional human effort and Finance-approved cash capture.

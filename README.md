@@ -8,10 +8,10 @@ security in regulated financial services.
 
 The homepage includes two audience presentations:
 
-- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 18 slides on
+- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 21 slides on
   industry outlook, strategic vision, value, ownership and capability expansion.
 - [Technical delivery architecture](https://tomqwu.github.io/ai_qe/briefings/technical/):
-  26 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
+  29 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
 
 These are research-informed perspectives and a proposed architecture, not measured bank results.
 
@@ -148,3 +148,13 @@ figures and printing suspend animation; Next step remains available for a static
 Browser API references: [SVG motion](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animateMotion),
 [pausing SVG animation](https://developer.mozilla.org/en-US/docs/Web/API/SVGSVGElement/pauseAnimations),
 and [visibility observation](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
+
+## Release validation
+
+Run `npm ci`, `npx playwright install chromium` and `pip install -r tools/requirements.txt`. Then run `npm test`, `python tools/validate_contracts.py`, `bundle exec jekyll build`, `python tools/finalize_site.py _site`, `python tools/verify_site.py _site`, `python tools/verify_industry.py _site` and `python tools/verify_publication.py _site`.
+
+Serve the build under `/ai_qe/` on port 61600 and run `npm run test:browser`. Set `QE_TEST_URL` to test another build. The browser suite checks all 50 slides at 1280×720, 1920×1080 and 375×812, SVG label bounds, player modes, focus, motion, sharing and search. CI runs it before publication.
+
+Canonical economics live in `_data/scenarios.json`; regenerate derived tables with `node tools/build_scenario_data.cjs`. Regenerate diagrams in order with `python tools/build_expanded_diagrams.py` then `python tools/build_audit_diagrams.py`. The payment reference contracts and failure fixtures are under `assets/examples/payments/`.
+
+For a new release, update `_data/release.yml`, regenerate the static audience PDFs using `node tools/export_decks.cjs`, render and visually inspect every page, and update the release history. The original 13-page research companion remains a dated archive; it is not the current slide export.

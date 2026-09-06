@@ -46,3 +46,13 @@ test('evidence intervals contain their estimate; only follow-up intervals includ
   assert.ok(studies[0].low > 0);
   for (const study of studies.slice(1)) assert.ok(study.low < 0 && study.high > 0);
 });
+test('slowdowns consume the full extra effort regardless of the capture setting', () => {
+  for (const capture of [0, 25, 50, 100]) {
+    const r = calculate({...presets.slowdown, capture});
+    near(r.capacity, 0); near(r.captured, 0); near(r.extraEffort, .033);
+    near(r.cashNet, -.012); near(r.net, -.045);
+  }
+});
+test('invalid inputs fail rather than silently creating a forecast', () => {
+  for (const saving of [NaN, Infinity, -101, 101]) assert.throws(() => calculate({...presets.base, saving}), RangeError);
+});

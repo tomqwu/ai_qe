@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" class="research-diagram" role="img" aria-labelledby="strategy-choices-title"><title id="strategy-choices-title">Three strategic choices: local assistants, shared assurance services, bounded agents</title><defs><marker id="strategy-choices-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<text x="38" y="40" class="stat" text-anchor="start">01</text>
+<g class="diagram-node ">
+<rect x="20" y="70" width="350" height="172" rx="8" class="node"/>
+<text x="36" y="98" class="node-title" text-anchor="start">Local assistants</text>
+<text x="36" y="121" class="node-text" text-anchor="start">Fast individual adoption</text>
+<text x="36" y="141" class="node-text" text-anchor="start">Duplicated context and checks</text>
+<text x="36" y="161" class="node-text" text-anchor="start">Local learning stays fragmented</text>
+</g>
+<text x="443" y="40" class="stat" text-anchor="start">02</text>
+<g class="diagram-node ">
+<rect x="425" y="70" width="350" height="172" rx="8" class="node node-teal"/>
+<text x="441" y="98" class="node-title" text-anchor="start">Shared assurance</text>
+<text x="441" y="121" class="node-text" text-anchor="start">Portable tests and evidence</text>
+<text x="441" y="141" class="node-text" text-anchor="start">Domain-owned expectations</text>
+<text x="441" y="161" class="node-text" text-anchor="start">Common evaluation and controls</text>
+</g>
+<text x="848" y="40" class="stat" text-anchor="start">03</text>
+<g class="diagram-node ">
+<rect x="830" y="70" width="350" height="172" rx="8" class="node"/>
+<text x="846" y="98" class="node-title" text-anchor="start">Bounded agents</text>
+<text x="846" y="121" class="node-text" text-anchor="start">Multi-step delegated work</text>
+<text x="846" y="141" class="node-text" text-anchor="start">Stronger action authority</text>
+<text x="846" y="161" class="node-text" text-anchor="start">Higher recovery obligations</text>
+</g>
+<path d="M 370 155 H 423" class="edge" marker-end="url(#strategy-choices-arrow)"/>
+<path d="M 775 155 H 828" class="edge" marker-end="url(#strategy-choices-arrow)"/>
+<text x="50" y="290" class="label" text-anchor="start">Use to learn tasks</text>
+<text x="440" y="290" class="label" text-anchor="start">Recommended strategic center</text>
+<text x="848" y="290" class="label" text-anchor="start">Earn through evidence</text>
+<rect x="20" y="335" width="1160" height="85" rx="8" class="lane"/>
+<text x="42" y="368" class="label" text-anchor="start">Sequencing choice: standardize the proof before expanding delegated authority.</text>
+<text x="42" y="399" class="node-text" text-anchor="start">Trade-off: shared services require ownership; agent breadth requires independently tested containment.</text>
+</svg>

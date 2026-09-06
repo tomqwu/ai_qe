@@ -54,45 +54,6 @@ html[data-motion='off'] .motion-inview * { animation: none !important; }
   .motion-toggle, .diagram-tour, .flow-effect, .motion-caption { display: none !important; }
   .motion-inview, .motion-inview * { animation: none !important; transform: none !important; filter: none !important; }
 }
-/* Present mode gives the architecture a darker stage with illuminated paths. */
-.presentation-mode { background: #081c28; }
-.presentation-mode .deck-header { background: #081c28; }
-.presentation-mode .diagram-slide { color: #cadfdf; background: radial-gradient(ellipse at top right,#19434d,#0c2534 70%); border-color: #31545e; box-shadow: 0 20px 60px #0004; }
-.presentation-mode .diagram-slide h2 { color: #f3fbf7; }
-.presentation-mode .diagram-slide .kicker, .presentation-mode .diagram-slide a { color: #a0e1d3; }
-.presentation-mode .diagram-slide .slide-footer, .presentation-mode .research-rationale { border-color: #42616b; }
-.presentation-mode .research-rationale summary, .presentation-mode .research-rationale strong, .presentation-mode .research-figure figcaption { color: #c6dcd9; }
-.presentation-mode .research-diagram text { fill: #e1efec; }
-.presentation-mode .research-diagram .lane { fill: #102e3b; stroke: #3d5c65; }
-.presentation-mode .research-diagram .lane-teal { fill: #16424a; }
-.presentation-mode .research-diagram .lane-sand { fill: #302f30; stroke: #7e725d; }
-.presentation-mode .research-diagram .node { fill: #1b3e4c; stroke: #65858a; }
-.presentation-mode .research-diagram .node-teal { fill: #17544d; stroke: #72bba6; }
-.presentation-mode .research-diagram .node-navy { fill: #0b2635; stroke: #8da9ab; }
-.presentation-mode .research-diagram .node-sand { fill: #493a2d; stroke: #b89c6d; }
-.presentation-mode .research-diagram .lane-title, .presentation-mode .research-diagram .stat { fill: #99e3d2; }
-.presentation-mode .research-diagram .edge, .presentation-mode .research-diagram .axis-line { stroke: #88bcb3; }
-.presentation-mode .research-diagram .edge-amber { stroke: #e3b471; }
-.presentation-mode .research-diagram marker path { stroke: #96d5c8; }
-.presentation-mode .research-diagram .edge-label, .presentation-mode .research-diagram .sequence-label { stroke: #0c2534; fill: #d6eee7; }
-.presentation-mode .research-diagram .decision { fill: #14574e; stroke: #8accb6; }
-.presentation-mode .research-diagram .bar-track { fill: #234552; }
-.presentation-mode .research-diagram .bar-teal { fill: #78cfb5; }
-.presentation-mode .research-diagram .bar-navy { fill: #e7b668; }
-.presentation-mode .research-diagram .flow-trail { stroke: #b3f5df; }
-.presentation-mode .motion-inview .flow-packet { filter: drop-shadow(0 0 5px #e9be6b); }
-.presentation-mode .motion-inview [aria-pressed='true'] .node { stroke: #eccb8c; stroke-width: 3.5; filter: drop-shadow(0 0 9px #d5ac6266); }
-.presentation-mode .diagram-tour { background: #163c48; border-color: #45646b; }
-.presentation-mode .diagram-tour .tour-status, .presentation-mode .tour-status strong { color: #e0efeb; }
-.presentation-mode .diagram-tour .flow-legend { color: #c6dcd9; }
-.presentation-mode .research-figure { --flow-active: #e7b668; }
-.presentation-mode .research-diagram [data-architecture-node][aria-pressed='true'] .node { stroke: var(--flow-active); stroke-width: 3.5; }
-.research-figure .flow-effect.route-focus .flow-trail { stroke: var(--flow-active); }
-.presentation-mode .architecture-inspector { background: #193b46; border-color: #c49c5f; }
-.presentation-mode .architecture-inspector summary, .presentation-mode .architecture-inspector strong { color: #e5f1eb; }
-.presentation-mode .diagram-pan-hint { color: #bdd9d1; }
-.presentation-mode .slide-status, .presentation-mode .slide-picker-label { color: #d0dfdf; }
-@media print { .diagram-slide h2 { animation: none !important; } .presentation-mode .diagram-slide { background: #0c2534; box-shadow: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
 .slide .diagram-tour .tour-status { font-size: clamp(.8rem,1.1cqw,1.05rem); }
 .slide .diagram-tour button { font-size: clamp(.75rem,1.05cqw,1rem); }
 .mobile-motion-control { display: none; }
@@ -103,3 +64,6 @@ html[data-motion='off'] .motion-inview * { animation: none !important; }
 }
 @media print { .mobile-motion-control { display: none; } }
 .slide { scroll-margin-top: 4.5rem; }
+
+/* An overview expresses structure, not simultaneous execution. */
+.research-figure[data-flow-mode="overview"] .flow-effect { display: none; }

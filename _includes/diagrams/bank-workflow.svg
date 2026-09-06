@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" class="research-diagram" role="img" aria-labelledby="bank-workflow-title"><title id="bank-workflow-title">Illustrative payment API change: current working hypothesis and proposed target workflow</title><defs><marker id="bank-workflow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<text x="20" y="38" class="lane-title" text-anchor="start">CURRENT WORKING HYPOTHESIS · VALIDATE WITH THE BANK</text>
+<g class="diagram-node ">
+<rect x="20" y="65" width="245" height="94" rx="8" class="node"/>
+<text x="36" y="93" class="node-title" text-anchor="start">Interpret requirement</text>
+<text x="36" y="116" class="node-text" text-anchor="start">Interpret intent</text>
+</g>
+<path d="M 265 112 H 323" class="edge" marker-end="url(#bank-workflow-arrow)"/>
+<g class="diagram-node ">
+<rect x="325" y="65" width="245" height="94" rx="8" class="node"/>
+<text x="341" y="93" class="node-title" text-anchor="start">Write tests</text>
+<text x="341" y="116" class="node-text" text-anchor="start">Local prompts</text>
+</g>
+<path d="M 570 112 H 628" class="edge" marker-end="url(#bank-workflow-arrow)"/>
+<g class="diagram-node ">
+<rect x="630" y="65" width="245" height="94" rx="8" class="node"/>
+<text x="646" y="93" class="node-title" text-anchor="start">Review change</text>
+<text x="646" y="116" class="node-text" text-anchor="start">Rebuild evidence</text>
+</g>
+<path d="M 875 112 H 933" class="edge" marker-end="url(#bank-workflow-arrow)"/>
+<g class="diagram-node ">
+<rect x="935" y="65" width="245" height="94" rx="8" class="node"/>
+<text x="951" y="93" class="node-title" text-anchor="start">Release</text>
+<text x="951" y="116" class="node-text" text-anchor="start">Late evidence assembly</text>
+</g>
+<text x="20" y="222" class="lane-title" text-anchor="start">PROPOSED TARGET · NEGATIVE PAYMENT AMOUNTS MUST BE REJECTED</text>
+<g class="diagram-node ">
+<rect x="20" y="250" width="245" height="126" rx="8" class="node node-teal"/>
+<text x="36" y="278" class="node-title" text-anchor="start">Domain contract</text>
+<text x="36" y="301" class="node-text" text-anchor="start">Owner-approved rule</text>
+<text x="36" y="321" class="node-text" text-anchor="start">Versioned test oracle</text>
+</g>
+<path d="M 265 310 H 323" class="edge" marker-end="url(#bank-workflow-arrow)"/>
+<g class="diagram-node ">
+<rect x="325" y="250" width="245" height="126" rx="8" class="node node-teal"/>
+<text x="341" y="278" class="node-title" text-anchor="start">Bounded generation</text>
+<text x="341" y="301" class="node-text" text-anchor="start">Permitted context only</text>
+<text x="341" y="321" class="node-text" text-anchor="start">Sandbox tests</text>
+</g>
+<path d="M 570 310 H 628" class="edge" marker-end="url(#bank-workflow-arrow)"/>
+<g class="diagram-node ">
+<rect x="630" y="250" width="245" height="126" rx="8" class="node node-teal"/>
+<text x="646" y="278" class="node-title" text-anchor="start">Independent proof</text>
+<text x="646" y="301" class="node-text" text-anchor="start">Original passes</text>
+<text x="646" y="321" class="node-text" text-anchor="start">Mutant fails</text>
+<text x="646" y="341" class="node-text" text-anchor="start">Reviewer decides</text>
+</g>
+<path d="M 875 310 H 933" class="edge" marker-end="url(#bank-workflow-arrow)"/>
+<g class="diagram-node ">
+<rect x="935" y="250" width="245" height="126" rx="8" class="node node-teal"/>
+<text x="951" y="278" class="node-title" text-anchor="start">Evidence-led release</text>
+<text x="951" y="301" class="node-text" text-anchor="start">Existing release owner</text>
+<text x="951" y="321" class="node-text" text-anchor="start">Failure → new test case</text>
+</g>
+<text x="20" y="435" class="small" text-anchor="start">Shared: identity, evaluation runners, evidence schema. Domain: payment rules, test cases, acceptance and service outcomes.</text>
+</svg>

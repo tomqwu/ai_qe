@@ -21,7 +21,7 @@
     host.replaceChildren(svg);
     return { svg, width, add: (tag, attrs, content) => { const e = svgElement(tag, attrs, content); svg.append(e); return e; } };
   }
-  function text(c, x, y, label, anchor = 'start', extra = {}) { return c.add('text', { x, y, fill: colors.ink, 'font-size': 12, 'text-anchor': anchor, ...extra }, label); }
+  function text(c, x, y, label, anchor = 'start', extra = {}) { return c.add('text', { x, y, fill: colors.ink, 'font-size': Math.max(14, c.width / 46), 'text-anchor': anchor, ...extra }, label); }
   function line(c, x1, y1, x2, y2, extra = {}) { c.add('line', { x1, y1, x2, y2, stroke: colors.line, 'stroke-width': 1, ...extra }); }
   function watch(element, draw) {
     let pending = false;
@@ -110,33 +110,33 @@
   });
 
   function waterfall(host, p, result) {
-    const k = 10000, values = [result.capacity * k, -result.uncaptured * k, -p.cost / 100 * k, -p.risk / 100 * k, result.net * k];
-    const labels = ['Capacity equiv.', 'Not captured', 'AI + pilot', 'Quality allowance', 'Net benefit'];
-    const compact = Boolean(host.closest('.explore-compact')), rowHeight = compact ? 29 : 35, axisY = compact ? 175 : 205;
-    const c = chart(host, compact ? 196 : 226, labels.map((s, i) => `${s}: ${money(values[i])}`).join('; ')); if (!c) return;
+    const k = 10000, values = [result.capacity * k, -result.uncaptured * k, -p.cost / 100 * k, -p.risk / 100 * k, -result.extraEffort * k, result.net * k];
+    const labels = ['Capacity equiv.', 'Not captured', 'AI + pilot', 'Quality allowance', 'Extra effort', 'Economic impact'];
+    const compact = Boolean(host.closest('.explore-compact')), factor = Math.max(1, host.clientWidth / (matchMedia('print').matches ? 1000 : 740)), rowHeight = (compact ? 29 : 35) * factor, axisY = (compact ? 204 : 240) * factor;
+    const c = chart(host, (compact ? 225 : 261) * factor, labels.map((s, i) => `${s}: ${money(values[i])}`).join('; ')); if (!c) return;
     let total = 0;
-    const bars = values.map((value, i) => { const start = i === 0 || i === 4 ? 0 : total; total = start + value; return { start, end: total }; });
+    const bars = values.map((value, i) => { const start = i === 0 || i === 5 ? 0 : total; total = start + value; return { start, end: total }; });
     const rawMin = Math.min(0, ...bars.map(b => Math.min(b.start, b.end))), rawMax = Math.max(0, ...bars.map(b => Math.max(b.start, b.end)));
     const span = Math.max(10, rawMax - rawMin), step = 10 ** Math.floor(Math.log10(span));
     const min = rawMin < 0 ? Math.floor((rawMin - span * .06) / step) * step : 0;
     const max = Math.ceil((rawMax + span * .06) / step) * step;
-    const left = c.width < 450 ? 110 : 126, right = c.width - 66, x = v => left + (v - min) / (max - min) * (right - left);
+    const left = Math.max(128, c.width * .22), right = c.width - Math.max(72, c.width * .10), x = v => left + (v - min) / (max - min) * (right - left);
     [min, 0, max].filter((v, i, a) => a.findIndex(n => Math.abs(n - v) < 1e-6) === i).forEach(v => {
       line(c, x(v), 8, x(v), axisY - 20, { stroke: v === 0 ? colors.muted : colors.line });
       if (v === 0 || Math.abs(x(v) - x(0)) > 45) text(c, x(v), axisY, signed(v), v === min ? 'start' : v === max ? 'end' : 'middle');
     });
     bars.forEach((b, i) => {
-      const y = 14 + i * rowHeight, positive = values[i] >= 0;
+      const y = 14 * factor + i * rowHeight, positive = values[i] >= 0;
       text(c, 0, y + 16, labels[i]);
-      if (i > 0 && i < 4) line(c, x(b.start), y - 11, x(b.start), y, { 'stroke-dasharray': '3 3' });
-      c.add('rect', { x: x(Math.min(b.start, b.end)), y, width: Math.max(0, Math.abs(x(b.end) - x(b.start))), height: 22, fill: i === 0 || i === 4 ? colors.ink : positive ? colors.teal : colors.amber });
+      if (i > 0 && i < 5) line(c, x(b.start), y - 11, x(b.start), y, { 'stroke-dasharray': '3 3' });
+      c.add('rect', { x: x(Math.min(b.start, b.end)), y, width: Math.max(0, Math.abs(x(b.end) - x(b.start))), height: 22, fill: i === 0 || i === 5 ? colors.ink : positive ? colors.teal : colors.amber });
       if (Math.abs(values[i]) < 1e-7) line(c, x(0), y + 2, x(0), y + 20, { stroke: colors.ink, 'stroke-width': 2 });
       text(c, c.width - 1, y + 16, `${signed(values[i])}k`, 'end');
     });
     text(c, (left + right) / 2, axisY + 16, 'Value ($ thousands)', 'middle');
   }
   function sensitivity(host, p) {
-    const c = chart(host, 188, 'Illustrative net annual benefit versus adoption from 0 to 100 percent, holding other assumptions fixed.'); if (!c) return;
+    const c = chart(host, 188, 'Illustrative net economic impact versus adoption from 0 to 100 percent, holding other assumptions fixed.'); if (!c) return;
     const points = Array.from({ length: 101 }, (_, adoption) => ({ adoption, y: model.calculate({ ...p, adoption }).net * 10000 }));
     const low = Math.min(0, ...points.map(d => d.y)), high = Math.max(0, ...points.map(d => d.y));
     const span = Math.max(10, high - low), min = low - span * .1, max = high + span * .2;
@@ -160,15 +160,15 @@
       const p = params(), result = model.calculate(p);
       inputs.forEach(input => { const key = input.dataset.param, value = p[key]; root.querySelector(`[data-value-label="${key}"]`).textContent = `${key === 'cost' || key === 'risk' ? value.toFixed(1) : value}%`; input.setAttribute('aria-valuetext', `${value} percent`); });
       root.querySelector('[data-net]').textContent = money(result.net * 10000);
-      root.querySelector('[data-net-label]').textContent = result.net < 0 ? 'illustrative net annual cost' : 'illustrative net annual benefit';
+      root.querySelector('[data-net-label]').textContent = 'illustrative net economic impact';
       root.querySelector('[data-capacity]').textContent = `${(result.capacity * 100).toFixed(2)}%`;
       root.querySelector('[data-net-percent]').textContent = `${result.net < 0 ? '−' : ''}${Math.abs(result.net * 100).toFixed(2)}%`;
       root.querySelector('[data-print-inputs]').textContent = `Adoption ${p.adoption}% · net task saving ${p.saving}% · capacity captured ${p.capture}%.`;
       root.querySelector('[data-assumption-line]').textContent = `Activity share ${p.share}% · eligibility ${p.eligible}% · AI/pilot cost ${p.cost.toFixed(1)}% · quality allowance ${p.risk.toFixed(1)}%.`;
-      root.querySelector('[data-model-note]').textContent = p.capture === 0 ? 'No capture: released capacity stays an effort benefit. AI/pilot costs and the quality allowance still reduce the net result.' : 'Illustrative assumptions, not a forecast. Capacity is effort equivalent; cash savings need Finance-approved capture.';
+      root.querySelector('[data-model-note]').textContent = result.extraEffort > 0 ? `Slowdown adds ${(result.extraEffort * 100).toFixed(2)}% human effort, valued at ${money(result.extraEffort * 10000)}. Cash impact before additional staffing is ${money(result.cashNet * 10000)}. Extra effort is not discounted by capture.` : p.capture === 0 ? 'No capture: released capacity stays an effort benefit. AI/pilot costs and the quality allowance still reduce the net result.' : 'Illustrative assumptions, not a forecast. Capacity is effort equivalent; cash savings need Finance-approved capture.';
       const table = root.querySelector('.model-fallback');
       table.querySelector('caption').textContent = 'Current illustrative assumptions · annual values per $10M';
-      [result.capacity, -result.uncaptured, -p.cost / 100, -p.risk / 100, result.net].forEach((value, i) => { table.querySelectorAll('td')[i].textContent = money(value * 10000); });
+      [result.capacity, -result.uncaptured, -p.cost / 100, -p.risk / 100, -result.extraEffort, result.net].forEach((value, i) => { table.querySelectorAll('td')[i].textContent = money(value * 10000); });
       draw();
     }
     inputs.forEach(input => input.addEventListener('input', () => { presets.forEach(b => b.setAttribute('aria-pressed', 'false')); render(); }));

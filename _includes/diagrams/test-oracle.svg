@@ -2,7 +2,7 @@
 <g class="diagram-node ">
 <rect x="20" y="46" width="350" height="117" rx="8" class="node node-teal"/>
 <text x="36" y="74" class="node-title" text-anchor="start">Approved behavior contract</text>
-<text x="36" y="97" class="node-text" text-anchor="start">Negative payment amounts are rejected</text>
+<text x="36" y="97" class="node-text" text-anchor="start">Reject negative payment amounts</text>
 <text x="36" y="117" class="node-text" text-anchor="start">No balance or ledger change</text>
 </g>
 <g class="diagram-node ">
@@ -15,14 +15,14 @@
 <rect x="465" y="130" width="305" height="124" rx="8" class="node"/>
 <text x="481" y="158" class="node-title" text-anchor="start">Generated candidate test</text>
 <text x="481" y="181" class="node-text" text-anchor="start">Input: a negative amount</text>
-<text x="481" y="201" class="node-text" text-anchor="start">Assertions derived from the contract</text>
+<text x="481" y="201" class="node-text" text-anchor="start">Contract-derived assertions</text>
 <text x="481" y="221" class="node-text" text-anchor="start">Agent proposes the test</text>
 </g>
 <g class="diagram-node ">
 <rect x="865" y="46" width="315" height="117" rx="8" class="node node-sand"/>
 <text x="881" y="74" class="node-title" text-anchor="start">Oracle review</text>
-<text x="881" y="97" class="node-text" text-anchor="start">Check expected result and side effects</text>
-<text x="881" y="117" class="node-text" text-anchor="start">Challenge weak or missing assertions</text>
+<text x="881" y="97" class="node-text" text-anchor="start">Check result + side effects</text>
+<text x="881" y="117" class="node-text" text-anchor="start">Challenge weak assertions</text>
 </g>
 <g class="diagram-node ">
 <rect x="865" y="244" width="315" height="117" rx="8" class="node"/>

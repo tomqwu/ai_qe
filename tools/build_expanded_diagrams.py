@@ -38,10 +38,10 @@ finish(s, 'E04,E06,A01,A03', 'Proposed portfolio screen · qualitative categorie
        'A two-by-two screen separates easy-to-verify results from expert judgment, and advice from greater action authority. Test drafts and log-linked diagnosis are candidate starting points.')
 
 s = SVG('ownership-system', 'Proposed operating responsibilities for product teams, the platform and independent challenge', 1200, 500)
-s.node(375, 25, 450, 88, 'Product and QE owner', ('Owns expected behavior and release outcomes',), 'node node-teal')
-s.node(20, 213, 330, 123, 'Shared platform team', ('Context, identity and runtime services', 'Service reliability and evidence exports'), 'node')
-s.node(435, 213, 330, 123, 'Delivery team', ('Test intent, assertions and review', 'Acceptance within existing CI gates'), 'node node-navy')
-s.node(850, 213, 330, 123, 'Security and risk partners', ('Threat scenarios and control challenge', 'Applicability and escalation advice'), 'node node-sand')
+s.node(375, 25, 450, 88, 'Product and QE owner', ('Owns behavior and release outcomes',), 'node node-teal')
+s.node(20, 213, 330, 123, 'Shared platform team', ('Context, identity and runtime', 'Service + evidence export'), 'node')
+s.node(435, 213, 330, 123, 'Delivery team', ('Test intent, assertions and review', 'Accept through existing CI'), 'node node-navy')
+s.node(850, 213, 330, 123, 'Security and risk partners', ('Threat cases + control challenge', 'Scope and escalation advice'), 'node node-sand')
 s.path('M 600 113 V 211'); s.text(614, 166, 'accountability', 'edge-label')
 s.path('M 350 260 H 433'); s.path('M 850 260 H 767'); s.text(90, 192, 'Shared services', 'lane-title'); s.text(880, 192, 'Independent challenge', 'lane-title')
 s.path('M 600 336 V 398'); s.node(375, 400, 450, 75, 'Operations and value owners', ('Incidents, adoption and capacity use',), 'node node-teal')
@@ -69,8 +69,8 @@ s = SVG('strategic-scorecard', 'Proposed leadership evidence contract linking st
 for x, t in [(20,'STRATEGIC OUTCOME'),(370,'EVIDENCE TO EXAMINE'),(820,'LEADERSHIP DECISION')]: s.text(x+16,32,t,'lane-title')
 rows = [('Delivery capacity', 'Net effort with review and rework', 'Redeploy verified capacity'),
         ('Trustworthy outcomes', 'Fault detection and escaped defects', 'Hold the quality floor'),
-        ('Reusable capability', 'Results across teams and task cohorts', 'Fund the shared service'),
-        ('Controlled autonomy', 'Denied actions and recovery exercises', 'Set the next authority limit')]
+        ('Reusable capability', 'Results by team and task', 'Fund the shared service'),
+        ('Controlled autonomy', 'Denials and recovery tests', 'Set the next authority limit')]
 for i,(a,b,c) in enumerate(rows):
     y=58+i*99
     s.node(20,y,310,76,a,(), 'node node-teal'); s.node(370,y,405,76,b,()); s.node(820,y,360,76,c,(), 'node node-sand')
@@ -82,11 +82,11 @@ finish(s, 'D02,E01,E03,A01', 'Proposed leadership scorecard · measures and deci
        'Four rows connect delivery capacity, trustworthy outcomes, reusable capability and controlled autonomy to evidence and leadership decisions.')
 
 s = SVG('governance-loop', 'Proposed governance loop connecting system inventory, authority, evidence and ongoing review', 1200, 510)
-s.node(20,70,290,113,'System inventory',('Purpose and critical dependencies','Named accountable owner'), 'node node-teal')
-s.node(455,70,290,113,'Authority and appetite',('Allowed data and actions','Escalation and stop conditions'))
-s.node(890,70,290,113,'Evidence review',('Evaluation and control results','Exceptions and unresolved risks'))
+s.node(20,70,290,113,'System inventory',('Purpose + dependencies','Named accountable owner'), 'node node-teal')
+s.node(455,70,290,113,'Authority and appetite',('Allowed data and actions','Escalation + stop rules'))
+s.node(890,70,290,113,'Evidence review',('Evaluation + control results','Exceptions + open risks'))
 s.path('M 310 126 H 453'); s.path('M 745 126 H 888')
-s.node(455,310,290,104,'Operational review',('Incidents and service changes','Revisit scope and authority'), 'node node-sand')
+s.node(455,310,290,104,'Operational review',('Incidents + service changes','Revisit scope and authority'), 'node node-sand')
 s.path('M 1035 183 V 362 H 747'); s.path('M 455 362 H 165 V 185','edge edge-dashed')
 s.text(891,240,'Approved scope', 'node-text'); s.text(24,282,'New evidence', 'node-text')
 rail(s,'OSFI context: July 2026 bulletin = sound practices; revised E-23 takes effect 1 May 2027.',478)
@@ -96,12 +96,12 @@ finish(s, 'A01,R01,R02', 'Proposed governance loop · assess applicability throu
        'Inventory informs authority limits. Evidence review supports an approved scope. Operations feed incidents and service changes back into the inventory and authority decision.')
 
 s = SVG('context-route', 'Proposed permission-aware retrieval pipeline with provenance and an untrusted-content boundary',1200,520)
-s.node(20,55,240,124,'Approved sources',('Contracts and source code','Synthetic fixtures','Access and retention labels'))
-s.node(325,55,240,124,'Retrieval service',('User and agent scope','Filter by current permissions','Select relevant passages'), 'node node-teal')
-s.node(630,55,240,124,'Context snapshot',('Source IDs and versions','Minimal task evidence','Classified, traceable input'))
-s.node(935,55,245,124,'Agent runtime',('Read as task evidence','Separate from instructions','Propose bounded actions'), 'node node-navy')
+s.node(20,55,240,124,'Approved sources',('Contracts + code','Synthetic fixtures','Access + retention'))
+s.node(325,55,240,124,'Retrieval service',('User and agent scope','Filter by current access','Relevant passages'), 'node node-teal')
+s.node(630,55,240,124,'Context snapshot',('Source IDs + versions','Minimal task evidence','Classified + traceable'))
+s.node(935,55,245,124,'Agent runtime',('Read as task evidence','Treat text as data','Scoped proposals'), 'node node-navy')
 for x in (260,565,870):s.path(f'M {x} 118 H {x+63}')
-s.node(325,302,385,115,'Retrieval evaluation',('Relevant evidence and correct citations','Forbidden-source and stale-access tests'), 'node node-sand')
+s.node(325,302,385,115,'Retrieval evaluation',('Relevant evidence and correct citations','Forbidden / stale access tests'), 'node node-sand')
 s.path('M 750 179 V 262 H 517 V 300','edge edge-dashed')
 s.node(785,302,395,115,'Action authority remains external',('Retrieved text cannot grant tool access','Gateway rechecks the requested action'))
 s.path('M 1057 179 V 300')
@@ -124,10 +124,10 @@ finish(s,'A01,T03,T06','Proposed release manifest · the model name alone cannot
        'A manifest contains model and prompt, retrieval and data, tools and memory, and the evaluation contract. A release identity binds those versions to evaluated runs and approval.')
 
 s = SVG('test-oracle','Proposed independent test oracle showing expected behavior, generated assertions and execution evidence',1200,510)
-s.node(20,46,350,117,'Approved behavior contract',('Negative payment amounts are rejected','No balance or ledger change'), 'node node-teal')
+s.node(20,46,350,117,'Approved behavior contract',('Reject negative payment amounts','No balance or ledger change'), 'node node-teal')
 s.node(20,244,350,117,'Implementation under test',('Current code may contain a defect','Observed behavior is evidence'))
-s.node(465,130,305,124,'Generated candidate test',('Input: a negative amount','Assertions derived from the contract','Agent proposes the test'))
-s.node(865,46,315,117,'Oracle review',('Check expected result and side effects','Challenge weak or missing assertions'), 'node node-sand')
+s.node(465,130,305,124,'Generated candidate test',('Input: a negative amount','Contract-derived assertions','Agent proposes the test'))
+s.node(865,46,315,117,'Oracle review',('Check result + side effects','Challenge weak assertions'), 'node node-sand')
 s.node(865,244,315,117,'Independent execution',('Pass on valid implementation','Fail on a relevant seeded fault'))
 s.path('M 370 103 H 407 V 180 H 463');s.path('M 370 303 H 407 V 219 H 463','edge edge-dashed')
 s.path('M 770 171 H 817 V 103 H 863');s.path('M 770 213 H 817 V 303 H 863')
@@ -138,13 +138,13 @@ finish(s,'E04,E05','Illustrative payment contract · expected behavior is propos
        'The approved contract and implementation inform a candidate test. Separate oracle review checks intended behavior; independent execution checks both valid code and a seeded fault.')
 
 s = SVG('mutation-loop','Proposed mutation-guided test generation: one candidate must pass original code and detect a selected fault',1200,500)
-s.node(20,58,270,121,'Fault concern',('Fault: negative amount accepted','Select a relevant code mutation'), 'node node-sand')
-s.node(390,58,310,121,'Candidate test',('Generate against the stated concern','Preserve the intended assertion'), 'node node-teal')
+s.node(20,58,270,121,'Fault concern',('Fault: accepts negatives','Select a relevant mutation'), 'node node-sand')
+s.node(390,58,310,121,'Candidate test',('Generate for stated concern','Preserve intended assertion'), 'node node-teal')
 s.path('M 290 119 H 388')
-s.node(860,25,320,110,'Original implementation',('Candidate passes','Expected behavior remains intact'))
-s.node(860,210,320,110,'Mutated implementation',('Candidate fails for the target fault','Exclude equivalent / invalid mutants'))
+s.node(860,25,320,110,'Original implementation',('Candidate passes','Preserve expected behavior'))
+s.node(860,210,320,110,'Mutated implementation',('Test fails for target fault','Exclude invalid faults','Exclude equivalent faults'))
 s.path('M 700 103 H 780 V 80 H 858');s.path('M 700 147 H 780 V 265 H 858')
-s.node(390,358,310,99,'Reviewable test evidence',('Both results + mutation rationale','Human review before integration'), 'node node-teal')
+s.node(390,358,310,99,'Reviewable test evidence',('Results + fault rationale','Human review before merge'), 'node node-teal')
 s.path('M 1180 80 H 1190 V 408 H 702');s.path('M 1020 320 V 347 H 545 V 356')
 s.path('M 390 408 H 335 V 160 H 292','edge edge-dashed');s.text(36,379,'Refine the concern', 'node-text')
 finish(s,'E05','Design pattern informed by Meta ACH · detecting selected mutants does not prove all real faults are covered.',
@@ -153,9 +153,9 @@ finish(s,'E05','Design pattern informed by Meta ACH · detecting selected mutant
        'A fault concern drives a candidate test. It must pass original code and fail a relevant mutated version. Combined evidence reaches review; weak results lead to refining the concern.')
 
 s = SVG('diagnosis-workflow','Proposed failure diagnosis workflow with log citations, review and separate accuracy and deployment populations',1200,500)
-s.node(20,55,260,112,'Failing integration test',('Sanitized logs and trace IDs','Relevant change context'))
-s.node(335,55,260,112,'Diagnostic assistant',('Extract relevant log lines','Suggest a cause with evidence'), 'node node-teal')
-s.node(650,55,250,112,'Engineer review',('Confirm or correct the cause','Route the actual remediation'))
+s.node(20,55,260,112,'Failing integration test',('Safe logs + trace IDs','Relevant change context'))
+s.node(335,55,260,112,'Diagnostic assistant',('Extract relevant log lines','Cause + evidence'), 'node node-teal')
+s.node(650,55,250,112,'Engineer review',('Confirm or correct cause','Route remediation'))
 s.node(955,55,225,112,'Outcome record',('Accepted / corrected','Diagnosis effort'))
 for a,b in [(280,333),(595,648),(900,953)]:s.path(f'M {a} 111 H {b}')
 s.rect(20,245,565,185,'lane lane-teal');s.text(42,284,'GOOGLE: REVIEWED ACCURACY SAMPLE','lane-title');s.text(42,353,'90.14%','big-stat');s.text(295,339,'71 manually evaluated failures','node-text');s.text(42,397,'Root-cause accuracy in the reported case study','node-text')
@@ -167,10 +167,10 @@ finish(s,'E06','Google case study (2026) plus a proposed local workflow · popul
        'A failing test feeds an assistant and then an engineer review. The outcome record captures corrections and effort. Separate panels show the small accuracy sample and larger deployment population.')
 
 s = SVG('flaky-repair','Proposed flaky-test repair loop preserving test semantics and checking repeatability',1200,500)
-s.node(20,65,250,118,'Reproduce the flake',('Capture failure conditions','Retain the original test intent'))
+s.node(20,65,250,118,'Reproduce the flake',('Record failure conditions','Retain test intent'))
 s.node(330,65,250,118,'Targeted context',('Dynamic call paths','Timing and shared state'))
-s.node(640,65,250,118,'Candidate repair',('Fix the failure mechanism','Keep assertions meaningful'), 'node node-teal')
-s.node(950,65,230,118,'Validation',('Repeat across conditions','Review semantic changes'))
+s.node(640,65,250,118,'Candidate repair',('Fix the failure cause','Keep valid assertions'), 'node node-teal')
+s.node(950,65,230,118,'Validation',('Vary conditions','Review behavior'))
 for a,b in [(270,328),(580,638),(890,948)]:s.path(f'M {a} 124 H {b}')
 s.node(640,315,540,109,'Reject misleading stability',('Deleted assertions can hide a faulty repair.','Review both the repair and the fault-detection capability.'),'node node-sand')
 s.path('M 1065 183 V 313');s.path('M 640 368 H 145 V 185','edge edge-dashed')
@@ -182,10 +182,10 @@ finish(s,'E07','Proposed repair assurance loop · inspired by a six-month indust
        'The workflow reproduces a flaky failure, gathers targeted context, proposes a repair and validates it. Semantically weak or unstable repairs return to diagnosis.')
 
 s = SVG('corpus-design','Proposed evaluation corpus lifecycle with separate development, held-out and adversarial case sets',1200,510)
-s.node(20,60,280,141,'Candidate cases',('User tasks and approved examples','Reviewed production failures','Synthetic edge cases'))
+s.node(20,60,280,141,'Candidate cases',('Tasks + approved examples','Reviewed service failures','Synthetic edge cases'))
 s.node(360,60,280,141,'Curation and labeling',('Minimize sensitive content','Deduplicate related cases','Review expected behavior'), 'node node-teal')
 s.path('M 300 130 H 358')
-for y,title,lines in [(20,'Development set',('Prompt iteration and debugging',)),(174,'Held-out evaluation',('Release comparison; restrict tuning access',)),(328,'Adversarial set',('Authority, disclosure and recovery scenarios',))]:
+for y,title,lines in [(20,'Development set',('Prompt iteration and debugging',)),(174,'Held-out evaluation',('Release comparison; restrict tuning access',)),(328,'Adversarial set',('Authority, disclosure, recovery',))]:
     s.node(765,y,415,112,title,lines,'node node-sand' if y==328 else 'node');s.path(f'M 640 130 H 700 V {y+56} H 763')
 s.text(35,296,'SPLIT RELATED CASES TOGETHER', 'lane-title');s.text(35,334,'Near duplicates can make a held-out result', 'label');s.text(35,365,'look more general than it is.', 'label')
 s.text(35,481,'Version each case, source permission, expectation, scenario tag and review decision. Report results by important slice.','small')
@@ -217,7 +217,7 @@ s.node(850,95,310,106,'Existing release systems',('Protected deployment identity
 s.path('M 350 148 H 443');s.text(371,133,'allow', 'edge-label','middle')
 s.node(445,251,310,106,'Controlled outputs',('Logs and test artifacts','Redaction and retention rules'))
 s.path('M 600 201 V 249')
-s.node(850,251,310,106,'Reviewed artifact',('Signed or verified provenance','Independent acceptance evidence'))
+s.node(850,251,310,106,'Reviewed artifact',('Signed or verified provenance','Independent approval evidence'))
 s.path('M 755 303 H 848');s.text(790,287,'review', 'edge-label','middle');s.path('M 1005 251 V 203')
 s.text(40,276,'Default-deny egress', 'node-title');s.text(40,310,'Explicit destinations and quotas', 'node-text');s.text(40,338,'Cleanup after every task', 'node-text')
 rail(s,'Sandboxing limits consequences; it still needs access controls, escape tests and artifact validation.',463)
@@ -227,10 +227,10 @@ finish(s,'A03,R01,E04','Proposed deployment boundaries · zones represent author
        'An orchestration worker invokes an ephemeral sandbox. Controlled artifacts reach review, then protected release systems. Production authority never belongs to the generating worker.')
 
 s = SVG('release-gate','Proposed release decision logic with mandatory floors and scenario-level evaluation',1200,500)
-s.node(20,60,275,133,'Comparable runs',('Same held-out corpus','Recorded configuration versions','Repeated runs where needed'))
-s.node(385,60,340,133,'Mandatory floors',('Critical behavior and security tests','Denied actions and privacy scenarios','Latency / cost limits for the workflow'), 'node node-teal')
+s.node(20,60,275,133,'Comparable runs',('Same held-out corpus','Configuration versions','Repeat runs as needed'))
+s.node(385,60,340,133,'Mandatory floors',('Critical behavior and security tests','Denial + privacy scenarios','Workflow latency / cost limits'), 'node node-teal')
 s.node(830,25,350,106,'Hold and investigate',('Any mandatory floor fails','Retain the failing scenario'), 'node node-sand')
-s.node(830,236,350,124,'Release review',('Inspect scenario-level regressions','Weigh gains and remaining uncertainty','Approve a bounded rollout'))
+s.node(830,236,350,124,'Release review',('Inspect scenario-level regressions','Weigh gains + uncertainty','Approve a bounded rollout'))
 s.path('M 295 127 H 383');s.path('M 725 100 H 777 V 78 H 828');s.text(738,64,'fail','edge-label')
 s.path('M 725 159 H 777 V 298 H 828');s.text(739,212,'pass','edge-label')
 rail(s,'A higher average score cannot override a failed critical scenario. Thresholds are agreed locally.',451)
@@ -241,8 +241,8 @@ finish(s,'A01,A02,T06','Proposed release logic · no universal score threshold i
 
 s = SVG('fallback-state','Proposed recovery state machine for an AI workflow with bounded recovery authority',1200,510)
 s.node(20,60,260,120,'Normal operation',('Approved configuration','Active monitoring'), 'node node-teal')
-s.node(360,60,280,120,'Containment',('Stop consequential tool actions','Preserve relevant evidence'), 'node node-sand')
-s.node(760,60,420,120,'Fallback service',('Use an approved previous route or manual queue','Protect the underlying business process'))
+s.node(360,60,280,120,'Containment',('Stop consequential actions','Preserve relevant evidence'), 'node node-sand')
+s.node(760,60,420,120,'Fallback service',('Approved prior route or manual queue','Protect the underlying business process'))
 s.path('M 280 119 H 358');s.text(287,42,'trigger', 'edge-label')
 s.path('M 640 119 H 758');s.text(666,102,'route', 'edge-label')
 s.node(760,328,420,113,'Recovery review',('Diagnose, patch and rerun failure scenarios','Owner authorizes resumption'))
