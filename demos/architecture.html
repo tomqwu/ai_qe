@@ -1,0 +1,35 @@
+---
+layout: null
+title: Architecture in motion
+parent: Industry research
+nav_order: 3.5
+permalink: /demos/architecture/
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture in motion | AI-QE &amp; AppSec</title>
+<meta name="description" content="Explore a 3D assurance architecture: bounded generation, independent authorization, verification and human release decisions.">
+<link rel="canonical" href="{{ page.url | absolute_url }}"><link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ '/assets/css/architecture-3d.css' | relative_url }}?v={{ site.data.release.version }}">
+<script type="module" src="{{ '/assets/js/architecture-3d.js' | relative_url }}?v={{ site.data.release.version }}"></script>
+</head>
+<body class="architecture-demo">
+<a class="skip-link" href="#demo-controls">Skip to playback controls</a>
+<header class="demo-header"><a class="demo-brand" href="{{ '/' | relative_url }}">AI × QE <span>ARCHITECTURE IN MOTION</span></a><nav aria-label="Demo resources"><a href="{{ '/docs/industry/architecture/' | relative_url }}">Research &amp; architecture ↗</a><span>v{{ site.data.release.version }}</span></nav></header>
+<main id="architecture-demo" data-model="{{ '/assets/models/assurance-platform.glb' | relative_url }}" data-story="{{ '/assets/data/architecture-demo.json' | relative_url }}">
+<div class="demo-intro"><div><p class="eyebrow">A PROPOSED ENTERPRISE ASSURANCE SYSTEM</p><h1>See where trust is earned.</h1></div><p>Generation proposes.<br>Independent controls decide.</p></div>
+<div class="scenario-tabs" role="group" aria-label="Architecture scenario"><button type="button" data-scenario="generate" aria-pressed="true">01 <span>Generate &amp; verify</span></button><button type="button" data-scenario="evaluate" aria-pressed="false">02 <span>Evaluate AI</span></button><button type="button" data-scenario="deny" aria-pressed="false">03 <span>Deny unsafe action</span></button><button type="button" data-scenario="hold" aria-pressed="false">04 <span>Hold failed proof</span></button></div>
+<div class="demo-workspace">
+<section class="scene-panel" aria-label="Interactive three-dimensional assurance platform"><div class="scene-view" id="scene-view"><canvas id="architecture-canvas" aria-label="3D architecture model. Drag to orbit and scroll to zoom. Use the component selector for accessible inspection." tabindex="0"></canvas><div class="scene-labels" aria-hidden="true"></div><div class="scene-loading" role="status"><span class="load-orbit"></span><strong>Preparing the assurance platform</strong><span>Loading the authored 3D scene…</span></div><div class="scene-fallback" hidden><img src="{{ '/assets/images/architecture-3d-poster.jpg' | relative_url }}" alt="Overview of the assurance platform's 11 modules and connecting control paths"><p>3D rendering is unavailable in this browser. Explore the stages below or watch the film.</p></div><div class="scene-corner"><span class="status-dot"></span><span data-run-label>GUIDED DEMONSTRATION</span></div><div class="scene-legend"><span><i class="legend-context"></i>Relationship</span><span><i class="legend-active"></i>Current flow</span><span><i class="legend-denied"></i>Denied / failed</span></div></div>
+<div class="view-controls"><p>Drag to orbit · scroll to zoom</p><div><button type="button" data-reset-camera>Reset view</button><button type="button" data-cinematic aria-pressed="true">Cinematic camera</button><button type="button" data-labels aria-pressed="true">Labels</button></div></div></section>
+<aside class="story-panel" aria-label="Current architecture stage"><div class="story-top"><span class="eyebrow" data-scenario-label>GENERATE &amp; VERIFY</span><span class="state-badge" data-state>READY</span></div><p class="step-number" data-step-number>01 <span>/ 07</span></p><h2 data-step-title>Start with permitted context</h2><p class="step-body" data-step-body>The engineer supplies a task; delivery systems provide approved, versioned source material.</p><div class="artifact"><span>EVIDENCE AT THIS BOUNDARY</span><strong data-artifact>Task PAY-042 · approved contract</strong></div><div class="component-inspector"><label for="component-select">Inspect a component</label><select id="component-select"><option value="">Select a module…</option></select><p data-component-detail>Choose a module in the scene or from this list to inspect its role.</p><a data-component-source href="{{ '/docs/industry/architecture/' | relative_url }}">Design basis &amp; sources ↗</a></div></aside>
+</div>
+<section class="playback" id="demo-controls" aria-label="Playback controls"><div class="playback-buttons"><button type="button" data-play aria-pressed="false">▶ Play story</button><button type="button" data-previous aria-label="Previous architecture stage">←</button><button type="button" data-next aria-label="Next architecture stage">→</button></div><div class="scrubber"><label for="story-progress"><span data-progress-label>Stage 1 of 7</span><span data-time>00:00 / 00:35</span></label><input id="story-progress" type="range" min="0" max="35" value="0" step="0.05" aria-label="Story playback position"></div><button type="button" data-replay>↻ Restart</button><p class="sr-only" data-announcement aria-live="polite"></p></section>
+<div class="demo-foot"><p>Authored demonstration · no live systems or production data.<br>Motion shows direction and sequence, not traffic volume or measured performance.</p><div><button type="button" data-watch-film>Watch the 35-second film</button><a href="{{ '/assets/video/assurance-architecture.mp4' | relative_url }}" download>MP4 ↓</a><a href="{{ '/assets/models/assurance-platform.blend' | relative_url }}" download>Blender scene ↓</a></div></div>
+<noscript><p class="no-script">JavaScript is required for the interactive scene. <a href="{{ '/assets/video/assurance-architecture.mp4' | relative_url }}">Watch the architecture film</a> or <a href="{{ '/docs/industry/architecture/' | relative_url }}">read the illustrated architecture</a>.</p></noscript>
+</main>
+<div class="film-edition">AI × QE · Architecture in motion · v{{ site.data.release.version }} <span>Proposed design · no live systems or production data</span></div>
+<dialog class="film-dialog"><div><strong>Inside the assurance platform</strong><button type="button" data-close-film>Close ×</button></div><video controls playsinline preload="none" poster="{{ '/assets/images/architecture-3d-poster.jpg' | relative_url }}"><source src="{{ '/assets/video/assurance-architecture.mp4' | relative_url }}" type="video/mp4"><track kind="captions" src="{{ '/assets/video/assurance-architecture.vtt' | relative_url }}" srclang="en" label="English stage descriptions" default></video><p>Silent film with on-screen explanations. Proposed architecture; not a recording of production activity.</p></dialog>
+</body></html>

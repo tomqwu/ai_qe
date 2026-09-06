@@ -7,6 +7,12 @@ permalink: /releases/
 
 The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
 
+## v1.4.0 · 6 September 2026
+
+Added [Architecture in motion]({{ '/demos/architecture/' | relative_url }}), a Blender-authored 3D model with a Three.js interactive viewer. Explore 11 modules, four scenarios, moving signals, camera orbit and component inspection. Denied requests stop at authorization; failed checks reach a held release decision. The AI-application evaluation branch remains distinct from generated-test execution.
+
+Includes a downloadable [35-second architecture film]({{ '/assets/video/assurance-architecture.mp4' | relative_url }}), captions, a static fallback and the [editable Blender scene]({{ '/assets/models/assurance-platform.blend' | relative_url }}). Motion respects reduced-motion settings. Slide content and PDFs remain **edition v1.3.0**.
+
 ## v1.3.1 · 6 September 2026
 
 Animated slides now have a visible Play/Pause, Next step and Overview bar below the canvas. It stays clear of the diagram and navigation, including in the embedded player. A guided flow plays once when its diagram enters view; Pause, Overview, motion-off and reduced-motion preferences retain control. Diagram controls contains view options and the AppSec path choice.

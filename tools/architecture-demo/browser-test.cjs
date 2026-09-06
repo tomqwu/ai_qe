@@ -1,0 +1,23 @@
+const assert=require('node:assert/strict'),{chromium}=require('playwright');
+const base=process.env.QE_TEST_URL||'http://127.0.0.1:61600/ai_qe';
+(async()=>{const browser=await chromium.launch({args:['--enable-unsafe-swiftshader']});try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(`${base}/demos/architecture/?scenario=generate`);await page.waitForFunction(()=>window.qeArchitecture?.ready,{},{timeout:60000});
+ assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.modules),11,'All Blender modules must load');
+ assert.ok(await page.locator('[data-play]').isVisible());
+ const signal=await page.evaluate(()=>window.qeArchitecture.snapshot.signals[0].position);
+ await page.waitForFunction(p=>{const q=window.qeArchitecture.snapshot.signals[0].position;return Math.hypot(...q.map((v,i)=>v-p[i]))>.03},signal,{timeout:10000});
+ await page.locator('[data-play]').click();const paused=await page.evaluate(()=>window.qeArchitecture.snapshot.elapsed);await page.waitForTimeout(180);assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.elapsed),paused,'Pause must freeze the story');
+ await page.locator('[data-scenario="deny"]').click();await page.locator('[data-next]').click();
+ assert.equal(await page.locator('[data-state]').innerText(),'DENIED');
+ assert.deepEqual(await page.evaluate(()=>window.qeArchitecture.snapshot.routes),[],'A denied request must not reach a tool');
+ await page.locator('[data-next]').click();assert.deepEqual(await page.evaluate(()=>window.qeArchitecture.snapshot.routes),['gateway:evidence'],'Only the denial receipt leaves the gateway');
+ await page.locator('[data-scenario="hold"]').click();await page.locator('[data-next]').click();assert.equal(await page.locator('[data-state]').innerText(),'FAILED');await page.locator('[data-next]').click();assert.equal(await page.locator('[data-state]').innerText(),'HOLD');assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.node),'release');
+ await page.locator('[data-scenario="evaluate"]').click();await page.locator('[data-next]').click();assert.deepEqual(await page.evaluate(()=>window.qeArchitecture.snapshot.routes),['application:evaluation'],'AI evaluation is separate from generated-test execution');
+ await page.locator('#component-select').selectOption('gateway');assert.match(await page.locator('[data-component-detail]').innerText(),/before a tool runs/);assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.playing),false);
+ const layout=await page.evaluate(()=>{const c=document.querySelector('.scene-view').getBoundingClientRect(),p=document.querySelector('.playback').getBoundingClientRect();return {sceneBottom:c.bottom,controlsTop:p.top,controlsBottom:p.bottom,height:innerHeight,wide:document.documentElement.scrollWidth>innerWidth}});assert.ok(layout.sceneBottom<=layout.controlsTop);assert.ok(layout.controlsBottom<=layout.height);assert.ok(!layout.wide);
+ await page.setViewportSize({width:390,height:844});assert.ok(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),'No mobile horizontal overflow');assert.ok(await page.locator('#component-select').isVisible());
+ await page.emulateMedia({reducedMotion:'reduce'});await page.waitForFunction(()=>document.querySelector('[data-play]').disabled);await page.locator('[data-next]').click();assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.playing),false);
+ await page.goto(`${base}/demos/architecture/?no3d=1`);await page.locator('.scene-fallback').waitFor({state:'visible'});await page.locator('[data-next]').click();assert.match(await page.locator('[data-step-title]').innerText(),/Generate a candidate/,'Text walkthrough survives without WebGL');
+ assert.deepEqual(errors,[]);console.log('Passed: Blender model loading, actual 3D motion, pause, denial and hold semantics, AI evaluation branch, inspection, desktop/mobile layout, reduced motion and WebGL fallback');
+ }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1});

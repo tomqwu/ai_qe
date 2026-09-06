@@ -41,6 +41,8 @@ jobs:
           node --test tools/qe-model.test.cjs tools/pilot-decision.test.cjs
           node tools/build_scenario_data.cjs --check
           python tools/validate_contracts.py
+          node tools/build_architecture_demo.cjs --check
+          python tools/verify_architecture_demo.py
       - name: Build with Jekyll
         run: bundle exec jekyll build
         env:
@@ -53,6 +55,7 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
           python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
           node tools/browser-smoke.cjs
+          node tools/architecture-demo/browser-test.cjs
       - name: Check site links and search index
         run: python tools/verify_site.py _site
       - name: Check research provenance and briefing completeness

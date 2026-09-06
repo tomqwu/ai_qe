@@ -158,3 +158,16 @@ Serve the build under `/ai_qe/` on port 61600 and run `npm run test:browser`. Se
 Canonical economics live in `_data/scenarios.json`; regenerate derived tables with `node tools/build_scenario_data.cjs`. Regenerate diagrams in order with `python tools/build_expanded_diagrams.py` then `python tools/build_audit_diagrams.py`. The payment reference contracts and failure fixtures are under `assets/examples/payments/`.
 
 For a content release, update `version` and `slide_edition` in `_data/release.yml`, regenerate the static audience PDFs using `node tools/export_decks.cjs`, render and visually inspect every page, and update the release history. A player-only patch may advance `version` while retaining `slide_edition` and its existing PDFs; document that distinction in the release notes. The original 13-page research companion remains a dated archive; it is not the current slide export.
+
+## Blender and Three.js architecture demonstration
+
+The `/demos/architecture/` page is a dedicated 3D viewer. The landing page links a lightweight poster, so ordinary research and slide pages do not load the WebGL renderer.
+
+- `assets/data/architecture-demo.json`: 11 modules, 12 directed routes and four authored scenario narratives.
+- `tools/architecture-demo/build_scene.py`: Blender geometry, editable camera animation and native flow-packet animation. Run `/Applications/Blender.app/Contents/MacOS/Blender --background --python tools/architecture-demo/build_scene.py` on this host, or use the Blender binary on another host.
+- `assets/models/assurance-platform.blend` and `.glb`: editable source scene and browser model. The Blender timeline contains the generated-test walkthrough; the Three.js viewer adds the other interactive scenarios.
+- `tools/architecture-demo/main.js`: Three.js viewer source. Run `node tools/build_architecture_demo.cjs` after edits. Three.js and esbuild are pinned in `package-lock.json`; the browser bundle is served locally. Three.js's MIT license is retained under `assets/licenses/`.
+- `node tools/architecture-demo/export_film.cjs`: capture 35 seconds at 1920×1080 / 24 fps from a running preview, using Playwright and FFmpeg. Set `QE_TEST_URL` or `FFMPEG` if needed. Produces an MP4, captions, poster, provenance hashes and review frames in `/tmp/ai-qe-film-proof`.
+- `node tools/architecture-demo/browser-test.cjs` and `python tools/verify_architecture_demo.py`: exercise real rendering/motion, authorization and failed-check semantics, fallback and artifact agreement. CI runs these checks; Blender and FFmpeg are authoring dependencies, not required on the deployment runner.
+
+The film is a silent render of the Three.js demonstration using the Blender-authored model. It is not live telemetry, a performance model or a claim that all flows occur simultaneously. After scene, narrative or visual changes, rebuild the model/bundle as needed, rebuild Jekyll, re-export the film, inspect its stage frames and rerun validation.
