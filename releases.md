@@ -5,7 +5,13 @@ permalink: /releases/
 ---
 # Publication editions
 
-The edition identifies both the site and audience presentations. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
+The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
+
+## v1.3.1 · 6 September 2026
+
+Animated slides now have a visible Play/Pause, Next step and Overview bar below the canvas. It stays clear of the diagram and navigation, including in the embedded player. A guided flow plays once when its diagram enters view; Pause, Overview, motion-off and reduced-motion preferences retain control. Diagram controls contains view options and the AppSec path choice.
+
+The slide content and downloadable PDFs remain **edition v1.3.0**. The page banner and player header identify this playback update as **v1.3.1**.
 
 ## v1.3.0 · 6 September 2026
 

@@ -6,6 +6,8 @@ from pypdf import PdfReader
 ROOT=Path(__file__).resolve().parents[1]
 site=Path(sys.argv[1] if len(sys.argv)>1 else '_site')
 version=re.search(r'version: "([^"]+)"',(ROOT/'_data/release.yml').read_text())[1]
+edition_match=re.search(r'slide_edition: "([^"]+)"',(ROOT/'_data/release.yml').read_text())
+edition=edition_match[1] if edition_match else version
 results=json.loads((ROOT/'_data/scenario_results.json').read_text())
 html=(site/'docs/economics/savings-model/index.html').read_text()
 for key,r in results.items():
@@ -17,11 +19,11 @@ assert '75% of generated tests' not in legacy and '75% of target test classes' i
 for audience,count in [('evp',21),('technical',29)]:
     text=(site/f'briefings/{audience}/index.html').read_text()
     assert f'v{version}' in text
-    pdf=PdfReader(ROOT/f'assets/pdf/ai-qe-{audience}-v{version}.pdf')
+    pdf=PdfReader(ROOT/f'assets/pdf/ai-qe-{audience}-v{edition}.pdf')
     assert len(pdf.pages)==count, f'{audience}: incorrect export length'
     for i,page in enumerate(pdf.pages):
         words=page.extract_text()
-        assert len(words)>100 and f'v{version}' in words, f'{audience}/{i+1}: missing content or edition'
+        assert len(words)>100 and f'v{edition}' in words, f'{audience}/{i+1}: missing content or edition'
         section=re.search(r'<section[^>]+id="slide-'+str(i+1)+r'".*?</section>',text,re.S)[0]
         svg=re.search(r'<svg xmlns="http://www.w3.org/2000/svg".*?</svg>',section,re.S)
         if svg:

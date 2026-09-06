@@ -93,6 +93,7 @@
     let index = -1;
     let playing = false;
     let completed = false;
+    let previewStarted = false;
     let timer;
     let remaining = 3200;
     let deadline;
@@ -115,6 +116,10 @@
       } else {
         legend.textContent = `${mode === 'tour' ? 'Gold = current step.' : 'Gold = direct connections.'} Teal = static context.${moving ? '' : ' Motion paused.'}`;
       }
+      host.dispatchEvent(new CustomEvent('qe:flow-state', { bubbles: true, detail: {
+        playing, enabled: enabled(), label: play.textContent,
+        status: index >= 0 ? `${playing ? '' : 'Paused · '}${index + 1}/${steps.length} · ${steps[index].title}` : status.textContent
+      } }));
     }
     function show(number) {
       clear();
@@ -140,6 +145,7 @@
       update();
     }
     function overview(finished = false) {
+      previewStarted = true;
       playing = false;
       index = -1;
       completed = finished;
@@ -165,6 +171,7 @@
     }
     play.addEventListener('click', () => {
       if (!enabled()) return;
+      previewStarted = true;
       playing = !playing;
       record.flowPaused = !playing;
       if (playing && index < 0) show(0);
@@ -172,6 +179,7 @@
       syncRecord(record);
     });
     next.addEventListener('click', () => {
+      previewStarted = true;
       playing = false;
       record.flowPaused = true;
       clear();
@@ -179,12 +187,16 @@
       syncRecord(record);
     });
     reset.addEventListener('click', () => overview());
+    host.addEventListener('qe:flow-command', event => {
+      ({ play, next, reset })[event.detail.action]?.click();
+    });
     branch?.addEventListener('change', () => {
       steps = allSteps.filter((step, i) => (branch.value === 'fix' ? [0, 1, 2, 4] : [0, 3, 5]).includes(i));
       overview();
     });
     host.addEventListener('qe:component-selected', event => {
       if (event.detail.source === 'manual') {
+        previewStarted = true;
         playing = false;
         index = -1;
         completed = false;
@@ -197,6 +209,13 @@
       }
     });
     record.updateTour = () => {
+      // One guided preview when the actual diagram enters view. Explicit pause,
+      // overview, inspection and reduced motion always take precedence.
+      if (!previewStarted && canRun(record)) {
+        previewStarted = true;
+        playing = true;
+        show(0);
+      }
       if (!enabled() && playing) {
         playing = false;
         record.flowPaused = true;

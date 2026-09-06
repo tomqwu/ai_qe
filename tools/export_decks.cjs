@@ -1,6 +1,7 @@
 // Static slide-edition exports. Interactive controls remain in the web decks.
 const {chromium}=require('playwright'), fs=require('node:fs'),path=require('node:path');
-const version=fs.readFileSync(path.join(__dirname,'../_data/release.yml'),'utf8').match(/version: "([^"]+)"/)[1];
+const release=fs.readFileSync(path.join(__dirname,'../_data/release.yml'),'utf8');
+const version=(release.match(/slide_edition: "([^"]+)"/)||release.match(/version: "([^"]+)"/))[1];
 const base=process.env.QE_TEST_URL||'http://127.0.0.1:61600/ai_qe';
 (async()=>{const browser=await chromium.launch();try{
  for(const audience of ['evp','technical']) {
