@@ -26,6 +26,19 @@ for name, research in diagrams.items():
     svg=ET.parse(ROOT/f'_includes/diagrams/{name}.svg')
     diagram_ids=[node.attrib['id'] for node in svg.iter() if 'id' in node.attrib]
     assert len(diagram_ids)==len(set(diagram_ids)), f'{name}: duplicate SVG IDs'
+# A walkthrough must reference actual directed connections and explain every
+# branch, including the application-evaluation and regression feedback paths.
+platform=ET.parse(ROOT/'_includes/diagrams/platform.svg')
+paths=[f'{node.attrib["data-from"]}:{node.attrib["data-to"]}' for node in platform.iter() if 'data-from' in node.attrib]
+assert len(paths)==len(set(paths)), 'Ambiguous platform route identity'
+components={node.attrib['data-architecture-node'] for node in platform.iter() if 'data-architecture-node' in node.attrib}
+steps=json.loads((ROOT/'_data/architecture_flow.json').read_text())
+covered=set()
+for step in steps:
+    assert step['node'] in components, f'Unknown tour component: {step["node"]}'
+    assert step.get('routes') and set(step['routes'])<=set(paths), f'Invalid routes: {step["title"]}'
+    covered.update(step['routes'])
+assert covered==set(paths), f'Unexplained platform routes: {set(paths)-covered}'
 for audience in ('evp','technical'):
     text=(ROOT/f'briefings/{audience}.html').read_text()
     count=int(re.search(r'slide_count: (\d+)',text)[1])
@@ -42,4 +55,4 @@ if site:
     assert not (site/'research').exists(), 'Private publisher archive exposed'
     library=(site/'docs/industry/library/index.html').read_text()
     assert all(f'id="{id}"' in library for id in ids)
-print(f'Passed: {len(sources)} sources, matching CSV/JSON, valid citations, complete decks, 13-page linked brief')
+print(f'Passed: {len(sources)} sources, matching CSV/JSON, valid citations, {len(paths)} guided connections, complete decks, 13-page linked brief')

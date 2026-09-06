@@ -2,8 +2,8 @@
 <figure data-diagram="{{ include.name }}" class="research-figure{% if include.name == 'platform' %} architecture-map{% endif %}"{% if include.name == 'platform' %} data-architecture-map{% endif %}>
   {% if include.name == 'platform' %}
   <div class="diagram-tour" data-diagram-tour hidden>
-    <div class="tour-actions"><button type="button" data-tour-play aria-pressed="false">▶ Play flow</button><button type="button" data-tour-next>Next step →</button></div>
-    <p class="tour-status" data-tour-status aria-live="polite" aria-atomic="true">A six-step walkthrough of a proposed QE workflow.</p>
+    <div class="tour-actions"><button type="button" data-tour-play aria-pressed="false">▶ Play flow</button><button type="button" data-tour-next>Next step →</button><button type="button" data-tour-reset>Overview</button></div>
+    <div class="tour-copy"><p class="tour-status" data-tour-status aria-live="polite" aria-atomic="true">Overview · all connections have equal emphasis.</p><p class="flow-legend" data-flow-legend>Moving pulses show direction. Play flow follows specific paths through the architecture.</p></div>
     <script type="application/json" data-tour-steps>{{ site.data.architecture_flow | jsonify }}</script>
   </div>
   {% endif %}

@@ -123,9 +123,23 @@ The audience decks embed native SVG architecture and research charts from `_incl
 
 `assets/js/motion.js` and `assets/css/motion.css` add directional light pulses to the existing
 SVG arrows, guided platform playback, chart reveals and gentle illustration movement.
-`_data/architecture_flow.json` supplies the six walkthrough stages; the diagram generator
+`_data/architecture_flow.json` supplies nine walkthrough stages with explicit directed routes; the diagram generator
 keeps component connections in `data-from` / `data-to` attributes. Animations indicate
 direction in a proposed workflow, not live telemetry or measured execution timing.
+
+The platform starts in Overview with equal emphasis on all connections. During the tour,
+gold paths represent the current stage; the remaining teal paths stay visible as static
+context. Component inspection highlights direct incoming and outgoing connections and
+labels that state separately. Overview clears the selection. The tour returns to Overview
+automatically after its final step. The walkthrough covers the parallel AI-evaluation branch and the regression
+feedback loop. `verify_industry.py` checks that every named route exists and every platform
+connection is explained by the tour. Diagram labels and nodes stay fully visible during
+playback and pause; they do not fade or replay an entrance animation.
+
+Pulses and their trails share one SVG clock. Guided pulses finish within their stage;
+Pause flow stops both the SVG motion and the stage timer. Next step provides a static
+walkthrough, and Resume flow continues from that stage. Other diagrams animate their
+authored directional edges uniformly; axes and sequence lifelines remain static.
 
 Present mode adds a dark architecture stage with illuminated paths. The Motion control pauses effects across same-origin site and deck windows. The preference
 is stored locally when storage is available. Reduced-motion settings, hidden tabs, offscreen

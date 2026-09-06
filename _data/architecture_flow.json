@@ -1,32 +1,56 @@
 [
   {
     "node": "context",
-    "title": "01 / Approved context",
-    "detail": "Retrieve permitted sources and preserve the input version."
+    "title": "01 / Task and permitted context",
+    "detail": "The engineer supplies the task; delivery systems supply approved source material.",
+    "routes": ["experience:runtime", "delivery:context"]
   },
   {
     "node": "runtime",
     "title": "02 / Generate a candidate",
-    "detail": "Use the task contract to propose a test or reviewed change."
+    "detail": "The context service passes permitted, versioned evidence to the runtime.",
+    "routes": ["context:runtime"]
   },
   {
     "node": "gateway",
     "title": "03 / Enforce authority",
-    "detail": "Check identity, resource scope and approval before executing a tool."
+    "detail": "The runtime requests an action; the gateway checks identity, resource scope and approval.",
+    "routes": ["runtime:gateway"]
   },
   {
     "node": "checks",
-    "title": "04 / Verify independently",
-    "detail": "Run in the sandbox; check stability and relevant fault detection."
+    "title": "04 / Verify generated work",
+    "detail": "An allowed request reaches independent sandbox and deterministic checks.",
+    "routes": ["gateway:checks"]
+  },
+  {
+    "node": "evaluation",
+    "title": "05 / Evaluate AI applications · parallel branch",
+    "detail": "AI application versions enter evaluation. This branch is separate from generated-test execution.",
+    "routes": ["application:evaluation"]
   },
   {
     "node": "release",
-    "title": "05 / Human release decision",
-    "detail": "Review the evidence through existing CI and change controls."
+    "title": "06 / Independent release decision",
+    "detail": "The relevant checks or evaluation results reach the release owner; the generator cannot approve itself.",
+    "routes": ["checks:release", "evaluation:release"]
   },
   {
     "node": "evidence",
-    "title": "06 / Learn from the outcome",
-    "detail": "Retain decisions and effort; curate failures into future evaluations."
+    "title": "07 / Retain execution and decision evidence",
+    "detail": "Run traces and release decisions join the evidence store. Trace collection also occurs during execution.",
+    "routes": ["gateway:evidence", "release:evidence"]
+  },
+  {
+    "node": "corpus",
+    "title": "08 / Curate regression cases",
+    "detail": "Reviewed failures and expectations become versioned cases with appropriate data controls.",
+    "routes": ["evidence:corpus"]
+  },
+  {
+    "node": "evaluation",
+    "title": "09 / Challenge the next release · feedback loop",
+    "detail": "The curated corpus supplies cases for future evaluations, closing the learning loop.",
+    "routes": ["corpus:evaluation"]
   }
 ]
