@@ -1,0 +1,87 @@
+/* Native diagrams share one visual grammar across the site and audience decks. */
+.research-figure { margin: 0; min-width: 0; }
+.diagram-shell { overflow-x: auto; overscroll-behavior-x: contain; max-width: 100%; scrollbar-color: #729e95 #edf2ee; }
+.diagram-shell:focus-visible, .research-rationale summary:focus-visible { outline: 3px solid #ba7128; outline-offset: 2px; }
+.research-diagram { display: block; width: 100%; height: auto; font-family: 'Source Sans 3', 'Segoe UI', sans-serif; }
+.research-diagram text { fill: #263f50; }
+.research-diagram .lane { fill: #f0f4f0; stroke: #ccd9d3; stroke-width: 1; }
+.research-diagram .lane-teal { fill: #e6f2ee; }
+.research-diagram .lane-sand { fill: #f8f1e6; stroke: #dfd0b8; }
+.research-diagram .node { fill: #fff; stroke: #b8cdc5; stroke-width: 1.5; }
+.research-diagram .node-teal { fill: #dcf0e8; stroke: #67a394; }
+.research-diagram .node-navy, .research-diagram .actor { fill: #152e40; stroke: #152e40; }
+.research-diagram .node-sand { fill: #fcf4e7; stroke: #cbaa70; }
+.research-diagram .on-dark text, .research-diagram .actor + text { fill: #fff; }
+.research-diagram .label { font-size: 23px; }
+.research-diagram .lane-title { font-size: 16px; font-weight: 700; letter-spacing: 1.1px; fill: #096d69; }
+.research-diagram .node-title { font-size: 21px; font-weight: 650; }
+.research-diagram .node-text { font-size: 18px; }
+.research-diagram .small { font-size: 16px; fill: #4a626b; }
+.research-diagram .edge-label { font-size: 16px; fill: #096d69; paint-order: stroke; stroke: #fcfcfa; stroke-width: 5px; stroke-linejoin: round; }
+.research-diagram .edge { fill: none; stroke: #096d69; stroke-width: 2; }
+.research-diagram .edge-dashed { stroke-dasharray: 6 5; }
+.research-diagram .edge-amber { stroke: #9b651e; }
+.research-diagram .bar-track { fill: #edf1ec; }
+.research-diagram .bar-teal { fill: #3f9d8c; }
+.research-diagram .bar-navy { fill: #152e40; }
+.research-diagram .stat { font-size: 42px; font-weight: 650; fill: #096d69; }
+.research-diagram .big-stat { font-size: 65px; font-weight: 600; letter-spacing: -2px; fill: #152e40; }
+.research-diagram .decision { fill: #e0eee7; stroke: #096d69; stroke-width: 2; }
+.research-diagram .lifeline { fill: none; stroke: #a3b9b0; stroke-width: 1.5; stroke-dasharray: 6 6; }
+.research-diagram .sequence-label { font-size: 19px; font-weight: 500; paint-order: stroke; stroke: #fcfcfa; stroke-width: 6px; }
+.research-diagram [data-architecture-node] { cursor: pointer; }
+.research-diagram [data-architecture-node]:hover .node { stroke: #096d69; stroke-width: 3; }
+.research-diagram [data-architecture-node]:focus { outline: none; }
+.research-diagram [data-architecture-node]:focus-visible .node { stroke: #b57023; stroke-width: 4; }
+.research-diagram [aria-pressed='true'] .node { stroke: #b57023; stroke-width: 3.5; }
+.research-figure figcaption { margin-top: .4rem; color: #4a626b; font-size: .85rem; line-height: 1.4; }
+.research-rationale { border-top: 1px solid #cfdbd9; margin: .6rem 0 0; padding-top: .45rem; font-size: .9rem; }
+.research-rationale summary { color: #096d69; cursor: pointer; font-weight: 600; }
+.research-rationale .rationale-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: .75rem 0; }
+.research-rationale p { margin: 0 0 .5rem; }
+.research-rationale strong { display: block; color: #152e40; }
+.diagram-pan-hint { display: none; }
+.architecture-inspector { border-left: 3px solid #ba7128; background: #f6f1e8; padding: .6rem .9rem; margin-top: .5rem; font-size: .95rem; }
+.architecture-inspector p { margin: 0; }
+.architecture-inspector strong { color: #152e40; }
+.architecture-inspector .inspector-label { color: #7a501b; font-size: .76rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .2rem; }
+.visual-jumps { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; align-items: center; padding: .9rem 0; border-top: 1px solid #cfdbd9; font-size: .9rem; }
+.visual-jumps a { font-weight: 600; }
+.diagram-slide { padding: 2.3cqw 3cqw 1.7cqw; }
+.diagram-slide h2 { font-size: clamp(1.7rem, 3.4cqw, 3rem); max-width: 35ch; }
+.diagram-slide .kicker { margin-bottom: .8cqw; }
+.diagram-slide .slide-content { padding: 1.4cqw 0 1cqw; }
+.diagram-slide .research-rationale, .diagram-slide figcaption { font-size: clamp(.7rem, 1.1cqw, .95rem); }
+.diagram-slide .research-rationale p { font-size: inherit; }
+.diagram-slide .architecture-inspector { font-size: clamp(.78rem, 1.25cqw, 1rem); }
+.diagram-slide .architecture-inspector p { font-size: inherit; }
+.diagram-slide .architecture-inspector .inspector-label { display: inline; font-size: .8em; margin-right: .5rem; }
+.diagram-slide .architecture-inspector p:last-child { display: inline; }
+.diagram-slide .research-rationale .rationale-copy { padding-bottom: .2rem; }
+#research-decisions-title ~ .diagram-node .node-title { font-size: 19px; }
+@media (max-width: 700px) {
+  .diagram-slide { padding: 1.4rem 1rem 1rem; }
+  .diagram-shell .research-diagram { min-width: 920px; }
+  .diagram-pan-hint { display: block; font-size: .78rem; color: #526b71; margin: .5rem 0; }
+  .diagram-slide .diagram-pan-hint { font-size: .78rem; }
+  .research-rationale .rationale-copy { grid-template-columns: 1fr; gap: .4rem; }
+  .diagram-slide .research-rationale, .diagram-slide figcaption { font-size: .8rem; }
+  .diagram-slide .architecture-inspector { font-size: .9rem; }
+  .visual-jumps { gap: .7rem 1.1rem; }
+}
+@media print {
+  .diagram-shell { overflow: visible; }
+  .diagram-shell .research-diagram { min-width: 0; }
+  .diagram-pan-hint, .research-rationale { display: none; }
+}
+
+.architecture-inspector summary { cursor: pointer; color: #152e40; font-weight: 600; }
+.architecture-inspector[open] summary { margin-bottom: .4rem; }
+.architecture-inspector summary:focus-visible { outline: 3px solid #ba7128; outline-offset: 3px; }
+@media screen and (min-width: 701px) {
+  .deck-ready:not(.embedded):not(.reading-view):has(.diagram-slide:not([hidden])) .slides,
+  .deck-ready:not(.embedded):not(.reading-view):has(.diagram-slide:not([hidden])) .deck-navigation {
+    width: min(calc(100% - 40px), calc((100svh - 145px) * 1.5));
+  }
+}
+.explorer-workbench > section > .research-figure { padding: 1rem; }

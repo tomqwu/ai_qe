@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" class="research-diagram" role="img" aria-labelledby="evidence-contrasts-title"><title id="evidence-contrasts-title">Two randomized-study findings measured different outcomes: a 26.08 percent increase in completed tasks in field experiments and a 19 percent increase in completion time in METR early-2025 study</title><defs><marker id="evidence-contrasts-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<rect x="20" y="20" width="560" height="345" rx="8" class="lane"/>
+<rect x="620" y="20" width="560" height="345" rx="8" class="lane lane-sand"/>
+<text x="44" y="54" class="lane-title" text-anchor="start">CUI ET AL. / THREE FIELD EXPERIMENTS</text>
+<text x="644" y="54" class="lane-title" text-anchor="start">METR / EARLY-2025 TRIAL</text>
+<text x="44" y="120" class="big-stat" text-anchor="start">+26.08%</text>
+<text x="44" y="159" class="label" text-anchor="start">completed tasks</text>
+<text x="644" y="120" class="big-stat" text-anchor="start">+19%</text>
+<text x="644" y="159" class="label" text-anchor="start">completion time</text>
+<text x="44" y="209" class="small" text-anchor="start">Developer sample</text>
+<text x="44" y="232" class="node-title" text-anchor="start">4,867</text>
+<text x="44" y="260" class="small" text-anchor="start">Precision</text>
+<text x="44" y="283" class="node-title" text-anchor="start">SE 10.3 percentage points</text>
+<text x="44" y="311" class="small" text-anchor="start">Setting</text>
+<text x="44" y="334" class="node-title" text-anchor="start">Coding assistants in three firms</text>
+<text x="644" y="209" class="small" text-anchor="start">Developer / task sample</text>
+<text x="644" y="232" class="node-title" text-anchor="start">16 / 246</text>
+<text x="644" y="260" class="small" text-anchor="start">Precision</text>
+<text x="644" y="283" class="node-title" text-anchor="start">95% CI: +2% to +39%</text>
+<text x="644" y="311" class="small" text-anchor="start">Setting</text>
+<text x="644" y="334" class="node-title" text-anchor="start">Experienced developers; familiar repos</text>
+<path d="M 300 365 V 398 H 900 V 365" class="edge"/>
+<text x="600" y="439" class="node-title" text-anchor="middle">The unit, task and user population determine what transfers.</text>
+<text x="600" y="470" class="small" text-anchor="middle">Separate outcomes; do not pool these percentages or treat them as QE savings rates.</text>
+</svg>

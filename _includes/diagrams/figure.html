@@ -1,0 +1,8 @@
+{% assign research = site.data.diagram_research[include.name] %}
+<figure class="research-figure{% if include.name == 'platform' %} architecture-map{% endif %}"{% if include.name == 'platform' %} data-architecture-map{% endif %}>
+  <p class="diagram-pan-hint">Pan horizontally to explore the full diagram. A text description is available below.</p>
+  <div class="diagram-shell" tabindex="0" role="region" aria-label="{{ include.label | default: 'Research diagram' | escape }}">{% assign diagram_path = 'diagrams/' | append: include.name | append: '.svg' %}{% include {{ diagram_path }} %}</div>
+  {% if include.name == 'platform' %}{% include diagrams/inspector.html %}{% endif %}
+  <figcaption>{{ research.caption }} {% include industry/cite.html ids=research.sources %}</figcaption>
+  <details class="research-rationale"><summary>Research behind this design &amp; diagram description</summary><div class="rationale-copy"><div><strong>Finding</strong><p>{{ research.finding }}</p><strong>Design implication</strong><p>{{ research.decision }}</p></div><div><strong>Diagram in words</strong><p>{{ research.words }}</p><a href="{{ '/docs/industry/library/' | relative_url }}">Inspect methods and source documents →</a></div></div></details>
+</figure>

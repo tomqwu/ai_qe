@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" class="research-diagram" role="img" aria-labelledby="test-sequence-title"><title id="test-sequence-title">Illustrative payment API test-generation sequence: contract, scoped context, candidate, policy-mediated execution, independent mutation test and reviewer approval</title><defs><marker id="test-sequence-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<rect x="9" y="15" width="212" height="53" rx="4" class="actor"/>
+<text x="115" y="47" class="node-title" text-anchor="middle">Engineer / QE</text>
+<path d="M 115 68 V 476" class="lifeline"/>
+<rect x="249" y="15" width="212" height="53" rx="4" class="actor"/>
+<text x="355" y="47" class="node-title" text-anchor="middle">QE agent</text>
+<path d="M 355 68 V 476" class="lifeline"/>
+<rect x="489" y="15" width="212" height="53" rx="4" class="actor"/>
+<text x="595" y="47" class="node-title" text-anchor="middle">Policy gateway</text>
+<path d="M 595 68 V 476" class="lifeline"/>
+<rect x="729" y="15" width="212" height="53" rx="4" class="actor"/>
+<text x="835" y="47" class="node-title" text-anchor="middle">Sandbox / CI</text>
+<path d="M 835 68 V 476" class="lifeline"/>
+<rect x="974" y="15" width="212" height="53" rx="4" class="actor"/>
+<text x="1080" y="47" class="node-title" text-anchor="middle">Reviewer</text>
+<path d="M 1080 68 V 476" class="lifeline"/>
+<path d="M 115 106 H 355" class="edge" marker-end="url(#test-sequence-arrow)"/>
+<text x="25" y="96" class="sequence-label" text-anchor="start">1  Contract: reject a negative payment amount</text>
+<path d="M 355 164 H 595" class="edge" marker-end="url(#test-sequence-arrow)"/>
+<text x="280" y="154" class="sequence-label" text-anchor="start">2  Request approved API contract + test patterns</text>
+<path d="M 595 214 H 355" class="edge edge-dashed" marker-end="url(#test-sequence-arrow)"/>
+<text x="280" y="204" class="sequence-label" text-anchor="start">3  Return scoped, versioned context</text>
+<path d="M 355 266 H 595" class="edge" marker-end="url(#test-sequence-arrow)"/>
+<text x="280" y="256" class="sequence-label" text-anchor="start">4  Submit candidate test + requested runner</text>
+<path d="M 595 318 H 835" class="edge" marker-end="url(#test-sequence-arrow)"/>
+<text x="570" y="308" class="sequence-label" text-anchor="start">5  Authorize sandbox run; no production access</text>
+<path d="M 835 372 H 595" class="edge edge-dashed" marker-end="url(#test-sequence-arrow)"/>
+<text x="570" y="362" class="sequence-label" text-anchor="start">6  Test must catch a seeded boundary fault</text>
+<path d="M 595 420 H 1080" class="edge" marker-end="url(#test-sequence-arrow)"/>
+<text x="560" y="410" class="sequence-label" text-anchor="start">7  Evidence bundle: assertions, CI, mutation result</text>
+<path d="M 1080 475 H 115" class="edge edge-dashed" marker-end="url(#test-sequence-arrow)"/>
+<text x="240" y="465" class="sequence-label" text-anchor="start">8  Human approval → existing merge controls</text>
+<text x="22" y="526" class="small" text-anchor="start">Illustrative workflow · approved contract defines the oracle; generated tests cannot silently weaken it</text>
+</svg>

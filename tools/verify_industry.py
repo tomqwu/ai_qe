@@ -13,11 +13,19 @@ for s in sources:
     assert s['url'].startswith('https://'), s['id']
 rows=list(csv.DictReader((ROOT/'assets/data/industry-sources.csv').open()))
 assert rows==[{k:str(v) if v is not None else '' for k,v in s.items()} for s in sources], 'CSV/source register mismatch'
-for folder in ('docs/industry','briefings','_includes/industry'):
+for folder in ('docs/industry','briefings','_includes/industry','_includes/diagrams'):
     for path in (ROOT/folder).glob('*'):
         if path.suffix not in ('.html','.md'): continue
         for group in re.findall(r'include industry/cite\.html ids="([^"]+)"',path.read_text()):
             assert set(group.split(','))<=ids, f'Unknown citation in {path}'
+diagrams=json.loads((ROOT/'_data/diagram_research.json').read_text())
+for name, research in diagrams.items():
+    assert set(research['sources'].split(','))<=ids, f'{name}: unknown citation'
+    assert all(research.get(field) for field in ('caption','finding','decision','words')), name
+    import xml.etree.ElementTree as ET
+    svg=ET.parse(ROOT/f'_includes/diagrams/{name}.svg')
+    diagram_ids=[node.attrib['id'] for node in svg.iter() if 'id' in node.attrib]
+    assert len(diagram_ids)==len(set(diagram_ids)), f'{name}: duplicate SVG IDs'
 for audience in ('evp','technical'):
     text=(ROOT/f'briefings/{audience}.html').read_text()
     count=int(re.search(r'slide_count: (\d+)',text)[1])

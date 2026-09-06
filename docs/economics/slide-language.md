@@ -8,6 +8,8 @@ description: Exact wording that can be used on an executive slide about AI-QE sa
 # Slide language
 {: .no_toc }
 
+These are wording notes for the pilot business case. The **visual audience briefings** cover the broader strategy and architecture: [EVP strategic vision]({{ '/briefings/evp/' | relative_url }}#slide-2) · [Technical platform architecture]({{ '/briefings/technical/' | relative_url }}#slide-2).
+
 ## Use
 
 - "Working hypothesis, to be tested on the bank's own data."

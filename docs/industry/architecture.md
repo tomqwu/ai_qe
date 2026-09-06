@@ -12,15 +12,19 @@ The proposed architecture separates generation, permission to act and verificati
 
 ## A control boundary around agent actions
 
-{% include industry/authority.html %}
+{% include diagrams/figure.html name="platform" label="Enterprise assurance platform" %}
 
 An agent may suggest a tool call, but a separate enforcement point decides whether that identity can perform the action on the specified resource. Prompt instructions are not an access-control mechanism. Retrieved documents, repository text and tool results should be treated as untrusted content.
 
 For the initial QE pilot, use scoped non-production context, a sandbox and draft artifacts. More consequential actions require a separate design review of authority, approvals, recovery and evidence. The detailed [pilot control mapping]({{ '/docs/governance/control-mapping/' | relative_url }}) remains applicable.
 
+## A workflow through the architecture
+
+{% include diagrams/figure.html name="test-sequence" label="Payment API test generation sequence" %}
+
 ## Evaluation extends across the lifecycle
 
-{% include industry/assurance-loop.html %}
+{% include diagrams/figure.html name="evaluation-system" label="Evaluation and release lifecycle" %}
 
 A useful evaluation contract identifies the user task, representative populations, important failure modes, expected behavior, scoring rules and release thresholds. Split development examples from a held-out evaluation set, and preserve a history of model, prompt, retrieval, dataset and tool versions.
 
@@ -39,6 +43,10 @@ LLM judges can help scale assessment, but they need calibration against expert l
 Re-run relevant evaluations when changing prompts, models, retrieval indexes, tool schemas, permissions or memory behavior. Maintain bounded retries, budget limits and a tested fallback. Curate incidents into regression cases without copying sensitive production content into broadly accessible datasets.
 
 OWASP's 2026 LLM guidance covers the model as an application component; its agentic guidance extends the threat model to actors with tools and memory. The newly introduced ACS proposes common runtime control hooks. Its implementation maturity should be evaluated before relying on framework portability. {% include industry/cite.html ids="A03,A04,A05" %}
+
+## Verify the authority boundary
+
+{% include diagrams/figure.html name="threat-boundary" label="Agent threat model" %}
 
 ## Financial-services context
 

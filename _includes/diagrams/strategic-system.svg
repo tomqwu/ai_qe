@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 530" class="research-diagram" role="img" aria-labelledby="strategic-system-title"><title id="strategic-system-title">Strategic target state: two quality missions use a shared assurance platform to create trustworthy delivery outcomes</title><defs><marker id="strategic-system-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="38" width="256" height="146" rx="8" class="node node-teal"/>
+<text x="36" y="66" class="node-title" text-anchor="start">AI for QE</text>
+<text x="36" y="89" class="node-text" text-anchor="start">Test design</text>
+<text x="36" y="109" class="node-text" text-anchor="start">Failure diagnosis</text>
+<text x="36" y="129" class="node-text" text-anchor="start">Security review</text>
+</g>
+<g class="diagram-node on-dark">
+<rect x="20" y="313" width="256" height="146" rx="8" class="node node-navy"/>
+<text x="36" y="341" class="node-title" text-anchor="start">QE for AI</text>
+<text x="36" y="364" class="node-text" text-anchor="start">Behavior and grounding</text>
+<text x="36" y="384" class="node-text" text-anchor="start">Agent actions</text>
+<text x="36" y="404" class="node-text" text-anchor="start">Drift and resilience</text>
+</g>
+<rect x="340" y="23" width="509" height="451" rx="8" class="lane"/>
+<text x="366" y="54" class="lane-title" text-anchor="start">SHARED QUALITY CAPABILITY</text>
+<g class="diagram-node ">
+<rect x="365" y="81" width="460" height="82" rx="8" class="node"/>
+<text x="381" y="109" class="node-title" text-anchor="start">Testable intent</text>
+<text x="381" y="132" class="node-text" text-anchor="start">Requirements → task contracts → expectations</text>
+</g>
+<g class="diagram-node ">
+<rect x="365" y="205" width="460" height="82" rx="8" class="node node-teal"/>
+<text x="381" y="233" class="node-title" text-anchor="start">Independent assurance</text>
+<text x="381" y="256" class="node-text" text-anchor="start">Tests + evaluations + security checks + review</text>
+</g>
+<g class="diagram-node ">
+<rect x="365" y="329" width="460" height="105" rx="8" class="node"/>
+<text x="381" y="357" class="node-title" text-anchor="start">Operational learning</text>
+<text x="381" y="380" class="node-text" text-anchor="start">Versioned evidence + observed failures</text>
+<text x="381" y="400" class="node-text" text-anchor="start">Curated cases improve the next evaluation</text>
+</g>
+<path d="M 596 163 V 202" class="edge" marker-end="url(#strategic-system-arrow)"/>
+<path d="M 596 287 V 326" class="edge" marker-end="url(#strategic-system-arrow)"/>
+<path d="M 366 380 H 351 V 121 H 363" class="edge edge-dashed" marker-end="url(#strategic-system-arrow)"/>
+<path d="M 276 111 H 340" class="edge" marker-end="url(#strategic-system-arrow)"/>
+<path d="M 276 386 H 340" class="edge" marker-end="url(#strategic-system-arrow)"/>
+<g class="diagram-node ">
+<rect x="906" y="38" width="274" height="104" rx="8" class="node"/>
+<text x="922" y="66" class="node-title" text-anchor="start">Delivery outcomes</text>
+<text x="922" y="89" class="node-text" text-anchor="start">Faster validated change</text>
+<text x="922" y="109" class="node-text" text-anchor="start">Less avoidable rework</text>
+</g>
+<g class="diagram-node ">
+<rect x="906" y="208" width="274" height="104" rx="8" class="node"/>
+<text x="922" y="236" class="node-title" text-anchor="start">Trustworthy AI</text>
+<text x="922" y="259" class="node-text" text-anchor="start">Evidence of behavior</text>
+<text x="922" y="279" class="node-text" text-anchor="start">Bounded authority</text>
+</g>
+<g class="diagram-node ">
+<rect x="906" y="378" width="274" height="104" rx="8" class="node"/>
+<text x="922" y="406" class="node-title" text-anchor="start">Reusable capability</text>
+<text x="922" y="429" class="node-text" text-anchor="start">Shared evaluation assets</text>
+<text x="922" y="449" class="node-text" text-anchor="start">Portable controls</text>
+</g>
+<path d="M 850 123 H 885 V 90 H 904" class="edge" marker-end="url(#strategic-system-arrow)"/>
+<path d="M 850 246 H 904" class="edge" marker-end="url(#strategic-system-arrow)"/>
+<path d="M 850 380 H 881 V 430 H 904" class="edge" marker-end="url(#strategic-system-arrow)"/>
+<text x="25" y="510" class="small" text-anchor="start">Strategic vision · outcomes are ambitions to validate, not reported bank results</text>
+</svg>

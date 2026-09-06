@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" class="research-diagram" role="img" aria-labelledby="evidence-model-title"><title id="evidence-model-title">Measurement data model joining task, run, review and outcome records to measure net effort and quality by comparable task cohort</title><defs><marker id="evidence-model-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node ">
+<rect x="20" y="32" width="294" height="133" rx="8" class="node"/>
+<text x="36" y="60" class="node-title" text-anchor="start">Task</text>
+<text x="36" y="83" class="node-text" text-anchor="start">task_id · task type · complexity</text>
+<text x="36" y="103" class="node-text" text-anchor="start">Eligible cohort + baseline effort</text>
+<text x="36" y="123" class="node-text" text-anchor="start">Preparation + active execution</text>
+</g>
+<g class="diagram-node ">
+<rect x="449" y="32" width="304" height="133" rx="8" class="node node-teal"/>
+<text x="465" y="60" class="node-title" text-anchor="start">Run</text>
+<text x="465" y="83" class="node-text" text-anchor="start">run_id → task_id</text>
+<text x="465" y="103" class="node-text" text-anchor="start">Model / prompt / context versions</text>
+<text x="465" y="123" class="node-text" text-anchor="start">Tool calls · cost · elapsed time</text>
+</g>
+<g class="diagram-node ">
+<rect x="884" y="32" width="296" height="133" rx="8" class="node"/>
+<text x="900" y="60" class="node-title" text-anchor="start">Review</text>
+<text x="900" y="83" class="node-text" text-anchor="start">review_id → run_id</text>
+<text x="900" y="103" class="node-text" text-anchor="start">Decision + active human effort</text>
+<text x="900" y="123" class="node-text" text-anchor="start">Corrections + independent checks</text>
+</g>
+<g class="diagram-node ">
+<rect x="884" y="283" width="296" height="133" rx="8" class="node"/>
+<text x="900" y="311" class="node-title" text-anchor="start">Outcome</text>
+<text x="900" y="334" class="node-text" text-anchor="start">outcome_id → task_id / artifact_id</text>
+<text x="900" y="354" class="node-text" text-anchor="start">Rework · defects · cycle time</text>
+<text x="900" y="374" class="node-text" text-anchor="start">Observed period + capture basis</text>
+</g>
+<g class="diagram-node on-dark">
+<rect x="449" y="283" width="304" height="133" rx="8" class="node node-navy"/>
+<text x="465" y="311" class="node-title" text-anchor="start">Cohort comparison</text>
+<text x="465" y="334" class="node-text" text-anchor="start">Comparable tasks + quality floors</text>
+<text x="465" y="354" class="node-text" text-anchor="start">Prep + execution + review + rework</text>
+<text x="465" y="374" class="node-text" text-anchor="start">Net effort, cost and uncertainty</text>
+</g>
+<path d="M 314 99 H 447" class="edge" marker-end="url(#evidence-model-arrow)"/>
+<text x="381" y="85" class="edge-label" text-anchor="middle">1 : many</text>
+<path d="M 753 99 H 882" class="edge" marker-end="url(#evidence-model-arrow)"/>
+<text x="818" y="85" class="edge-label" text-anchor="middle">1 : many</text>
+<path d="M 1032 165 V 281" class="edge" marker-end="url(#evidence-model-arrow)"/>
+<text x="1048" y="255" class="edge-label" text-anchor="start">artifact link</text>
+<path d="M 1032 215 H 789 V 312 H 755" class="edge edge-dashed" marker-end="url(#evidence-model-arrow)"/>
+<text x="812" y="205" class="edge-label" text-anchor="start">review effort</text>
+<path d="M 168 165 V 349 H 447" class="edge" marker-end="url(#evidence-model-arrow)"/>
+<path d="M 601 165 V 281" class="edge" marker-end="url(#evidence-model-arrow)"/>
+<path d="M 884 349 H 755" class="edge" marker-end="url(#evidence-model-arrow)"/>
+<text x="25" y="456" class="node-title" text-anchor="start">Total human effort = preparation + execution + verification + correction + rework</text>
+<text x="25" y="487" class="small" text-anchor="start">Proposed logical schema · retain identifiers and versions; minimize sensitive payloads · time saved requires a capture mechanism</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" class="research-diagram" role="img" aria-labelledby="threat-boundary-title"><title id="threat-boundary-title">Agent threat model: untrusted context reaches the model, but a policy gateway controls tools and resource access, with denied-action tests and bounded recovery</title><defs><marker id="threat-boundary-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<rect x="20" y="30" width="278" height="370" rx="8" class="lane lane-sand"/>
+<text x="40" y="60" class="lane-title" text-anchor="start">UNTRUSTED INPUT</text>
+<g class="diagram-node ">
+<rect x="40" y="88" width="238" height="100" rx="8" class="node"/>
+<text x="56" y="116" class="node-title" text-anchor="start">Retrieved content</text>
+<text x="56" y="139" class="node-text" text-anchor="start">Documents · web · code</text>
+<text x="56" y="159" class="node-text" text-anchor="start">May contain instructions</text>
+</g>
+<g class="diagram-node ">
+<rect x="40" y="237" width="238" height="100" rx="8" class="node"/>
+<text x="56" y="265" class="node-title" text-anchor="start">Tool output / memory</text>
+<text x="56" y="288" class="node-text" text-anchor="start">Poisoned observations</text>
+<text x="56" y="308" class="node-text" text-anchor="start">Persistent injected context</text>
+</g>
+<g class="diagram-node ">
+<rect x="358" y="163" width="240" height="125" rx="8" class="node"/>
+<text x="374" y="191" class="node-title" text-anchor="start">Agent runtime</text>
+<text x="374" y="214" class="node-text" text-anchor="start">Interprets task and context</text>
+<text x="374" y="234" class="node-text" text-anchor="start">Proposes tool + arguments</text>
+<text x="374" y="254" class="node-text" text-anchor="start">Cannot grant itself access</text>
+</g>
+<path d="M 278 137 H 320 V 208 H 356" class="edge" marker-end="url(#threat-boundary-arrow)"/>
+<path d="M 278 287 H 320 V 250 H 356" class="edge" marker-end="url(#threat-boundary-arrow)"/>
+<path d="M 641 36 V 417" class="lifeline"/>
+<text x="648" y="31" class="lane-title" text-anchor="start">AUTHORITY BOUNDARY</text>
+<g class="diagram-node on-dark">
+<rect x="687" y="162" width="234" height="126" rx="8" class="node node-navy"/>
+<text x="703" y="190" class="node-title" text-anchor="start">Policy gateway</text>
+<text x="703" y="213" class="node-text" text-anchor="start">Agent identity + resource</text>
+<text x="703" y="233" class="node-text" text-anchor="start">Allowlist + approval rule</text>
+<text x="703" y="253" class="node-text" text-anchor="start">Deny outside scope</text>
+</g>
+<path d="M 598 225 H 685" class="edge" marker-end="url(#threat-boundary-arrow)"/>
+<text x="609" y="203" class="edge-label" text-anchor="start">request</text>
+<g class="diagram-node ">
+<rect x="972" y="67" width="208" height="105" rx="8" class="node node-teal"/>
+<text x="988" y="95" class="node-title" text-anchor="start">Allowed tools</text>
+<text x="988" y="118" class="node-text" text-anchor="start">Scoped credentials</text>
+<text x="988" y="138" class="node-text" text-anchor="start">Bounded execution</text>
+</g>
+<path d="M 921 205 H 946 V 119 H 970" class="edge" marker-end="url(#threat-boundary-arrow)"/>
+<g class="diagram-node ">
+<rect x="972" y="291" width="208" height="105" rx="8" class="node node-sand"/>
+<text x="988" y="319" class="node-title" text-anchor="start">Denied action</text>
+<text x="988" y="342" class="node-text" text-anchor="start">No side effect</text>
+<text x="988" y="362" class="node-text" text-anchor="start">Stop / escalate</text>
+</g>
+<path d="M 921 249 H 946 V 343 H 970" class="edge edge-amber" marker-end="url(#threat-boundary-arrow)"/>
+<text x="25" y="441" class="node-title" text-anchor="start">Test: poisoned context requests a production write → gateway denies → trace records identity, target and reason</text>
+<text x="25" y="477" class="small" text-anchor="start">Proposed negative test · test recovery as well as refusal · finite coverage does not prove absence of vulnerabilities</text>
+</svg>

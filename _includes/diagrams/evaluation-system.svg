@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 575" class="research-diagram" role="img" aria-labelledby="evaluation-system-title"><title id="evaluation-system-title">Proposed AI evaluation architecture with versioned application configurations, held-out cases, independent evaluation, release decisions, monitoring and feedback</title><defs><marker id="evaluation-system-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node on-dark">
+<rect x="20" y="20" width="298" height="103" rx="8" class="node node-navy"/>
+<text x="36" y="48" class="node-title" text-anchor="start">Versioned application</text>
+<text x="36" y="71" class="node-text" text-anchor="start">Model · prompt · retrieval</text>
+<text x="36" y="91" class="node-text" text-anchor="start">Tools · permissions · memory</text>
+</g>
+<g class="diagram-node ">
+<rect x="20" y="185" width="298" height="105" rx="8" class="node"/>
+<text x="36" y="213" class="node-title" text-anchor="start">Evaluation corpus</text>
+<text x="36" y="236" class="node-text" text-anchor="start">Representative + adversarial cases</text>
+<text x="36" y="256" class="node-text" text-anchor="start">Held-out set · human labels</text>
+</g>
+<g class="diagram-node ">
+<rect x="388" y="20" width="358" height="103" rx="8" class="node node-teal"/>
+<text x="404" y="48" class="node-title" text-anchor="start">Baseline and candidate runs</text>
+<text x="404" y="71" class="node-text" text-anchor="start">Same tasks and test conditions</text>
+<text x="404" y="91" class="node-text" text-anchor="start">Record outputs AND tool actions</text>
+</g>
+<g class="diagram-node ">
+<rect x="388" y="185" width="358" height="132" rx="8" class="node"/>
+<text x="404" y="213" class="node-title" text-anchor="start">Independent scoring</text>
+<text x="404" y="236" class="node-text" text-anchor="start">Deterministic contracts</text>
+<text x="404" y="256" class="node-text" text-anchor="start">Calibrated judges + expert review</text>
+<text x="404" y="276" class="node-text" text-anchor="start">Quality by scenario; cost and latency</text>
+</g>
+<path d="M 318 72 H 386" class="edge" marker-end="url(#evaluation-system-arrow)"/>
+<path d="M 318 233 H 351 V 78 H 386" class="edge" marker-end="url(#evaluation-system-arrow)"/>
+<path d="M 567 123 V 183" class="edge" marker-end="url(#evaluation-system-arrow)"/>
+<text x="585" y="156" class="edge-label" text-anchor="start">versioned traces</text>
+<polygon points="978,166 1153,249 978,332 803,249" class="decision"/>
+<text x="978" y="237" class="node-title" text-anchor="middle">Release gate</text>
+<text x="978" y="263" class="node-text" text-anchor="middle">Agreed floors hold?</text>
+<path d="M 746 249 H 801" class="edge" marker-end="url(#evaluation-system-arrow)"/>
+<g class="diagram-node ">
+<rect x="868" y="19" width="288" height="100" rx="8" class="node node-sand"/>
+<text x="884" y="47" class="node-title" text-anchor="start">Hold + investigate</text>
+<text x="884" y="70" class="node-text" text-anchor="start">Failed case → diagnosis</text>
+<text x="884" y="90" class="node-text" text-anchor="start">Revise configuration or control</text>
+</g>
+<path d="M 978 167 V 121" class="edge edge-amber" marker-end="url(#evaluation-system-arrow)"/>
+<text x="995" y="146" class="edge-label" text-anchor="start">no</text>
+<g class="diagram-node ">
+<rect x="856" y="399" width="302" height="104" rx="8" class="node node-teal"/>
+<text x="872" y="427" class="node-title" text-anchor="start">Controlled deployment</text>
+<text x="872" y="450" class="node-text" text-anchor="start">Canary / bounded exposure</text>
+<text x="872" y="470" class="node-text" text-anchor="start">Human escalation + rollback</text>
+</g>
+<path d="M 978 332 V 397" class="edge" marker-end="url(#evaluation-system-arrow)"/>
+<text x="994" y="371" class="edge-label" text-anchor="start">yes</text>
+<g class="diagram-node ">
+<rect x="388" y="399" width="358" height="104" rx="8" class="node"/>
+<text x="404" y="427" class="node-title" text-anchor="start">Production monitoring</text>
+<text x="404" y="450" class="node-text" text-anchor="start">Task outcomes · drift · denied actions</text>
+<text x="404" y="470" class="node-text" text-anchor="start">Sampled traces · incidents · corrections</text>
+</g>
+<path d="M 856 451 H 748" class="edge" marker-end="url(#evaluation-system-arrow)"/>
+<g class="diagram-node ">
+<rect x="20" y="399" width="298" height="104" rx="8" class="node"/>
+<text x="36" y="427" class="node-title" text-anchor="start">Case curation</text>
+<text x="36" y="450" class="node-text" text-anchor="start">Review expectations and privacy</text>
+<text x="36" y="470" class="node-text" text-anchor="start">Add failures to regression suite</text>
+</g>
+<path d="M 388 451 H 320" class="edge" marker-end="url(#evaluation-system-arrow)"/>
+<path d="M 169 399 V 292" class="edge edge-dashed" marker-end="url(#evaluation-system-arrow)"/>
+<text x="183" y="359" class="edge-label" text-anchor="start">new cases</text>
+<text x="22" y="553" class="small" text-anchor="start">Proposed application-level assurance · evaluate again when context, behavior or authority changes</text>
+</svg>

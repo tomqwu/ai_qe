@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 530" class="research-diagram" role="img" aria-labelledby="research-decisions-title"><title id="research-decisions-title">Research-to-design map connecting DORA, Meta, NIST and OSFI findings with architecture decisions</title><defs><marker id="research-decisions-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<text x="24" y="28" class="lane-title" text-anchor="start">RESEARCH OBSERVATION</text>
+<text x="430" y="28" class="lane-title" text-anchor="start">DESIGN RESPONSE</text>
+<text x="884" y="28" class="lane-title" text-anchor="start">EVIDENCE TO RETAIN</text>
+<g class="diagram-node ">
+<rect x="20" y="64" width="364" height="84" rx="8" class="node"/>
+<text x="36" y="92" class="node-title" text-anchor="start">DORA / verification effort</text>
+<text x="36" y="115" class="node-text" text-anchor="start">Generation can shift work into review.</text>
+</g>
+<g class="diagram-node ">
+<rect x="430" y="64" width="397" height="84" rx="8" class="node node-teal"/>
+<text x="446" y="92" class="node-title" text-anchor="start">Join effort with run telemetry</text>
+</g>
+<text x="447" y="121" class="node-text" text-anchor="start">Measure net workflow effort</text>
+<path d="M 384 106 H 428" class="edge" marker-end="url(#research-decisions-arrow)"/>
+<g class="diagram-node ">
+<rect x="875" y="64" width="305" height="84" rx="8" class="node"/>
+<text x="891" y="92" class="node-title" text-anchor="start">Prep · review · correction</text>
+</g>
+<text x="891" y="122" class="node-text" text-anchor="start">D02</text>
+<path d="M 827 106 H 873" class="edge" marker-end="url(#research-decisions-arrow)"/>
+<g class="diagram-node ">
+<rect x="20" y="173" width="364" height="84" rx="8" class="node"/>
+<text x="36" y="201" class="node-title" text-anchor="start">Meta / filtered test generation</text>
+<text x="36" y="224" class="node-text" text-anchor="start">Passing is not proof of added value.</text>
+</g>
+<g class="diagram-node ">
+<rect x="430" y="173" width="397" height="84" rx="8" class="node node-teal"/>
+<text x="446" y="201" class="node-title" text-anchor="start">Independent test-quality gate</text>
+</g>
+<text x="447" y="230" class="node-text" text-anchor="start">Protect approved assertions</text>
+<path d="M 384 215 H 428" class="edge" marker-end="url(#research-decisions-arrow)"/>
+<g class="diagram-node ">
+<rect x="875" y="173" width="305" height="84" rx="8" class="node"/>
+<text x="891" y="201" class="node-title" text-anchor="start">Stable runs · fault detection</text>
+</g>
+<text x="891" y="231" class="node-text" text-anchor="start">E04 · E05</text>
+<path d="M 827 215 H 873" class="edge" marker-end="url(#research-decisions-arrow)"/>
+<g class="diagram-node ">
+<rect x="20" y="282" width="364" height="84" rx="8" class="node"/>
+<text x="36" y="310" class="node-title" text-anchor="start">NIST / lifecycle assurance</text>
+<text x="36" y="333" class="node-text" text-anchor="start">Assurance continues in production.</text>
+</g>
+<g class="diagram-node ">
+<rect x="430" y="282" width="397" height="84" rx="8" class="node node-teal"/>
+<text x="446" y="310" class="node-title" text-anchor="start">Version cases; feed failures back</text>
+</g>
+<text x="447" y="339" class="node-text" text-anchor="start">Re-evaluate configuration changes</text>
+<path d="M 384 324 H 428" class="edge" marker-end="url(#research-decisions-arrow)"/>
+<g class="diagram-node ">
+<rect x="875" y="282" width="305" height="84" rx="8" class="node"/>
+<text x="891" y="310" class="node-title" text-anchor="start">Case history · drift · release</text>
+</g>
+<text x="891" y="340" class="node-text" text-anchor="start">A01 · A02</text>
+<path d="M 827 324 H 873" class="edge" marker-end="url(#research-decisions-arrow)"/>
+<g class="diagram-node ">
+<rect x="20" y="391" width="364" height="84" rx="8" class="node"/>
+<text x="36" y="419" class="node-title" text-anchor="start">OWASP + OSFI / agent actions</text>
+<text x="36" y="442" class="node-text" text-anchor="start">Tools expand the impact of failure.</text>
+</g>
+<g class="diagram-node ">
+<rect x="430" y="391" width="397" height="84" rx="8" class="node node-teal"/>
+<text x="446" y="419" class="node-title" text-anchor="start">Enforce permissions outside the model</text>
+</g>
+<text x="447" y="448" class="node-text" text-anchor="start">Test denied actions and recovery</text>
+<path d="M 384 433 H 428" class="edge" marker-end="url(#research-decisions-arrow)"/>
+<g class="diagram-node ">
+<rect x="875" y="391" width="305" height="84" rx="8" class="node"/>
+<text x="891" y="419" class="node-title" text-anchor="start">Identity · allow/deny · approval</text>
+</g>
+<text x="891" y="449" class="node-text" text-anchor="start">A03 · R01</text>
+<path d="M 827 433 H 873" class="edge" marker-end="url(#research-decisions-arrow)"/>
+</svg>

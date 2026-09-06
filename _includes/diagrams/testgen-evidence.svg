@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" class="research-diagram" role="img" aria-labelledby="testgen-evidence-title"><title id="testgen-evidence-title">Meta TestGen-LLM evaluation: among 86 target test classes, 75 percent had a generated test that built, 57 percent had one that passed reliably, and 25 percent had one that increased coverage</title><defs><marker id="testgen-evidence-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<text x="22" y="29" class="lane-title" text-anchor="start">A PASSING TEST IS AN INTERMEDIATE RESULT</text>
+<text x="22" y="66" class="label" text-anchor="start">Share of target test classes with at least one qualifying generated test</text>
+<text x="22" y="138" class="node-title" text-anchor="start">Builds correctly</text>
+<text x="22" y="164" class="small" text-anchor="start">Syntax and dependencies</text>
+<rect x="340" y="112" width="690" height="57" rx="2" class="bar-track"/>
+<rect x="340" y="112" width="517.5" height="57" rx="2" class="bar-teal"/>
+<text x="1056" y="152" class="stat" text-anchor="start">75%</text>
+<text x="22" y="244" class="node-title" text-anchor="start">Passes reliably</text>
+<text x="22" y="270" class="small" text-anchor="start">Builds + non-flaky execution</text>
+<rect x="340" y="218" width="690" height="57" rx="2" class="bar-track"/>
+<rect x="340" y="218" width="393.3" height="57" rx="2" class="bar-teal"/>
+<text x="1056" y="258" class="stat" text-anchor="start">57%</text>
+<text x="22" y="350" class="node-title" text-anchor="start">Adds coverage</text>
+<text x="22" y="376" class="small" text-anchor="start">Builds + passes + new line coverage</text>
+<rect x="340" y="324" width="690" height="57" rx="2" class="bar-track"/>
+<rect x="340" y="324" width="172.5" height="57" rx="2" class="bar-navy"/>
+<text x="1056" y="364" class="stat" text-anchor="start">25%</text>
+<text x="340" y="409" class="small" text-anchor="start">0%</text>
+<text x="685" y="409" class="small" text-anchor="middle">50%</text>
+<text x="1030" y="409" class="small" text-anchor="end">100%</text>
+<text x="22" y="453" class="small" text-anchor="start">Meta / FSE 2024 · §3.3 · 86 Kotlin components with existing test classes · reported percentages rounded</text>
+<text x="22" y="477" class="small" text-anchor="start">Denominator is target test classes, not individual generated tests. Coverage is a proxy for test improvement.</text>
+</svg>

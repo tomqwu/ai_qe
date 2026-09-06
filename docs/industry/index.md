@@ -42,3 +42,7 @@ This is an independent desk-research synthesis, not a Gartner or McKinsey public
 The [document library]({{ '/docs/industry/library/' | relative_url }}) records publication dates, review dates, source type, access limits and transferability. Gartner's licensed reports were assessed only through their public abstracts. World Quality Report figures come from its public release. Publicly downloadable papers were gathered into a local research archive; publisher originals remain linked at their source.
 
 Diagrams labeled *proposed* or *authored synthesis* express our design judgment. Editorial images are AI-generated conceptual illustrations. No diagram implies a deployed bank system, and no illustrative economic scenario reports achieved savings.
+
+## How the research changes the design
+
+{% include diagrams/figure.html name="research-decisions" label="Research to architecture decisions" %}
