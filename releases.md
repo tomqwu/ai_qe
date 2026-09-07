@@ -7,6 +7,10 @@ permalink: /releases/
 
 The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
 
+## v1.4.2 · 6 September 2026
+
+Retains the clearer 3D architecture introduced in v1.4.1. Playback now also checks the current reduced-motion preference on the next visible frame, covering browsers that delay the preference-change event. Switching reduced motion on pauses playback and disables camera motion; switching it off restores the controls without starting playback automatically.
+
 ## v1.4.1 · 6 September 2026
 
 Made [Architecture in motion]({{ '/demos/architecture/' | relative_url }}) easier to follow. Inputs, AI generation, checks and evidence now have distinct colors and text badges. Larger labels, a numbered current-step marker and white directional flows identify what is happening. Full map reveals the other connections.
