@@ -11,6 +11,7 @@ const host=document.querySelector('#architecture-demo');
 const $=selector=>host.querySelector(selector);
 const view=$('#scene-view'),canvas=$('#architecture-canvas');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+let motionPreference=reduce.matches;
 const capture=new URLSearchParams(location.search).get('capture')==='1';
 if(capture)document.body.classList.add('capture');
 let data,renderer,scene,camera,controls,composer,model,ready=false,playing=false,cinematic=false,overview=false,playbackRate=1,elapsed=0,scenario,stageIndex=-1,inspected='',lastFrame=0,lastUI=0,renderFailed=false;
@@ -69,7 +70,7 @@ function positionLabels(){
   leader.hidden=false;leader.style.left=`${ax}px`;leader.style.top=`${ay}px`;leader.style.width=`${Math.hypot(dx,dy)}px`;leader.style.transform=`rotate(${Math.atan2(dy,dx)}rad)`;
  }
 }
-function tick(now){requestAnimationFrame(tick);if(capture||!ready||document.hidden)return;const dt=lastFrame?Math.min((now-lastFrame)/1000,.1):0;lastFrame=now;if(playing){elapsed=Math.min(total(),elapsed+dt*playbackRate);if(elapsed>=total())setPlaying(false);}if(now-lastUI>80){updateStage();lastUI=now;}if(playing||controls.enableDamping)render();}
+function tick(now){requestAnimationFrame(tick);if(capture||!ready||document.hidden)return;syncMotionPreference();const dt=lastFrame?Math.min((now-lastFrame)/1000,.1):0;lastFrame=now;if(playing){elapsed=Math.min(total(),elapsed+dt*playbackRate);if(elapsed>=total())setPlaying(false);}if(now-lastUI>80){updateStage();lastUI=now;}if(playing||controls.enableDamping)render();}
 function fail(error){console.error('Architecture demo unavailable:',error);renderFailed=true;setPlaying(false);$('.scene-loading').hidden=true;$('.scene-fallback').hidden=false;host.dataset.status='fallback';$('[data-announcement]').textContent='3D rendering is unavailable. The stage descriptions and film remain available.';}
 function setupRoutes(){const baseMaterial=new THREE.MeshStandardMaterial({color:'#65758c',metalness:0,roughness:.8,emissive:'#65758c',emissiveIntensity:.05});for(const route of data.routes){const curve=new THREE.CurvePath();for(let i=1;i<route.points.length;i++)curve.add(new THREE.LineCurve3(new THREE.Vector3(...route.points[i-1]),new THREE.Vector3(...route.points[i])));const geometry=new THREE.TubeGeometry(curve,Math.max(16,route.points.length*12),.035,6,false);const base=new THREE.Mesh(geometry,baseMaterial);scene.add(base);const highlight=new THREE.Mesh(new THREE.TubeGeometry(curve,Math.max(16,route.points.length*12),.085,8,false),new THREE.MeshStandardMaterial({color:activeGold,emissive:activeGold,emissiveIntensity:.5,roughness:.28}));scene.add(highlight);const arrow=new THREE.Mesh(new THREE.ConeGeometry(.115,.29,8),new THREE.MeshBasicMaterial({color:'#6aaf9e'}));arrow.position.copy(curve.getPointAt(.95));direction.copy(curve.getTangentAt(.95)).normalize();arrow.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),direction);scene.add(arrow);const packet=new THREE.Mesh(new THREE.SphereGeometry(.18,16,8),new THREE.MeshStandardMaterial({color:activeGold,emissive:activeGold,emissiveIntensity:1.8,roughness:.16}));scene.add(packet);paths.set(route.id,{curve,base,highlight,arrow,packet});}}
 async function init(){try{
@@ -97,10 +98,19 @@ $('[data-reset-camera]').addEventListener('click',()=>{cinematic=false;updateBut
 $('[data-cinematic]').addEventListener('click',()=>{cinematic=!cinematic;updateButtons();render()});
 $('[data-overview]').addEventListener('click',e=>{overview=!overview;e.currentTarget.setAttribute('aria-pressed',String(overview));highlight();render()});
 $('#playback-rate').addEventListener('change',e=>{playbackRate=Number(e.target.value)});
-reduce.addEventListener('change',()=>{if(reduce.matches){cinematic=false;setPlaying(false);if(controls)controls.enableDamping=false;}updateButtons();updateStage();render()});
+// Some browsers coalesce media-query change events during rapid viewport changes.
+// Reconcile the current preference on both the event and the next visible frame.
+function syncMotionPreference(){
+ const preference=reduce.matches;if(preference===motionPreference)return;
+ motionPreference=preference;
+ if(preference){cinematic=false;playing=false;}
+ if(controls)controls.enableDamping=!capture&&!preference;
+ updateButtons();updateStage();render();
+}
+reduce.addEventListener('change',syncMotionPreference);
 document.addEventListener('visibilitychange',()=>{lastFrame=0;});
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();fail(new Error('Graphics context was lost'))});
 const dialog=document.querySelector('.film-dialog'),video=dialog.querySelector('video');$('[data-watch-film]').addEventListener('click',()=>{setPlaying(false);dialog.showModal();video.play().catch(()=>{})});document.querySelector('[data-close-film]').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>video.pause());
 // A deterministic frame interface drives the downloadable film and regression checks.
-window.qeArchitecture={get ready(){return ready&&!renderFailed},get snapshot(){return {scenario:scenario?.id,stage:stageIndex,elapsed,playing,cinematic,overview,playbackRate,node:current()?.step.node,routes:current()?.step.routes,modules:modules.size,signals:[...paths].filter(([,p])=>p.packet.visible).map(([route,p])=>({route,position:p.packet.position.toArray()}))}},seek(time,id){if(id&&id!==scenario.id)selectScenario(id);setPlaying(false);elapsed=Math.max(0,Math.min(total(),Number(time)));updateStage(true);render();return this.snapshot;},setCameraCinema(value){cinematic=Boolean(value)&&!reduce.matches;render();}};
+window.qeArchitecture={get ready(){return ready&&!renderFailed},get snapshot(){return {scenario:scenario?.id,stage:stageIndex,elapsed,playing,cinematic,overview,playbackRate,reducedMotion:reduce.matches,node:current()?.step.node,routes:current()?.step.routes,modules:modules.size,signals:[...paths].filter(([,p])=>p.packet.visible).map(([route,p])=>({route,position:p.packet.position.toArray()}))}},seek(time,id){if(id&&id!==scenario.id)selectScenario(id);setPlaying(false);elapsed=Math.max(0,Math.min(total(),Number(time)));updateStage(true);render();return this.snapshot;},setCameraCinema(value){cinematic=Boolean(value)&&!reduce.matches;render();}};
 init();

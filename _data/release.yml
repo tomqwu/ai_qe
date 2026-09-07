@@ -1,4 +1,4 @@
-version: "1.4.1"
+version: "1.4.2"
 slide_edition: "1.3.0"
 updated: "2026-09-06"
-latest_change: "Clearer 3D architecture: distinct role colors, larger labels, a numbered current step, plain-language explanations and slower playback with a steady camera. Updated 49-second film; slide content and PDF edition remain v1.3.0."
+latest_change: "Retained the clearer 3D colors, labels and 49-second film; fixed playback controls when reduced-motion preferences change during a session. Slide content and PDF edition remain v1.3.0."

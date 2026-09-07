@@ -10,13 +10,13 @@
     "assets/models/assurance-platform.glb": "f371414e73c4ada0d91772e391caad0c5832ff55c98d5b4100c1cdf801b66e00",
     "assets/models/assurance-platform.blend": "a937ba141e4857d7d1c74263696c535e52e130988495c13b164919484cb9131a",
     "tools/architecture-demo/build_scene.py": "e94c7dcf12312171d82128c97ed3aa08b7fb4278236397e8bc055972a2e7060b",
-    "tools/architecture-demo/main.js": "681836f2c51884ad3555859c7a6bcb666674dc2c2228855af2d15aed4da7b746",
+    "tools/architecture-demo/main.js": "011ee99be98cea884044339e6c2fe6d6bfebe542bc94f1addae77d008a816356",
     "assets/css/architecture-3d.css": "46c212596a517d31f288538959fd5b8ae5e97f11a122ebf131e82df781a113e8",
     "demos/architecture.html": "42952f6569eb20b6e8faabbdbd1efafac5052f5062e68fbb3c25594df6c82301"
   },
   "outputs": {
-    "assets/video/assurance-architecture.mp4": "598f98407408a49032cf9145c6896782f04b679de7852eeff3970e23fa86b42e",
+    "assets/video/assurance-architecture.mp4": "77b0bb83df174c8924651b2f4f798c830138bbe317b7958219770e0f66c2aef1",
     "assets/video/assurance-architecture.vtt": "dfe7a314f74bfa4d9dd8c09159a97da9189fb9a9426d4d7ae270906c94ee7ff7",
-    "assets/images/architecture-3d-poster.jpg": "22094616ae9d71cdd021d0e089e78e0bc4ae29d812efe3ca29c83f651409ad69"
+    "assets/images/architecture-3d-poster.jpg": "1dbc384a8d5303efa1cb8da3d3f29b33405c9c0a85c7c37f32df703401cda0fd"
   }
 }
