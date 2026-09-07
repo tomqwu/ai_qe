@@ -35,7 +35,7 @@ A useful evaluation contract identifies the user task, representative population
 | Task outcome | Correct result against an independent expected outcome | Fluency is not correctness |
 | Retrieval and grounding | Relevant evidence; correct attribution; permission-aware retrieval | A citation can point to an irrelevant or inaccessible source |
 | Agent trajectory | Correct tool, arguments, scope and termination | A successful final answer can hide an unsafe action |
-| Adversarial resilience | Injection, data disclosure and denied-action scenarios | A finite suite does not prove absence of vulnerabilities |
+| Adversarial resilience | Injection, data disclosure and denied-action scenarios | A finite suite does not prove absence of other failure modes |
 | Operational behavior | Latency, cost, escalation, drift and fallback success | Average performance can hide rare severe failures |
 
 LLM judges can help scale assessment, but they need calibration against expert labels and checks for inconsistency and bias. Deterministic contracts and human review still have distinct roles. {% include industry/cite.html ids="A01,A02,T03,T06" %}

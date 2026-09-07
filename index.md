@@ -2,7 +2,7 @@
 title: Overview
 layout: home
 nav_order: 1
-description: A strategic vision and practical architecture for AI-assisted quality engineering and application security in regulated financial services.
+description: A strategic vision and practical architecture for AI-assisted quality engineering in regulated financial services.
 permalink: /
 has_toc: false
 ---

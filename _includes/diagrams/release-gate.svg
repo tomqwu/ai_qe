@@ -9,7 +9,7 @@
 <g class="diagram-node ">
 <rect x="385" y="60" width="340" height="133" rx="8" class="node node-teal"/>
 <text x="401" y="88" class="node-title" text-anchor="start">Mandatory floors</text>
-<text x="401" y="111" class="node-text" text-anchor="start">Critical behavior and security tests</text>
+<text x="401" y="111" class="node-text" text-anchor="start">Behavior + regression tests</text>
 <text x="401" y="131" class="node-text" text-anchor="start">Denial + privacy scenarios</text>
 <text x="401" y="151" class="node-text" text-anchor="start">Workflow latency / cost limits</text>
 </g>

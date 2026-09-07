@@ -38,7 +38,7 @@ s.path('M 246 283 H 274',link=('context', 'runtime'));s.path('M 484 283 H 512',l
 s.path('M 380 113 V 210',link=('experience', 'runtime'));s.text(295,153,'task + scope','edge-label')
 s.path('M 710 113 V 140 H 25 V 283 H 30','edge edge-dashed',link=('delivery', 'context'));s.text(444,155,'approved context','edge-label')
 s.rect(772,165,414,233,'lane lane-sand');s.text(790,193,'INDEPENDENT ASSURANCE','lane-title')
-s.node(792,212,374,65,'Sandbox + deterministic checks',('Build · repeatability · mutation · security',),'node','checks')
+s.node(792,212,374,65,'Sandbox + deterministic checks',('Build · repeatability · mutation · fixtures',),'node','checks')
 s.node(792,293,374,65,'Evaluation service',('Held-out cases · judges · human labels',),'node','evaluation')
 s.path('M 724 244 H 790',link=('gateway', 'checks'));s.text(738,231,'allow','edge-label','middle')
 s.path('M 1028 113 V 155 H 1169 V 325 H 1166','edge edge-dashed',link=('application', 'evaluation'))
@@ -55,11 +55,11 @@ s.text(32,590,'Proposed logical architecture · dashed paths carry context, evid
 s.save()
 
 s=SVG('strategic-system','Strategic target state: two quality missions use a shared assurance platform to create trustworthy delivery outcomes',1200,530)
-s.node(20,38,256,146,'AI for QE',('Test design','Failure diagnosis','Security review'),'node node-teal')
+s.node(20,38,256,146,'AI for QE',('Test design','Failure diagnosis','Test maintenance'),'node node-teal')
 s.node(20,313,256,146,'QE for AI',('Behavior and grounding','Agent actions','Drift and resilience'),'node node-navy')
 s.rect(340,23,509,451,'lane');s.text(366,54,'SHARED QUALITY CAPABILITY','lane-title')
 s.node(365,81,460,82,'Testable intent',('Requirements → task contracts → expectations',))
-s.node(365,205,460,82,'Independent assurance',('Tests + evaluations + security checks + review',),'node node-teal')
+s.node(365,205,460,82,'Independent assurance',('Tests + evaluations + human review',),'node node-teal')
 s.node(365,329,460,105,'Operational learning',('Versioned evidence + observed failures','Curated cases improve the next evaluation',))
 s.path('M 596 163 V 202');s.path('M 596 287 V 326');s.path('M 366 380 H 351 V 121 H 363','edge edge-dashed')
 s.path('M 276 111 H 340');s.path('M 276 386 H 340')
@@ -134,7 +134,7 @@ for x,vals in [(44,[('Developer sample','4,867'),('Precision','SE 10.3 percentag
 s.path('M 300 365 V 398 H 900 V 365','edge',False);s.text(600,439,'The unit, task and user population determine what transfers.','node-title','middle');s.text(600,470,'Separate outcomes; do not pool these percentages or treat them as QE savings rates.','small','middle');s.save()
 
 
-s=SVG('threat-boundary','Agent threat model: untrusted context reaches the model, but a policy gateway controls tools and resource access, with denied-action tests and bounded recovery',1200,490)
+s=SVG('threat-boundary','QA agent boundaries: untrusted context reaches the model, but a policy gateway controls tools and resource access, with denied-action tests and bounded recovery',1200,490)
 s.rect(20,30,278,370,'lane lane-sand');s.text(40,60,'UNTRUSTED INPUT','lane-title')
 s.node(40,88,238,100,'Retrieved content',('Docs · web · code','May carry instructions'))
 s.node(40,237,238,100,'Tool output / memory',('Poisoned observations','Persisted injected text'))
@@ -146,7 +146,7 @@ s.path('M 598 225 H 685');s.text(609,203,'request','edge-label')
 s.node(972,67,208,105,'Allowed tools',('Scoped credentials','Bounded execution'),'node node-teal');s.path('M 921 205 H 946 V 119 H 970')
 s.node(972,291,208,105,'Denied action',('No side effect','Stop / escalate'),'node node-sand');s.path('M 921 249 H 946 V 343 H 970','edge edge-amber')
 s.text(25,441,'Test: poisoned context requests a production write → gateway denies → trace records identity, target and reason','node-title')
-s.text(25,477,'Proposed negative test · test recovery as well as refusal · finite coverage does not prove absence of vulnerabilities','small');s.save()
+s.text(25,477,'Proposed negative test · test recovery as well as refusal · finite coverage does not prove absence of other failure modes','small');s.save()
 
 s=SVG('evidence-model','Measurement data model joining task, run, review and outcome records to measure net effort and quality by comparable task cohort',1200,500)
 for x,y,w,title,lines,cls in [

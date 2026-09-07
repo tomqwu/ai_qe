@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" class="research-diagram" role="img" aria-labelledby="threat-boundary-title"><title id="threat-boundary-title">Agent threat model: untrusted context reaches the model, but a policy gateway controls tools and resource access, with denied-action tests and bounded recovery</title><defs><marker id="threat-boundary-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" class="research-diagram" role="img" aria-labelledby="threat-boundary-title"><title id="threat-boundary-title">QA agent boundaries: untrusted context reaches the model, but a policy gateway controls tools and resource access, with denied-action tests and bounded recovery</title><defs><marker id="threat-boundary-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
 <rect x="20" y="30" width="278" height="370" rx="8" class="lane lane-sand"/>
 <text x="40" y="60" class="lane-title" text-anchor="start">UNTRUSTED INPUT</text>
 <g class="diagram-node ">
@@ -48,5 +48,5 @@
 </g>
 <path d="M 921 249 H 946 V 343 H 970" class="edge edge-amber" marker-end="url(#threat-boundary-arrow)"/>
 <text x="25" y="441" class="node-title" text-anchor="start">Test: poisoned context requests a production write → gateway denies → trace records identity, target and reason</text>
-<text x="25" y="477" class="small" text-anchor="start">Proposed negative test · test recovery as well as refusal · finite coverage does not prove absence of vulnerabilities</text>
+<text x="25" y="477" class="small" text-anchor="start">Proposed negative test · test recovery as well as refusal · finite coverage does not prove absence of other failure modes</text>
 </svg>

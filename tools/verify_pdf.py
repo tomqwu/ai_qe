@@ -10,7 +10,7 @@ from pathlib import Path
 from pypdf import PdfReader, PdfWriter
 
 root = Path(__file__).resolve().parents[1]
-source = root / "assets/pdf/ai-qe-appsec-discovery-questionnaire-v2.pdf"
+source = root / "assets/pdf/ai-qe-discovery-questionnaire-v3.pdf"
 reader = PdfReader(source)
 fields = reader.get_fields()
 

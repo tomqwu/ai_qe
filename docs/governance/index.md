@@ -2,7 +2,7 @@
 title: Governance
 nav_order: 4
 has_children: true
-description: Canadian banking supervisory context for AI-assisted delivery, testing and application security, and a control mapping for pilots.
+description: Canadian banking supervisory context for AI-assisted delivery and testing, and a control mapping for pilots.
 ---
 
 # Governance

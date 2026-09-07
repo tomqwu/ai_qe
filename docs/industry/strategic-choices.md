@@ -22,7 +22,7 @@ The strategic recommendation is to make approved expectations, independent evalu
 
 The example changes a payment API rule: negative amounts must be rejected. The **current-state row is a discovery hypothesis**, not an assertion about any bank. Validate it through interviews and workflow traces. The target connects an approved domain contract to generated candidate tests, independent mutation checks, human review and existing change controls. It claims no observed efficiency gain. {% include industry/cite.html ids="E04,E05,D02" %}
 
-The payments owner owns the negative-amount rule and failure consequences. QE owns test validity. The platform team owns identity integration, runner isolation and evidence availability. AppSec owns security disposition and dismissal audit. The release owner accepts residual risk and recovery responsibilities. A common platform cannot take over these domain decisions.
+The payments owner owns the negative-amount rule and failure consequences. QE owns test validity. The platform team owns identity integration, runner isolation and evidence availability. Domain QA owns failure classification, retest evidence and the review of quarantined tests. The release owner accepts residual risk and recovery responsibilities. A common platform cannot take over these domain decisions.
 
 ## Sequence by dependency
 

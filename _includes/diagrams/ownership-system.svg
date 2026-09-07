@@ -18,8 +18,8 @@
 </g>
 <g class="diagram-node ">
 <rect x="850" y="213" width="330" height="123" rx="8" class="node node-sand"/>
-<text x="866" y="241" class="node-title" text-anchor="start">Security and risk partners</text>
-<text x="866" y="264" class="node-text" text-anchor="start">Threat cases + control challenge</text>
+<text x="866" y="241" class="node-title" text-anchor="start">Delivery and risk owners</text>
+<text x="866" y="264" class="node-text" text-anchor="start">Exceptions + evidence review</text>
 <text x="866" y="284" class="node-text" text-anchor="start">Scope and escalation advice</text>
 </g>
 <path d="M 600 113 V 211" class="edge" marker-end="url(#ownership-system-arrow)"/>

@@ -12,11 +12,11 @@
     "tools/architecture-demo/build_scene.py": "e94c7dcf12312171d82128c97ed3aa08b7fb4278236397e8bc055972a2e7060b",
     "tools/architecture-demo/main.js": "cb592435a579627b68a4de818ee533b3689b0f8a860523a36a513bf744c9d68c",
     "assets/css/architecture-3d.css": "9aa8374af43eb1532ea3f5b94a19326e5b0f5a9d72e8f6ff872971e339f0a34a",
-    "demos/architecture.html": "fb0287c9db1829b62d78a42dc452820510370e2cb94a4b04bcd95fe530faa7b4"
+    "demos/architecture.html": "c831f7adb8fb5046c546cdf4f857aae4fd0af298d0fd4822d4a48c57ba5cddde"
   },
   "outputs": {
-    "assets/video/assurance-architecture.mp4": "5d35e59c88a053947abd6ee35d0a5115dfbd953eeb86a226de522de72bfd0d23",
+    "assets/video/assurance-architecture.mp4": "441875a608bd8dcb1ef17b93332b637abbbef56ff48105604f33dc1b37984c73",
     "assets/video/assurance-architecture.vtt": "dfe7a314f74bfa4d9dd8c09159a97da9189fb9a9426d4d7ae270906c94ee7ff7",
-    "assets/images/architecture-3d-poster.jpg": "a3b6edf8e84e1b56f117b948fb820d660d2cff356589be016e5cc1441bc3a834"
+    "assets/images/architecture-3d-poster.jpg": "7a826298bcc7e7e18e9e371337d0b5d61b114bbf686372e146313cdab637d05c"
   }
 }

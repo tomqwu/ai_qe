@@ -1,7 +1,7 @@
-title: AI-QE & AppSec
+title: AI × QE
 description: >-
   Strategic vision, delivery architecture and an inspectable evidence base for AI-assisted
-  quality engineering and application security in regulated financial services.
+  quality engineering in regulated financial services.
 baseurl: "/ai_qe"
 permalink: pretty
 
@@ -28,7 +28,7 @@ heading_anchors: true
 back_to_top: true
 back_to_top_text: "Back to top"
 footer_content: >-
-  Research for AI-assisted QE and AppSec. Sources and verification dates are recorded on each
+  Research for AI-assisted QE. Sources and verification dates are recorded on each
   research page. Regulatory summaries are not legal advice.
 last_edit_timestamp: true
 last_edit_time_format: "%b %e, %Y"
@@ -64,3 +64,11 @@ exclude:
   - playwright.config.cjs
   - test-results/
   - playwright-report/
+  - assets/pdf/ai-qe-appsec-discovery-questionnaire-v2.pdf
+  - assets/pdf/ai-qe-appsec-discovery-questionnaire-v2.1.pdf
+  - assets/pdf/ai-qe-evp-v1.3.0.pdf
+  - assets/pdf/ai-qe-technical-v1.3.0.pdf
+  - assets/pdf/ai-qe-industry-research-2026.pdf
+  - assets/pdf/ai-qe-fintech-evp-v1.6.0.pdf
+  - assets/pdf/ai-qe-fintech-technical-v1.6.0.pdf
+  - assets/data/industry-sources-2026-09-05.json

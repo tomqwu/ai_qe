@@ -10,7 +10,7 @@ has_toc: true
 
 [Open the interactive case]({{ '/case-studies/fintech/' | relative_url }}) or the [technical briefing]({{ '/briefings/fintech-technical/' | relative_url }}).
 
-**Fictional case, edition v1.6.0.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
+**Fictional case, edition v1.7.0.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
 
 ## Assumption register
 

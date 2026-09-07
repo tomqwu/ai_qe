@@ -2,7 +2,7 @@
 title: Pilot business-case facilitation guide
 parent: Method
 nav_order: 4
-description: Structure for a 60-90 minute executive session on AI-enabled QE and AppSec, the recommended message, the decisions to request, and where the AI gateway topic belongs.
+description: Structure for a 60-90 minute executive session on AI-enabled QE, the recommended message, the decisions to request, and where the AI gateway topic belongs.
 ---
 
 # Pilot business-case facilitation guide
@@ -25,7 +25,7 @@ This guide supports a **60–90 minute pilot business-case workshop**. For the c
 | 2. What we heard | 10 min | Questionnaire results in six charts: primary outcome, top concerns, top-three effort activities, automation and regression profile, trusted-metric grid, acceptable autonomy level | Current-state questions rather than conclusions; no savings number yet |
 | 3. What the external evidence actually says | 10 min | One slide: task gains exist (vendor and lab), METR's early-2025 study found a slowdown and its follow-up is inconclusive, surveys and telemetry show quality risks alongside some output gains, consultancy estimates do not establish audited QA savings; one slide: what could not be verified | Credibility; pre-empts "the analysts say" |
 | 4. Automation, assistance and agency | 5 min | The autonomy ladder; what is proposed for the pilot (levels 1-5 with human approval) and what is explicitly out (autonomous merge or deploy) | Governance boundary in plain language |
-| 5. Where the opportunity is | 10 min | QA: seven candidate use cases with the two defaults; AppSec: triage and prioritization with draft remediation; the engineering gaps that are not AI problems | Separate foundational automation from AI |
+| 5. Where the opportunity is | 10 min | QA: test design, generation, data, environments, execution, maintenance and evidence with the two defaults; the engineering gaps that are not AI problems | Separate foundational automation from AI |
 | 6. Conservative savings hypothesis | 10 min | Scenario table in percentages; the base-case waterfall per $10M with assumptions visible; the four-level distinction | Discipline; no dollar forecast |
 | 7. The phased model | 10 min | Phases 0-4 with duration, ceiling, deliverables and stop rules; applications proposed | Minimize upfront spend; show early exit |
 | 8. Controls and regulatory alignment | 5 min | One-page control mapping | Turn caution into a regulatory strength |
