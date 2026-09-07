@@ -18,6 +18,9 @@
 .ft-role-1 { background:#236098; }.ft-role-2 { background:#7042a4; }.ft-role-3 { background:#126457; }.ft-role-4 { background:#8d5610; }
 .ft-staff dl { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:12px 0; }
 .ft-staff dt { font-weight:600; }.ft-staff dd { margin:4px 0; }
+/* These grouped definitions stack labels above values, unlike the theme's glossary rows. */
+.ft-case .ft-staff dt, .ft-case .ft-workflow-detail dt { margin:0; text-align:left; }
+.ft-case .ft-staff dt::after, .ft-case .ft-workflow-detail dt::after { content:none; }
 .ft-diagram-scroll { overflow:auto; padding:4px; }
 .ft-diagram svg { width:100%; display:block; }
 .ft-node rect { stroke-width:2; }.ft-node text { fill:#1c374b; font-family:"Source Sans 3",sans-serif; font-size:23px; }
@@ -67,8 +70,9 @@
 .ft-sim-narration { padding:22px; background:#fff; border-left:4px solid #236098; min-height:218px; }.ft-sim-narration h3 { font-size:24px; margin:8px 0; }.ft-sim-narration p { margin:8px 0; }.ft-eyebrow { font-size:13px; font-weight:650; text-transform:uppercase; letter-spacing:.07em; color:#236098; }
 .ft-sim-actions { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; align-items:center; }.ft-sim-actions [data-sim-play] { background:#236098; color:#fff; border-color:#236098; }.ft-sim-actions span { font-size:13px; color:#526571; }
 .ft-sim-result { padding:18px 22px; background:#e5f3ed; border-left:4px solid #126457; }.ft-sim-result.ft-failed { background:#fbefec; border-color:#ac3939; }.ft-sim-result p { margin:8px 0 0; }
-.ft-workflow-tabs { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0; }.ft-workflow-tabs button { font-size:15px; }.ft-workflow-tabs button[aria-pressed=true] { color:#fff; background:#7042a4; border-color:#7042a4; }
+.ft-workflow-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); grid-auto-rows:1fr; gap:8px; margin:24px 0; }.ft-workflow-tabs button { min-height:52px; font-size:15px; line-height:1.4; text-align:left; }.ft-workflow-tabs button[aria-pressed=true] { color:#fff; background:#7042a4; border-color:#7042a4; }
 .ft-workflow-detail { padding:24px; background:#f7f5fa; border-top:3px solid #7042a4; scroll-margin-top:20px; }.ft-workflow-detail h3 { margin:0 0 16px; font-size:26px; }.ft-stage-example { font-size:21px; color:#51307d; }.ft-workflow-detail dl { margin:20px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:20px 32px; }.ft-workflow-detail dt { font-weight:650; color:#51307d; }.ft-workflow-detail dd { margin:6px 0 0; }
+.ft-workflow-detail dl > div { min-width:0; }
 .ft-readiness { display:grid; grid-template-columns:1fr 1fr; gap:0 24px; margin:24px 0; }.ft-readiness > div { padding:14px 0; border-top:1px solid #bdcfce; }.ft-readiness strong, .ft-readiness span { display:block; }.ft-readiness span { margin-top:6px; }
 .ft-table-scroll { overflow:auto; }.ft-hours { min-width:640px; font-variant-numeric:tabular-nums; }.ft-hours caption { text-align:left; font-size:15px; padding-bottom:12px; }.ft-hours th, .ft-hours td { padding:10px; }.ft-hours tfoot { font-weight:700; }
 .ft-model-output { padding:24px; background:#152e40; color:#fff; margin:24px 0; }.ft-model-output strong { font-size:28px; }.ft-model-output p { margin:10px 0 0; }
@@ -95,6 +99,10 @@
 .fintech-deck .ft-evidence-chain { gap:1.5cqw 3cqw; margin:.6cqw 0; }.fintech-deck .ft-evidence-chain li { padding:1cqw 0; }.fintech-deck .ft-evidence-chain b { font-size:2cqw; }.fintech-deck .ft-evidence-chain span { font-size:1.6cqw; margin-top:.5cqw; }.fintech-deck .ft-callout { padding:1.3cqw 2cqw; }
 .fintech-deck .ft-questions { margin:0; padding-left:2cqw; }.fintech-deck .ft-questions li { padding:1.3cqw 0 1.3cqw 1cqw; font-size:2cqw; }
 .fintech-deck .ft-cover-statement { gap:4cqw; margin:2cqw 0; }.fintech-deck .ft-big-number { font-size:15cqw; }.fintech-deck .ft-cover-statement strong { font-size:3cqw; }.fintech-deck .ft-cover-statement p { font-size:2.2cqw; }
+@media (max-width:1000px) {
+ .ft-workflow-tabs { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .ft-workflow-detail dl { grid-template-columns:1fr; }
+}
 @media (max-width:700px) {
  .ft-case h1 { font-size:38px; }.ft-case section { margin:44px 0; }.ft-staff dl { grid-template-columns:1fr 1fr; }.ft-staff-bar { height:60px; }
  .ft-case .ft-comparison > div { grid-template-columns:1fr; gap:6px; }.ft-case .ft-total-bar { height:40px; font-size:14px; }
@@ -115,5 +123,12 @@
  .fintech-deck .ft-questions { padding-left:20px; }.fintech-deck .ft-questions li { font-size:20px; padding:14px 0 14px 6px; }
  .fintech-deck .ft-cover-statement { display:block; margin:18px 0; }.fintech-deck .ft-big-number { font-size:110px; }.fintech-deck .ft-cover-statement strong { font-size:26px; }.fintech-deck .ft-cover-statement p { font-size:21px; }
 }
+@media (max-width:380px) {
+ .ft-sim-route { flex-direction:column; gap:22px; }
+ .ft-sim-route li { flex-direction:row; gap:12px; text-align:left; }
+ .ft-sim-route li:not(:last-child)::after { content:'↓'; left:10px; top:32px; }
+ .ft-playing .ft-current:not(:last-child)::after { animation-name:ft-direction-down; }
+}
+@keyframes ft-direction-down { 50% { transform:translateY(5px); } }
 @media (prefers-reduced-motion:reduce) { .ft-playing .ft-current::after { animation:none !important; } }
 @media print { .fintech-deck .ft-speaker-notes { display:none; }.fintech-deck .ft-diagram-scroll { overflow:visible; }.fintech-deck .ft-diagram svg { min-width:0; } }

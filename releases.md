@@ -7,6 +7,14 @@ permalink: /releases/
 
 The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
 
+## v1.6.1 · 7 September 2026
+
+Corrected the [fintech workflow explorer]({{ '/case-studies/fintech/#workflow' | relative_url }}): field labels now align above their descriptions, and all eight stage buttons form an even grid with four columns on desktop and two on smaller screens. Narrow screens show workflow details in one column. The staffing labels use the same left alignment.
+
+The payment simulation's stage strip stacks vertically on the narrowest phones so the page stays within the screen. Its arrows continue to follow the flow direction.
+
+Fintech slides and PDFs retain **edition v1.6.0**, research decks retain **v1.3.0**, and the architecture film retains its **v1.6.0** edition.
+
 ## v1.6.0 · 7 September 2026
 
 Added the [Harbor fintech case explorer]({{ '/case-studies/fintech/' | relative_url }}): a fictional organization with 75 offshore QA staff and a retry-safe payment release. It includes a step-by-step payment simulation, a shared QA architecture, all eight workflow stages, three delivery-maturity profiles, capacity arithmetic and an implementation plan. Every staffing figure, effort estimate and case outcome is labeled as assumed or illustrative.
