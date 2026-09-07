@@ -103,13 +103,18 @@ assert.deepEqual(components.map(t => t.demo_node).sort(), architecture.nodes.map
     await page.locator('#search-input').pressSequentially('RAG');
     const searchResult = page.locator('a.search-result[href$="/dictionary/#rag"]');
     await searchResult.waitFor({state: 'visible'});
-    // Native blur has a null relatedTarget, as can browser chrome or navigation.
-    // The theme must close search without throwing, from both focus surfaces.
+    // A null focus destination also occurs during Safari result clicks. It must
+    // preserve the link; a definite window departure closes the search instead.
     await page.locator('#search-input').evaluate(el => el.blur());
+    assert.ok(await searchResult.isVisible(), 'Unknown input focus destination must preserve clickable results');
+    await page.evaluate(() => window.dispatchEvent(new Event('blur')));
     await page.waitForFunction(() => !document.documentElement.classList.contains('search-active'));
     await page.locator('#search-input').focus();
+    await searchResult.waitFor({state: 'visible'});
     await searchResult.focus();
     await searchResult.evaluate(el => el.blur());
+    assert.ok(await searchResult.isVisible(), 'Unknown result focus destination must preserve clickable results');
+    await page.evaluate(() => window.dispatchEvent(new Event('blur')));
     await page.waitForFunction(() => !document.documentElement.classList.contains('search-active'));
     await page.locator('#search-input').focus();
     await page.locator('a.search-result[href$="/dictionary/#rag"]').click();
