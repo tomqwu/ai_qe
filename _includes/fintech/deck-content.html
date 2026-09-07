@@ -1,0 +1,18 @@
+{% assign case = site.data.fintech_case %}
+{% assign deck = site.data.fintech_decks[page.case_audience] %}
+{% for slide in deck %}
+{% if slide.chapter != '' %}{% assign current_chapter = slide.chapter %}{% endif %}
+<section class="slide ft-slide{% if forloop.first %} ft-cover{% endif %}" id="slide-{{ forloop.index }}" data-chapter="{{ current_chapter | escape }}" aria-labelledby="title-{{ forloop.index }}">
+  <p class="kicker">Harbor / Fictional fintech case / {{ page.case_audience | upcase }}</p>
+  <h2 id="title-{{ forloop.index }}">{{ slide.title | escape }}</h2>
+  <div class="slide-content">
+    {% if slide.lead != '' %}<p class="ft-lead">{{ slide.lead | escape }}</p>{% endif %}
+    {% if slide.visual %}{% assign visual = 'fintech/' | append: slide.visual | append: '.html' %}{% include {{ visual }} %}{% endif %}
+    {% if slide.rows %}<table class="ft-table"><thead><tr>{% for heading in slide.columns %}<th scope="col">{{ heading | escape }}</th>{% endfor %}</tr></thead><tbody>{% for row in slide.rows %}<tr>{% for cell in row %}{% if forloop.first %}<th scope="row">{{ cell | escape }}</th>{% else %}<td>{{ cell | escape }}</td>{% endif %}{% endfor %}</tr>{% endfor %}</tbody></table>{% endif %}
+    {% if slide.points %}<ol class="ft-questions">{% for point in slide.points %}<li>{{ point | escape }}</li>{% endfor %}</ol>{% endif %}
+    <p class="ft-note">{{ slide.note | escape }}</p>
+    <aside class="ft-speaker-notes"><p>{{ case.disclosure }}</p>{% assign source_ids = slide.sources | split: ',' %}{% for source in case.sources %}{% if source_ids contains source.id %}<p><a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.id }} · {{ source.title | escape }}</a> — {{ source.use | escape }}</p>{% endif %}{% endfor %}<p><a href="{{ '/case-studies/fintech/implementation/' | relative_url }}" target="_blank" rel="noopener">Case assumptions, implementation plan and measurement method</a></p></aside>
+  </div>
+  <footer class="slide-footer"><span>AI × QE · Fintech edition v{{ case.edition }} · Assumed case</span><a href="{{ '/case-studies/fintech/' | relative_url }}" target="_blank" rel="noopener">Case explorer &amp; sources ↗</a><span class="slide-number">{{ forloop.index }} / {{ deck.size }}</span></footer>
+</section>
+{% endfor %}

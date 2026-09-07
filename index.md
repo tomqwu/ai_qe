@@ -16,6 +16,13 @@ has_toc: false
   <div class="research-edition"><span>{{ site.data.industry_sources | size }} curated sources</span><span>Gartner · McKinsey · DORA · primary studies</span><span>Reviewed 6 September 2026</span></div>
 </section>
 
+<section class="home-section" aria-labelledby="fintech-case-title">
+  <p class="eyebrow">New / Fintech case study / v{{ site.data.release.fintech_edition }}</p>
+  <h2 id="fintech-case-title">75 QA staff. One payment release.</h2>
+  <p>A fictional fintech customer retries a payment after a timeout. Follow the failure, inspect the shared QA platform and explore AI assistance at all eight workflow stages. Change the delivery-maturity assumptions to see the capacity model respond.</p>
+  <div class="hero-actions"><a class="btn btn-primary" href="{{ '/case-studies/fintech/' | relative_url }}">Explore the fintech story →</a><a class="text-link" href="{{ '/case-studies/fintech/' | relative_url }}#briefings">30 new audience slides →</a></div>
+</section>
+
 <section class="home-section" id="capabilities" aria-labelledby="capabilities-title">
   <div class="section-heading"><div><p class="eyebrow">The expanded quality mandate</p><h2 id="capabilities-title">AI for QE. QE for AI.</h2></div><a class="text-link" href="{{ '/docs/industry/library/' | relative_url }}">Browse the document library →</a></div>
   {% include industry/capabilities.html %}

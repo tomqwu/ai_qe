@@ -2,7 +2,7 @@
   "name": "ai-qe-publication-checks",
   "private": true,
   "scripts": {
-    "test": "node --test tools/qe-model.test.cjs tools/pilot-decision.test.cjs && node tools/build_scenario_data.cjs --check",
+    "test": "node --test tools/qe-model.test.cjs tools/pilot-decision.test.cjs tools/fintech-model.test.cjs && node tools/build_scenario_data.cjs --check",
     "test:browser": "node tools/browser-smoke.cjs"
   },
   "devDependencies": {

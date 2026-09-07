@@ -1,0 +1,5 @@
+<ol class="ft-flow-row"><li><strong>Approved case</strong><span>Business oracle + fixture</span></li><li><strong>AI draft</strong><span>Existing framework conventions</span></li><li><strong>Reviewed PR</strong><span>Assertions + failure evidence</span></li><li><strong>CI execution</strong><span>Real runner; recorded result</span></li></ol>
+<div class="ft-code-example"><span>Required assertions for PAY-142</span><pre>same transfer ID on retry
+journal count == 1
+payer balance == 90000 minor units
+recipient balance == 10000 minor units</pre><p>The test must fail when a deliberate duplicate-posting fault is enabled.</p></div>
