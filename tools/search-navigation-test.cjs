@@ -84,7 +84,10 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
       const popupPromise = page.context().waitForEvent('page');
       await result.locator('.search-result-title').click({modifiers:['ControlOrMeta']});
       const popup = await popupPromise;
-      await popup.waitForURL(expected);
+      await popup.bringToFront();
+      await popup.waitForURL(expected,{waitUntil:'domcontentloaded',timeout:10000}).catch(error=>{
+       throw new Error(`${engine.name()} new tab: expected ${expected}, got ${popup.url()}; ${error.message}`);
+      });
       await popup.close();
       navigations++;
      }
