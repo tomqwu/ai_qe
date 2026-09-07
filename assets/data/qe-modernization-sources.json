@@ -1,0 +1,132 @@
+[
+  {
+    "id": "Q1",
+    "title": "DORA: Test automation",
+    "url": "https://dora.dev/capabilities/test-automation/",
+    "type": "Research synthesis",
+    "finding": "Reliable feedback, shared developer and tester responsibility, and incremental improvement of brownfield test suites.",
+    "limit": "Does not establish an AI productivity percentage.",
+    "published": "2025-07-17",
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q2",
+    "title": "DORA: Test data management",
+    "url": "https://dora.dev/capabilities/test-data-management/",
+    "type": "Research synthesis",
+    "finding": "On-demand test data and controlled state support independent and parallel test execution.",
+    "limit": "Data availability does not prove business correctness.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q3",
+    "title": "DORA: Continuous delivery",
+    "url": "https://dora.dev/capabilities/continuous-delivery/",
+    "type": "Research synthesis",
+    "finding": "Delivery capability combines tests, deployment, data, observability and organizational practice.",
+    "limit": "CI installation alone is not continuous delivery.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q4",
+    "title": "Docker Compose",
+    "url": "https://docs.docker.com/compose/",
+    "type": "Product documentation",
+    "finding": "Compose defines and runs multi-container applications in development and test workflows.",
+    "limit": "Packaging does not reproduce every production dependency or operating condition.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q5",
+    "title": "Docker: Startup and shutdown order",
+    "url": "https://docs.docker.com/compose/how-tos/startup-order/",
+    "type": "Product documentation",
+    "finding": "Dependency order and explicit health conditions distinguish a running container from a ready service.",
+    "limit": "The application still needs domain-specific readiness and migration checks.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q6",
+    "title": "Testcontainers for Java",
+    "url": "https://java.testcontainers.org/",
+    "type": "Product documentation",
+    "finding": "Tests can use short-lived instances of real containerized dependencies.",
+    "limit": "A containerized database is real software, but the test topology is still scoped.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q7",
+    "title": "Testcontainers: Runtime requirements",
+    "url": "https://java.testcontainers.org/supported_docker_environment/",
+    "type": "Product documentation",
+    "finding": "The runner needs a compatible container runtime, connectivity and image access.",
+    "limit": "Alternative runtimes may need configuration and have feature differences.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q8",
+    "title": "WireMock: Stateful behaviour",
+    "url": "https://wiremock.org/docs/stateful-behaviour/",
+    "type": "Product documentation",
+    "finding": "Scenarios model changes in an HTTP substitute across requests.",
+    "limit": "State and reset rules must be reviewed against the actual provider.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q9",
+    "title": "WireMock: Simulating faults",
+    "url": "https://wiremock.org/docs/simulating-faults/",
+    "type": "Product documentation",
+    "finding": "Controlled delays and failure responses enable repeatable dependency fault tests.",
+    "limit": "Provider fidelity and actual timeout settings remain application-specific.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q10",
+    "title": "Pact: When to use contract testing",
+    "url": "https://docs.pact.io/getting_started/what_is_pact_good_for",
+    "type": "Product documentation",
+    "finding": "Consumer and provider contracts check interaction compatibility.",
+    "limit": "Provider verification does not establish downstream side effects or complete business correctness.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q11",
+    "title": "Kubernetes: Multi-tenancy",
+    "url": "https://kubernetes.io/docs/concepts/security/multi-tenancy/",
+    "type": "Product documentation",
+    "finding": "Namespace-based shared environments also need isolation configuration and resource controls.",
+    "limit": "An existing Kubernetes platform may be useful; Kubernetes is not required for the pilot.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q12",
+    "title": "Playwright: Docker",
+    "url": "https://playwright.dev/docs/docker",
+    "type": "Product documentation",
+    "finding": "Browser and system dependencies can be packaged for CI execution.",
+    "limit": "Match the project and image versions; browser execution does not establish native mobile coverage.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  },
+  {
+    "id": "Q13",
+    "title": "Appium: Drivers",
+    "url": "https://appium.io/docs/en/latest/intro/drivers/",
+    "type": "Product documentation",
+    "finding": "Mobile automation depends on platform-specific drivers and their prerequisites.",
+    "limit": "A backend container does not supply the required device, OS, driver or signing setup.",
+    "published": null,
+    "reviewed": "2026-09-07"
+  }
+]

@@ -32,4 +32,4 @@ for audience,slides in decks.items():
             for label in ['300h','182h','40h','78h','66h','33h','15packs']:assert label in words
     urls=[str(a.get_object().get('/A',{}).get('/URI','')) for p in pdf.pages for a in p.get('/Annots',[])]
     assert any('tomqwu.github.io/ai_qe/case-studies/fintech/' in u for u in urls)
-print('Passed: fintech assumptions, source IDs, case editions and all 33 PDF pages including diagram labels, tables, caveats and usable case links')
+print(f'Passed: fintech assumptions, source IDs, case editions and all {sum(len(slides) for slides in decks.values())} PDF pages including diagram labels, tables, caveats and usable case links')

@@ -7,10 +7,10 @@ that collects evidence and reusable method for AI-assisted quality engineering i
 
 The homepage includes two audience presentations:
 
-- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 22 slides on
+- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 23 slides on
   industry outlook, strategic vision, value, ownership and capability expansion.
 - [Technical delivery architecture](https://tomqwu.github.io/ai_qe/briefings/technical/):
-  31 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
+  33 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
 
 These are research-informed perspectives and a proposed architecture, not measured bank results.
 
@@ -42,6 +42,12 @@ Publisher documents remain local and excluded from Pages. Their original URLs ar
 in the public library. Update CSV when changing the source JSON. Research figures use
 explicit units and caveats; diagrams are authored proposed designs, not measured rankings.
 
+## QE modernization
+
+[QE modernization](https://tomqwu.github.io/ai_qe/qe-modernization/) connects readiness gaps to six workstreams, a proposed repeatable test environment and application-specific execution patterns. `_data/modernization.json` is canonical for the thirteen primary references, workstreams, capability progression, application surfaces and directed walkthrough. CSV/JSON source exports are distributed on the page and in GitHub releases.
+
+Shared editable diagrams live in `_includes/modernization/` and are reused in the industry and fintech decks. Run `node tools/modernization-browser-test.cjs` against the preview to verify surface switching, source exports, search navigation, responsive layout, real packet movement, pause behavior and no-JavaScript access. The diagram is a teaching architecture and does not run containers.
+
 ## Site version and latest change
 
 `_data/release.yml` is the shared release record for every site page and both audience decks.
@@ -54,7 +60,7 @@ the site edition; source review dates remain attached to their individual resear
 
 ## Maintaining the briefings
 
-The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 13-slide EVP and 20-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this assumed case distinct from observed industry findings.
+The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 14-slide EVP and 22-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this assumed case distinct from observed industry findings.
 
 Run `node tools/export_decks.cjs --fintech` against the preview to export the case PDFs. The edition in the case data, deck front matter and `fintech_edition` release field must agree. Run `node tools/fintech-browser-test.cjs` and `python tools/verify_fintech.py _site` after the build. `npm test` includes capacity and payment-model checks. The browser case is a deterministic teaching model; it does not connect to a payment service or invoke the example QA frameworks.
 
@@ -176,7 +182,7 @@ and [visibility observation](https://developer.mozilla.org/en-US/docs/Web/API/In
 
 Run `npm ci`, `npx playwright install chromium` and `pip install -r tools/requirements.txt`. Then run `npm test`, `python tools/validate_contracts.py`, `bundle exec jekyll build`, `python tools/finalize_site.py _site`, `python tools/verify_site.py _site`, `python tools/verify_industry.py _site` and `python tools/verify_publication.py _site`.
 
-Serve the build under `/ai_qe/` on port 61600 and run `npm run test:browser`. Set `QE_TEST_URL` to test another build. The browser suite checks all 50 slides at 1280×720, 1920×1080 and 375×812, SVG label bounds, player modes, focus, motion, sharing and search. CI runs it before publication.
+Serve the build under `/ai_qe/` on port 61600 and run `npm run test:browser`. Set `QE_TEST_URL` to test another build. The browser suite checks all industry slides at 1280×720, 1920×1080 and 375×812, SVG label bounds, player modes, focus, motion, sharing and search. CI runs it before publication.
 
 Canonical economics live in `_data/scenarios.json`; regenerate derived tables with `node tools/build_scenario_data.cjs`. Regenerate diagrams in order with `python tools/build_expanded_diagrams.py` then `python tools/build_audit_diagrams.py`. The payment reference contracts and failure fixtures are under `assets/examples/payments/`.
 

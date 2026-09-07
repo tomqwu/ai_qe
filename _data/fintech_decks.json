@@ -203,6 +203,17 @@
       "note": "Harbor has not been assessed. The dependency backlog can change scope, cost and timing; the 480-hour setup allowance is not a client quote.",
       "sources": "",
       "chapter": "Client adoption assumptions"
+    },
+    {
+      "title": "Modernization enables wider AI adoption",
+      "visual": "modernization-roadmap",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "For Harbor, fund repeatable payment tests and shared QE services alongside reviewed AI assistance. This is an assumed capability path, not a completed client assessment.",
+      "sources": "",
+      "chapter": "QE modernization"
     }
   ],
   "technical": [
@@ -524,6 +535,28 @@
       "note": "WireMock is an HTTP example. Contract fidelity, callback behavior and batch access need explicit owners; passing a stub does not prove end-to-end correctness.",
       "sources": "",
       "chapter": "Client adoption assumptions"
+    },
+    {
+      "title": "The proposed Harbor test environment",
+      "visual": "modernization-environment",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "The CI runner checks the real payment service and database against reviewed provider models. Retain separate provider and settlement evidence.",
+      "sources": "",
+      "chapter": "QE modernization"
+    },
+    {
+      "title": "Technology roles in the payment pilot",
+      "visual": "modernization-distinctions",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Choose Testcontainers, Compose or an existing supported environment for the test scope. Mobile devices and legacy settlement retain their own integration requirements.",
+      "sources": "",
+      "chapter": "QE modernization"
     }
   ]
 }

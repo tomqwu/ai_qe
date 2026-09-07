@@ -16,7 +16,8 @@ for key,r in results.items():
     assert abs(actual-r['net'])<1e-10, f'Static economics mismatch: {key}'
 legacy=(site/'docs/evidence/testing-studies/index.html').read_text()
 assert '75% of generated tests' not in legacy and '75% of target test classes' in legacy
-for audience,count in [('evp',22),('technical',31)]:
+decks=[deck for deck in json.loads((ROOT/'_data/briefing_room.json').read_text()) if deck['series']=='Industry perspective']
+for audience,count in [(deck['audience'],deck['slides']) for deck in decks]:
     text=(site/f'briefings/{audience}/index.html').read_text()
     assert f'v{version}' in text
     pdf=PdfReader(ROOT/f'assets/pdf/ai-qe-{audience}-v{edition}.pdf')
@@ -33,4 +34,4 @@ for audience,count in [('evp',22),('technical',31)]:
                 assert label in normalized, f'{audience}/{i+1}: missing PDF diagram label: {label}'
     links=[str(a.get_object().get('/A',{}).get('/URI','')) for page in pdf.pages for a in page.get('/Annots',[])]
     assert any('tomqwu.github.io/ai_qe/docs/' in x for x in links), 'PDF needs usable source links'
-print('Passed: canonical scenario/claim agreement, edition labels, 53 PDF pages and working source-link annotations')
+print(f"Passed: canonical scenario/claim agreement, edition labels, {sum(deck['slides'] for deck in decks)} PDF pages and working source-link annotations")

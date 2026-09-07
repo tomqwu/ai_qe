@@ -1,0 +1,333 @@
+{
+  "reviewed": "2026-09-07",
+  "disclosure": "Authored modernization roadmap and proposed Harbor architecture. The starting conditions and outcomes are illustrative, not an assessed client or a measured deployment.",
+  "sources": [
+    {
+      "id": "Q1",
+      "title": "DORA: Test automation",
+      "url": "https://dora.dev/capabilities/test-automation/",
+      "type": "Research synthesis",
+      "finding": "Reliable feedback, shared developer and tester responsibility, and incremental improvement of brownfield test suites.",
+      "limit": "Does not establish an AI productivity percentage.",
+      "published": "2025-07-17",
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q2",
+      "title": "DORA: Test data management",
+      "url": "https://dora.dev/capabilities/test-data-management/",
+      "type": "Research synthesis",
+      "finding": "On-demand test data and controlled state support independent and parallel test execution.",
+      "limit": "Data availability does not prove business correctness.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q3",
+      "title": "DORA: Continuous delivery",
+      "url": "https://dora.dev/capabilities/continuous-delivery/",
+      "type": "Research synthesis",
+      "finding": "Delivery capability combines tests, deployment, data, observability and organizational practice.",
+      "limit": "CI installation alone is not continuous delivery.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q4",
+      "title": "Docker Compose",
+      "url": "https://docs.docker.com/compose/",
+      "type": "Product documentation",
+      "finding": "Compose defines and runs multi-container applications in development and test workflows.",
+      "limit": "Packaging does not reproduce every production dependency or operating condition.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q5",
+      "title": "Docker: Startup and shutdown order",
+      "url": "https://docs.docker.com/compose/how-tos/startup-order/",
+      "type": "Product documentation",
+      "finding": "Dependency order and explicit health conditions distinguish a running container from a ready service.",
+      "limit": "The application still needs domain-specific readiness and migration checks.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q6",
+      "title": "Testcontainers for Java",
+      "url": "https://java.testcontainers.org/",
+      "type": "Product documentation",
+      "finding": "Tests can use short-lived instances of real containerized dependencies.",
+      "limit": "A containerized database is real software, but the test topology is still scoped.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q7",
+      "title": "Testcontainers: Runtime requirements",
+      "url": "https://java.testcontainers.org/supported_docker_environment/",
+      "type": "Product documentation",
+      "finding": "The runner needs a compatible container runtime, connectivity and image access.",
+      "limit": "Alternative runtimes may need configuration and have feature differences.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q8",
+      "title": "WireMock: Stateful behaviour",
+      "url": "https://wiremock.org/docs/stateful-behaviour/",
+      "type": "Product documentation",
+      "finding": "Scenarios model changes in an HTTP substitute across requests.",
+      "limit": "State and reset rules must be reviewed against the actual provider.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q9",
+      "title": "WireMock: Simulating faults",
+      "url": "https://wiremock.org/docs/simulating-faults/",
+      "type": "Product documentation",
+      "finding": "Controlled delays and failure responses enable repeatable dependency fault tests.",
+      "limit": "Provider fidelity and actual timeout settings remain application-specific.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q10",
+      "title": "Pact: When to use contract testing",
+      "url": "https://docs.pact.io/getting_started/what_is_pact_good_for",
+      "type": "Product documentation",
+      "finding": "Consumer and provider contracts check interaction compatibility.",
+      "limit": "Provider verification does not establish downstream side effects or complete business correctness.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q11",
+      "title": "Kubernetes: Multi-tenancy",
+      "url": "https://kubernetes.io/docs/concepts/security/multi-tenancy/",
+      "type": "Product documentation",
+      "finding": "Namespace-based shared environments also need isolation configuration and resource controls.",
+      "limit": "An existing Kubernetes platform may be useful; Kubernetes is not required for the pilot.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q12",
+      "title": "Playwright: Docker",
+      "url": "https://playwright.dev/docs/docker",
+      "type": "Product documentation",
+      "finding": "Browser and system dependencies can be packaged for CI execution.",
+      "limit": "Match the project and image versions; browser execution does not establish native mobile coverage.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    },
+    {
+      "id": "Q13",
+      "title": "Appium: Drivers",
+      "url": "https://appium.io/docs/en/latest/intro/drivers/",
+      "type": "Product documentation",
+      "finding": "Mobile automation depends on platform-specific drivers and their prerequisites.",
+      "limit": "A backend container does not supply the required device, OS, driver or signing setup.",
+      "published": null,
+      "reviewed": "2026-09-07"
+    }
+  ],
+  "horizons": [
+    {
+      "title": "Trusted work",
+      "foundation": "Reviewed scenarios, expected outcomes and ownership",
+      "ai": "AI drafts with domain review",
+      "proof": "A reviewer can identify a wrong answer"
+    },
+    {
+      "title": "Repeatable execution",
+      "foundation": "Reliable suites, isolated data and controlled dependencies",
+      "ai": "AI drafts tests that run in CI",
+      "proof": "Another engineer reproduces the result"
+    },
+    {
+      "title": "Shared QE services",
+      "foundation": "Reusable environments, contracts, artifacts and support",
+      "ai": "Assistance works across teams",
+      "proof": "A second team onboards and operates it"
+    },
+    {
+      "title": "Broader AI execution",
+      "foundation": "Evaluated tools, bounded actions and recovery",
+      "ai": "Agents execute within approved scope",
+      "proof": "Failures stop, evidence persists, people can intervene"
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "test-strategy",
+      "title": "Test strategy and testability",
+      "current": "Manual regression packs, UI-heavy coverage and unclear expected outcomes.",
+      "build": "Map critical journeys. Move suitable checks to unit, API and component suites; retain exploratory, usability and real integration coverage. Add observable outcomes and curate flaky tests.",
+      "owner": "QE lead + application developers",
+      "proof": "A known defect is caught by an independent assertion, and another engineer reproduces the result.",
+      "ai": "Draft scenarios and test code from approved rules; reviewers own the expected outcomes.",
+      "sources": [
+        "Q1"
+      ]
+    },
+    {
+      "id": "environments",
+      "title": "Containerization and environment lifecycle",
+      "current": "Shared environments drift, and setup depends on an individual.",
+      "build": "Package suitable apps, test runners and dependencies. Pin versions, apply migrations, wait for readiness, seed isolated data and clean up even after failure. Use scripted VMs or reserved systems where containers do not fit.",
+      "owner": "Platform / DevOps owner",
+      "proof": "Two runs do not interfere, a clean runner recreates the environment, and failed runs leave no unowned resources.",
+      "ai": "Propose setup changes through review; the pipeline owns execution and cleanup.",
+      "sources": [
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7"
+      ]
+    },
+    {
+      "id": "virtual-services",
+      "title": "Service virtualization and contract fidelity",
+      "current": "A supplier sandbox cannot reliably reproduce failures, callbacks or edge cases.",
+      "build": "Create owned, versioned substitutes for supported protocols. Model state transitions, delays and failures; reset between runs. Compare contracts and behavior with the real integration on a defined schedule.",
+      "owner": "Integration lead + provider owner",
+      "proof": "A deliberate contract mismatch fails a check, and timeout and duplicate scenarios can be replayed.",
+      "ai": "Draft mappings and suggest edge cases; integration engineers review the model.",
+      "sources": [
+        "Q8",
+        "Q9",
+        "Q10"
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Data, fixtures and domain checks",
+      "current": "Teams reuse accounts and manually repair balances between tests.",
+      "build": "Create permitted synthetic fixtures with valid business relationships, unique run identities and deterministic reset. Check money movement in the journal and balances, not just HTTP status.",
+      "owner": "Domain QA + data / application engineer",
+      "proof": "The retry scenario rejects a duplicate transfer or a wrong journal entry even if the API reports success.",
+      "ai": "Suggest data combinations; independent checks validate relationships and outcomes.",
+      "sources": [
+        "Q2",
+        "Q10"
+      ]
+    },
+    {
+      "id": "delivery-evidence",
+      "title": "CI execution and diagnostic evidence",
+      "current": "Tests run late; failures produce screenshots without reproducible context.",
+      "build": "Version the build, tests, fixtures and substitutes together. Retain assertions, logs, traces and artifacts by run ID. Keep mandatory suites and distinguish product, test and environment failures.",
+      "owner": "Developers + QE automation + DevOps",
+      "proof": "A failed required check stops promotion; evidence remains accessible after environment cleanup.",
+      "ai": "Draft evidence-linked triage and repair suggestions; retests establish whether a fix works.",
+      "sources": [
+        "Q1",
+        "Q3"
+      ]
+    },
+    {
+      "id": "platform-people",
+      "title": "Shared platform service and team skills",
+      "current": "Offshore testers wait for access and depend on a few automation specialists.",
+      "build": "Provide maintained templates, onboarding, coaching, ownership, support hours and capacity. Introduce self-service environments only when the platform can operate them.",
+      "owner": "QE platform product owner + supplier delivery lead",
+      "proof": "A second squad runs the pattern, troubleshoots a failure and knows who owns the next action.",
+      "ai": "Reuse evaluated assistance through supported interfaces; retain domain QA and developer accountability.",
+      "sources": [
+        "Q1",
+        "Q3",
+        "Q11"
+      ]
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "api",
+      "title": "API and service tests",
+      "fit": "Java payment service with PostgreSQL and an HTTP provider dependency.",
+      "runtime": "JUnit + REST Assured; Testcontainers-managed dependencies or a reviewed Compose stack. Use the existing container-capable CI runner.",
+      "substitute": "WireMock models the HTTP provider. Run the real database engine where practical and use reviewed seed data.",
+      "gate": "Verify contracts where both sides participate, then retain actual provider and settlement checks. Inspect the transfer identity, journal and balances.",
+      "first": "Reproduce PAY-142 with a pinned build, isolated account and a reviewed provider timeout.",
+      "sources": [
+        "Q4",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q10"
+      ]
+    },
+    {
+      "id": "web-mobile",
+      "title": "Web and native mobile",
+      "fit": "React web and mobile clients use the same payment APIs, with different execution requirements.",
+      "runtime": "Playwright can run web checks in a compatible browser image. Native mobile uses Appium drivers plus suitable devices or emulators and OS-specific tooling.",
+      "substitute": "Virtualize backend or provider behavior at a controlled boundary. Do not substitute away the user journey the test is meant to exercise.",
+      "gate": "Keep the required browser/device matrix and real client-to-backend checks. A green API suite does not establish mobile readiness.",
+      "first": "Automate one stable user journey; record browser/device, driver, application build and data revisions.",
+      "sources": [
+        "Q12",
+        "Q13",
+        "Q10"
+      ]
+    },
+    {
+      "id": "legacy",
+      "title": "Legacy, batch and shared systems",
+      "fit": "Settlement files, proprietary middleware or licensed systems cannot necessarily be packaged as disposable containers.",
+      "runtime": "Use a scripted VM, supported adapter, file harness or reserved integration window. Containerize only the compatible harness and surrounding dependencies.",
+      "substitute": "Model the relevant file or message contract with a protocol-appropriate simulator. HTTP mappings alone do not cover every message or batch protocol.",
+      "gate": "Retain actual settlement-cycle, reconciliation and integration checks. Manage shared data and booking conflicts explicitly.",
+      "first": "Control one input batch and its expected reconciliation, then reserve a reproducible validation window.",
+      "sources": [
+        "Q2",
+        "Q3",
+        "Q10"
+      ]
+    }
+  ],
+  "flow": [
+    {
+      "title": "A pinned test run calls the application",
+      "detail": "CI uses reviewed tests, fixture and dependency revisions. The example environment exists only for the bounded run.",
+      "node": "",
+      "routes": [
+        "runner:app"
+      ]
+    },
+    {
+      "title": "The provider substitute exercises a fault",
+      "detail": "An owned HTTP model returns a deliberate delay or failure. This establishes behavior against that model.",
+      "node": "",
+      "routes": [
+        "app:provider"
+      ]
+    },
+    {
+      "title": "The application writes real database state",
+      "detail": "The container runs the database engine. Independent assertions inspect transfer identity, journal entries and balances.",
+      "node": "",
+      "routes": [
+        "app:database"
+      ]
+    },
+    {
+      "title": "The runner retains original evidence",
+      "detail": "Assertions, logs and run versions survive cleanup. A failed check remains a failure; AI may summarize it but cannot turn it into a pass.",
+      "node": "",
+      "routes": [
+        "runner:evidence"
+      ]
+    },
+    {
+      "title": "Real integration contributes separate evidence",
+      "detail": "Provider, device and settlement checks close the gaps left by substitutes. The accountable owner reviews all required results.",
+      "node": "",
+      "routes": [
+        "integration:evidence"
+      ]
+    }
+  ]
+}

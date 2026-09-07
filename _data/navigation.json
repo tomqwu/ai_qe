@@ -21,14 +21,19 @@
       "step": "04"
     },
     {
+      "title": "QE modernization",
+      "url": "/qe-modernization/",
+      "step": "05"
+    },
+    {
       "title": "Platform readiness",
       "url": "/platform-readiness/",
-      "step": "05"
+      "step": "06"
     },
     {
       "title": "Plan the discovery",
       "url": "/discovery/",
-      "step": "06"
+      "step": "07"
     }
   ],
   "reference": [

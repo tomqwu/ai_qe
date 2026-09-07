@@ -10,7 +10,13 @@ has_toc: true
 
 [Open the interactive case]({{ '/case-studies/fintech/' | relative_url }}) or the [technical briefing]({{ '/briefings/fintech-technical/' | relative_url }}).
 
-**Fictional case, edition v1.9.0.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
+**Fictional case, edition v1.10.0.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
+
+## QE modernization before wider execution
+
+The [modernization guide]({{ "/qe-modernization/#harbor" | relative_url }}) develops the foundation backlog behind this case. Start with one payment journey: reviewed assertions, a reproducible environment, isolated data, a versioned provider substitute and durable evidence. Compare its behavior with the real provider and settlement path. Containerize suitable components; reserve supported environments for systems that cannot be made disposable.
+
+Reviewed AI drafts can begin where their own prerequisites are satisfied. Wider execution depends on demonstrated test reliability, environment repeatability and supported ownership. The 480-hour setup allowance below does not price this modernization backlog.
 
 ## Assumption register
 

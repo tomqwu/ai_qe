@@ -4,7 +4,7 @@ title: Assurance architecture
 description: Research-informed AI and quality engineering — Technical SDs & leads · Architecture.
 audience: Technical SDs & leads · Architecture
 deck_class: technical-deck
-slide_count: 31
+slide_count: 33
 nav_exclude: true
 search_exclude: true
 permalink: /briefings/technical/
@@ -176,4 +176,16 @@ briefing_minutes: "40–55"
 <p class="kicker">31 / Service virtualization</p><h2 id="title-31">Controlled dependencies and real integration</h2>
 <div class="slide-content">{% include adoption/virtualization.html %}<p class="figure-note">An integration engineer owns contract fidelity, state reset and refresh triggers. AI may draft HTTP mappings; message, mobile and legacy dependencies need their own test strategy.</p></div>
 {% include slide-footer.html n="31" source="/platform-readiness/#virtualization" label="Dependency architecture and sources" %}
+</section>
+
+<section class="slide diagram-slide" id="slide-32" data-chapter="QE modernization" aria-labelledby="title-32">
+<p class="kicker">32 / QE modernization</p><h2 id="title-32">A repeatable test environment</h2>
+<div class="slide-content">{% include modernization/environment.html %}<p class="figure-note">Run real application and database software, model selected provider behavior and retain original evidence beyond environment cleanup.</p></div>
+{% include slide-footer.html n="32" source="/qe-modernization/#evidence" label="Modernization evidence and assumptions" %}
+</section>
+
+<section class="slide" id="slide-33" data-chapter="QE modernization" aria-labelledby="title-33">
+<p class="kicker">33 / QE modernization</p><h2 id="title-33">Containerization, virtualization and contracts</h2>
+<div class="slide-content">{% include modernization/distinctions.html %}<p class="figure-note">Select a supported runtime for the application. Contract compatibility and simulated behavior need complementary domain and real-integration checks.</p></div>
+{% include slide-footer.html n="33" source="/qe-modernization/#evidence" label="Modernization evidence and assumptions" %}
 </section>

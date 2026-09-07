@@ -9,6 +9,18 @@ description: Dated entries recording what was verified, when, what changed, and 
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+## 2026-09-07: QE modernization and AI enablement (v1.10.0)
+
+**Question.** Which QE foundations enable wider AI execution, and where do service virtualization and containerization fit?
+
+**Evidence checked.** Thirteen primary references from DORA, Docker, Testcontainers, WireMock, Pact, Kubernetes, Playwright and Appium. The [modernization source library]({{ '/qe-modernization/#evidence' | relative_url }}) records supported findings, limitations, access links and review dates. Product documentation establishes capabilities, not client benefits.
+
+**Synthesis.** Reviewed assistance can begin while QE improves. Broader execution needs trustworthy tests, controlled state and dependencies, repeatable environments and supported ownership. Containers package runtime software, virtualization supplies selected dependency models, and contracts check interaction compatibility. Real integration and domain assertions remain necessary. Kubernetes is an optional environment choice.
+
+**Changed.** Added a modernization hub, six workstreams, an animated proposed test architecture, application-surface examples and six slides across the audience decks. The Harbor sequence and capability progression are authored proposals with unverified client assumptions. No additional savings benchmark is claimed.
+
+**Open evidence.** Client environment constraints, runtime and license access, current flake rates, test-data reset, dependency fidelity and platform support capacity still require discovery.
+
 ## 2026-09-06 — Deeper audience briefings (v1.2.0)
 
 Expanded the EVP strategic-vision deck from 10 to 18 slides and the technical architecture deck from 11 to 26. Added 17 native diagrams with source findings, design implications and accessible descriptions. The new material covers portfolio choices, operating ownership, skills, investment, leadership measures, context and configuration boundaries, test oracles, mutation, diagnosis, repair, corpus design, agent enforcement, isolation, release, recovery and telemetry. New tables cover analyst signals, industrial cases, judge calibration and integration contracts.
