@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.9.1 · 7 September 2026
+
+The desktop navigation now stays at **248 px** instead of expanding with the browser window. The recovered space goes to the page, with a centered content area capped at 1,200 px. Navigation labels and click targets retain their size; phones retain the collapsible Menu.
+
+This is a layout patch. All four slide/PDF editions remain **v1.9.0**, the research companion **v1.7.0**, questionnaire **v3**, and architecture film **v1.8.0**. [GitHub release v1.9.1](https://github.com/tomqwu/ai_qe/releases/tag/v1.9.1) includes the current downloads.
+
 ## v1.9.0 · 7 September 2026
 
 Added [Platform readiness]({{ '/platform-readiness/' | relative_url }}) to the primary menu and discovery path. Twelve adoption assumptions connect infrastructure, DevOps, service virtualization, data, testability, frameworks, evidence, AI access, people, platform ownership and funding to each workflow. The interactive worksheet identifies required capabilities and unresolved evidence without averaging away blockers.
