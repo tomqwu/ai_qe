@@ -18,6 +18,8 @@ The case has two dedicated, QA-focused briefings with diagrams and editable web 
 
 The industry research decks retain **slide edition v1.3.0**. Refreshed the existing architecture film's site edition label to v1.6.0; its scenario content is unchanged.
 
+Fixed the theme's search focus handling when focus leaves the page or returns to browser controls. A missing next focus target now closes search without a JavaScript error.
+
 ## v1.5.0 · 6 September 2026
 
 Added the [AI × QE dictionary]({{ '/dictionary/' | relative_url }}) with plain-language definitions, acronyms, concrete examples and related terms across six topics. Search, topic filters and A–Z navigation support quick lookup; each term has a shareable link and appears in the site-wide search.
