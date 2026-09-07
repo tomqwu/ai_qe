@@ -30,6 +30,7 @@ has_toc: false
 <section class="home-section" id="briefings" aria-labelledby="briefings-title">
   <div class="section-heading"><div><p class="eyebrow">Start with your perspective</p><h2 id="briefings-title">Visual briefings for<br>strategy and architecture.</h2></div><p>Strategy for executive leaders.<br>Architecture for the teams who deliver it.</p></div>
   {% include briefing-embed.html %}
+  <p>New to the terminology? <a href="{{ '/dictionary/' | relative_url }}">Open the AI × QE dictionary →</a> Plain-language definitions, examples and a guide to the architecture components.</p>
 </section>
 
 <section class="home-section" aria-labelledby="research-title">

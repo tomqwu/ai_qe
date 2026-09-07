@@ -159,6 +159,12 @@ Canonical economics live in `_data/scenarios.json`; regenerate derived tables wi
 
 For a content release, update `version` and `slide_edition` in `_data/release.yml`, regenerate the static audience PDFs using `node tools/export_decks.cjs`, render and visually inspect every page, and update the release history. A player-only patch may advance `version` while retaining `slide_edition` and its existing PDFs; document that distinction in the release notes. The original 13-page research companion remains a dated archive; it is not the current slide export.
 
+## Dictionary authoring
+
+`_data/dictionary.json` is the canonical term register for `/dictionary/`, the site search index and the 3D component definition links. Keep IDs stable for shared links. Each entry needs a category, aliases, an original definition, an illustrative example, related term IDs and a context page. Optional `reference` links identify primary terminology sources. The 11 component entries also carry a unique `demo_node` matching the architecture graph.
+
+`dictionary.html` renders every definition without JavaScript; `assets/js/dictionary.js` adds search, topic filters, URL state and accessible anchor navigation. `tools/finalize_site.py` indexes each term and its aliases. After a build, run `node tools/dictionary-test.cjs` against the preview (`QE_TEST_URL` overrides its default); CI includes it. Changes to the demo's template or renderer also require a refreshed film manifest, as below.
+
 ## Blender and Three.js architecture demonstration
 
 The `/demos/architecture/` page is a dedicated 3D viewer. The landing page links a lightweight poster, so ordinary research and slide pages do not load the WebGL renderer.

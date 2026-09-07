@@ -1,0 +1,1160 @@
+{
+  "categories": [
+    {
+      "id": "foundations",
+      "label": "AI & QE essentials"
+    },
+    {
+      "id": "architecture",
+      "label": "Architecture components"
+    },
+    {
+      "id": "testing",
+      "label": "Testing & evaluation"
+    },
+    {
+      "id": "security",
+      "label": "Security & operations"
+    },
+    {
+      "id": "economics",
+      "label": "Value & measurement"
+    },
+    {
+      "id": "evidence",
+      "label": "Reading the research"
+    }
+  ],
+  "terms": [
+    {
+      "id": "action-gateway",
+      "term": "Action gateway",
+      "category": "architecture",
+      "aliases": [
+        "Permission gate",
+        "Authorization gateway"
+      ],
+      "definition": "The independent control that checks whether a specific identity may perform a specific action on a specific resource before a tool executes it.",
+      "example": "Allow a sandbox test run; deny a request to change production data.",
+      "related": [
+        "authorization",
+        "least-privilege",
+        "sandbox-checks"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "gateway"
+    },
+    {
+      "id": "adoption",
+      "term": "Adoption and utilization",
+      "category": "economics",
+      "aliases": [
+        "Adoption",
+        "Utilization",
+        "Actual usage"
+      ],
+      "definition": "How much eligible work actually uses the AI-assisted process. Tool access or license counts alone do not measure this.",
+      "example": "Half of eligible test-writing work uses the assistant during the measured period.",
+      "related": [
+        "eligibility",
+        "net-task-saving",
+        "released-capacity"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "agent",
+      "term": "AI agent",
+      "category": "foundations",
+      "aliases": [
+        "Agent",
+        "Agentic AI"
+      ],
+      "definition": "A system that uses an AI model to choose steps and call tools toward a task. Its ability to propose an action is separate from permission to execute it.",
+      "example": "A test author chooses a repository search, then asks to run a test in a sandbox.",
+      "related": [
+        "action-gateway",
+        "least-privilege",
+        "qe-runtime"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "ai-application",
+      "term": "AI application",
+      "category": "architecture",
+      "aliases": [
+        "AI applications",
+        "System under evaluation"
+      ],
+      "definition": "The AI-enabled product being evaluated, including its model, prompts, retrieval and tools. It is distinct from the assistant that creates tests.",
+      "example": "A customer-support agent is the application under test.",
+      "related": [
+        "qe-for-ai",
+        "evaluation-service",
+        "evaluation-manifest"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "application"
+    },
+    {
+      "id": "ai-for-qe",
+      "term": "AI for QE",
+      "category": "foundations",
+      "aliases": [
+        "AI-assisted quality engineering"
+      ],
+      "definition": "Using AI to help people design tests, investigate failures and review security findings. People still need evidence that the resulting work is correct.",
+      "example": "An assistant drafts a payment test; an engineer checks its expected result.",
+      "related": [
+        "qe-for-ai",
+        "quality-engineering",
+        "test-oracle"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "api",
+      "term": "Application programming interface (API)",
+      "category": "foundations",
+      "aliases": [
+        "API",
+        "Tool interface"
+      ],
+      "definition": "A defined way for software to request data or actions from another system. In this design, a tool call uses a bounded interface rather than unrestricted system access.",
+      "example": "A sandbox API accepts a test artifact and returns a run identifier.",
+      "related": [
+        "action-gateway",
+        "idempotency-key"
+      ],
+      "learn": "/docs/industry/reference-contracts/"
+    },
+    {
+      "id": "appsec",
+      "term": "Application security (AppSec)",
+      "category": "foundations",
+      "aliases": [
+        "AppSec",
+        "Application security"
+      ],
+      "definition": "Work that identifies, prevents and fixes security weaknesses in software and its delivery process.",
+      "example": "Triage a scanner finding, verify that the proposed fix blocks the attack, and retain review evidence.",
+      "related": [
+        "sast",
+        "dast",
+        "false-positive"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "authentication",
+      "term": "Authentication",
+      "category": "security",
+      "aliases": [
+        "Identity verification",
+        "AuthN"
+      ],
+      "definition": "Checking who or what is making a request. Establishing identity does not establish permission for every action.",
+      "example": "Verify the service identity that submitted a sandbox run request.",
+      "related": [
+        "authorization",
+        "non-human-identity"
+      ],
+      "learn": "/docs/industry/reference-contracts/"
+    },
+    {
+      "id": "authorization",
+      "term": "Authorization",
+      "category": "security",
+      "aliases": [
+        "Access decision",
+        "AuthZ",
+        "Permission"
+      ],
+      "definition": "Deciding whether an identity is allowed to perform the requested action on the requested resource under the current policy.",
+      "example": "A known service identity may read test fixtures but may not access production accounts.",
+      "related": [
+        "authentication",
+        "action-gateway",
+        "least-privilege"
+      ],
+      "learn": "/docs/industry/reference-contracts/"
+    },
+    {
+      "id": "baseline",
+      "term": "Baseline",
+      "category": "economics",
+      "aliases": [
+        "Before measurement",
+        "Comparison baseline"
+      ],
+      "definition": "The measured starting point used for a comparison, including the work, people, quality and effort counted.",
+      "example": "Measure current test-writing and review time before introducing the assistant.",
+      "related": [
+        "net-task-saving",
+        "quality-floor",
+        "transferability"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "benchmark",
+      "term": "Benchmark",
+      "category": "evidence",
+      "aliases": [
+        "Benchmark study",
+        "Reference dataset"
+      ],
+      "definition": "A defined task set and measurement method used to compare performance. Results apply to those tasks and conditions before any broader inference is made.",
+      "example": "Success on a public coding set does not establish savings on the bank’s regression work.",
+      "related": [
+        "held-out-set",
+        "transferability",
+        "causal-evidence"
+      ],
+      "learn": "/docs/evidence/reading-the-evidence/"
+    },
+    {
+      "id": "capture-factor",
+      "term": "Capture factor",
+      "category": "economics",
+      "aliases": [
+        "Capture rate",
+        "Finance-approved capture"
+      ],
+      "definition": "The share of positive released capacity that can become a financial benefit through an agreed spending change in the relevant period.",
+      "example": "An approved reduction in contractor scope converts part of the released capacity into lower spending.",
+      "related": [
+        "released-capacity",
+        "hard-dollar-savings",
+        "net-benefit"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "causal-evidence",
+      "term": "Causal evidence",
+      "category": "evidence",
+      "aliases": [
+        "Causality",
+        "Randomized experiment",
+        "RCT"
+      ],
+      "definition": "Evidence supporting the claim that an intervention changed an outcome, using a design that addresses alternative explanations. Its scope still depends on the study.",
+      "example": "A randomized comparison estimates a tool’s effect for the studied participants and tasks.",
+      "related": [
+        "observational-evidence",
+        "transferability"
+      ],
+      "learn": "/docs/evidence/reading-the-evidence/"
+    },
+    {
+      "id": "ci-cd",
+      "term": "CI/CD",
+      "category": "foundations",
+      "aliases": [
+        "Continuous integration",
+        "Continuous delivery",
+        "Continuous deployment"
+      ],
+      "definition": "Automated steps that integrate code and prepare it for release. CD can mean delivery or deployment; this site’s release path retains an explicit approval decision.",
+      "example": "A code change triggers tests and evidence collection before an approved release.",
+      "related": [
+        "delivery-systems",
+        "release-authority",
+        "regression-corpus"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "confidence-interval",
+      "term": "Confidence interval",
+      "category": "evidence",
+      "aliases": [
+        "CI",
+        "Statistical uncertainty"
+      ],
+      "definition": "A range calculated by a statistical method to express uncertainty in an estimate. A 95% method is designed to cover the true parameter in 95% of repeated samples under its assumptions.",
+      "example": "A wide interval signals that the data allow a broad range of effect sizes.",
+      "related": [
+        "point-estimate",
+        "causal-evidence"
+      ],
+      "learn": "/docs/evidence/reading-the-evidence/",
+      "reference": {
+        "title": "NIST: interpreting confidence intervals",
+        "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm"
+      }
+    },
+    {
+      "id": "context-service",
+      "term": "Context service",
+      "category": "architecture",
+      "aliases": [
+        "Approved context",
+        "Context retrieval"
+      ],
+      "definition": "The proposed component that supplies relevant, versioned material the task is allowed to access. Retrieved text remains untrusted as instructions.",
+      "example": "Supply the approved API contract, excluding another team’s restricted customer records.",
+      "related": [
+        "rag",
+        "prompt-injection",
+        "least-privilege"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "context"
+    },
+    {
+      "id": "cost-avoidance",
+      "term": "Cost avoidance",
+      "category": "economics",
+      "aliases": [
+        "Avoided cost",
+        "Avoided hiring"
+      ],
+      "definition": "Preventing an otherwise planned cost, measured against an approved counterfactual spending plan. It differs from reducing current spending.",
+      "example": "Absorb planned demand without an additional hire that was in the approved workforce plan.",
+      "related": [
+        "hard-dollar-savings",
+        "released-capacity"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "delivery-systems",
+      "term": "Delivery systems",
+      "category": "architecture",
+      "aliases": [
+        "Source systems",
+        "Repository",
+        "Pipeline"
+      ],
+      "definition": "The existing tools that hold requirements, code, builds, tests and change records. They supply versioned inputs to the proposed platform.",
+      "example": "The repository provides a commit; the ticket system provides its acceptance criteria.",
+      "related": [
+        "context-service",
+        "ci-cd"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "delivery"
+    },
+    {
+      "id": "deterministic-check",
+      "term": "Deterministic check",
+      "category": "testing",
+      "aliases": [
+        "Deterministic validation",
+        "Rule-based check"
+      ],
+      "definition": "A check that applies fixed rules to the same inputs and conditions, producing a repeatable result. Its usefulness still depends on choosing the right rule.",
+      "example": "Assert that an invalid payment returns status 422 and writes zero payment records.",
+      "related": [
+        "test-oracle",
+        "llm-judge"
+      ],
+      "learn": "/docs/industry/reference-contracts/"
+    },
+    {
+      "id": "digest",
+      "term": "Digest",
+      "category": "security",
+      "aliases": [
+        "Hash",
+        "Checksum",
+        "Artifact digest"
+      ],
+      "definition": "A compact value calculated from content to identify a particular version and detect changes. It does not show that the content is safe or correct.",
+      "example": "A changed test file has a different digest, so its earlier evaluation cannot be reused as proof.",
+      "related": [
+        "evaluation-manifest",
+        "evidence-store"
+      ],
+      "learn": "/docs/industry/reference-contracts/"
+    },
+    {
+      "id": "drift",
+      "term": "Drift",
+      "category": "security",
+      "aliases": [
+        "Distribution shift",
+        "Behavior drift"
+      ],
+      "definition": "A change in the inputs, environment or behavior that can make earlier evaluation results less representative of current use.",
+      "example": "Customers begin asking about a new product that the evaluation set does not cover.",
+      "related": [
+        "held-out-set",
+        "regression-corpus",
+        "telemetry"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "dast",
+      "term": "Dynamic application security testing (DAST)",
+      "category": "security",
+      "aliases": [
+        "DAST",
+        "Dynamic analysis"
+      ],
+      "definition": "Probing a running application for security weaknesses by observing its responses. Scope and authorization matter before running these checks.",
+      "example": "Send authorized test requests to a sandbox endpoint and inspect its responses.",
+      "related": [
+        "sast",
+        "sandbox-checks",
+        "appsec"
+      ],
+      "learn": "/docs/industry/evidence/",
+      "reference": {
+        "title": "OWASP: vulnerability scanning",
+        "url": "https://owasp.org/www-community/Vulnerability_Scanning_Tools"
+      }
+    },
+    {
+      "id": "eligibility",
+      "term": "Eligibility",
+      "category": "economics",
+      "aliases": [
+        "Eligible work",
+        "Addressable tasks"
+      ],
+      "definition": "The share of an activity that fits the agreed AI use case and its control constraints. It is an input to the site’s savings model.",
+      "example": "Exclude tasks needing restricted data when the pilot cannot access that data.",
+      "related": [
+        "adoption",
+        "released-capacity"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "evaluation-contract",
+      "term": "Evaluation contract",
+      "category": "testing",
+      "aliases": [
+        "Acceptance criteria",
+        "Evaluation plan"
+      ],
+      "definition": "The written agreement on what is being tested, for whom, which failures matter, how results are scored and what thresholds must be met.",
+      "example": "Require the payment system to reject negative amounts and create no payment record.",
+      "related": [
+        "test-oracle",
+        "quality-floor",
+        "evaluation-manifest"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "evaluation-manifest",
+      "term": "Evaluation manifest",
+      "category": "security",
+      "aliases": [
+        "Manifest",
+        "Versioned configuration"
+      ],
+      "definition": "A record of the exact artifacts, configuration, evaluation data and checks used in an evaluation. Changes can invalidate earlier results.",
+      "example": "Record the model, prompt, dataset, runner and candidate digests for run EVAL-042.",
+      "related": [
+        "digest",
+        "evidence-store",
+        "evaluation-contract"
+      ],
+      "learn": "/docs/industry/reference-contracts/"
+    },
+    {
+      "id": "evaluation-service",
+      "term": "Evaluation service",
+      "category": "architecture",
+      "aliases": [
+        "AI evaluator",
+        "Evaluation harness"
+      ],
+      "definition": "The proposed component that runs an AI application against defined cases and scoring rules, then records its behavior and results.",
+      "example": "Check answer correctness, permitted tool use and refusal behavior for a support agent.",
+      "related": [
+        "evaluation-contract",
+        "llm-judge",
+        "qe-for-ai"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "evaluation"
+    },
+    {
+      "id": "evidence-store",
+      "term": "Evidence store",
+      "category": "architecture",
+      "aliases": [
+        "Evidence log",
+        "Audit trail",
+        "Evidence record"
+      ],
+      "definition": "The proposed store of linked inputs, decisions and results that lets a reviewer reconstruct what happened. Recording an outcome does not by itself make that outcome trustworthy.",
+      "example": "Link the task, permission decision, artifact version and sandbox result in one reviewable record.",
+      "related": [
+        "evaluation-manifest",
+        "digest",
+        "release-authority"
+      ],
+      "learn": "/docs/industry/reference-contracts/",
+      "demo_node": "evidence"
+    },
+    {
+      "id": "fallback",
+      "term": "Fallback",
+      "category": "security",
+      "aliases": [
+        "Safe fallback",
+        "Rollback",
+        "Recovery"
+      ],
+      "definition": "A predefined alternative when an AI step or dependency cannot safely continue. A rollback specifically restores an earlier state; a fallback may route work to a person instead.",
+      "example": "Stop the agent and send the task to a reviewer when the required context is unavailable.",
+      "related": [
+        "release-authority",
+        "quality-floor",
+        "telemetry"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "false-negative",
+      "term": "False negative",
+      "category": "testing",
+      "aliases": [
+        "Missed detection",
+        "FN"
+      ],
+      "definition": "A result that fails to flag a problem or positive condition that is actually present.",
+      "example": "A scan reports no issue even though an exploitable flaw exists.",
+      "related": [
+        "false-positive",
+        "recall",
+        "quality-floor"
+      ],
+      "learn": "/docs/industry/evidence/"
+    },
+    {
+      "id": "false-positive",
+      "term": "False positive",
+      "category": "testing",
+      "aliases": [
+        "False alarm",
+        "FP"
+      ],
+      "definition": "A result that flags a problem or positive condition when that condition is absent. Interpret “positive” according to the task.",
+      "example": "A security scanner reports a vulnerability that investigation shows is not present.",
+      "related": [
+        "false-negative",
+        "precision",
+        "appsec"
+      ],
+      "learn": "/docs/industry/evidence/"
+    },
+    {
+      "id": "flaky-test",
+      "term": "Flaky test",
+      "category": "testing",
+      "aliases": [
+        "Flakiness",
+        "Non-deterministic test"
+      ],
+      "definition": "A test that sometimes passes and sometimes fails without a relevant change to the code under test. Investigate causes before changing assertions or suppressing it.",
+      "example": "A timing-sensitive test fails intermittently when a shared environment is busy.",
+      "related": [
+        "regression-corpus",
+        "telemetry"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "grounding",
+      "term": "Grounding",
+      "category": "foundations",
+      "aliases": [
+        "Grounded response"
+      ],
+      "definition": "Connecting an AI output to the supplied source material so its claims can be checked against that material. Source support alone does not prove the source is correct.",
+      "example": "A generated test cites the exact requirement version that defines the expected behavior.",
+      "related": [
+        "rag",
+        "test-oracle",
+        "evidence-store"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "hard-dollar-savings",
+      "term": "Hard-dollar savings",
+      "category": "economics",
+      "aliases": [
+        "Cash savings",
+        "Realized savings",
+        "Budget savings"
+      ],
+      "definition": "A reduction in spending recognized through an agreed Finance process. The site distinguishes this from time saved or capacity redeployed.",
+      "example": "An approved contract renewal costs less because less work is purchased.",
+      "related": [
+        "released-capacity",
+        "cost-avoidance",
+        "capture-factor"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "held-out-set",
+      "term": "Held-out set",
+      "category": "testing",
+      "aliases": [
+        "Holdout",
+        "Held out",
+        "Test set"
+      ],
+      "definition": "Evaluation cases kept separate from the examples used to develop or tune the system, so the assessment is less influenced by those choices.",
+      "example": "Reserve unseen payment edge cases for the final pilot evaluation.",
+      "related": [
+        "regression-corpus",
+        "benchmark",
+        "evaluation-contract"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "idempotency-key",
+      "term": "Idempotency key",
+      "category": "security",
+      "aliases": [
+        "Idempotency",
+        "Duplicate request"
+      ],
+      "definition": "An identifier a service uses to recognize repeated requests for the same operation and avoid duplicate effects under its defined contract.",
+      "example": "After a timeout, check the original run using the same key before attempting a retry.",
+      "related": [
+        "api",
+        "action-gateway",
+        "fallback"
+      ],
+      "learn": "/docs/industry/reference-contracts/"
+    },
+    {
+      "id": "judge-calibration",
+      "term": "Judge calibration",
+      "category": "testing",
+      "aliases": [
+        "Calibration",
+        "Scoring rubric",
+        "Human agreement"
+      ],
+      "definition": "Comparing a model judge’s scores with expert ratings on representative cases, then checking disagreement, bias and consistency.",
+      "example": "Inspect cases where the judge passes an answer that experts rate as incorrect.",
+      "related": [
+        "llm-judge",
+        "held-out-set",
+        "evaluation-contract"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "llm",
+      "term": "Large language model (LLM)",
+      "category": "foundations",
+      "aliases": [
+        "LLM",
+        "Language model",
+        "Generative AI"
+      ],
+      "definition": "An AI model that generates or analyzes language and code from its input. A fluent response can still be incorrect.",
+      "example": "A model writes a test from a requirement but may invent the expected result.",
+      "related": [
+        "agent",
+        "test-oracle",
+        "llm-judge"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "least-privilege",
+      "term": "Least privilege",
+      "category": "security",
+      "aliases": [
+        "Scoped permission",
+        "Scope",
+        "Bounded access"
+      ],
+      "definition": "Giving an identity only the access needed for its task, limited by resource, action and time where possible.",
+      "example": "Permit one test run in an isolated project until the task’s authorization expires.",
+      "related": [
+        "authorization",
+        "non-human-identity",
+        "action-gateway"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "llm-judge",
+      "term": "LLM judge",
+      "category": "testing",
+      "aliases": [
+        "Model-based judge",
+        "AI judge"
+      ],
+      "definition": "A language model used to score an output against a rubric. Its scores need checks against expert judgment and known failure cases.",
+      "example": "A judge scores answer completeness; experts verify whether it overlooks unsupported claims.",
+      "related": [
+        "judge-calibration",
+        "test-oracle"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "mutation-testing",
+      "term": "Mutation testing",
+      "category": "testing",
+      "aliases": [
+        "Mutation score",
+        "Seeded fault",
+        "Mutant"
+      ],
+      "definition": "Deliberately introducing small faults to check whether tests detect them. Detection adds evidence about test strength; it does not prove all real defects will be caught.",
+      "example": "Change “reject negative amounts” to “accept negative amounts” and check that the test fails.",
+      "related": [
+        "test-oracle",
+        "coverage",
+        "sandbox-checks"
+      ],
+      "learn": "/docs/industry/evidence/"
+    },
+    {
+      "id": "net-benefit",
+      "term": "Net benefit",
+      "category": "economics",
+      "aliases": [
+        "Net economic impact",
+        "Net captured impact"
+      ],
+      "definition": "Benefits remaining after the relevant AI, platform, evaluation, governance and other costs are deducted. State whether the result values effort or represents cash impact.",
+      "example": "Subtract pilot costs from captured benefit; value any added effort separately from actual cash spending.",
+      "related": [
+        "capture-factor",
+        "net-task-saving",
+        "scenario"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "net-task-saving",
+      "term": "Net task saving",
+      "category": "economics",
+      "aliases": [
+        "Task efficiency",
+        "Review burden",
+        "Net effort reduction"
+      ],
+      "definition": "The share of baseline human effort removed after counting AI-assisted work, review, correction and additional controls. It can be negative.",
+      "example": "A 10-hour task becomes 6 hours of work plus 2 hours of review: net task saving is 20%.",
+      "related": [
+        "baseline",
+        "released-capacity",
+        "quality-floor"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "non-human-identity",
+      "term": "Non-human identity",
+      "category": "security",
+      "aliases": [
+        "NHI",
+        "Service identity",
+        "Workload identity"
+      ],
+      "definition": "An identity assigned to a service or workload rather than a person, with an owner and managed permissions.",
+      "example": "The test runner uses its own scoped identity instead of an engineer’s broad credentials.",
+      "related": [
+        "authentication",
+        "least-privilege"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "observational-evidence",
+      "term": "Observational evidence",
+      "category": "evidence",
+      "aliases": [
+        "Correlation",
+        "Association",
+        "Survey"
+      ],
+      "definition": "Evidence from observed behavior or reported experience without assigning the intervention. Differences may reflect other factors as well as AI use.",
+      "example": "Teams using AI report faster delivery, but may also differ in skills or platform maturity.",
+      "related": [
+        "causal-evidence",
+        "transferability"
+      ],
+      "learn": "/docs/evidence/reading-the-evidence/"
+    },
+    {
+      "id": "point-estimate",
+      "term": "Point estimate",
+      "category": "evidence",
+      "aliases": [
+        "Effect size estimate",
+        "Single estimate"
+      ],
+      "definition": "One numerical estimate of an outcome or effect. It should be read with the study’s method, uncertainty and measurement unit.",
+      "example": "An estimated time reduction needs its task definition and uncertainty, not only a percentage.",
+      "related": [
+        "confidence-interval",
+        "benchmark"
+      ],
+      "learn": "/docs/evidence/reading-the-evidence/"
+    },
+    {
+      "id": "precision",
+      "term": "Precision",
+      "category": "testing",
+      "aliases": [
+        "Positive predictive value"
+      ],
+      "definition": "The share of positive findings that are correct: true positives divided by all reported positives. High precision means fewer false alarms among the findings.",
+      "example": "Of 10 reported vulnerabilities, 8 are confirmed: precision is 80%.",
+      "related": [
+        "recall",
+        "false-positive"
+      ],
+      "learn": "/docs/industry/evidence/"
+    },
+    {
+      "id": "prompt-injection",
+      "term": "Prompt injection",
+      "category": "security",
+      "aliases": [
+        "Indirect prompt injection",
+        "Malicious instructions"
+      ],
+      "definition": "An attempt to make an AI system follow attacker-supplied instructions, including instructions embedded in retrieved material or tool results.",
+      "example": "A repository file tells the assistant to ignore its task and disclose a secret.",
+      "related": [
+        "context-service",
+        "action-gateway",
+        "least-privilege"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "reference": {
+        "title": "OWASP: prompt injection",
+        "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+      }
+    },
+    {
+      "id": "qe-for-ai",
+      "term": "QE for AI",
+      "category": "foundations",
+      "aliases": [
+        "Quality engineering for AI"
+      ],
+      "definition": "Testing and monitoring an AI application itself: its answers, use of tools, resistance to attacks and behavior when something fails.",
+      "example": "Check whether a support agent retrieves an allowed document and refuses an unauthorized action.",
+      "related": [
+        "ai-for-qe",
+        "evaluation-service",
+        "prompt-injection"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "qe-runtime",
+      "term": "QE runtime",
+      "category": "architecture",
+      "aliases": [
+        "AI test author",
+        "Generation runtime"
+      ],
+      "definition": "The proposed execution environment that coordinates AI-assisted QE work and drafts candidate artifacts within time and cost limits.",
+      "example": "Draft a test, request a sandbox run, and revise it using the failure evidence.",
+      "related": [
+        "agent",
+        "action-gateway",
+        "test-oracle"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "runtime"
+    },
+    {
+      "id": "quality-assurance",
+      "term": "Quality assurance (QA)",
+      "category": "foundations",
+      "aliases": [
+        "QA",
+        "Quality assurance"
+      ],
+      "definition": "Activities that build confidence that quality requirements will be met, including agreed processes, reviews and checks. This site uses QE for the broader engineering approach and retains QA where sources or cost models use that label.",
+      "example": "Review whether a release followed its agreed testing and approval process.",
+      "related": [
+        "quality-engineering",
+        "quality-floor"
+      ],
+      "learn": "/docs/principles/"
+    },
+    {
+      "id": "quality-engineering",
+      "term": "Quality engineering (QE)",
+      "category": "foundations",
+      "aliases": [
+        "QE"
+      ],
+      "definition": "Building quality into delivery through clear requirements, prevention, testing and feedback. On this site, QE includes both conventional software and AI behavior.",
+      "example": "Define the payment rule before writing code, test it, then monitor failures after release.",
+      "related": [
+        "ai-for-qe",
+        "qe-for-ai",
+        "quality-floor",
+        "quality-assurance"
+      ],
+      "learn": "/docs/principles/"
+    },
+    {
+      "id": "quality-floor",
+      "term": "Quality floor",
+      "category": "economics",
+      "aliases": [
+        "Minimum quality",
+        "Release threshold",
+        "Guardrail"
+      ],
+      "definition": "The minimum acceptable quality and safety conditions that must hold while testing a productivity improvement. Mandatory gates cannot be offset by time saved.",
+      "example": "Hold the pilot when a required security check fails, even if tests are produced faster.",
+      "related": [
+        "release-authority",
+        "evaluation-contract",
+        "net-task-saving"
+      ],
+      "learn": "/docs/method/phased-pilot/"
+    },
+    {
+      "id": "recall",
+      "term": "Recall",
+      "category": "testing",
+      "aliases": [
+        "Sensitivity",
+        "Detection rate"
+      ],
+      "definition": "The share of actual positive cases detected: true positives divided by all actual positives. Measuring it requires knowing which cases truly contain the condition.",
+      "example": "A seeded set contains 10 vulnerabilities and the tool finds 8: recall is 80%.",
+      "related": [
+        "precision",
+        "false-negative"
+      ],
+      "learn": "/docs/industry/evidence/"
+    },
+    {
+      "id": "regression-corpus",
+      "term": "Regression corpus",
+      "category": "architecture",
+      "aliases": [
+        "Regression cases",
+        "Regression suite",
+        "Test corpus"
+      ],
+      "definition": "A curated, versioned collection of cases rerun after changes to detect previously addressed failures returning.",
+      "example": "Add a reviewed negative-payment case after a defect investigation.",
+      "related": [
+        "held-out-set",
+        "evaluation-service",
+        "drift"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "corpus"
+    },
+    {
+      "id": "release-authority",
+      "term": "Release authority",
+      "category": "architecture",
+      "aliases": [
+        "Human approval",
+        "Release decision"
+      ],
+      "definition": "The accountable person or process that decides whether the evidence and required approvals support release. In the demo, human approval is independent of generation.",
+      "example": "Hold the change when a mandatory check fails, even if the generated code looks plausible.",
+      "related": [
+        "quality-floor",
+        "evidence-store",
+        "fallback"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "release"
+    },
+    {
+      "id": "released-capacity",
+      "term": "Released capacity",
+      "category": "economics",
+      "aliases": [
+        "Capacity released",
+        "Productivity capacity"
+      ],
+      "definition": "Human time made available after net task savings, eligible work and actual adoption are accounted for. It may be redeployed without reducing spending.",
+      "example": "A team uses freed hours to reduce its backlog while the payroll stays the same.",
+      "related": [
+        "net-task-saving",
+        "capture-factor",
+        "hard-dollar-savings"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "rag",
+      "term": "Retrieval-augmented generation (RAG)",
+      "category": "foundations",
+      "aliases": [
+        "RAG",
+        "Retrieval augmented generation"
+      ],
+      "definition": "Finding relevant material and supplying it to a model as context for its response. Retrieval must respect the requesting identity’s permissions.",
+      "example": "Retrieve the approved payment specification before drafting its tests.",
+      "related": [
+        "context-service",
+        "grounding",
+        "prompt-injection"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "sandbox-checks",
+      "term": "Sandbox checks",
+      "category": "architecture",
+      "aliases": [
+        "Test sandbox",
+        "Sandbox",
+        "Verification"
+      ],
+      "definition": "Execution and validation inside an isolated environment with limited access and resources. Passing these checks provides evidence for review.",
+      "example": "Run the candidate test against known good behavior and a deliberately faulty implementation.",
+      "related": [
+        "mutation-testing",
+        "test-oracle",
+        "release-authority"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "checks"
+    },
+    {
+      "id": "scenario",
+      "term": "Scenario",
+      "category": "economics",
+      "aliases": [
+        "Sensitivity analysis",
+        "Downside",
+        "Base case",
+        "Upside"
+      ],
+      "definition": "An explicit set of assumptions used to explore possible outcomes. A scenario is not a measured result or a forecast unless evidence supports that use.",
+      "example": "Compare lower adoption or higher review effort while keeping the other model inputs fixed.",
+      "related": [
+        "net-benefit",
+        "baseline"
+      ],
+      "learn": "/docs/economics/savings-model/"
+    },
+    {
+      "id": "sast",
+      "term": "Static application security testing (SAST)",
+      "category": "security",
+      "aliases": [
+        "SAST",
+        "Static analysis"
+      ],
+      "definition": "Analyzing source code or related artifacts for potential security weaknesses without running the application being examined.",
+      "example": "Flag a potentially unsafe data flow from user input to a database query.",
+      "related": [
+        "dast",
+        "appsec",
+        "false-positive"
+      ],
+      "learn": "/docs/industry/evidence/",
+      "reference": {
+        "title": "OWASP: source code analysis",
+        "url": "https://owasp.org/www-community/Source_Code_Analysis_Tools"
+      }
+    },
+    {
+      "id": "team-workflow",
+      "term": "Team workflow",
+      "category": "architecture",
+      "aliases": [
+        "Team request",
+        "Experience layer"
+      ],
+      "definition": "The place where a person submits a scoped task and inspects the result. It records the request and its owner.",
+      "example": "An engineer asks for tests for one payment endpoint.",
+      "related": [
+        "qe-runtime",
+        "delivery-systems"
+      ],
+      "learn": "/docs/industry/architecture/",
+      "demo_node": "experience"
+    },
+    {
+      "id": "telemetry",
+      "term": "Telemetry",
+      "category": "security",
+      "aliases": [
+        "Observability",
+        "Operational signals"
+      ],
+      "definition": "Recorded operational measurements and events used to understand system behavior. Logs, timing and tool-use records can support investigation and monitoring.",
+      "example": "Track failed requests, tool denials, evaluation scores and cost per run.",
+      "related": [
+        "evidence-store",
+        "drift"
+      ],
+      "learn": "/docs/industry/architecture/"
+    },
+    {
+      "id": "coverage",
+      "term": "Test coverage",
+      "category": "testing",
+      "aliases": [
+        "Code coverage",
+        "Branch coverage",
+        "Coverage"
+      ],
+      "definition": "A measure of which parts of a system or requirement set tests exercise. High coverage does not establish that the assertions detect incorrect behavior.",
+      "example": "A test reaches the rejection branch but never checks whether a payment was created.",
+      "related": [
+        "test-oracle",
+        "mutation-testing"
+      ],
+      "learn": "/docs/industry/evidence/"
+    },
+    {
+      "id": "test-oracle",
+      "term": "Test oracle",
+      "category": "testing",
+      "aliases": [
+        "Oracle",
+        "Expected behavior",
+        "Independent expected result"
+      ],
+      "definition": "The basis for deciding whether observed behavior is correct. It should come from an independent rule or trusted reference, rather than simply repeat the generated code’s assumptions.",
+      "example": "The payment specification requires HTTP 422 and no new payment for a negative amount.",
+      "related": [
+        "mutation-testing",
+        "evaluation-contract"
+      ],
+      "learn": "/docs/industry/reference-contracts/"
+    },
+    {
+      "id": "transferability",
+      "term": "Transferability",
+      "category": "evidence",
+      "aliases": [
+        "External validity",
+        "Generalizability"
+      ],
+      "definition": "How well a finding may apply to a different population, task or operating setting. This site requires local measurement before scaling a claim.",
+      "example": "A student programming study may not predict an experienced team’s AppSec review effort.",
+      "related": [
+        "benchmark",
+        "baseline",
+        "causal-evidence"
+      ],
+      "learn": "/docs/evidence/reading-the-evidence/"
+    }
+  ]
+}

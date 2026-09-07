@@ -1,4 +1,4 @@
-"""Add stable slide anchors to the theme search index after Jekyll renders."""
+"""Add stable slide and dictionary anchors after Jekyll renders."""
 import json,sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -30,5 +30,11 @@ for audience,name in [('evp','EVP strategic vision'),('technical','Technical arc
     for slide in parser.items:
         path=f'/briefings/{audience}/#{slide["id"]}'
         index[f'{audience}-{slide["id"]}']={'doc':name,'title':' '.join(slide['title'].split()),'content':' '.join(slide['content'].split()),'url':'/ai_qe'+path,'relUrl':path}
+dictionary=json.loads((Path(__file__).resolve().parents[1]/'_data/dictionary.json').read_text())
+index['dictionary']={'doc':'Dictionary','title':'AI × QE dictionary','content':'Plain-language glossary of terms, acronyms, definitions and examples.','url':'/ai_qe/dictionary/','relUrl':'/dictionary/'}
+for term in dictionary['terms']:
+    path=f'/dictionary/#{term["id"]}'
+    content=' '.join([term['term'],*term['aliases'],term['definition'],term['example']])
+    index[f'dictionary-{term["id"]}']={'doc':'Dictionary','title':term['term'],'content':content,'url':'/ai_qe'+path,'relUrl':path}
 p.write_text(json.dumps(index,ensure_ascii=False))
-print(f'Search finalized: {len(index)} entries including all audience slide anchors')
+print(f'Search finalized: {len(index)} entries including audience slides and {len(dictionary["terms"])} dictionary terms')

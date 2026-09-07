@@ -2,6 +2,8 @@
 :root { --frame-width: min(calc(100vw - 32px), calc((100dvh - 112px) * 16 / 9)); }
 body.deck-page { min-height: 100dvh; padding-bottom: 64px; }
 .deck-header { height: 48px; padding: 6px 16px; gap: 12px; }
+.drawer-dictionary { padding-bottom: 12px; border-bottom: 1px solid #c8d6d6; font-size: 15px; line-height: 1.5; }
+.drawer-dictionary span { color: #526570; font-size: 13px; }
 .deck-audience { font-size: 12px; }
 .deck-tools button { font-size: 13px; min-height: 34px; }
 .deck-page.deck-ready .slides,

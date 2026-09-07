@@ -7,6 +7,12 @@ permalink: /releases/
 
 The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
 
+## v1.5.0 · 6 September 2026
+
+Added the [AI × QE dictionary]({{ '/dictionary/' | relative_url }}) with plain-language definitions, acronyms, concrete examples and related terms across six topics. Search, topic filters and A–Z navigation support quick lookup; each term has a shareable link and appears in the site-wide search.
+
+All 11 architecture components link between the dictionary and the 3D inspector. The homepage, site navigation and briefing notes also link to the dictionary. Definitions remain readable without JavaScript. Refreshed the architecture film's edition label. Slide content and PDFs remain **edition v1.3.0**.
+
 ## v1.4.2 · 6 September 2026
 
 Retains the clearer 3D architecture introduced in v1.4.1. Playback now also checks the current reduced-motion preference on the next visible frame, covering browsers that delay the preference-change event. Switching reduced motion on pauses playback and disables camera motion; switching it off restores the controls without starting playback automatically.
