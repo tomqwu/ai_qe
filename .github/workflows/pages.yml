@@ -38,7 +38,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Check economics, pilot gates and reference contracts
         run: |
-          node --test tools/qe-model.test.cjs tools/pilot-decision.test.cjs
+          node --test tools/qe-model.test.cjs tools/pilot-decision.test.cjs tools/fintech-model.test.cjs
           node tools/build_scenario_data.cjs --check
           python tools/validate_contracts.py
           node tools/build_architecture_demo.cjs --check
@@ -56,13 +56,16 @@ jobs:
           python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
           node tools/browser-smoke.cjs
           node tools/dictionary-test.cjs
+          node tools/fintech-browser-test.cjs
           node tools/architecture-demo/browser-test.cjs
       - name: Check site links and search index
         run: python tools/verify_site.py _site
       - name: Check research provenance and briefing completeness
         run: python tools/verify_industry.py _site
       - name: Check publication agreement and PDF editions
-        run: python tools/verify_publication.py _site
+        run: |
+          python tools/verify_publication.py _site
+          python tools/verify_fintech.py _site
       - name: Check questionnaire fields and response ranges
         run: python tools/verify_pdf.py
       - uses: actions/upload-pages-artifact@v3

@@ -15,3 +15,8 @@
 <link rel="stylesheet" href="{{ '/assets/css/dictionary.css' | relative_url }}?v={{ site.data.release.version }}">
 <script src="{{ '/assets/js/dictionary.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 {% endif %}
+{% if page.fintech %}
+<link rel="stylesheet" href="{{ '/assets/css/fintech.css' | relative_url }}?v={{ site.data.release.version }}">
+<script src="{{ '/assets/js/fintech-model.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+<script src="{{ '/assets/js/fintech-case.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+{% endif %}

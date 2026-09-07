@@ -7,6 +7,17 @@ permalink: /releases/
 
 The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
 
+## v1.6.0 · 7 September 2026
+
+Added the [Harbor fintech case explorer]({{ '/case-studies/fintech/' | relative_url }}): a fictional organization with 75 offshore QA staff and a retry-safe payment release. It includes a step-by-step payment simulation, a shared QA architecture, all eight workflow stages, three delivery-maturity profiles, capacity arithmetic and an implementation plan. Every staffing figure, effort estimate and case outcome is labeled as assumed or illustrative.
+
+The case has two dedicated, QA-focused briefings with diagrams and editable web content:
+
+- [EVP strategic vision · 12 slides · v1.6.0]({{ '/briefings/fintech-evp/' | relative_url }}) · [PDF]({{ '/assets/pdf/ai-qe-fintech-evp-v1.6.0.pdf' | relative_url }})
+- [Technical QA architecture · 18 slides · v1.6.0]({{ '/briefings/fintech-technical/' | relative_url }}) · [PDF]({{ '/assets/pdf/ai-qe-fintech-technical-v1.6.0.pdf' | relative_url }})
+
+The industry research decks retain **slide edition v1.3.0**. Refreshed the existing architecture film's site edition label to v1.6.0; its scenario content is unchanged.
+
 ## v1.5.0 · 6 September 2026
 
 Added the [AI × QE dictionary]({{ '/dictionary/' | relative_url }}) with plain-language definitions, acronyms, concrete examples and related terms across six topics. Search, topic filters and A–Z navigation support quick lookup; each term has a shareable link and appears in the site-wide search.

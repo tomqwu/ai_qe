@@ -1,0 +1,1 @@
+<div class="ft-stage-pair">{% for stage in site.data.fintech_case.workflow %}{% if slide.stages contains stage.id %}<article><h3>{{ stage.title }}</h3><dl><dt>AI assistance</dt><dd>{{ stage.ai }}</dd><dt>Output and owner</dt><dd>{{ stage.output }}. {{ stage.owner }}.</dd><dt>Human check</dt><dd>{{ stage.check }}</dd></dl></article>{% endif %}{% endfor %}</div>

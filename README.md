@@ -45,6 +45,10 @@ the site edition; source review dates remain attached to their individual resear
 
 ## Maintaining the briefings
 
+The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 12-slide EVP and 18-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this assumed case distinct from observed industry findings.
+
+Run `node tools/export_decks.cjs --fintech` against the preview to export the case PDFs. The edition in the case data, deck front matter and `fintech_edition` release field must agree. Run `node tools/fintech-browser-test.cjs` and `python tools/verify_fintech.py _site` after the build. `npm test` includes capacity and payment-model checks. The browser case is a deterministic teaching model; it does not connect to a payment service or invoke the example QA frameworks.
+
 Edit the slide sections in `briefings/evp.html` and `briefings/technical.html`. Keep the
 numbered slide IDs, descriptive headings and source links. Update `slide_count` and the
 `briefing_minutes` estimate when adding or removing slides. The audience selector reads the count and duration from each deck.

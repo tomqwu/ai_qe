@@ -25,7 +25,7 @@ class Slides(HTMLParser):
             if self.title:self.slide['title']+=data
 root=Path(sys.argv[1] if len(sys.argv)>1 else '_site')
 p=root/'assets/js/search-data.json';index=json.loads(p.read_text())
-for audience,name in [('evp','EVP strategic vision'),('technical','Technical architecture')]:
+for audience,name in [('evp','EVP strategic vision'),('technical','Technical architecture'),('fintech-evp','Fintech strategic vision'),('fintech-technical','Fintech QA architecture')]:
     parser=Slides();parser.feed((root/f'briefings/{audience}/index.html').read_text())
     for slide in parser.items:
         path=f'/briefings/{audience}/#{slide["id"]}'

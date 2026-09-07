@@ -1,0 +1,496 @@
+{
+  "evp": [
+    {
+      "title": "A shared QA platform for Harbor",
+      "visual": "cover",
+      "lead": "A payment-release story for a fictional fintech with 75 offshore QA staff.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "EVP briefing • Strategic vision • Assumptions throughout",
+      "sources": "",
+      "chapter": "The business situation"
+    },
+    {
+      "title": "The assumed QA organization",
+      "visual": "staff",
+      "lead": "Five application squads share 75 offshore QA staff. Each person appears in one primary-role group.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "The pilot draws eight QA staff from this population. Headcount alone does not establish a savings opportunity.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "One timeout can become two debits",
+      "visual": "payment",
+      "lead": "PAY-142 adds safe retries to a CAD 100 transfer. The customer retries after a timeout.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "The product requirement is one transfer, one balanced journal and one customer-visible result. This is an authored scenario.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "Where the release work goes",
+      "visual": "effort",
+      "lead": "Assumed hands-on effort for one bounded release test pack. Eight stages add to 300 hours.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "The pack spans 10 business days. Waiting time and human effort use different units and must be measured separately.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "The platform investment",
+      "visual": "architecture",
+      "lead": "Common context, fixtures and evidence serve every squad. Application teams retain business ownership.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Existing test frameworks and pipelines execute approved work. AI supports preparation and interpretation.",
+      "sources": "S1,S2",
+      "chapter": "The proposed change"
+    },
+    {
+      "title": "AI assistance across the release",
+      "visual": null,
+      "lead": "",
+      "rows": [
+        [
+          "Prepare",
+          "Clarify requirements, draft scenarios, prepare data and diagnose environment readiness."
+        ],
+        [
+          "Deliver",
+          "Draft framework tests, recommend execution scope and summarize failures."
+        ],
+        [
+          "Decide",
+          "Review money-movement evidence and resolve outstanding defects before release."
+        ]
+      ],
+      "columns": [
+        "Work",
+        "Proposed assistance"
+      ],
+      "points": null,
+      "note": "The eight-stage walkthrough contains inputs, outputs, technology examples and a named human check for each stage.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "Delivery maturity changes the first move",
+      "visual": "maturity",
+      "lead": "The same tool creates different work in a shared manual environment and a repeatable delivery system.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Cloud hosting alone does not establish deployment, data-reset or test maturity. Profiles are illustrative assumptions.",
+      "sources": "S1",
+      "chapter": ""
+    },
+    {
+      "title": "What 78 hours of gross capacity means",
+      "visual": "capacity",
+      "lead": "Mixed-maturity target: 300 hours becomes 222, including 40 hours of review.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Illustrative capacity arithmetic. Tool, cloud and vendor charges are excluded. This is not cash ROI or a measured AI effect.",
+      "sources": "",
+      "chapter": "Value and delivery"
+    },
+    {
+      "title": "Ownership within the offshore model",
+      "visual": null,
+      "lead": "",
+      "rows": [
+        [
+          "Shared enablement",
+          "Own context adapters, templates, fixtures, runner integration and coaching."
+        ],
+        [
+          "Application QA teams",
+          "Own business scenarios, expected results, execution and defect disposition."
+        ],
+        [
+          "Product and release owners",
+          "Resolve requirement questions and accept the release evidence."
+        ],
+        [
+          "Delivery management",
+          "Provide repository access, overlap hours and an explicit backlog for freed capacity."
+        ]
+      ],
+      "columns": [
+        "Owner",
+        "Accountability"
+      ],
+      "points": null,
+      "note": "Reskill domain testers through paired reviews. Agree supplier incentives and reuse ownership before scaling.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "A proposed twelve-week engagement",
+      "visual": "roadmap",
+      "lead": "A measured pilot creates a reusable delivery pattern and a decision about the next applications.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "A planning sequence, not a guaranteed schedule. Environment readiness or inconclusive results can extend a phase.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "The evidence needed to expand",
+      "visual": null,
+      "lead": "",
+      "rows": [
+        [
+          "Quality",
+          "All mandatory payment assertions pass; no unexplained skips or weakened checks."
+        ],
+        [
+          "Effort",
+          "Include preparation, review, correction, retesting and platform operation."
+        ],
+        [
+          "Delivery",
+          "Report elapsed time, waiting reasons and failed-run recovery separately."
+        ],
+        [
+          "Reuse",
+          "A second squad runs the pattern and maintains it without the pilot authors."
+        ]
+      ],
+      "columns": [
+        "Measure",
+        "Expansion evidence"
+      ],
+      "points": null,
+      "note": "A faster draft is insufficient. Compare tasks of similar scope and retain conventional work as a reference.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "The senior-director conversation",
+      "visual": null,
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": [
+        "“Across the 75 QA staff, where do people spend time and where are they waiting?”",
+        "“Which payment journey has stable requirements, observable outcomes and an owner who can join a pilot?”",
+        "“Could one platform team remove duplicated work across the squads?”",
+        "“If we return capacity, which backlog or release commitment will use it?”"
+      ],
+      "note": "Proposed next step: a workflow assessment with the QA, development and platform leads. Agree a bounded pilot after reviewing the baseline.",
+      "sources": "",
+      "chapter": "The discussion"
+    }
+  ],
+  "technical": [
+    {
+      "title": "Harbor’s payment QA architecture",
+      "visual": "cover",
+      "lead": "A concrete design for AI assistance across a release workflow with 75 offshore QA staff.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Technical SDs and leads • Fictional fintech • Proposed architecture",
+      "sources": "",
+      "chapter": "System and behavior"
+    },
+    {
+      "title": "The assumed application landscape",
+      "visual": "landscape",
+      "lead": "Payment APIs offer the first controlled test surface. Other applications follow their own readiness.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Assumed stack: Java/Spring Boot, React, PostgreSQL and Azure. Existing automation remains useful.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "The shared QA platform",
+      "visual": "architecture",
+      "lead": "The model proposes artifacts. Reviewers approve them. Existing runners produce evidence.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Adapters, context assembly and evidence linking are integration work to build. No turnkey platform is implied.",
+      "sources": "S2,S3",
+      "chapter": ""
+    },
+    {
+      "title": "PAY-142: the payment contract",
+      "visual": null,
+      "lead": "",
+      "rows": [
+        [
+          "Same key + same payload",
+          "Return the same transfer ID and result. Post the journal once."
+        ],
+        [
+          "Same key + changed amount",
+          "Reject the conflicting request without another posting."
+        ],
+        [
+          "Concurrent retries / duplicate callbacks",
+          "Converge on one transfer and one balanced journal."
+        ],
+        [
+          "Expected final state",
+          "Payer CAD 900.00; recipient CAD 100.00; one journal with two balancing entries."
+        ]
+      ],
+      "columns": [
+        "Condition",
+        "Expected behavior"
+      ],
+      "points": null,
+      "note": "Authored business rules: initial balances CAD 1,000.00 and CAD 0.00; transfer CAD 100.00; no fees, FX or other activity. No regulatory claim.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "The retry failure and its detection",
+      "visual": "payment",
+      "lead": "The provider accepts a transfer, but its response times out. A retry reaches the posting path again.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Injecting a duplicate-posting defect should fail the journal-count and balance assertions. A correct success toast cannot override that failure.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "Requirements and test design",
+      "visual": "workflow",
+      "lead": "PAY-142 starts with an ambiguity: does a timeout mean failure, success or unknown?",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Domain QA and the product owner approve expected behavior before generated tests can validate it.",
+      "sources": "S2",
+      "chapter": "Work at each stage",
+      "stages": [
+        "requirements",
+        "design"
+      ]
+    },
+    {
+      "title": "Test data and environment preparation",
+      "visual": "workflow",
+      "lead": "Synthetic accounts, known balances and a controlled provider response make the retry repeatable.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Container-based service tests do not replace real integration, mobile or batch testing. Validate stubs against the provider contract.",
+      "sources": "S5,S7",
+      "chapter": "",
+      "stages": [
+        "data",
+        "environment"
+      ]
+    },
+    {
+      "title": "Generated code enters an ordinary review",
+      "visual": "generation",
+      "lead": "Use the approved case matrix and repository examples to produce a candidate test change.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "The reviewer checks the oracle. A deliberate duplicate-posting fault must fail before the candidate joins the required suite.",
+      "sources": "S3,S6",
+      "chapter": ""
+    },
+    {
+      "title": "The appropriate test layer",
+      "visual": null,
+      "lead": "",
+      "rows": [
+        [
+          "Service and API",
+          "REST Assured + JUnit. Cover retry, concurrent requests, idempotency conflicts and journal outcomes."
+        ],
+        [
+          "Web journey",
+          "Playwright for the new React flow. Check pending state, retry action and the final customer message."
+        ],
+        [
+          "Existing browser and mobile",
+          "Keep owned Selenium and Appium coverage. Change frameworks only when maintenance evidence supports it."
+        ],
+        [
+          "Batch and integration",
+          "Retain settlement-file reconciliation and provider sandbox checks with explicit scheduling."
+        ]
+      ],
+      "columns": [
+        "Layer",
+        "Example implementation"
+      ],
+      "points": null,
+      "note": "Test distribution follows behavior and observability. A new browser framework does not solve a shared settlement environment.",
+      "sources": "S6,S8",
+      "chapter": ""
+    },
+    {
+      "title": "Execution retains required coverage",
+      "visual": "workflow",
+      "lead": "CI records the build, fixture, stub and test revisions before runners execute the pack.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "AI test-selection recommendations run in shadow mode first. Required payment checks continue on every eligible release.",
+      "sources": "",
+      "chapter": "",
+      "stages": [
+        "execution"
+      ]
+    },
+    {
+      "title": "Triage preserves the original test intent",
+      "visual": "workflow",
+      "lead": "A failed journal assertion belongs to the product defect path until evidence establishes otherwise.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Capture failed tests, skipped tests and retries. A repair that removes an assertion does not count as a passing outcome.",
+      "sources": "S4",
+      "chapter": "",
+      "stages": [
+        "triage"
+      ]
+    },
+    {
+      "title": "A traceable release decision",
+      "visual": "evidence",
+      "lead": "Every generated artifact and run links back to the approved business behavior.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "An absent result remains unknown. The release owner resolves exceptions and the QA lead reviews the evidence pack.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "What the demonstration proves",
+      "visual": null,
+      "lead": "",
+      "rows": [
+        [
+          "Normal transfer",
+          "One posting and expected balances: the modeled checks pass."
+        ],
+        [
+          "Retry with injected bug",
+          "Two postings and incorrect balances: the modeled checks block release."
+        ],
+        [
+          "Retry with deduplication",
+          "One posting after two attempts: the modeled checks pass."
+        ],
+        [
+          "Duplicate callback",
+          "Repeat the event with the same identity and inspect the journal outcome."
+        ]
+      ],
+      "columns": [
+        "Try in the case explorer",
+        "Expected outcome"
+      ],
+      "points": null,
+      "note": "The browser demonstration is a deterministic teaching model. It does not execute REST Assured, call a payment service or prove production correctness.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "Readiness across six dimensions",
+      "visual": "readiness",
+      "lead": "Select a profile in the case explorer to see the initial scope and effort assumptions change.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Assess each application separately. A strong payments API can coexist with a fragile UI suite and a shared legacy batch environment.",
+      "sources": "S1",
+      "chapter": "Delivery and evidence"
+    },
+    {
+      "title": "Offshore handoff and platform ownership",
+      "visual": "handoff",
+      "lead": "Each handoff carries a reproducible artifact and a named next owner.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Pilot team: one QA lead, four domain testers, two automation engineers and one data/environment engineer. Product, development and platform support contribute separately.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "Effort includes review and operation",
+      "visual": "capacity",
+      "lead": "Record time at the eight workflow stages using the same boundary for baseline and assisted packs.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "The interactive model can show negative net capacity. Do not extrapolate one pack to all 75 staff or combine overlapping benefits.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "Pilot validation and stop conditions",
+      "visual": null,
+      "lead": "",
+      "rows": [
+        [
+          "Design",
+          "Baseline one current pack. Compare at least two assisted packs with similar scope and matched conventional tasks."
+        ],
+        [
+          "Record",
+          "Capture task complexity, reviewer time, corrections, failures, waits and environment incidents."
+        ],
+        [
+          "Stop or repair",
+          "Pause expansion for an escaped money-movement defect, unreliable fixtures or tests that pass the injected fault."
+        ],
+        [
+          "Expand",
+          "Require trustworthy mandatory coverage, positive net capacity and a successful second-squad reuse trial."
+        ]
+      ],
+      "columns": [
+        "Step",
+        "Proposed validation"
+      ],
+      "points": null,
+      "note": "Small pilot samples support a delivery decision with uncertainty. They do not establish a general causal productivity rate.",
+      "sources": "",
+      "chapter": ""
+    },
+    {
+      "title": "Architecture questions for the leads",
+      "visual": null,
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": [
+        "“Can we deploy a known build, reset the data and replay a provider timeout today?”",
+        "“Where do payment outcomes become observable: API, journal, callback or batch file?”",
+        "“Which framework already has maintainers and reliable CI execution?”",
+        "“Who owns reusable fixtures and who approves the expected financial behavior?”"
+      ],
+      "note": "Review the workflow map and a real failed release together. The first implementation backlog should follow those answers.",
+      "sources": "",
+      "chapter": "The discussion"
+    }
+  ]
+}

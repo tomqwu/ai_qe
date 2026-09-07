@@ -10,6 +10,10 @@ has_toc: false
 
 # Audience briefings
 
+**New: a fintech story with 75 offshore QA staff.** The [fintech case explorer]({{ '/case-studies/fintech/' | relative_url }}#briefings) adds a 12-slide [EVP strategic vision]({{ '/briefings/fintech-evp/' | relative_url }}) and an 18-slide [technical architecture briefing]({{ '/briefings/fintech-technical/' | relative_url }}), both edition **v1.6.0**. Follow a payment retry through the proposed platform, eight workflow stages, maturity scenarios and a measured pilot. All company details and hours are illustrative assumptions. [EVP PDF]({{ '/assets/pdf/ai-qe-fintech-evp-v1.6.0.pdf' | relative_url }}) · [Technical PDF]({{ '/assets/pdf/ai-qe-fintech-technical-v1.6.0.pdf' | relative_url }}).
+
+## Industry research briefings
+
 Start with the strategic vision or go deeper into the delivery architecture. The September 2026 edition draws on the [industry research]({{ "/docs/industry/" | relative_url }}) and its 30-source document library. Each deck links to the research, economics and pilot design behind it.
 
 {% include briefing-embed.html %}

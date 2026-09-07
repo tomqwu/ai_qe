@@ -53,10 +53,10 @@
     (chapter || picker).append(option);
     slide.setAttribute('aria-roledescription', 'slide');
   });
-  function share() {
-    if (embedded) window.parent.postMessage({ type: 'ai-qe:deck-state', audience: body.classList.contains('technical-deck') ? 'technical' : 'evp', slide: slides[index].id, count: slides.length, title: title(slides[index]), mode }, location.origin);
+  function share(interaction = false) {
+    if (embedded) window.parent.postMessage({ type: 'ai-qe:deck-state', audience: body.classList.contains('technical-deck') ? 'technical' : 'evp', slide: slides[index].id, count: slides.length, title: title(slides[index]), mode, interaction }, location.origin);
   }
-  function render(updateHash = true) {
+  function render(updateHash = true, interaction = false) {
     closeDiagramControls();
     diagramButton.hidden = !slides[index].querySelector('.research-figure');
     updateFlowBar();
@@ -71,14 +71,14 @@
     present.textContent = mode === 'present' ? 'Exit presentation' : 'Present ↗';
     present.setAttribute('aria-pressed', String(mode === 'present'));
     if (updateHash) history.replaceState(null, '', `#${slides[index].id}`);
-    share();
+    share(interaction);
   }
   function goTo(i) {
-    index = Math.max(0, Math.min(slides.length - 1, i)); render();
+    index = Math.max(0, Math.min(slides.length - 1, i)); render(true, true);
     if (mode === 'reading') slides[index].scrollIntoView({ block: 'start' });
     else { window.scrollTo(0, 0); slides[index].querySelector('.slide-content')?.scrollTo(0, 0); }
   }
-  function setMode(value) { mode = value; render(); }
+  function setMode(value) { mode = value; render(true, true); }
   previous.addEventListener('click', () => goTo(index - 1));
   next.addEventListener('click', () => goTo(index + 1));
   picker.addEventListener('change', () => goTo(Number(picker.value)));
@@ -104,7 +104,7 @@
     document.querySelector('#drawer-title').textContent = edition ? 'Publication edition' : `${index + 1} · ${title(slides[index])}`;
     if (edition) drawerContent.append(document.querySelector('[data-edition-content]').content.cloneNode(true));
     else {
-      const items = slides[index].querySelectorAll('figcaption, .research-rationale, .architecture-inspector, .slide-footer > a');
+      const items = slides[index].querySelectorAll('figcaption, .research-rationale, .architecture-inspector, .ft-speaker-notes, .slide-footer > a');
       items.forEach(item => {
         const copy = item.cloneNode(true); copy.removeAttribute('hidden'); copy.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
         if (copy.tagName === 'DETAILS') copy.open = true;
@@ -132,13 +132,13 @@
   });
   window.addEventListener('hashchange', () => {
     const target = slides.findIndex(s => `#${s.id}` === location.hash);
-    if (target >= 0) { index = target; render(false); }
+    if (target >= 0) { index = target; render(false, true); }
   });
   // Reading scroll updates the resume position without hijacking browser history.
   const readingObserver = new IntersectionObserver(entries => {
     if (mode !== 'reading') return;
     const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) { closeDiagramControls(); index = slides.indexOf(visible.target); diagramButton.hidden = !slides[index].querySelector('.research-figure'); updateFlowBar(); picker.value = String(index); status.textContent = `${index + 1} / ${slides.length} · ${title(slides[index])}`; previous.disabled = index === 0; next.disabled = index === slides.length - 1; share(); }
+    if (visible) { closeDiagramControls(); index = slides.indexOf(visible.target); diagramButton.hidden = !slides[index].querySelector('.research-figure'); updateFlowBar(); picker.value = String(index); status.textContent = `${index + 1} / ${slides.length} · ${title(slides[index])}`; previous.disabled = index === 0; next.disabled = index === slides.length - 1; share(true); }
   }, { threshold: [.25, .5, .75] });
   slides.forEach(slide => readingObserver.observe(slide));
   document.querySelector('.deck-tools').hidden = false; navigation.hidden = false;
