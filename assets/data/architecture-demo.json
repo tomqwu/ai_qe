@@ -1,10 +1,10 @@
 {
   "title": "Inside the assurance platform",
-  "version": "1.0",
+  "version": "1.1",
   "nodes": [
     {
       "id": "experience",
-      "title": "Team workflow",
+      "title": "Team request",
       "subtitle": "Task and scope",
       "position": [
         -7,
@@ -12,11 +12,13 @@
         -4.8
       ],
       "detail": "An engineer supplies an approved task. Existing delivery controls retain ownership.",
-      "sources": "A01,R01"
+      "sources": "A01,R01",
+      "technicalTitle": "Team workflow",
+      "group": "inputs"
     },
     {
       "id": "delivery",
-      "title": "Delivery systems",
+      "title": "Source systems",
       "subtitle": "Versioned sources",
       "position": [
         -2.35,
@@ -24,11 +26,13 @@
         -4.8
       ],
       "detail": "Repositories and CI supply approved source material with identity and version information.",
-      "sources": "A03,R01"
+      "sources": "A03,R01",
+      "technicalTitle": "Delivery systems",
+      "group": "inputs"
     },
     {
       "id": "application",
-      "title": "AI applications",
+      "title": "AI application",
       "subtitle": "Configuration versions",
       "position": [
         6.9,
@@ -36,11 +40,13 @@
         -4.8
       ],
       "detail": "An AI application configuration is evaluated as a separate branch from generated-test execution.",
-      "sources": "A01,T03"
+      "sources": "A01,T03",
+      "technicalTitle": "AI applications",
+      "group": "inputs"
     },
     {
       "id": "context",
-      "title": "Context service",
+      "title": "Approved context",
       "subtitle": "Permitted evidence",
       "position": [
         -7,
@@ -48,11 +54,13 @@
         0
       ],
       "detail": "Retrieve permitted, versioned context. Source text cannot grant permissions.",
-      "sources": "A03,R01"
+      "sources": "A03,R01",
+      "technicalTitle": "Context service",
+      "group": "inputs"
     },
     {
       "id": "runtime",
-      "title": "QE runtime",
+      "title": "AI test author",
       "subtitle": "Bounded generation",
       "position": [
         -2.35,
@@ -60,11 +68,13 @@
         0
       ],
       "detail": "The model proposes a candidate and requested action within a bounded task. It cannot approve its own work.",
-      "sources": "A01,R01"
+      "sources": "A01,R01",
+      "technicalTitle": "QE runtime",
+      "group": "ai"
     },
     {
       "id": "gateway",
-      "title": "Action gateway",
+      "title": "Permission gate",
       "subtitle": "Independent authority",
       "position": [
         2.3,
@@ -72,11 +82,13 @@
         0
       ],
       "detail": "Check identity, resource scope, expiry and approval before a tool runs. Denied requests have no tool side effect.",
-      "sources": "A03,R01"
+      "sources": "A03,R01",
+      "technicalTitle": "Action gateway",
+      "group": "controls"
     },
     {
       "id": "checks",
-      "title": "Sandbox checks",
+      "title": "Test sandbox",
       "subtitle": "Independent proof",
       "position": [
         6.9,
@@ -84,11 +96,13 @@
         0
       ],
       "detail": "The original implementation passes and a relevant seeded fault fails. A passing test alone does not establish usefulness.",
-      "sources": "E04,E05"
+      "sources": "E04,E05",
+      "technicalTitle": "Sandbox checks",
+      "group": "controls"
     },
     {
       "id": "evidence",
-      "title": "Evidence store",
+      "title": "Evidence log",
       "subtitle": "Run / artifact / decision",
       "position": [
         -7,
@@ -96,11 +110,13 @@
         4.8
       ],
       "detail": "Join task, run, artifact, evaluation and human decision. Traces are retained during execution as well as at the release decision.",
-      "sources": "D02,A01"
+      "sources": "D02,A01",
+      "technicalTitle": "Evidence store",
+      "group": "evidence"
     },
     {
       "id": "corpus",
-      "title": "Regression corpus",
+      "title": "Regression cases",
       "subtitle": "Reviewed failure cases",
       "position": [
         -2.35,
@@ -108,11 +124,13 @@
         4.8
       ],
       "detail": "Curate reviewed failures and approved expectations into versioned cases for future evaluations.",
-      "sources": "A01,T03"
+      "sources": "A01,T03",
+      "technicalTitle": "Regression corpus",
+      "group": "evidence"
     },
     {
       "id": "release",
-      "title": "Release authority",
+      "title": "Human approval",
       "subtitle": "Human review and gates",
       "position": [
         2.3,
@@ -120,11 +138,13 @@
         4.8
       ],
       "detail": "Independent reviewers and existing delivery gates decide approve or hold; the generator never self-approves.",
-      "sources": "A01,R01"
+      "sources": "A01,R01",
+      "technicalTitle": "Release authority",
+      "group": "controls"
     },
     {
       "id": "evaluation",
-      "title": "Evaluation service",
+      "title": "AI evaluator",
       "subtitle": "Held-out / adversarial",
       "position": [
         6.9,
@@ -132,7 +152,9 @@
         4.8
       ],
       "detail": "Run held-out and adversarial cases, deterministic checks and calibrated human or model judges.",
-      "sources": "A01,T03"
+      "sources": "A01,T03",
+      "technicalTitle": "Evaluation service",
+      "group": "controls"
     }
   ],
   "routes": [
@@ -404,84 +426,91 @@
       "subtitle": "From an approved task to independent proof",
       "steps": [
         {
-          "title": "Start with permitted context",
-          "body": "The engineer supplies a task; delivery systems provide approved, versioned source material.",
+          "title": "Gather approved inputs",
+          "body": "An engineer provides the task. Source systems supply approved, versioned material.",
           "node": "context",
           "routes": [
             "experience:runtime",
             "delivery:context"
           ],
           "state": "active",
-          "artifact": "Task PAY-042 \u00b7 approved contract",
-          "duration": 5
+          "artifact": "Approved task and source versions",
+          "duration": 7,
+          "flow": "Task + sources → approved inputs"
         },
         {
-          "title": "Generate a candidate",
-          "body": "The QE runtime receives scoped context and drafts a test. Generation creates a proposal, not release authority.",
+          "title": "Draft a test",
+          "body": "The AI uses the approved context to draft a test. It cannot approve its own work.",
           "node": "runtime",
           "routes": [
             "context:runtime"
           ],
           "state": "active",
-          "artifact": "Candidate test \u00b7 source hashes",
-          "duration": 5
+          "artifact": "Draft test linked to its sources",
+          "duration": 7,
+          "flow": "Approved context → AI test author"
         },
         {
-          "title": "Enforce the action boundary",
-          "body": "The gateway independently checks who may run which tool, on which resource, before execution.",
+          "title": "Check permission first",
+          "body": "The permission gate checks who can run which tool, and on which resource.",
           "node": "gateway",
           "routes": [
             "runtime:gateway"
           ],
           "state": "active",
-          "artifact": "DEC-042 \u00b7 sandbox-only permission",
-          "duration": 5
+          "artifact": "Permission to use the sandbox only",
+          "duration": 7,
+          "flow": "AI test author → permission gate"
         },
         {
-          "title": "Prove useful behavior",
-          "body": "Run in the sandbox: the original must pass, and a relevant seeded fault must fail.",
+          "title": "Check the test works",
+          "body": "The test must pass working code and catch a deliberately inserted fault.",
           "node": "checks",
           "routes": [
             "gateway:checks"
           ],
           "state": "active",
-          "artifact": "Original passes \u00b7 mutant fails",
-          "duration": 5
+          "artifact": "Working code passes · inserted fault fails",
+          "duration": 7,
+          "flow": "Permission gate → test sandbox"
         },
         {
-          "title": "Keep approval independent",
-          "body": "Evidence reaches the existing reviewer and release gate. The generating agent cannot approve itself.",
+          "title": "Let a person decide",
+          "body": "A reviewer checks the results and chooses approve or hold. The AI cannot self-approve.",
           "node": "release",
           "routes": [
             "checks:release"
           ],
           "state": "review",
-          "artifact": "Human decision \u00b7 approve or hold",
-          "duration": 5
+          "artifact": "Reviewer decision: approve or hold",
+          "duration": 7,
+          "flow": "Test results → human approval"
         },
         {
-          "title": "Retain the evidence",
-          "body": "Join the run, artifact and decision. Runtime traces also accumulate during execution.",
+          "title": "Keep an audit trail",
+          "body": "Save the run, outputs and decision together. Execution logs are also collected along the way.",
           "node": "evidence",
           "routes": [
             "gateway:evidence",
             "release:evidence"
           ],
           "state": "active",
-          "artifact": "RUN-042 \u00b7 artifact and decision joins",
-          "duration": 5
+          "artifact": "A traceable record of what happened",
+          "duration": 7,
+          "flow": "Permission + decision → evidence log"
         },
         {
-          "title": "Learn for the next release",
-          "body": "Reviewed failures become regression cases. They challenge future evaluations; they do not retroactively approve this run.",
+          "title": "Improve the next evaluation",
+          "body": "Turn reviewed failures into reusable cases to challenge future versions. This does not approve the current run.",
           "node": "corpus",
           "routes": [
             "evidence:corpus",
             "corpus:evaluation"
           ],
           "state": "active",
-          "artifact": "Versioned cases \u00b7 next evaluation",
-          "duration": 5
+          "artifact": "Reviewed cases for the next evaluation",
+          "duration": 7,
+          "flow": "Evidence → regression cases → AI evaluator"
         }
       ]
     },
@@ -491,57 +520,62 @@
       "subtitle": "A separate application-assurance branch",
       "steps": [
         {
-          "title": "Version the AI application",
-          "body": "Treat model, prompt, retrieval, tools and permissions as one evaluated configuration.",
+          "title": "Choose the AI version",
+          "body": "Record the model, prompt, retrieved sources, tools and permissions being evaluated.",
           "node": "application",
           "routes": [],
           "state": "active",
-          "artifact": "Configuration manifest \u00b7 candidate version",
-          "duration": 5
+          "artifact": "One versioned application configuration",
+          "duration": 7,
+          "flow": "Current focus: AI application"
         },
         {
-          "title": "Evaluate application behavior",
-          "body": "The application enters held-out, adversarial and calibrated evaluation. This branch is separate from generated-test execution.",
+          "title": "Test the AI application",
+          "body": "Check normal tasks, unfamiliar cases and hostile inputs. This is separate from testing AI-generated code.",
           "node": "evaluation",
           "routes": [
             "application:evaluation"
           ],
           "state": "active",
-          "artifact": "Task quality \u00b7 tool behavior \u00b7 latency",
-          "duration": 5
+          "artifact": "Results for quality, tool use and response time",
+          "duration": 7,
+          "flow": "AI application → AI evaluator"
         },
         {
-          "title": "Challenge with reviewed failures",
-          "body": "Versioned regression cases provide evidence against the candidate configuration.",
+          "title": "Replay known failures",
+          "body": "Run reviewed regression cases against this version to see whether past problems return.",
           "node": "evaluation",
           "routes": [
             "corpus:evaluation"
           ],
           "state": "active",
-          "artifact": "Held-out cases \u00b7 corpus version",
-          "duration": 5
+          "artifact": "Results linked to the case version",
+          "duration": 7,
+          "flow": "Regression cases → AI evaluator"
         },
         {
-          "title": "Decide at the release boundary",
-          "body": "Relevant evaluation results reach an independent release owner. Mandatory failures mean hold.",
+          "title": "Review the results",
+          "body": "An independent owner decides whether to release. Any mandatory failed check means hold.",
           "node": "release",
           "routes": [
             "evaluation:release"
           ],
           "state": "review",
-          "artifact": "Approve / hold \u00b7 accountable owner",
-          "duration": 5
+          "artifact": "Accountable reviewer: approve or hold",
+          "duration": 7,
+          "flow": "AI evaluator → human approval"
         },
         {
-          "title": "Preserve the decision trail",
-          "body": "Keep the configuration, evaluation version and reviewer decision together.",
+          "title": "Save the decision",
+          "body": "Keep the application version, evaluation results and reviewer decision together.",
           "node": "evidence",
           "routes": [
             "release:evidence"
           ],
           "state": "active",
-          "artifact": "Versioned release evidence",
-          "duration": 5
+          "artifact": "A traceable release decision",
+          "duration": 7,
+          "flow": "Human approval → evidence log"
         }
       ]
     },
@@ -551,44 +585,48 @@
       "subtitle": "A failed authorization leaves no tool side effect",
       "steps": [
         {
-          "title": "An unsafe action is requested",
-          "body": "A sandbox-only task proposes a production write. Retrieved text cannot expand the task\u2019s permissions.",
+          "title": "The AI asks for too much",
+          "body": "A sandbox-only task requests a production change. Source text cannot expand its permissions.",
           "node": "gateway",
           "routes": [
             "runtime:gateway"
           ],
           "state": "active",
-          "artifact": "Requested resource: production",
-          "duration": 5
+          "artifact": "Requested action: change production",
+          "duration": 7,
+          "flow": "AI test author → permission gate"
         },
         {
-          "title": "Deny before execution",
-          "body": "The gateway rejects the action. No packet reaches the sandbox or a production tool.",
+          "title": "Stop before any tool runs",
+          "body": "The permission gate rejects the request. No action reaches a tool.",
           "node": "gateway",
           "routes": [],
           "state": "denied",
-          "artifact": "DENY \u00b7 scope mismatch \u00b7 no tool call",
-          "duration": 6
+          "artifact": "DENIED · outside the permitted scope",
+          "duration": 7,
+          "flow": "STOP · no outgoing tool action"
         },
         {
-          "title": "Record the denied request",
-          "body": "Retain identity, requested resource, policy version and denial reason.",
+          "title": "Log why it was blocked",
+          "body": "Save who asked, what they requested, which policy applied and why access was denied.",
           "node": "evidence",
           "routes": [
             "gateway:evidence"
           ],
           "state": "denied",
-          "artifact": "Denied-action receipt",
-          "duration": 5
+          "artifact": "A denial record, not a tool action",
+          "duration": 7,
+          "flow": "Denied request → evidence log"
         },
         {
-          "title": "Hold and escalate",
-          "body": "The workflow remains held. Any broader action needs a separate authorized request; the agent cannot grant its own access.",
+          "title": "Keep the workflow on hold",
+          "body": "A broader action needs a separately authorized request. The AI cannot grant itself access.",
           "node": "release",
           "routes": [],
           "state": "hold",
-          "artifact": "Human escalation \u00b7 no automatic retry",
-          "duration": 5
+          "artifact": "Human escalation · no automatic retry",
+          "duration": 7,
+          "flow": "HOLD · waiting for an authorized decision"
         }
       ]
     },
@@ -598,49 +636,83 @@
       "subtitle": "Generation succeeds; independent quality checks fail",
       "steps": [
         {
-          "title": "Execute within approved scope",
-          "body": "Authorization allows the candidate test into the sandbox. Permission is not proof of quality.",
+          "title": "Run the permitted test",
+          "body": "The permission gate allows a sandbox run. Permission alone does not prove test quality.",
           "node": "checks",
           "routes": [
             "gateway:checks"
           ],
           "state": "active",
-          "artifact": "Sandbox execution \u00b7 scoped identity",
-          "duration": 5
+          "artifact": "Execution stays inside the sandbox",
+          "duration": 7,
+          "flow": "Permission gate → test sandbox"
         },
         {
-          "title": "The candidate misses the fault",
-          "body": "A seeded faulty implementation still passes. The test does not establish the required fault detection.",
+          "title": "The test misses a fault",
+          "body": "Deliberately faulty code still passes. This test has not shown that it catches the problem.",
           "node": "checks",
           "routes": [],
           "state": "failed",
-          "artifact": "Mutation check failed",
-          "duration": 6
+          "artifact": "Required quality check failed",
+          "duration": 7,
+          "flow": "FAILED · the inserted fault was missed"
         },
         {
-          "title": "Hold the release",
-          "body": "The failed result reaches the independent release owner. No approval or promotion is implied.",
+          "title": "Block the release",
+          "body": "The reviewer receives the failed result. The release stays on hold.",
           "node": "release",
           "routes": [
             "checks:release"
           ],
           "state": "hold",
-          "artifact": "HOLD \u00b7 mandatory quality floor",
-          "duration": 5
+          "artifact": "HOLD · a mandatory check failed",
+          "duration": 7,
+          "flow": "Failed test result → human approval"
         },
         {
-          "title": "Retain and improve the case",
-          "body": "Record the failure and curate a reviewed case. A revised candidate must pass a new evaluation before approval.",
+          "title": "Record and improve",
+          "body": "Save the failure and review a better test case. A revised candidate needs a fresh evaluation.",
           "node": "corpus",
           "routes": [
             "release:evidence",
             "evidence:corpus"
           ],
           "state": "review",
-          "artifact": "Failure record \u00b7 revised test case",
-          "duration": 5
+          "artifact": "Reviewed failure case for another attempt",
+          "duration": 7,
+          "flow": "Decision → evidence → regression cases"
         }
       ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "inputs",
+      "title": "Inputs",
+      "badge": "IN",
+      "color": "#62b5ff",
+      "plate": "#245da6"
+    },
+    {
+      "id": "ai",
+      "title": "AI generation",
+      "badge": "AI",
+      "color": "#c2a0ff",
+      "plate": "#7043b4"
+    },
+    {
+      "id": "controls",
+      "title": "Checks & decisions",
+      "badge": "CK",
+      "color": "#ffc857",
+      "plate": "#996415"
+    },
+    {
+      "id": "evidence",
+      "title": "Evidence & learning",
+      "badge": "EV",
+      "color": "#54dfbd",
+      "plate": "#147a65"
     }
   ]
 }

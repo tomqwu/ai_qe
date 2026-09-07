@@ -22,6 +22,13 @@ light=material('Signal mint',(.10,.84,.61),.1,.25,2)
 white=material('Signal ivory',(.69,.95,.83),.1,.25,1.3)
 slate=material('Plinth basalt',(.015,.037,.049),.22,.44)
 glass=material('Smoked teal',(.06,.20,.22),.55,.19)
+def linear_hex(value):
+ rgb=[int(value[i:i+2],16)/255 for i in (1,3,5)]
+ return tuple(c/12.92 if c<=.04045 else ((c+.055)/1.055)**2.4 for c in rgb)
+groups={g['id']:g for g in DATA['groups']}
+plates={k:material('Role plate '+k,linear_hex(g['plate']),.12,.48) for k,g in groups.items()}
+accents={k:material('Role accent '+k,linear_hex(g['color']),.10,.40) for k,g in groups.items()}
+signals={k:material('Role signal '+k,linear_hex(g['color']),.08,.38,.65) for k,g in groups.items()}
 def finish(o,name,mat,parent=None):
  o.name=name;o.data.materials.append(mat)
  if parent:o.parent=parent
@@ -60,11 +67,12 @@ box('Inset surface',(20.9,.08,14.6),(0,-.03,.65),navy,bevel=.2)
 for z in [-6.45,7.8]:line('Perimeter light',[[-10,.08,z],[10,.08,z]],teal,.025)
 for x in [-10,10]:line('Perimeter light',[[x,.08,-6.45],[x,.08,7.8]],teal,.025)
 for i,node in enumerate(DATA['nodes']):
+ accent=accents[node['group']];signal=signals[node['group']]
  root=bpy.data.objects.new('module_'+node['id'],None);root['nodeId']=node['id'];root.location=xyz(node['position']);bpy.context.collection.objects.link(root)
- box('base_'+node['id'],(3.25,.24,2.35),(0,.17,0),ivory,root,.12)
- box('trim_'+node['id'],(3.05,.055,2.15),(0,.305,0),teal,root,.05)
- box('deck_'+node['id'],(2.90,.10,2.0),(0,.38,0),navy,root,.06)
- text('ID_'+node['id'],str(i+1).zfill(2),.19,(-1.21,.32,1.00),gold,root)
+ box('base_'+node['id'],(3.25,.24,2.35),(0,.17,0),plates[node['group']],root,.12)
+ box('trim_'+node['id'],(3.05,.055,2.15),(0,.305,0),accent,root,.05)
+ box('deck_'+node['id'],(2.90,.10,2.0),(0,.38,0),plates[node['group']],root,.06)
+ text('ID_'+node['id'],groups[node['group']]['badge'],.22,(-1.15,.44,.86),ivory,root)
  k=node['id']
  if k in ['experience','delivery']:
   if k=='experience':
@@ -113,6 +121,12 @@ for i,node in enumerate(DATA['nodes']):
   cylinder('Evaluation base',.88,.19,(0,.57,0),ivory,root)
   for j in range(3):ring('Evaluation lens',.64+j*.07,(0,.93+j*.31,0),light if j==1 else gold,root)
   sphere('Evaluation target',.32,(0,1.40,0),teal,root,True)
+ # Apply the same role color to the model's accents, without tinting neutral porcelain.
+ for child in root.children:
+  if child.type=='MESH':
+   for slot in child.material_slots:
+    if slot.material==teal or slot.material==gold:slot.material=accent
+    elif slot.material==light:slot.material=signal
 # Export only the authored reusable model. Browser routes and labels stay crisp at every resolution.
 model=ROOT/'assets/models/assurance-platform.glb'
 bpy.ops.export_scene.gltf(filepath=str(model),export_format='GLB',export_animations=False,export_extras=True,export_cameras=False,export_lights=False)
@@ -125,19 +139,21 @@ for name,loc,power,size in [('Key',(-5,4,13),2200,8),('Fill',(7,-5,9),1500,7),('
 bpy.ops.object.camera_add(location=(16,-23,23));camera=bpy.context.object;camera.name='Cinematic camera';camera.data.type='ORTHO';camera.data.ortho_scale=28;scene.camera=camera
 focus=bpy.data.objects.new('Camera focus',None);bpy.context.collection.objects.link(focus);focus.location=(0,-.4,.5)
 c=camera.constraints.new(type='TRACK_TO');c.target=focus;c.track_axis='TRACK_NEGATIVE_Z';c.up_axis='UP_Y'
-scene.frame_start=1;scene.frame_end=840
-for frame,loc in [(1,(16,-23,23)),(420,(12,-25,22)),(840,(16,-23,23))]:camera.location=loc;camera.keyframe_insert(data_path='location',frame=frame)
+scene.frame_start=1;scene.frame_end=sum(s['duration'] for s in DATA['scenarios'][0]['steps'])*scene.render.fps
+# A fixed camera gives the audience time to read the architecture.
+camera.location=(16,-23,23)
 route_map={r['id']:r for r in DATA['routes']};offset=1
 for index,step in enumerate(DATA['scenarios'][0]['steps']):
+ interval=step['duration']*scene.render.fps;travel=interval-12
  scene.timeline_markers.new(step['title'],frame=offset)
  for rid in step['routes']:
   points=route_map[rid]['points'];packet=sphere('signal_'+str(index)+'_'+rid,.14,points[0],white)
   # Scale keyframes isolate each route's active interval without hiding context paths.
-  for f,scale in [(1,0),(offset-1,0),(offset,1),(offset+105,1),(offset+106,0)]:packet.scale=(scale,)*3;packet.keyframe_insert(data_path='scale',frame=max(1,f))
+  for f,scale in [(1,0),(offset-1,0),(offset,1),(offset+travel,1),(offset+travel+1,0)]:packet.scale=(scale,)*3;packet.keyframe_insert(data_path='scale',frame=max(1,f))
   lengths=[0]
   for a,b in zip(points,points[1:]):lengths.append(lengths[-1]+(Vector(a)-Vector(b)).length)
-  for point,d in zip(points,lengths):packet.location=xyz(point);packet.keyframe_insert(data_path='location',frame=offset+int(105*d/lengths[-1]))
- offset+=120
+  for point,d in zip(points,lengths):packet.location=xyz(point);packet.keyframe_insert(data_path='location',frame=offset+int(travel*d/lengths[-1]))
+ offset+=interval
 scene.frame_set(1)
 bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'assets/models/assurance-platform.blend'),compress=True)
 print('Authored',len(DATA['nodes']),'modules;',model.stat().st_size,'GLB bytes')

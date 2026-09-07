@@ -7,6 +7,12 @@ permalink: /releases/
 
 The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
 
+## v1.4.1 · 6 September 2026
+
+Made [Architecture in motion]({{ '/demos/architecture/' | relative_url }}) easier to follow. Inputs, AI generation, checks and evidence now have distinct colors and text badges. Larger labels, a numbered current-step marker and white directional flows identify what is happening. Full map reveals the other connections.
+
+A light explanation panel uses simpler language and a short route summary. The camera stays still by default, each stage lasts seven seconds, and a pace selector supports slower viewing. Updated the [49-second film]({{ '/assets/video/assurance-architecture.mp4' | relative_url }}), captions, poster and editable Blender scene to match. Slide content and PDFs remain **edition v1.3.0**.
+
 ## v1.4.0 · 6 September 2026
 
 Added [Architecture in motion]({{ '/demos/architecture/' | relative_url }}), a Blender-authored 3D model with a Three.js interactive viewer. Explore 11 modules, four scenarios, moving signals, camera orbit and component inspection. Denied requests stop at authorization; failed checks reach a held release decision. The AI-application evaluation branch remains distinct from generated-test execution.
