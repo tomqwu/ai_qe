@@ -4,7 +4,7 @@ title: Assurance architecture
 description: Research-informed AI and quality engineering — Technical SDs & leads · Architecture.
 audience: Technical SDs & leads · Architecture
 deck_class: technical-deck
-slide_count: 29
+slide_count: 31
 nav_exclude: true
 search_exclude: true
 permalink: /briefings/technical/
@@ -164,4 +164,16 @@ briefing_minutes: "40–55"
 <p class="kicker">29 / Failure resolution</p><h2 id="title-29">Repair the failure or track the exception</h2>
 <div class="slide-content">{% include diagrams/figure.html name="failure-resolution" label="Repair the failure or track the exception" %}</div>
 {% include slide-footer.html n="29" source="/docs/industry/coverage/" label="Research and implementation detail" %}
+</section>
+
+<section class="slide" id="slide-30" data-chapter="Client adoption" aria-labelledby="title-30">
+<p class="kicker">30 / Client adoption assumptions</p><h2 id="title-30">Platform prerequisites for the selected workflow</h2>
+<div class="slide-content">{% include adoption/foundations.html %}<p class="figure-note">Assess infrastructure, pipelines, dependency control, data reset and application testability separately. Add approved AI access, observability, framework ownership and operating capacity.</p></div>
+{% include slide-footer.html n="30" source="/platform-readiness/" label="Adoption assumptions and evidence" %}
+</section>
+
+<section class="slide" id="slide-31" data-chapter="Client adoption" aria-labelledby="title-31">
+<p class="kicker">31 / Service virtualization</p><h2 id="title-31">Controlled dependencies and real integration</h2>
+<div class="slide-content">{% include adoption/virtualization.html %}<p class="figure-note">An integration engineer owns contract fidelity, state reset and refresh triggers. AI may draft HTTP mappings; message, mobile and legacy dependencies need their own test strategy.</p></div>
+{% include slide-footer.html n="31" source="/platform-readiness/#virtualization" label="Dependency architecture and sources" %}
 </section>

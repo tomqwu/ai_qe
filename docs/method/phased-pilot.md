@@ -37,6 +37,12 @@ Recommended scope is one modern cloud or API-based application with an existing 
 
 **Alternates.** Automation maintenance and flaky-test remediation where quarantine rates are high (FlakyGuard: about half of reproducible flaky tests fixable, about half of fixes accepted). Change-impact analysis and regression selection only where requirements-to-test traceability already exists; without it the use case becomes a data project. Requirement and test-scenario generation is popular but its net effort is hard to measure because the baseline activity is diffuse; keep it for a later phase.
 
+## Adoption prerequisites
+
+Before agreeing pilot dates or benefits, complete the [workflow-specific dependency assessment]({{ '/platform-readiness/' | relative_url }}). Record the application boundary, selected workflow, evidence reference, owner, remediation and review date. Infrastructure, delivery pipelines, test-data reset, dependency virtualization or real-integration access, testability, framework reliability and observability must support the chosen execution path. Also establish approved AI access, reviewer capacity, offshore handoffs, platform support and a funded baseline.
+
+A missing prerequisite cannot be offset by a high score elsewhere. Use the register to scope foundation work or a narrower assisted workflow. Repeatable capability is required in the target application; expansion additionally requires supported reuse by a second team. These are proposed adoption gates, separate from the quality and value gates below.
+
 ## Minimum data and access
 
 Read access to the pilot squads' repositories, CI logs, test results and defect tracker; API specifications for the modern application; the approved enterprise AI platform with a dedicated pilot project, region and spending ceiling; a service identity per AI integration with least privilege and short-lived credentials; a logging destination for prompts, responses, model versions and approvals; non-production environments with de-identified or synthetic test data only. No production data, no production write access, no customer data in prompts.

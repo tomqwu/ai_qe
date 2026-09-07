@@ -12,6 +12,10 @@ The proposed architecture separates generation, permission to act and verificati
 
 <img class="industry-cover" src="{{ '/assets/images/industry/assurance-lab.webp' | relative_url }}" alt="Conceptual AI assurance laboratory with a model engine, test specimens, controlled test chamber and human review station" width="1536" height="1024" loading="lazy">
 
+## Adoption foundations
+
+The runtime architecture assumes a usable delivery system. Before connecting client tools, validate the [infrastructure, platform and workflow dependencies]({{ '/platform-readiness/' | relative_url }}): repeatable environments and pipelines, isolated data, controlled external dependencies, testable interfaces, owned frameworks and evidence, approved AI access, reviewer capacity and platform operation. A missing foundation changes the pilot boundary, cost and timing. Cloud migration, Kubernetes and retrieval infrastructure are design choices, not universal prerequisites.
+
 ## A control boundary around agent actions
 
 {% include diagrams/figure.html name="platform" label="Enterprise assurance platform" %}

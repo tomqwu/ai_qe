@@ -10,7 +10,7 @@ has_toc: true
 
 [Open the interactive case]({{ '/case-studies/fintech/' | relative_url }}) or the [technical briefing]({{ '/briefings/fintech-technical/' | relative_url }}).
 
-**Fictional case, edition v1.7.0.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
+**Fictional case, edition v1.9.0.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
 
 ## Assumption register
 
@@ -24,6 +24,17 @@ has_toc: true
 | Payment contract | PAY-142 transfers CAD 100.00 between synthetic accounts starting at CAD 1,000.00 and CAD 0.00. No fees, FX, overdraft, settlement timing or unrelated account activity is modeled. |
 | Expected behavior | The same request key and payload return the original transfer identity. Conflicting payloads are rejected. Retries and duplicate callbacks create one journal with two balancing entries. |
 | Evidence status | Hours, maturity profiles, staffing and simulated outcomes are assumptions. No client baseline or actual pilot result has been collected. |
+
+## Client adoption assumption register
+
+The [platform readiness hub]({{ '/platform-readiness/?preset=harbor' | relative_url }}) makes twelve prerequisites explicit. Harbor has not been assessed; the current-state statements below are hypotheses for discovery. For each one, record the evidence reference, accountable person, remediation and review date. A modern API does not establish readiness for mobile, legacy or batch applications.
+
+| Dependency | Assumed Harbor starting point | Accountable role |
+|---|---|---|
+{% for dependency in site.data.adoption.dependencies %}| [{{ dependency.title }}]({{ '/platform-readiness/#dependency-' | append: dependency.id | relative_url }}) | {{ dependency.harbor }} | {{ dependency.owner }} |
+{% endfor %}
+
+No required capability can be compensated for by a higher maturity score elsewhere. The adoption worksheet applies requirements separately to each workflow; second-team rollout additionally requires supported platform operation, evidence reuse and trained handoffs. The illustrative effort profiles below are not adoption approval.
 
 ## Stack
 
@@ -79,6 +90,8 @@ Playwright's documented healer may return a skipped test when it believes behavi
 **Output:** {{ stage.output }}. **Accountable reviewer:** {{ stage.owner }}.
 
 **Acceptance check:** {{ stage.check }}
+
+**Adoption prerequisites:** [Inspect the required foundations for {{ stage.title | downcase }}]({{ '/platform-readiness/' | relative_url }}?preset=harbor&workflow={{ stage.id }}).
 {% endfor %}
 
 A run manifest should identify the requirement revision, scenario ID, test commit, application build, fixture revision, dependency-stub revision, environment and runner result location. Candidate-generation records additionally retain prompt/model configuration and reviewer disposition. Record missing links as gaps; do not infer a passing run from an AI summary.
@@ -116,7 +129,7 @@ The assumed mixed-profile calculation is:
 3. Redeploy an assumed **50%** to named other work = **33 usable hours**.
 4. An assumed **480 person-hours of setup**, divided by 33, takes **15 comparable packs**, rounded up, to recover in capacity terms.
 
-Setup includes integration, initial fixtures, coaching and supporting product/development/platform effort. Avoid charging initial setup again in each assisted pack. Conversely, recurring operation must not disappear into the setup bucket. The low-maturity profile has 315 assisted hours plus 12 operating hours: **27 additional hours per pack**. The model retains that full cost even at a low capture percentage. At zero positive capacity or zero capture, there is no finite capacity payback.
+The twelve-dependency remediation backlog is not priced by the 480-hour setup assumption. Re-estimate infrastructure, provider virtualization, data, licenses and support effort for the actual client. Setup includes integration, initial fixtures, coaching and supporting product/development/platform effort. Avoid charging initial setup again in each assisted pack. Conversely, recurring operation must not disappear into the setup bucket. The low-maturity profile has 315 assisted hours plus 12 operating hours: **27 additional hours per pack**. The model retains that full cost even at a low capture percentage. At zero positive capacity or zero capture, there is no finite capacity payback.
 
 Tool, cloud and vendor charges are excluded. Staff hours recovered are not automatically budget savings. Do not extrapolate the pack to all 75 people or annualize it until eligible volume, adoption, maintenance and redeployment are observed. A cash business case requires actual commercial costs and an agreed mechanism for realizing financial benefit.
 

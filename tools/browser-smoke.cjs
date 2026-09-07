@@ -10,7 +10,7 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
  try {
   for (const viewport of [{width:1280,height:720},{width:1920,height:1080},{width:375,height:812}]) {
    await page.setViewportSize(viewport);
-   for (const [audience,count] of [['evp',21],['technical',29]]) {
+   for (const [audience,count] of [['evp',22],['technical',31]]) {
     await page.goto(`${base}/briefings/${audience}/`); await page.evaluate(() => document.fonts.ready);
     assert.equal(await page.locator('.slide').count(),count);
     for (let i=0;i<count;i++) {
@@ -75,7 +75,7 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
   await page.reload();await frame.locator('#slide-11').waitFor({state:'visible'});
   // The published arithmetic and searchable anchors must match the interactive state.
   const search=await (await page.request.get(`${base}/assets/js/search-data.json`)).json();
-  assert.equal(Object.values(search).filter(s=>/\/briefings\/(evp|technical)\/#slide-/.test(s.url)).length,50);
+  assert.equal(Object.values(search).filter(s=>/\/briefings\/(evp|technical)\/#slide-/.test(s.url)).length,53);
   await page.goto(`${base}/briefings/evp/#slide-5`);await page.locator('[data-preset="slowdown"]').click();
   assert.match(await page.locator('[data-net]').innerText(),/450/);
   assert.match(await page.locator('[data-model-note]').innerText(),/Cash impact.*120/);

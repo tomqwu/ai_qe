@@ -18,7 +18,7 @@ description: Ten operating principles for AI-assisted QE in a regulated bank, pl
 
 These principles govern every study, questionnaire, pilot and presentation on this site. They are written for an executive audience that is concerned about excessive technology and AI spending, overlapping tools, unclear return and pilots that never produce budget impact.
 
-1. **Baseline before solutioning.** Do not propose an AI-QE platform before understanding the current SDLC maturity, testing strategy, QA operating model, workflows, tooling, quality gates, metrics and cost structure.
+1. **Baseline before solutioning.** Validate the [twelve client adoption assumptions]({{ "/platform-readiness/" | relative_url }}) for the selected application and workflow, including dependency owners, evidence and funded remediation. Do not propose an AI-QE platform before understanding the current SDLC maturity, testing strategy, QA operating model, workflows, tooling, quality gates, metrics and cost structure.
 2. **Existing capabilities first.** Use the bank's approved enterprise AI, source-control, CI/CD, testing, observability and security platforms before recommending new products.
 3. **Separate foundational automation from AI.** Stable CI/CD, API tests, service virtualization, test data, environments and deterministic release gates may need ordinary engineering improvement rather than AI.
 4. **Separate AI assistance from autonomy.** Distinguish AI that recommends, generates artifacts, executes authorized tests, creates work items or pull requests, and autonomously changes or deploys software (see the ladder below).

@@ -38,11 +38,13 @@ def prepare(output):
 
 [Open the site](https://tomqwu.github.io/ai_qe/?v={release["version"]}) · [Presentation room](https://tomqwu.github.io/ai_qe/briefings/) · [Fintech story](https://tomqwu.github.io/ai_qe/case-studies/fintech/) · [Discovery guide](https://tomqwu.github.io/ai_qe/discovery/)
 
+[Platform readiness and adoption assumptions](https://tomqwu.github.io/ai_qe/platform-readiness/)
+
 Publication editions:
 
 - Site and presentation player: **v{release["version"]}**
-- Industry decks: **v{release["slide_edition"]}** — 21 EVP slides and 29 technical slides
-- Fintech decks: **v{release["fintech_edition"]}** — 12 EVP slides and 18 technical slides
+- Industry decks: **v{release["slide_edition"]}** — 22 EVP slides and 31 technical slides
+- Fintech decks: **v{release["fintech_edition"]}** — 13 EVP slides and 20 technical slides
 - Research companion: **v{release["research_edition"]}** — 13 pages
 - Fillable discovery questionnaire: **v{release["questionnaire_edition"]}**
 

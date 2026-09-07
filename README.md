@@ -7,10 +7,10 @@ that collects evidence and reusable method for AI-assisted quality engineering i
 
 The homepage includes two audience presentations:
 
-- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 21 slides on
+- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 22 slides on
   industry outlook, strategic vision, value, ownership and capability expansion.
 - [Technical delivery architecture](https://tomqwu.github.io/ai_qe/briefings/technical/):
-  29 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
+  31 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
 
 These are research-informed perspectives and a proposed architecture, not measured bank results.
 
@@ -54,7 +54,7 @@ the site edition; source review dates remain attached to their individual resear
 
 ## Maintaining the briefings
 
-The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 12-slide EVP and 18-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this assumed case distinct from observed industry findings.
+The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 13-slide EVP and 20-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this assumed case distinct from observed industry findings.
 
 Run `node tools/export_decks.cjs --fintech` against the preview to export the case PDFs. The edition in the case data, deck front matter and `fintech_edition` release field must agree. Run `node tools/fintech-browser-test.cjs` and `python tools/verify_fintech.py _site` after the build. `npm test` includes capacity and payment-model checks. The browser case is a deterministic teaching model; it does not connect to a payment service or invoke the example QA frameworks.
 
@@ -202,3 +202,9 @@ The `/demos/architecture/` page is a dedicated 3D viewer. The landing page links
 - `node tools/architecture-demo/browser-test.cjs` and `python tools/verify_architecture_demo.py`: exercise real rendering/motion, authorization and failed-check semantics, fallback and artifact agreement. CI runs these checks; Blender and FFmpeg are authoring dependencies, not required on the deployment runner.
 
 The film is a silent render of the Three.js demonstration using the Blender-authored model. It is not live telemetry, a performance model or a claim that all flows occur simultaneously. After scene, narrative or visual changes, rebuild the model/bundle as needed, rebuild Jekyll, re-export the film, inspect its stage frames and rerun validation.
+
+## Adoption dependencies
+
+`_data/adoption.json` defines twelve explicit client assumptions, evidence, owners, sources and eight workflow mappings. `/platform-readiness/` renders the canonical register. The pure `readiness-model.js` determines required capability gaps without an average score; `readiness.js` provides scenario controls and a local downloadable worksheet. Client inputs are self-assessments and do not authorize adoption. Hub, fintech case and four briefings share editable dependency diagrams in `_includes/adoption/`.
+
+Run `node --test tools/readiness-model.test.cjs` and `node tools/readiness-browser-test.cjs` against a built preview. When changing assumptions, keep the case implementation notes, discovery and pilot prerequisites consistent. Re-export all four decks when their content edition changes.

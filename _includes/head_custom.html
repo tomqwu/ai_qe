@@ -24,3 +24,5 @@
 <link rel="stylesheet" href="{{ '/assets/css/brand.css' | relative_url }}?v={{ site.data.release.version }}">
 <link rel="stylesheet" href="{{ '/assets/css/sales.css' | relative_url }}?v={{ site.data.release.version }}">
 <script src="{{ '/assets/js/sales-navigation.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+<link rel="stylesheet" href="{{ '/assets/css/readiness.css' | relative_url }}?v={{ site.data.release.version }}">
+{% if page.readiness %}<script src="{{ '/assets/js/readiness-model.js' | relative_url }}?v={{ site.data.release.version }}" defer></script><script src="{{ '/assets/js/readiness.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>{% endif %}
