@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.10.0 · 7 September 2026
+
+Added [QE modernization]({{ '/qe-modernization/' | relative_url }}) to the conversation path. Six workstreams connect reliable tests, containerization, virtual services, data, CI evidence and shared ownership to broader AI adoption. A guided test-environment architecture and API, web/mobile and legacy examples distinguish real software, simulated dependencies and separate integration checks. Thirteen primary-source records explain the evidence and limits.
+
+The Harbor implementation now includes a concrete modernization sequence and explicit foundation costs. Reviewed assistance can begin alongside this work; broader execution depends on evidence for the selected scope.
+
+All four slide/PDF editions advance to **v1.10.0**: industry EVP **23 slides**, industry technical **33**, fintech EVP **14**, fintech technical **22**. Existing slide anchors remain stable. The research companion stays **v1.7.0**, questionnaire **v3**, and architecture film **v1.8.0**. [GitHub release v1.10.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.10.0) includes the current PDFs and both source registers.
+
 ## v1.9.1 · 7 September 2026
 
 The desktop navigation now stays at **248 px** instead of expanding with the browser window. The recovered space goes to the page, with a centered content area capped at 1,200 px. Navigation labels and click targets retain their size; phones retain the collapsible Menu.

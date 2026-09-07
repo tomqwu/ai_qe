@@ -1,0 +1,1 @@
+<span class="mod-linked-sources">{% for id in include.ids %}<a href="{{ '/qe-modernization/#evidence-' | append: id | relative_url }}">{{ id }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>

@@ -90,5 +90,9 @@ adoption=json.loads((Path(__file__).resolve().parents[1]/'_data/adoption.json').
 for dependency in adoption['dependencies']:
     path=f'/platform-readiness/#dependency-{dependency["id"]}'
     index[f'adoption-{dependency["id"]}']={'doc':'Platform readiness','title':dependency['title'],'content':' '.join(dependency[field] for field in ('assumption','evidence','owner','action','example','harbor')),'url':'/ai_qe'+path,'relUrl':path}
+modernization=json.loads((Path(__file__).resolve().parents[1]/'_data/modernization.json').read_text())
+for stream in modernization['workstreams']:
+    path=f'/qe-modernization/#workstream-{stream["id"]}'
+    index[f'modernization-{stream["id"]}']={'doc':'QE modernization','title':stream['title'],'content':' '.join(stream[field] for field in ('current','build','proof','owner','ai')),'url':'/ai_qe'+path,'relUrl':path}
 p.write_text(json.dumps(index,ensure_ascii=False))
 print(f'Search finalized: {len(index)} entries including audience slides and {len(dictionary["terms"])} dictionary terms')

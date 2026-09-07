@@ -7,6 +7,7 @@ readiness: true
 description: Adoption assumptions, platform dependencies and evidence needed for each AI-assisted quality engineering workflow.
 ---
 {% assign adoption = site.data.adoption %}
+<aside class="adoption-link-note"><strong>Address the gaps:</strong> <a href="{{ '/qe-modernization/' | relative_url }}">QE modernization</a> explains the work behind readiness, including containerized test environments, service virtualization, data, CI and shared ownership.</aside>
 <header class="readiness-hero"><p class="eyebrow">AI × QE / Conditions for adoption</p><h1>AI adoption needs<br>working foundations.</h1><p class="readiness-intro">Choose an application and a workflow before proposing a pilot. Infrastructure, delivery practices and people determine what can be adopted, what needs remediation and what the proposal must fund.</p><p class="readiness-disclosure">{{ adoption.disclosure }}</p><nav class="readiness-jump" aria-label="Readiness sections"><a href="#dependency-map">See the dependencies</a><a href="#assessment">Assess a workflow</a><a href="#assumptions">Inspect the assumptions</a><a href="#virtualization">Understand virtualization</a><a href="#adoption-plan">Plan the adoption</a></nav></header>
 
 <section id="dependency-map"><p class="eyebrow">01 / The adoption architecture</p><h2>Every assisted workflow rests on shared foundations</h2><p>The three layers work together. Select a dependency to inspect the assumption and evidence behind it.</p>

@@ -82,12 +82,12 @@ class PublicationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
             manifest = prepare(folder)
-            self.assertEqual(len(manifest['assets']), 11)
+            self.assertEqual(len(manifest['assets']), 13)
             self.assertEqual(len(list((folder / 'assets').glob('*.pdf'))), 6)
             for name, digest in manifest['assets'].items():
                 self.assertEqual(hashlib.sha256((folder / 'assets' / name).read_bytes()).hexdigest(), digest)
                 self.assertNotIn('appsec', name)
-            self.assertEqual(len((folder / 'assets/SHA256SUMS.txt').read_text().splitlines()), 10)
+            self.assertEqual(len((folder / 'assets/SHA256SUMS.txt').read_text().splitlines()), 12)
 
 
 if __name__ == '__main__':
