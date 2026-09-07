@@ -22,9 +22,10 @@ const base=process.env.QE_TEST_URL||'http://127.0.0.1:61600/ai_qe';
    assert.equal(await page.locator('[data-readiness-decision]').getAttribute('data-ready'),'true');
    await page.locator('#readiness-workflow').selectOption('automation');
    await page.locator('#dependency-virtualization textarea').fill('Integration owner · contract check · 2026-09-14');
+   await page.locator('#readiness-application').fill('Payments API · retry journey');
    const pending=page.waitForEvent('download');await page.locator('[data-readiness-export]').click();const download=await pending;
    const sheet=JSON.parse(fs.readFileSync(await download.path(),'utf8'));
-   assert.match(sheet.status,/not verified or approved/);assert.equal(sheet.dependencies.length,12);
+   assert.equal(sheet.application,'Payments API · retry journey');assert.match(sheet.status,/not verified or approved/);assert.equal(sheet.dependencies.length,12);
    assert.equal(sheet.dependencies.find(d=>d.id==='virtualization').level,0);assert.match(sheet.dependencies.find(d=>d.id==='virtualization').notes,/Integration owner/);
    await page.reload();assert.equal(await page.locator('#dependency-virtualization textarea').inputValue(),'');
    for(const width of [320,390,768,1440,1920]){
