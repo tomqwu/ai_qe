@@ -1,11 +1,23 @@
 ---
-title: Release history
+title: Downloads & releases
 nav_order: 9
 permalink: /releases/
 ---
 # Publication editions
 
 The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
+
+<div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
+
+## v1.8.0 · 7 September 2026
+
+A new visual identity and conversation-led navigation connect the strategic vision, fintech case, architecture demonstration and discovery guide. The presentation room brings all four audience decks together with audience filters, outlines and direct presentation and PDF links. Research, economics and delivery controls remain available as supporting evidence.
+
+[GitHub release v1.8.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.8.0) includes the current PDFs, architecture film, captions, source registers and SHA-256 checksums. Future versions publish a GitHub release after the site deploys successfully.
+
+This is a site and presentation-player update. **All four slide/PDF editions and the research companion retain v1.7.0; the fillable questionnaire remains v3.** Slide content is unchanged. The architecture film is refreshed to display site v1.8.0.
+
+<div class="release-downloads">{% for deck in site.data.briefing_room %}{% assign edition = site.data.release[deck.edition] %}<a href="{{ '/assets/pdf/' | append: deck.pdf_prefix | append: '-v' | append: edition | append: '.pdf' | relative_url }}">{{ deck.series }} · {{ deck.audience_label }}<br><strong>{{ deck.slides }} slides · PDF v{{ edition }} ↓</strong></a>{% endfor %}<a href="{{ '/assets/pdf/ai-qe-industry-research-v' | append: site.data.release.research_edition | append: '.pdf' | relative_url }}">QA research companion<br><strong>13 pages · PDF v{{ site.data.release.research_edition }} ↓</strong></a><a href="{{ '/assets/pdf/ai-qe-discovery-questionnaire-v' | append: site.data.release.questionnaire_edition | append: '.pdf' | relative_url }}">Discovery questionnaire<br><strong>Fillable PDF v{{ site.data.release.questionnaire_edition }} ↓</strong></a></div>
 
 ## v1.7.0 · 7 September 2026
 

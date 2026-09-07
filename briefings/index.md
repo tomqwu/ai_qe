@@ -1,43 +1,25 @@
 ---
-title: Audience briefings
+title: Presentation room
 nav_order: 1.5
-description: Strategic vision for EVPs and delivery architecture for technical SDs and engineering leads.
+description: Choose a strategic vision or architecture briefing, lead a fintech conversation and open the supporting diagrams and evidence.
 permalink: /briefings/
 has_toc: false
 ---
 
-<p class="eyebrow">Two audiences. One evidence base.</p>
+<div class="room-intro"><p class="eyebrow">Ready for the conversation</p><h1>Choose the audience.<br>Open the right story.</h1><p>Start with the fintech case for a concrete discussion. Use the industry briefings when the conversation calls for a wider strategic vision or a deeper architecture.</p></div>
 
-# Audience briefings
+<section data-presentation-room aria-label="Choose a presentation">
+  <div class="room-filters" hidden role="group" aria-label="Filter briefings by audience"><button type="button" data-room-filter="all" aria-pressed="true">All briefings</button><button type="button" data-room-filter="evp" aria-pressed="false">EVP &amp; sponsors</button><button type="button" data-room-filter="technical" aria-pressed="false">Technical SDs &amp; leads</button></div>
+  <p class="room-status" data-room-status role="status" aria-live="polite">4 briefings · all audiences</p>
+  <div class="room-grid">{% for deck in site.data.briefing_room %}{% assign edition = site.data.release[deck.edition] %}
+    <article class="room-card" data-deck-audience="{{ deck.audience }}"><div class="room-cover"><span class="room-audience">{{ deck.audience_label }} / {{ deck.series }}</span><strong>{{ deck.cover }}</strong></div><div class="room-body"><h2>{{ deck.title }}</h2><p class="room-meta">{{ deck.slides }} slides · {{ deck.time }} with discussion · PDF v{{ edition }}</p><p>{{ deck.description }}</p><details><summary>See the conversation outline</summary><ul>{% for point in deck.outline %}<li>{{ point }}</li>{% endfor %}</ul></details><div class="room-actions"><a class="btn btn-primary" href="{{ deck.url | relative_url }}">Present this deck ↗</a><a href="{{ '/assets/pdf/' | append: deck.pdf_prefix | append: '-v' | append: edition | append: '.pdf' | relative_url }}">Download PDF ↓</a></div></div></article>
+  {% endfor %}</div>
+</section>
 
-**New: a fintech story with 75 offshore QA staff.** The [fintech case explorer]({{ '/case-studies/fintech/' | relative_url }}#briefings) adds a 12-slide [EVP strategic vision]({{ '/briefings/fintech-evp/' | relative_url }}) and an 18-slide [technical architecture briefing]({{ '/briefings/fintech-technical/' | relative_url }}), both edition **v1.7.0**. Follow a payment retry through the proposed platform, eight workflow stages, maturity scenarios and a measured pilot. All company details and hours are illustrative assumptions. [EVP PDF]({{ '/assets/pdf/ai-qe-fintech-evp-v1.7.0.pdf' | relative_url }}) · [Technical PDF]({{ '/assets/pdf/ai-qe-fintech-technical-v1.7.0.pdf' | relative_url }}).
+<aside class="meeting-route"><h2>A suggested 30-minute conversation</h2><ol><li><strong>01 / Align · 5 minutes</strong>Which part of QA creates the most delay or repeated work?<small>Start with the fintech EVP story.</small></li><li><strong>02 / Explore · 15 minutes</strong>Follow one workflow and show the platform services behind it.<small><a href="{{ '/case-studies/fintech/' | relative_url }}#workflow">Workflow explorer →</a> · <a href="{{ '/demos/architecture/' | relative_url }}">3D architecture →</a></small></li><li><strong>03 / Agree · 10 minutes</strong>Choose the process, owner and evidence needed for a first pilot.<small><a href="{{ '/discovery/' | relative_url }}">Discovery guide →</a></small></li></ol></aside>
 
-## Industry research briefings
+<section class="home-section" id="briefings" aria-labelledby="preview-title"><div class="section-heading"><div><p class="eyebrow">Preview before you present</p><h2 id="preview-title">Explore the industry decks here.</h2></div></div>{% include briefing-embed.html %}</section>
 
-Start with the strategic vision or go deeper into the delivery architecture. The September 2026 edition draws on the [industry research]({{ "/docs/industry/" | relative_url }}) and its 30-source document library. Each deck links to the research, economics and pilot design behind it.
+<section class="home-section"><h2>Keep the supporting material close</h2><div class="resource-grid"><a class="resource-link" href="{{ '/docs/industry/library/' | relative_url }}"><span class="resource-number">When asked “what is the evidence?”</span><h3 class="no_anchor">Open the source library ↗</h3><p>{{ site.data.industry_sources | size }} sources with findings, methods and limitations.</p></a><a class="resource-link" href="{{ '/dictionary/' | relative_url }}"><span class="resource-number">When a term needs explaining</span><h3 class="no_anchor">Use the dictionary ↗</h3><p>Plain-language explanations linked to the architecture.</p></a></div></section>
 
-{% include briefing-embed.html %}
-
-## What each briefing covers
-
-**EVP · Strategic vision — 21 slides.** The industry outlook, dual quality mandate, value logic, industrial cases, portfolio choices, ownership, skills, shared investment and leadership evidence. Allow 25–35 minutes with discussion.
-
-**Technical SDs & leads · Assurance architecture — 29 slides.** Context and configuration boundaries, test oracles, mutation testing, diagnosis and repair, evaluation datasets, judge calibration, tool enforcement, isolation, release, recovery, observability and integration contracts. Allow 40–55 minutes with discussion.
-
-## Jump into a chapter
-
-| Audience | Chapter | Slides |
-|---|---|---|
-| EVP | [Vision and value]({{ '/briefings/evp/' | relative_url }}#slide-1) | 1–5 |
-| EVP | [Industry and portfolio]({{ '/briefings/evp/' | relative_url }}#slide-6) | 6–8 |
-| EVP | [Capability and ownership]({{ '/briefings/evp/' | relative_url }}#slide-9) | 9–14 |
-| EVP | [Roadmap and leadership]({{ '/briefings/evp/' | relative_url }}#slide-15) | 15–18 |
-| Technical | [Architecture overview]({{ '/briefings/technical/' | relative_url }}#slide-1) | 1–6 |
-| Technical | [Context and test validity]({{ '/briefings/technical/' | relative_url }}#slide-7) | 7–12 |
-| Technical | [Evaluation and agent controls]({{ '/briefings/technical/' | relative_url }}#slide-13) | 13–16 |
-| Technical | [Deployment and operations]({{ '/briefings/technical/' | relative_url }}#slide-17) | 17–21 |
-| Technical | [Integration and delivery]({{ '/briefings/technical/' | relative_url }}#slide-22) | 22–26 |
-
-These are research-informed perspectives and a proposed pilot architecture. They do not report a deployed bank solution or measured bank results. The [research log]({{ '/docs/research-log/' | relative_url }}) records verification dates; [reading the evidence]({{ '/docs/evidence/reading-the-evidence/' | relative_url }}) explains the limits of external benchmarks.
-
-The decks support keyboard navigation, full-screen presentation, a continuous reading view, and browser printing. They also remain readable with JavaScript disabled.
+The fintech organization and results are illustrative assumptions. Industry studies support specific findings, not a guaranteed client outcome. Presentation mode supports arrow keys, full screen, diagrams and source notes; each deck links back to this room.

@@ -30,10 +30,30 @@ root=Path(sys.argv[1] if len(sys.argv)>1 else '_site')
 theme_js=root/'assets/js/just-the-docs.js'
 theme_text=theme_js.read_text()
 focus_statement='const nextFocusedElement = evt.relatedTarget;'
-safe_focus=focus_statement+'\n    if (!nextFocusedElement) { hideSearch(); return; }'
+old_safe_focus=focus_statement+'\n    if (!nextFocusedElement) { hideSearch(); return; }'
+safe_focus=old_safe_focus+"\n    if (nextFocusedElement.matches('[data-close-search]')) return;"
 if safe_focus not in theme_text:
     assert theme_text.count(focus_statement)==1, 'Review the pinned theme search-focus patch after updating the theme'
-    theme_js.write_text(theme_text.replace(focus_statement,safe_focus))
+    theme_text=theme_text.replace(old_safe_focus,focus_statement).replace(focus_statement,safe_focus)
+# Pasted/assisted input may not emit keyup. Also replay a query entered while
+# the asynchronous search index was loading, once the handlers are installed.
+keyup_statement="jtd.addEvent(searchInput, 'keyup', function(e){"
+input_patch="jtd.addEvent(searchInput, 'input', update);\n\n  "+keyup_statement
+if input_patch not in theme_text:
+    assert theme_text.count(keyup_statement)==1, 'Review the theme search-input patch'
+    theme_text=theme_text.replace(keyup_statement,input_patch)
+loaded_statement='searchLoaded(index, docs);'
+ready_patch=loaded_statement+"\n      var enteredQuery = document.getElementById('search-input');\n      if (enteredQuery.value) enteredQuery.dispatchEvent(new Event('input'));"
+if ready_patch not in theme_text:
+    assert theme_text.count(loaded_statement)==1, 'Review the theme search-ready patch'
+    theme_text=theme_text.replace(loaded_statement,ready_patch)
+# A second event for the same query must not cancel later result batches.
+update_start='function update() {\n    currentSearchIndex++;\n\n'
+if update_start in theme_text:
+    theme_text=theme_text.replace(update_start,'function update() {\n')
+    theme_text=theme_text.replace('    currentInput = input;','    currentSearchIndex++;\n    currentInput = input;')
+assert '    currentSearchIndex++;\n    currentInput = input;' in theme_text, 'Review search result batching after theme updates'
+theme_js.write_text(theme_text)
 p=root/'assets/js/search-data.json';index=json.loads(p.read_text())
 for audience,name in [('evp','EVP strategic vision'),('technical','Technical architecture'),('fintech-evp','Fintech strategic vision'),('fintech-technical','Fintech QA architecture')]:
     parser=Slides();parser.feed((root/f'briefings/{audience}/index.html').read_text())
