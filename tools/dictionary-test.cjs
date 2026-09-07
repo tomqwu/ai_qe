@@ -25,7 +25,7 @@ assert.deepEqual(components.map(t => t.demo_node).sort(), architecture.nodes.map
   const browser = await chromium.launch();
   const page = await browser.newPage({viewport: {width: 1440, height: 1000}, reducedMotion: 'reduce'});
   const errors = [];
-  page.on('pageerror', error => errors.push(error.message));
+  page.on('pageerror', error => errors.push({url: page.url(), stack: error.stack}));
   const proof = process.env.QE_DICTIONARY_PROOF || '/tmp/ai-qe-dictionary-proof';
   fs.mkdirSync(proof, {recursive: true});
   const visible = () => page.locator('[data-dictionary-term]:visible');
@@ -101,6 +101,17 @@ assert.deepEqual(components.map(t => t.demo_node).sort(), architecture.nodes.map
     await page.setViewportSize({width: 1440, height: 1000});
     await page.goto(`${base}/docs/industry/`);
     await page.locator('#search-input').pressSequentially('RAG');
+    const searchResult = page.locator('a.search-result[href$="/dictionary/#rag"]');
+    await searchResult.waitFor({state: 'visible'});
+    // Native blur has a null relatedTarget, as can browser chrome or navigation.
+    // The theme must close search without throwing, from both focus surfaces.
+    await page.locator('#search-input').evaluate(el => el.blur());
+    await page.waitForFunction(() => !document.documentElement.classList.contains('search-active'));
+    await page.locator('#search-input').focus();
+    await searchResult.focus();
+    await searchResult.evaluate(el => el.blur());
+    await page.waitForFunction(() => !document.documentElement.classList.contains('search-active'));
+    await page.locator('#search-input').focus();
     await page.locator('a.search-result[href$="/dictionary/#rag"]').click();
     await page.waitForSelector('#rag');
     assert.equal(new URL(page.url()).hash, '#rag', 'Site-wide acronym search opens the exact dictionary entry');

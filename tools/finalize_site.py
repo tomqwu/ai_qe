@@ -24,6 +24,16 @@ class Slides(HTMLParser):
             self.slide['content']+=data+' '
             if self.title:self.slide['title']+=data
 root=Path(sys.argv[1] if len(sys.argv)>1 else '_site')
+# The pinned Just the Docs theme dereferences a null relatedTarget when search
+# loses focus to the page/browser. Patch this exact upstream statement, and fail
+# visibly if a future theme update changes the code that needs review.
+theme_js=root/'assets/js/just-the-docs.js'
+theme_text=theme_js.read_text()
+focus_statement='const nextFocusedElement = evt.relatedTarget;'
+safe_focus=focus_statement+'\n    if (!nextFocusedElement) { hideSearch(); return; }'
+if safe_focus not in theme_text:
+    assert theme_text.count(focus_statement)==1, 'Review the pinned theme search-focus patch after updating the theme'
+    theme_js.write_text(theme_text.replace(focus_statement,safe_focus))
 p=root/'assets/js/search-data.json';index=json.loads(p.read_text())
 for audience,name in [('evp','EVP strategic vision'),('technical','Technical architecture'),('fintech-evp','Fintech strategic vision'),('fintech-technical','Fintech QA architecture')]:
     parser=Slides();parser.feed((root/f'briefings/{audience}/index.html').read_text())

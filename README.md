@@ -169,6 +169,8 @@ For a content release, update `version` and `slide_edition` in `_data/release.ym
 
 `dictionary.html` renders every definition without JavaScript; `assets/js/dictionary.js` adds search, topic filters, URL state and accessible anchor navigation. `tools/finalize_site.py` indexes each term and its aliases. After a build, run `node tools/dictionary-test.cjs` against the preview (`QE_TEST_URL` overrides its default); CI includes it. Changes to the demo's template or renderer also require a refreshed film manifest, as below.
 
+The finalizer also applies a narrow null-focus guard to the pinned Just the Docs search script. Without it, a search input or result losing focus to the browser can throw on `relatedTarget.id`. The finalizer checks the exact upstream statement so a theme update requires an explicit review; the dictionary browser test exercises native blur on both search surfaces.
+
 ## Blender and Three.js architecture demonstration
 
 The `/demos/architecture/` page is a dedicated 3D viewer. The landing page links a lightweight poster, so ordinary research and slide pages do not load the WebGL renderer.
