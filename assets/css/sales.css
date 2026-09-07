@@ -113,7 +113,12 @@
 .release-downloads a{border:1px solid #cfdbd7;border-radius:6px;padding:14px;font-size:14px;text-decoration:none;background:#fff}
 .release-downloads a:hover{border-color:#147a71;background:#eff6f1}
 
-@media(min-width:50rem){.sales-sidebar{height:100svh}
+/* Keep the navigation rail fixed instead of inheriting the theme's expanding page gutter. */
+@media screen and (min-width:50rem){
+:root{--sales-rail-width:15.5rem}
+.side-bar.sales-sidebar{width:var(--sales-rail-width);min-width:var(--sales-rail-width);height:100svh}
+.sales-sidebar + .main{margin-left:var(--sales-rail-width);max-width:none}
+.sales-sidebar + .main .main-content-wrap{max-width:75rem;margin-left:auto;margin-right:auto}
 .sales-header{display:flex}
 .sales-sidebar-footer{flex:none}
 .sales-nav{width:100%}
