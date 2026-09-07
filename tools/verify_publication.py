@@ -14,7 +14,7 @@ for key,r in results.items():
     row=re.search(r'<tr data-scenario="'+key+r'">(.*?)</tr>',html,re.S)[1]
     actual=float(re.search(r'data-scenario-net="([^"]+)"',row)[1])
     assert abs(actual-r['net'])<1e-10, f'Static economics mismatch: {key}'
-legacy=(site/'docs/evidence/testing-appsec-studies/index.html').read_text()
+legacy=(site/'docs/evidence/testing-studies/index.html').read_text()
 assert '75% of generated tests' not in legacy and '75% of target test classes' in legacy
 for audience,count in [('evp',21),('technical',29)]:
     text=(site/f'briefings/{audience}/index.html').read_text()

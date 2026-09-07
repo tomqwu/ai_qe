@@ -4,7 +4,7 @@
 <text x="36" y="66" class="node-title" text-anchor="start">AI for QE</text>
 <text x="36" y="89" class="node-text" text-anchor="start">Test design</text>
 <text x="36" y="109" class="node-text" text-anchor="start">Failure diagnosis</text>
-<text x="36" y="129" class="node-text" text-anchor="start">Security review</text>
+<text x="36" y="129" class="node-text" text-anchor="start">Test maintenance</text>
 </g>
 <g class="diagram-node on-dark">
 <rect x="20" y="313" width="256" height="146" rx="8" class="node node-navy"/>
@@ -23,7 +23,7 @@
 <g class="diagram-node ">
 <rect x="365" y="205" width="460" height="82" rx="8" class="node node-teal"/>
 <text x="381" y="233" class="node-title" text-anchor="start">Independent assurance</text>
-<text x="381" y="256" class="node-text" text-anchor="start">Tests + evaluations + security checks + review</text>
+<text x="381" y="256" class="node-text" text-anchor="start">Tests + evaluations + human review</text>
 </g>
 <g class="diagram-node ">
 <rect x="365" y="329" width="460" height="105" rx="8" class="node"/>

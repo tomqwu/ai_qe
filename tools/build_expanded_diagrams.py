@@ -41,14 +41,14 @@ s = SVG('ownership-system', 'Proposed operating responsibilities for product tea
 s.node(375, 25, 450, 88, 'Product and QE owner', ('Owns behavior and release outcomes',), 'node node-teal')
 s.node(20, 213, 330, 123, 'Shared platform team', ('Context, identity and runtime', 'Service + evidence export'), 'node')
 s.node(435, 213, 330, 123, 'Delivery team', ('Test intent, assertions and review', 'Accept through existing CI'), 'node node-navy')
-s.node(850, 213, 330, 123, 'Security and risk partners', ('Threat cases + control challenge', 'Scope and escalation advice'), 'node node-sand')
+s.node(850, 213, 330, 123, 'Delivery and risk owners', ('Exception cases + evidence review', 'Scope and escalation advice'), 'node node-sand')
 s.path('M 600 113 V 211'); s.text(614, 166, 'accountability', 'edge-label')
 s.path('M 350 260 H 433'); s.path('M 850 260 H 767'); s.text(90, 192, 'Shared services', 'lane-title'); s.text(880, 192, 'Independent challenge', 'lane-title')
 s.path('M 600 336 V 398'); s.node(375, 400, 450, 75, 'Operations and value owners', ('Incidents, adoption and capacity use',), 'node node-teal')
 finish(s, 'D01,M01,A01', 'Proposed ownership model · adapt to existing institutional accountability.',
        'DORA and McKinsey place AI adoption in the surrounding delivery organization. NIST frames governance across the lifecycle.',
        'Assign a product owner for outcomes, a platform owner for services and a separate challenge function; include operations and value capture.',
-       'Product and QE accountability flows to the delivery team. Shared platform services enable delivery; security and risk challenge its evidence. Operations and value owners use the resulting outcomes.')
+       'Product and QE accountability flows to the delivery team. Shared platform services enable delivery; delivery and risk owners challenge its evidence. Operations and value owners use the resulting outcomes.')
 
 s = SVG('investment-stack', 'Proposed investment split between product-specific quality assets and reusable assurance services', 1200, 490)
 s.text(30, 35, 'PRODUCT-SPECIFIC ASSETS', 'lane-title')
@@ -228,7 +228,7 @@ finish(s,'A03,R01,E04','Proposed deployment boundaries · zones represent author
 
 s = SVG('release-gate','Proposed release decision logic with mandatory floors and scenario-level evaluation',1200,500)
 s.node(20,60,275,133,'Comparable runs',('Same held-out corpus','Configuration versions','Repeat runs as needed'))
-s.node(385,60,340,133,'Mandatory floors',('Critical behavior and security tests','Denial + privacy scenarios','Workflow latency / cost limits'), 'node node-teal')
+s.node(385,60,340,133,'Mandatory floors',('Behavior + regression tests','Denial + privacy scenarios','Workflow latency / cost limits'), 'node node-teal')
 s.node(830,25,350,106,'Hold and investigate',('Any mandatory floor fails','Retain the failing scenario'), 'node node-sand')
 s.node(830,236,350,124,'Release review',('Inspect scenario-level regressions','Weigh gains + uncertainty','Approve a bounded rollout'))
 s.path('M 295 127 H 383');s.path('M 725 100 H 777 V 78 H 828');s.text(738,64,'fail','edge-label')
@@ -255,16 +255,16 @@ finish(s,'A01,A03,R01','Proposed recovery state machine · triggers and fallback
        'Separate containment, fallback and authorized resumption; explicitly handle actions that cannot be reversed by a model rollback.',
        'A trigger moves normal operation to containment and fallback. Recovery review verifies a fix before an owner authorizes resumption. Completed side effects require separate reconciliation.')
 
-s = SVG('trace-pipeline','Proposed observability pipeline linking operational events to quality, security and evaluation records',1200,510)
+s = SVG('trace-pipeline','Proposed observability pipeline linking operational events to quality, operations and evaluation records',1200,510)
 for x,title,lines in [(20,'Application events',('Task and run IDs','Timing and model usage')),(415,'Gateway decisions',('Requested action and resource','Allow / deny + policy version')),(810,'Reviewer feedback',('Accepted / corrected result','Failure reason and effort'))]:s.node(x,40,370,117,title,lines)
 for x in (205,600,995):s.path(f'M {x} 157 V 211')
 s.rect(20,214,1160,100,'lane lane-teal');s.text(40,247,'TELEMETRY COLLECTION BOUNDARY','lane-title');s.text(40,285,'Join by run ID · Minimize payloads · Apply access and retention rules · Preserve event integrity','label')
-for x,title,lines in [(20,'Operations',('Service errors and tail latency','Cost or retry-limit alerts')),(415,'Security monitoring',('Unexpected tool patterns','Denials and incident evidence')),(810,'Evaluation curation',('Reviewed failure cases','Regression dataset candidates'))]:
+for x,title,lines in [(20,'Operations',('Service errors and tail latency','Cost or retry-limit alerts')),(415,'Platform monitoring',('Unexpected tool patterns','Denials and incident evidence')),(810,'Evaluation curation',('Reviewed failure cases','Regression dataset candidates'))]:
     s.node(x,374,370,108,title,lines);s.path(f'M {x+185} 314 V 372')
 finish(s,'A01,T03,A03','Proposed event architecture · traces and derived evidence need their own data controls.',
        'Evaluation workflows use operational feedback, while agent risk guidance calls attention to tool and action behavior.',
        'Join application events, gateway decisions and reviewer corrections without broadly copying sensitive raw prompts into monitoring systems.',
-       'Three event streams enter a controlled telemetry boundary. The joined records support operations, security monitoring and reviewed regression-case curation.')
+       'Three event streams enter a controlled telemetry boundary. The joined records support operations, platform monitoring and reviewed regression-case curation.')
 
 DATA.write_text(json.dumps(research, ensure_ascii=False, indent=2) + '\n')
 print(f'Regenerated {len(research)} research diagrams and their source annotations.')

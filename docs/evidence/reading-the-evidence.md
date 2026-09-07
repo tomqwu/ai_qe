@@ -17,7 +17,7 @@ description: A plain reading of the benchmark evidence, the cross-cutting findin
 
 ## Three modest claims
 
-The evidence supports three modest claims. Task-level time reductions exist for well-specified generation tasks (test scaffolds, unit-test extension, documentation, fix drafting) in the range of one quarter to one half on those tasks. Triage-type tasks (failed-test classification, static-analysis false-positive filtering) show high agreement with human judgement in vendor and academic settings. Adoption is widespread in the cited surveys, whose populations and definitions differ (using, piloting, or planning to use AI).
+The evidence supports three modest claims. Task-level time reductions exist for well-specified generation tasks (test scaffolds, unit-test extension, documentation, fix drafting) in the range of one quarter to one half on those tasks. Failure-triage studies report diagnosis accuracy and reviewer helpfulness on their respective evaluation cohorts; those measures should remain separate. Adoption is widespread in the cited surveys, whose populations and definitions differ (using, piloting, or planning to use AI).
 
 ## What it does not support
 

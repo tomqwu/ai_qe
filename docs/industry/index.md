@@ -33,7 +33,7 @@ Our proposed direction is to connect assistance, independent verification and op
 <a href="{{ '/docs/industry/library/' | relative_url }}">06 / Document library<span>Filter sources by evidence type and topic; inspect caveats</span></a>
 </div>
 
-<div class="research-download"><strong>A portable research brief</strong><p>Original companion brief · 5 September 2026 · 13 pages · 30-source edition. It is not an export of the expanded audience decks.</p><a href="{{ '/assets/pdf/ai-qe-industry-research-2026.pdf' | relative_url }}">Download the research brief (PDF) ↗</a></div>
+<div class="research-download"><strong>A portable research brief</strong><p>QA companion brief · v1.7.0 · 7 September 2026 · 13 pages · 30-source edition. It is not an export of the expanded audience decks.</p><a href="{{ '/assets/pdf/ai-qe-industry-research-v1.7.0.pdf' | relative_url }}">Download the research brief (PDF) ↗</a></div>
 
 ## How this review was assembled
 

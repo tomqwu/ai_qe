@@ -61,14 +61,14 @@
       ['Prepare the generation request', 'Test patterns → versioned generation prompt', 'Define the expected test contract and approved context before inference.'],
       ['Generate candidate tests', 'Approved prompt → candidate API or component tests', 'Approved AI platform, scoped service identity, model version and token cost recorded.'],
       ['Prepare the proposed change', 'Candidate tests → draft change with source references', 'Generated tests stay a draft. Record prompt/model provenance for every artifact.'],
-      ['Review and run the checks', 'Draft tests → reviewed change with test and scan results', 'Human approval plus deterministic tests and security checks; normal change controls govern merge.']
+      ['Review and run the checks', 'Draft tests → reviewed change with test and regression results', 'Human approval plus deterministic tests and owner review; normal change controls govern merge.']
     ],
-    security: [
-      ['Read the finding context', 'SAST/SCA finding + code context → scoped evidence', 'Use an approved finding export and minimum necessary repository context.'],
-      ['Prepare the triage request', 'Finding evidence → prioritization and owner-routing prompt', 'Record the finding identifier and source scope. Protect customer and personal data.'],
-      ['Request a recommendation', 'Approved prompt → priority, explanation and candidate fix', 'Approved platform and project identity. Log model, prompt and operating cost.'],
-      ['Prepare the security draft', 'Recommendation → human-reviewable triage or draft fix', 'No automatic dismissal or merge. Retain evidence for sampled audits of dismissed findings.'],
-      ['Validate the recommendation', 'Draft finding decision → documented human disposition', 'Human review and required scans govern the outcome. Audit dismissed findings for suppressed true positives.']
+    maintenance: [
+      ['Read the unstable test context', 'CI failures + test history → repeatability evidence', 'Read-only, project-scoped traces and synthetic fixtures.'],
+      ['Prepare the repair request', 'Failure evidence → cause hypothesis and task contract', 'Preserve the original domain assertion and record fixture and source versions.'],
+      ['Propose a test repair', 'Approved context → candidate repair with explanation', 'Distinguish product defects from test, data and environment causes; an owner confirms the diagnosis.'],
+      ['Prepare a reviewable change', 'Candidate repair → draft patch and reproduction steps', 'No automatic weakening of assertions or silent quarantine. A temporary exception needs an owner, expiry and replacement coverage.'],
+      ['Verify the repair', 'Draft patch → repeated passes plus relevant regression evidence', 'Reproduce the failure first. Human review and existing CI gates govern acceptance; track repair effort and recurrence.']
     ]
   };
   document.querySelectorAll('[data-flow]').forEach(root => {

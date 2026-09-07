@@ -50,10 +50,10 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
   assert.equal(await page.evaluate(()=>document.activeElement.hasAttribute('data-notes')),true,'Notes close returns focus');
   await page.locator('[data-next]').focus();await page.keyboard.press('Space');
   assert.equal(await page.locator('.slide:not([hidden])').getAttribute('id'),'slide-15');
-  // Only the selected semantic path moves. AppSec alternatives are never played together.
+  // Only the selected semantic path moves. Repair and quarantine alternatives are never played together.
   await page.goto(`${base}/briefings/technical/#slide-29`); await page.locator('#slide-29').waitFor({state:'visible'});
   await page.locator('[data-diagram-tools]').click();
-  await page.locator('[data-tour-branch]').selectOption('dismiss');
+  await page.locator('[data-tour-branch]').selectOption('quarantine');
   for(let i=0;i<2;i++)await page.locator('.deck-flow-bar [data-flow-next]').click();
   assert.deepEqual(await page.locator('#slide-29 path.edge.route-focus').evaluateAll(paths=>paths.map(p=>`${p.dataset.from}:${p.dataset.to}`)),['edge:3']);
   await page.keyboard.press('Escape');

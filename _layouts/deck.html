@@ -26,7 +26,7 @@
 <body class="deck-page {{ page.deck_class }}">
   <a class="skip-link" href="#slides">Skip to slides</a>
   <header class="deck-header">
-    <a href="{% if page.fintech %}{{ '/case-studies/fintech/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" target="_top" class="deck-brand">AI-QE <span>{% if page.fintech %}Fintech case{% else %}&amp; AppSec{% endif %}</span></a>
+    <a href="{% if page.fintech %}{{ '/case-studies/fintech/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" target="_top" class="deck-brand">AI-QE <span>{% if page.fintech %}Fintech case{% else %}Research{% endif %}</span></a>
     <span class="deck-audience">{{ page.audience }}</span>
     <div class="deck-tools" hidden>{% include motion-toggle.html %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-diagram-tools hidden aria-expanded="false">Diagram controls</button><button type="button" data-notes>Sources &amp; notes</button><button type="button" data-edition>v{{ site.data.release.version }}</button><button type="button" data-fullscreen>Present ↗</button></div>
   </header>

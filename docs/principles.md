@@ -1,7 +1,7 @@
 ---
 title: Principles
 nav_order: 2
-description: Ten operating principles for AI-assisted QE and AppSec in a regulated bank, plus the autonomy ladder used across the site.
+description: Ten operating principles for AI-assisted QE in a regulated bank, plus the autonomy ladder used across the site.
 ---
 
 # Principles and autonomy ladder

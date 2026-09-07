@@ -14,7 +14,7 @@ This proposed allocation draws on the broader organizational emphasis in DORA an
 
 ## Capabilities to develop
 
-QE teams need skills in evaluation design, meaningful assertions, data curation, failure analysis and AI-assisted workflow integration. Platform teams need stable identity, context, model routing and observability services. Security and risk teams need agent threat modeling and ways to challenge the evidence independently.
+QE teams need skills in evaluation design, meaningful assertions, data curation, failure analysis and AI-assisted workflow integration. Platform teams need stable identity, context, model routing and observability services. Delivery and risk owners need exception handling, recovery exercises and ways to challenge the evidence independently.
 
 Preserve learning opportunities for junior engineers. Reviewing an AI-generated change requires enough understanding to recognize omissions and weak reasoning; a workflow that hides that reasoning can erode the skills it depends on. Team design is a strategic choice, not an automatic consequence of assistant adoption. {% include industry/cite.html ids="G04,D02" %}
 

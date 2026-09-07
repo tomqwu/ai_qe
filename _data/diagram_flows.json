@@ -133,50 +133,50 @@
       ]
     }
   ],
-  "appsec-loop": [
+  "failure-resolution": [
     {
-      "title": "1 / Finding \u2192 triage",
-      "detail": "Enrich scanner evidence and identify the responsible owner.",
+      "title": "1 / Failure \u2192 triage",
+      "detail": "Capture CI traces, fixture versions and repeatability evidence.",
       "node": "",
       "routes": [
         "edge:0"
       ]
     },
     {
-      "title": "2 / Fix branch",
-      "detail": "A reviewed disposition requests a draft remediation.",
+      "title": "2 / Repair branch",
+      "detail": "An owner confirms the cause and requests a product, test, data or environment repair.",
       "node": "",
       "routes": [
         "edge:1"
       ]
     },
     {
-      "title": "3 / Validate fix",
-      "detail": "Rerun security and regression checks; review before merge.",
+      "title": "3 / Independent retest",
+      "detail": "Reproduce the original failure, verify the repair and run relevant regression cases.",
       "node": "",
       "routes": [
         "edge:2"
       ]
     },
     {
-      "title": "Dismissal branch",
-      "detail": "If triage dismissed the finding, audit it instead of treating it as fixed.",
+      "title": "Quarantine branch",
+      "detail": "Only a confirmed flaky test can enter a time-limited exception with replacement coverage.",
       "node": "",
       "routes": [
         "edge:3"
       ]
     },
     {
-      "title": "5 / Fix evidence",
-      "detail": "Retain the verified outcome, versions and reviewer.",
+      "title": "4 / Repair evidence",
+      "detail": "Retain the verified outcome, reviewer and versions.",
       "node": "",
       "routes": [
         "edge:4"
       ]
     },
     {
-      "title": "6 / Dismissal evidence",
-      "detail": "Retain audit results; reopen any missed true positive.",
+      "title": "3 / Open exception record",
+      "detail": "Keep the owner, expiry, repair ticket and coverage plan. Recheck until the test is restored.",
       "node": "",
       "routes": [
         "edge:5"

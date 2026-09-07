@@ -59,7 +59,7 @@
 <g class="diagram-node ">
 <rect x="792" y="212" width="374" height="65" rx="8" class="node"/>
 <text x="808" y="240" class="node-title" text-anchor="start">Sandbox + deterministic checks</text>
-<text x="808" y="263" class="node-text" text-anchor="start">Build · repeatability · mutation · security</text>
+<text x="808" y="263" class="node-text" text-anchor="start">Build · repeatability · mutation · fixtures</text>
 </g>
 </g>
 <g role="button" tabindex="0" aria-label="Inspect Evaluation service" data-architecture-node="evaluation" aria-pressed="false">

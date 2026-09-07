@@ -68,6 +68,8 @@ jobs:
           python tools/verify_fintech.py _site
       - name: Check questionnaire fields and response ranges
         run: python tools/verify_pdf.py
+      - name: Check QA-only publication scope
+        run: python tools/verify_qe_scope.py _site
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
 

@@ -81,7 +81,7 @@
     "caption": "Proposed ownership model · adapt to existing institutional accountability.",
     "finding": "DORA and McKinsey place AI adoption in the surrounding delivery organization. NIST frames governance across the lifecycle.",
     "decision": "Assign a product owner for outcomes, a platform owner for services and a separate challenge function; include operations and value capture.",
-    "words": "Product and QE accountability flows to the delivery team. Shared platform services enable delivery; security and risk challenge its evidence. Operations and value owners use the resulting outcomes."
+    "words": "Product and QE accountability flows to the delivery team. Shared platform services enable delivery; delivery and risk owners challenge its evidence. Operations and value owners use the resulting outcomes."
   },
   "investment-stack": {
     "sources": "D01,M01,T03,T06",
@@ -186,7 +186,7 @@
     "caption": "Proposed event architecture · traces and derived evidence need their own data controls.",
     "finding": "Evaluation workflows use operational feedback, while agent risk guidance calls attention to tool and action behavior.",
     "decision": "Join application events, gateway decisions and reviewer corrections without broadly copying sensitive raw prompts into monitoring systems.",
-    "words": "Three event streams enter a controlled telemetry boundary. The joined records support operations, security monitoring and reviewed regression-case curation."
+    "words": "Three event streams enter a controlled telemetry boundary. The joined records support operations, platform monitoring and reviewed regression-case curation."
   },
   "strategy-choices": {
     "sources": "G01,D01,A01,A03",
@@ -209,11 +209,11 @@
     "decision": "Provide joined artifacts and negative fixtures so the logical design can be exercised.",
     "words": "A payment test task binds permitted context, resource scope and deadline. A policy decision authorizes only the sandbox action. An evaluation manifest joins artifact and corpus versions. The evidence record links task, policy and evaluation and remains held for human review."
   },
-  "appsec-loop": {
-    "sources": "E08,E09,A03",
-    "caption": "Proposed AppSec workflow · triage, fix and dismissal are distinct evidence paths.",
-    "finding": "Autofix reports remediation workflow gains; static-analysis research shows model-dependent precision and recall.",
-    "decision": "Validate fixes independently and audit dismissals so reducing alert volume cannot conceal missed vulnerabilities.",
-    "words": "A scanner finding is enriched with trace and contextual evidence. Human triage chooses a draft remediation or a retained dismissal. Fixes rerun the scanner and regression checks. Dismissals enter a sampled audit and missed true positives are reopened. Both paths retain reviewer, versions and outcomes."
+  "failure-resolution": {
+    "sources": "E06,E07",
+    "caption": "Proposed QA workflow · a temporary quarantine is not a successful repair.",
+    "finding": "AutoDiagnose informs evidence-based failure triage. FlakyGuard reports reproducibility and accepted repairs using separate denominators.",
+    "decision": "Verify repairs against the original failure. Require an owner, expiry and replacement coverage for a confirmed flaky test placed in quarantine.",
+    "words": "Capture CI traces, fixture versions and repeatability evidence. An owner confirms whether the cause is product, test, data or environment. Proposed repairs require an independent retest and relevant regression. A confirmed flaky test may instead enter a time-limited quarantine with replacement coverage. Both paths keep a resolution record; the quarantined test remains open until restored."
   }
 }

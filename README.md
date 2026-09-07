@@ -1,8 +1,7 @@
-# AI-Enabled QE & AppSec Research Base
+# AI-Enabled Quality Engineering Research Base
 
 A static documentation site (Jekyll + just-the-docs, deployed with GitHub Actions to GitHub Pages)
-that collects evidence and reusable method for AI-assisted quality engineering and application
-security in regulated financial services.
+that collects evidence and reusable method for AI-assisted quality engineering in regulated financial services.
 
 [Browse the research site](https://tomqwu.github.io/ai_qe/).
 
@@ -22,7 +21,7 @@ topic pages and a filterable library backed by `_data/industry_sources.json`.
 It distinguishes forecasts, surveys, experiments, cases, frameworks and product docs.
 Public Gartner abstracts are labeled; no licensed findings or vendor rankings are implied.
 
-- `assets/pdf/ai-qe-industry-research-2026.pdf`: original 13-page brief.
+- `assets/pdf/ai-qe-industry-research-v1.7.0.pdf`: current 13-page QA brief.
 - `tools/build_industry_brief.py`: rebuild with reportlab and Pillow.
 - `tools/gather_industry_docs.py`: gather public PDFs into ignored `research/downloads/`.
 - `research/document-manifest.json`: retrieval status, provenance and SHA-256 hashes.
@@ -107,6 +106,7 @@ python tools/verify_site.py _site
 python tools/verify_industry.py _site
 node --test tools/qe-model.test.cjs
 python tools/verify_pdf.py
+python tools/verify_qe_scope.py _site
 ```
 
 These checks run on pull requests and before deployment. They validate local links,
@@ -114,6 +114,10 @@ anchors, search results, PDF field integrity, continuous numeric response ranges
 generator consistency and saving long narrative answers. External citations require
 source review; the link check does not treat a successful HTTP response as evidence
 that a claim is correct.
+
+The scope check also inspects published page content, data, PDF metadata and form fields
+to keep retired material out of the QA publication. Historical source files remain
+excluded from the site through `_config.yml`.
 
 Evidence pages use study summaries with findings and caveats visible and methodology
 in native expandable details. Preserve these fields when adding a study. The remote
@@ -161,7 +165,7 @@ Serve the build under `/ai_qe/` on port 61600 and run `npm run test:browser`. Se
 
 Canonical economics live in `_data/scenarios.json`; regenerate derived tables with `node tools/build_scenario_data.cjs`. Regenerate diagrams in order with `python tools/build_expanded_diagrams.py` then `python tools/build_audit_diagrams.py`. The payment reference contracts and failure fixtures are under `assets/examples/payments/`.
 
-For a content release, update `version` and `slide_edition` in `_data/release.yml`, regenerate the static audience PDFs using `node tools/export_decks.cjs`, render and visually inspect every page, and update the release history. A player-only patch may advance `version` while retaining `slide_edition` and its existing PDFs; document that distinction in the release notes. The original 13-page research companion remains a dated archive; it is not the current slide export.
+For a content release, update `version` and `slide_edition` in `_data/release.yml`, regenerate the static audience PDFs using `node tools/export_decks.cjs`, render and visually inspect every page, and update the release history. A player-only patch may advance `version` while retaining `slide_edition` and its existing PDFs; document that distinction in the release notes. The 13-page QA research companion has its own edition; it is not a slide export. Superseded mixed-scope downloads are excluded from publication.
 
 ## Dictionary authoring
 

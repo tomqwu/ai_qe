@@ -13,8 +13,8 @@
       "label": "Testing & evaluation"
     },
     {
-      "id": "security",
-      "label": "Security & operations"
+      "id": "operations",
+      "label": "Platform controls & operations"
     },
     {
       "id": "economics",
@@ -104,7 +104,7 @@
       "aliases": [
         "AI-assisted quality engineering"
       ],
-      "definition": "Using AI to help people design tests, investigate failures and review security findings. People still need evidence that the resulting work is correct.",
+      "definition": "Using AI to help people design tests, investigate failures and maintain automation. People still need evidence that the resulting work is correct.",
       "example": "An assistant drafts a payment test; an engineer checks its expected result.",
       "related": [
         "qe-for-ai",
@@ -130,26 +130,9 @@
       "learn": "/docs/industry/reference-contracts/"
     },
     {
-      "id": "appsec",
-      "term": "Application security (AppSec)",
-      "category": "foundations",
-      "aliases": [
-        "AppSec",
-        "Application security"
-      ],
-      "definition": "Work that identifies, prevents and fixes security weaknesses in software and its delivery process.",
-      "example": "Triage a scanner finding, verify that the proposed fix blocks the attack, and retain review evidence.",
-      "related": [
-        "sast",
-        "dast",
-        "false-positive"
-      ],
-      "learn": "/docs/industry/architecture/"
-    },
-    {
       "id": "authentication",
       "term": "Authentication",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Identity verification",
         "AuthN"
@@ -165,7 +148,7 @@
     {
       "id": "authorization",
       "term": "Authorization",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Access decision",
         "AuthZ",
@@ -206,7 +189,7 @@
         "Reference dataset"
       ],
       "definition": "A defined task set and measurement method used to compare performance. Results apply to those tasks and conditions before any broader inference is made.",
-      "example": "Success on a public coding set does not establish savings on the bank’s regression work.",
+      "example": "Success on a public coding set does not establish savings on the bank\u2019s regression work.",
       "related": [
         "held-out-set",
         "transferability",
@@ -241,7 +224,7 @@
         "RCT"
       ],
       "definition": "Evidence supporting the claim that an intervention changed an outcome, using a design that addresses alternative explanations. Its scope still depends on the study.",
-      "example": "A randomized comparison estimates a tool’s effect for the studied participants and tasks.",
+      "example": "A randomized comparison estimates a tool\u2019s effect for the studied participants and tasks.",
       "related": [
         "observational-evidence",
         "transferability"
@@ -257,7 +240,7 @@
         "Continuous delivery",
         "Continuous deployment"
       ],
-      "definition": "Automated steps that integrate code and prepare it for release. CD can mean delivery or deployment; this site’s release path retains an explicit approval decision.",
+      "definition": "Automated steps that integrate code and prepare it for release. CD can mean delivery or deployment; this site\u2019s release path retains an explicit approval decision.",
       "example": "A code change triggers tests and evidence collection before an approved release.",
       "related": [
         "delivery-systems",
@@ -295,7 +278,7 @@
         "Context retrieval"
       ],
       "definition": "The proposed component that supplies relevant, versioned material the task is allowed to access. Retrieved text remains untrusted as instructions.",
-      "example": "Supply the approved API contract, excluding another team’s restricted customer records.",
+      "example": "Supply the approved API contract, excluding another team\u2019s restricted customer records.",
       "related": [
         "rag",
         "prompt-injection",
@@ -357,7 +340,7 @@
     {
       "id": "digest",
       "term": "Digest",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Hash",
         "Checksum",
@@ -374,7 +357,7 @@
     {
       "id": "drift",
       "term": "Drift",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Distribution shift",
         "Behavior drift"
@@ -389,27 +372,6 @@
       "learn": "/docs/industry/architecture/"
     },
     {
-      "id": "dast",
-      "term": "Dynamic application security testing (DAST)",
-      "category": "security",
-      "aliases": [
-        "DAST",
-        "Dynamic analysis"
-      ],
-      "definition": "Probing a running application for security weaknesses by observing its responses. Scope and authorization matter before running these checks.",
-      "example": "Send authorized test requests to a sandbox endpoint and inspect its responses.",
-      "related": [
-        "sast",
-        "sandbox-checks",
-        "appsec"
-      ],
-      "learn": "/docs/industry/evidence/",
-      "reference": {
-        "title": "OWASP: vulnerability scanning",
-        "url": "https://owasp.org/www-community/Vulnerability_Scanning_Tools"
-      }
-    },
-    {
       "id": "eligibility",
       "term": "Eligibility",
       "category": "economics",
@@ -417,7 +379,7 @@
         "Eligible work",
         "Addressable tasks"
       ],
-      "definition": "The share of an activity that fits the agreed AI use case and its control constraints. It is an input to the site’s savings model.",
+      "definition": "The share of an activity that fits the agreed AI use case and its control constraints. It is an input to the site\u2019s savings model.",
       "example": "Exclude tasks needing restricted data when the pilot cannot access that data.",
       "related": [
         "adoption",
@@ -445,7 +407,7 @@
     {
       "id": "evaluation-manifest",
       "term": "Evaluation manifest",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Manifest",
         "Versioned configuration"
@@ -499,7 +461,7 @@
     {
       "id": "fallback",
       "term": "Fallback",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Safe fallback",
         "Rollback",
@@ -539,12 +501,11 @@
         "False alarm",
         "FP"
       ],
-      "definition": "A result that flags a problem or positive condition when that condition is absent. Interpret “positive” according to the task.",
-      "example": "A security scanner reports a vulnerability that investigation shows is not present.",
+      "definition": "A result that flags a problem or positive condition when that condition is absent. Interpret \u201cpositive\u201d according to the task.",
+      "example": "An automated test reports a payment defect, but investigation finds an invalid fixture rather than a product defect.",
       "related": [
         "false-negative",
-        "precision",
-        "appsec"
+        "precision"
       ],
       "learn": "/docs/industry/evidence/"
     },
@@ -619,7 +580,7 @@
     {
       "id": "idempotency-key",
       "term": "Idempotency key",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Idempotency",
         "Duplicate request"
@@ -642,7 +603,7 @@
         "Scoring rubric",
         "Human agreement"
       ],
-      "definition": "Comparing a model judge’s scores with expert ratings on representative cases, then checking disagreement, bias and consistency.",
+      "definition": "Comparing a model judge\u2019s scores with expert ratings on representative cases, then checking disagreement, bias and consistency.",
       "example": "Inspect cases where the judge passes an answer that experts rate as incorrect.",
       "related": [
         "llm-judge",
@@ -672,14 +633,14 @@
     {
       "id": "least-privilege",
       "term": "Least privilege",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Scoped permission",
         "Scope",
         "Bounded access"
       ],
       "definition": "Giving an identity only the access needed for its task, limited by resource, action and time where possible.",
-      "example": "Permit one test run in an isolated project until the task’s authorization expires.",
+      "example": "Permit one test run in an isolated project until the task\u2019s authorization expires.",
       "related": [
         "authorization",
         "non-human-identity",
@@ -713,7 +674,7 @@
         "Mutant"
       ],
       "definition": "Deliberately introducing small faults to check whether tests detect them. Detection adds evidence about test strength; it does not prove all real defects will be caught.",
-      "example": "Change “reject negative amounts” to “accept negative amounts” and check that the test fails.",
+      "example": "Change \u201creject negative amounts\u201d to \u201caccept negative amounts\u201d and check that the test fails.",
       "related": [
         "test-oracle",
         "coverage",
@@ -759,14 +720,14 @@
     {
       "id": "non-human-identity",
       "term": "Non-human identity",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "NHI",
         "Service identity",
         "Workload identity"
       ],
       "definition": "An identity assigned to a service or workload rather than a person, with an owner and managed permissions.",
-      "example": "The test runner uses its own scoped identity instead of an engineer’s broad credentials.",
+      "example": "The test runner uses its own scoped identity instead of an engineer\u2019s broad credentials.",
       "related": [
         "authentication",
         "least-privilege"
@@ -798,7 +759,7 @@
         "Effect size estimate",
         "Single estimate"
       ],
-      "definition": "One numerical estimate of an outcome or effect. It should be read with the study’s method, uncertainty and measurement unit.",
+      "definition": "One numerical estimate of an outcome or effect. It should be read with the study\u2019s method, uncertainty and measurement unit.",
       "example": "An estimated time reduction needs its task definition and uncertainty, not only a percentage.",
       "related": [
         "confidence-interval",
@@ -814,7 +775,7 @@
         "Positive predictive value"
       ],
       "definition": "The share of positive findings that are correct: true positives divided by all reported positives. High precision means fewer false alarms among the findings.",
-      "example": "Of 10 reported vulnerabilities, 8 are confirmed: precision is 80%.",
+      "example": "Of 10 reported payment defects, 8 are confirmed: precision is 80%.",
       "related": [
         "recall",
         "false-positive"
@@ -824,7 +785,7 @@
     {
       "id": "prompt-injection",
       "term": "Prompt injection",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Indirect prompt injection",
         "Malicious instructions"
@@ -919,7 +880,7 @@
         "Guardrail"
       ],
       "definition": "The minimum acceptable quality and safety conditions that must hold while testing a productivity improvement. Mandatory gates cannot be offset by time saved.",
-      "example": "Hold the pilot when a required security check fails, even if tests are produced faster.",
+      "example": "Hold the pilot when a required payment assertion fails, even if tests are produced faster.",
       "related": [
         "release-authority",
         "evaluation-contract",
@@ -936,7 +897,7 @@
         "Detection rate"
       ],
       "definition": "The share of actual positive cases detected: true positives divided by all actual positives. Measuring it requires knowing which cases truly contain the condition.",
-      "example": "A seeded set contains 10 vulnerabilities and the tool finds 8: recall is 80%.",
+      "example": "A seeded set contains 10 payment faults and the test suite detects 8: recall is 80%.",
       "related": [
         "precision",
         "false-negative"
@@ -1005,7 +966,7 @@
         "RAG",
         "Retrieval augmented generation"
       ],
-      "definition": "Finding relevant material and supplying it to a model as context for its response. Retrieval must respect the requesting identity’s permissions.",
+      "definition": "Finding relevant material and supplying it to a model as context for its response. Retrieval must respect the requesting identity\u2019s permissions.",
       "example": "Retrieve the approved payment specification before drafting its tests.",
       "related": [
         "context-service",
@@ -1052,27 +1013,6 @@
       "learn": "/docs/economics/savings-model/"
     },
     {
-      "id": "sast",
-      "term": "Static application security testing (SAST)",
-      "category": "security",
-      "aliases": [
-        "SAST",
-        "Static analysis"
-      ],
-      "definition": "Analyzing source code or related artifacts for potential security weaknesses without running the application being examined.",
-      "example": "Flag a potentially unsafe data flow from user input to a database query.",
-      "related": [
-        "dast",
-        "appsec",
-        "false-positive"
-      ],
-      "learn": "/docs/industry/evidence/",
-      "reference": {
-        "title": "OWASP: source code analysis",
-        "url": "https://owasp.org/www-community/Source_Code_Analysis_Tools"
-      }
-    },
-    {
       "id": "team-workflow",
       "term": "Team workflow",
       "category": "architecture",
@@ -1092,7 +1032,7 @@
     {
       "id": "telemetry",
       "term": "Telemetry",
-      "category": "security",
+      "category": "operations",
       "aliases": [
         "Observability",
         "Operational signals"
@@ -1131,7 +1071,7 @@
         "Expected behavior",
         "Independent expected result"
       ],
-      "definition": "The basis for deciding whether observed behavior is correct. It should come from an independent rule or trusted reference, rather than simply repeat the generated code’s assumptions.",
+      "definition": "The basis for deciding whether observed behavior is correct. It should come from an independent rule or trusted reference, rather than simply repeat the generated code\u2019s assumptions.",
       "example": "The payment specification requires HTTP 422 and no new payment for a negative amount.",
       "related": [
         "mutation-testing",
@@ -1148,7 +1088,7 @@
         "Generalizability"
       ],
       "definition": "How well a finding may apply to a different population, task or operating setting. This site requires local measurement before scaling a claim.",
-      "example": "A student programming study may not predict an experienced team’s AppSec review effort.",
+      "example": "A student programming study may not predict an experienced team\u2019s regression-maintenance effort.",
       "related": [
         "benchmark",
         "baseline",

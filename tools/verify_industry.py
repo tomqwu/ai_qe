@@ -45,11 +45,11 @@ for audience in ('evp','technical'):
     actual=[int(n) for n in re.findall(r'id="slide-(\d+)"',text)]
     assert actual==list(range(1,count+1)), f'{audience}: incomplete or duplicate slides'
     assert len(re.findall(r'include slide-footer.html',text))==count
-pdf=PdfReader(ROOT/'assets/pdf/ai-qe-industry-research-2026.pdf')
+pdf=PdfReader(ROOT/'assets/pdf/ai-qe-industry-research-v1.7.0.pdf')
 assert len(pdf.pages)==13
 assert all(len(page.extract_text().strip())>100 for page in pdf.pages), 'Blank PDF page'
 urls={str(a.get_object().get('/A',{}).get('/URI','')) for page in pdf.pages for a in page.get('/Annots',[])}
-original_sources=json.loads((ROOT/'assets/data/industry-sources-2026-09-05.json').read_text())
+original_sources=sources
 assert {s['url'] for s in original_sources}<=urls, 'Missing or stale PDF publisher links'
 if site:
     assert json.loads((site/'assets/data/industry-sources.json').read_text())==sources

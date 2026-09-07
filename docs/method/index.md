@@ -2,7 +2,7 @@
 title: Method
 nav_order: 6
 has_children: true
-description: "Reusable method for AI-QE and AppSec studies - discovery questionnaire design, interview and data request, phased pilot design, and executive presentation outline."
+description: "Reusable method for AI-QE studies - discovery questionnaire design, interview and data request, phased pilot design, and executive presentation outline."
 ---
 
 # Method

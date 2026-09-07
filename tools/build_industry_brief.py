@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild the original research brief; requires reportlab and Pillow."""
+"""Rebuild the QA research brief; requires reportlab and Pillow."""
 import json
 from io import BytesIO
 from PIL import Image
@@ -11,7 +11,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import Paragraph
 from reportlab.lib.utils import ImageReader
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'assets/pdf/ai-qe-industry-research-2026.pdf'
+OUT=ROOT/'assets/pdf/ai-qe-industry-research-v1.7.0.pdf'
 S=json.loads((ROOT/'_data/industry_sources.json').read_text())
 W,H=595.28,841.89
 NAVY='#152e40';TEAL='#096d69';INK='#405563';LINE='#cfdbd9';PAPER='#fcfcfa'
@@ -49,7 +49,7 @@ def page(kicker,title,sub=''):
     y=para(title,48,96,size=29,bold=True,color=NAVY,leading=32)
     if sub:y=para(sub,48,y+16,size=12.5)
     line(H-45)
-    c.setFillColor(HexColor(INK));c.setFont('Helvetica',8);c.drawString(48,26,'Independent synthesis / Reviewed 5 September 2026')
+    c.setFillColor(HexColor(INK));c.setFont('Helvetica',8);c.drawString(48,26,'Independent synthesis / QA edition v1.7.0 / 7 September 2026')
     c.setFillColor(HexColor(TEAL));c.setFont('Helvetica-Bold',9);c.drawRightString(W-48,26,f'{PAGE:02d}')
     return y+28
 
@@ -88,7 +88,7 @@ para('A financial-services perspective on industry adoption, evidence, technolog
 note('30 curated primary-source entries. Includes public Gartner and McKinsey material, DORA, enterprise research, NIST, OWASP, OSFI and representative product documentation.',678)
 # 2 / Thesis
 y=page('01 / Strategic thesis','A broader quality mandate','The opportunity is a shared quality capability across assisted delivery and AI applications.')
-y=blocks([('AI for QE','Generate test candidates, diagnose failures and support security review. Independent checks establish whether the output is useful.'),('QE for AI','Evaluate task outcomes, retrieval and tool actions. Test the application configuration and its operating boundary.'),('Shared foundation','Maintain task contracts, trusted evaluation cases, version history and accountable decisions. Reuse platform services where they improve integration.')],y)
+y=blocks([('AI for QE','Generate test candidates, diagnose failures and prepare release evidence. Independent checks establish whether the output is useful.'),('QE for AI','Evaluate task outcomes, retrieval and tool actions. Test the application configuration and its operating boundary.'),('Shared foundation','Maintain task contracts, trusted evaluation cases, version history and accountable decisions. Reuse platform services where they improve integration.')],y)
 y=heading('Strategic implication',y+12)
 y=para('AI can contribute more artifacts and actions while QE strengthens the organization\'s ability to judge them. The durable investment is the evaluation system, engineering capability and evidence around the tools.',48,y)
 note('Authored synthesis informed by analyst perspectives, engineering research and assurance frameworks. It does not describe a deployed bank system.',y+22,'G01,M01,D01,A01')
@@ -131,12 +131,12 @@ note('Proposed lifecycle. Re-evaluate changes to models, prompts, retrieval, too
 # 7 / authority
 y=page('06 / Agent architecture','Permission lives outside the model','A proposed application boundary for a governed QE workflow.')
 y=flow([('Context','Scoped code, contracts and test evidence.'),('AI workflow','Model, prompts, retrieval and memory.'),('Policy gate','Identity, tool scope, budget and approval.'),('Bounded tools','Sandbox, test runner and draft change.')],y+8)
-y=blocks([('Verification','Independent tests, security checks and review govern the release decision.'),('Evidence','Join configuration versions, tool calls, artifacts, decisions and cost under a privacy-aware logging standard.'),('Recovery','Test denied actions, bounded retries, escalation, stop conditions and fallback.')],y)
+y=blocks([('Verification','Independent tests, data and access checks and review govern the release decision.'),('Evidence','Join configuration versions, tool calls, artifacts, decisions and cost under a privacy-aware logging standard.'),('Recovery','Test denied actions, bounded retries, escalation, stop conditions and fallback.')],y)
 y=note('Retrieved content and tool output remain untrusted. Runtime permission checks should not depend on the model obeying a prompt.',y,'A03,A05,R01')
 note('OSFI\'s July 2026 bulletin offers sound practices complementing existing guidelines. Revised E-23 is effective May 1, 2027; assess system applicability with institutional model-risk owners.',y+15,'R02')
 # 8 / operating
 y=page('07 / Operating model','Ownership connects quality and value')
-y=blocks([('Product / business','Task outcomes, acceptance criteria and accountable value owner.'),('QE / engineering','Test validity, evaluation datasets and delivery integration.'),('Platform / AI','Approved runtime, identity, context services and observability.'),('Security / risk','Threat scenarios, policy and independent challenge.'),('Finance / delivery','Total cost, use of released capacity and validated benefit.')],y)
+y=blocks([('Product / business','Task outcomes, acceptance criteria and accountable value owner.'),('QE / engineering','Test validity, evaluation datasets and delivery integration.'),('Platform / AI','Approved runtime, identity, context services and observability.'),('Delivery / risk','Quality exceptions, recovery and independent challenge.'),('Finance / delivery','Total cost, use of released capacity and validated benefit.')],y)
 y=heading('Measure the whole workflow',y+2)
 y=para('Include preparation, review, correction, repeated runs and controls in active effort. Measure escaped defects and rework alongside adoption, latency and cost. Agent runtime and human effort are different units.',48,y)
 note('Proposed ownership model. Released capacity needs an explicit capture mechanism; external task gains do not establish enterprise savings.',y+16,'D01,D02,M01')

@@ -47,11 +47,11 @@ Earlier entries below record the initial review; this entry supersedes their sta
 
 **Not verified.** World Quality Report cost-of-quality share; any Gartner AI-testing productivity figure; Snyk DeepCode AI Fix accuracy; full DORA 2026 ROI PDF; Stack Overflow 2026 survey; a Bain or Deloitte 2026 quantified testing gain.
 
-**Pages created.** Productivity benchmarks; Testing and AppSec studies; What the evidence supports; Savings model; Slide language.
+**Pages created.** Productivity benchmarks; Testing studies; What the evidence supports; Savings model; Slide language.
 
 ## 2026-09-04: Canadian governance context
 
-**Question.** Which supervisory instruments govern AI-assisted delivery, testing and AppSec in a federally regulated bank, and what is their current status?
+**Question.** Which supervisory instruments govern AI-assisted delivery and testing in a federally regulated bank, and what is their current status?
 
 **Checked against primary sources.** OSFI B-13, B-10, E-21, E-23 (2027), Integrity and Security Guideline, incident reporting advisory; OSFI Technology Risk Bulletins on generative and agentic AI (July 2026) and frontier AI (April 2026); FIFAI II (March 2026); Annual Risk Outlook 2026-27; OSFI-FCAC AI risk report (2024); OPC generative-AI principles; Bill C-36; Quebec Law 25; "AI for All" strategy; FSB consultation on sound practices for AI (June 2026); US SR 26-2 and OCC 2026-13; EU AI omnibus and DORA.
 
