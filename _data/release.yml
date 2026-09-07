@@ -1,5 +1,5 @@
-version: "1.6.0"
+version: "1.6.1"
 slide_edition: "1.3.0"
 fintech_edition: "1.6.0"
 updated: "2026-09-07"
-latest_change: "Added a fictional fintech case with 75 offshore QA staff, an interactive payment story, eight AI-assisted workflow stages, maturity and capacity scenarios, and 30 new audience slides with PDFs. Research decks retain edition v1.3.0."
+latest_change: "Aligned fintech workflow labels with their descriptions and arranged all eight stage buttons into an even, responsive grid. Fintech slides and PDFs retain edition v1.6.0; research decks retain v1.3.0."
