@@ -1,0 +1,55 @@
+---
+title: Dictionary
+nav_order: 1.8
+permalink: /dictionary/
+has_toc: false
+search_exclude: true
+description: Plain-language definitions, acronyms and examples for AI, quality engineering, architecture, security and business value.
+dictionary: true
+---
+<div class="dictionary" data-dictionary>
+  <p class="eyebrow">The language behind the system</p>
+  <h1>AI × QE dictionary</h1>
+  <p class="dictionary-lead">Understand the terms. Follow the architecture.<br>Explain the idea in your own words.</p>
+  <p>{{ site.data.dictionary.terms.size }} plain-language definitions, with examples and links to the research. Start with <a href="#ai-for-qe">AI for QE</a>, <a href="#qe-for-ai">QE for AI</a> or <a href="#released-capacity">released capacity</a>.</p>
+
+  <div class="dictionary-controls" data-dictionary-controls hidden>
+    <div class="dictionary-field"><label for="dictionary-query">Find a term or acronym</label><input id="dictionary-query" type="search" placeholder="Try RAG, oracle, permission or savings…" autocomplete="off" spellcheck="false" aria-controls="dictionary-results"></div>
+    <div class="dictionary-field"><label for="dictionary-topic">Topic</label><select id="dictionary-topic" aria-controls="dictionary-results"><option value="">All topics</option>{% for category in site.data.dictionary.categories %}<option value="{{ category.id }}">{{ category.label }}</option>{% endfor %}</select></div>
+    <button type="button" data-dictionary-reset>Clear</button>
+  </div>
+  <div class="dictionary-index" id="dictionary-index">
+    <p data-dictionary-count role="status" aria-live="polite">{{ site.data.dictionary.terms.size }} terms · A–Z</p>
+    <nav aria-label="Dictionary letters" class="dictionary-letters">{% assign previous = '' %}{% for term in site.data.dictionary.terms %}{% assign letter = term.term | slice: 0 | upcase %}{% if letter != previous %}<a href="#{{ term.id }}" data-letter="{{ letter }}">{{ letter }}</a>{% assign previous = letter %}{% endif %}{% endfor %}</nav>
+  </div>
+  <figure class="dictionary-map" data-dictionary-map aria-labelledby="dictionary-map-title">
+    <figcaption id="dictionary-map-title"><strong>Four steps in the generated-test path</strong><span>Select a component to learn its role.</span></figcaption>
+    <ol>
+      <li><a href="#qe-runtime"><span>01 / Generate</span><strong>AI test author</strong><small>Proposes a candidate</small></a></li>
+      <li><a href="#action-gateway"><span>02 / Authorize</span><strong>Permission gate</strong><small>Controls the tool action</small></a></li>
+      <li><a href="#sandbox-checks"><span>03 / Verify</span><strong>Test sandbox</strong><small>Checks the candidate</small></a></li>
+      <li><a href="#release-authority"><span>04 / Decide</span><strong>Human approval</strong><small>Reviews the evidence</small></a></li>
+    </ol>
+    <p>A simplified path through the proposed design. Decisions and results feed the <a href="#evidence-store">evidence log</a>. <a href="{{ '/demos/architecture/' | relative_url }}">Explore all 11 components in 3D →</a></p>
+  </figure>
+
+  <div class="dictionary-empty" data-dictionary-empty hidden><strong>No matching terms</strong><p>Try a shorter phrase, an acronym, or choose All topics. Clear resets both filters.</p></div>
+  <div class="dictionary-results" id="dictionary-results">
+  {% for term in site.data.dictionary.terms %}{% assign category = site.data.dictionary.categories | where: 'id', term.category | first %}
+    <article class="dictionary-term" data-dictionary-term data-category="{{ term.category }}" data-letter="{{ term.term | slice: 0 | upcase }}" aria-labelledby="{{ term.id }}">
+      <div class="dictionary-meta">{{ category.label }}{% if term.demo_node %}<span>3D component</span>{% endif %}</div>
+      <h2 class="no_anchor" id="{{ term.id }}" tabindex="-1"><a href="#{{ term.id }}" title="Permanent link to {{ term.term | escape }}">{{ term.term }}</a></h2>
+      <p class="dictionary-aliases">Also found as: {{ term.aliases | join: ' · ' }}</p>
+      <p class="dictionary-definition">{{ term.definition }}</p>
+      <div class="dictionary-example"><strong>For example</strong><p>{{ term.example }}</p></div>
+      <div class="dictionary-more">
+        <p><a href="{{ term.learn | relative_url }}">Read in context →</a>{% if term.demo_node %} · <a href="{{ '/demos/architecture/' | relative_url }}?component={{ term.demo_node }}">View component in 3D ↗</a>{% endif %}</p>
+        <p>Related: {% for id in term.related %}{% assign related = site.data.dictionary.terms | where: 'id', id | first %}<a href="#{{ id }}">{{ related.term }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+        {% if term.reference %}<p><a href="{{ term.reference.url }}">{{ term.reference.title }} ↗</a></p>{% endif %}
+      </div>
+      <a class="dictionary-back" href="#dictionary-index">Back to term index ↑</a>
+    </article>
+  {% endfor %}
+  </div>
+  <p class="dictionary-editorial">These are original editorial explanations of how terms are used on this site. Architecture component names describe a proposed design; examples are illustrative. “Read in context” opens the relevant explanation and its sources. For original publications, visit the <a href="{{ '/docs/industry/library/' | relative_url }}">document library</a>.</p>
+</div>

@@ -42,7 +42,7 @@
     <label class="slide-picker-label">Go to slide <select aria-label="Go to slide"></select></label>
   </nav>
   <aside class="deck-diagram-panel" aria-label="Diagram view and flow controls" hidden></aside>
-  <dialog class="deck-drawer" aria-labelledby="drawer-title"><div class="drawer-heading"><h2 id="drawer-title">Slide notes</h2><button type="button" data-close-drawer aria-label="Close notes">Close ×</button></div><div data-drawer-content></div></dialog>
+  <dialog class="deck-drawer" aria-labelledby="drawer-title"><div class="drawer-heading"><h2 id="drawer-title">Slide notes</h2><button type="button" data-close-drawer aria-label="Close notes">Close ×</button></div><p class="drawer-dictionary"><a href="{{ '/dictionary/' | relative_url }}" target="_blank" rel="noopener">Dictionary · terms &amp; acronyms ↗</a> <span>(opens in a new tab)</span></p><div data-drawer-content></div></dialog>
   <template data-edition-content>{% include release-banner.html %}<p><a href="{{ '/releases/' | relative_url }}" target="_top">Full release history and downloads →</a></p></template>
   <p class="deck-message" role="status"></p>
   <noscript><p class="no-script">All slides are shown in reading order. Use your browser’s print command to save a copy.</p></noscript>

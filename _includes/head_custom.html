@@ -11,3 +11,7 @@
 <link rel="stylesheet" href="{{ "/assets/css/release.css" | relative_url }}?v={{ site.data.release.version }}">
 <link rel="stylesheet" href="{{ '/assets/css/motion.css' | relative_url }}?v={{ site.data.release.version }}">
 <script src="{{ '/assets/js/motion.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+{% if page.dictionary %}
+<link rel="stylesheet" href="{{ '/assets/css/dictionary.css' | relative_url }}?v={{ site.data.release.version }}">
+<script src="{{ '/assets/js/dictionary.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+{% endif %}

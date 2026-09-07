@@ -47,7 +47,7 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
-      - name: Index slide anchors
+      - name: Index slide and dictionary anchors
         run: python tools/finalize_site.py _site
       - name: Browser navigation and viewport regression checks
         run: |
@@ -55,6 +55,7 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
           python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
           node tools/browser-smoke.cjs
+          node tools/dictionary-test.cjs
           node tools/architecture-demo/browser-test.cjs
       - name: Check site links and search index
         run: python tools/verify_site.py _site

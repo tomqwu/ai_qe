@@ -26,8 +26,34 @@ function stageStart(i){return scenario.steps.slice(0,i).reduce((sum,s)=>sum+s.du
 function seconds(t){return `${String(Math.floor(t/60)).padStart(2,'0')}:${String(Math.floor(t%60)).padStart(2,'0')}`}
 function setPlaying(value){playing=Boolean(value)&&!reduce.matches&&!renderFailed&&ready;if(playing&&elapsed>=total())elapsed=0;updateButtons();}
 function updateButtons(){const play=$('[data-play]');play.textContent=playing?'Ⅱ Pause story':elapsed>=total()?'↻ Replay story':'▶ Play story';play.setAttribute('aria-pressed',String(playing));play.disabled=reduce.matches||renderFailed||!ready;play.title=reduce.matches?'Reduced motion is enabled. Use the stage arrows or timeline.':'';$('[data-cinematic]').setAttribute('aria-pressed',String(cinematic));$('[data-cinematic]').disabled=reduce.matches||renderFailed;}
-function selectScenario(id){scenario=data.scenarios.find(s=>s.id===id)||data.scenarios[0];elapsed=0;stageIndex=-1;inspected='';$('[data-scenario-label]').textContent=scenario.title.toUpperCase();$('[data-progress-label]').textContent=`Stage 1 of ${scenario.steps.length}`;$('#story-progress').max=total();host.querySelectorAll('[data-scenario]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scenario===scenario.id)));const url=new URL(location.href);url.searchParams.set('scenario',scenario.id);history.replaceState(null,'',url);setPlaying(!capture);updateStage(true);render();}
-function inspect(id){const node=data.nodes.find(n=>n.id===id);if(!node)return;inspected=id;$('#component-select').value=id;$('[data-component-detail]').textContent=node.technicalTitle+': '+node.detail;const source=$('[data-component-source]');source.href=new URL(`../../docs/industry/library/#${node.sources.split(',')[0]}`,location.href).href;source.textContent=`Design basis · ${node.sources.split(',').join(' / ')} ↗`;highlight();}
+function selectScenario(id){scenario=data.scenarios.find(s=>s.id===id)||data.scenarios[0];elapsed=0;stageIndex=-1;resetInspection();$('[data-scenario-label]').textContent=scenario.title.toUpperCase();$('[data-progress-label]').textContent=`Stage 1 of ${scenario.steps.length}`;$('#story-progress').max=total();host.querySelectorAll('[data-scenario]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scenario===scenario.id)));const url=new URL(location.href);url.searchParams.set('scenario',scenario.id);url.searchParams.delete('component');history.replaceState(null,'',url);setPlaying(!capture);updateStage(true);render();}
+function inspect(id){
+ const node=data.nodes.find(n=>n.id===id);
+ if(!node){resetInspection();if(!capture){const url=new URL(location.href);url.searchParams.delete('component');history.replaceState(null,'',url);}highlight();return;}
+ inspected=id;$('#component-select').value=id;
+ $('[data-component-detail]').textContent=node.technicalTitle+': '+node.detail;
+ const source=$('[data-component-source]');
+ source.href=new URL(`../../docs/industry/library/#${node.sources.split(',')[0]}`,location.href).href;
+ source.textContent=`Design basis · ${node.sources.split(',').join(' / ')} ↗`;
+ const definition=$('[data-component-definition]');
+ const entry=document.querySelector('[data-component-definitions]').content.querySelector(`[data-node="${id}"]`);
+ definition.hidden=!entry;
+ if(entry){definition.href=entry.href;definition.textContent=`Dictionary: ${entry.textContent} ↗`;definition.setAttribute('aria-label',`Dictionary: ${entry.textContent} (opens in a new tab)`);}
+ if(!capture){const url=new URL(location.href);url.searchParams.set('component',id);history.replaceState(null,'',url);}
+ highlight();
+}
+function resetInspection(){
+ inspected='';$('#component-select').value='';
+ $('[data-component-detail]').textContent='Choose a module in the scene or from this list to inspect its role.';
+ $('[data-component-definition]').hidden=true;
+ const source=$('[data-component-source]');source.href=new URL('../../docs/industry/architecture/',location.href).href;source.textContent='Design basis & sources ↗';
+}
+function openRequestedStory(){
+ const params=new URLSearchParams(location.search),id=params.get('component'),node=data.nodes.find(n=>n.id===id);
+ const preferred=params.get('scenario')||(node&&data.scenarios.find(s=>s.steps.some(step=>step.node===id))?.id)||'generate';
+ selectScenario(preferred);
+ if(node&&!capture){const stage=scenario.steps.findIndex(step=>step.node===id);elapsed=stageStart(Math.max(0,stage));updateStage(true);inspect(id);setPlaying(false);render();}
+}
 function highlight(){
  if(!model||!scenario)return;
  labelLayoutKey='';
@@ -85,8 +111,8 @@ async function init(){try{
  setupRoutes();composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));composer.addPass(new UnrealBloomPass(new THREE.Vector2(1024,600),.13,.20,1.9));composer.addPass(new OutputPass());
  const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();let down;
  canvas.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY]});canvas.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const rect=canvas.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);for(const hit of raycaster.intersectObject(model,true)){let node=hit.object;while(node&&!node.userData.nodeId)node=node.parent;if(node){inspect(node.userData.nodeId);setPlaying(false);render();break;}}});
- ready=true;host.dataset.status='ready';host.dataset.moduleCount=String(modules.size);$('.scene-loading').hidden=true;resize();selectScenario(new URLSearchParams(location.search).get('scenario')||'generate');new ResizeObserver(resize).observe(view);requestAnimationFrame(tick);
- }catch(error){fail(error);if(data){ready=true;selectScenario(new URLSearchParams(location.search).get('scenario')||'generate');}}}
+ ready=true;host.dataset.status='ready';host.dataset.moduleCount=String(modules.size);$('.scene-loading').hidden=true;resize();openRequestedStory();new ResizeObserver(resize).observe(view);requestAnimationFrame(tick);
+ }catch(error){fail(error);if(data){ready=true;openRequestedStory();}}}
 
 host.querySelectorAll('[data-scenario]').forEach(b=>b.addEventListener('click',()=>{if(data)selectScenario(b.dataset.scenario)}));
 $('[data-play]').addEventListener('click',()=>{setPlaying(!playing);updateStage();render()});
