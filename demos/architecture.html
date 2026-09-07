@@ -14,10 +14,11 @@ permalink: /demos/architecture/
 <link rel="canonical" href="{{ page.url | absolute_url }}"><link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ '/assets/css/architecture-3d.css' | relative_url }}?v={{ site.data.release.version }}">
 <script type="module" src="{{ '/assets/js/architecture-3d.js' | relative_url }}?v={{ site.data.release.version }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/brand.css' | relative_url }}?v={{ site.data.release.version }}">
 </head>
 <body class="architecture-demo">
 <a class="skip-link" href="#demo-controls">Skip to playback controls</a>
-<header class="demo-header"><a class="demo-brand" href="{{ '/' | relative_url }}">AI × QE <span>ARCHITECTURE IN MOTION</span></a><nav aria-label="Demo resources"><a href="{{ '/docs/industry/architecture/' | relative_url }}">Research ↗</a><a href="{{ '/dictionary/' | relative_url }}" target="_blank" rel="noopener" aria-label="Dictionary (opens in a new tab)">Dictionary ↗</a><span>v{{ site.data.release.version }}</span></nav></header>
+<header class="demo-header"><a class="demo-brand" href="{{ '/' | relative_url }}">{% include brand/mark.svg %}AI × QE <span class="brand-destination">ARCHITECTURE IN MOTION</span></a><nav aria-label="Demo resources"><a href="{{ '/briefings/' | relative_url }}">Briefings ↗</a><a href="{{ '/dictionary/' | relative_url }}" target="_blank" rel="noopener" aria-label="Dictionary (opens in a new tab)">Dictionary ↗</a><span>v{{ site.data.release.version }}</span></nav></header>
 <main id="architecture-demo" data-model="{{ '/assets/models/assurance-platform.glb' | relative_url }}?v={{ site.data.release.version }}" data-story="{{ '/assets/data/architecture-demo.json' | relative_url }}?v={{ site.data.release.version }}">
 <div class="demo-intro"><div><p class="eyebrow">A PROPOSED ENTERPRISE ASSURANCE SYSTEM</p><h1>See where trust is earned.</h1></div><p>Generation proposes.<br>Independent controls decide.</p></div>
 <div class="scenario-tabs" role="group" aria-label="Architecture scenario"><button type="button" data-scenario="generate" aria-pressed="true">01 <span>Generate &amp; verify</span></button><button type="button" data-scenario="evaluate" aria-pressed="false">02 <span>Evaluate AI</span></button><button type="button" data-scenario="deny" aria-pressed="false">03 <span>Deny unsafe action</span></button><button type="button" data-scenario="hold" aria-pressed="false">04 <span>Hold failed proof</span></button></div>

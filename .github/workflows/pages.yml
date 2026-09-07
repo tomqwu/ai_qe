@@ -55,6 +55,7 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
           python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
           node tools/browser-smoke.cjs
+          node tools/sales-navigation-test.cjs
           node tools/dictionary-test.cjs
           node tools/fintech-browser-test.cjs
           node tools/architecture-demo/browser-test.cjs
@@ -66,6 +67,7 @@ jobs:
         run: |
           python tools/verify_publication.py _site
           python tools/verify_fintech.py _site
+          python -m unittest discover -s tools -p "test_release.py"
       - name: Check questionnaire fields and response ranges
         run: python tools/verify_pdf.py
       - name: Check QA-only publication scope
@@ -86,3 +88,21 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  release:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare current publication assets and checksums
+        run: python tools/prepare_release.py --output /tmp/ai-qe-release
+      - name: Publish the GitHub release after deployment
+        run: python tools/publish_release.py --package /tmp/ai-qe-release
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: From manual QA to AI-assisted delivery
 layout: home
 nav_order: 1
 description: A strategic vision and practical architecture for AI-assisted quality engineering in regulated financial services.
@@ -7,20 +7,28 @@ permalink: /
 has_toc: false
 ---
 
-<section class="home-hero" aria-labelledby="home-title">
-  <p class="eyebrow">Industry research / September 2026</p>
-  <h1 id="home-title">Quality engineering<br>for the AI era.</h1>
-  <p class="hero-lead">A strategic vision and assurance architecture for AI-assisted delivery, AI applications and the teams accountable for quality.</p>
-  <div class="hero-actions"><a class="btn btn-primary" href="{{ "/docs/industry/" | relative_url }}">Explore the research →</a><a class="text-link" href="#briefings">View audience briefings →</a></div>
-  <img class="industry-cover" src="{{ "/assets/images/industry/quality-studio.webp" | relative_url }}" alt="Conceptual quality engineering studio connecting specification, AI generation, testing, human review and release" width="1536" height="1024">
-  <div class="research-edition"><span>{{ site.data.industry_sources | size }} curated sources</span><span>Gartner · McKinsey · DORA · primary studies</span><span>Reviewed 6 September 2026</span></div>
+<section class="sales-hero" aria-labelledby="home-title">
+  <div class="hero-copy"><p class="eyebrow">AI × QE / A quality transformation briefing</p>
+  <h1 id="home-title">From manual QA to <span class="keep-together">AI-assisted</span> delivery.</h1>
+  <p class="hero-lead">Start with the work your teams do every day. See where AI can help, what the platform needs, and how to prove the value.</p>
+  <div class="hero-actions"><a class="btn btn-primary" href="{{ '/briefings/' | relative_url }}">Choose your briefing →</a><a class="text-link" href="{{ '/case-studies/fintech/' | relative_url }}">See the fintech story ↗</a></div></div>
+  <figure class="hero-art"><img src="{{ '/assets/images/industry/quality-studio.webp' | relative_url }}" alt="Illustrated workflow connecting requirements, AI assistance, test execution, human review and release" width="1536" height="1024"><figcaption><strong>One platform. Every QA workflow.</strong>Explore a proposed system for requirements, testing, evidence and human decisions.</figcaption></figure>
+</section>
+<div class="sales-proof-line"><span><strong>{{ site.data.industry_sources | size }} sources</strong> · findings with caveats</span><span><strong>4 audience decks</strong> · vision &amp; architecture</span><span><strong>1 fintech case</strong> · explicit assumptions</span></div>
+
+<section class="conversation-path" aria-labelledby="conversation-title">
+  <div class="section-heading"><div><p class="eyebrow">A path through the conversation</p><h2 id="conversation-title">Start with the audience. Go deeper together.</h2></div></div>
+  <div class="path-grid">
+    <a class="path-card" href="{{ '/briefings/' | relative_url }}?for=evp"><span class="path-number">01 / VISION</span><strong>Set the direction</strong><p>For EVPs and sponsors: the opportunity, target state and leadership choices.</p><span class="path-action">Open executive briefings →</span></a>
+    <a class="path-card" href="{{ '/case-studies/fintech/' | relative_url }}"><span class="path-number">02 / THE STORY</span><strong>Make it concrete</strong><p>75 offshore QA staff. A payment retry. Eight workflows to improve.</p><span class="path-action">Explore the assumed case →</span></a>
+    <a class="path-card" href="{{ '/briefings/' | relative_url }}?for=technical"><span class="path-number">03 / ARCHITECTURE</span><strong>Show how it works</strong><p>For technical SDs and leads: shared services, toolchains and delivery maturity.</p><span class="path-action">Open architecture briefings →</span></a>
+    <a class="path-card" href="{{ '/discovery/' | relative_url }}"><span class="path-number">04 / NEXT STEP</span><strong>Scope the opportunity</strong><p>Pick a workflow, understand the baseline and agree what a pilot must prove.</p><span class="path-action">Plan the discovery →</span></a>
+  </div>
 </section>
 
-<section class="home-section" aria-labelledby="fintech-case-title">
-  <p class="eyebrow">New / Fintech case study / v{{ site.data.release.fintech_edition }}</p>
-  <h2 id="fintech-case-title">75 QA staff. One payment release.</h2>
-  <p>A fictional fintech customer retries a payment after a timeout. Follow the failure, inspect the shared QA platform and explore AI assistance at all eight workflow stages. Change the delivery-maturity assumptions to see the capacity model respond.</p>
-  <div class="hero-actions"><a class="btn btn-primary" href="{{ '/case-studies/fintech/' | relative_url }}">Explore the fintech story →</a><a class="text-link" href="{{ '/case-studies/fintech/' | relative_url }}#briefings">30 new audience slides →</a></div>
+<section class="sales-case-feature" aria-labelledby="fintech-case-title">
+  <div><p class="eyebrow">The fintech story / Illustrative case</p><h2 id="fintech-case-title">75 QA staff.<br>One payment release.</h2><p>What happens when the payment provider accepts a transfer, but the customer sees a timeout? Use this familiar problem to explain the platform, the workflows and the human decisions.</p><a class="text-link" href="{{ '/case-studies/fintech/' | relative_url }}">Walk through the case →</a></div>
+  <ol class="case-steps"><li><b>1</b><span>See the payment failure<small>Retry, duplicate prevention and reconciliation</small></span></li><li><b>2</b><span>Break down the QA work<small>Manual work → AI assistance → human check</small></span></li><li><b>3</b><span>Change the delivery assumptions<small>DevOps, cloud and testing maturity affect the opportunity</small></span></li></ol>
 </section>
 
 <section class="home-section" id="capabilities" aria-labelledby="capabilities-title">

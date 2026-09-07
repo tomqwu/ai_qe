@@ -1,0 +1,17 @@
+<nav aria-label="Site navigation" id="conversation-nav" class="sales-nav">
+  <p class="sales-nav-label">Lead the conversation</p>
+  <ul class="sales-nav-list">
+    {% for item in site.data.navigation.conversation %}<li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}><span class="nav-step" aria-hidden="true">{{ item.step }}</span><span>{{ item.title }}</span>{% if page.url == item.url %}<span class="nav-current-dot" aria-hidden="true"></span>{% endif %}</a></li>{% endfor %}
+  </ul>
+  <p class="sales-nav-label sales-nav-proof">Support it with proof</p>
+  {% for group in site.data.navigation.reference %}
+  {% assign group_active = false %}{% if group.parents contains page.parent or page.url == group.url %}{% assign group_active = true %}{% endif %}{% for extra in group.extra %}{% if extra.url == page.url %}{% assign group_active = true %}{% endif %}{% endfor %}
+  <details class="sales-nav-group"{% if group_active %} open{% endif %}>
+    <summary>{{ group.title }}<span aria-hidden="true">+</span></summary>
+    <ul class="sales-nav-list sales-nav-children"><li><a href="{{ group.url | relative_url }}"{% if page.url == group.url %} aria-current="page"{% endif %}>Overview</a></li>
+      {% for parent in group.parents %}{% assign children = site.html_pages | where: 'parent', parent | sort: 'nav_order' %}{% for child in children %}{% unless child.url == '/demos/architecture/' %}<li><a href="{{ child.url | relative_url }}"{% if page.url == child.url %} aria-current="page"{% endif %}>{{ child.title }}</a></li>{% endunless %}{% endfor %}{% endfor %}
+      {% for extra in group.extra %}<li><a href="{{ extra.url | relative_url }}"{% if page.url == extra.url %} aria-current="page"{% endif %}>{{ extra.title }}</a></li>{% endfor %}
+    </ul>
+  </details>{% endfor %}
+  <ul class="sales-nav-list sales-nav-utility"><li><a href="{{ '/dictionary/' | relative_url }}"{% if page.url == '/dictionary/' %} aria-current="page"{% endif %}>Dictionary</a></li><li><a href="{{ '/releases/' | relative_url }}"{% if page.url == '/releases/' %} aria-current="page"{% endif %}>Downloads &amp; releases</a></li></ul>
+</nav>

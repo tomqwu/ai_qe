@@ -14,6 +14,14 @@ The homepage includes two audience presentations:
 
 These are research-informed perspectives and a proposed architecture, not measured bank results.
 
+## Conversation-led navigation
+
+The homepage leads from the audience briefings to the fintech example, architecture and a scoped discovery. `_data/navigation.json` defines the primary menu and supporting reference groups. `_data/briefing_room.json` holds the four presentation cards; `/briefings/?for=evp` and `/briefings/?for=technical` are shareable audience views. Keep card counts and outlines aligned with the actual decks.
+
+`_includes/brand/mark.svg` is the shared vector mark. `assets/css/brand.css` supplies the wordmark and deck/demo treatment; `assets/css/sales.css` and `assets/js/sales-navigation.js` provide the site navigation and presentation room. The mobile menu supports Escape and returns keyboard focus to its button. Without JavaScript, navigation and all briefing links remain available.
+
+Run `node tools/sales-navigation-test.cjs` against a built preview to check all four deck/PDF paths, audience sharing, search, mobile menus, current-page indicators and no-JavaScript access.
+
 ## Industry research edition (September 2026)
 
 The [industry research section](https://tomqwu.github.io/ai_qe/docs/industry/) adds a research overview, five
@@ -86,6 +94,11 @@ bundle exec jekyll serve --livereload
 
 Push to `main`. In the repository settings, set Pages > Build and deployment > Source to
 "GitHub Actions". The workflow in `.github/workflows/pages.yml` builds and deploys the site.
+
+After a successful deployment, the workflow publishes the site version as a GitHub release. `tools/prepare_release.py` assembles the six current PDFs, MP4, captions, CSV/JSON source registers and checksums in an empty output directory. `tools/publish_release.py` uploads a draft using the job's repository-scoped token, verifies GitHub's SHA-256 digests, and publishes only after all assets are complete. An existing published edition is never overwritten; increment the site version for a new commit. A matching interrupted draft can resume.
+
+For a local package preview, run `python tools/prepare_release.py --output /tmp/ai-qe-release-preview` using a new empty directory. Run `python -m unittest discover -s tools -p 'test_release.py'` to check upload sequencing, failed-upload behavior, edition protection and package integrity. Publishing itself runs only inside GitHub Actions. [GitHub release API](https://docs.github.com/en/rest/releases/releases) · [Release asset checksums](https://docs.github.com/en/rest/releases/assets).
+
 
 ## Questionnaire generator
 

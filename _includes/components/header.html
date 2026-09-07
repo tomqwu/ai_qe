@@ -1,13 +1,6 @@
-<div id="main-header" class="main-header">
-  {% if site.search_enabled != false %}
-    {% include components/search_header.html %}
-  {% else %}
-    <div></div>
-  {% endif %}
-  {% include header_custom.html %}
-  {% if site.aux_links %}
-    {% include components/aux_nav.html %}
-  {% endif %}
+<div id="main-header" class="main-header sales-header">
+  {% if site.search_enabled != false %}{% include components/search_header.html %}{% endif %}
+  <div class="sales-header-actions">{% include motion-toggle.html %}<a class="header-present" href="{{ '/briefings/' | relative_url }}"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="3" width="16" height="11" rx="1"/><path d="m6 18 4-4 4 4M10 14v4"/></svg><span>Presentation room</span></a></div>
+  <button type="button" class="sales-close-search" data-close-search aria-label="Close search">Close ×</button>
 </div>
-<div class="mobile-motion-control">{% include motion-toggle.html %}</div>
 {% include release-banner.html %}
