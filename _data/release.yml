@@ -1,4 +1,4 @@
-version: "1.4.0"
+version: "1.4.1"
 slide_edition: "1.3.0"
 updated: "2026-09-06"
-latest_change: "Added a Blender-authored 3D architecture demo with four interactive scenarios, cinematic playback and a downloadable film. Slide content and PDF edition remain v1.3.0."
+latest_change: "Clearer 3D architecture: distinct role colors, larger labels, a numbered current step, plain-language explanations and slower playback with a steady camera. Updated 49-second film; slide content and PDF edition remain v1.3.0."

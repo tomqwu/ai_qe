@@ -2,21 +2,21 @@
   "width": 1920,
   "height": 1080,
   "fps": 24,
-  "duration": 35,
-  "frames": 840,
+  "duration": 49,
+  "frames": 1176,
   "scenario": "generate",
   "inputs": {
-    "assets/data/architecture-demo.json": "f2f93c3607867a228558ad1a25233e6b97646783ef6887fe9229d94b3282fecb",
-    "assets/models/assurance-platform.glb": "ce2793dfcfdb057d52ffc9b528b404848c1696c4c307456ba9b0acafb8949242",
-    "assets/models/assurance-platform.blend": "c0a5ba1827fb78019ad640937e5c6b8f342ea5170f7c95e0b3346c734385759e",
-    "tools/architecture-demo/build_scene.py": "ef49f77607280521ca8f54209fab1423f1cd4102666eefdd862ada777613972b",
-    "tools/architecture-demo/main.js": "b2e3031724896f4083938a362ae10aab8c0d8a984120306b737e8e2d0a342b77",
-    "assets/css/architecture-3d.css": "5fe1ff8512cb1b0e7f9a1bb522b2d0a083a95539702f94de5e4778e9264ba184",
-    "demos/architecture.html": "61b6b6420829e451b6d43d335fec241a9b4cf25c9f0a5f60c54e7e327134003b"
+    "assets/data/architecture-demo.json": "f7a108ffe62585ae35ad94df6a3b5f6bd3bd89c45554f1161a2960db90d17345",
+    "assets/models/assurance-platform.glb": "f371414e73c4ada0d91772e391caad0c5832ff55c98d5b4100c1cdf801b66e00",
+    "assets/models/assurance-platform.blend": "a937ba141e4857d7d1c74263696c535e52e130988495c13b164919484cb9131a",
+    "tools/architecture-demo/build_scene.py": "e94c7dcf12312171d82128c97ed3aa08b7fb4278236397e8bc055972a2e7060b",
+    "tools/architecture-demo/main.js": "681836f2c51884ad3555859c7a6bcb666674dc2c2228855af2d15aed4da7b746",
+    "assets/css/architecture-3d.css": "46c212596a517d31f288538959fd5b8ae5e97f11a122ebf131e82df781a113e8",
+    "demos/architecture.html": "2a81d861f26fa1fae8d5fd11f8e2ee1e9296ae2f02fc86fe3a5cfb837f2832d9"
   },
   "outputs": {
-    "assets/video/assurance-architecture.mp4": "1f12c23d5b26a6763eba9ba0cd491882a4348bc90590ff4ae945241f0c843244",
-    "assets/video/assurance-architecture.vtt": "3237b91298074d4f1861d4ce911d22d588bd6974a0f9add3c741b40af565abaa",
-    "assets/images/architecture-3d-poster.jpg": "ceb9bc8ea1ab72efa112c220741efa56fe8115515b2b231919203424a8966831"
+    "assets/video/assurance-architecture.mp4": "598f98407408a49032cf9145c6896782f04b679de7852eeff3970e23fa86b42e",
+    "assets/video/assurance-architecture.vtt": "dfe7a314f74bfa4d9dd8c09159a97da9189fb9a9426d4d7ae270906c94ee7ff7",
+    "assets/images/architecture-3d-poster.jpg": "22094616ae9d71cdd021d0e089e78e0bc4ae29d812efe3ca29c83f651409ad69"
   }
 }

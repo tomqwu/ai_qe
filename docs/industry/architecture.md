@@ -8,7 +8,7 @@ permalink: /docs/industry/architecture/
 
 The proposed architecture separates generation, permission to act and verification. This supports both AI-assisted QE workflows and the testing of AI applications.
 
-[**Explore the architecture in 3D →**]({{ '/demos/architecture/' | relative_url }}) · Orbit the model and compare generated-test verification, AI evaluation, denied actions and failed quality checks. A [35-second film]({{ '/assets/video/assurance-architecture.mp4' | relative_url }}) and [editable Blender scene]({{ '/assets/models/assurance-platform.blend' | relative_url }}) are also available. These are authored illustrations of this logical architecture, not a live system or a performance simulation.
+[**Explore the architecture in 3D →**]({{ '/demos/architecture/' | relative_url }}) · Orbit the model and compare generated-test verification, AI evaluation, denied actions and failed quality checks. A [49-second film]({{ '/assets/video/assurance-architecture.mp4' | relative_url }}?v={{ site.data.release.version }}) and [editable Blender scene]({{ '/assets/models/assurance-platform.blend' | relative_url }}?v={{ site.data.release.version }}) are also available. These are authored illustrations of this logical architecture, not a live system or a performance simulation.
 
 <img class="industry-cover" src="{{ '/assets/images/industry/assurance-lab.webp' | relative_url }}" alt="Conceptual AI assurance laboratory with a model engine, test specimens, controlled test chamber and human review station" width="1536" height="1024" loading="lazy">
 
