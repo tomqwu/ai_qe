@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.9.0 · 7 September 2026
+
+Added [Platform readiness]({{ '/platform-readiness/' | relative_url }}) to the primary menu and discovery path. Twelve adoption assumptions connect infrastructure, DevOps, service virtualization, data, testability, frameworks, evidence, AI access, people, platform ownership and funding to each workflow. The interactive worksheet identifies required capabilities and unresolved evidence without averaging away blockers.
+
+The fintech case and implementation register now make the unverified foundations explicit. Pilot and economics guidance require a funded remediation backlog before committing to scope, timing or benefits. New editable diagrams explain the adoption foundations and the boundary between virtualized dependencies and real integration.
+
+All four slide/PDF editions advance to **v1.9.0**: industry EVP **22 slides**, industry technical **31**, fintech EVP **13**, fintech technical **20**. Existing slide anchors are preserved. The research companion remains **v1.7.0**, questionnaire **v3**, and architecture film **v1.8.0**. [GitHub release v1.9.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.9.0) contains the current downloads.
+
 ## v1.8.1 · 7 September 2026
 
 Fixed search results disappearing before their links could open in Safari. Results remain available through the click, with native navigation to pages, dictionary terms and individual slides. Search scripts now use the site version so returning readers receive the fix. Automated checks exercise actual clicks, taps, keyboard selection and opening results in a new tab in Chromium and WebKit.

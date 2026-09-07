@@ -51,6 +51,8 @@ Routing: executive sponsor, Finance and procurement answer Sections 1, 5B and 6;
 | 9 | Operating-model descriptions | Multi | Centralized; Embedded; Managed service; Hybrid; Dedicated automation/SDET capability; Business-led UAT; Varies by business unit; Being redesigned |
 | 10 | Where QA spends the most human effort | Top 3 | Requirements review and acceptance criteria; Test planning and test-case creation; Building automated tests; Maintaining or repairing automated tests; Preparing test data; Environments; Manual functional execution; Regression execution; Failed-test triage and root cause; Defect creation, routing, retest and closure; UAT coordination; Quality reporting, traceability and release evidence |
 
+Use the [adoption assumption worksheet]({{ '/platform-readiness/' | relative_url }}#assessment) alongside questions 6, 12, 15, 17, 19 and 21. Capture application-specific evidence and owners for infrastructure, DevOps, service virtualization, data, testability, frameworks, AI access and operating capacity. The existing questionnaire identifies issues; the worksheet turns them into prerequisite actions and review dates.
+
 ### Section 3. Testing maturity and workflow (engineering route)
 
 | # | Question | Type | Options |

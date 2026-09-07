@@ -89,7 +89,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Cloud hosting alone does not establish deployment, data-reset or test maturity. Profiles are illustrative assumptions.",
+      "note": "These profiles illustrate effort, not adoption approval. Review twelve dependency areas before committing to scope, dates or benefits.",
       "sources": "S1",
       "chapter": ""
     },
@@ -100,7 +100,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Illustrative capacity arithmetic. Tool, cloud and vendor charges are excluded. This is not cash ROI or a measured AI effect.",
+      "note": "Conditional capacity arithmetic; adoption prerequisites are unverified. Tool, cloud and vendor charges are excluded. This is not cash ROI or measured AI impact.",
       "sources": "",
       "chapter": "Value and delivery"
     },
@@ -142,7 +142,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "A planning sequence, not a guaranteed schedule. Environment readiness or inconclusive results can extend a phase.",
+      "note": "Infrastructure, provider access, data and reviewer capacity can extend a phase. Re-estimate remediation before committing to this illustrative schedule.",
       "sources": "",
       "chapter": ""
     },
@@ -192,6 +192,17 @@
       "note": "Proposed next step: a workflow assessment with the QA, development and platform leads. Agree a bounded pilot after reviewing the baseline.",
       "sources": "",
       "chapter": "The discussion"
+    },
+    {
+      "title": "Adoption depends on funded foundations",
+      "visual": "adoption",
+      "lead": "Validate the selected workflow before promising a rollout.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Harbor has not been assessed. The dependency backlog can change scope, cost and timing; the 480-hour setup allowance is not a client quote.",
+      "sources": "",
+      "chapter": "Client adoption assumptions"
     }
   ],
   "technical": [
@@ -415,11 +426,11 @@
     {
       "title": "Readiness across six dimensions",
       "visual": "readiness",
-      "lead": "Select a profile in the case explorer to see the initial scope and effort assumptions change.",
+      "lead": "These dimensions describe the assumed delivery profile. Review the wider dependency register before approving a workflow.",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Assess each application separately. A strong payments API can coexist with a fragile UI suite and a shared legacy batch environment.",
+      "note": "Assess each application separately. Unknown infrastructure, data, virtualization, AI access or ownership must be resolved before the affected workflow can proceed.",
       "sources": "S1",
       "chapter": "Delivery and evidence"
     },
@@ -441,7 +452,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "The interactive model can show negative net capacity. Do not extrapolate one pack to all 75 staff or combine overlapping benefits.",
+      "note": "Targets assume verified adoption prerequisites. Negative capacity remains possible; do not extrapolate one pack to all 75 staff or combine overlapping benefits.",
       "sources": "",
       "chapter": ""
     },
@@ -491,6 +502,28 @@
       "note": "Review the workflow map and a real failed release together. The first implementation backlog should follow those answers.",
       "sources": "",
       "chapter": "The discussion"
+    },
+    {
+      "title": "Platform prerequisites for the pilot",
+      "visual": "adoption",
+      "lead": "Twelve dependency areas connect the platform to each QA workflow.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Unknown evidence remains a gap. Platform owners, reviewers and supplier leads must accept named actions and review dates before adoption.",
+      "sources": "",
+      "chapter": "Client adoption assumptions"
+    },
+    {
+      "title": "Service virtualization and real integration",
+      "visual": "virtualization",
+      "lead": "Control the payment provider for repeatable tests; keep a separate real-integration gate.",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "WireMock is an HTTP example. Contract fidelity, callback behavior and batch access need explicit owners; passing a stub does not prove end-to-end correctness.",
+      "sources": "",
+      "chapter": "Client adoption assumptions"
     }
   ]
 }

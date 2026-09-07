@@ -86,5 +86,9 @@ for term in dictionary['terms']:
     path=f'/dictionary/#{term["id"]}'
     content=' '.join([term['term'],*term['aliases'],term['definition'],term['example']])
     index[f'dictionary-{term["id"]}']={'doc':'Dictionary','title':term['term'],'content':content,'url':'/ai_qe'+path,'relUrl':path}
+adoption=json.loads((Path(__file__).resolve().parents[1]/'_data/adoption.json').read_text())
+for dependency in adoption['dependencies']:
+    path=f'/platform-readiness/#dependency-{dependency["id"]}'
+    index[f'adoption-{dependency["id"]}']={'doc':'Platform readiness','title':dependency['title'],'content':' '.join(dependency[field] for field in ('assumption','evidence','owner','action','example','harbor')),'url':'/ai_qe'+path,'relUrl':path}
 p.write_text(json.dumps(index,ensure_ascii=False))
 print(f'Search finalized: {len(index)} entries including audience slides and {len(dictionary["terms"])} dictionary terms')

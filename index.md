@@ -7,6 +7,8 @@ permalink: /
 has_toc: false
 ---
 
+
+
 <section class="sales-hero" aria-labelledby="home-title">
   <div class="hero-copy"><p class="eyebrow">AI × QE / A quality transformation briefing</p>
   <h1 id="home-title">From manual QA to <span class="keep-together">AI-assisted</span> delivery.</h1>
@@ -15,6 +17,8 @@ has_toc: false
   <figure class="hero-art"><img src="{{ '/assets/images/industry/quality-studio.webp' | relative_url }}" alt="Illustrated workflow connecting requirements, AI assistance, test execution, human review and release" width="1536" height="1024"><figcaption><strong>One platform. Every QA workflow.</strong>Explore a proposed system for requirements, testing, evidence and human decisions.</figcaption></figure>
 </section>
 <div class="sales-proof-line"><span><strong>{{ site.data.industry_sources | size }} sources</strong> · findings with caveats</span><span><strong>4 audience decks</strong> · vision &amp; architecture</span><span><strong>1 fintech case</strong> · explicit assumptions</span></div>
+
+<aside class="adoption-link-note"><p><strong>Adoption assumption:</strong> validate the client's infrastructure, DevOps, service virtualization, test data, framework reliability and people before committing to an AI pilot. <a href="{{ '/platform-readiness/' | relative_url }}">Explore platform readiness and the twelve dependencies →</a></p></aside>
 
 <section class="conversation-path" aria-labelledby="conversation-title">
   <div class="section-heading"><div><p class="eyebrow">A path through the conversation</p><h2 id="conversation-title">Start with the audience. Go deeper together.</h2></div></div>

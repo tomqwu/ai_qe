@@ -1,0 +1,351 @@
+{
+  "reviewed": "2026-09-07",
+  "disclosure": "Authored adoption assumptions for discovery, not a certified maturity model or an assessed client. Technology names are examples. Unknown prerequisites remain gaps; no average score can override a missing requirement.",
+  "levels": [
+    "0 · Unknown / no evidence",
+    "1 · Manual or planned",
+    "2 · Repeatable in this application",
+    "3 · Reused and supported across teams"
+  ],
+  "dependencies": [
+    {
+      "id": "intent",
+      "title": "Requirements & expected outcomes",
+      "group": "Define the work",
+      "owner": "Product owner + domain QA",
+      "assumption": "Approved requirements, representative defects and independent expected results are available for the selected journey.",
+      "evidence": "A versioned scenario with source links, accepted edge cases and a named reviewer; a deliberately incorrect result is rejected.",
+      "action": "Resolve ambiguous payment rules and record the test oracle before generating assertions.",
+      "example": "Azure Boards, Test Plans and a reviewed scenario catalog",
+      "harbor": "PAY-142 exists; product owners must confirm retry, concurrency and journal rules.",
+      "level": 1,
+      "sources": [
+        "P1"
+      ]
+    },
+    {
+      "id": "infra",
+      "title": "Infrastructure & environments",
+      "group": "Run the work",
+      "owner": "Infrastructure / environment lead",
+      "assumption": "A permitted cloud or on-premises environment can run the application and tests with sufficient capacity, network routes, credentials and isolation.",
+      "evidence": "Another engineer provisions or restores the pinned build, completes health checks and records reset time and runner capacity.",
+      "action": "Resolve runner access, image or package access, deployment drift and environment booking before execution.",
+      "example": "Existing Azure environment and pipeline agents; infrastructure as code where supported",
+      "harbor": "A shared Azure test environment exists; independent reset and concurrent capacity are unproven.",
+      "level": 1,
+      "sources": [
+        "P2",
+        "P4"
+      ]
+    },
+    {
+      "id": "devops",
+      "title": "DevOps & delivery pipelines",
+      "group": "Run the work",
+      "owner": "DevOps lead + application developer",
+      "assumption": "Builds, tests, deployments and configuration are versioned and can be repeated without undocumented manual steps.",
+      "evidence": "A run links the commit, build, deployment, test and configuration revisions; a failed required test stops promotion.",
+      "action": "Create a reproducible pipeline and retain mandatory suites before AI recommends test selection.",
+      "example": "Azure Pipelines or GitHub Actions; existing repositories and artifact stores",
+      "harbor": "CI is available; deployment remains partly manual and artifact links need integration.",
+      "level": 1,
+      "sources": [
+        "P1",
+        "P2"
+      ]
+    },
+    {
+      "id": "virtualization",
+      "title": "Service virtualization & dependencies",
+      "group": "Run the work",
+      "owner": "Integration lead + dependency owner",
+      "assumption": "External APIs, callbacks, messages and legacy or batch dependencies have an explicit test strategy: controlled substitutes where suitable and scheduled real integration checks.",
+      "evidence": "Versioned contracts and scenarios reproduce success, timeout, duplicate and delayed responses; a provider check detects drift from the real integration.",
+      "action": "Inventory protocols and owners, agree stub fidelity and refresh triggers, and book a sandbox or batch window for what cannot be simulated.",
+      "example": "WireMock for HTTP behavior; Pact where applicable for contracts; protocol-specific simulators for messages or legacy systems",
+      "harbor": "Provider stubs are proposed work. The shared settlement batch and real provider sandbox still need reserved validation windows.",
+      "level": 1,
+      "sources": [
+        "P2",
+        "P3",
+        "P6"
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Test data & reset",
+      "group": "Run the work",
+      "owner": "Test-data lead + application owner",
+      "assumption": "Permitted synthetic or appropriately controlled data preserves business relationships and can be isolated and reset per run.",
+      "evidence": "Two runs start from known balances and relationships without interfering; data use, cleanup and reset duration are recorded.",
+      "action": "Create deterministic fixtures and unique test accounts. Review data handling before model or runner access.",
+      "example": "PostgreSQL seed fixtures; Testcontainers for bounded service tests with a compatible runtime",
+      "harbor": "Synthetic account fixtures and scripted reset are backlog items; shared records cannot establish repeatability.",
+      "level": 1,
+      "sources": [
+        "P4"
+      ]
+    },
+    {
+      "id": "testability",
+      "title": "Application & integration testability",
+      "group": "Run the work",
+      "owner": "Application architect + developer",
+      "assumption": "The chosen application exposes controllable interfaces and observable outcomes; web, mobile and legacy constraints are assessed separately.",
+      "evidence": "A retry can be injected and its transfer identity, journal count and balances inspected; batch and asynchronous completion are observable.",
+      "action": "Add test hooks, stable interfaces and outcome access, or narrow the pilot to an independently testable component.",
+      "example": "Java payment APIs, React web, existing mobile app and a separately scheduled settlement batch",
+      "harbor": "Payment APIs are the candidate surface. UI reliability and batch independence are not assumed to match API readiness.",
+      "level": 2,
+      "sources": [
+        "P2"
+      ]
+    },
+    {
+      "id": "automation",
+      "title": "Frameworks, runners & devices",
+      "group": "Run the work",
+      "owner": "Automation lead + application QA",
+      "assumption": "Owned test suites provide meaningful assertions, dependable fixtures and the required API, web, mobile and nonfunctional coverage.",
+      "evidence": "Tests catch an injected defect, reruns expose flakiness, and the selected browsers, devices and operating systems are available.",
+      "action": "Stabilize seed tests and ownership; retain required coverage while evaluating generated tests and maintenance suggestions.",
+      "example": "JUnit / REST Assured, Playwright, existing Selenium and Appium; current performance tooling",
+      "harbor": "Some Java tests are usable; noisy UI tests and device scheduling require their own readiness decisions.",
+      "level": 1,
+      "sources": [
+        "P1"
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "Observability & release evidence",
+      "group": "Operate the work",
+      "owner": "QA lead + observability / release owner",
+      "assumption": "Runner results, logs, traces, defects and release records are accessible, correlated and retained for the intended review.",
+      "evidence": "A failure can be traced from requirement and build to the original assertion, environment state, defect decision and fresh retest.",
+      "action": "Connect run IDs and artifacts; distinguish product, environment and test faults before AI triage is trusted.",
+      "example": "Pipeline artifacts, Playwright traces, OpenTelemetry signals and Azure Boards",
+      "harbor": "Evidence is spread across tools; a joined run manifest and retention rules must be demonstrated.",
+      "level": 1,
+      "sources": [
+        "P5"
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "AI access, data rules & evaluation",
+      "group": "Operate the work",
+      "owner": "AI platform owner + data owner",
+      "assumption": "The model and connectors are approved for the intended inputs, identities, locations and actions, with usable limits and human review.",
+      "evidence": "Approved input boundaries, an access test, representative evaluation cases, model/prompt versions, spend limits and a safe disable path.",
+      "action": "Confirm endpoint availability, permitted context, residency/retention requirements, licensing and action scope before connecting client assets.",
+      "example": "The client's approved model endpoint or coding assistant; selected versioned context before retrieval expansion",
+      "harbor": "An approved endpoint and permission to use repository context are assumptions to validate, not installed capabilities.",
+      "level": 0,
+      "sources": []
+    },
+    {
+      "id": "people",
+      "title": "People, skills & offshore handoffs",
+      "group": "Define the work",
+      "owner": "QA delivery director + supplier lead",
+      "assumption": "Domain reviewers, developers and platform engineers have allocated time, access and skills; supplier incentives support reuse and quality.",
+      "evidence": "An offshore engineer submits a reviewable artifact and the named next owner accepts it within an agreed review window.",
+      "action": "Provide repository and environment access, pair coaching, escalation paths and funded review time across time zones.",
+      "example": "A pilot pod drawn from the assumed 75 QA staff, with additional product, development and platform support",
+      "harbor": "Domain expertise exists; automation skills and working-hour overlap are uneven. Support effort is additional to the eight QA pilot roles.",
+      "level": 1,
+      "sources": [
+        "P1"
+      ]
+    },
+    {
+      "id": "platform",
+      "title": "Shared platform ownership & service capacity",
+      "group": "Operate the work",
+      "owner": "QA platform product owner",
+      "assumption": "Reusable connectors, templates, data and runner services have an owner, support model, version policy and capacity for onboarding teams.",
+      "evidence": "A second team onboards without the pilot authors; support, upgrade, license and concurrency limits are tested and budgeted.",
+      "action": "Name the service owner and first support boundary; sequence adoption by capacity rather than enabling every team at once.",
+      "example": "A supported QA service catalog over the existing stack; Kubernetes and a vector database are optional design choices",
+      "harbor": "A shared QA service is proposed. Cross-team reuse and support coverage have not been demonstrated.",
+      "level": 0,
+      "sources": [
+        "P2"
+      ]
+    },
+    {
+      "id": "measurement",
+      "title": "Baseline, funding & adoption evidence",
+      "group": "Define the work",
+      "owner": "Sponsor + delivery measurement lead",
+      "assumption": "Comparable baseline work, foundation effort, recurring costs and intended use of released capacity are agreed before benefits are claimed.",
+      "evidence": "A sampled release pack separates active work, waiting, review, rework, setup, platform operation and license/model costs.",
+      "action": "Fund and schedule dependency remediation. Re-estimate the pilot when prerequisites change; separate automation gains from AI contribution.",
+      "example": "The Harbor effort model is illustrative; no client savings rate or fixed adoption date is inferred",
+      "harbor": "The 300-hour baseline, 480-hour setup and 12-hour operating allowance are unverified planning assumptions, not a readiness budget.",
+      "level": 0,
+      "sources": []
+    }
+  ],
+  "workflows": [
+    {
+      "id": "requirements",
+      "title": "Requirements",
+      "output": "Reviewed ambiguity questions and acceptance criteria",
+      "needs": [
+        "intent",
+        "ai",
+        "people",
+        "evidence",
+        "measurement"
+      ]
+    },
+    {
+      "id": "design",
+      "title": "Test design",
+      "output": "A reviewed scenario matrix with independent expected results",
+      "needs": [
+        "intent",
+        "ai",
+        "people",
+        "testability",
+        "evidence",
+        "measurement"
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Test data",
+      "output": "Reviewed synthetic fixtures and reproducible reset scripts",
+      "needs": [
+        "intent",
+        "ai",
+        "people",
+        "data",
+        "infra",
+        "evidence",
+        "measurement"
+      ]
+    },
+    {
+      "id": "environment",
+      "title": "Environment",
+      "output": "A reproducible preflight with controlled dependencies",
+      "needs": [
+        "infra",
+        "devops",
+        "virtualization",
+        "data",
+        "ai",
+        "people",
+        "evidence",
+        "measurement"
+      ]
+    },
+    {
+      "id": "automation",
+      "title": "Automation",
+      "output": "Reviewed executable tests that catch a known defect",
+      "needs": [
+        "intent",
+        "infra",
+        "devops",
+        "virtualization",
+        "data",
+        "testability",
+        "automation",
+        "ai",
+        "people",
+        "evidence",
+        "measurement"
+      ]
+    },
+    {
+      "id": "execution",
+      "title": "Execution",
+      "output": "Original runner evidence with mandatory coverage retained",
+      "needs": [
+        "intent",
+        "infra",
+        "devops",
+        "virtualization",
+        "data",
+        "testability",
+        "automation",
+        "ai",
+        "people",
+        "evidence",
+        "measurement"
+      ]
+    },
+    {
+      "id": "triage",
+      "title": "Triage & retest",
+      "output": "Evidence-linked diagnosis and independently verified retest",
+      "needs": [
+        "intent",
+        "infra",
+        "devops",
+        "data",
+        "testability",
+        "automation",
+        "ai",
+        "people",
+        "evidence",
+        "measurement"
+      ]
+    },
+    {
+      "id": "reporting",
+      "title": "Release evidence",
+      "output": "A reviewed summary of results, gaps and owner decisions",
+      "needs": [
+        "intent",
+        "ai",
+        "people",
+        "evidence",
+        "measurement"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "P1",
+      "title": "DORA: Test automation",
+      "url": "https://dora.dev/capabilities/test-automation/",
+      "use": "Fast, reliable suites and shared developer/tester responsibility inform the framework and ownership assumptions."
+    },
+    {
+      "id": "P2",
+      "title": "DORA: Loosely coupled teams",
+      "url": "https://dora.dev/capabilities/loosely-coupled-teams/",
+      "use": "Independent testing, dependency control and explicit service contracts inform the infrastructure and integration design."
+    },
+    {
+      "id": "P3",
+      "title": "WireMock: Service virtualization",
+      "url": "https://wiremock.org/docs/solutions/service-virtualization/",
+      "use": "HTTP stubs can model state, delay and faults. The fidelity checks and real-integration gate here are authored requirements."
+    },
+    {
+      "id": "P4",
+      "title": "Testcontainers: Container runtime requirements",
+      "url": "https://java.testcontainers.org/supported_docker_environment/",
+      "use": "Testcontainers requires a compatible container runtime; it is not a substitute for provisioning the complete application estate."
+    },
+    {
+      "id": "P5",
+      "title": "OpenTelemetry: Signals",
+      "url": "https://opentelemetry.io/docs/concepts/signals/",
+      "use": "Telemetry signals inform the evidence integration design; instrumentation alone does not establish a correct financial outcome."
+    },
+    {
+      "id": "P6",
+      "title": "Pact: Introduction to contract testing",
+      "url": "https://docs.pact.io/",
+      "use": "Consumer and provider interaction checks support compatibility; they do not replace end-to-end business-outcome tests."
+    }
+  ]
+}

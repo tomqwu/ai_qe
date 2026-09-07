@@ -39,6 +39,7 @@ jobs:
       - name: Check economics, pilot gates and reference contracts
         run: |
           node --test tools/qe-model.test.cjs tools/pilot-decision.test.cjs tools/fintech-model.test.cjs
+          node --test tools/readiness-model.test.cjs
           node tools/build_scenario_data.cjs --check
           python tools/validate_contracts.py
           node tools/build_architecture_demo.cjs --check
@@ -57,6 +58,7 @@ jobs:
           node tools/browser-smoke.cjs
           node tools/sales-navigation-test.cjs
           node tools/search-navigation-test.cjs
+          node tools/readiness-browser-test.cjs
           node tools/dictionary-test.cjs
           node tools/fintech-browser-test.cjs
           node tools/architecture-demo/browser-test.cjs

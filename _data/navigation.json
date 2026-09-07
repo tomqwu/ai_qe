@@ -1,14 +1,79 @@
 {
   "conversation": [
-    {"title":"Start here","url":"/","step":"01"},
-    {"title":"Presentation room","url":"/briefings/","step":"02"},
-    {"title":"The fintech story","url":"/case-studies/fintech/","step":"03"},
-    {"title":"Architecture in motion","url":"/demos/architecture/","step":"04"},
-    {"title":"Plan the discovery","url":"/discovery/","step":"05"}
+    {
+      "title": "Start here",
+      "url": "/",
+      "step": "01"
+    },
+    {
+      "title": "Presentation room",
+      "url": "/briefings/",
+      "step": "02"
+    },
+    {
+      "title": "The fintech story",
+      "url": "/case-studies/fintech/",
+      "step": "03"
+    },
+    {
+      "title": "Architecture in motion",
+      "url": "/demos/architecture/",
+      "step": "04"
+    },
+    {
+      "title": "Platform readiness",
+      "url": "/platform-readiness/",
+      "step": "05"
+    },
+    {
+      "title": "Plan the discovery",
+      "url": "/discovery/",
+      "step": "06"
+    }
   ],
   "reference": [
-    {"title":"Research & evidence","url":"/docs/industry/","parents":["Industry research","Evidence"],"extra":[{"title":"Evidence overview","url":"/docs/evidence/"},{"title":"Research log","url":"/docs/research-log/"}]},
-    {"title":"Value & economics","url":"/docs/economics/","parents":["Economics"]},
-    {"title":"Delivery & controls","url":"/docs/method/","parents":["Method","Governance"],"extra":[{"title":"Operating principles","url":"/docs/principles/"},{"title":"Governance overview","url":"/docs/governance/"}]}
+    {
+      "title": "Research & evidence",
+      "url": "/docs/industry/",
+      "parents": [
+        "Industry research",
+        "Evidence"
+      ],
+      "extra": [
+        {
+          "title": "Evidence overview",
+          "url": "/docs/evidence/"
+        },
+        {
+          "title": "Research log",
+          "url": "/docs/research-log/"
+        }
+      ]
+    },
+    {
+      "title": "Value & economics",
+      "url": "/docs/economics/",
+      "parents": [
+        "Economics"
+      ]
+    },
+    {
+      "title": "Delivery & controls",
+      "url": "/docs/method/",
+      "parents": [
+        "Method",
+        "Governance"
+      ],
+      "extra": [
+        {
+          "title": "Operating principles",
+          "url": "/docs/principles/"
+        },
+        {
+          "title": "Governance overview",
+          "url": "/docs/governance/"
+        }
+      ]
+    }
   ]
 }
