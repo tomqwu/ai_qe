@@ -22,6 +22,8 @@ The homepage leads from the audience briefings to the fintech example, architect
 
 Run `node tools/sales-navigation-test.cjs` against a built preview to check all four deck/PDF paths, audience sharing, search, mobile menus, current-page indicators and no-JavaScript access.
 
+Run `node tools/search-navigation-test.cjs` to verify actual search-result navigation in Chromium and WebKit at desktop, narrow and touch sizes. This covers nested link targets, dictionary and slide anchors, keyboard selection, dismissal, and modifier-opened tabs. Install both engines with `npx playwright install chromium webkit`. Set `QE_TEST_URL` to check a deployed site.
+
 ## Industry research edition (September 2026)
 
 The [industry research section](https://tomqwu.github.io/ai_qe/docs/industry/) adds a research overview, five
