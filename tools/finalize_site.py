@@ -1,5 +1,5 @@
 """Add stable slide and dictionary anchors after Jekyll renders."""
-import json,sys
+import json,re,sys
 from html.parser import HTMLParser
 from pathlib import Path
 class Slides(HTMLParser):
@@ -24,17 +24,25 @@ class Slides(HTMLParser):
             self.slide['content']+=data+' '
             if self.title:self.slide['title']+=data
 root=Path(sys.argv[1] if len(sys.argv)>1 else '_site')
-# The pinned Just the Docs theme dereferences a null relatedTarget when search
-# loses focus to the page/browser. Patch this exact upstream statement, and fail
-# visibly if a future theme update changes the code that needs review.
+# Safari does not focus links on pointer activation: relatedTarget is null while
+# a result click is still in progress. Keep results mounted until the native click
+# completes. Outside clicks and known focus destinations still dismiss search.
 theme_js=root/'assets/js/just-the-docs.js'
 theme_text=theme_js.read_text()
 focus_statement='const nextFocusedElement = evt.relatedTarget;'
 old_safe_focus=focus_statement+'\n    if (!nextFocusedElement) { hideSearch(); return; }'
-safe_focus=old_safe_focus+"\n    if (nextFocusedElement.matches('[data-close-search]')) return;"
+previous_safe_focus=old_safe_focus+"\n    if (nextFocusedElement.matches('[data-close-search]')) return;"
+safe_focus=focus_statement+"\n    if (!nextFocusedElement) return;\n    if (nextFocusedElement.matches('[data-close-search]')) return;"
 if safe_focus not in theme_text:
     assert theme_text.count(focus_statement)==1, 'Review the pinned theme search-focus patch after updating the theme'
-    theme_text=theme_text.replace(old_safe_focus,focus_statement).replace(focus_statement,safe_focus)
+    theme_text=theme_text.replace(previous_safe_focus,focus_statement).replace(old_safe_focus,focus_statement).replace(focus_statement,safe_focus)
+# Browser controls/window changes are a definite departure, unlike a null
+# focusout during a Safari link click. Do not replace native anchor navigation.
+focus_listener="searchResults.addEventListener('focusout', updateSearchFocus);"
+blur_patch=focus_listener+"\n  window.addEventListener('blur', hideSearch);"
+if blur_patch not in theme_text:
+    assert theme_text.count(focus_listener)==1, 'Review the theme search-dismissal patch'
+    theme_text=theme_text.replace(focus_listener,blur_patch)
 # Pasted/assisted input may not emit keyup. Also replay a query entered while
 # the asynchronous search index was loading, once the handlers are installed.
 keyup_statement="jtd.addEvent(searchInput, 'keyup', function(e){"
@@ -54,6 +62,18 @@ if update_start in theme_text:
     theme_text=theme_text.replace('    currentInput = input;','    currentSearchIndex++;\n    currentInput = input;')
 assert '    currentSearchIndex++;\n    currentInput = input;' in theme_text, 'Review search result batching after theme updates'
 theme_js.write_text(theme_text)
+# The theme normally emits an unversioned script URL. Readers must receive the
+# fixed search behavior even when their browser cached a previous site edition.
+version=json.loads(re.search(r'^version: (".*")$',(Path(__file__).resolve().parents[1]/'_data/release.yml').read_text(),re.M)[1])
+script_url=re.compile(r'(<script\b[^>]*\bsrc="[^"]*/assets/js/just-the-docs\.js)(?:\?v=[^" ]*)?("[^>]*>)')
+versioned_pages=0
+for page in root.rglob('*.html'):
+    html=page.read_text()
+    updated,count=script_url.subn(lambda match:match[1]+'?v='+version+match[2],html)
+    if count:
+        page.write_text(updated)
+        versioned_pages+=1
+assert versioned_pages, 'No theme script URLs found to version'
 p=root/'assets/js/search-data.json';index=json.loads(p.read_text())
 for audience,name in [('evp','EVP strategic vision'),('technical','Technical architecture'),('fintech-evp','Fintech strategic vision'),('fintech-technical','Fintech QA architecture')]:
     parser=Slides();parser.feed((root/f'briefings/{audience}/index.html').read_text())

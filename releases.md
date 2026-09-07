@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.8.1 · 7 September 2026
+
+Fixed search results disappearing before their links could open in Safari. Results remain available through the click, with native navigation to pages, dictionary terms and individual slides. Search scripts now use the site version so returning readers receive the fix. Automated checks exercise actual clicks, taps, keyboard selection and opening results in a new tab in Chromium and WebKit.
+
+[GitHub release v1.8.1](https://github.com/tomqwu/ai_qe/releases/tag/v1.8.1) includes the current publication assets. Slide/PDF and research editions retain **v1.7.0**, the questionnaire remains **v3**, and the architecture film retains **v1.8.0**.
+
 ## v1.8.0 · 7 September 2026
 
 A new visual identity and conversation-led navigation connect the strategic vision, fintech case, architecture demonstration and discovery guide. The presentation room brings all four audience decks together with audience filters, outlines and direct presentation and PDF links. Research, economics and delivery controls remain available as supporting evidence.
