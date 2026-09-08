@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.12.0 · 8 September 2026
+
+Connected the modernization-to-AI story with an interactive dependency matrix, concrete Harbor tool integration architecture, before/after operating model, offshore handoff swimlane and eight PAY-142 sample artifacts. The environment lifecycle now demonstrates passing checks, failed assertions and setup failures with retained evidence and cleanup. Selected bank cases have compact intervention/outcome stories; AI, human review, virtual services, systems and failed checks have distinct visual roles.
+
+Diagnosis-only pilots now use their own readiness scope, separate from execution and retesting. Guided fintech stories connect vision, evidence, architecture, dependencies and discussion while preserving original slide anchors. Full decks remain available in their established order.
+
+All four slide/PDF editions advance to **v1.12.0**: industry EVP **25 slides**, industry technical **35**, fintech EVP **16**, fintech technical **26** (102 total). Two technical views extend the existing deck; several text-heavy slides become visual explanations. The research companion remains **v1.7.0**, questionnaire **v3** and film **v1.8.0**. [GitHub release v1.12.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.12.0) packages the current publication assets.
+
 ## v1.11.1 · 7 September 2026
 
 Made [QE modernization an explicit fintech adoption dependency]({{ '/case-studies/fintech/evidence/#dependencies' | relative_url }}). Six capability areas now connect to proof and accountable roles. Each client trial and downloaded brief identifies its own modernization prerequisites and opens the matching readiness assessment with unknown client assumptions. Required gaps need funded remediation before broader AI execution; reviewed drafting follows its own prerequisites.

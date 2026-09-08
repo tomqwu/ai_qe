@@ -7,7 +7,8 @@
     <li><strong>Prove required capabilities</strong><span>Fund gaps; retain evidence of repeatable results.</span></li>
     <li><strong>Enable the agreed AI scope</strong><span>Review outputs; prove reuse before wider adoption.</span></li>
   </ol>
-  <div class="fe-practices">
+  {% include visual-story/dependencies.html %}
+  <details><summary>Read all six modernization workstreams and their proof</summary><div class="fe-practices">
     {% for stream in site.data.modernization.workstreams %}
     <article data-fe-modernization="{{ stream.id }}">
       <h3><a href="{{ '/qe-modernization/#workstream-' | append: stream.id | relative_url }}">{{ stream.title }}</a></h3>
@@ -15,7 +16,7 @@
       <p><strong>Accountable role.</strong> {{ stream.owner }}</p>
     </article>
     {% endfor %}
-  </div>
+  </div></details>
   <p><strong>Client assumption.</strong> These capabilities are unverified until the client supplies evidence. A roadmap or license purchase is insufficient. Capture each required gap, a named owner, remediation cost and a review date; unresolved execution dependencies hold that scope.</p>
   <p>Containerization is an implementation option where suitable. Legacy, mobile and batch testing may need reproducible VMs, devices or reserved integration environments. Service substitutes require owned behavior and separate real-integration checks.</p>
   <p><a href="{{ '/platform-readiness/?scope=pilot&preset=unknown#assessment' | relative_url }}">Assess client dependencies →</a> · <a href="{{ '/qe-modernization/#evidence' | relative_url }}">Modernization sources and technical guidance →</a></p>

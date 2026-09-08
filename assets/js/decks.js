@@ -11,6 +11,24 @@
   body.classList.toggle('embedded', embedded);
   let index = Math.max(0, slides.findIndex(s => `#${s.id}` === location.hash));
   let mode = 'slides', chapter;
+  const routeButton = document.querySelector('[data-guided-route]');
+  const routeData = document.querySelector('[data-guided-slides]');
+  const route = routeData ? JSON.parse(routeData.textContent).map(n => n - 1).filter(n => n >= 0 && n < slides.length) : [];
+  let guided = new URLSearchParams(location.search).get('route') === 'client' && route.includes(index);
+  const sequence = () => guided ? route : slides.map((_, i) => i);
+  const move = delta => { const order = sequence(); return order[Math.max(0, Math.min(order.length - 1, order.indexOf(index) + delta))]; };
+  function syncRouteURL() {
+    const url = new URL(location.href);
+    if (guided) url.searchParams.set('route', 'client'); else url.searchParams.delete('route');
+    history.replaceState(null, '', url);
+  }
+  function updatePosition() {
+    const order = sequence(), position = order.indexOf(index);
+    previous.disabled = position === 0; next.disabled = position === order.length - 1; picker.value = String(index);
+    status.textContent = (guided ? `Story ${position + 1}/${order.length} · Slide ` : '') + `${index + 1} / ${slides.length} · ${title(slides[index])}`;
+    if (routeButton) { routeButton.setAttribute('aria-pressed', String(guided)); routeButton.textContent = guided ? 'Full deck' : 'Guided story'; }
+  }
+
   const diagramButton = document.querySelector('[data-diagram-tools]'), diagramPanel = document.querySelector('.deck-diagram-panel');
   const flowBar = document.querySelector('.deck-flow-bar'), flowStates = new WeakMap();
   function updateFlowBar() {
@@ -64,8 +82,7 @@
     body.classList.toggle('reading-view', mode === 'reading');
     body.classList.toggle('presentation-mode', mode === 'present');
     body.dataset.deckMode = mode;
-    previous.disabled = index === 0; next.disabled = index === slides.length - 1; picker.value = String(index);
-    status.textContent = `${index + 1} / ${slides.length} · ${title(slides[index])}`;
+    updatePosition();
     reading.textContent = mode === 'reading' ? 'Slide view' : 'Read all';
     reading.setAttribute('aria-pressed', String(mode === 'reading'));
     present.textContent = mode === 'present' ? 'Exit presentation' : 'Present ↗';
@@ -74,16 +91,20 @@
     share(interaction);
   }
   function goTo(i) {
-    index = Math.max(0, Math.min(slides.length - 1, i)); render(true, true);
+    index = Math.max(0, Math.min(slides.length - 1, i));
+    if (guided && !route.includes(index)) { guided = false; syncRouteURL(); }
+    render(true, true);
     if (mode === 'reading') slides[index].scrollIntoView({ block: 'start' });
     else { window.scrollTo(0, 0); slides[index].querySelector('.slide-content')?.scrollTo(0, 0); }
   }
   function setMode(value) { mode = value; render(true, true); }
-  previous.addEventListener('click', () => goTo(index - 1));
-  next.addEventListener('click', () => goTo(index + 1));
+  previous.addEventListener('click', () => goTo(move(-1)));
+  next.addEventListener('click', () => goTo(move(1)));
+  routeButton?.addEventListener('click', () => { guided = !guided; if (guided) { mode = 'slides'; if (!route.includes(index)) index = route[0]; } syncRouteURL(); render(true, true); });
   picker.addEventListener('change', () => goTo(Number(picker.value)));
   reading.addEventListener('click', () => {
     if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    if (mode !== 'reading' && guided) { guided = false; syncRouteURL(); }
     setMode(mode === 'reading' ? 'slides' : 'reading');
     if (mode === 'reading') slides[index].scrollIntoView({ block: 'start' });
   });
@@ -127,18 +148,18 @@
     if (mode === 'reading' || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.defaultPrevented) return;
     if (event.target.closest('input, select, textarea, [contenteditable], .qe-explorer, .research-figure')) return;
     if (event.key === ' ' && event.target.closest('button, a')) return;
-    const directions = { ArrowRight: index + 1, PageDown: index + 1, ' ': index + 1, ArrowLeft: index - 1, PageUp: index - 1, Home: 0, End: slides.length - 1 };
+    const directions = { ArrowRight: move(1), PageDown: move(1), ' ': move(1), ArrowLeft: move(-1), PageUp: move(-1), Home: sequence()[0], End: sequence().at(-1) };
     if (event.key in directions) { event.preventDefault(); goTo(directions[event.key]); }
   });
   window.addEventListener('hashchange', () => {
     const target = slides.findIndex(s => `#${s.id}` === location.hash);
-    if (target >= 0) { index = target; render(false, true); }
+    if (target >= 0) { index = target; if (guided && !route.includes(index)) { guided = false; syncRouteURL(); } render(false, true); }
   });
   // Reading scroll updates the resume position without hijacking browser history.
   const readingObserver = new IntersectionObserver(entries => {
     if (mode !== 'reading') return;
     const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) { closeDiagramControls(); index = slides.indexOf(visible.target); diagramButton.hidden = !slides[index].querySelector('.research-figure'); updateFlowBar(); picker.value = String(index); status.textContent = `${index + 1} / ${slides.length} · ${title(slides[index])}`; previous.disabled = index === 0; next.disabled = index === slides.length - 1; share(true); }
+    if (visible) { closeDiagramControls(); index = slides.indexOf(visible.target); diagramButton.hidden = !slides[index].querySelector('.research-figure'); updateFlowBar(); updatePosition(); share(true); }
   }, { threshold: [.25, .5, .75] });
   slides.forEach(slide => readingObserver.observe(slide));
   document.querySelector('.deck-tools').hidden = false; navigation.hidden = false;

@@ -10,7 +10,7 @@ has_toc: true
 
 [Open the interactive case]({{ '/case-studies/fintech/' | relative_url }}) or the [technical briefing]({{ '/briefings/fintech-technical/' | relative_url }}).
 
-**Fictional case, edition v1.11.0.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
+**Fictional case, edition v{{ site.data.fintech_case.edition }}.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
 
 ## QE modernization before wider execution
 
@@ -45,6 +45,9 @@ No required capability can be compensated for by a higher maturity score elsewhe
 QE modernization is an explicit adoption dependency within this register. For the selected workflow, confirm test strategy, environment lifecycle, service virtualization and contract fidelity, data, CI evidence and shared ownership. Record remediation cost, an owner and acceptance evidence before committing to broader AI execution. The [fintech trial dependencies]({{ "/case-studies/fintech/evidence/#dependencies" | relative_url }}) connect these workstreams to each proposed trial.
 
 ## Stack
+
+{% include visual-story/architecture.html %}
+
 
 The design extends tools that the assumed team already knows. A discovery assessment can substitute the customer's equivalents without changing the workflow responsibilities.
 
@@ -87,6 +90,9 @@ For a real implementation, the developer must resolve request-key scope, retenti
 Playwright's documented healer may return a skipped test when it believes behavior is broken. In this proposal, an unexplained skip or weakened assertion cannot satisfy a required case. Such candidates return to review. [Playwright Test Agents](https://playwright.dev/docs/test-agents).
 
 ## Workflow artifacts and handoffs
+
+{% include visual-story/artifacts.html %}
+
 
 {% for stage in site.data.fintech_case.workflow %}
 ### {{ forloop.index }}. {{ stage.title }}
