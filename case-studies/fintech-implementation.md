@@ -2,11 +2,11 @@
 title: Fintech implementation notes
 nav_exclude: true
 permalink: /case-studies/fintech/implementation/
-description: Assumptions, integration backlog, framework examples and a measurement method for the fictional FinTech Client QA case.
+description: Assumptions, integration backlog, framework examples and a measurement method for Our Banking Client, an illustrative QA case.
 has_toc: true
 ---
 
-# FinTech Client: implementation plan
+# Our Banking Client: implementation plan
 
 [Open the interactive case]({{ '/case-studies/fintech/' | relative_url }}) or the [technical briefing]({{ '/briefings/fintech-technical/' | relative_url }}).
 
@@ -35,9 +35,9 @@ Reviewed AI drafts can begin where their own prerequisites are satisfied. Wider 
 
 ## Client adoption assumption register
 
-The [platform readiness hub]({{ '/platform-readiness/?preset=harbor' | relative_url }}) makes twelve prerequisites explicit. FinTech Client has not been assessed; the current-state statements below are hypotheses for discovery. For each one, record the evidence reference, accountable person, remediation and review date. A modern API does not establish readiness for mobile, legacy or batch applications.
+The [platform readiness hub]({{ '/platform-readiness/?preset=harbor' | relative_url }}) makes twelve prerequisites explicit. Our Banking Client has not been assessed; the current-state statements below are hypotheses for discovery. For each one, record the evidence reference, accountable person, remediation and review date. A modern API does not establish readiness for mobile, legacy or batch applications.
 
-| Dependency | FinTech Client scenario starting point | Accountable role |
+| Dependency | Our Banking Client scenario starting point | Accountable role |
 |---|---|---|
 {% for dependency in site.data.adoption.dependencies %}| [{{ dependency.title }}]({{ '/platform-readiness/#dependency-' | append: dependency.id | relative_url }}) | {{ dependency.harbor }} | {{ dependency.owner }} |
 {% endfor %}
@@ -183,4 +183,4 @@ Use one record per comparable API test pack. Retain failed runs and foundation w
 
 ## External evidence and the client trial
 
-The [financial-services evidence explorer]({{ '/case-studies/fintech/evidence/' | relative_url }}) separates direct AI testing cases from modernization and adjacent engineering results. Use its trial selector to agree the first workflow, reviewer and acceptance criteria. Peer figures do not replace FinTech Client’s illustrative inputs or supply a client forecast. Record actual API pilot dates and effort against the illustrative planning windows; readiness and sufficient evidence determine progression.
+The [financial-services evidence explorer]({{ '/case-studies/fintech/evidence/' | relative_url }}) separates direct AI testing cases from modernization and adjacent engineering results. Use its trial selector to agree the first workflow, reviewer and acceptance criteria. Peer figures do not replace Our Banking Client’s illustrative inputs or supply a client forecast. Record actual API pilot dates and effort against the illustrative planning windows; readiness and sufficient evidence determine progression.

@@ -1,9 +1,9 @@
 {
-  "edition": "1.14.0",
+  "edition": "1.14.1",
   "reviewed": "2026-09-07",
   "adoptionAssumptions": "/platform-readiness/?preset=harbor",
-  "company": "FinTech Client",
-  "disclosure": "FinTech Client is an illustrative digital payments scenario. Staffing, systems, hours and targets are planning inputs, not verified client results or industry benchmarks.",
+  "company": "Our Banking Client",
+  "disclosure": "Our Banking Client is an illustrative digital payments scenario. Staffing, systems, hours and targets are planning inputs, not verified client results or industry benchmarks.",
   "staff": [{"role":"Manual & domain testing","count":45},{"role":"Automation engineering","count":15},{"role":"Data & environments","count":8},{"role":"QA leads & coordination","count":7}],
   "pilot": {"qa":8,"setupHours":480,"overheadHours":12,"capturePercent":50,"baselineElapsedDays":10},
   "workflow": [
