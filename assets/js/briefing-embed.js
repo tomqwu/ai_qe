@@ -16,7 +16,7 @@
     audience = tab.dataset.audience;
     tabs.forEach(item => { const active = item === tab; item.setAttribute('aria-selected', String(active)); item.tabIndex = active ? 0 : -1; });
     panel.setAttribute('aria-labelledby', tab.id);
-    frame.title = tab.dataset.deckTitle ? `${tab.dataset.deckTitle} presentation` : audience === 'evp' ? 'EVP strategic vision presentation' : 'Technical assurance architecture presentation';
+    frame.title = tab.dataset.deckTitle ? `${tab.dataset.deckTitle} presentation` : audience === 'evp' ? 'Executive strategic vision presentation' : 'Technical assurance architecture presentation';
     openLink.textContent = tab.dataset.deckTitle ? `Open ${tab.dataset.deckTitle} ↗` : audience === 'evp' ? 'Open strategic vision ↗' : 'Open assurance architecture ↗';
     const target = new URL(tab.href); target.hash = slide || positions[audience]; frame.src = target.href;
     updateURL(target.hash.slice(1), writeHistory);

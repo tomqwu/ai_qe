@@ -75,7 +75,7 @@ for page in root.rglob('*.html'):
         versioned_pages+=1
 assert versioned_pages, 'No theme script URLs found to version'
 p=root/'assets/js/search-data.json';index=json.loads(p.read_text())
-for audience,name in [('evp','EVP strategic vision'),('technical','Technical architecture'),('fintech-evp','Fintech strategic vision'),('fintech-technical','Fintech QA architecture')]:
+for audience,name in [('evp','Executive strategic vision'),('technical','Technical architecture'),('fintech-evp','Fintech strategic vision'),('fintech-technical','Fintech QA architecture')]:
     parser=Slides();parser.feed((root/f'briefings/{audience}/index.html').read_text())
     for slide in parser.items:
         path=f'/briefings/{audience}/#{slide["id"]}'

@@ -14,7 +14,7 @@ Gartner's public forecasts anticipate much wider assistant use and changes in te
 
 McKinsey's software-development research places AI within the wider product lifecycle and operating model. Its 2026 bank example illustrates an ambitious implementation direction, but the public account does not supply enough independent detail to make the claimed gains a planning baseline. {% include industry/cite.html ids="M01,M02" %}
 
-**Implication for an EVP:** define the future capability and how it changes delivery. A license rollout alone leaves the integration, verification and ownership work unresolved.
+**Implication for an executive:** define the future capability and how it changes delivery. A license rollout alone leaves the integration, verification and ownership work unresolved.
 
 ## Experimentation is ahead of enterprise scale
 

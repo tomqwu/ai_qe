@@ -28,7 +28,7 @@
     if (!['all','evp','technical'].includes(audience)) audience = 'all';
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.roomFilter === audience)));
     cards.forEach(card => { card.hidden = audience !== 'all' && card.dataset.deckAudience !== audience; });
-    status.textContent = `${cards.filter(card => !card.hidden).length} briefings · ${audience === 'all' ? 'all audiences' : audience === 'evp' ? 'EVP & sponsors' : 'Technical SDs & leads'}`;
+    status.textContent = `${cards.filter(card => !card.hidden).length} briefings · ${audience === 'all' ? 'all audiences' : audience === 'evp' ? 'Executives & sponsors' : 'Technical SDs & leads'}`;
     if (write) { const url = new URL(location.href); audience === 'all' ? url.searchParams.delete('for') : url.searchParams.set('for', audience); history.replaceState(null, '', url); }
   }
   buttons.forEach(button => button.addEventListener('click', () => choose(button.dataset.roomFilter)));

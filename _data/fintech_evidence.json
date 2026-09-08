@@ -135,7 +135,7 @@
       "unit": "Reported unit-test coverage for a selected module",
       "finding": "Diffblue reports this coverage increase within 24 hours. A separate application received 3,211 generated tests; review took one day.",
       "change": "AI-based Java regression-test generation supports legacy modernization.",
-      "limit": "Vendor case. Manual-time savings use assumed 30 minutes per test and six productive hours per day. Coverage records exercised code, not proven business correctness; this is not an LLM rollout benchmark.",
+      "limit": "Vendor case. Manual-time savings are modelled using 30 minutes per test and six productive hours per day. Coverage records exercised code, not proven business correctness; this is not an LLM rollout benchmark.",
       "lesson": "Generate candidates in a buildable module, then challenge assertions against independently specified behavior.",
       "pilot": "api"
     },

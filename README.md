@@ -7,7 +7,7 @@ that collects evidence and reusable method for AI-assisted quality engineering i
 
 The homepage includes two audience presentations:
 
-- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 25 slides on
+- [Executive strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 25 slides on
   industry outlook, strategic vision, value, ownership and capability expansion.
 - [Technical delivery architecture](https://tomqwu.github.io/ai_qe/briefings/technical/):
   35 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
@@ -60,7 +60,7 @@ the site edition; source review dates remain attached to their individual resear
 
 ## Maintaining the briefings
 
-The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 16-slide EVP and 24-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this assumed case distinct from observed industry findings.
+The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 16-slide executive and 26-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this illustrative case distinct from observed industry findings.
 
 Run `node tools/export_decks.cjs --fintech` against the preview to export the case PDFs. The edition in the case data, deck front matter and `fintech_edition` release field must agree. Run `node tools/fintech-browser-test.cjs` and `python tools/verify_fintech.py _site` after the build. `npm test` includes capacity and payment-model checks. The browser case is a deterministic teaching model; it does not connect to a payment service or invoke the example QA frameworks.
 
@@ -224,7 +224,7 @@ Run `node tools/fintech-evidence-browser-test.cjs` against a built preview. It c
 
 ## Connected visual story
 
-`_data/visual_story.json` holds the proposed Northstar Payments integration nodes, authored PAY-142 artifacts, lifecycle stages, modernization grouping and curated audience routes. Dependency requirements remain canonical in `_data/adoption.json` and are evaluated by `readiness-model.js`; the map adds no competing maturity score. Diagnosis-only review and execution/retest have distinct prerequisites.
+`_data/visual_story.json` holds the proposed FinTech Client integration nodes, authored PAY-142 artifacts, lifecycle stages, modernization grouping and curated audience routes. Dependency requirements remain canonical in `_data/adoption.json` and are evaluated by `readiness-model.js`; the map adds no competing maturity score. Diagnosis-only review and execution/retest have distinct prerequisites.
 
 Shared HTML views live in `_includes/visual-story/`, with role styling and progressive enhancement in `assets/css/visual-story.css` and `assets/js/visual-story.js`. The six workstreams group twelve adoption assumptions; a marked matrix cell refers to selected capabilities within that workstream. Original claims and evidence limits remain in the fintech evidence register.
 

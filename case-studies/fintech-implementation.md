@@ -2,11 +2,11 @@
 title: Fintech implementation notes
 nav_exclude: true
 permalink: /case-studies/fintech/implementation/
-description: Assumptions, integration backlog, framework examples and a measurement method for the fictional Northstar Payments QA case.
+description: Assumptions, integration backlog, framework examples and a measurement method for the fictional FinTech Client QA case.
 has_toc: true
 ---
 
-# Northstar Payments: implementation and assumptions
+# FinTech Client: implementation plan
 
 [Open the interactive case]({{ '/case-studies/fintech/' | relative_url }}) or the [technical briefing]({{ '/briefings/fintech-technical/' | relative_url }}).
 
@@ -33,9 +33,9 @@ Reviewed AI drafts can begin where their own prerequisites are satisfied. Wider 
 
 ## Client adoption assumption register
 
-The [platform readiness hub]({{ '/platform-readiness/?preset=harbor' | relative_url }}) makes twelve prerequisites explicit. Northstar Payments has not been assessed; the current-state statements below are hypotheses for discovery. For each one, record the evidence reference, accountable person, remediation and review date. A modern API does not establish readiness for mobile, legacy or batch applications.
+The [platform readiness hub]({{ '/platform-readiness/?preset=harbor' | relative_url }}) makes twelve prerequisites explicit. FinTech Client has not been assessed; the current-state statements below are hypotheses for discovery. For each one, record the evidence reference, accountable person, remediation and review date. A modern API does not establish readiness for mobile, legacy or batch applications.
 
-| Dependency | Assumed Northstar Payments starting point | Accountable role |
+| Dependency | FinTech Client scenario starting point | Accountable role |
 |---|---|---|
 {% for dependency in site.data.adoption.dependencies %}| [{{ dependency.title }}]({{ '/platform-readiness/#dependency-' | append: dependency.id | relative_url }}) | {{ dependency.harbor }} | {{ dependency.owner }} |
 {% endfor %}
@@ -49,7 +49,7 @@ QE modernization is an explicit adoption dependency within this register. For th
 {% include visual-story/architecture.html %}
 
 
-The design extends tools that the assumed team already knows. A discovery assessment can substitute the customer's equivalents without changing the workflow responsibilities.
+The design extends tools that the team in this scenario already knows. A discovery assessment can substitute the customer's equivalents without changing the workflow responsibilities.
 
 | Capability | Example technology | Integration to implement |
 |---|---|---|
@@ -136,12 +136,12 @@ The unit is **one comparable, bounded release test pack**, not a person, applica
 
 Assisted work excludes the review column. The baseline includes its ordinary review and rework. Record corrections and retests in the appropriate stage once. The target combines AI assistance with fixtures, automation and environment changes; it does not isolate AI's causal contribution.
 
-The assumed mixed-profile calculation is:
+The mixed-profile scenario calculation is:
 
 1. 300 baseline hours − 222 assisted hours = **78 hours of gross capacity**.
 2. Subtract **12 hours of recurring platform operation** per pack = **66 net hours**.
-3. Redeploy an assumed **50%** to named other work = **33 usable hours**.
-4. An assumed **480 person-hours of setup**, divided by 33, takes **15 comparable packs**, rounded up, to recover in capacity terms.
+3. Redeploy **50%** in this scenario to named other work = **33 usable hours**.
+4. The **480-person-hour setup input**, divided by 33, takes **15 comparable packs**, rounded up, to recover in capacity terms.
 
 The twelve-dependency remediation backlog is not priced by the 480-hour setup assumption. Re-estimate infrastructure, provider virtualization, data, licenses and support effort for the actual client. Setup includes integration, initial fixtures, coaching and supporting product/development/platform effort. Avoid charging initial setup again in each assisted pack. Conversely, recurring operation must not disappear into the setup bucket. The low-maturity profile has 315 assisted hours plus 12 operating hours: **27 additional hours per pack**. The model retains that full cost even at a low capture percentage. At zero positive capacity or zero capture, there is no finite capacity payback.
 
@@ -161,4 +161,4 @@ This offers a concrete progression of work: an assessment with a usable baseline
 
 ## External evidence and the client trial
 
-The [financial-services evidence explorer]({{ '/case-studies/fintech/evidence/' | relative_url }}) separates direct AI testing cases from modernization and adjacent engineering results. Use its trial selector to agree the first workflow, reviewer and acceptance criteria. Peer figures do not replace Northstar Payments's illustrative inputs or supply a client forecast. The existing 12-week planning sequence remains a proposal conditional on readiness.
+The [financial-services evidence explorer]({{ '/case-studies/fintech/evidence/' | relative_url }}) separates direct AI testing cases from modernization and adjacent engineering results. Use its trial selector to agree the first workflow, reviewer and acceptance criteria. Peer figures do not replace FinTech Client’s illustrative inputs or supply a client forecast. The existing 12-week planning sequence remains a proposal conditional on readiness.

@@ -17,7 +17,7 @@ description: Assessment of common planning ranges, a downside/base/upside scenar
 
 ## Adoption assumptions affect the economics
 
-Validate the [platform prerequisites for the selected workflow]({{ '/platform-readiness/' | relative_url }}) before treating any scenario as achievable. Infrastructure, service virtualization, test data, integration, coaching and support can add setup effort, recurring cost and wait time. Attribute ordinary automation improvements separately from AI assistance. Unknown dependencies are an estimation gap, not zero cost or assumed readiness.
+Validate the [platform prerequisites for the selected workflow]({{ '/platform-readiness/' | relative_url }}) before treating any scenario as achievable. Infrastructure, service virtualization, test data, integration, coaching and support can add setup effort, recurring cost and wait time. Attribute ordinary automation improvements separately from AI assistance. Unknown dependencies are an estimation gap, not evidence of zero cost or readiness.
 
 ## The formulas
 

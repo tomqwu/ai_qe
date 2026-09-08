@@ -51,8 +51,8 @@ def prepare(output):
 Publication editions:
 
 - Site and presentation player: **v{release["version"]}**
-- Industry decks: **v{release["slide_edition"]}** — {counts[('Industry perspective', 'evp')]} EVP slides and {counts[('Industry perspective', 'technical')]} technical slides
-- Fintech decks: **v{release["fintech_edition"]}** — {counts[('Fintech case', 'evp')]} EVP slides and {counts[('Fintech case', 'technical')]} technical slides
+- Industry decks: **v{release["slide_edition"]}** — {counts[('Industry perspective', 'evp')]} Executive slides and {counts[('Industry perspective', 'technical')]} technical slides
+- Fintech decks: **v{release["fintech_edition"]}** — {counts[('Fintech case', 'evp')]} Executive slides and {counts[('Fintech case', 'technical')]} technical slides
 - Research companion: **v{release["research_edition"]}** — 13 pages
 - Fillable discovery questionnaire: **v{release["questionnaire_edition"]}**
 

@@ -1,10 +1,14 @@
-"""Build the role-routed, fillable AI-QE executive discovery questionnaire (v3) with reportlab AcroForm.
+"""Build the role-routed, fillable AI-QE executive discovery questionnaire with reportlab AcroForm.
 
 Usage: python tools/questionnaire_form.py [output.pdf]
 Set ORG_NAME / PREPARED_BY environment variables to brand the header and footer; defaults are neutral.
 """
 import os, sys
 import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+EDITION = re.search(r'questionnaire_edition: "([^\"]+)"', (ROOT / "_data/release.yml").read_text())[1]
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import HexColor, white, black
@@ -24,9 +28,9 @@ TEXT_W = W - ML - MR
 
 ORG = os.environ.get('ORG_NAME', '').strip()
 PREPARED_BY = os.environ.get('PREPARED_BY', '').strip()
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), '..', 'assets', 'pdf', 'ai-qe-discovery-questionnaire-v3.pdf')
+OUT = sys.argv[1] if len(sys.argv) > 1 else str(ROOT / f'assets/pdf/ai-qe-discovery-questionnaire-v{EDITION}.pdf')
 HEADER_L = (ORG + ' ' if ORG else '') + 'AI-Enabled Quality Engineering'
-HEADER_R = 'Executive discovery questionnaire (v3)'
+HEADER_R = f'Executive discovery questionnaire (v{EDITION})'
 FOOTER = (('Prepared by ' + PREPARED_BY + '  |  ') if PREPARED_BY else '') + 'Save the completed PDF before closing'
 
 
@@ -38,7 +42,7 @@ def slug(s):
 class Form:
     def __init__(self, path):
         self.c = canvas.Canvas(path, pagesize=letter)
-        self.c.setTitle((ORG + ' ' if ORG else '') + 'AI-Enabled Quality Engineering - Executive Discovery Questionnaire v3')
+        self.c.setTitle((ORG + ' ' if ORG else '') + f'AI-Enabled Quality Engineering - Executive Discovery Questionnaire v{EDITION}')
         self.c.setAuthor(PREPARED_BY or 'AI-QE research base')
         self.form = self.c.acroForm
         self.page = 0
@@ -315,8 +319,8 @@ f = Form(OUT)
 f.c.setFillColor(NAVY); f.c.setFont('Helvetica-Bold', 18)
 f.c.drawString(ML, f.y - 18, 'AI-Enabled Quality Engineering'); f.y -= 24
 f.c.setFillColor(black); f.c.setFont('Helvetica-Bold', 10)
-f.c.drawString(ML, f.y - 10, 'Executive discovery questionnaire - role-routed, multiple-selection version (v3)'); f.y -= 18
-f.rich([('Purpose: ', True), ('tailor the EVP presentation, select relevant industry research, identify practical QA opportunities, and define a conservative phased pilot. Approximate ranges are sufficient; no customer data, source code, detailed rate cards, or formal financial commitments are required.', False)], size=8.5, gap=6)
+f.c.drawString(ML, f.y - 10, f'Executive discovery questionnaire - role-routed, multiple-selection version (v{EDITION})'); f.y -= 18
+f.rich([('Purpose: ', True), ('tailor the executive presentation, select relevant industry research, identify practical QA opportunities, and define a conservative phased pilot. Approximate ranges are sufficient; no customer data, source code, detailed rate cards, or formal financial commitments are required.', False)], size=8.5, gap=6)
 
 # How to complete box
 box_lines = [
@@ -349,7 +353,7 @@ f.two_textfields('R01_Name', 'Name', 'R02_Title', 'Title / role')
 f.two_textfields('R03_Function', 'Function / business area', 'R04_Date', 'Date')
 
 # ---------- Section 1 ----------
-f.section_bar('1. Executive objectives and spending concerns', 'Executive sponsor and Finance route. Establish what the EVP expects the conversation to solve and how success should be described.')
+f.section_bar('1. Executive objectives and spending concerns', 'Executive sponsor and Finance route. Establish what the executive sponsor expects the conversation to solve and how success should be described.')
 q = f.question('What are the primary objectives for exploring AI in quality engineering?', 'Select up to three.')
 f.checkboxes(q, ['Reduce manual testing effort', 'Shorten regression and release cycles', 'Improve automation coverage and maintainability', 'Reduce escaped production defects', 'Improve audit and release evidence', 'Increase delivery capacity without increasing team size', 'Improve developer productivity'])
 f.rule()
@@ -404,7 +408,7 @@ q = f.question('Which quality checks are mandatory release gates?', 'Select all 
 f.checkboxes(q, ['Unit-test pass rate and/or code coverage', 'API, integration, or regression pass rate', 'Critical and high-priority defect thresholds', 'Performance or resilience thresholds', 'Accessibility compliance', 'UAT or business approval', 'Production-readiness / change approval', 'Traceability, audit, or control evidence'])
 
 # ---------- Section 4 ----------
-f.section_bar('4. Metrics, toolchain, and AI readiness', 'Engineering, QE and platform routes. These responses determine whether an EVP-level savings hypothesis can be evidence-based.')
+f.section_bar('4. Metrics, toolchain, and AI readiness', 'Engineering, QE and platform routes. These responses determine whether a leadership savings hypothesis can be evidence-based.')
 q = f.question('For each baseline measure, indicate whether it is tracked and trusted, tracked but unreliable, or not tracked.', 'Select one per row. Leave a row blank if you do not know.')
 f.grid_radio(q, ['QA effort hours by activity, release, or application', 'Regression duration and execution volume', 'Automation coverage and maintenance effort', 'Flaky-test or rerun rate', 'Defect volume, severity, reopen rate, and escaped defects', 'Change-failure, rollback, or production-incident rate', 'Mean time to triage and remediate defects', 'Release frequency and lead time for change', 'QA labour, contractor, managed-service, or tool spend', 'Test-environment availability and test-data lead time'], ['Tracked and trusted', 'Tracked but unreliable', 'Not tracked'])
 f.rule()
@@ -465,7 +469,7 @@ f.checkboxes(q, ['Insufficient measurable savings', 'High implementation or inte
 f.rule()
 q = f.question('What is the single most expensive or frustrating part of the current QA workflow?', 'Optional. Up to 1,000 characters; scroll within the field to read longer answers.')
 f.textfield(f'Q{q:02d}_Text', height=96)
-q = f.question('What question would the EVP most want the presentation to answer?', 'Optional. Up to 1,000 characters; scroll within the field to read longer answers.')
+q = f.question('What question would the executive sponsor most want the presentation to answer?', 'Optional. Up to 1,000 characters; scroll within the field to read longer answers.')
 f.textfield(f'Q{q:02d}_Text', height=96)
 q = f.question('Is there a representative application, team, or recent release that should be used as an illustrative case, and who is the delivery lead we may contact?', 'Optional. Up to 1,000 characters; scroll within the field to read longer answers.')
 f.textfield(f'Q{q:02d}_Text', height=96)

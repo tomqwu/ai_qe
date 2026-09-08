@@ -1,4 +1,4 @@
-<figure class="ft-staff" aria-label="Assumed staff allocation, 75 people in total">
+<figure class="ft-staff" aria-label="Staff allocation for the client scenario, 75 people in total">
   <div class="ft-staff-bar" aria-hidden="true">{% for group in site.data.fintech_case.staff %}<span class="ft-role-{{ forloop.index }}" style="flex:{{ group.count }}">{{ group.count }}</span>{% endfor %}</div>
   <dl>{% for group in site.data.fintech_case.staff %}<div class="ft-staff-item"><dt>{{ group.role }}</dt><dd>{{ group.count }} people</dd></div>{% endfor %}</dl>
 </figure>
