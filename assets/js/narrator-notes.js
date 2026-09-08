@@ -2,6 +2,7 @@
   'use strict';
   const loader = document.querySelector('script[data-narrator-guides]');
   if (!loader || !window.QENarrationMedia) return;
+  if (document.querySelector('#architecture-demo') && new URLSearchParams(location.search).get('capture') === '1') return;
   const {parseCaptions, claim} = window.QENarrationMedia;
   const base = new URL(loader.dataset.siteBase, location.origin);
   const players = new Set();

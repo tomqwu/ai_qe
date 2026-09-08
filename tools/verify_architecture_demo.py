@@ -18,7 +18,13 @@ chunk=struct.unpack_from('<I',blob,12)[0];model=json.loads(blob[20:20+chunk]);as
 assert 'Blender' in model['asset']['generator']
 manifest=json.loads((ROOT/'assets/data/architecture-film.json').read_text())
 assert (manifest['width'],manifest['height'],manifest['fps'],manifest['duration'],manifest['frames'])==(1920,1080,24,49,1176)
-for name,digest in {**manifest['inputs'],**manifest['outputs']}.items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,f'3D film input or output changed: {name}'
+snapshots=manifest.get('input_snapshots',{})
+assert set(snapshots)<=set(manifest['inputs']), 'Only recorded inputs may use an archived source snapshot'
+for name,digest in manifest['inputs'].items():
+ source=(ROOT/snapshots.get(name,name)).resolve()
+ assert source.is_relative_to(ROOT), 'Film input must remain inside the repository'
+ assert hashlib.sha256(source.read_bytes()).hexdigest()==digest,f'3D film input changed: {name}'
+for name,digest in manifest['outputs'].items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,f'3D film output changed: {name}'
 assert sum(s['duration'] for s in data['scenarios'][0]['steps'])==manifest['duration']
 assert (ROOT/'assets/video/assurance-architecture.vtt').read_text().startswith('WEBVTT')
 assert (ROOT/'assets/video/assurance-architecture.vtt').read_text().count(' --> ')==7
