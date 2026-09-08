@@ -7,7 +7,7 @@
 
   let entries = {}, state = window.QEDeck.getState(), currentSlide = null, clip = null;
   let cueList = [], captionRequest, clipVersion = 0, audioFailed = false, captionFailed = false;
-  let captionsOn = true, continuing = false, clipStarted = false, frame = 0, panel;
+  let captionsOn = true, continuing = false, clipStarted = false, frame = 0, resizeFrame = 0, panel;
   const slidePauseMs = 2000;
   let advanceTimer = 0, pendingAdvance = null;
   const audio = document.createElement('audio');
@@ -44,12 +44,19 @@
       <div class="narration-meta"><p data-narration-status role="status" aria-live="polite"></p><button type="button" data-narration-retry-captions hidden>Retry captions</button><button type="button" data-narration-transcript>Transcript</button></div>`;
     document.querySelector('.deck-navigation').before(panel);
     panel.append(audio);
-    new ResizeObserver(reserveSpace).observe(panel);
+    // Reserve space on the next frame: changing the shared slide width inside
+    // the observer callback would resize the observed panel in the same cycle.
+    new ResizeObserver(() => {
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(reserveSpace);
+    }).observe(panel);
     return Object.fromEntries(['play', 'replay', 'seek', 'time', 'speed', 'cc', 'auto', 'caption', 'status', 'retry-captions', 'transcript'].map(key => [key, panel.querySelector(`[data-narration-${key}]`)]));
   }
   let ui;
   function reserveSpace() {
-    body.style.setProperty('--narration-height', panel && !panel.hidden ? `${Math.ceil(panel.getBoundingClientRect().height)}px` : '0px');
+    resizeFrame = 0;
+    const height = panel && !panel.hidden ? `${Math.ceil(panel.getBoundingClientRect().height)}px` : '0px';
+    if (body.style.getPropertyValue('--narration-height') !== height) body.style.setProperty('--narration-height', height);
   }
   function announce(message) { if (ui) ui.status.textContent = message; }
   function setVisible(visible) {
@@ -214,7 +221,7 @@
       dialog.setAttribute('aria-label', 'Slide narration transcript');
       const heading = document.createElement('h2'); heading.textContent = 'English narration transcript';
       const provenance = document.createElement('p'); provenance.className = 'narration-provenance';
-      provenance.textContent = [clip.voice && `Voice: ${clip.voice}`, clip.caption_method && `Caption timing: ${clip.caption_method}`].filter(Boolean).join('\n');
+      provenance.textContent = [clip.voice && 'Audio narration · English', clip.caption_method && 'English captions synchronized to the recording.'].filter(Boolean).join('\n');
       const text = document.createElement('p'); text.textContent = clip.transcript;
       const close = document.createElement('button'); close.type = 'button'; close.textContent = 'Close transcript';
       close.addEventListener('click', () => dialog.close());

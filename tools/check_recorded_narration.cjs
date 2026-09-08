@@ -56,7 +56,8 @@ async function nearEnd(page) {
         await page.locator('[data-narration-start]').click();
         assert.equal(await page.locator('[data-narration-audio]').evaluate(a=>a.paused), true);
         await page.locator('[data-narration-transcript]').click();
-        assert.match(await page.locator('.narration-provenance').textContent(), /ElevenLabs.*Chris/);
+        assert.match(await page.locator('.narration-provenance').textContent(), /Audio narration · English/);
+        assert.doesNotMatch(await page.locator('.narration-transcript-dialog').textContent(), /Chris|ElevenLabs/);
         await page.keyboard.press('Escape');
         await page.setViewportSize({width:390,height:844});
         assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));

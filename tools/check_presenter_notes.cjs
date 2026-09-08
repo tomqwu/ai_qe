@@ -38,6 +38,7 @@ async function playing(audio) { await audio.page().waitForFunction(a => !a.pause
         }).map(f=>f.className));
         assert.deepEqual(missing,[],route+' has an unexplained visual');
         assert.equal(await page.locator('[data-guide-audio]').evaluateAll(a=>a.some(x=>!x.paused)),false,'Never autoplay a page explanation');
+        assert.doesNotMatch(await page.locator('body').innerText(), /\bChris\b/, 'Public narration uses neutral audio labels');
       }
       assert.equal(requestedAudio,0,'Collapsed in-place guides do not download MP3 files');
       for(const [route,count] of [['fintech-evp',19],['fintech-technical',30],['evp',25],['technical',35]]){
@@ -94,7 +95,7 @@ async function playing(audio) { await audio.page().waitForFunction(a => !a.pause
       await page.emulateMedia({media:'print'});
       assert.equal(await page.locator('[data-narrator-guide]').isVisible(),false);
       assert.deepEqual(errors,[]);
-      console.log(`${engine.name()}: all 109 slide notes; diagram coverage on 16 existing pages; actual Chris audio/captions, lazy loading, audio focus, mobile and four architecture scenarios passed`);
+      console.log(`${engine.name()}: all 109 slide notes; diagram coverage on 16 existing pages; actual recorded audio/captions, lazy loading, audio focus, mobile and four architecture scenarios passed`);
     }finally{await browser.close();}
   }
 })().catch(error=>{console.error(error);process.exit(1);});

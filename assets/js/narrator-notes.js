@@ -28,12 +28,12 @@
     const play = element('button', 'narrator-guide-play', '▶ Listen to explanation');
     play.type = 'button'; play.dataset.guidePlay = ''; play.setAttribute('aria-pressed', 'false');
     const duration = Math.round(clip.duration);
-    toolbar.append(play, element('span', 'narrator-guide-credit', `Chris · ${Math.floor(duration / 60)}:${String(duration % 60).padStart(2, '0')}`));
+    toolbar.append(play, element('span', 'narrator-guide-credit', `Audio narration · ${Math.floor(duration / 60)}:${String(duration % 60).padStart(2, '0')}`));
     const player = element('div', 'narrator-guide-player'); player.hidden = true;
     const caption = element('p', 'narrator-guide-caption'); caption.dataset.guideCaption = '';
     caption.setAttribute('aria-label', 'English subtitles'); caption.setAttribute('aria-live', 'off');
     const audio = document.createElement('audio'); audio.controls = true; audio.preload = 'none'; audio.src = audioURL;
-    audio.setAttribute('aria-label', 'Chris explanation playback'); audio.dataset.guideAudio = '';
+    audio.setAttribute('aria-label', 'Audio explanation playback'); audio.dataset.guideAudio = '';
     const status = element('p', 'narrator-guide-status'); status.setAttribute('role', 'status');
     const cc = element('button', 'narrator-guide-cc', 'CC'); cc.type = 'button'; cc.setAttribute('aria-label', 'English subtitles'); cc.setAttribute('aria-pressed', 'true');
     const speed = document.createElement('select'); speed.setAttribute('aria-label', 'Explanation speed');
