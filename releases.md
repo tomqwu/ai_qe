@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.11.1 · 7 September 2026
+
+Made [QE modernization an explicit fintech adoption dependency]({{ '/case-studies/fintech/evidence/#dependencies' | relative_url }}). Six capability areas now connect to proof and accountable roles. Each client trial and downloaded brief identifies its own modernization prerequisites and opens the matching readiness assessment with unknown client assumptions. Required gaps need funded remediation before broader AI execution; reviewed drafting follows its own prerequisites.
+
+This site and trial-brief clarification retains the four **v1.11.0** slide/PDF editions and their 100 slides. The research companion remains **v1.7.0**, questionnaire **v3** and film **v1.8.0**. [GitHub release v1.11.1](https://github.com/tomqwu/ai_qe/releases/tag/v1.11.1) includes the same 15 publication assets.
+
 ## v1.11.0 · 7 September 2026
 
 Added [Fintech results and client pilots]({{ '/case-studies/fintech/evidence/' | relative_url }}): seven cases, ten sources, reported-outcome charts, six adoption practices and a downloadable trial discussion brief for onboarding design, payment API tests or triage. The architecture walkthrough shows a rejected candidate stopping before the maintained suite. Cases retain their evidence type, measurement scope and limitations.

@@ -17,6 +17,7 @@ const route='/case-studies/fintech/evidence/';
    page.on('pageerror',error=>errors.push(error.message));
    await page.goto(base+route);await page.evaluate(()=>document.fonts.ready);
    assert.equal(await page.locator('[data-fe-case]:visible').count(),7);
+   assert.equal(await page.locator('#dependencies [data-fe-modernization]').count(),6);
    for(const [category,count] of [['ai-qe',3],['foundation',2],['adjacent',2],['all',7]]){
     await page.locator(`[data-filter="${category}"]`).click();
     assert.equal(await page.locator('[data-fe-case]:visible').count(),count);
@@ -31,8 +32,16 @@ const route='/case-studies/fintech/evidence/';
     assert.equal(await page.locator('[data-fe-pilot-select]').inputValue(),pilot.id);
     const downloaded=page.waitForEvent('download');await page.locator('[data-fe-export]').click();
     const file=await downloaded;const content=fs.readFileSync(await file.path(),'utf8');
-    for(const field of ['title','dependency','output','measure','gate','fail','question'])assert.ok(content.includes(pilot[field]),field);
+    for(const field of ['title','dependency','modernization','output','measure','gate','fail','question'])assert.ok(content.includes(pilot[field]),field);
     assert.ok(content.includes('No client readiness or savings is assumed.'));
+    assert.ok(content.includes('An unresolved execution dependency blocks that execution scope.'));
+    assert.ok(content.includes('https://tomqwu.github.io/ai_qe/qe-modernization/#workstreams'));
+    const href=await page.locator('[data-fe-pilot]:visible [data-fe-readiness]').getAttribute('href');
+    const assessment=await browser.newPage();await assessment.goto(new URL(href,base).href);
+    assert.equal(await assessment.locator('#readiness-workflow').inputValue(),pilot.readiness_workflow);
+    assert.equal(await assessment.locator('#readiness-preset').inputValue(),'unknown');
+    assert.equal(await assessment.locator('#readiness-scope').inputValue(),'pilot');
+    assert.ok(content.includes(`workflow=${pilot.readiness_workflow}#assessment`));await assessment.close();
    }
    const exported=await page.request.get(base+'/assets/data/fintech-evidence-sources.json');assert.deepEqual(await exported.json(),data.sources);
    const csv=await (await page.request.get(base+'/assets/data/fintech-evidence-sources.csv')).text();for(const source of data.sources)assert.ok(csv.includes(source.url));
