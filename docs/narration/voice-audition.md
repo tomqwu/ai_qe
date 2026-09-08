@@ -1,6 +1,6 @@
 # Banking briefing: English voice audition
 
-Status: selected voice is **Carl — Technology Advertiser**, with a conversational technology-talk delivery. The audition script, player and audio-aligned caption tools are prepared. The public recording manifest is empty; no narrated site release has been published.
+Status: the current private audition uses **剪映 / Energetic Male(English)** with a conversational technology-talk script. Three inputs were generated and exported in 剪映 Mac 10.5.0, then joined into a 55.7-second MP3 with 27 audio-timed English caption cues. The public recording manifest is empty; no narrated site release has been published.
 
 The canonical scripts are in [`assets/data/narration-scripts.json`](../../assets/data/narration-scripts.json). Use `text` for readable captions and transcript display. Use `speakText` for narration input with acronym pronunciation expanded.
 
@@ -8,7 +8,7 @@ The canonical scripts are in [`assets/data/narration-scripts.json`](../../assets
 
 Confident American technology talk for a senior banking audience. Use short sentences, active phrasing, clear emphasis and a brisk conversational pace. Aim for approximately 150–165 words per minute. Pause briefly at the transition from the constrained baseline to the proposed system, and before the payment-retry scenario.
 
-Selected ElevenLabs Voice Library voice: `0a3rU6OS52qFMvnAmGct` (Carl — Technology Advertiser). Starting settings for the audition: `eleven_multilingual_v2`, stability `0.45`, similarity boost `0.75`, style `0.35`, speaker boost enabled and speed `1.08`. These are starting settings to evaluate, not a guarantee of speaking rate. Use the actual recording duration for playback.
+Current voice: **Energetic Male(English)** in 剪映. The short audition uses the same voice for all three segments, with no added music or playback-speed adjustment. Use the actual recording duration for playback. The user chose 剪映 after the earlier voice auditions; the selected Carl API voice did not produce a recording.
 
 The revised script has 136 display words and 139 words after pronunciation expansion. Assess whether the recording sounds like an engaged presenter explaining a working idea: clear problem, concrete change, testing scenario and evidence. The listener should be able to follow the story without reading the slide.
 
@@ -62,9 +62,27 @@ Deliver one audio file and one WebVTT caption track per slide. Keep SRT as an op
 
 Start audio only after a user playback action. Advance on the audio `ended` event, not a slide timer. Pause, seek, replay and playback-speed controls must keep captions tied to the audio clock. Moving to a different slide stops the previous clip. Check that the first cue appears after navigation and the final cue is retained for its actual spoken interval. Provide a CC toggle and a readable transcript.
 
-## Voice access and publication
+## Segmented 剪映 workflow
 
-ElevenLabs API generation of Voice Library voices requires a paid plan; a library entry marked available to free users does not establish API entitlement. Commercial presentation audio must be generated during an eligible paid subscription. Keep private listening previews outside the public repository and regenerate them under the appropriate subscription before using them in a client presentation. See [ElevenLabs publication rights](https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform).
+The user reported a 500-word voice-input limit. The preparation tool defaults to **450 characters**, which stays below both 500 words and 500 characters. It splits at sentence boundaries when possible, preserves every word, and records the audience, slide and part for each input. The tested audition used three manually grouped inputs of 240, 338 and 271 characters.
+
+```sh
+python3 tools/prepare_jianying_narration.py \
+  --audience audition \
+  --output /absolute/path/new-audition-inputs
+```
+
+Use `--audience evp` for the executive scripts or `--audience technical` for the technical scripts. These are existing internal route keys; the displayed audience name remains Executive. Output includes numbered text files, `segments.json`, and an SRT file with staging slots. **The staging SRT is narration input, not final captions.**
+
+For an optional library-generated text timeline, install `pyJianYingDraft==0.3.0` in a separate Python environment and add `--draft`. The [project documentation](https://github.com/GuanYixuan/pyJianYingDraft) covers text/audio tracks and SRT import. It provides no TTS API, and its automatic export controller is Windows-only. A generated draft is not automatically registered with the Mac app. Direct loading depends on Jianying version; native SRT import was verified in Mac 10.5.0.
+
+1. Import the staging SRT into a separate native draft and add its text segments to the timeline.
+2. Generate the chosen voice for each segment. Export audio through the Mac app.
+3. Assemble the segments in slide/part order using actual audio lengths. Remove the staging gaps while preserving spoken pauses.
+4. Recognize English captions from the audio, restore approved spelling and punctuation, and keep the recognition timestamps. If audio is cut after recognition, apply exactly the same cuts and offsets to the captions.
+5. Export one audio file and one timed caption file per slide. Verify their duration and text before importing them into the presentation.
+
+For the current private audition, 剪映 generated the speech and recognized all 27 cues. Only staging silence was removed. Caption text was checked against the canonical script, and cue times were shifted with the audio cuts. Voice approval remains a listening decision; generation and export do not establish subjective delivery quality.
 
 ## Import a reviewed recording
 

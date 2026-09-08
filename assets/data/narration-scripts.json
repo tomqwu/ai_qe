@@ -1,10 +1,11 @@
 {
   "audition": {
     "title": "Our Banking Client — technology talk audition",
-    "voice": "Carl - Technology Advertiser",
-    "voice_id": "0a3rU6OS52qFMvnAmGct",
+    "voice": "Jianying / Energetic Male(English)",
     "text": "Here's the problem. Seventy-five people are testing, but they're waiting on the same few environments. Backend services aren't virtualized. The vendor gives us limited test slots. The bottleneck is test capacity.\n\nSo let's change the system.\n\nSpin up an isolated test environment. Model the vendor service. Now we can replay a timeout, a duplicate callback, or a failed retry, whenever we need to.\n\nThen bring in AI. Copilot helps engineers draft tests. An agent can help explain CI failures and pull the evidence together. Engineers review the code and make the release decision.\n\nHere's our banking test scenario. The payment times out. The customer hits retry. We need to prove that one payment creates one debit.\n\nThat's the pilot: repeatable tests, faster feedback, and evidence we can trust. Measure modernization first. Then measure what AI adds.",
-    "speakText": "Here's the problem. Seventy-five people are testing, but they're waiting on the same few environments. Backend services aren't virtualized. The vendor gives us limited test slots. The bottleneck is test capacity.\n\nSo let's change the system.\n\nSpin up an isolated test environment. Model the vendor service. Now we can replay a timeout, a duplicate callback, or a failed retry, whenever we need to.\n\nThen bring in A I. Copilot helps engineers draft tests. An agent can help explain C I failures and pull the evidence together. Engineers review the code and make the release decision.\n\nHere's our banking test scenario. The payment times out. The customer hits retry. We need to prove that one payment creates one debit.\n\nThat's the pilot: repeatable tests, faster feedback, and evidence we can trust. Measure modernization first. Then measure what A I adds."
+    "speakText": "Here's the problem. Seventy-five people are testing, but they're waiting on the same few environments. Backend services aren't virtualized. The vendor gives us limited test slots. The bottleneck is test capacity.\n\nSo let's change the system.\n\nSpin up an isolated test environment. Model the vendor service. Now we can replay a timeout, a duplicate callback, or a failed retry, whenever we need to.\n\nThen bring in A I. Copilot helps engineers draft tests. An agent can help explain C I failures and pull the evidence together. Engineers review the code and make the release decision.\n\nHere's our banking test scenario. The payment times out. The customer hits retry. We need to prove that one payment creates one debit.\n\nThat's the pilot: repeatable tests, faster feedback, and evidence we can trust. Measure modernization first. Then measure what A I adds.",
+    "provider": "Jianying Mac",
+    "input_max_characters": 450
   },
   "decks": {
     "evp": {
