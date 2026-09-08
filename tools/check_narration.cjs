@@ -16,6 +16,7 @@ function audioFixture() {
 }
 const wav = audioFixture();
 const fixture = { audio:'/assets/audio/narration-test.wav', captions:'/assets/audio/narration-test.vtt', transcript:'A test narration transcript.' };
+const creditedFixture = {...fixture, voice:'Test studio / Narrator', caption_method:'Word alignment from final audio'};
 async function mediaPaused(page) { return page.locator('[data-narration-audio]').evaluate(audio => audio.paused); }
 async function waitForPlaying(page) { await page.waitForFunction(() => { const audio = document.querySelector('[data-narration-audio]'); return audio && !audio.paused && audio.currentTime > .05; }); }
 async function currentSlide(page) { return page.locator('.slide:not([hidden])').getAttribute('id'); }
@@ -40,9 +41,12 @@ async function checkBounds(page) {
       const page = await browser.newPage({viewport:{width:1280,height:720}, reducedMotion:'reduce'});
       page.setDefaultTimeout(12000);
       const errors = []; page.on('pageerror', error => errors.push(error.message));
-      let audioFails = false, captionsFail = false, emptyManifest = false;
-      await page.route('**/assets/data/narration.json*', route => route.fulfill({ json:{edition:'test-only', decks:emptyManifest ? {} : {evp:{slides:{'slide-17':fixture,'slide-18':fixture}},technical:{slides:{'slide-27':fixture}}}} }));
-      await page.route('**/assets/audio/narration-test.vtt', route => route.fulfill({status:captionsFail ? 503 : 200, contentType:'text/vtt', body:captionsFail ? 'Unavailable' : captions}));
+      let audioFails = false, captionsFail = false, emptyManifest = false, captionGate;
+      await page.route('**/assets/data/narration.json*', route => route.fulfill({ json:{edition:'test-only', decks:emptyManifest ? {} : {evp:{slides:{'slide-17':creditedFixture,'slide-18':creditedFixture}},technical:{slides:{'slide-27':fixture}}}} }));
+      await page.route('**/assets/audio/narration-test.vtt', async route => {
+        if (captionGate) await captionGate;
+        return route.fulfill({status:captionsFail ? 503 : 200, contentType:'text/vtt', body:captionsFail ? 'Unavailable' : captions});
+      });
       await page.route('**/assets/audio/narration-test.wav', route => {
         if (audioFails) return route.fulfill({status:503, body:'Unavailable'});
         const range = route.request().headers().range?.match(/^bytes=(\d+)-(\d*)$/);
@@ -52,7 +56,17 @@ async function checkBounds(page) {
         headers['content-range'] = `bytes ${start}-${end}/${wav.length}`;
         return route.fulfill({status:206,contentType:'audio/wav',headers,body:wav.subarray(start,end + 1)});
       });
+      let releaseCaptions;
+      captionGate = new Promise(resolve => { releaseCaptions = resolve; });
       await page.goto(base + '/briefings/fintech-evp/#slide-18');
+      await page.locator('[data-narration-play]').click(); await waitForPlaying(page);
+      assert.equal(await page.locator('[data-narration-cc]').isDisabled(),true);
+      assert.match(await page.locator('[data-narration-status]').textContent(),/Loading captions/);
+      assert.equal(await page.locator('[data-narration-caption]').textContent(),'');
+      releaseCaptions(); captionGate = null;
+      await page.locator('[data-narration-cc]:not([disabled])').waitFor();
+      assert.match(await page.locator('[data-narration-status]').textContent(),/Captions synchronized/);
+      await page.reload();
       await page.locator('[data-narration-cc]:not([disabled])').waitFor();
       assert.equal(await mediaPaused(page), true, 'Loading a recorded slide must not autoplay');
       await page.locator('[data-narration-auto]').uncheck();
@@ -74,6 +88,7 @@ async function checkBounds(page) {
       await page.locator('[data-narration-transcript]').click();
       assert.equal(await mediaPaused(page),true);
       assert.match(await page.locator('.narration-transcript-dialog').textContent(),/A test narration transcript/);
+      assert.equal(await page.locator('.narration-provenance').textContent(),'Voice: Test studio / Narrator\nCaption timing: Word alignment from final audio');
       await page.keyboard.press('ArrowRight'); assert.equal(await currentSlide(page),'slide-18');
       await page.keyboard.press('Escape');
       await page.locator('[data-reading]').click(); assert.equal(await page.locator('.narration-panel').isVisible(),false);
@@ -128,6 +143,9 @@ async function checkBounds(page) {
 
       await page.goto(base + '/briefings/fintech-technical/#slide-27');
       await page.locator('[data-narration-play]').waitFor(); await checkBounds(page);
+      await page.locator('[data-narration-transcript]').click();
+      assert.equal(await page.locator('.narration-provenance').count(),0,'Missing optional provenance must not invent a provider or caption method');
+      await page.keyboard.press('Escape');
       for (const width of [320,375,700]) {
         await page.setViewportSize({width,height:812});
         await page.locator('[data-narration-play]').scrollIntoViewIfNeeded();

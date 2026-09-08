@@ -1,33 +1,30 @@
 # Banking briefing: English voice audition
 
-Status: audition scripts and slide playback are prepared. No voice recordings have been generated or published; ElevenLabs or WellSaid account access is still needed. The planned demo covers two consecutive executive slides and two consecutive technical slides. Full-deck narration follows the voice comparison.
+Status: selected voice is **Carl — Technology Advertiser**, with a conversational technology-talk delivery. The audition script, player and audio-aligned caption tools are prepared. The public recording manifest is empty; no narrated site release has been published.
 
-The canonical scripts are in [`assets/data/narration-scripts.json`](../../assets/data/narration-scripts.json). Use `text` for readable captions and transcript display. Use `speakText` for provider-neutral narration input; it spells acronyms as letters and separates product names where helpful. Both fields carry the same meaning.
+The canonical scripts are in [`assets/data/narration-scripts.json`](../../assets/data/narration-scripts.json). Use `text` for readable captions and transcript display. Use `speakText` for narration input with acronym pronunciation expanded.
 
 ## Voice direction
 
-Calm, confident English for a senior banking audience. Aim for approximately 130–145 words per minute, with a short pause between paragraphs. Emphasize the constraint, architectural change and decision evidence. Keep the delivery conversational and restrained; give the diagram time to be understood.
+Confident American technology talk for a senior banking audience. Use short sentences, active phrasing, clear emphasis and a brisk conversational pace. Aim for approximately 150–165 words per minute. Pause briefly at the transition from the constrained baseline to the proposed system, and before the payment-retry scenario.
 
-Use the identical audition script and voice direction in ElevenLabs and WellSaid. The source contains 128 words, or 138 tokens after pronunciation expansions. Expect about one minute, but use the generated audio's measured duration for navigation. Do not stretch the recording to an arbitrary sixty-second boundary.
+Selected ElevenLabs Voice Library voice: `0a3rU6OS52qFMvnAmGct` (Carl — Technology Advertiser). Starting settings for the audition: `eleven_multilingual_v2`, stability `0.45`, similarity boost `0.75`, style `0.35`, speaker boost enabled and speed `1.08`. These are starting settings to evaluate, not a guarantee of speaking rate. Use the actual recording duration for playback.
 
-Assess both complete recordings on:
+The revised script has 136 display words and 139 words after pronunciation expansion. Assess whether the recording sounds like an engaged presenter explaining a working idea: clear problem, concrete change, testing scenario and evidence. The listener should be able to follow the story without reading the slide.
 
-- Natural delivery, steady pace and clean sentence endings.
-- Clear acronyms and product names without exaggerated pauses.
-- Consistent energy across a full minute.
-- Accurate emphasis on “proposed pilot,” human review and the separate real-provider gate.
+## Technology-talk audition script
 
-Listen once without looking at the script, then once alongside the captions. Use the same headphones or speakers and comparable playback loudness for both samples.
-
-## Identical comparison script
-
-> Our Banking Client starts with seventy-five offshore QA staff, including forty-five manual and domain testers. A few shared environments, non-virtualized backend services and limited vendor test slots constrain how much testing can run in parallel.
+> Here's the problem. Seventy-five people are testing, but they're waiting on the same few environments. Backend services aren't virtualized. The vendor gives us limited test slots. The bottleneck is test capacity.
 >
-> Our proposed pilot changes that foundation. Isolated runs and controlled provider models make faults repeatable. AI helps draft API tests and explain CI evidence. Engineers review the changes and own the release decision.
+> So let's change the system.
 >
-> Consider a payment timeout. A customer retries, but one payment must still produce one debit. REST Assured tests check the journal and PostgreSQL balances, while WireMock reproduces provider behavior.
+> Spin up an isolated test environment. Model the vendor service. Now we can replay a timeout, a duplicate callback, or a failed retry, whenever we need to.
 >
-> We will assess fault detection, critical coverage and trustworthy evidence. These are pilot goals. Real vendor integration remains a separate gate, and we will measure QE modernization and AI contributions separately.
+> Then bring in AI. Copilot helps engineers draft tests. An agent can help explain CI failures and pull the evidence together. Engineers review the code and make the release decision.
+>
+> Here's our banking test scenario. The payment times out. The customer hits retry. We need to prove that one payment creates one debit.
+>
+> That's the pilot: repeatable tests, faster feedback, and evidence we can trust. Measure modernization first. Then measure what AI adds.
 
 ## Four-clip slide demo
 
@@ -38,7 +35,7 @@ Listen once without looking at the script, then once alongside the captions. Use
 | Technical / 26 | Explain context, model, runner and evidence adapter contracts and their failure behavior. | 124 |
 | Technical / 27 | Walk the before/after topology, isolated service/data, virtualized provider faults and retained raw assertions. | 126 |
 
-Each pair forms a consecutive demo without changing slide indices. The first clip introduces the next slide explicitly. The second ends at a natural stopping point. At the end of the second clip, stop playback until another narrated slide is available.
+Each pair forms a consecutive demo in the full deck without changing slide indices. Sample entry links should omit `route=client`: the guided technical route moves from slide 26 to slide 28. Narration must remain accurate in either route; avoid promising a specific next diagram when the route can skip it. At the end of a recorded pair, stop playback when no next recording is available.
 
 ## Pronunciation guide
 
@@ -65,9 +62,13 @@ Deliver one audio file and one WebVTT caption track per slide. Keep SRT as an op
 
 Start audio only after a user playback action. Advance on the audio `ended` event, not a slide timer. Pause, seek, replay and playback-speed controls must keep captions tied to the audio clock. Moving to a different slide stops the previous clip. Check that the first cue appears after navigation and the final cue is retained for its actual spoken interval. Provide a CC toggle and a readable transcript.
 
+## Voice access and publication
+
+ElevenLabs API generation of Voice Library voices requires a paid plan; a library entry marked available to free users does not establish API entitlement. Commercial presentation audio must be generated during an eligible paid subscription. Keep private listening previews outside the public repository and regenerate them under the appropriate subscription before using them in a client presentation. See [ElevenLabs publication rights](https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform).
+
 ## Import a reviewed recording
 
-Export the chosen voice recording and audio-aligned English captions. WellSaid supports SRT and VTT caption downloads. With ElevenLabs, use speech timestamp output or forced alignment, then review the resulting cues. Do not estimate final caption times from script length.
+Export the chosen voice recording and audio-aligned English captions. For ElevenLabs timestamp responses, `tools/captions_from_alignment.py` writes SRT and WebVTT using actual character times and restores approved acronym spelling; it refuses a mismatch with the canonical display text. WellSaid supports SRT and VTT caption downloads. With ElevenLabs, use speech timestamp output or forced alignment, then review the resulting cues. Do not estimate final caption times from script length.
 
 ```sh
 python3 tools/import_narration.py \

@@ -21,6 +21,7 @@
 .narration-transcript-dialog::backdrop { background:#102632b3; }
 .narration-transcript-dialog h2 { margin:0 0 16px; font-size:24px; }
 .narration-transcript-dialog p { white-space:pre-line; font-size:18px; line-height:1.6; }
+.narration-transcript-dialog .narration-provenance { font-size:14px; line-height:1.45; padding-bottom:12px; border-bottom:1px solid #b9ceca; color:#405563; }
 @media screen and (min-width:701px) {
   .deck-page.has-narration { --frame-width:min(calc(100vw - 32px),calc((100dvh - 112px - var(--narration-height,116px)) * 16 / 9)); padding-bottom:calc(64px + var(--narration-height,116px)); }
   .deck-page.has-narration.has-flow-controls { --frame-width:min(calc(100vw - 32px),calc((100dvh - 160px - var(--narration-height,116px)) * 16 / 9)); }

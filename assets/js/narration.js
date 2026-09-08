@@ -187,13 +187,17 @@
       dialog.className = 'narration-transcript-dialog';
       dialog.setAttribute('aria-label', 'Slide narration transcript');
       const heading = document.createElement('h2'); heading.textContent = 'English narration transcript';
+      const provenance = document.createElement('p'); provenance.className = 'narration-provenance';
+      provenance.textContent = [clip.voice && `Voice: ${clip.voice}`, clip.caption_method && `Caption timing: ${clip.caption_method}`].filter(Boolean).join('\n');
       const text = document.createElement('p'); text.textContent = clip.transcript;
       const close = document.createElement('button'); close.type = 'button'; close.textContent = 'Close transcript';
       close.addEventListener('click', () => dialog.close());
       dialog.addEventListener('close', () => { dialog.remove(); ui.transcript.focus(); });
-      dialog.append(heading, text, close); body.append(dialog); dialog.showModal();
+      dialog.append(heading);
+      if (provenance.textContent) dialog.append(provenance);
+      dialog.append(text, close); body.append(dialog); dialog.showModal();
     });
-    audio.addEventListener('play', () => { updatePlaying(); if (!captionFailed) announce('English narration · Captions synchronized to audio.'); });
+    audio.addEventListener('play', () => { updatePlaying(); if (!captionFailed) announce(cueList.length ? 'English narration · Captions synchronized to audio.' : 'English narration · Loading captions.'); });
     audio.addEventListener('pause', () => { updatePlaying(); if (!audio.ended && clip && !audioFailed && !captionFailed) announce('Narration paused.'); });
     for (const event of ['loadedmetadata', 'durationchange', 'timeupdate', 'seeked']) audio.addEventListener(event, updateTime);
     audio.addEventListener('seeking', clearCaption);
@@ -236,7 +240,12 @@
     if (!slides || typeof slides !== 'object') return;
     for (const [id, entry] of Object.entries(slides)) {
       const audioURL = assetURL(entry?.audio), captionsURL = assetURL(entry?.captions);
-      if (document.getElementById(id)?.classList.contains('slide') && audioURL && captionsURL) entries[id] = { audio: audioURL, captions: captionsURL, transcript: typeof entry.transcript === 'string' ? entry.transcript : '' };
+      if (document.getElementById(id)?.classList.contains('slide') && audioURL && captionsURL) entries[id] = {
+        audio: audioURL, captions: captionsURL,
+        transcript: typeof entry.transcript === 'string' ? entry.transcript : '',
+        voice: typeof entry.voice === 'string' ? entry.voice.trim() : '',
+        caption_method: typeof entry.caption_method === 'string' ? entry.caption_method.trim() : ''
+      };
     }
     if (!Object.keys(entries).length) return;
     ui = buildPanel(); connectControls(); loadSlide(window.QEDeck.getState());
