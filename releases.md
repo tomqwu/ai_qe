@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.11.0 · 7 September 2026
+
+Added [Fintech results and client pilots]({{ '/case-studies/fintech/evidence/' | relative_url }}): seven cases, ten sources, reported-outcome charts, six adoption practices and a downloadable trial discussion brief for onboarding design, payment API tests or triage. The architecture walkthrough shows a rejected candidate stopping before the maintained suite. Cases retain their evidence type, measurement scope and limitations.
+
+All four slide/PDF editions advance to **v1.11.0**: industry EVP **25 slides**, industry technical **35**, fintech EVP **16**, fintech technical **24**. Eight new slides preserve prior anchors. The research companion remains **v1.7.0**, questionnaire **v3**, and film **v1.8.0**. [GitHub release v1.11.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.11.0) includes 15 assets: six PDFs, the film and captions, three CSV/JSON source registers, and checksums.
+
 ## v1.10.0 · 7 September 2026
 
 Added [QE modernization]({{ '/qe-modernization/' | relative_url }}) to the conversation path. Six workstreams connect reliable tests, containerization, virtual services, data, CI evidence and shared ownership to broader AI adoption. A guided test-environment architecture and API, web/mobile and legacy examples distinguish real software, simulated dependencies and separate integration checks. Thirteen primary-source records explain the evidence and limits.

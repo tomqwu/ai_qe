@@ -9,14 +9,15 @@
     "url": "/briefings/fintech-evp/",
     "pdf_prefix": "ai-qe-fintech-evp",
     "edition": "fintech_edition",
-    "slides": 14,
-    "time": "15–20 min",
+    "slides": 16,
+    "time": "20–25 min",
     "outline": [
       "The payment story and manual-work baseline",
       "Shared capability and team responsibilities",
       "Maturity assumptions, value and the next decision",
       "Client adoption assumptions and foundation ownership",
-      "QE modernization, repeatable environments and virtual services"
+      "QE modernization, repeatable environments and virtual services",
+      "Financial-services evidence and a focused client trial"
     ]
   },
   {
@@ -29,14 +30,15 @@
     "url": "/briefings/fintech-technical/",
     "pdf_prefix": "ai-qe-fintech-technical",
     "edition": "fintech_edition",
-    "slides": 22,
-    "time": "30–40 min",
+    "slides": 24,
+    "time": "35–45 min",
     "outline": [
       "Payment behavior and an executable test example",
       "Shared services and AI assistance by workflow",
       "DevOps maturity, ownership and implementation",
       "Client adoption assumptions and foundation ownership",
-      "QE modernization, repeatable environments and virtual services"
+      "QE modernization, repeatable environments and virtual services",
+      "Financial-services evidence and a focused client trial"
     ]
   },
   {
@@ -49,14 +51,15 @@
     "url": "/briefings/evp/",
     "pdf_prefix": "ai-qe-evp",
     "edition": "slide_edition",
-    "slides": 23,
-    "time": "25–35 min",
+    "slides": 25,
+    "time": "30–40 min",
     "outline": [
       "Vision and value · slides 1–5",
       "Industry, capability and ownership · slides 6–14",
       "Roadmap, leadership and proof · slides 15–21",
       "Client adoption assumptions and foundation ownership",
-      "QE modernization, repeatable environments and virtual services"
+      "QE modernization, repeatable environments and virtual services",
+      "Financial-services evidence and a focused client trial"
     ]
   },
   {
@@ -69,14 +72,15 @@
     "url": "/briefings/technical/",
     "pdf_prefix": "ai-qe-technical",
     "edition": "slide_edition",
-    "slides": 33,
-    "time": "40–55 min",
+    "slides": 35,
+    "time": "45–60 min",
     "outline": [
       "Architecture, context and test validity · slides 1–12",
       "Evaluation, controls and operations · slides 13–21",
       "Integration, delivery and failure resolution · slides 22–29",
       "Client adoption assumptions and foundation ownership",
-      "QE modernization, repeatable environments and virtual services"
+      "QE modernization, repeatable environments and virtual services",
+      "Financial-services evidence and a focused client trial"
     ]
   }
 ]

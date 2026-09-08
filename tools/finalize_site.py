@@ -94,5 +94,9 @@ modernization=json.loads((Path(__file__).resolve().parents[1]/'_data/modernizati
 for stream in modernization['workstreams']:
     path=f'/qe-modernization/#workstream-{stream["id"]}'
     index[f'modernization-{stream["id"]}']={'doc':'QE modernization','title':stream['title'],'content':' '.join(stream[field] for field in ('current','build','proof','owner','ai')),'url':'/ai_qe'+path,'relUrl':path}
+fintech_evidence=json.loads((Path(__file__).resolve().parents[1]/'_data/fintech_evidence.json').read_text())
+for case in fintech_evidence['cases']:
+    path=f'/case-studies/fintech/evidence/#case-{case["id"]}'
+    index[f'fintech-evidence-{case["id"]}']={'doc':'Fintech results and client pilots','title':case['name'],'content':' '.join(case[field] for field in ('headline','unit','finding','change','limit','lesson')),'url':'/ai_qe'+path,'relUrl':path}
 p.write_text(json.dumps(index,ensure_ascii=False))
 print(f'Search finalized: {len(index)} entries including audience slides and {len(dictionary["terms"])} dictionary terms')

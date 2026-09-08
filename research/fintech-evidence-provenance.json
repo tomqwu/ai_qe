@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://arxiv.org/pdf/2402.05636v2",
+    "path": "research/downloads/fintech-evidence/anz-copilot-v2.pdf",
+    "retrieved": "2026-09-07",
+    "status": "downloaded privately",
+    "sha256": "69243c0c56f88b5cab990f3914fb3eea01901edf689b84f8e400e126ec5087f0"
+  },
+  {
+    "url": "https://assets.kpmg.com/content/dam/kpmgsites/uk/pdf/2025/05/market-insights-software-testing-in-financial-services.pdf.coredownload.inline.pdf",
+    "path": "research/downloads/fintech-evidence/kpmg-financial-services-testing-2025.pdf",
+    "retrieved": "2026-09-07",
+    "status": "downloaded privately",
+    "sha256": "8ed23af5bd1b6f67c170878f45c81de556529433931b9794840b60ab5811c294"
+  }
+]

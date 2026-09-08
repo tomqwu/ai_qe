@@ -16,24 +16,29 @@
       "step": "03"
     },
     {
+      "title": "Fintech results & pilots",
+      "url": "/case-studies/fintech/evidence/",
+      "step": "04"
+    },
+    {
       "title": "Architecture in motion",
       "url": "/demos/architecture/",
-      "step": "04"
+      "step": "05"
     },
     {
       "title": "QE modernization",
       "url": "/qe-modernization/",
-      "step": "05"
+      "step": "06"
     },
     {
       "title": "Platform readiness",
       "url": "/platform-readiness/",
-      "step": "06"
+      "step": "07"
     },
     {
       "title": "Plan the discovery",
       "url": "/discovery/",
-      "step": "07"
+      "step": "08"
     }
   ],
   "reference": [

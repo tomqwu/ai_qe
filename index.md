@@ -62,4 +62,6 @@ has_toc: false
   </div>
 </section>
 
+<aside class="adoption-link-note"><strong>Financial-services evidence.</strong> Explore seven reported cases, their limits and the first trial that fits the client. <a href="{{ '/case-studies/fintech/evidence/' | relative_url }}">Open fintech results and client pilots →</a></aside>
+
 <aside class="evidence-position" aria-labelledby="position-title"><p class="eyebrow">The working position</p><h2 id="position-title">External evidence informs the opportunity.<br>Local proof earns the right to scale.</h2><p>Selected tasks show gains. Outcomes vary with the work, the team and the review burden. A bank-wide savings claim needs bank-specific measurement and a Finance-approved capture mechanism.</p><a class="text-link" href="{{ '/docs/principles/' | relative_url }}">Read the operating principles →</a></aside>

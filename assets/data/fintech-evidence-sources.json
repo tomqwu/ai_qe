@@ -1,0 +1,112 @@
+[
+  {
+    "id": "F1",
+    "title": "Libra Internet Bank: AI-assisted test design",
+    "publisher": "UiPath",
+    "url": "https://www.uipath.com/resources/automation-case-studies/libra-bank-reduces-test-creation-time-with-uipath-test-cloud",
+    "type": "Named customer / vendor case",
+    "section": "Bringing AI-powered software testing to banking teams; Outcomes",
+    "published": null,
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F2",
+    "title": "Goldman Sachs: automated Java unit tests",
+    "publisher": "Diffblue",
+    "url": "https://www.diffblue.com/case-studies/goldman-sachs-complete-a-years-worth-of-java-unit-test-writing-overnight-with-diffblue-cover/",
+    "type": "Named customer / vendor case",
+    "section": "Results; Time spent writing unit tests and manual-effort footnote",
+    "published": null,
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F3",
+    "title": "DBS annual report 2024: CIO statement",
+    "publisher": "DBS",
+    "url": "https://www.dbs.com/annualreports/2024/cio-statement.html",
+    "type": "Bank-authored operational report",
+    "section": "Change management; JIRA Assist; AI-powered change risk scoring",
+    "published": "2024 reporting year",
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F4",
+    "title": "Fiserv: testing transformation",
+    "publisher": "Tricentis",
+    "url": "https://www.tricentis.com/case-studies/fiserv-testing-transformation-tricentis",
+    "type": "Named customer / vendor case",
+    "section": "Company overview; Embracing the future with AI; Result",
+    "published": null,
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F5",
+    "title": "Bank of Queensland: quality as a service",
+    "publisher": "Tricentis",
+    "url": "https://www.tricentis.com/case-studies/bank-of-queensland-delivers-quality-as-a-service",
+    "type": "Named customer / vendor case",
+    "section": "Results; Looking to the future",
+    "published": null,
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F6",
+    "title": "ANZ: empirical study of GitHub Copilot",
+    "publisher": "Chatterjee, Liu, Rowland and Hogarth",
+    "url": "https://arxiv.org/abs/2402.05636v2",
+    "type": "Bank-authored controlled coding experiment",
+    "section": "Sections 3, 4.6, 4.9 and 5; PDF pp. 4, 6–7, 11–13",
+    "published": "2024-04-17",
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F7",
+    "title": "Unnamed fintech provider: AI-led QE",
+    "publisher": "TestingXperts",
+    "url": "https://www.testingxperts.com/case-study/ai-led-qe-reduces-qa-cycle-effort-fintech/",
+    "type": "Anonymous supplier case",
+    "section": "Summary; AI-Led Test Design Transformation; Impact-Driven Test Prioritization",
+    "published": null,
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F8",
+    "title": "Software testing in financial services: Market Insights 2025",
+    "publisher": "KPMG",
+    "url": "https://assets.kpmg.com/content/dam/kpmgsites/uk/pdf/2025/05/market-insights-software-testing-in-financial-services.pdf.coredownload.inline.pdf",
+    "type": "Consultancy synthesis",
+    "section": "Pages 10–13; used for context, not as an independent outcome study",
+    "published": "2025",
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F9",
+    "title": "Changing the developer productivity experiment design",
+    "publisher": "METR",
+    "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+    "type": "Independent research / methodological update",
+    "section": "Selection effects; raw estimates and confidence intervals",
+    "published": "2026-02-24",
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  },
+  {
+    "id": "F10",
+    "title": "What is Diffblue Cover?",
+    "publisher": "Diffblue",
+    "url": "https://cover-docs.diffblue.com/get-started/what-is-diffblue-cover",
+    "type": "Product documentation",
+    "section": "How it works: regression tests capture current behavior",
+    "published": null,
+    "reviewed": "2026-09-07",
+    "access": "Public full text"
+  }
+]

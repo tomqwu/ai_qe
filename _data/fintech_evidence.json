@@ -1,0 +1,380 @@
+{
+  "reviewed": "2026-09-07",
+  "sources": [
+    {
+      "id": "F1",
+      "title": "Libra Internet Bank: AI-assisted test design",
+      "publisher": "UiPath",
+      "url": "https://www.uipath.com/resources/automation-case-studies/libra-bank-reduces-test-creation-time-with-uipath-test-cloud",
+      "type": "Named customer / vendor case",
+      "section": "Bringing AI-powered software testing to banking teams; Outcomes",
+      "published": null,
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F2",
+      "title": "Goldman Sachs: automated Java unit tests",
+      "publisher": "Diffblue",
+      "url": "https://www.diffblue.com/case-studies/goldman-sachs-complete-a-years-worth-of-java-unit-test-writing-overnight-with-diffblue-cover/",
+      "type": "Named customer / vendor case",
+      "section": "Results; Time spent writing unit tests and manual-effort footnote",
+      "published": null,
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F3",
+      "title": "DBS annual report 2024: CIO statement",
+      "publisher": "DBS",
+      "url": "https://www.dbs.com/annualreports/2024/cio-statement.html",
+      "type": "Bank-authored operational report",
+      "section": "Change management; JIRA Assist; AI-powered change risk scoring",
+      "published": "2024 reporting year",
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F4",
+      "title": "Fiserv: testing transformation",
+      "publisher": "Tricentis",
+      "url": "https://www.tricentis.com/case-studies/fiserv-testing-transformation-tricentis",
+      "type": "Named customer / vendor case",
+      "section": "Company overview; Embracing the future with AI; Result",
+      "published": null,
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F5",
+      "title": "Bank of Queensland: quality as a service",
+      "publisher": "Tricentis",
+      "url": "https://www.tricentis.com/case-studies/bank-of-queensland-delivers-quality-as-a-service",
+      "type": "Named customer / vendor case",
+      "section": "Results; Looking to the future",
+      "published": null,
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F6",
+      "title": "ANZ: empirical study of GitHub Copilot",
+      "publisher": "Chatterjee, Liu, Rowland and Hogarth",
+      "url": "https://arxiv.org/abs/2402.05636v2",
+      "type": "Bank-authored controlled coding experiment",
+      "section": "Sections 3, 4.6, 4.9 and 5; PDF pp. 4, 6–7, 11–13",
+      "published": "2024-04-17",
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F7",
+      "title": "Unnamed fintech provider: AI-led QE",
+      "publisher": "TestingXperts",
+      "url": "https://www.testingxperts.com/case-study/ai-led-qe-reduces-qa-cycle-effort-fintech/",
+      "type": "Anonymous supplier case",
+      "section": "Summary; AI-Led Test Design Transformation; Impact-Driven Test Prioritization",
+      "published": null,
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F8",
+      "title": "Software testing in financial services: Market Insights 2025",
+      "publisher": "KPMG",
+      "url": "https://assets.kpmg.com/content/dam/kpmgsites/uk/pdf/2025/05/market-insights-software-testing-in-financial-services.pdf.coredownload.inline.pdf",
+      "type": "Consultancy synthesis",
+      "section": "Pages 10–13; used for context, not as an independent outcome study",
+      "published": "2025",
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F9",
+      "title": "Changing the developer productivity experiment design",
+      "publisher": "METR",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "type": "Independent research / methodological update",
+      "section": "Selection effects; raw estimates and confidence intervals",
+      "published": "2026-02-24",
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    },
+    {
+      "id": "F10",
+      "title": "What is Diffblue Cover?",
+      "publisher": "Diffblue",
+      "url": "https://cover-docs.diffblue.com/get-started/what-is-diffblue-cover",
+      "type": "Product documentation",
+      "section": "How it works: regression tests capture current behavior",
+      "published": null,
+      "reviewed": "2026-09-07",
+      "access": "Public full text"
+    }
+  ],
+  "cases": [
+    {
+      "id": "libra",
+      "name": "Libra Internet Bank",
+      "category": "ai-qe",
+      "source": "F1",
+      "headline": "35% less test-creation time",
+      "unit": "Reported bank-level test design time",
+      "finding": "UiPath reports 35% less time creating test cases and AI generation for more than 60% of cases used. The pilot began with two onboarding teams.",
+      "change": "Requirements in Jira feed AI-generated cases alongside Xray and Test Manager; smoke automation expanded separately.",
+      "limit": "Vendor-published customer account. Sample, measurement window and net review effort are undisclosed. The 90%+ smoke automation figure applies to teams using UiPath.",
+      "lesson": "Try reviewed scenario drafting on one onboarding journey; measure accepted coverage and total effort.",
+      "pilot": "design"
+    },
+    {
+      "id": "goldman",
+      "name": "Goldman Sachs",
+      "category": "ai-qe",
+      "source": "F2",
+      "headline": "36% → 72% coverage",
+      "unit": "Reported unit-test coverage for a selected module",
+      "finding": "Diffblue reports this coverage increase within 24 hours. A separate application received 3,211 generated tests; review took one day.",
+      "change": "AI-based Java regression-test generation supports legacy modernization.",
+      "limit": "Vendor case. Manual-time savings use assumed 30 minutes per test and six productive hours per day. Coverage records exercised code, not proven business correctness; this is not an LLM rollout benchmark.",
+      "lesson": "Generate candidates in a buildable module, then challenge assertions against independently specified behavior.",
+      "pilot": "api"
+    },
+    {
+      "id": "dbs",
+      "name": "DBS",
+      "category": "adjacent",
+      "source": "F3",
+      "headline": "5% → 100% of changes screened",
+      "unit": "Reported change-request screening coverage",
+      "finding": "DBS reports an 81% decrease in monthly average change-related incidents with AI risk scoring. It separately describes JIRA Assist for user stories and test cases.",
+      "change": "Near-production testing, stronger change practices and ML-based screening support delivery reliability.",
+      "limit": "Bank self-report, without a causal control or raw incident counts. The incident result belongs to change-risk management; no JIRA Assist productivity percentage is reported.",
+      "lesson": "Evaluate change-risk suggestions against known outcomes before allowing them to alter mandatory testing.",
+      "pilot": "triage"
+    },
+    {
+      "id": "fiserv",
+      "name": "Fiserv",
+      "category": "foundation",
+      "source": "F4",
+      "headline": "65% fewer major incidents",
+      "unit": "Reported year-over-year incidents",
+      "finding": "Tricentis reports the decline during testing standardization across a large application estate.",
+      "change": "A testing centre of excellence connects Jira, qTest, Tosca and data validation, with shared training.",
+      "limit": "Vendor case with multiple simultaneous changes. AI testing is a subsequent pilot; the quoted 25% AI uplift is an expectation, not a measured result.",
+      "lesson": "Establish shared evidence, framework ownership and reusable data checks while piloting AI.",
+      "pilot": "api"
+    },
+    {
+      "id": "boq",
+      "name": "Bank of Queensland",
+      "category": "foundation",
+      "source": "F5",
+      "headline": "5+ weeks → 5 days",
+      "unit": "Reported regression cycle",
+      "finding": "The case reports shorter regression cycles within an 18-month transformation and releases moving from every three to four months to monthly.",
+      "change": "Tosca and qTest support existing testers, traceability and daily environment health checks.",
+      "limit": "Vendor modernization case. Service virtualization and Vision AI appear as future work; the reported cycle reduction cannot be assigned to them.",
+      "lesson": "Remove environment waits and build usable automation before promising a shorter release cycle.",
+      "pilot": "api"
+    },
+    {
+      "id": "anz",
+      "name": "ANZ",
+      "category": "adjacent",
+      "source": "F6",
+      "headline": "30.98 → 17.86 minutes",
+      "unit": "Mean self-reported time per Python challenge",
+      "finding": "The controlled crossover study involved over 100 engineers. Analysis retained 172 task observations after removing six duplicates and 22 unsolved tasks.",
+      "change": "Copilot access switched between groups; participants attempted fixed Python problems.",
+      "limit": "Coding experiment, not QE delivery. Time was self-reported; failed tasks were excluded. The time test used 22 paired participants; unit-test success improvement was not statistically significant.",
+      "lesson": "Compare matched tasks, retain unsuccessful attempts and measure quality separately from speed.",
+      "pilot": "design"
+    },
+    {
+      "id": "anonymous",
+      "name": "Unnamed fintech software provider",
+      "category": "ai-qe",
+      "source": "F7",
+      "headline": "42% less QA cycle effort claimed",
+      "unit": "Supplier-reported QA cycle effort",
+      "finding": "TestingXperts reports AI use in test design, automation, impact analysis, reporting and investigation.",
+      "change": "Several workflow interventions are bundled in one engagement.",
+      "limit": "Client, sample and measurement period are undisclosed. The separate 60–70% productivity claim is not reconciled with its 10-hour to 4–5-hour example. Seek definitions and raw data before quoting it as a benchmark.",
+      "lesson": "Use the workflow ideas to frame discovery; exclude the headline from the client savings forecast.",
+      "pilot": "triage"
+    }
+  ],
+  "practices": [
+    {
+      "title": "Start with a bounded journey",
+      "body": "Choose one onboarding or payment change with clear expected outcomes. Preserve the current toolchain where it supports the trial.",
+      "sources": [
+        "F1"
+      ],
+      "proof": "A domain reviewer can accept or reject each proposed scenario."
+    },
+    {
+      "title": "Give tests an independent correctness check",
+      "body": "Coverage and passing tests are useful signals. Challenge money movement, rounding and retries with known failures and reviewed expected outcomes.",
+      "sources": [
+        "F2",
+        "F10"
+      ],
+      "proof": "A duplicate transfer or wrong balance causes the candidate test to fail."
+    },
+    {
+      "title": "Modernize the execution foundation",
+      "body": "Assign owners to environments, fixture reset, dependency models and reusable frameworks. Track their improvements separately from AI.",
+      "sources": [
+        "F4",
+        "F5",
+        "F8"
+      ],
+      "proof": "Another engineer reproduces the run and locates its original evidence."
+    },
+    {
+      "title": "Keep the comparison honest",
+      "body": "Use comparable work, the same readiness level and explicit task allocation. Include failures, review, rework and setup; record missing observations.",
+      "sources": [
+        "F6",
+        "F9"
+      ],
+      "proof": "The team can explain selection, exclusions and uncertainty in the result."
+    },
+    {
+      "title": "Run recommendations beside the existing process",
+      "body": "Observe risk-based test selection or triage suggestions before changing required suites. Inspect missed defects and incorrect groupings.",
+      "sources": [
+        "F3"
+      ],
+      "proof": "Mandatory payment checks still run, and wrong suggestions are visible."
+    },
+    {
+      "title": "Scale a supported service",
+      "body": "Coach domain QA and automation engineers together. Name a support owner and test transfer to a second team before expanding across 50–100 staff.",
+      "sources": [
+        "F1",
+        "F4",
+        "F5"
+      ],
+      "proof": "The second team uses and maintains the pattern without its original authors."
+    }
+  ],
+  "pilots": [
+    {
+      "id": "design",
+      "title": "Onboarding test design",
+      "fit": "Manual case writing dominates; requirements and domain reviewers are available.",
+      "stack": "Jira + Xray, or Azure Boards + Test Plans; an approved assistant drafts into the existing review workflow.",
+      "input": "One onboarding journey, approved acceptance rules, historic cases and known omissions.",
+      "output": "A reviewed scenario matrix, rejected drafts and traceable expected outcomes.",
+      "dependency": "Approved source access, consistent requirements, reviewer time and a conventional-work baseline.",
+      "measure": "Active minutes per accepted scenario, review/rework, missed critical cases and duplicate cases.",
+      "gate": "All required onboarding rules are covered and independently reviewed; net effort improves on comparable work.",
+      "fail": "Pause if reviewers cannot establish correctness or critical scenarios are omitted.",
+      "question": "Which onboarding rule is repeatedly missed, and who can judge a proposed test against it?"
+    },
+    {
+      "id": "api",
+      "title": "Payment API test generation",
+      "fit": "A buildable service, stable API tests and repeatable test data already exist.",
+      "stack": "JUnit + REST Assured; Testcontainers or a supported environment; WireMock at the provider boundary; existing CI.",
+      "input": "PAY-142 rules, repository conventions, synthetic accounts and provider scenarios.",
+      "output": "A reviewed test pull request, deliberate-fault results and retained CI artifacts.",
+      "dependency": "Build access, permitted AI tooling, runtime capacity, isolated fixtures, owned stubs and independent financial assertions.",
+      "measure": "Effort per accepted change, assertion strength, flaky failures, setup time and repeatability.",
+      "gate": "Required checks pass on the intended build and fail on a deliberately broken duplicate-posting variant.",
+      "fail": "Stop if a candidate weakens assertions, silently skips required checks or passes the broken variant.",
+      "question": "Can two engineers reproduce the same payment failure in an isolated environment today?"
+    },
+    {
+      "id": "triage",
+      "title": "Failure triage and evidence",
+      "fit": "Test runs already retain usable logs, traces, assertions and defect dispositions.",
+      "stack": "Existing CI and test management; Playwright traces or API logs; approved AI summaries linked to source artifacts.",
+      "input": "A bounded set of historical failures with independently adjudicated causes, then new failures in shadow mode.",
+      "output": "Evidence-linked draft diagnoses with uncertainty, reviewer corrections and original run links.",
+      "dependency": "Accessible diagnostics, run IDs, reviewer capacity and a policy for retaining permitted evidence.",
+      "measure": "Time to correct disposition, unsupported claims, wrong grouping, missed product defects and review burden.",
+      "gate": "Reviewers can trace every material claim to evidence, and product defects remain visible.",
+      "fail": "Pause if the tool invents a cause, hides an unresolved failure or collapses distinct product defects.",
+      "question": "How much time is spent finding evidence versus making the actual diagnosis?"
+    }
+  ],
+  "flow": [
+    {
+      "title": "Approved intent reaches the assistant",
+      "detail": "The domain owner supplies expected behavior and permitted context.",
+      "node": "",
+      "routes": [
+        "intent:draft"
+      ]
+    },
+    {
+      "title": "A candidate reaches review",
+      "detail": "Generated tests remain proposals. A reviewer checks their intent and assertions.",
+      "node": "",
+      "routes": [
+        "draft:review"
+      ]
+    },
+    {
+      "title": "Reviewed tests face an independent challenge",
+      "detail": "CI runs the normal build and a known-bad variant against controlled fixtures.",
+      "node": "",
+      "routes": [
+        "review:challenge"
+      ]
+    },
+    {
+      "title": "Invalid candidates return for correction",
+      "detail": "A compile error, wrong assertion or failure to detect the known fault rejects the candidate. Nothing is promoted.",
+      "node": "",
+      "routes": [
+        "challenge:rework"
+      ]
+    }
+  ],
+  "featured": [
+    {
+      "name": "Libra Internet Bank",
+      "source": "F1",
+      "case": "libra",
+      "metric": "Test-creation time",
+      "unit": "Index: previous time = 100",
+      "before": 100,
+      "after": 65,
+      "before_label": "Previous",
+      "after_label": "Reported",
+      "headline": "35% less time",
+      "caveat": "UiPath customer case. Normalized from the reported reduction; review effort is unspecified."
+    },
+    {
+      "name": "Goldman Sachs",
+      "source": "F2",
+      "case": "goldman",
+      "metric": "Unit-test coverage",
+      "unit": "Share of a selected module (%)",
+      "before": 36,
+      "after": 72,
+      "before_label": "Before",
+      "after_label": "After",
+      "headline": "36% → 72%",
+      "caveat": "Diffblue customer case. Coverage measures exercised code; it does not establish financial correctness."
+    },
+    {
+      "name": "Fiserv",
+      "source": "F4",
+      "case": "fiserv",
+      "metric": "Major incidents",
+      "unit": "Index: previous year = 100",
+      "before": 100,
+      "after": 35,
+      "before_label": "Prior year",
+      "after_label": "Reported",
+      "headline": "65% fewer incidents",
+      "caveat": "Tricentis modernization case. AI testing was a later pilot; this is not an AI-attributed reduction."
+    }
+  ]
+}

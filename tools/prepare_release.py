@@ -23,7 +23,8 @@ def prepare(output):
                   f'assets/pdf/ai-qe-discovery-questionnaire-v{release["questionnaire_edition"]}.pdf',
                   'assets/video/assurance-architecture.mp4', 'assets/video/assurance-architecture.vtt',
                   'assets/data/industry-sources.csv', 'assets/data/industry-sources.json',
-                  'assets/data/qe-modernization-sources.csv', 'assets/data/qe-modernization-sources.json']
+                  'assets/data/qe-modernization-sources.csv', 'assets/data/qe-modernization-sources.json',
+                  'assets/data/fintech-evidence-sources.csv', 'assets/data/fintech-evidence-sources.json']
     assets = output / 'assets'
     assets.mkdir()
     hashes = {}
@@ -45,6 +46,8 @@ def prepare(output):
 
 [QE modernization, containerization and service virtualization](https://tomqwu.github.io/ai_qe/qe-modernization/)
 
+[Financial-services results and client trials](https://tomqwu.github.io/ai_qe/case-studies/fintech/evidence/)
+
 Publication editions:
 
 - Site and presentation player: **v{release["version"]}**
@@ -53,7 +56,7 @@ Publication editions:
 - Research companion: **v{release["research_edition"]}** — 13 pages
 - Fillable discovery questionnaire: **v{release["questionnaire_edition"]}**
 
-Assets include all six PDFs, the architecture film and captions, and the industry and modernization CSV/JSON source registers. SHA256SUMS.txt covers all twelve downloadable publication files. The PDF filenames identify their content edition, which may precede a site-navigation release. The existing architecture film retains its v1.8.0 edition.
+Assets include all six PDFs, the architecture film and captions, and the industry, modernization and fintech-evidence CSV/JSON source registers. SHA256SUMS.txt covers all fourteen downloadable publication files. The PDF filenames identify their content edition, which may precede a site-navigation release. The existing architecture film retains its v1.8.0 edition.
 
 Published only after the site build, browser checks, PDF checks and GitHub Pages deployment succeed. The fintech case is fictional; its estimates and outcomes are illustrative assumptions.
 '''

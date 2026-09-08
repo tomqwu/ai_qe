@@ -16,6 +16,8 @@ description: An independent research synthesis of AI for quality engineering and
 
 <div class="research-edition"><span>{{ site.data.industry_sources | size }} curated primary-source entries</span><span>Reviewed 6 September 2026</span><span>Financial-services lens</span></div>
 
+<aside class="adoption-link-note"><strong>Financial-services evidence.</strong> Explore seven reported cases, their limits and the first trial that fits the client. <a href="{{ '/case-studies/fintech/evidence/' | relative_url }}">Open fintech results and client pilots →</a></aside>
+
 ## The research position
 
 **Treat AI × QE as a change to the quality system.** Analyst perspectives point toward broader AI participation in delivery. Industry surveys describe adoption and organizational friction. Enterprise cases show practical ways to generate tests and diagnose failures. None provides a transferable enterprise savings rate. {% include industry/cite.html ids="G01,G04,M01,W01,D01,E04,E06" %}
