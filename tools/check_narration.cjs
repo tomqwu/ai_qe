@@ -114,9 +114,41 @@ async function checkBounds(page) {
       assert.equal(await page.locator('.narration-panel').isVisible(),false);
       assert.match(await page.locator('.deck-message').textContent(),/Narration paused/);
       await slide(page,17); await page.locator('[data-narration-play]').click(); await waitForPlaying(page); await seekNearEnd(page);
+      await page.waitForFunction(() => document.querySelector('.narration-panel').dataset.narrationState === 'between-slides');
+      const gapStart = Date.now();
+      assert.equal(await currentSlide(page),'slide-17','Keep the completed slide visible during the pause');
+      assert.match(await page.locator('[data-narration-start]').textContent(),/Pause narration/);
       await page.waitForURL(/#slide-18$/); await waitForPlaying(page);
+      assert.ok(Date.now() - gapStart >= 1800,'Pause between slides is about two wall-clock seconds even at 1.25x');
       await page.locator('[data-narration-play]').click();
       await checkBounds(page);
+
+      // Pause, manual navigation, notes and Auto-next off must cancel delayed navigation.
+      const enterGap = async () => {
+        await slide(page,17); await page.locator('[data-narration-auto]').check();
+        await page.locator('[data-narration-play]').click(); await waitForPlaying(page); await seekNearEnd(page);
+        await page.waitForFunction(() => document.querySelector('.narration-panel').dataset.narrationState === 'between-slides');
+      };
+      await enterGap(); await page.locator('[data-narration-start]').click();
+      await page.waitForTimeout(2200);
+      assert.equal(await currentSlide(page),'slide-17','Pause holds the slide past the pending timer');
+      await page.locator('[data-narration-start]').click();
+      await page.waitForURL(/#slide-18$/); await waitForPlaying(page);
+      await page.locator('[data-narration-play]').click();
+      for (const action of ['navigate','notes','auto-off']) {
+        await enterGap();
+        if (action==='navigate') await slide(page,18);
+        if (action==='notes') await page.locator('[data-notes]').click();
+        if (action==='auto-off') await page.locator('[data-narration-auto]').uncheck();
+        await page.waitForTimeout(2200);
+        assert.equal(await currentSlide(page),action==='navigate'?'slide-18':'slide-17',`${action} cancels the delayed change`);
+        assert.equal(await mediaPaused(page),true);
+        if (action==='notes') {
+          assert.match(await page.locator('[data-drawer-content] .slide-narrator-notes').textContent(),/A test narration transcript/);
+          await page.locator('[data-close-drawer]').click();
+        }
+      }
+      await page.locator('[data-narration-auto]').check();
       await slide(page,17); await page.locator('[data-narration-play]').click(); await waitForPlaying(page);
       await slide(page,18); assert.equal(await mediaPaused(page),true,'Manual navigation must stop playback');
       assert.equal(await page.locator('[data-narration-caption]').textContent(),'');

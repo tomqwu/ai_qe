@@ -46,11 +46,19 @@ Completed recordings are reused when the plan and checksums match. Saved respons
 
 ## Presenting with narration
 
-Every presentation has a **Play narration** button. It begins on the current slide, shows synchronized English captions and enables automatic advancement. The `audio.ended` event advances through the current full deck or guided route; no fixed slide timer is used.
+Every presentation has a **Play narration** button. It begins on the current slide, shows synchronized English captions and enables automatic advancement. The `audio.ended` event starts a two-second breathing pause, then advances through the current full deck or guided route. The pause uses wall-clock time and is not shortened by playback speed. Pausing holds the transition; resuming completes its remaining pause. Manual navigation, notes, Auto-next off and hidden tabs cancel a pending transition.
 
 Pause for discussion, replay a slide, seek or change speed. Captions follow the audio clock. Manual navigation, switching to reading mode, opening notes or a transcript, and hiding the tab pause playback. The next slide never plays automatically on initial page load.
 
 The subtitle panel has reserved space below the slide. A CC toggle and readable transcript are available; the transcript identifies the generated voice and caption method. Missing media offers a retry, and missing captions offer their own retry without blocking audio.
+
+## In-place diagram explanations and narrator notes
+
+Every slide exposes its spoken explanation in the existing **Sources & notes** drawer. On the existing site pages, **Listen to explanation** reuses the matching Chris recording; **Narrator notes** adds a visual walkthrough and the transcript. The mapping lives in `assets/data/narration-guides.json`. These players load MP3s only on demand, show synchronized English captions and share audio focus with embedded decks.
+
+The 3D architecture's four scenarios each have a narrated overview. Starting an overview pauses the independent story timer. Stage selection pauses the overview; the recording does not claim word-by-word synchronization with the 3D stages. Calculators explicitly label narration as an explanation of the published baseline and method, not a reading of current selections.
+
+This update creates no new pages, regenerates no audio and preserves the recorded audio and PDF editions.
 
 ## Verification and publication
 
@@ -59,6 +67,7 @@ python3 tools/validate_narration.py --require-complete
 python3 -m unittest discover -s tools -p 'test_*narration.py'
 python3 -m unittest discover -s tools -p 'test_captions_from_alignment.py'
 QE_TEST_URL=http://127.0.0.1:61601/ai_qe node tools/check_narration.cjs
+QE_TEST_URL=http://127.0.0.1:61601/ai_qe node tools/check_presenter_notes.cjs
 ```
 
 Validate all slide IDs, transcripts, audio hashes, measured durations, caption bounds and provenance before publishing. Check real audio in Chromium and WebKit, including mobile layout, manual navigation, the final slide and a guided route. Review screenshots with subtitles visible so labels remain readable.

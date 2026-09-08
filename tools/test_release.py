@@ -91,6 +91,8 @@ class PublicationTests(unittest.TestCase):
             self.assertEqual(len((folder / 'assets/SHA256SUMS.txt').read_text().splitlines()), 15)
             bundle = next((folder / 'assets').glob('ai-qe-narration-*.zip'))
             with zipfile.ZipFile(bundle) as archive:
+                guides = json.loads(archive.read('narration-guides.json'))
+                self.assertEqual(set(guides['demo']), {'generate', 'evaluate', 'deny', 'hold'})
                 for extension in ('.mp3', '.vtt'):
                     self.assertEqual(sum(name.endswith(extension) for name in archive.namelist()), 109)
                 self.assertEqual(sum(name.startswith('transcripts/') for name in archive.namelist()), 109)

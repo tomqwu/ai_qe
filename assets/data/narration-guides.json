@@ -1,0 +1,437 @@
+{
+  "description": "Existing Chris recordings reused in place; no new pages or generated voices. Diagram notes describe the published design, not live telemetry.",
+  "guides": [
+    {
+      "selector": "figure[data-diagram=\"platform\"]",
+      "deck": "industry-technical",
+      "slide": "slide-2",
+      "guide": "Engineers and delivery systems supply tasks and approved context. The runtime proposes actions through a policy gateway. Independent sandbox checks and application evaluations supply evidence to the release authority. Traces and decisions feed the evidence store; curated failures become regression cases."
+    },
+    {
+      "selector": "figure[data-diagram=\"test-sequence\"]",
+      "deck": "industry-technical",
+      "slide": "slide-3",
+      "guide": "The engineer supplies the contract. The agent requests scoped context and proposes a test. The gateway authorizes sandbox execution. CI checks the candidate against a seeded boundary fault. The reviewer receives assertions and test evidence before using existing merge controls."
+    },
+    {
+      "selector": "figure[data-diagram=\"testgen-evidence\"]",
+      "deck": "industry-technical",
+      "slide": "slide-4",
+      "guide": "The bars have a common zero-to-100-percent axis. The qualifying share drops from 75% for build success to 57% for reliable passing and 25% for added coverage. These percentages describe test classes, not individual generated tests."
+    },
+    {
+      "selector": "figure[data-diagram=\"evaluation-system\"]",
+      "deck": "industry-technical",
+      "slide": "slide-5",
+      "guide": "Versioned application configurations and a held-out evaluation corpus feed comparable runs and independent scoring. A failed release gate holds the change for investigation. A passing gate leads to controlled deployment and production monitoring; curated failures refresh the corpus."
+    },
+    {
+      "selector": "figure[data-diagram=\"context-route\"]",
+      "deck": "industry-technical",
+      "slide": "slide-7",
+      "guide": "Approved sources feed scoped retrieval and a minimal context snapshot. The runtime treats that content as evidence. Retrieval checks evaluate relevance and access; the action gateway retains authority."
+    },
+    {
+      "selector": "figure[data-diagram=\"configuration-bundle\"]",
+      "deck": "industry-technical",
+      "slide": "slide-8",
+      "guide": "A manifest contains model and prompt, retrieval and data, tools and memory, and the evaluation contract. A release identity binds those versions to evaluated runs and approval."
+    },
+    {
+      "selector": "figure[data-diagram=\"test-oracle\"]",
+      "deck": "industry-technical",
+      "slide": "slide-9",
+      "guide": "The approved contract and implementation inform a candidate test. Separate oracle review checks intended behavior; independent execution checks both valid code and a seeded fault."
+    },
+    {
+      "selector": "figure[data-diagram=\"mutation-loop\"]",
+      "deck": "industry-technical",
+      "slide": "slide-10",
+      "guide": "A fault concern drives a candidate test. It must pass original code and fail a relevant mutated version. Combined evidence reaches review; weak results lead to refining the concern."
+    },
+    {
+      "selector": "figure[data-diagram=\"diagnosis-workflow\"]",
+      "deck": "industry-technical",
+      "slide": "slide-11",
+      "guide": "A failing test feeds an assistant and then an engineer review. The outcome record captures corrections and effort. Separate panels show the small accuracy sample and larger deployment population."
+    },
+    {
+      "selector": "figure[data-diagram=\"flaky-repair\"]",
+      "deck": "industry-technical",
+      "slide": "slide-12",
+      "guide": "The workflow reproduces a flaky failure, gathers targeted context, proposes a repair and validates it. Semantically weak or unstable repairs return to diagnosis."
+    },
+    {
+      "selector": "figure[data-diagram=\"corpus-design\"]",
+      "deck": "industry-technical",
+      "slide": "slide-13",
+      "guide": "Candidate cases pass through privacy review, deduplication and labeling. They feed development, held-out and adversarial sets with distinct uses."
+    },
+    {
+      "selector": "figure[data-diagram=\"threat-boundary\"]",
+      "deck": "industry-technical",
+      "slide": "slide-15",
+      "guide": "Untrusted documents, code, tool output and memory reach the agent runtime. The agent can request an action, but the gateway checks identity, resource and policy. Permitted calls reach scoped tools. Denied calls cause no side effect and stop or escalate."
+    },
+    {
+      "selector": "figure[data-diagram=\"gateway-sequence\"]",
+      "deck": "industry-technical",
+      "slide": "slide-16",
+      "guide": "The runtime requests a production write. The gateway evaluates scope, records a denial and returns it to the runtime. The scoped tool is never invoked."
+    },
+    {
+      "selector": "figure[data-diagram=\"execution-isolation\"]",
+      "deck": "industry-technical",
+      "slide": "slide-17",
+      "guide": "An orchestration worker invokes an ephemeral sandbox. Controlled artifacts reach review, then protected release systems. Production authority never belongs to the generating worker."
+    },
+    {
+      "selector": "figure[data-diagram=\"release-gate\"]",
+      "deck": "industry-technical",
+      "slide": "slide-18",
+      "guide": "Comparable runs reach a mandatory-floor check. Failure holds the candidate. Passing candidates proceed to review of scenario-level regressions and remaining uncertainty."
+    },
+    {
+      "selector": "figure[data-diagram=\"fallback-state\"]",
+      "deck": "industry-technical",
+      "slide": "slide-19",
+      "guide": "A trigger moves normal operation to containment and fallback. Recovery review verifies a fix before an owner authorizes resumption. Completed side effects require separate reconciliation."
+    },
+    {
+      "selector": "figure[data-diagram=\"trace-pipeline\"]",
+      "deck": "industry-technical",
+      "slide": "slide-20",
+      "guide": "Three event streams enter a controlled telemetry boundary. The joined records support operations, platform monitoring and reviewed regression-case curation."
+    },
+    {
+      "selector": "figure[data-diagram=\"evidence-model\"]",
+      "deck": "industry-technical",
+      "slide": "slide-21",
+      "guide": "A task has multiple runs; a run may have several review records. Outcomes link through task and artifact identifiers. A cohort comparison joins baseline effort, run and review effort, rework and defects. Version identifiers make changes in tool configuration auditable."
+    },
+    {
+      "selector": "figure[data-diagram=\"contract-chain\"]",
+      "deck": "industry-technical",
+      "slide": "slide-27",
+      "guide": "A payment test task binds permitted context, resource scope and deadline. A policy decision authorizes only the sandbox action. An evaluation manifest joins artifact and corpus versions. The evidence record links task, policy and evaluation and remains held for human review."
+    },
+    {
+      "selector": "figure[data-diagram=\"failure-resolution\"]",
+      "deck": "industry-technical",
+      "slide": "slide-29",
+      "guide": "Capture CI traces, fixture versions and repeatability evidence. An owner confirms whether the cause is product, test, data or environment. Proposed repairs require an independent retest and relevant regression. A confirmed flaky test may instead enter a time-limited quarantine with replacement coverage. Both paths keep a resolution record; the quarantined test remains open until restored."
+    },
+    {
+      "selector": "figure[data-diagram=\"strategic-system\"]",
+      "deck": "industry-evp",
+      "slide": "slide-2",
+      "guide": "AI for QE and QE for AI share testable intent, independent assurance and operational learning. That common capability supports validated delivery, trustworthy AI behavior and reuse across teams."
+    },
+    {
+      "selector": "figure[data-diagram=\"evidence-contrasts\"]",
+      "deck": "industry-evp",
+      "slide": "slide-4",
+      "guide": "Cui: 4,867 developers, completed tasks +26.08%, standard error 10.3 percentage points. METR: 16 developers, 246 tasks, completion time +19%, 95% confidence interval +2% to +39%. The studies measure distinct outcomes and should not be pooled."
+    },
+    {
+      "selector": "figure[data-diagram=\"opportunity-map\"]",
+      "deck": "industry-evp",
+      "slide": "slide-8",
+      "guide": "A two-by-two screen separates easy-to-verify results from expert judgment, and advice from greater action authority. Test drafts and log-linked diagnosis are candidate starting points."
+    },
+    {
+      "selector": "figure[data-diagram=\"research-decisions\"]",
+      "deck": "industry-evp",
+      "slide": "slide-9",
+      "guide": "DORA informs joined effort measurement. Meta informs independent test-quality gates. NIST informs versioned evaluation and feedback. OWASP and OSFI inform external permission enforcement. Each design response has an associated evidence record."
+    },
+    {
+      "selector": "figure[data-diagram=\"ownership-system\"]",
+      "deck": "industry-evp",
+      "slide": "slide-11",
+      "guide": "Product and QE accountability flows to the delivery team. Shared platform services enable delivery; delivery and risk owners challenge its evidence. Operations and value owners use the resulting outcomes."
+    },
+    {
+      "selector": "figure[data-diagram=\"investment-stack\"]",
+      "deck": "industry-evp",
+      "slide": "slide-14",
+      "guide": "Three example domains contribute different quality assets. They use a common assurance layer, which connects through replaceable model and tool adapters."
+    },
+    {
+      "selector": "figure[data-diagram=\"capability-horizons\"]",
+      "deck": "industry-evp",
+      "slide": "slide-15",
+      "guide": "Horizon one is trusted assistance, gated by local quality and net effort. Horizon two is connected assurance, gated by repeatability across teams. Horizon three is controlled agents, gated by safe actions and tested resilience."
+    },
+    {
+      "selector": "figure[data-diagram=\"strategic-scorecard\"]",
+      "deck": "industry-evp",
+      "slide": "slide-16",
+      "guide": "Four rows connect delivery capacity, trustworthy outcomes, reusable capability and controlled autonomy to evidence and leadership decisions."
+    },
+    {
+      "selector": "figure[data-diagram=\"governance-loop\"]",
+      "deck": "industry-evp",
+      "slide": "slide-17",
+      "guide": "Inventory informs authority limits. Evidence review supports an approved scope. Operations feed incidents and service changes back into the inventory and authority decision."
+    },
+    {
+      "selector": "figure[data-diagram=\"strategy-choices\"]",
+      "deck": "industry-evp",
+      "slide": "slide-19",
+      "guide": "Local assistants accelerate individual tasks. Shared assurance makes expectations, evaluation and evidence reusable. Bounded agents add delegated actions and stronger recovery obligations. These are design choices, not measured maturity scores."
+    },
+    {
+      "selector": "figure[data-diagram=\"bank-workflow\"]",
+      "deck": "industry-evp",
+      "slide": "slide-20",
+      "guide": "The current-state hypothesis has local interpretation, test writing, review and late evidence assembly. The target versions the approved payment rule, generates tests in a scoped sandbox, independently checks fault detection and retains the reviewer decision and release evidence."
+    },
+    {
+      "selector": "figure.ft-staff",
+      "deck": "evp",
+      "slide": "slide-2",
+      "guide": "Start with the five squads and the shared constraints. The eight-person pilot cohort comes from the existing team; product and platform support are separate contributions."
+    },
+    {
+      "selector": "figure.ft-payment",
+      "deck": "evp",
+      "slide": "slide-3",
+      "guide": "Trace the timeout and retry. Ask whether the retry returns the original transfer, then point to the independent money-movement checks. This is an authored testing scenario."
+    },
+    {
+      "selector": "figure.ft-effort",
+      "deck": "evp",
+      "slide": "slide-4",
+      "guide": "Separate hands-on testing from waiting for environments and evidence. Adding drafting assistance alone does not remove those queues."
+    },
+    {
+      "selector": "figure.ft-diagram[data-diagram=\"fintech-platform\"]",
+      "deck": "evp",
+      "slide": "slide-5",
+      "guide": "Follow context, AI drafting, human review, execution, evidence and release review. Pause at the human review boundary: a proposed test is not an approved test."
+    },
+    {
+      "selector": "figure.ft-before-after",
+      "deck": "evp",
+      "slide": "slide-6",
+      "guide": "Compare the two lanes from left to right. Point out the new environment and evidence capabilities before discussing AI assistance."
+    },
+    {
+      "selector": "figure.ft-pilot-time",
+      "deck": "evp",
+      "slide": "slide-10",
+      "guide": "Walk through baseline, bounded pilot and reuse. These are planning windows; readiness evidence determines whether the next phase can start."
+    },
+    {
+      "selector": "figure.vs-scope-map",
+      "deck": "evp",
+      "slide": "slide-13",
+      "guide": "Begin with one workflow. Identify the missing foundation, its owner and the evidence required before expanding its scope."
+    },
+    {
+      "selector": "figure.adoption-foundations",
+      "deck": "industry-technical",
+      "slide": "slide-30",
+      "guide": "Explain the foundations as dependencies. One unproven requirement can block the selected workflow even when other capabilities are mature."
+    },
+    {
+      "selector": "figure.dependency-map",
+      "deck": "industry-technical",
+      "slide": "slide-30",
+      "guide": "Follow the links from client foundations to the affected AI workflow. Unknown readiness stays unknown until an owner supplies evidence."
+    },
+    {
+      "selector": "figure.mod-roadmap",
+      "deck": "evp",
+      "slide": "slide-14",
+      "guide": "Read from repeatable testing to wider AI adoption. AI assistance can start narrowly, while missing foundations remain explicit delivery work."
+    },
+    {
+      "selector": "figure.mod-distinctions",
+      "deck": "technical",
+      "slide": "slide-22",
+      "guide": "Distinguish the roles: containers isolate runtime, virtualization controls dependency behavior, and contracts check interface expectations. None replaces real integration evidence."
+    },
+    {
+      "selector": "figure.fe-results",
+      "deck": "industry-evp",
+      "slide": "slide-24",
+      "guide": "Read each case with its own scope and evidence label. Keep AI-specific results separate from broader modernization outcomes; do not combine unlike percentages."
+    },
+    {
+      "selector": "figure.fe-paths",
+      "deck": "industry-evp",
+      "slide": "slide-25",
+      "guide": "Choose one workflow that the client owns and can judge independently. Agree the output, prerequisites and acceptance criteria before discussing expansion."
+    },
+    {
+      "selector": "figure.al-map",
+      "deck": "evp",
+      "slide": "slide-17",
+      "guide": "Walk through individual copilots, connected assistants, bounded agents and a shared platform. Each layer depends on evidence that the preceding workflow is repeatable."
+    },
+    {
+      "selector": "figure.al-architecture",
+      "deck": "technical",
+      "slide": "slide-28",
+      "guide": "Trace the artifact handoffs across the four adoption layers. The shared platform supplies reusable context, execution and evidence services; teams retain their business assertions."
+    },
+    {
+      "selector": "figure.ba-architecture",
+      "deck": "technical",
+      "slide": "slide-27",
+      "guide": "Compare the constrained manual baseline with the proposed isolated test system. Point to the virtual provider and real database, then the separate real-provider validation lane."
+    },
+    {
+      "selector": "figure.virtualization-diagram",
+      "deck": "technical",
+      "slide": "slide-20",
+      "guide": "Follow calls to the controlled provider substitute. Use its state and faults to reproduce edge cases, then explain why real-provider and settlement checks remain separate."
+    },
+    {
+      "selector": "figure.research-figure[data-diagram=\"modernization-environment\"]",
+      "deck": "technical",
+      "slide": "slide-21",
+      "guide": "Follow the test runner to the real payment service, real database and controlled provider model. Raw run evidence must survive environment cleanup."
+    },
+    {
+      "selector": "figure.research-figure[data-diagram=\"fintech-candidate-validation\"]",
+      "deck": "technical",
+      "slide": "slide-23",
+      "guide": "Follow a candidate through independent checks and deliberate fault injection. A test must fail for the intended defect; successful execution alone is insufficient."
+    },
+    {
+      "selector": "figure.fe-comparison",
+      "deck": "industry-technical",
+      "slide": "slide-35",
+      "guide": "Compare conventional and assisted work under the same modernized conditions. Include unsuccessful attempts and review effort, then separate the AI effect from foundation improvements."
+    },
+    {
+      "selector": "figure.vs-lifecycle",
+      "deck": "technical",
+      "slide": "slide-25",
+      "guide": "Move from pinned inputs through environment startup, independent assertions, evidence retention and cleanup. Failure paths still retain their original result."
+    },
+    {
+      "selector": "figure.vs-architecture",
+      "deck": "technical",
+      "slide": "slide-26",
+      "guide": "Follow the owned context, model, runner and evidence adapters. Point to each artifact contract and show where an incomplete handoff blocks acceptance."
+    },
+    {
+      "selector": "figure.vs-handoff",
+      "deck": "technical",
+      "slide": "slide-15",
+      "guide": "Follow an artifact between domain QA, automation engineering and the platform owner. The handoff includes reviewed expectations and traceable evidence."
+    },
+    {
+      "selector": "figure.ownership-map",
+      "deck": "industry-evp",
+      "slide": "slide-11",
+      "guide": "Follow accountability across product, engineering, platform and release decisions. Shared services support teams without taking ownership of domain correctness."
+    },
+    {
+      "selector": "figure.authority-figure",
+      "deck": "industry-technical",
+      "slide": "slide-15",
+      "guide": "Point to the gateway outside the AI workflow. Permissions are checked before a tool runs; verification and evidence support the separate release decision."
+    },
+    {
+      "selector": "figure.industry-chart",
+      "deck": "industry-evp",
+      "slide": "slide-3",
+      "guide": "Read the adoption barriers as survey responses with their stated population and source. They describe organizational constraints, not a measured client maturity score."
+    },
+    {
+      "selector": ".value-explorer",
+      "deck": "industry-evp",
+      "slide": "slide-5",
+      "guide": "Use the chart to distinguish gross task capacity, recurring overhead and realized value. The recording explains the published model; read the current controls and chart for the selected inputs.",
+      "baseline": true
+    },
+    {
+      "selector": "figure.ft-comparison",
+      "deck": "evp",
+      "slide": "slide-8",
+      "guide": "Read baseline effort, assisted effort and recurring overhead separately. The recording describes the published banking scenario, while the current calculator may show different inputs.",
+      "baseline": true
+    },
+    {
+      "selector": "figure.mission-overview",
+      "deck": "industry-technical",
+      "slide": "slide-1",
+      "guide": "Distinguish AI assistance for engineering work from assurance of AI application behavior. Both need independent checks and accountable decisions."
+    },
+    {
+      "selector": "figure.dictionary-map",
+      "deck": "industry-technical",
+      "slide": "slide-22",
+      "guide": "Use the map to locate a term in the stack before opening its definition. The recording explains technology roles; it is not a reading of every dictionary entry."
+    },
+    {
+      "selector": "#payment-demo",
+      "deck": "evp",
+      "slide": "slide-3",
+      "guide": "Frame the timeout as a QE testing scenario. The question is whether a retry can be proven to preserve a single money movement.",
+      "path": "/case-studies/fintech/"
+    },
+    {
+      "selector": "#outcomes",
+      "deck": "evp",
+      "slide": "slide-19",
+      "guide": "Start with critical-fault detection, reviewed scenario coverage and traceable decisions. The targets have not been demonstrated as client results.",
+      "path": "/case-studies/fintech/"
+    },
+    {
+      "selector": "#assessment",
+      "deck": "technical",
+      "slide": "slide-14",
+      "guide": "Explain how the selected workflow changes the evidence required. The audio describes the readiness method, not the current assessment result.",
+      "path": "/platform-readiness/",
+      "baseline": true
+    },
+    {
+      "selector": "#workstreams",
+      "deck": "evp",
+      "slide": "slide-14",
+      "guide": "Use the workstreams to identify the foundation work, owner and proof needed for the selected AI use case.",
+      "path": "/qe-modernization/"
+    },
+    {
+      "selector": "figure.system-figure:has(.test-pipeline)",
+      "deck": "industry-technical",
+      "slide": "slide-4",
+      "guide": "Read the gates in order: build, repeat reliably, detect a relevant fault and earn maintainer acceptance. A failed check returns or rejects the candidate; the stages are not a numerical funnel."
+    },
+    {
+      "selector": ".evidence-explorer",
+      "deck": "industry-evp",
+      "slide": "slide-4",
+      "guide": "Read the estimates with their confidence intervals and study populations. The overview explains why different task-level results cannot be pooled into a bank-wide saving.",
+      "baseline": true
+    }
+  ],
+  "demo": {
+    "generate": {
+      "deck": "industry-technical",
+      "slide": "slide-3",
+      "guide": "Listen to the scenario overview, then use Next architecture stage to inspect the handoffs. The overview recording does not drive the stage timer."
+    },
+    "evaluate": {
+      "deck": "industry-technical",
+      "slide": "slide-5",
+      "guide": "Follow the versioned application through independent evaluation, release review and operational feedback. The recording is a scenario overview."
+    },
+    "deny": {
+      "deck": "industry-technical",
+      "slide": "slide-16",
+      "guide": "Point to the permission boundary and the stopped path. The prohibited tool never runs; retained denial evidence is part of the outcome."
+    },
+    "hold": {
+      "deck": "industry-technical",
+      "slide": "slide-18",
+      "guide": "Show why a failed critical check holds the release even when other checks pass. The recording explains the release decision, not a measured client result."
+    }
+  }
+}
