@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.12.1 · 8 September 2026
+
+Renamed the fictional client from Harbor to **Northstar Payments**, a digital payments provider, across the [fintech case]({{ '/case-studies/fintech/' | relative_url }}), implementation plan, readiness assumptions, architecture diagrams, audience decks and downloadable trial briefs. The payment retry scenario and its illustrative staffing, effort and adoption assumptions are unchanged. Existing case and readiness links still work.
+
+All four slide/PDF editions advance to **v1.12.1**, including the shared payment architecture caption in the industry technical deck. Counts remain **25 / 35 / 16 / 26 slides** (102 total). Historical releases retain their original names and editions. The research companion remains **v1.7.0**, questionnaire **v3** and film **v1.8.0**. [GitHub release v1.12.1](https://github.com/tomqwu/ai_qe/releases/tag/v1.12.1) packages the current assets.
+
 ## v1.12.0 · 8 September 2026
 
 Connected the modernization-to-AI story with an interactive dependency matrix, concrete Harbor tool integration architecture, before/after operating model, offshore handoff swimlane and eight PAY-142 sample artifacts. The environment lifecycle now demonstrates passing checks, failed assertions and setup failures with retained evidence and cleanup. Selected bank cases have compact intervention/outcome stories; AI, human review, virtual services, systems and failed checks have distinct visual roles.
