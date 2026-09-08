@@ -6,7 +6,9 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
 (async () => {
  let navigations = 0;
  for (const engine of [webkit, chromium]) {
-  const browser = await engine.launch({headless:true});
+  // Full Chromium preserves native new-tab lifecycle events. Headless Shell
+  // can miss the initial commit under load and report a loaded tab as blank.
+  const browser = await engine.launch({headless:true, ...(engine === chromium ? {channel:'chromium'} : {})});
   try {
    for (const mode of ['desktop', 'narrow', 'touch']) {
     const page = await browser.newPage({viewport:{width:mode==='desktop'?1440:390,height:900},
