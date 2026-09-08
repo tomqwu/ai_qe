@@ -183,7 +183,7 @@
       "assumption": "Comparable baseline work, foundation effort, recurring costs and intended use of released capacity are agreed before benefits are claimed.",
       "evidence": "A sampled release pack separates active work, waiting, review, rework, setup, platform operation and license/model costs.",
       "action": "Fund and schedule dependency remediation. Re-estimate the pilot when prerequisites change; separate automation gains from AI contribution.",
-      "example": "The FinTech Client effort model is illustrative; no client savings rate or fixed adoption date is inferred",
+      "example": "The effort model for Our Banking Client is illustrative; no client savings rate or fixed adoption date is inferred",
       "harbor": "The 300-hour baseline, 480-hour setup and 12-hour operating allowance are unverified planning assumptions, not a readiness budget.",
       "level": 0,
       "sources": []

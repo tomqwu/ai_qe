@@ -3,7 +3,7 @@
 Objective: strengthen the case for a bounded AI-assisted QE trial with inspectable financial-services evidence, without turning vendor results into a client forecast.
 Audiences: Executive strategic vision; technical SD/lead architecture; client discovery.
 Scope: seven institutional/supplier cases, ten sources, results explorer, best practices, pilot selector and eight slide additions across existing briefings.
-Preserved: fictional FinTech Client with 75 offshore QA, existing 12-week planning sequence, no AppSec program, editable visual design, current GitHub Pages/release path.
+Preserved: fictional Our Banking Client with 75 offshore QA, existing 12-week planning sequence, no AppSec program, editable visual design, current GitHub Pages/release path.
 
 ## Evidence and interpretation
 - F1/F2: direct AI-in-testing examples; named vendor cases with task/coverage boundaries.

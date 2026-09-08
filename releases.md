@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.14.1 · 8 September 2026
+
+Renamed the current client scenario to **Our Banking Client** across the case explorer, adoption roadmap, readiness and modernization material, diagrams, presentation titles, source notes and downloadable trial briefs. The illustrative scenario disclosure and existing links remain valid.
+
+The fintech slide/PDF editions advance to **v1.14.1**, retaining **17 executive / 28 technical slides**. Industry PDFs remain **v1.12.2**, questionnaire **v4**, research companion **v1.7.0** and film **v1.8.0**. Earlier release entries and archived editions retain their original names. [GitHub release v1.14.1](https://github.com/tomqwu/ai_qe/releases/tag/v1.14.1) packages the current assets.
+
 ## v1.14.0 · 8 September 2026
 
 Added the [AI adoption roadmap]({{ '/ai-adoption/' | relative_url }}): individual copilots, connected workflow assistants, bounded QE agents and a shared QE AI platform. The interactive PAY-142 examples connect inputs, AI authority, outputs, reviewers, technology, dependencies and evidence needed to expand. Platform foundations start on day one; teams can scale useful assistance without delegating more actions.

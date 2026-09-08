@@ -1,5 +1,5 @@
 {
-  "disclosure": "Authored FinTech Client design and sample artifacts. No live client integration or measured outcome is claimed.",
+  "disclosure": "Authored design and sample artifacts for Our Banking Client. No live client integration or measured outcome is claimed.",
   "map_columns": [
     "design",
     "automation",
@@ -284,7 +284,7 @@
       ]
     },
     "dependency": "Enable the target: versioned builds, resettable test data, validated provider stubs, CI access and reviewers. Keep real-provider integration checks.",
-    "disclosure": "Illustrative before/after design for the FinTech Client scenario. The after state is a pilot target; elapsed time, effort and quality outcomes have not been measured.",
+    "disclosure": "Illustrative before/after design for Our Banking Client. The after state is a pilot target; elapsed time, effort and quality outcomes have not been measured.",
     "slide_dependency": "Requires CI, isolated data, validated provider stubs and reviewers. Keep real integration checks."
   },
   "pilot_time": {

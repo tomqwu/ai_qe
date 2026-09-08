@@ -1,7 +1,7 @@
 {
   "evp": [
     {
-      "title": "FinTech Client: shared QA platform",
+      "title": "Our Banking Client: shared QA platform",
       "visual": "cover",
       "lead": "A payment-release story for a fictional fintech with 75 offshore QA staff.",
       "rows": null,
@@ -184,7 +184,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "FinTech Client has not been assessed. The dependency backlog can change scope, cost and timing; the 480-hour setup allowance is not a client quote.",
+      "note": "Our Banking Client has not been assessed. The dependency backlog can change scope, cost and timing; the 480-hour setup allowance is not a client quote.",
       "sources": "",
       "chapter": "Client adoption assumptions"
     },
@@ -195,7 +195,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "For FinTech Client, fund repeatable payment tests and shared QE services alongside reviewed AI assistance. Validate this capability roadmap through client discovery.",
+      "note": "For Our Banking Client, fund repeatable payment tests and shared QE services alongside reviewed AI assistance. Validate this capability roadmap through client discovery.",
       "sources": "",
       "chapter": "QE modernization"
     },
@@ -206,12 +206,12 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Peer results support a trial. Outcomes for FinTech Client remain unmeasured.",
+      "note": "Peer results support a trial. Outcomes for Our Banking Client remain unmeasured.",
       "sources": "",
       "chapter": "Fintech evidence and adoption"
     },
     {
-      "title": "FinTech Client: where to begin",
+      "title": "Our Banking Client: where to begin",
       "visual": "evidence-pilot-paths",
       "lead": "",
       "rows": null,
@@ -235,7 +235,7 @@
   ],
   "technical": [
     {
-      "title": "FinTech Client: QA architecture",
+      "title": "Our Banking Client: QA architecture",
       "visual": "cover",
       "lead": "A concrete design for AI assistance across a release workflow with 75 offshore QA staff.",
       "rows": null,
@@ -554,7 +554,7 @@
       "chapter": "Client adoption assumptions"
     },
     {
-      "title": "FinTech Client: test environment",
+      "title": "Our Banking Client: test environment",
       "visual": "modernization-environment",
       "lead": "",
       "rows": null,

@@ -1,5 +1,5 @@
 <figure class="vs-architecture">
-  <div class="vs-architecture-grid" aria-label="Proposed {{ site.data.fintech_case.company }} integration architecture">
+  <div class="vs-architecture-grid" aria-label="Proposed integration architecture for {{ site.data.fintech_case.company }}">
   {% for node in site.data.visual_story.architecture %}<article class="vs-system vs-{{ node.role }}"><p class="vs-node-meta">{{ forloop.index }} / {{ node.status }}</p><h3>{{ node.title }}</h3><p>{{ node.stack }}</p><p class="vs-owner">{{ node.owner }}</p><p class="vs-wire">{{ node.output }}{% unless forloop.last %} → {{ forloop.index | plus: 1 }}{% endunless %}</p>{% unless forloop.last %}<span class="vs-connector" aria-hidden="true">→</span>{% endunless %}</article>{% endfor %}
   </div>
   <p class="vs-boundary">{% if page.layout == "deck" %}<strong>Runtime:</strong> CI runs approved commits in the isolated test environment. Real provider, settlement and mobile checks retain separate lanes.{% else %}<strong>Execution boundary:</strong> approved commits enter CI. REST Assured/JUnit test the payment API; Playwright covers the web journey. Real PostgreSQL + a WireMock provider model run in the test environment. Mobile devices and real provider/settlement checks retain separate lanes.{% endif %}</p>
