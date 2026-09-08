@@ -224,7 +224,7 @@ Run `node tools/fintech-evidence-browser-test.cjs` against a built preview. It c
 
 ## Connected visual story
 
-`_data/visual_story.json` holds the proposed Harbor integration nodes, authored PAY-142 artifacts, lifecycle stages, modernization grouping and curated audience routes. Dependency requirements remain canonical in `_data/adoption.json` and are evaluated by `readiness-model.js`; the map adds no competing maturity score. Diagnosis-only review and execution/retest have distinct prerequisites.
+`_data/visual_story.json` holds the proposed Northstar Payments integration nodes, authored PAY-142 artifacts, lifecycle stages, modernization grouping and curated audience routes. Dependency requirements remain canonical in `_data/adoption.json` and are evaluated by `readiness-model.js`; the map adds no competing maturity score. Diagnosis-only review and execution/retest have distinct prerequisites.
 
 Shared HTML views live in `_includes/visual-story/`, with role styling and progressive enhancement in `assets/css/visual-story.css` and `assets/js/visual-story.js`. The six workstreams group twelve adoption assumptions; a marked matrix cell refers to selected capabilities within that workstream. Original claims and evidence limits remain in the fintech evidence register.
 

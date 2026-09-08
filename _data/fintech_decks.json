@@ -1,7 +1,7 @@
 {
   "evp": [
     {
-      "title": "A shared QA platform for Harbor",
+      "title": "Northstar Payments: shared QA platform",
       "visual": "cover",
       "lead": "A payment-release story for a fictional fintech with 75 offshore QA staff.",
       "rows": null,
@@ -184,7 +184,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Harbor has not been assessed. The dependency backlog can change scope, cost and timing; the 480-hour setup allowance is not a client quote.",
+      "note": "Northstar Payments has not been assessed. The dependency backlog can change scope, cost and timing; the 480-hour setup allowance is not a client quote.",
       "sources": "",
       "chapter": "Client adoption assumptions"
     },
@@ -195,23 +195,23 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "For Harbor, fund repeatable payment tests and shared QE services alongside reviewed AI assistance. This is an assumed capability path, not a completed client assessment.",
+      "note": "For Northstar Payments, fund repeatable payment tests and shared QE services alongside reviewed AI assistance. This is an assumed capability path, not a completed client assessment.",
       "sources": "",
       "chapter": "QE modernization"
     },
     {
-      "title": "Peer results inform Harbor’s opportunity",
+      "title": "Peer evidence for the payments pilot",
       "visual": "evidence-results",
       "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Peer results support a trial. Harbor’s outcomes remain unmeasured.",
+      "note": "Peer results support a trial. Outcomes for Northstar Payments remain unmeasured.",
       "sources": "",
       "chapter": "Fintech evidence and adoption"
     },
     {
-      "title": "Harbor’s first adoption choice",
+      "title": "Northstar Payments: where to begin",
       "visual": "evidence-pilot-paths",
       "lead": "",
       "rows": null,
@@ -224,7 +224,7 @@
   ],
   "technical": [
     {
-      "title": "Harbor’s payment QA architecture",
+      "title": "Northstar Payments: QA architecture",
       "visual": "cover",
       "lead": "A concrete design for AI assistance across a release workflow with 75 offshore QA staff.",
       "rows": null,
@@ -543,7 +543,7 @@
       "chapter": "Client adoption assumptions"
     },
     {
-      "title": "The proposed Harbor test environment",
+      "title": "Northstar Payments: test environment",
       "visual": "modernization-environment",
       "lead": "",
       "rows": null,
@@ -576,7 +576,7 @@
       "chapter": "Fintech evidence and adoption"
     },
     {
-      "title": "A fair comparison within the Harbor pilot",
+      "title": "A fair comparison for the payments pilot",
       "visual": "evidence-comparison",
       "lead": "",
       "rows": null,
