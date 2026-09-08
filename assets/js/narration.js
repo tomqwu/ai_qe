@@ -2,12 +2,14 @@
   'use strict';
   const body = document.body;
   const manifestPath = body.dataset.narrationManifest;
-  if (!manifestPath || !window.QEDeck) return;
+  if (!manifestPath || !window.QEDeck || !window.QENarrationMedia) return;
   const startButton = document.querySelector('[data-narration-start]');
 
   let entries = {}, state = window.QEDeck.getState(), currentSlide = null, clip = null;
   let cueList = [], captionRequest, clipVersion = 0, audioFailed = false, captionFailed = false;
   let captionsOn = true, continuing = false, clipStarted = false, frame = 0, panel;
+  const slidePauseMs = 2000;
+  let advanceTimer = 0, pendingAdvance = null;
   const audio = document.createElement('audio');
   audio.preload = 'metadata';
   audio.setAttribute('aria-label', 'Recorded slide narration');
@@ -23,28 +25,7 @@
     const url = new URL(path.startsWith('/assets/') ? path.slice(1) : path, base);
     return url.origin === location.origin && ['http:', 'https:'].includes(url.protocol) ? url.href : null;
   }
-  function parseTime(value) {
-    if (!/^(?:\d{2,}:)?\d{2}:\d{2}\.\d{3}$/.test(value)) return NaN;
-    return value.split(':').reduce((sum, part) => sum * 60 + Number(part), 0);
-  }
-  function parseCaptions(text) {
-    if (!/^\uFEFF?WEBVTT(?:\s|$)/.test(text)) throw new Error('Invalid caption file');
-    const cues = [];
-    for (const block of text.replace(/^\uFEFF/, '').replace(/\r/g, '').split(/\n\s*\n/)) {
-      const lines = block.split('\n');
-      if (/^(?:WEBVTT|NOTE|STYLE|REGION)(?:\s|$)/.test(lines[0])) continue;
-      const timing = lines.findIndex(line => line.includes('-->'));
-      if (timing < 0) continue;
-      const match = lines[timing].match(/^(\S+)\s+-->\s+(\S+)/);
-      if (!match) continue;
-      const start = parseTime(match[1]), end = parseTime(match[2]);
-      // Render cue text as text, never executable markup. VTT voice/class tags are optional.
-      const caption = lines.slice(timing + 1).join('\n').replace(/<[^>]*>/g, '').replace(/&(?:amp|lt|gt|nbsp|quot);/g, entity => ({ '&amp;': '&', '&lt;': '<', '&gt;': '>', '&nbsp;': ' ', '&quot;': '"' }[entity])).replace(/[ \t]+/g, ' ').trim();
-      if (Number.isFinite(start) && end > start && caption) cues.push({ start, end, text: caption });
-    }
-    if (!cues.length) throw new Error('Empty caption file');
-    return cues.sort((a, b) => a.start - b.start);
-  }
+  const {parseCaptions} = window.QENarrationMedia;
   function buildPanel() {
     panel = document.createElement('section');
     panel.className = 'narration-panel';
@@ -97,8 +78,8 @@
   function tick() { updateTime(); if (!audio.paused && !audio.ended) frame = requestAnimationFrame(tick); }
   function updatePlaying() {
     if (!ui) return;
-    const playing = !audio.paused && !audio.ended;
-    panel.dataset.narrationState = audioFailed ? 'error' : playing ? 'playing' : audio.ended ? 'ended' : 'paused';
+    const playing = Boolean(advanceTimer) || (!audio.paused && !audio.ended);
+    panel.dataset.narrationState = audioFailed ? 'error' : advanceTimer ? 'between-slides' : playing ? 'playing' : pendingAdvance ? 'paused' : audio.ended ? 'ended' : 'paused';
     ui.play.textContent = audioFailed ? 'Retry audio' : playing ? 'Ⅱ Pause' : '▶ Play';
     ui.play.setAttribute('aria-label', audioFailed ? 'Retry narration audio' : playing ? 'Pause narration' : 'Play narration');
     if (startButton) {
@@ -106,12 +87,39 @@
       startButton.setAttribute('aria-pressed', String(playing));
     }
     cancelAnimationFrame(frame);
-    if (playing) frame = requestAnimationFrame(tick);
+    if (playing && !advanceTimer) frame = requestAnimationFrame(tick);
+  }
+  function cancelAdvance() {
+    clearTimeout(advanceTimer); advanceTimer = 0; pendingAdvance = null;
+  }
+  function beginAdvance() {
+    if (!pendingAdvance) return;
+    pendingAdvance.started = performance.now();
+    announce('Brief pause before the next slide · Pause to hold here.');
+    advanceTimer = setTimeout(() => {
+      const expected = pendingAdvance;
+      advanceTimer = 0; pendingAdvance = null;
+      const fresh = window.QEDeck.getState();
+      if (!expected || fresh.slide !== expected.slide || fresh.nextSlide !== expected.nextSlide || fresh.mode === 'reading' || document.hidden || document.querySelector('dialog[open]') || !ui.auto.checked) { updatePlaying(); return; }
+      continuing = true;
+      document.dispatchEvent(new CustomEvent('qe:deck-command', { detail: { action: 'next', source: 'narration', expectedSlide: expected.slide } }));
+      continuing = false;
+    }, pendingAdvance.remaining);
+    updatePlaying();
+  }
+  function pausePlayback() {
+    if (advanceTimer) {
+      pendingAdvance.remaining = Math.max(0, pendingAdvance.remaining - (performance.now() - pendingAdvance.started));
+      clearTimeout(advanceTimer); advanceTimer = 0;
+      updatePlaying(); announce('Narration paused between slides. Select Play to continue.');
+    } else stop();
   }
   function stop() {
     continuing = false;
+    cancelAdvance();
     audio.pause();
     cancelAnimationFrame(frame);
+    updatePlaying();
   }
   async function loadCaptions(entry, version) {
     captionRequest?.abort();
@@ -173,6 +181,7 @@
   }
   function play() {
     if (!clip || document.hidden || state.mode === 'reading') return;
+    if (pendingAdvance) { beginAdvance(); return; }
     clipStarted = true;
     if (audioFailed) { audioFailed = false; audio.load(); }
     if (audio.ended) audio.currentTime = 0;
@@ -186,14 +195,15 @@
   }
   function connectControls() {
     startButton?.addEventListener('click', () => {
-      if (!audio.paused && !audio.ended) { stop(); return; }
+      if (advanceTimer || (!audio.paused && !audio.ended)) { pausePlayback(); return; }
       if (window.QEDeck.getState().mode === 'reading') document.querySelector('[data-reading]').click();
       ui.auto.checked = true;
       play();
     });
-    ui.play.addEventListener('click', () => audio.paused || audio.ended ? play() : stop());
-    ui.replay.addEventListener('click', () => { if (clip) { clearCaption(); audio.currentTime = 0; play(); } });
-    ui.seek.addEventListener('input', () => { clipStarted = true; clearCaption(); audio.currentTime = Number(ui.seek.value); updateTime(); });
+    ui.play.addEventListener('click', () => advanceTimer || (!audio.paused && !audio.ended) ? pausePlayback() : play());
+    ui.replay.addEventListener('click', () => { if (clip) { cancelAdvance(); clearCaption(); audio.currentTime = 0; play(); } });
+    ui.seek.addEventListener('input', () => { cancelAdvance(); clipStarted = true; clearCaption(); audio.currentTime = Number(ui.seek.value); updateTime(); updatePlaying(); });
+    ui.auto.addEventListener('change', () => { if (!ui.auto.checked && pendingAdvance) { cancelAdvance(); updatePlaying(); announce('Automatic slide changes off. Use Next slide when ready.'); } });
     ui.speed.addEventListener('change', () => { audio.playbackRate = Number(ui.speed.value); });
     ui.cc.addEventListener('click', () => { captionsOn = !captionsOn; ui.cc.setAttribute('aria-pressed', String(captionsOn)); panel.dataset.captions = captionsOn ? 'on' : 'off'; renderCaption(); });
     ui['retry-captions'].addEventListener('click', () => { if (clip) loadCaptions(clip, clipVersion); });
@@ -213,7 +223,7 @@
       if (provenance.textContent) dialog.append(provenance);
       dialog.append(text, close); body.append(dialog); dialog.showModal();
     });
-    audio.addEventListener('play', () => { updatePlaying(); if (!captionFailed) announce(cueList.length ? 'English narration · Captions synchronized to audio.' : 'English narration · Loading captions.'); });
+    audio.addEventListener('play', () => { window.QENarrationMedia.claim(audio); updatePlaying(); if (!captionFailed) announce(cueList.length ? 'English narration · Captions synchronized to audio.' : 'English narration · Loading captions.'); });
     audio.addEventListener('pause', () => { updatePlaying(); if (!audio.ended && clip && !audioFailed && !captionFailed) announce('Narration paused.'); });
     for (const event of ['loadedmetadata', 'durationchange', 'timeupdate', 'seeked']) audio.addEventListener(event, updateTime);
     audio.addEventListener('seeking', clearCaption);
@@ -227,9 +237,9 @@
       const fresh = window.QEDeck.getState();
       if (fresh.slide !== currentSlide || fresh.mode === 'reading' || document.hidden || document.querySelector('dialog[open]')) return;
       if (ui.auto.checked && fresh.nextSlide) {
-        continuing = true;
-        document.dispatchEvent(new CustomEvent('qe:deck-command', { detail: { action: 'next', source: 'narration', expectedSlide: currentSlide } }));
-        continuing = false;
+        cancelAdvance();
+        pendingAdvance = { slide:currentSlide, nextSlide:fresh.nextSlide, remaining:slidePauseMs };
+        beginAdvance();
       } else announce(fresh.nextSlide ? 'Narration complete. Replay or use Next slide when ready.' : 'Narration complete. You have reached the end of this slide sequence.');
     });
     document.addEventListener('qe:deck-state', event => {
@@ -245,6 +255,7 @@
       stop();
       if (clip) announce('Narration paused for slide notes. Close the notes and select Play to resume.');
     });
+    document.addEventListener('qe:narration-interrupt', stop);
     window.addEventListener('pagehide', stop);
     window.addEventListener('beforeprint', stop);
   }
@@ -264,6 +275,16 @@
       };
     }
     if (!Object.keys(entries).length) return;
+    for (const [id, entry] of Object.entries(entries)) {
+      if (!entry.transcript) continue;
+      const notes = document.createElement('aside'); notes.className = 'slide-narrator-notes'; notes.hidden = true;
+      const heading = document.createElement('h3'); heading.textContent = 'Narrator notes';
+      notes.append(heading);
+      for (const paragraph of entry.transcript.split(/\n\s*\n/)) {
+        const text = document.createElement('p'); text.textContent = paragraph; notes.append(text);
+      }
+      document.getElementById(id).append(notes);
+    }
     ui = buildPanel(); connectControls(); loadSlide(window.QEDeck.getState());
   }).catch(() => { /* A missing optional recording never prevents slide navigation. */ });
 })();

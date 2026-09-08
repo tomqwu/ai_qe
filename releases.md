@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.18.0 · 8 September 2026
+
+Added a **two-second breathing pause** after each narrated slide across all four decks. Pause holds the transition; manual navigation, opening notes, hiding the tab or turning Auto-next off cancels it. The pause stays two seconds at every playback speed.
+
+All **109 slides** now include their spoken explanation in the existing **Sources & notes** drawer. Existing diagrams, readiness and modernization sections, banking visuals, research charts and all four 3D architecture scenarios offer **Chris explanations, synchronized English captions and expandable narrator notes in place**. Playing one explanation pauses other narration, including embedded presentations. Calculator recordings explain the published baseline; 3D recordings explain the scenario overview separately from its stage timer.
+
+No new pages or audio recordings were created. Narration retains **chris-v1.17.0**; banking PDFs remain **v1.16.1**, and industry PDFs remain **v1.12.2**. [GitHub release v1.18.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.18.0) packages the current assets.
+
 ## v1.17.0 · 8 September 2026
 
 Added English narration by **Chris / ElevenLabs** to all **109 slides** across the four [presentations]({{ '/briefings/' | relative_url }}). Select **Play narration** to listen from the current slide with synchronized captions and automatic advancement when each recording finishes. Pause, replay, seek, playback speed, a caption toggle and a readable transcript support both full decks and guided stories.

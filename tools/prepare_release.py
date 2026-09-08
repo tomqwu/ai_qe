@@ -49,13 +49,19 @@ def prepare(output):
             records.append((f'transcripts/{audience}/{slide}.txt', (entry['transcript'] + '\n').encode()))
     assert len(records) == 109 * 3, 'Narration bundle must cover all 109 slides'
     records.append(('narration.json', json.dumps(narration, ensure_ascii=False, indent=2).encode()))
+    guides = json.loads((ROOT / 'assets/data/narration-guides.json').read_text())
+    for guide in [*guides['guides'], *guides['demo'].values()]:
+        assert guide['slide'] in narration['decks'][guide['deck']]['slides'], 'Unrecorded presenter guide'
+    records.append(('narration-guides.json', json.dumps(guides, ensure_ascii=False, indent=2).encode()))
     records.append(('README.txt', (
         'AI x QE — Chris / ElevenLabs English narration\n\n'
         'One MP3, timed WebVTT subtitle file and transcript per slide. '
         'Folder keys: evp = banking executive, technical = banking architecture, '
         'industry-evp = industry executive, industry-technical = industry architecture.\n\n'
         'Open https://tomqwu.github.io/ai_qe/briefings/ and select Play narration '
-        'for synchronized slide playback. The original PDF content editions are unchanged.\n'
+        'for synchronized slide playback with a two-second pause between slides. '
+        'narration-guides.json maps existing diagram and scenario explanations to these recordings '
+        'and supplies presenter walkthrough notes. The original PDF content editions are unchanged.\n'
     ).encode()))
     with zipfile.ZipFile(bundle, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
         for name, content in sorted(records):

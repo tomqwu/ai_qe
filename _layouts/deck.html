@@ -32,6 +32,7 @@
 {% if page.fintech and page.case_audience == "technical" %}<link rel="stylesheet" href="{{ "/assets/css/technical-blueprint.css" | relative_url }}?v={{ site.data.release.version }}">{% endif %}
 {% if page.fintech %}<link rel="stylesheet" href="{{ "/assets/css/qe-outcomes.css" | relative_url }}?v={{ site.data.release.version }}">{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/narration.css' | relative_url }}?v={{ site.data.release.version }}">
+<script src="{{ "/assets/js/narration-media.js" | relative_url }}?v={{ site.data.release.version }}" defer></script>
 <script src="{{ '/assets/js/narration.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 </head>
 <body class="deck-page {{ page.deck_class }}" data-narration-manifest="{{ '/assets/data/narration.json' | relative_url }}?v={{ site.data.release.version }}" data-narration-audience="{{ page.narration_deck }}" data-site-base="{{ '/' | relative_url }}">

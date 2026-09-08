@@ -1,0 +1,22 @@
+.narrator-guide { margin:12px 0 28px; padding:12px 16px; border:1px solid #b9ceca; border-left:3px solid #087875; border-radius:6px; background:#f5f9f8; color:#173643; font:16px/1.5 "Source Sans 3",sans-serif; clear:both; grid-column:1/-1; }
+.narrator-guide-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px; }
+.narrator-guide button,.narrator-guide select { font:inherit; min-height:38px; padding:5px 12px; border:1px solid #88a8a6; border-radius:4px; color:#173643; background:#fff; cursor:pointer; }
+.narrator-guide button.narrator-guide-play { color:#fff; background:#087875; border-color:#087875; font-weight:600; }
+.narrator-guide-credit { color:#47616d; font-size:14px; font-variant-numeric:tabular-nums; }
+.narrator-guide-notes { margin-top:8px; }
+.narrator-guide-notes summary { cursor:pointer; font-weight:600; color:#096d69; min-height:32px; padding:4px 0; }
+.narrator-guide-notes h3 { margin:16px 0 6px; font-size:16px; font-weight:650; }
+.narrator-guide-notes p { max-width:80ch; margin:8px 0; font-size:16px; line-height:1.6; }
+.narrator-guide-baseline { border-left:3px solid #ab771d; padding-left:12px; }
+.narrator-guide-player { margin-top:12px; }
+.narrator-guide-player[hidden] { display:none!important; }
+.narrator-guide-caption { min-height:56px; margin:0 0 8px!important; padding:10px 14px; border-radius:4px; color:#fff; background:#173643; font-size:17px; line-height:1.4; white-space:pre-line; text-align:center; }
+.narrator-guide-caption:empty::before { content:'English subtitles'; color:#bed3dd; font-size:14px; }
+.narrator-guide-controls { display:flex; align-items:center; gap:8px; }
+.narrator-guide-controls audio { flex:1; width:100%; min-width:0; height:44px; }
+.narrator-guide-controls [aria-pressed=true] { color:#fff; background:#173643; }
+.narrator-guide-status { font-size:13px!important; margin:6px 0 0!important; }
+.narrator-guide :focus-visible { outline:3px solid #a76715; outline-offset:3px; }
+[data-demo-narrator] { max-width:1600px; margin:auto; }
+@media(max-width:600px) { .narrator-guide { padding:10px; } .narrator-guide-controls { flex-wrap:wrap; } .narrator-guide-controls audio { flex-basis:100%; } }
+@media print { .narrator-guide { display:none!important; } }

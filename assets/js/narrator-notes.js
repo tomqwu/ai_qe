@@ -1,0 +1,137 @@
+(() => {
+  'use strict';
+  const loader = document.querySelector('script[data-narrator-guides]');
+  if (!loader || !window.QENarrationMedia) return;
+  if (document.querySelector('#architecture-demo') && new URLSearchParams(location.search).get('capture') === '1') return;
+  const {parseCaptions, claim} = window.QENarrationMedia;
+  const base = new URL(loader.dataset.siteBase, location.origin);
+  const players = new Set();
+  let pausingFlow = false;
+  const asset = path => {
+    if (typeof path !== 'string') return null;
+    const url = new URL(path.startsWith('/assets/') ? path.slice(1) : path, base);
+    return url.origin === location.origin && /^https?:$/.test(url.protocol) ? url.href : null;
+  };
+  const element = (tag, className, text) => {
+    const node = document.createElement(tag); node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  };
+  function createGuide(target, definition, manifest, demo = false) {
+    const clip = manifest.decks?.[definition.deck]?.slides?.[definition.slide];
+    const audioURL = asset(clip?.audio), captionURL = asset(clip?.captions);
+    if (!audioURL || !captionURL || !clip.transcript) return null;
+    const wrapper = element('section', 'narrator-guide');
+    wrapper.dataset.narratorGuide = `${definition.deck}/${definition.slide}`;
+    wrapper.setAttribute('aria-label', 'Narrated explanation and presenter notes');
+    const toolbar = element('div', 'narrator-guide-toolbar');
+    const play = element('button', 'narrator-guide-play', '▶ Listen to explanation');
+    play.type = 'button'; play.dataset.guidePlay = ''; play.setAttribute('aria-pressed', 'false');
+    const duration = Math.round(clip.duration);
+    toolbar.append(play, element('span', 'narrator-guide-credit', `Chris · ${Math.floor(duration / 60)}:${String(duration % 60).padStart(2, '0')}`));
+    const player = element('div', 'narrator-guide-player'); player.hidden = true;
+    const caption = element('p', 'narrator-guide-caption'); caption.dataset.guideCaption = '';
+    caption.setAttribute('aria-label', 'English subtitles'); caption.setAttribute('aria-live', 'off');
+    const audio = document.createElement('audio'); audio.controls = true; audio.preload = 'none'; audio.src = audioURL;
+    audio.setAttribute('aria-label', 'Chris explanation playback'); audio.dataset.guideAudio = '';
+    const status = element('p', 'narrator-guide-status'); status.setAttribute('role', 'status');
+    const cc = element('button', 'narrator-guide-cc', 'CC'); cc.type = 'button'; cc.setAttribute('aria-label', 'English subtitles'); cc.setAttribute('aria-pressed', 'true');
+    const speed = document.createElement('select'); speed.setAttribute('aria-label', 'Explanation speed');
+    for (const rate of [.75, 1, 1.25, 1.5]) speed.add(new Option(`${rate}×`, String(rate), rate === 1, rate === 1));
+    const controls = element('div', 'narrator-guide-controls'); controls.append(audio, speed, cc);
+    player.append(caption, controls, status);
+    const notes = document.createElement('details'); notes.className = 'narrator-guide-notes';
+    notes.append(element('summary', '', 'Narrator notes'));
+    notes.append(element('h3', '', 'Walk through the visual'), element('p', '', definition.guide));
+    if (definition.baseline) notes.append(element('p', 'narrator-guide-baseline', 'The recording explains the published baseline and method. It does not recalculate or read your current selections.'));
+    notes.append(element('h3', '', 'Spoken explanation'));
+    for (const paragraph of clip.transcript.split(/\n\s*\n/)) notes.append(element('p', '', paragraph));
+    wrapper.append(toolbar, player, notes);
+    if (demo) target.append(wrapper); else target.after(wrapper);
+    let cues = [], cuesRequested = false, captionsOn = true, frame = 0, request;
+    function renderCaption() {
+      const text = captionsOn && !audio.seeking ? cues.find(cue => audio.currentTime >= cue.start && audio.currentTime < cue.end)?.text || '' : '';
+      if (caption.textContent !== text) caption.textContent = text;
+    }
+    function tick() { renderCaption(); if (!audio.paused && !audio.ended) frame = requestAnimationFrame(tick); }
+    function sync() {
+      const playing = !audio.paused && !audio.ended;
+      play.textContent = playing ? 'Ⅱ Pause explanation' : audio.error ? 'Retry explanation' : '▶ Listen to explanation';
+      play.setAttribute('aria-pressed', String(playing));
+      wrapper.dataset.playing = String(playing);
+      cancelAnimationFrame(frame); if (playing) frame = requestAnimationFrame(tick);
+    }
+    async function loadCaptions() {
+      if (cuesRequested) return;
+      cuesRequested = true; request = new AbortController();
+      status.textContent = 'Loading English captions…';
+      try {
+        const response = await fetch(captionURL, {signal:request.signal});
+        if (!response.ok) throw new Error('Caption request failed');
+        cues = parseCaptions(await response.text()); renderCaption();
+        status.textContent = definition.baseline ? 'Published baseline explanation · English captions' : demo ? 'Scenario overview · English captions · Use the stage controls to inspect the flow.' : 'English captions synchronized to the explanation.';
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+        cuesRequested = false;
+        status.textContent = 'Captions could not load. Read Narrator notes; replay to retry captions.';
+      }
+    }
+    play.addEventListener('click', () => {
+      if (!audio.paused && !audio.ended) { audio.pause(); return; }
+      player.hidden = false;
+      if (audio.error) audio.load();
+      if (audio.ended) audio.currentTime = 0;
+      audio.play().catch(() => { sync(); status.textContent = 'Playback could not start. Select Listen to retry, or read Narrator notes.'; });
+    });
+    audio.addEventListener('play', () => {
+      claim(audio); player.hidden = false;
+      // An overview recording must not race the independent diagram timer.
+      pausingFlow = true;
+      if (demo) document.querySelector('[data-play][aria-pressed="true"]')?.click();
+      target.querySelector('[data-tour-play][aria-pressed="true"]')?.click();
+      pausingFlow = false;
+      loadCaptions(); sync();
+    });
+    audio.addEventListener('pause', sync);
+    audio.addEventListener('ended', () => { caption.textContent = ''; sync(); status.textContent = 'Explanation complete. Replay or continue exploring when ready.'; });
+    audio.addEventListener('error', () => { caption.textContent = ''; sync(); status.textContent = 'Audio could not load. Select Retry explanation, or read Narrator notes.'; });
+    for (const event of ['timeupdate', 'seeked']) audio.addEventListener(event, renderCaption);
+    audio.addEventListener('seeking', () => { caption.textContent = ''; });
+    cc.addEventListener('click', () => { captionsOn = !captionsOn; cc.setAttribute('aria-pressed', String(captionsOn)); renderCaption(); });
+    speed.addEventListener('change', () => { audio.playbackRate = Number(speed.value); });
+    // Exploring a different step pauses its overview, but never restarts it.
+    const onExplore = event => { if (!pausingFlow && event.target.closest('[data-tour-play], [data-tour-next], [data-tour-reset], [data-layer]')) audio.pause(); };
+    target.addEventListener('click', onExplore);
+    const controller = {audio, destroy() { audio.pause(); request?.abort(); cancelAnimationFrame(frame); target.removeEventListener('click', onExplore); audio.removeAttribute('src'); audio.load(); wrapper.remove(); players.delete(controller); }};
+    players.add(controller);
+    return controller;
+  }
+  Promise.all([loader.dataset.narratorGuides, loader.dataset.manifest].map(async path => {
+    const response = await fetch(path); if (!response.ok) throw new Error('Narrator notes unavailable'); return response.json();
+  })).then(([config, manifest]) => {
+    const annotated = new Set();
+    const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
+    for (const guide of config.guides) {
+      if (guide.path && guide.path !== path) continue;
+      for (const target of document.querySelectorAll(guide.selector)) {
+        if (target.closest('.slide') || annotated.has(target)) continue;
+        if (createGuide(target, guide, manifest)) annotated.add(target);
+      }
+    }
+    const demo = document.querySelector('[data-demo-narrator]');
+    if (demo) {
+      let controller, scenario;
+      const update = id => { if (id === scenario) return; scenario = id; controller?.destroy(); if (config.demo[id]) controller = createGuide(demo, config.demo[id], manifest, true); };
+      update(new URLSearchParams(location.search).get('scenario') || 'generate');
+      const scenarios = document.querySelector('.scenario-tabs');
+      new MutationObserver(() => update(scenarios.querySelector('[aria-pressed="true"]').dataset.scenario)).observe(scenarios, {subtree:true,attributes:true,attributeFilter:['aria-pressed']});
+      document.querySelectorAll('[data-play], [data-previous], [data-next], [data-replay], [data-watch-film], #component-select, #story-progress').forEach(control => {
+        control.addEventListener(control.matches('input,select') ? 'input' : 'click', () => { if (!pausingFlow) controller?.audio.pause(); });
+      });
+    }
+  }).catch(() => { /* Core diagrams and their existing descriptions remain available. */ });
+  function pauseAll() { for (const player of players) player.audio.pause(); }
+  document.addEventListener('visibilitychange', () => { if (document.hidden) pauseAll(); });
+  window.addEventListener('pagehide', pauseAll);
+  window.addEventListener('beforeprint', pauseAll);
+})();

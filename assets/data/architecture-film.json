@@ -20,5 +20,9 @@
     "assets/video/assurance-architecture.mp4": "d3a503d2f064b2140394710b6f49f02f5c8df515d94d97924dea2701f9e3c44d",
     "assets/video/assurance-architecture.vtt": "dfe7a314f74bfa4d9dd8c09159a97da9189fb9a9426d4d7ae270906c94ee7ff7",
     "assets/images/architecture-3d-poster.jpg": "d52cfb6dcc3c5740b19a3cd07e693ce5ef0f1a9334074725aa98479526b4962a"
-  }
+  },
+  "input_snapshots": {
+    "demos/architecture.html": "tools/architecture-demo/film-v1.8.0-page.html"
+  },
+  "snapshot_note": "The v1.8.0 film retains its original page input and output hashes. The current architecture page adds in-place narration controls in v1.18.0; the film was not regenerated."
 }

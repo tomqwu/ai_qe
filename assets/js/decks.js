@@ -139,13 +139,15 @@
     document.querySelector('#drawer-title').textContent = edition ? 'Publication edition' : `${index + 1} · ${title(slides[index])}`;
     if (edition) drawerContent.append(document.querySelector('[data-edition-content]').content.cloneNode(true));
     else {
+      const narration = slides[index].querySelector('.slide-narrator-notes');
+      if (narration) { const copy = narration.cloneNode(true); copy.hidden = false; drawerContent.append(copy); }
       const items = slides[index].querySelectorAll('figcaption, .research-rationale, .architecture-inspector, .ft-speaker-notes, .slide-footer > a');
       items.forEach(item => {
         const copy = item.cloneNode(true); copy.removeAttribute('hidden'); copy.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
         if (copy.tagName === 'DETAILS') copy.open = true;
         drawerContent.append(copy);
       });
-      if (!items.length) drawerContent.textContent = 'Source links and explanations are included in this slide.';
+      if (!items.length && !narration) drawerContent.textContent = 'Source links and explanations are included in this slide.';
     }
     drawer.showModal();
     document.dispatchEvent(new CustomEvent('qe:deck-dialog-open'));
