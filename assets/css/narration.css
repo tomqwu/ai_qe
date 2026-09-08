@@ -40,6 +40,9 @@
   .has-narration:not(.reading-view) .slide .virtualization-route { gap:1cqw; }
   .has-narration:not(.reading-view) .slide .virtualization-route>div { min-height:12cqw; padding:1cqw; gap:.7cqw; }
   .has-narration:not(.reading-view) .slide .virtualization-validation { padding:1cqw; margin-top:1cqw; gap:.6cqw 1.2cqw; }
+  .has-narration:not(.reading-view) .explore-compact .model-chart svg { width:100%; height:auto; max-height:21cqw; }
+  .has-narration:not(.reading-view) .explore-compact .value-headline { padding-bottom:.4cqw; margin-bottom:.4cqw; }
+  .has-narration:not(.reading-view) .explore-compact .scenario-presets { margin-bottom:.5cqw; }
   .deck-page.has-narration { --frame-width:min(calc(100vw - 32px),calc((100dvh - 112px - var(--narration-height,116px)) * 16 / 9)); padding-bottom:calc(64px + var(--narration-height,116px)); }
   .deck-page.has-narration.has-flow-controls { --frame-width:min(calc(100vw - 32px),calc((100dvh - 160px - var(--narration-height,116px)) * 16 / 9)); }
   .narration-panel { position:fixed; bottom:56px; left:50%; transform:translateX(-50%); }

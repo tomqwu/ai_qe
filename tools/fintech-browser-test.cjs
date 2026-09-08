@@ -8,9 +8,11 @@ try {
   await page.setViewportSize(viewport);
   for(const [audience,slides] of Object.entries(decks)) {
    await page.goto(`${base}/briefings/fintech-${audience}/`);await page.evaluate(()=>document.fonts.ready);
+   await page.locator('[data-narration-play]').waitFor({state:'visible'});
    assert.equal(await page.locator('.slide').count(),slides.length);
    for(let i=0;i<slides.length;i++) {
     await page.locator('.deck-navigation select').selectOption(String(i));
+    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
     const r=await page.locator('.slide:not([hidden])').evaluate(s=>{const c=s.querySelector('.slide-content'),n=document.querySelector('.deck-navigation').getBoundingClientRect();return {overflow:c.scrollHeight-c.clientHeight,wide:document.documentElement.scrollWidth>innerWidth,slideBottom:s.getBoundingClientRect().bottom,navTop:n.top,navBottom:n.bottom,h:innerHeight};});
     assert.ok(!r.wide,`${audience}/${i+1} horizontal overflow`);assert.ok(r.navBottom<=r.h+1);
     if(viewport.width>700){assert.ok(r.overflow<=3,`${audience}/${i+1}: ${r.overflow}px overflow`);assert.ok(r.slideBottom<=r.navTop+1,`${audience}/${i+1} covered by navigation`);}
