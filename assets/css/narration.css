@@ -39,6 +39,7 @@
   .has-narration:not(.reading-view) .slide .vs-operating-lanes li { margin-bottom:.85cqw; }
   .has-narration:not(.reading-view) .slide .fe-result-grid article { padding:.7cqw 0; }
   .has-narration:not(.reading-view) .slide .fe-bars>div:not(.fe-axis) { margin:.8cqw 0; }
+  .has-narration:not(.reading-view) .slide .adoption-foundation-layers>div { gap:1cqw; padding-top:1cqw; }
   .has-narration:not(.reading-view) .slide .virtualization-route { gap:1cqw; }
   .has-narration:not(.reading-view) .slide .virtualization-route>div { min-height:12cqw; padding:1cqw; gap:.7cqw; }
   .has-narration:not(.reading-view) .slide .virtualization-validation { padding:1cqw; margin-top:1cqw; gap:.6cqw 1.2cqw; }
