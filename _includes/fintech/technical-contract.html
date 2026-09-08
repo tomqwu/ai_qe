@@ -1,0 +1,13 @@
+<div class="ft-tech-panels"><section class="ft-tech-panel"><h3>Request / authored API example</h3><pre class="ft-tech-code"><code>POST /transfers
+Idempotency-Key: pay-142
+{
+  "from": "payer", "to": "recipient",
+  "currency": "CAD",
+  "amountMinor": 10000
+}</code></pre></section><section class="ft-tech-panel"><h3>Replay + independent oracle</h3><pre class="ft-tech-code"><code>same key + same payload → transfer t-142
+same key + changed payload → conflict
+
+journalCount(t-142) == 1
+entryCount(t-142)   == 2
+payer.balance      == 90000
+recipient.balance  == 10000</code></pre></section></div><p class="ft-tech-strip">Concurrent retries and repeated callbacks must converge on the same identity. Define key scope, retention and recovery with the service owner.</p>

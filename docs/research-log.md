@@ -10,6 +10,16 @@ description: Dated entries recording what was verified, when, what changed, and 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
 
+## 8 September 2026 — Banking engineering blueprint
+
+**Question.** What must technical leads inspect beyond the executive strategic-vision story?
+
+**Checked.** Reused the current PAY-142 scenario, modernization dependencies and source register. Rechecked [Microsoft PublishTestResults v2](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/publish-test-results-v2?view=azure-pipelines) for JUnit publication, failed tests, missing result files and publication failure settings. Cancellation can still prevent collection; `always()` is not an evidence-availability guarantee.
+
+**Design outcome.** Banking technical slides now show separate authoring/execution planes, an authored API contract, the response-loss-after-commit sequence, concrete context and fixture manifests, ledger assertions, raw CI results, diagnosis routing, evidence records and correlation IDs. Code samples explicitly distinguish documented task syntax from proposed schemas and non-runnable pseudocode. The sequence does not infer journal success from a provider timeout. No new client outcomes or measured gains are claimed.
+
+**Destinations.** The 28-slide banking technical briefing and PDF, its architecture-focused guided route and the presentation-room description. Executive content retains strategic vision. Financial-service evidence and original source dates remain unchanged.
+
 ## 8 September 2026 — Four layers of AI-assisted QE
 
 **Question.** How can leadership distinguish individual test-writing assistance, AI within CI reports, bounded task agents and a shared platform without treating them as a fixed vendor maturity ladder?

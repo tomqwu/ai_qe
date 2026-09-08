@@ -1,0 +1,178 @@
+{
+  "context": {
+    "label": "Versioned context → reviewed acceptance criteria",
+    "panels": [
+      {
+        "label": "Input contract · authored YAML",
+        "title": "Bind the draft to its sources",
+        "language": "yaml",
+        "code": "requirement: PAY-142@r3\ncontract: payments-api@v1.4\nfixture: cad-transfer@v2\namount_minor: 10000\nkey: pay-142\nopen_question: key-retention-window"
+      },
+      {
+        "label": "Review artifact · test matrix",
+        "title": "Agree the expected behavior",
+        "language": "text",
+        "code": "same key + same payload -> original ID\nsame key + changed amount -> conflict\nparallel retries -> one transfer\nduplicate callback -> one posting\nclient timeout -> outcome still unknown\nexpired key -> rule needs domain approval"
+      }
+    ],
+    "checks": [
+      "AI drafts cases with source references; domain QA defines the expected ledger outcomes.",
+      "Unresolved retention and replay rules stop approval of those cases."
+    ],
+    "disclosure": "Proposed artifacts for the client scenario; identifiers and conflict behavior require agreement with the API owner."
+  },
+  "fixtures": {
+    "label": "Build + environment + synthetic data = repeatable run",
+    "panels": [
+      {
+        "label": "Fixture contract · authored JSON",
+        "title": "Isolate the money movement",
+        "language": "json",
+        "code": "{\n  \"run\": \"run-042\",\n  \"currency\": \"CAD\",\n  \"payer_minor\": 100000,\n  \"recipient_minor\": 0,\n  \"transfer_minor\": 10000,\n  \"idempotency_key\": \"pay-142\"\n}"
+      },
+      {
+        "label": "Run manifest · authored YAML",
+        "title": "Pin every mutable dependency",
+        "language": "yaml",
+        "code": "service_image: sha256:<digest>\ntest_commit: <commit-sha>\nfixture_version: cad-transfer@v2\nschema_version: payments@v8\nprovider_stub: accept-once@v3\naccount_scope: isolated-per-run\npreflight: health + schema + balances\nfault: drop API response after commit"
+      }
+    ],
+    "checks": [
+      "A test fixture creates isolated accounts; shared accounts would invalidate the balance assertions.",
+      "Testcontainers supplies disposable dependencies; WireMock simulates the provider. Real integration remains a separate check."
+    ],
+    "disclosure": "Proposed manifest schema. Digest and commit placeholders must resolve to real immutable versions before execution."
+  },
+  "assertions": {
+    "label": "Generated candidate → reviewed assertions → defect challenge",
+    "panels": [
+      {
+        "label": "Review anti-pattern · pseudocode",
+        "title": "A success status is insufficient",
+        "language": "text",
+        "code": "retry = post_transfer(\"pay-142\", 10000)\nassert retry.status == 200\n\n# This can pass after a duplicate debit.\n# It cannot establish ledger correctness."
+      },
+      {
+        "label": "Required invariants · pseudocode",
+        "title": "Prove identity and balances",
+        "language": "text",
+        "code": "assert retry.id == original_transfer_id\nassert journals(retry.id).count == 1\nassert entries(retry.id).count == 2\nassert sum_signed_entries(retry.id) == 0\nassert balance(payer) == 90000\nassert balance(recipient) == 10000"
+      }
+    ],
+    "checks": [
+      "Capture the original accepted transfer ID from service evidence before the retry; do not derive expectations from the candidate test.",
+      "Run the same assertions against a correct build and an injected duplicate-posting defect: pass, then fail."
+    ],
+    "disclosure": "Non-runnable pseudocode for this CAD 100 test scenario; a REST Assured/JUnit implementation needs approved API and ledger helpers."
+  },
+  "pipeline": {
+    "label": "Run tests → publish raw results → explain failures → review",
+    "panels": [
+      {
+        "label": "Azure Pipelines · task fragment",
+        "title": "Publish failures explicitly",
+        "language": "yaml",
+        "code": "- task: PublishTestResults@2\n  condition: always()\n  inputs:\n    testResultsFormat: JUnit\n    testResultsFiles: 'results/TEST-*.xml'\n    failTaskOnFailedTests: true\n    failTaskOnMissingResultsFile: true\n    failTaskOnFailureToPublishResults: true"
+      },
+      {
+        "label": "Proposed AI adapter · authored YAML",
+        "title": "Read evidence after the run",
+        "language": "yaml",
+        "code": "inputs: [junit, run_manifest, logs]\naccess: read-only\noutput: diagnosis.json\nevidence_links: required\nchange_test_status: prohibited\nmissing_artifact: unknown\nmerge_or_release: human-owned"
+      }
+    ],
+    "checks": [
+      "Keep the runner’s failing exit status and required suites; publishing or summarizing cannot turn a failed run into success.",
+      "Run publication even after failure. Check mandatory test coverage separately: one result file does not prove suite completeness."
+    ],
+    "disclosure": "Microsoft task syntax is documented; the AI adapter is proposed integration work. Job cancellation can still prevent artifact collection."
+  },
+  "triage": {
+    "label": "Observed failure → cited hypothesis → owner → fresh run",
+    "panels": [
+      {
+        "label": "Diagnostic output · authored JSON",
+        "title": "Separate observation from hypothesis",
+        "language": "json",
+        "code": "{\n  \"test\": \"PAY-142.retry\",\n  \"observed\": \"journals=2; expected=1\",\n  \"evidence\": \"run-042/ledger.json\",\n  \"hypothesis\": \"replay posted twice\",\n  \"classification\": \"needs-review\",\n  \"owner\": \"payments-engineering\"\n}"
+      },
+      {
+        "label": "Triage policy · pseudocode",
+        "title": "Preserve the original test intent",
+        "language": "text",
+        "code": "preflight failed -> environment owner\nassertion + ledger agree -> product review\nunstable reproduction -> flake investigation\nmissing logs -> unresolved\napproved fix -> new build + full rerun\noriginal failing run -> retained"
+      }
+    ],
+    "checks": [
+      "Correlate test, trace and transfer IDs before grouping failures; an AI hypothesis is not a defect verdict.",
+      "A repair proposal may change implementation or test mechanics. It may not weaken the approved money-movement assertions."
+    ],
+    "disclosure": "Proposed diagnostic schema and routing policy. Human review assigns the disposition; the original evidence remains available."
+  },
+  "evidence": {
+    "label": "Requirement → test → build → run → disposition → release",
+    "panels": [
+      {
+        "label": "Evidence record · authored YAML",
+        "title": "Make the decision reproducible",
+        "language": "yaml",
+        "code": "requirement: PAY-142@r3\ntest_commit: <commit-sha>\nbuild_digest: sha256:<digest>\nfixture: cad-transfer@v2\nrun: run-042\nraw_results: results/TEST-payments.xml\ndisposition: defects/PAY-281\nrelease_decision: pending-human-review"
+      },
+      {
+        "label": "Case gate · pseudocode",
+        "title": "Fail closed on missing proof",
+        "language": "text",
+        "code": "missing artifact -> UNKNOWN / block\nrequired test skipped -> INCOMPLETE / block\nledger invariant failed -> FAILED / block\nunresolved critical defect -> block\nall required checks pass -> review eligible\nrelease owner records final decision"
+      }
+    ],
+    "checks": [
+      "The AI summary links to retained originals; its prose is never the authoritative test result.",
+      "Required provider integration and other release checks still apply after this API case passes."
+    ],
+    "disclosure": "Proposed evidence contract and pilot gate. This example does not supply a complete banking release policy."
+  },
+  "telemetry": {
+    "label": "Correlate raw evidence before asking for a diagnosis",
+    "panels": [
+      {
+        "label": "Correlation record · authored JSON",
+        "title": "Join identities across the run",
+        "language": "json",
+        "code": "{\n  \"run\": \"run-042\",\n  \"test\": \"PAY-142.retry\",\n  \"trace_id\": \"trace-042\",\n  \"transfer_id\": \"t-142\",\n  \"idempotency_key\": \"pay-142\",\n  \"raw_result\": \"failed\"\n}"
+      },
+      {
+        "label": "Evidence path · authored example",
+        "title": "Trace the failed invariant",
+        "language": "text",
+        "code": "JUnit: journals expected 1, observed 2\n  -> trace-042: two post attempts\n  -> t-142: two committed journals\n  -> run-042: build + fixture + stub refs\n\nAI hypothesis: replay posted twice\nQA disposition: pending owner review"
+      }
+    ],
+    "checks": [
+      "Correlate request attempts using trace and transfer IDs; retries remain separate events in the same scenario.",
+      "Keep logs, journal facts and manifests as originals. Missing joins stay unresolved; redact sensitive values before AI input."
+    ],
+    "disclosure": "Proposed observability contract. Example identifiers are illustrative; the AI hypothesis does not override the failed assertion."
+  },
+  "measurement": {
+    "label": "Measure engineering outcomes and AI overhead together",
+    "panels": [
+      {
+        "label": "Run event · authored JSON",
+        "title": "Capture comparable observations",
+        "language": "json",
+        "code": "{\n  \"run\": \"run-042\",\n  \"mode\": \"assisted\",\n  \"scope\": \"PAY-142-api\",\n  \"raw_result\": \"failed\",\n  \"review_minutes\": \"not-recorded\",\n  \"model_cost\": \"not-recorded\",\n  \"rerun_count\": \"not-recorded\"\n}"
+      },
+      {
+        "label": "Pilot measures · definitions",
+        "title": "Keep quality and effort visible",
+        "language": "text",
+        "code": "defect challenge: detected / injected\ncase completion: executed / required\nflake rate: unstable / repeated tests\nreview load: human minutes per case\ntime to disposition: failure to owner decision\nnet effort: draft + review + rerun + operation"
+      }
+    ],
+    "checks": [
+      "Compare baseline and assisted runs with the same scope, environment and acceptance rules; separate setup from recurring effort.",
+      "Set pilot thresholds after a baseline exists. Do not infer headcount savings from generated-test volume or model speed."
+    ],
+    "disclosure": "Authored measurement schema; no pilot timing, cost or effectiveness observations have been recorded."
+  }
+}

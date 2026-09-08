@@ -1,0 +1,44 @@
+/* Engineering views retain the common slide frame and readable type scale. */
+.ft-tech-figure { margin:0; }
+.ft-tech-scroll { overflow:auto; }
+.ft-tech-svg { display:block; width:100%; color:#2d556e; font-family:"Source Sans 3",sans-serif; }
+.ft-tech-svg text { fill:#173447; }
+.ft-tech-svg .node-title { font-weight:650; }
+.ft-tech-svg .ft-tech-zone { fill:#486471; font-weight:650; letter-spacing:1px; }
+.ft-tech-node rect { fill:#eff6fb; stroke:#36739a; stroke-width:2; }
+.ft-tech-ai rect { fill:#f2eafa; stroke:#7745a2; }
+.ft-tech-review rect { fill:#fff3db; stroke:#976614; }
+.ft-tech-evidence rect { fill:#e7f5ef; stroke:#1c7864; }
+.ft-tech-edge { fill:none; stroke:#426d84; stroke-width:2.5; }
+.ft-tech-boundary { fill:#f6f9fb; stroke:#b6c8d2; stroke-dasharray:6 5; }
+.ft-tech-lane { fill:#e8f1f7; stroke:#769aaf; }
+.ft-tech-lifeline { fill:none; stroke:#a9b9c2; stroke-dasharray:4 5; }
+.ft-tech-svg .ft-tech-center { text-anchor:middle; font-weight:650; }
+.ft-tech-svg .ft-tech-message { paint-order:stroke; stroke:#fff; stroke-width:6px; stroke-linejoin:round; }
+.ft-tech-panels { display:grid; grid-template-columns:1fr 1fr; gap:2cqw; min-width:0; }
+.ft-tech-panel { min-width:0; padding:1.3cqw; border:1px solid #b9cad5; border-top:3px solid #296a92; border-radius:5px; background:#f6f9fb; }
+.deck-page .ft-tech-panel h3 { margin:0 0 1cqw; font-size:1.85cqw; }
+.deck-page .ft-tech-code { margin:0; padding:1.1cqw; font:1.43cqw/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:#eaf4ff; background:#152c3e; border:0; border-radius:4px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.deck-page .ft-tech-code code { padding:0; background:transparent; color:inherit; font:inherit; border:0; }
+.deck-page .ft-tech-strip { border-left:3px solid #32779c; background:#edf4f8; padding:.75cqw 1cqw; margin:1cqw 0 0; font-size:1.55cqw; line-height:1.35; }
+.deck-page .ft-tech-checks { margin:1cqw 0 0; padding-left:1.6cqw; display:grid; gap:.4cqw; }
+.deck-page .ft-tech-checks li { padding:0; font-size:1.5cqw; line-height:1.35; }
+.deck-page .ft-tech-panel p { font-size:1.5cqw; line-height:1.35; margin:.8cqw 0 0; }
+.fintech-deck .ft-tech-figure figcaption { display:block; }
+.fintech-deck .ft-tech-svg { max-height:30cqw; }
+.ft-tech-sequence-text { display:none; }
+@media screen and (max-width:700px) {
+ .ft-tech-panels { grid-template-columns:1fr; gap:16px; }
+ .ft-tech-panel { padding:16px; }
+ .deck-page .ft-tech-panel h3 { font-size:21px; margin:0 0 12px; }
+ .deck-page .ft-tech-code { font-size:13px; padding:12px; }
+ .deck-page .ft-tech-panel p, .deck-page .ft-tech-checks li, .deck-page .ft-tech-strip { font-size:16px; }
+ .deck-page .ft-tech-checks { margin:16px 0; padding-left:20px; gap:8px; }
+ .deck-page .ft-tech-strip { padding:12px; margin:16px 0; }
+ .ft-tech-svg { min-width:900px; }
+ .fintech-deck .ft-tech-svg { max-height:none; }
+ .ft-tech-sequence-text { display:grid; gap:14px; margin:0; padding-left:24px; }
+ .ft-tech-sequence-text span { display:block; margin-top:5px; }
+ .ft-tech-sequence-text li { font-size:16px !important; }
+ .ft-tech-figure:has(+ .ft-tech-sequence-text) .ft-tech-scroll { display:none; }
+}
