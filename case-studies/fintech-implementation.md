@@ -126,6 +126,12 @@ Cloud hosting does not establish maturity by itself. Readiness depends on deploy
 
 Offshore delivery adds practical dependencies: repository and environment access, coding skills, a shared review window, accountable next owners, training capacity and supplier incentives. Reuse requires time and ownership. Coaching and supporting-engineer effort belong in the economics.
 
+## Quality outcomes beyond hours
+
+[Compare the architecture and inspect the outcome register]({{ "/case-studies/fintech/#outcomes" | relative_url }}). Three primary measures cover critical payment-fault detection, critical-scenario coverage and complete decision evidence. Repeatability, real-provider fidelity and second-squad reuse supply supporting proof. Freeze scope, denominators, exclusions and owners before collecting baseline and assisted observations.
+
+Distinguish current work, modernized QE without AI and the same foundation with AI where feasible. Without a comparable foundation-only reference, report combined contribution rather than isolated AI impact. Seeded-fault detection does not prove reduced production incidents or financial loss.
+
 ## Measurement
 
 The unit is **one comparable, bounded release test pack**, not a person, application portfolio or organization. Capture task-level active effort in mutually exclusive workflow stages. Use timestamps and reason codes separately for waits and elapsed release time. Do not add days of waiting to person-hours or claim that every saved task hour shortens the release's critical path.

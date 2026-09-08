@@ -1,0 +1,114 @@
+{
+  "title": "Prove better quality, not only fewer hours",
+  "status": "Proposed pilot scorecard",
+  "disclosure": "Baseline and observed after results are not recorded. Agree the scope, denominators and targets before the pilot. These are proposed acceptance criteria for Our Banking Client, not measured client improvements or industry benchmarks. Report QE modernization and AI contributions separately.",
+  "comparison": "Measure the existing workflow, the improved QE foundation, and AI assistance on that foundation. Hold scenario scope and acceptance criteria constant, record configuration changes, and retain human review effort. Seeded-fault detection is a pilot test of test effectiveness; it does not establish a reduction in production defect escapes.",
+  "baseline_status": "Not recorded",
+  "after_status": "Not recorded",
+  "measures": [
+    {
+      "id": "payment-detection",
+      "role": "primary",
+      "executive_label": "Catch payment faults",
+      "before": "Detection unmeasured",
+      "target": "Catch every critical seeded fault",
+      "mechanism": "Reviewed fault scenarios and independent balance assertions",
+      "technical_definition": "Correctly detected viable critical payment faults / all approved viable critical faults in the seeded catalogue. Unexecuted faults remain in the denominator; report separately.",
+      "evidence": "Versioned fault catalogue, clean-build control run, injected-build results, transfer and journal assertions; show caught / eligible counts.",
+      "owner": "Domain QA lead + payment service owner",
+      "attribution": "Shared contribution",
+      "quality_guardrail": "The clean control must pass and the injected fault must fail the intended assertion. Approve and log invalid or equivalent fault exclusions; infrastructure errors are not detections.",
+      "source_ids": [
+        "QO1"
+      ]
+    },
+    {
+      "id": "critical-coverage",
+      "role": "primary",
+      "executive_label": "Cover critical journeys",
+      "before": "Coverage unmeasured",
+      "target": "Exercise every critical scenario",
+      "mechanism": "AI drafts edge cases; domain QA approves the scenario matrix",
+      "technical_definition": "Approved critical scenarios with reviewed assertions and a valid execution result / all approved critical scenarios in the frozen pilot matrix. Skipped or blocked scenarios are incomplete.",
+      "evidence": "Requirement-to-scenario matrix and execution IDs for retry, concurrency, changed payload, delayed callback and reconciliation cases; publish covered / approved counts.",
+      "owner": "Product owner + domain QA lead",
+      "attribution": "Shared contribution",
+      "quality_guardrail": "Coverage means exercised behavior, not a green result. Report failures separately; do not remove difficult scenarios or accept AI-generated assertions without domain review.",
+      "source_ids": []
+    },
+    {
+      "id": "evidence-completeness",
+      "role": "primary",
+      "executive_label": "Explain each release decision",
+      "before": "Traceability unmeasured",
+      "target": "Complete every decision record",
+      "mechanism": "CI captures evidence; AI drafts a source-linked summary",
+      "technical_definition": "Pilot release-candidate decision packs containing every required, resolvable evidence field / all pilot release candidates submitted for a decision. Missing packs remain in the denominator.",
+      "evidence": "Schema-validated packs linking requirements, source commit, environment and fixture versions, raw results, exceptions, reviewer and decision; show complete / submitted counts.",
+      "owner": "Release owner + QE lead",
+      "attribution": "Shared contribution",
+      "quality_guardrail": "A complete pack may recommend rejection. AI summaries must agree with retained raw results; completeness never overrides a failed mandatory gate or human release authority.",
+      "source_ids": []
+    },
+    {
+      "id": "repeatability",
+      "role": "supporting",
+      "executive_label": "Trust repeat runs",
+      "before": "Flakiness unmeasured",
+      "target": "No unexplained critical flakes",
+      "mechanism": "Pinned builds, isolated fixtures and controlled dependency behavior",
+      "technical_definition": "Test cases with mixed pass/fail results / all cases completing the agreed unchanged-configuration repeat protocol. Publish incomplete cases / all selected cases separately.",
+      "evidence": "Pre-agreed repeat count, first-attempt and retry outcomes, build/data/stub versions, error classification, and mixed-result / completed plus incomplete / selected counts.",
+      "owner": "Automation lead + platform engineer",
+      "attribution": "QE foundation",
+      "quality_guardrail": "A retry pass does not erase the first failure. Investigate critical flakes; expose blocked or incomplete runs and keep mandatory coverage unchanged.",
+      "source_ids": [
+        "QO2"
+      ]
+    },
+    {
+      "id": "integration-fidelity",
+      "role": "supporting",
+      "executive_label": "Validate real integrations",
+      "before": "Fidelity unmeasured",
+      "target": "Verify agreed provider behaviors",
+      "mechanism": "Versioned stubs plus separate provider-sandbox verification",
+      "technical_definition": "Approved provider behaviors verified against the real provider sandbox / all provider behaviors assigned to the agreed integration check. Report stub outcomes separately.",
+      "evidence": "Contract version, provider-sandbox run IDs and captured behavior, stub-to-provider mismatch log, unresolved exclusions, and verified / agreed behavior counts.",
+      "owner": "Integration lead + provider relationship owner",
+      "attribution": "QE foundation",
+      "quality_guardrail": "Passing stubs proves only the simulated scenario. Sandbox checks do not establish production resilience; document inaccessible behaviors and retain separate end-to-end acceptance.",
+      "source_ids": []
+    },
+    {
+      "id": "second-squad-reuse",
+      "role": "supporting",
+      "executive_label": "Enable the next squad",
+      "before": "Reuse unmeasured",
+      "target": "Second squad runs independently",
+      "mechanism": "Supported templates, fixtures, runbooks and reviewed AI guidance",
+      "technical_definition": "Journeys independently configured, run and evidenced by the second squad / all journeys assigned to its agreed reuse trial. Record pilot-author interventions separately.",
+      "evidence": "Second-squad commits and CI runs, template versions, completed handoff checklist, support log and independently completed / assigned journey counts.",
+      "owner": "QE platform owner + second-squad lead",
+      "attribution": "Shared contribution",
+      "quality_guardrail": "Agree what independent means before the trial. Hidden pilot-author fixes or omitted mandatory checks cannot count as successful reuse; assign ongoing support ownership.",
+      "source_ids": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "QO1",
+      "title": "PIT: Basic concepts",
+      "url": "https://pitest.org/quickstart/basic_concepts/",
+      "reviewed": "2026-09-08",
+      "use": "Supports mutation testing as a check that tests detect introduced faults and distinguishes detected, surviving, equivalent and invalid mutations. The payment fault catalogue and pilot acceptance criteria are authored proposals, not PIT benchmark results."
+    },
+    {
+      "id": "QO2",
+      "title": "Playwright: Retries",
+      "url": "https://playwright.dev/docs/test-retries",
+      "reviewed": "2026-09-08",
+      "use": "Defines passed, flaky and failed retry outcomes and supports preserving first-attempt results. The unchanged-configuration repeat protocol and target are authored pilot measures, not a Playwright industry benchmark."
+    }
+  ]
+}

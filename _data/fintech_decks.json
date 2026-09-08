@@ -231,6 +231,28 @@
       "note": "Authored roadmap. Expand with validated prerequisites and client evidence.",
       "sources": "AL1,AL2,AL3,AL4",
       "chapter": "The AI adoption roadmap"
+    },
+    {
+      "title": "Before / after: the shared QE architecture",
+      "visual": "architecture-value",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Pilot target. Application teams retain expected behavior and release decisions; each application must meet its own readiness gates.",
+      "sources": "",
+      "chapter": "Architecture and outcomes"
+    },
+    {
+      "title": "Outcomes beyond hours",
+      "visual": "outcomes",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Business aims: fewer escaped payment defects and emergency fixes. These proposed pilot measures do not establish those outcomes.",
+      "sources": "QO1,QO2",
+      "chapter": "Architecture and outcomes"
     }
   ],
   "technical": [
@@ -669,12 +691,12 @@
     },
     {
       "title": "Before / after: the API test architecture",
-      "visual": "before-after",
+      "visual": "architecture-before-after",
       "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Pilot target. AI drafts; people approve intent and changes; assertions verify the payment outcome.",
+      "note": "Proposed topology. Isolate and reset each run; retain evidence outside disposable resources. Real integration remains a separate gate.",
       "sources": "S2,S5,S6,S7",
       "chapter": "Before and after the API pilot"
     },
@@ -688,6 +710,30 @@
       "note": "Proposed integration paths. The CI assistant is read-only; bounded agents need isolated tools, independent checks and human approval.",
       "sources": "AL1,AL2,AL3,AL4",
       "chapter": "The AI adoption roadmap"
+    },
+    {
+      "title": "Measure test effectiveness and decision evidence",
+      "visual": "outcome-measures",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "A clean control must pass; the intended injected-fault assertion must fail. Coverage and complete evidence do not imply a release pass.",
+      "sources": "QO1",
+      "chapter": "Outcomes beyond hours",
+      "metric_role": "primary"
+    },
+    {
+      "title": "Prove reliability, integration and reuse",
+      "visual": "outcome-measures",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "A passing retry never erases failure. Stubs do not prove real integration. Agree the independence of the reuse trial before measuring.",
+      "sources": "QO2",
+      "chapter": "Outcomes beyond hours",
+      "metric_role": "supporting"
     }
   ]
 }

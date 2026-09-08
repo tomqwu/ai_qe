@@ -36,3 +36,5 @@
 <link rel="stylesheet" href="{{ '/assets/css/visual-story.css' | relative_url }}?v={{ site.data.release.version }}">
 {% unless page.readiness %}<script src="{{ "/assets/js/readiness-model.js" | relative_url }}?v={{ site.data.release.version }}" defer></script>{% endunless %}
 <script src="{{ '/assets/js/visual-story.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+
+{% if page.fintech %}<link rel="stylesheet" href="{{ "/assets/css/qe-outcomes.css" | relative_url }}?v={{ site.data.release.version }}">{% endif %}
