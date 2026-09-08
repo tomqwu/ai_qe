@@ -23,13 +23,13 @@
       "chapter": ""
     },
     {
-      "title": "One timeout can become two debits",
+      "title": "QE testing scenario: one timeout, two debits",
       "visual": "payment",
-      "lead": "PAY-142 adds safe retries to a CAD 100 transfer. The customer retries after a timeout.",
+      "lead": "PAY-142 simulates a CAD 100 transfer accepted before a timeout. The customer retries; an injected duplicate-posting defect tests whether QE catches the second debit.",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "The product requirement is one transfer, one balanced journal and one customer-visible result. This is an authored scenario.",
+      "note": "Expected: one transfer, one balanced journal and one customer-visible result. This is a QE test scenario, not a reported client incident.",
       "sources": "",
       "chapter": ""
     },
@@ -288,13 +288,13 @@
       "chapter": ""
     },
     {
-      "title": "The retry failure and its detection",
+      "title": "QE testing scenario: detecting a duplicate posting",
       "visual": "payment",
-      "lead": "The provider accepts a transfer, but its response times out. A retry reaches the posting path again.",
+      "lead": "Simulate an accepted transfer, a timed-out response and a retry. A deliberately injected defect posts the same transfer twice.",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Injecting a duplicate-posting defect should fail the journal-count and balance assertions. A correct success toast cannot override that failure.",
+      "note": "Assert one journal and correct balances. The duplicate-posting variant must fail. This is a QE test scenario, not a reported client incident.",
       "sources": "",
       "chapter": ""
     },
