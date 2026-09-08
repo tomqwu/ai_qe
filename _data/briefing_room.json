@@ -9,8 +9,8 @@
     "url": "/briefings/fintech-evp/",
     "pdf_prefix": "ai-qe-fintech-evp",
     "edition": "fintech_edition",
-    "slides": 16,
-    "time": "20–25 min",
+    "slides": 17,
+    "time": "25–30 min",
     "outline": [
       "The payment story and manual-work baseline",
       "Shared capability and team responsibilities",
@@ -20,7 +20,8 @@
       "Financial-services evidence and a focused client trial",
       "Guided client route: connected workflows, prerequisites and concrete architecture",
       "Before / after: manual API work and the target pilot workflow",
-      "Observed time framework for the API pilot and brainstorm questions"
+      "Observed time framework for the API pilot and brainstorm questions",
+      "Four AI adoption layers: individual copilots, connected workflows, bounded agents and shared platform services"
     ]
   },
   {
@@ -33,7 +34,7 @@
     "url": "/briefings/fintech-technical/",
     "pdf_prefix": "ai-qe-fintech-technical",
     "edition": "fintech_edition",
-    "slides": 27,
+    "slides": 28,
     "time": "35–45 min",
     "outline": [
       "Payment behavior and an executable test example",
@@ -44,7 +45,8 @@
       "Financial-services evidence and a focused client trial",
       "Guided client route: connected workflows, prerequisites and concrete architecture",
       "Before / after: manual API work and the target pilot workflow",
-      "Brainstorm questions"
+      "Brainstorm questions",
+      "Four AI adoption layers: individual copilots, connected workflows, bounded agents and shared platform services"
     ]
   },
   {

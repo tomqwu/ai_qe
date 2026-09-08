@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.14.0 · 8 September 2026
+
+Added the [AI adoption roadmap]({{ '/ai-adoption/' | relative_url }}): individual copilots, connected workflow assistants, bounded QE agents and a shared QE AI platform. The interactive PAY-142 examples connect inputs, AI authority, outputs, reviewers, technology, dependencies and evidence needed to expand. Platform foundations start on day one; teams can scale useful assistance without delegating more actions.
+
+Executive slide **17** explains the four layers; technical slide **28** maps their integration paths. The fintech case, primary menu, readiness page and modernization page link to the roadmap. Primary GitHub and Microsoft documentation supports product capabilities; the roadmap and client examples are authored proposals, without fixed timing or savings claims.
+
+Fintech slides and PDFs advance to **v1.14.0**: **17 executive / 28 technical slides**. Industry decks remain **v1.12.2**, questionnaire **v4**, research companion **v1.7.0** and film **v1.8.0**. [GitHub release v1.14.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.14.0) packages the current assets.
+
 ## v1.13.0 · 8 September 2026
 
 Made the executive before/after slide explicit and added a technical API comparison showing manual preparation, shared execution and fragmented evidence alongside reviewed AI drafts, repeatable tests and linked proof. The after state is a pilot target with named platform prerequisites. Both views also appear in the case explorer.

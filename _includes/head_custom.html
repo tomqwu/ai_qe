@@ -20,6 +20,8 @@
 <script src="{{ '/assets/js/fintech-model.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 <script src="{{ '/assets/js/fintech-case.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 {% endif %}
+{% if page.ai_adoption or page.fintech %}<link rel="stylesheet" href="{{ '/assets/css/ai-adoption.css' | relative_url }}?v={{ site.data.release.version }}">{% endif %}
+{% if page.ai_adoption %}<script src="{{ '/assets/js/ai-adoption.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>{% endif %}
 
 <link rel="stylesheet" href="{{ '/assets/css/brand.css' | relative_url }}?v={{ site.data.release.version }}">
 <link rel="stylesheet" href="{{ '/assets/css/sales.css' | relative_url }}?v={{ site.data.release.version }}">

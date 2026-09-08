@@ -1,0 +1,101 @@
+/* Adoption is capability progression; platform foundations support every layer. */
+.al-page { color:#233e50; }
+.al-page [hidden] { display:none !important; }
+.al-page section { margin:64px 0; scroll-margin-top:24px; }
+.al-hero { border-bottom:2px solid #183447; padding:8px 0 28px; }
+.al-hero h1 { color:#152e40; font-size:clamp(36px,4vw,54px); line-height:1.08; letter-spacing:-.03em; }
+.al-intro { font-size:22px; line-height:1.5; max-width:68ch; }
+.al-page h2 { color:#152e40; font-size:30px; letter-spacing:-.02em; }
+.al-page h3 { color:#152e40; }
+.al-page p, .al-page dd, .al-page li { line-height:1.55; }
+.al-disclosure { font-size:14px; color:#526571; }
+.al-jump, .al-links { display:flex; flex-wrap:wrap; gap:10px 24px; }
+.al-jump { margin-top:24px; font-weight:600; }
+.al-level-1 { --al-color:#245e91; --al-tint:#edf4fb; }
+.al-level-2 { --al-color:#7042a4; --al-tint:#f6f0fb; }
+.al-level-3 { --al-color:#8d5610; --al-tint:#fff5e5; }
+.al-level-4 { --al-color:#126457; --al-tint:#edf7f2; }
+.al-map, .al-architecture { margin:24px 0; }
+.al-levels { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; list-style:none; margin:0; padding:0; }
+.al-levels > li::before, .al-path li::before { display:none !important; }
+.al-levels > li { margin:0; padding:0; display:flex; }
+.al-levels a { display:flex; flex-direction:column; width:100%; border:1px solid #bbcbd3; border-top:5px solid var(--al-color); border-radius:8px; padding:20px 16px 16px; background:var(--al-tint); color:#183447; text-decoration:none; box-sizing:border-box; }
+.al-levels a:hover { border-color:var(--al-color); text-decoration:none; }
+.al-levels a[aria-current="true"] { outline:3px solid var(--al-color); outline-offset:3px; }
+.al-levels a:focus-visible, .al-controls button:focus-visible { outline:3px solid #102f46; outline-offset:4px; }
+.al-number { display:inline-grid; place-items:center; width:38px; height:38px; border-radius:50%; background:var(--al-color); color:white; font-size:22px; font-weight:700; flex:none; }
+.al-verb { font-size:13px; font-weight:650; color:var(--al-color); margin:14px 0 6px; }
+.al-levels strong { font-size:21px; line-height:1.15; min-height:3.5em; }
+.al-example { font-size:17px; line-height:1.4; margin:12px 0 20px; }
+.al-gate { margin-top:auto; border-top:1px solid #bac9d1; padding-top:12px; font-size:15px; line-height:1.35; min-height:5em; box-sizing:border-box; }
+.al-gate b { display:block; color:var(--al-color); margin-bottom:5px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+.al-foundation { display:flex; flex-wrap:wrap; gap:5px 20px; padding:15px 20px; margin-top:20px; border-radius:6px; background:#193749; color:#fff; }
+.al-foundation strong { font-size:17px; }
+.al-foundation span { font-size:16px; }
+.al-map figcaption, .al-architecture figcaption { font-size:14px; color:#526571; line-height:1.4; margin-top:12px; }
+.al-controls { display:flex; align-items:center; gap:16px; margin:28px 0 18px; }
+.al-controls button { border:1px solid #98aeba; border-radius:5px; background:#fff; color:#183447; padding:9px 14px; cursor:pointer; font:inherit; }
+.al-controls p { font-size:14px; margin:0; }
+.al-detail { margin:28px 0; padding:28px; border:1px solid #b7c9d2; border-top:5px solid var(--al-color); border-radius:8px; scroll-margin-top:24px; }
+.al-detail header { display:flex; align-items:center; gap:16px; }
+.al-detail header p { margin:0 0 4px; }
+.al-detail h3 { margin:0; font-size:28px; }
+.al-summary { font-size:21px; }
+.al-authority, .al-next { padding:16px 20px; background:var(--al-tint); border-left:3px solid var(--al-color); }
+.al-example-chain { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; padding:18px 0; }
+.al-example-chain h4 { margin:0 0 8px; color:var(--al-color); font-size:17px; }
+.al-example-chain p { margin:0; font-size:17px; }
+.al-page .al-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin:14px 0 26px; }
+.al-page .al-facts dt { text-align:left; margin:0 0 8px; font-weight:650; color:#183447; }
+.al-page .al-facts dt::after { content:none; }
+.al-page .al-facts dd { margin:0; font-size:17px; }
+.al-links { font-size:14px; }
+.al-callout { border-left:4px solid #236098; background:#f1f5f7; padding:18px 24px; margin:28px 0; }
+.al-callout h3 { margin-top:0; }
+.al-callout p:last-child { margin-bottom:0; }
+.al-path { display:grid; grid-template-columns:180px minmax(0,1fr); align-items:stretch; margin:12px 0; gap:20px; }
+.al-path-label { display:flex; align-items:center; gap:12px; color:var(--al-color); }
+.al-path-label b { font-size:30px; }
+.al-path-label strong { font-size:17px; line-height:1.25; }
+.al-path ol { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); list-style:none; padding:0; margin:0; gap:22px; }
+.al-path li { position:relative; display:grid; align-items:center; text-align:center; font-size:17px; line-height:1.3; border:1px solid var(--al-color); background:var(--al-tint); border-radius:6px; padding:16px 10px; margin:0; }
+.al-path li:not(:last-child)::after { content:'→'; position:absolute; right:-20px; top:50%; transform:translateY(-50%); color:var(--al-color); font-size:20px; }
+.al-decisions { display:grid; gap:24px; }
+.al-decisions article { padding:0 0 22px; border-bottom:1px solid #b9cbd5; }
+.al-decisions h3 { font-size:23px; margin-bottom:10px; }
+/* Slide units follow the existing container-sized master; no global typography overrides. */
+.fintech-deck .al-map, .fintech-deck .al-architecture { margin:0; }
+.fintech-deck .al-levels { gap:1.3cqw; }
+.fintech-deck .al-levels a { border-top-width:.4cqw; padding:1.5cqw 1.3cqw; border-radius:.5cqw; }
+.fintech-deck .al-number { width:3cqw; height:3cqw; font-size:1.8cqw; }
+.fintech-deck .al-verb { font-size:1.1cqw; margin:1cqw 0 .5cqw; }
+.fintech-deck .al-levels strong { font-size:2cqw; min-height:2.4em; }
+.fintech-deck .al-example { font-size:1.45cqw; margin:1cqw 0 1.4cqw; }
+.fintech-deck .al-gate { font-size:1.3cqw; padding-top:.8cqw; min-height:4.8em; }
+.fintech-deck .al-gate b { font-size:.95cqw; margin-bottom:.4cqw; }
+.fintech-deck .al-foundation { padding:1cqw 1.4cqw; margin-top:1.4cqw; gap:.4cqw 1.6cqw; }
+.fintech-deck .al-foundation strong { font-size:1.45cqw; }.fintech-deck .al-foundation span { font-size:1.35cqw; }
+.fintech-deck .al-map figcaption, .fintech-deck .al-architecture figcaption { font-size:1.15cqw; margin-top:.8cqw; }
+.fintech-deck .al-path { grid-template-columns:18cqw minmax(0,1fr); gap:1.8cqw; margin:.9cqw 0; }
+.fintech-deck .al-path-label { gap:1cqw; }.fintech-deck .al-path-label b { font-size:2.6cqw; }.fintech-deck .al-path-label strong { font-size:1.5cqw; }
+.fintech-deck .al-path ol { gap:2cqw; }.fintech-deck .al-path li { font-size:1.5cqw; padding:1.3cqw .8cqw; }
+.fintech-deck .al-path li:not(:last-child)::after { right:-1.9cqw; font-size:1.8cqw; }
+@media (max-width:1100px) and (min-width:701px) { .al-page .al-levels { grid-template-columns:1fr 1fr; }.al-page .al-levels strong { min-height:0; }.al-page .al-path { grid-template-columns:145px minmax(0,1fr); } }
+@media (max-width:700px) {
+ .al-page section { margin:44px 0; }.al-intro { font-size:20px; }.al-levels, .fintech-deck .al-levels { grid-template-columns:1fr; gap:18px; }
+ .al-levels a, .fintech-deck .al-levels a { padding:20px; border-top-width:5px; border-radius:8px; }
+ .al-number, .fintech-deck .al-number { width:38px; height:38px; font-size:22px; }
+ .al-verb, .fintech-deck .al-verb { font-size:14px; margin:12px 0 6px; }
+ .al-levels strong, .fintech-deck .al-levels strong { font-size:23px; min-height:0; }
+ .al-example, .fintech-deck .al-example { font-size:18px; margin:12px 0 18px; }
+ .al-gate, .fintech-deck .al-gate { font-size:16px; padding-top:12px; }.al-gate b, .fintech-deck .al-gate b { font-size:12px; margin-bottom:6px; }
+ .al-foundation, .fintech-deck .al-foundation { padding:16px; margin-top:20px; gap:6px; }.al-foundation strong, .fintech-deck .al-foundation strong { font-size:17px; }.al-foundation span, .fintech-deck .al-foundation span { font-size:16px; }
+ .al-map figcaption, .al-architecture figcaption, .fintech-deck .al-map figcaption, .fintech-deck .al-architecture figcaption { font-size:14px; margin-top:12px; }
+ .al-controls { flex-wrap:wrap; }.al-detail { padding:20px; }.al-detail h3 { font-size:25px; }.al-summary { font-size:20px; }
+ .al-example-chain, .al-page .al-facts { grid-template-columns:minmax(0,1fr); }.al-authority, .al-next { padding:14px; }
+ .al-path, .fintech-deck .al-path { grid-template-columns:1fr; gap:12px; margin:24px 0; }.al-path-label, .fintech-deck .al-path-label { gap:12px; }
+ .al-path-label b, .fintech-deck .al-path-label b { font-size:28px; }.al-path-label strong, .fintech-deck .al-path-label strong { font-size:20px; }
+ .al-path ol, .fintech-deck .al-path ol { grid-template-columns:1fr; gap:24px; }.al-path li, .fintech-deck .al-path li { font-size:18px; padding:16px; }
+ .al-path li:not(:last-child)::after, .fintech-deck .al-path li:not(:last-child)::after { content:'↓'; right:auto; left:50%; top:100%; transform:translateX(-50%); font-size:20px; }
+}
+@media print { .al-controls { display:none; } }

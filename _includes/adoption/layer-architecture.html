@@ -1,0 +1,5 @@
+<figure class="al-architecture" aria-label="Integration paths for the four AI adoption layers">
+  {% for layer in site.data.ai_adoption.layers %}<div class="al-path al-level-{{ layer.number }}"><div class="al-path-label"><b>{{ layer.number }}</b><strong>{{ layer.title }}</strong></div><ol>{% for node in layer.architecture %}<li>{{ node }}</li>{% endfor %}</ol></div>{% endfor %}
+  <div class="al-foundation"><strong>Independent checks + accountable owners</strong><span>Preserve financial assertions; people approve merge and release.</span></div>
+  <figcaption>Parallel integration paths, not four consecutive runtime steps. Layer 4 supplies shared services to layers 1–3.</figcaption>
+</figure>

@@ -26,19 +26,24 @@
       "step": "05"
     },
     {
+      "title": "AI adoption roadmap",
+      "url": "/ai-adoption/",
+      "step": "06"
+    },
+    {
       "title": "QE modernization",
       "url": "/qe-modernization/",
-      "step": "06"
+      "step": "07"
     },
     {
       "title": "Platform readiness",
       "url": "/platform-readiness/",
-      "step": "07"
+      "step": "08"
     },
     {
       "title": "Plan the discovery",
       "url": "/discovery/",
-      "step": "08"
+      "step": "09"
     }
   ],
   "reference": [
