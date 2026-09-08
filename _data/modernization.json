@@ -175,7 +175,7 @@
     {
       "id": "environments",
       "title": "Containerization and environment lifecycle",
-      "current": "Shared environments drift, and setup depends on an individual.",
+      "current": "Few shared environments create booking queues and reset contention; setup depends on an individual.",
       "build": "Package suitable apps, test runners and dependencies. Pin versions, apply migrations, wait for readiness, seed isolated data and clean up even after failure. Use scripted VMs or reserved systems where containers do not fit.",
       "owner": "Platform / DevOps owner",
       "proof": "Two runs do not interfere, a clean runner recreates the environment, and failed runs leave no unowned resources.",
@@ -190,7 +190,7 @@
     {
       "id": "virtual-services",
       "title": "Service virtualization and contract fidelity",
-      "current": "A supplier sandbox cannot reliably reproduce failures, callbacks or edge cases.",
+      "current": "Without service virtualization, testing depends on limited vendor environments and their available failure, callback and edge-case behavior.",
       "build": "Create owned, versioned substitutes for supported protocols. Model state transitions, delays and failures; reset between runs. Compare contracts and behavior with the real integration on a defined schedule.",
       "owner": "Integration lead + provider owner",
       "proof": "A deliberate contract mismatch fails a check, and timeout and duplicate scenarios can be replayed.",
@@ -230,7 +230,7 @@
     {
       "id": "platform-people",
       "title": "Shared platform service and team skills",
-      "current": "Offshore testers wait for access and depend on a few automation specialists.",
+      "current": "A large manual QE team waits for environment access and coordinates reruns; adding staff does not increase vendor test capacity.",
       "build": "Provide maintained templates, onboarding, coaching, ownership, support hours and capacity. Introduce self-service environments only when the platform can operate them.",
       "owner": "QE platform product owner + supplier delivery lead",
       "proof": "A second squad runs the pattern, troubleshoots a failure and knows who owns the next action.",

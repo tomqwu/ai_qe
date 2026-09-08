@@ -5,10 +5,17 @@ description: Dated entries recording what was verified, when, what changed, and 
 ---
 
 # Research log
+
 {: .no_toc }
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+
+## 2026-09-08 · Manual QE baseline clarification
+
+Source: user-provided scenario clarification. The banking starting point is a large manual QE workforce, few shared test environments, no backend service virtualization and limited vendor test environments that cap parallel execution. Preserve the existing 75-person staffing model and 45 manual/domain testers; do not invent vendor environment counts or observed improvements.
+
+Updated the case narrative, before/after diagrams, workflow, readiness and modernization assumptions. Isolation and provider virtualization are proposed modernization work, with separate real-provider and settlement validation. Environment queue time and human effort remain separate measurements.
 
 ## 8 September 2026 — Architecture and quality outcomes beyond hours
 

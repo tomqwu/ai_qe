@@ -32,7 +32,7 @@
       "evidence": "Another engineer provisions or restores the pinned build, completes health checks and records reset time and runner capacity.",
       "action": "Resolve runner access, image or package access, deployment drift and environment booking before execution.",
       "example": "Existing Azure environment and pipeline agents; infrastructure as code where supported",
-      "harbor": "A shared Azure test environment exists; independent reset and concurrent capacity are unproven.",
+      "harbor": "Few shared test environments and shared data constrain the QA teams. Vendor-owned test environment capacity caps parallel integration runs; independent reset is not established.",
       "level": 1,
       "sources": [
         "P2",
@@ -64,7 +64,7 @@
       "evidence": "Versioned contracts and scenarios reproduce success, timeout, duplicate and delayed responses; a provider check detects drift from the real integration.",
       "action": "Inventory protocols and owners, agree stub fidelity and refresh triggers, and book a sandbox or batch window for what cannot be simulated.",
       "example": "WireMock for HTTP behavior; Pact where applicable for contracts; protocol-specific simulators for messages or legacy systems",
-      "harbor": "Provider stubs are proposed work. The shared settlement batch and real provider sandbox still need reserved validation windows.",
+      "harbor": "Backend services are not virtualized at baseline. Versioned provider substitutes are proposed work; limited vendor test environments and the shared settlement batch still need reserved real-integration windows.",
       "level": 1,
       "sources": [
         "P2",
@@ -154,7 +154,7 @@
       "evidence": "An offshore engineer submits a reviewable artifact and the named next owner accepts it within an agreed review window.",
       "action": "Provide repository and environment access, pair coaching, escalation paths and funded review time across time zones.",
       "example": "A pilot pod drawn from the 75-person QA team in this scenario, with additional product, development and platform support",
-      "harbor": "Domain expertise exists; automation skills and working-hour overlap are uneven. Support effort is additional to the eight QA pilot roles.",
+      "harbor": "75 QA staff include 45 manual/domain testers; automation skills and working-hour overlap are uneven. Support effort is additional to the eight QA pilot roles.",
       "level": 1,
       "sources": [
         "P1"

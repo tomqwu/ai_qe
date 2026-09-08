@@ -253,17 +253,17 @@
       "steps": [
         {
           "title": "Assemble cases",
-          "description": "QA copies scenarios and builds requests by hand.",
+          "description": "Manual testers copy cases and prepare API requests.",
           "stack": "Azure Boards → spreadsheets / manual API requests"
         },
         {
-          "title": "Run and investigate",
-          "description": "Shared data and provider availability shape the run.",
-          "stack": "Shared Azure test environment → provider sandbox"
+          "title": "Queue, run and rerun",
+          "description": "Vendor slots and shared resets limit runs; backends are not virtualized.",
+          "stack": "Limited test environments → vendor slots; no backend virtualization"
         },
         {
           "title": "Reconcile evidence",
-          "description": "QA collects logs and chases defect and release owners.",
+          "description": "QA manually reconciles screenshots, logs and release status.",
           "stack": "Screenshots + log files → release spreadsheet"
         }
       ]
@@ -288,7 +288,7 @@
         }
       ]
     },
-    "dependency": "Enable the target: versioned builds, resettable test data, validated provider stubs, CI access and reviewers. Keep real-provider integration checks.",
+    "dependency": "More testers do not add environment capacity. Enable the target with repeatable environments, isolated data, validated service virtualization, CI and reviewers. Reserve vendor slots for real-provider integration checks.",
     "disclosure": "Illustrative before/after design for Our Banking Client. The after state is a pilot target; elapsed time, effort and quality outcomes have not been measured.",
     "slide_dependency": "Requires CI, isolated data, validated provider stubs and reviewers. Keep real integration checks."
   },
