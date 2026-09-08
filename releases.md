@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.12.3 · 8 September 2026
+
+Labelled the timeout-and-retry example explicitly as a **QE testing scenario** in the case explorer, executive and technical slides, payment diagram and implementation notes. The explanation identifies a deliberately injected duplicate-posting defect and the expected one-transfer outcome. A timeout alone does not imply two debits; the example is not a reported client incident.
+
+The two fintech slide/PDF editions advance to **v1.12.3** (16 executive and 26 technical slides). Industry decks remain **v1.12.2**, the questionnaire **v4**, research companion **v1.7.0** and film **v1.8.0**. Slide links and test behavior are preserved. [GitHub release v1.12.3](https://github.com/tomqwu/ai_qe/releases/tag/v1.12.3) packages the current assets.
+
 ## v1.12.2 · 8 September 2026
 
 Standardized the audience label to **Executive** and the scenario name to **FinTech Client** across current pages, diagrams, presentations, search results and downloadable briefs. Simplified scenario wording while retaining the disclosure that staffing, systems, hours and targets are illustrative planning inputs requiring client validation.

@@ -1,5 +1,5 @@
-<figure class="ft-payment">
+<figure class="ft-payment" aria-label="QE testing scenario: timeout, retry and duplicate-posting detection">
   <ol class="ft-flow-row"><li><strong>Customer</strong><span>Send CAD 100</span></li><li><strong>Payment API</strong><span>Key: pay-142</span></li><li><strong>Provider</strong><span>Accept; response times out</span></li><li><strong>Customer retries</strong><span>Reuse pay-142</span></li></ol>
-  <div class="ft-payment-branches"><div><span class="ft-branch-label">Injected defect</span><strong>2 journals</strong><p>Payer CAD 800<br>Recipient CAD 200</p><b>FAIL · duplicate posting</b></div><div><span class="ft-branch-label">Required behavior</span><strong>1 journal</strong><p>Payer CAD 900<br>Recipient CAD 100</p><b>PASS · expected state</b></div></div>
-  <figcaption>Illustrative outcomes for initial balances of CAD 1,000 and CAD 0. A journal contains one debit and one credit. No fees, FX or other activity.</figcaption>
+  <div class="ft-payment-branches"><div><span class="ft-branch-label">Injected test defect</span><strong>2 journals</strong><p>Payer CAD 800<br>Recipient CAD 200</p><b>FAIL · duplicate posting</b></div><div><span class="ft-branch-label">Expected test outcome</span><strong>1 journal</strong><p>Payer CAD 900<br>Recipient CAD 100</p><b>PASS · expected state</b></div></div>
+  <figcaption>QE testing scenario. The injected defect causes the duplicate posting; a timeout alone does not imply two debits. Initial balances: CAD 1,000 and CAD 0. One journal contains one debit and one credit. No fees, FX or other activity.</figcaption>
 </figure>

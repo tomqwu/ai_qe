@@ -12,6 +12,8 @@ has_toc: true
 
 **Fictional case, edition v{{ site.data.fintech_case.edition }}.** This is a proposed delivery design and a working browser teaching simulation. It is not a deployed fintech QA platform. All company details, effort inputs, payment rules and pilot targets below are authored assumptions. The sources document technology capabilities, not the case's results.
 
+**QE testing scenario: timeout and retry.** PAY-142 deliberately injects a duplicate-posting defect to test whether the journal-count and balance assertions catch it. The expected outcome is one transfer. This is a test design, not a reported client incident; a timeout alone does not imply two debits.
+
 ## QE modernization before wider execution
 
 The [modernization guide]({{ "/qe-modernization/#harbor" | relative_url }}) develops the foundation backlog behind this case. Start with one payment journey: reviewed assertions, a reproducible environment, isolated data, a versioned provider substitute and durable evidence. Compare its behavior with the real provider and settlement path. Containerize suitable components; reserve supported environments for systems that cannot be made disposable.
