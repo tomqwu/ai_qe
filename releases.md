@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.12.2 · 8 September 2026
+
+Standardized the audience label to **Executive** and the scenario name to **FinTech Client** across current pages, diagrams, presentations, search results and downloadable briefs. Simplified scenario wording while retaining the disclosure that staffing, systems, hours and targets are illustrative planning inputs requiring client validation.
+
+All four slide/PDF editions advance to **v1.12.2**, with **25 / 35 / 16 / 26 slides** (102 total). The fillable discovery questionnaire advances to **v4** with the updated audience wording. The research companion remains **v1.7.0** and film **v1.8.0**. Existing presentation and readiness links remain valid. [GitHub release v1.12.2](https://github.com/tomqwu/ai_qe/releases/tag/v1.12.2) packages the current assets; earlier editions below are historical records.
+
 ## v1.12.1 · 8 September 2026
 
 Renamed the fictional client from Harbor to **Northstar Payments**, a digital payments provider, across the [fintech case]({{ '/case-studies/fintech/' | relative_url }}), implementation plan, readiness assumptions, architecture diagrams, audience decks and downloadable trial briefs. The payment retry scenario and its illustrative staffing, effort and adoption assumptions are unchanged. Existing case and readiness links still work.
@@ -21,7 +27,7 @@ Connected the modernization-to-AI story with an interactive dependency matrix, c
 
 Diagnosis-only pilots now use their own readiness scope, separate from execution and retesting. Guided fintech stories connect vision, evidence, architecture, dependencies and discussion while preserving original slide anchors. Full decks remain available in their established order.
 
-All four slide/PDF editions advance to **v1.12.0**: industry EVP **25 slides**, industry technical **35**, fintech EVP **16**, fintech technical **26** (102 total). Two technical views extend the existing deck; several text-heavy slides become visual explanations. The research companion remains **v1.7.0**, questionnaire **v3** and film **v1.8.0**. [GitHub release v1.12.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.12.0) packages the current publication assets.
+All four slide/PDF editions advance to **v1.12.0**: industry Executive **25 slides**, industry technical **35**, fintech Executive **16**, fintech technical **26** (102 total). Two technical views extend the existing deck; several text-heavy slides become visual explanations. The research companion remains **v1.7.0**, questionnaire **v3** and film **v1.8.0**. [GitHub release v1.12.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.12.0) packages the current publication assets.
 
 ## v1.11.1 · 7 September 2026
 
@@ -33,7 +39,7 @@ This site and trial-brief clarification retains the four **v1.11.0** slide/PDF e
 
 Added [Fintech results and client pilots]({{ '/case-studies/fintech/evidence/' | relative_url }}): seven cases, ten sources, reported-outcome charts, six adoption practices and a downloadable trial discussion brief for onboarding design, payment API tests or triage. The architecture walkthrough shows a rejected candidate stopping before the maintained suite. Cases retain their evidence type, measurement scope and limitations.
 
-All four slide/PDF editions advance to **v1.11.0**: industry EVP **25 slides**, industry technical **35**, fintech EVP **16**, fintech technical **24**. Eight new slides preserve prior anchors. The research companion remains **v1.7.0**, questionnaire **v3**, and film **v1.8.0**. [GitHub release v1.11.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.11.0) includes 15 assets: six PDFs, the film and captions, three CSV/JSON source registers, and checksums.
+All four slide/PDF editions advance to **v1.11.0**: industry Executive **25 slides**, industry technical **35**, fintech Executive **16**, fintech technical **24**. Eight new slides preserve prior anchors. The research companion remains **v1.7.0**, questionnaire **v3**, and film **v1.8.0**. [GitHub release v1.11.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.11.0) includes 15 assets: six PDFs, the film and captions, three CSV/JSON source registers, and checksums.
 
 ## v1.10.0 · 7 September 2026
 
@@ -41,7 +47,7 @@ Added [QE modernization]({{ '/qe-modernization/' | relative_url }}) to the conve
 
 The Harbor implementation now includes a concrete modernization sequence and explicit foundation costs. Reviewed assistance can begin alongside this work; broader execution depends on evidence for the selected scope.
 
-All four slide/PDF editions advance to **v1.10.0**: industry EVP **23 slides**, industry technical **33**, fintech EVP **14**, fintech technical **22**. Existing slide anchors remain stable. The research companion stays **v1.7.0**, questionnaire **v3**, and architecture film **v1.8.0**. [GitHub release v1.10.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.10.0) includes the current PDFs and both source registers.
+All four slide/PDF editions advance to **v1.10.0**: industry Executive **23 slides**, industry technical **33**, fintech Executive **14**, fintech technical **22**. Existing slide anchors remain stable. The research companion stays **v1.7.0**, questionnaire **v3**, and architecture film **v1.8.0**. [GitHub release v1.10.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.10.0) includes the current PDFs and both source registers.
 
 ## v1.9.1 · 7 September 2026
 
@@ -55,7 +61,7 @@ Added [Platform readiness]({{ '/platform-readiness/' | relative_url }}) to the p
 
 The fintech case and implementation register now make the unverified foundations explicit. Pilot and economics guidance require a funded remediation backlog before committing to scope, timing or benefits. New editable diagrams explain the adoption foundations and the boundary between virtualized dependencies and real integration.
 
-All four slide/PDF editions advance to **v1.9.0**: industry EVP **22 slides**, industry technical **31**, fintech EVP **13**, fintech technical **20**. Existing slide anchors are preserved. The research companion remains **v1.7.0**, questionnaire **v3**, and architecture film **v1.8.0**. [GitHub release v1.9.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.9.0) contains the current downloads.
+All four slide/PDF editions advance to **v1.9.0**: industry Executive **22 slides**, industry technical **31**, fintech Executive **13**, fintech technical **20**. Existing slide anchors are preserved. The research companion remains **v1.7.0**, questionnaire **v3**, and architecture film **v1.8.0**. [GitHub release v1.9.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.9.0) contains the current downloads.
 
 ## v1.8.1 · 7 September 2026
 
@@ -77,12 +83,12 @@ This is a site and presentation-player update. **All four slide/PDF editions and
 
 Focused the publication on AI-assisted quality engineering across the homepage, shared branding, research pages, presentations, diagrams, dictionary and questionnaire. The interactive capability map now includes test maintenance. The technical deck closes with repair, retest and a time-limited flaky-test quarantine, with separate animated paths and an explicit unresolved-work record.
 
-- [EVP strategic vision · 21 slides · v1.7.0 PDF]({{ '/assets/pdf/ai-qe-evp-v1.7.0.pdf' | relative_url }})
+- [Executive strategic vision · 21 slides · v1.7.0 PDF]({{ '/assets/pdf/ai-qe-evp-v1.7.0.pdf' | relative_url }})
 - [Technical architecture · 29 slides · v1.7.0 PDF]({{ '/assets/pdf/ai-qe-technical-v1.7.0.pdf' | relative_url }})
 - [QA research companion · 13 pages · v1.7.0 PDF]({{ '/assets/pdf/ai-qe-industry-research-v1.7.0.pdf' | relative_url }})
 - [QA discovery questionnaire · fillable v3 PDF]({{ '/assets/pdf/ai-qe-discovery-questionnaire-v3.pdf' | relative_url }})
 
-The current library contains 30 sources and the dictionary contains 62 terms. Superseded mixed-scope downloads are no longer published. The architecture film has been refreshed to match the site edition. Fintech case decks and PDFs are also re-exported as **v1.7.0** to remove the old branding from PDF metadata; their QA narrative is unchanged. [Fintech EVP PDF]({{ '/assets/pdf/ai-qe-fintech-evp-v1.7.0.pdf' | relative_url }}) · [Fintech technical PDF]({{ '/assets/pdf/ai-qe-fintech-technical-v1.7.0.pdf' | relative_url }}).
+The current library contains 30 sources and the dictionary contains 62 terms. Superseded mixed-scope downloads are no longer published. The architecture film has been refreshed to match the site edition. Fintech case decks and PDFs are also re-exported as **v1.7.0** to remove the old branding from PDF metadata; their QA narrative is unchanged. [Fintech Executive PDF]({{ '/assets/pdf/ai-qe-fintech-evp-v1.7.0.pdf' | relative_url }}) · [Fintech technical PDF]({{ '/assets/pdf/ai-qe-fintech-technical-v1.7.0.pdf' | relative_url }}).
 
 ## v1.6.1 · 7 September 2026
 
@@ -98,7 +104,7 @@ Added the [Harbor fintech case explorer]({{ '/case-studies/fintech/' | relative_
 
 The case has two dedicated, QA-focused briefings with diagrams and editable web content:
 
-- [EVP strategic vision · 12 slides · v1.6.0]({{ '/briefings/fintech-evp/' | relative_url }})
+- [Executive strategic vision · 12 slides · v1.6.0]({{ '/briefings/fintech-evp/' | relative_url }})
 - [Technical QA architecture · 18 slides · v1.6.0]({{ '/briefings/fintech-technical/' | relative_url }})
 
 The industry research decks retain **slide edition v1.3.0**. Refreshed the existing architecture film's site edition label to v1.6.0; its scenario content is unchanged.
@@ -137,9 +143,9 @@ The slide content and downloadable PDFs remain **edition v1.3.0**. The page bann
 
 Shared slide frame, consistent margins and typography, persistent navigation, explicit presentation modes, source/edition drawers, mobile diagram overviews and searchable slide anchors. The embedded player preserves the current audience and slide in its share URL.
 
-Added strategic choices and a financial-services workflow to the **21-slide EVP deck**; concrete payment reference contracts, failure semantics and a branched evidence workflow to the **29-slide technical deck**. Expanded the library to 32 entries and added research coverage and deployment comparison criteria. Reconciled scenario arithmetic, introduced negative task savings, corrected the TestGen denominator and specified the pilot decision bands.
+Added strategic choices and a financial-services workflow to the **21-slide Executive deck**; concrete payment reference contracts, failure semantics and a branched evidence workflow to the **29-slide technical deck**. Expanded the library to 32 entries and added research coverage and deployment comparison criteria. Reconciled scenario arithmetic, introduced negative task savings, corrected the TestGen denominator and specified the pilot decision bands.
 
-- [Interactive EVP deck]({{ '/briefings/evp/' | relative_url }}) · [Interactive technical deck]({{ '/briefings/technical/' | relative_url }})
+- [Interactive Executive deck]({{ '/briefings/evp/' | relative_url }}) · [Interactive technical deck]({{ '/briefings/technical/' | relative_url }})
 
 The PDFs are static exports of this slide edition. Animation, scenario controls, component inspection and expanded research notes are available in the interactive decks and linked research pages.
 
@@ -149,7 +155,7 @@ Clarified the architecture tour with uniform context paths, explicit directed st
 
 ## v1.2.0 · 6 September 2026
 
-Expanded the audience presentations to 18 EVP and 26 technical slides, with 17 additional native diagrams covering strategy, test validity, evaluation and operations.
+Expanded the audience presentations to 18 Executive and 26 technical slides, with 17 additional native diagrams covering strategy, test validity, evaluation and operations.
 
 ## Original research companion · 5 September 2026
 

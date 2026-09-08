@@ -43,7 +43,7 @@ Do not substitute token volume, generated test counts or accepted suggestions fo
 
 ## Strategic visual briefings
 
-The expanded EVP briefing makes the operating choices explicit: [workflow portfolio]({{ '/briefings/evp/' | relative_url }}#slide-8), [ownership model]({{ '/briefings/evp/' | relative_url }}#slide-11), [skills agenda]({{ '/briefings/evp/' | relative_url }}#slide-12), [shared investment architecture]({{ '/briefings/evp/' | relative_url }}#slide-14) and [leadership evidence contract]({{ '/briefings/evp/' | relative_url }}#slide-16). Each separates the source findings from the proposed organizational response.
+The expanded Executive briefing makes the operating choices explicit: [workflow portfolio]({{ '/briefings/evp/' | relative_url }}#slide-8), [ownership model]({{ '/briefings/evp/' | relative_url }}#slide-11), [skills agenda]({{ '/briefings/evp/' | relative_url }}#slide-12), [shared investment architecture]({{ '/briefings/evp/' | relative_url }}#slide-14) and [leadership evidence contract]({{ '/briefings/evp/' | relative_url }}#slide-16). Each separates the source findings from the proposed organizational response.
 
 ## Strategic choices for leadership
 

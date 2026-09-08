@@ -15,7 +15,7 @@ description: Design rules, lessons from reviewing a 29-question executive questi
 {:toc}
 </details>
 
-[Download the fillable PDF (v3)](../../../assets/pdf/ai-qe-discovery-questionnaire-v3.pdf){: .btn .btn-primary } [Generator script](https://github.com/tomqwu/ai_qe/blob/main/tools/questionnaire_form.py){: .btn }
+[Download the fillable PDF (v{{ site.data.release.questionnaire_edition }})]({{ '/assets/pdf/ai-qe-discovery-questionnaire-v' | append: site.data.release.questionnaire_edition | append: '.pdf' | relative_url }}){: .btn .btn-primary } [Generator script](https://github.com/tomqwu/ai_qe/blob/main/tools/questionnaire_form.py){: .btn }
 
 ## Design rules
 
@@ -27,7 +27,7 @@ A well-built 29-question form with 186 checkbox options across 19 multi-select q
 
 The recurring defects were: multi-select on the questions that define success (the "which outcome matters most" question with a "balanced combination" escape option produced no signal); "select all that apply" on an autonomy ladder, which loses the ceiling; a controls question where every option is mandatory in a bank, so selecting six of eleven carries no information; overlapping effort thresholds (10%, 20% and 30% as separate checkboxes); two near-duplicate use-case questions; range gaps in the regression-duration dropdown; and a denominator left open on the external-capacity question (headcount or spend). The largest omission was the financial-capture question set: budget ownership, variable share of spend, renewal windows, what happens to released capacity, and what Finance will recognize as a saving. Without those, the same 4% capacity result can be booked as a hard saving, as cost avoidance, or as nothing.
 
-## Role-routed core questionnaire (v3)
+## Role-routed core questionnaire (v{{ site.data.release.questionnaire_edition }})
 
 Routing: executive sponsor, Finance and procurement answer Sections 1, 5B and 6; engineering, delivery, QE and platform leaders answer Sections 2, 3, 4, 5A and 6.
 

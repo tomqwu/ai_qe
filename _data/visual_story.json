@@ -1,5 +1,5 @@
 {
-  "disclosure": "Authored Northstar Payments design and sample artifacts. No live client integration or measured outcome is claimed.",
+  "disclosure": "Authored FinTech Client design and sample artifacts. No live client integration or measured outcome is claimed.",
   "map_columns": [
     "design",
     "automation",
@@ -54,7 +54,7 @@
       "title": "Approved QA context",
       "stack": "Azure Boards / Test Plans + repository",
       "role": "system",
-      "status": "Assumed existing tools",
+      "status": "Existing tools in this scenario",
       "owner": "Product + domain QA",
       "output": "Story and test revisions"
     },
@@ -78,7 +78,7 @@
       "title": "Human review",
       "stack": "Domain check + reviewed pull request",
       "role": "human",
-      "status": "Assumed review · extend checks",
+      "status": "Human review · extend checks",
       "owner": "Domain QA + automation engineer",
       "output": "Approved test commit"
     },
@@ -86,7 +86,7 @@
       "title": "CI and test runners",
       "stack": "Azure Pipelines · JUnit / REST Assured · Playwright",
       "role": "system",
-      "status": "Assumed tools · integrate",
+      "status": "Existing tools · integrate",
       "owner": "DevOps + application engineers",
       "output": "Assertions + run manifest"
     },

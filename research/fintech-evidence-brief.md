@@ -1,9 +1,9 @@
 # Fintech evidence and client adoption brief
 
 Objective: strengthen the case for a bounded AI-assisted QE trial with inspectable financial-services evidence, without turning vendor results into a client forecast.
-Audiences: EVP strategic vision; technical SD/lead architecture; client discovery.
+Audiences: Executive strategic vision; technical SD/lead architecture; client discovery.
 Scope: seven institutional/supplier cases, ten sources, results explorer, best practices, pilot selector and eight slide additions across existing briefings.
-Preserved: fictional Northstar Payments with 75 offshore QA, existing 12-week planning sequence, no AppSec program, editable visual design, current GitHub Pages/release path.
+Preserved: fictional FinTech Client with 75 offshore QA, existing 12-week planning sequence, no AppSec program, editable visual design, current GitHub Pages/release path.
 
 ## Evidence and interpretation
 - F1/F2: direct AI-in-testing examples; named vendor cases with task/coverage boundaries.
@@ -15,7 +15,7 @@ Preserved: fictional Northstar Payments with 75 offshore QA, existing 12-week pl
 No pooled effect size, bank-wide QA savings rate or endorsement is established.
 
 ## Message to visual
-Reported results → three separate, explicitly labelled charts → new hub and EVP slides.
+Reported results → three separate, explicitly labelled charts → new hub and Executive slides.
 Candidate test to accepted evidence → directed review/challenge diagram with reject branch → hub and technical slides.
 Choose an entry point → interactive three-path pilot selector with exported discussion brief → client discovery.
 Incremental AI effect → conventional and assisted lanes with shared inputs/checks → technical slides.

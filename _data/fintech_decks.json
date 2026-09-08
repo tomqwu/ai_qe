@@ -1,18 +1,18 @@
 {
   "evp": [
     {
-      "title": "Northstar Payments: shared QA platform",
+      "title": "FinTech Client: shared QA platform",
       "visual": "cover",
       "lead": "A payment-release story for a fictional fintech with 75 offshore QA staff.",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "EVP briefing • Strategic vision • Assumptions throughout",
+      "note": "Executive briefing • Strategic vision • Client scenario",
       "sources": "",
       "chapter": "The business situation"
     },
     {
-      "title": "The assumed QA organization",
+      "title": "The QA organization",
       "visual": "staff",
       "lead": "Five application squads share 75 offshore QA staff. Each person appears in one primary-role group.",
       "rows": null,
@@ -36,7 +36,7 @@
     {
       "title": "Where the release work goes",
       "visual": "effort",
-      "lead": "Assumed hands-on effort for one bounded release test pack. Eight stages add to 300 hours.",
+      "lead": "Modelled hands-on effort for one bounded release test pack. Eight stages add to 300 hours.",
       "rows": null,
       "columns": null,
       "points": null,
@@ -184,7 +184,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Northstar Payments has not been assessed. The dependency backlog can change scope, cost and timing; the 480-hour setup allowance is not a client quote.",
+      "note": "FinTech Client has not been assessed. The dependency backlog can change scope, cost and timing; the 480-hour setup allowance is not a client quote.",
       "sources": "",
       "chapter": "Client adoption assumptions"
     },
@@ -195,7 +195,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "For Northstar Payments, fund repeatable payment tests and shared QE services alongside reviewed AI assistance. This is an assumed capability path, not a completed client assessment.",
+      "note": "For FinTech Client, fund repeatable payment tests and shared QE services alongside reviewed AI assistance. Validate this capability roadmap through client discovery.",
       "sources": "",
       "chapter": "QE modernization"
     },
@@ -206,12 +206,12 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Peer results support a trial. Outcomes for Northstar Payments remain unmeasured.",
+      "note": "Peer results support a trial. Outcomes for FinTech Client remain unmeasured.",
       "sources": "",
       "chapter": "Fintech evidence and adoption"
     },
     {
-      "title": "Northstar Payments: where to begin",
+      "title": "FinTech Client: where to begin",
       "visual": "evidence-pilot-paths",
       "lead": "",
       "rows": null,
@@ -224,7 +224,7 @@
   ],
   "technical": [
     {
-      "title": "Northstar Payments: QA architecture",
+      "title": "FinTech Client: QA architecture",
       "visual": "cover",
       "lead": "A concrete design for AI assistance across a release workflow with 75 offshore QA staff.",
       "rows": null,
@@ -235,13 +235,13 @@
       "chapter": "System and behavior"
     },
     {
-      "title": "The assumed application landscape",
+      "title": "The application landscape",
       "visual": "landscape",
       "lead": "Payment APIs offer the first controlled test surface. Other applications follow their own readiness.",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Assumed stack: Java/Spring Boot, React, PostgreSQL and Azure. Existing automation remains useful.",
+      "note": "Example stack: Java/Spring Boot, React, PostgreSQL and Azure. Existing automation remains useful.",
       "sources": "",
       "chapter": ""
     },
@@ -443,7 +443,7 @@
     {
       "title": "Readiness across six dimensions",
       "visual": "readiness",
-      "lead": "These dimensions describe the assumed delivery profile. Review the wider dependency register before approving a workflow.",
+      "lead": "These dimensions describe the delivery profile in this scenario. Review the wider dependency register before approving a workflow.",
       "rows": null,
       "columns": null,
       "points": null,
@@ -543,7 +543,7 @@
       "chapter": "Client adoption assumptions"
     },
     {
-      "title": "Northstar Payments: test environment",
+      "title": "FinTech Client: test environment",
       "visual": "modernization-environment",
       "lead": "",
       "rows": null,

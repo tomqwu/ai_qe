@@ -36,7 +36,7 @@
     for (const [key, value, suffix] of [['baseline', result.baseline, 'h'], ['work', result.work, 'h work'], ['review', result.review, 'h']]) {
       const bar = q(`[data-chart-${key}]`); bar.style.width = `${value / scale * 100}%`; bar.textContent = `${value}${suffix}`;
     }
-    q('[data-model-chart]').setAttribute('aria-label', `Assumed effort: ${result.baseline} baseline hours compared with ${result.work} assisted work hours and ${result.review} review hours`);
+    q('[data-model-chart]').setAttribute('aria-label', `Modelled effort: ${result.baseline} baseline hours compared with ${result.work} assisted work hours and ${result.review} review hours`);
     const title = document.createElement('strong'), body = document.createElement('p');
     title.textContent = result.usable < 0 ? `${format(-result.usable)} additional hours per pack` : `${format(result.usable)} usable hours per pack`;
     body.textContent = `${format(result.gross)}h gross capacity − ${data.pilot.overheadHours}h platform operation = ${format(result.net)}h net capacity. ` + (result.net > 0 ? `Redeploying ${capture}% yields ${format(result.usable)}h. ` : 'The full slowdown is retained, regardless of the redeployment percentage. ') + (result.packs === null ? 'Setup capacity cannot be recovered under these assumptions.' : `Recovering ${data.pilot.setupHours}h of setup requires ${result.packs} comparable packs, rounded up.`);

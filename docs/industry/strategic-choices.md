@@ -31,4 +31,4 @@ The payments owner owns the negative-amount rule and failure consequences. QE ow
 3. Reuse evaluation infrastructure while keeping domain datasets and acceptance with the domain.
 4. Expand delegated actions only after the denied-action and recovery cases pass; monitor the service after approval.
 
-The strategic scorecard combines quality, delivery flow, adoption, net human effort, attributable cost and control exceptions. It must not reward artifact volume while ignoring rework. Cash capture remains a separate Finance decision. The [pilot workshop]({{ '/docs/method/executive-presentation/' | relative_url }}) provides an implementation discussion when required; the EVP presentation is the strategic narrative.
+The strategic scorecard combines quality, delivery flow, adoption, net human effort, attributable cost and control exceptions. It must not reward artifact volume while ignoring rework. Cash capture remains a separate Finance decision. The [pilot workshop]({{ '/docs/method/executive-presentation/' | relative_url }}) provides an implementation discussion when required; the Executive presentation is the strategic narrative.

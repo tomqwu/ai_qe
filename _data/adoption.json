@@ -96,7 +96,7 @@
       "evidence": "A retry can be injected and its transfer identity, journal count and balances inspected; batch and asynchronous completion are observable.",
       "action": "Add test hooks, stable interfaces and outcome access, or narrow the pilot to an independently testable component.",
       "example": "Java payment APIs, React web, existing mobile app and a separately scheduled settlement batch",
-      "harbor": "Payment APIs are the candidate surface. UI reliability and batch independence are not assumed to match API readiness.",
+      "harbor": "Payment APIs are the candidate surface. UI reliability and batch independence require separate readiness checks.",
       "level": 2,
       "sources": [
         "P2"
@@ -153,7 +153,7 @@
       "assumption": "Domain reviewers, developers and platform engineers have allocated time, access and skills; supplier incentives support reuse and quality.",
       "evidence": "An offshore engineer submits a reviewable artifact and the named next owner accepts it within an agreed review window.",
       "action": "Provide repository and environment access, pair coaching, escalation paths and funded review time across time zones.",
-      "example": "A pilot pod drawn from the assumed 75 QA staff, with additional product, development and platform support",
+      "example": "A pilot pod drawn from the 75-person QA team in this scenario, with additional product, development and platform support",
       "harbor": "Domain expertise exists; automation skills and working-hour overlap are uneven. Support effort is additional to the eight QA pilot roles.",
       "level": 1,
       "sources": [
@@ -183,7 +183,7 @@
       "assumption": "Comparable baseline work, foundation effort, recurring costs and intended use of released capacity are agreed before benefits are claimed.",
       "evidence": "A sampled release pack separates active work, waiting, review, rework, setup, platform operation and license/model costs.",
       "action": "Fund and schedule dependency remediation. Re-estimate the pilot when prerequisites change; separate automation gains from AI contribution.",
-      "example": "The Northstar Payments effort model is illustrative; no client savings rate or fixed adoption date is inferred",
+      "example": "The FinTech Client effort model is illustrative; no client savings rate or fixed adoption date is inferred",
       "harbor": "The 300-hour baseline, 480-hour setup and 12-hour operating allowance are unverified planning assumptions, not a readiness budget.",
       "level": 0,
       "sources": []

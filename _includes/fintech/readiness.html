@@ -1,4 +1,4 @@
-<table class="ft-table ft-readiness-table"><thead><tr><th scope="col">Dimension</th><th scope="col">Assumed mixed profile</th><th scope="col">First implementation priority</th></tr></thead><tbody>
+<table class="ft-table ft-readiness-table"><thead><tr><th scope="col">Dimension</th><th scope="col">Mixed delivery profile</th><th scope="col">First implementation priority</th></tr></thead><tbody>
 {% assign priorities = 'Confirm payment outcomes before generation|Pin build and deployment revisions|Isolate accounts and script data reset|Pilot the API and control provider behavior|Stabilize owned tests and retain required coverage|Pair reviews and define the next owner' | split: '|' %}
 {% for dimension in site.data.fintech_case.dimensions %}<tr><th scope="row">{{ dimension }}</th><td>{{ site.data.fintech_case.profiles[1].readiness[forloop.index0] }}</td><td>{{ priorities[forloop.index0] }}</td></tr>{% endfor %}
 </tbody></table>

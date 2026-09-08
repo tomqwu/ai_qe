@@ -15,7 +15,7 @@ description: Structure for a 60-90 minute executive session on AI-enabled QE, th
 {:toc}
 </details>
 
-This guide supports a **60–90 minute pilot business-case workshop**. For the current audience presentations, use [EVP strategic vision]({{ '/briefings/evp/' | relative_url }}) and [Technical architecture]({{ '/briefings/technical/' | relative_url }}). The EVP deck addresses strategic choices and shared capabilities; this workshop addresses pilot funding and measurement.
+This guide supports a **60–90 minute pilot business-case workshop**. For the current audience presentations, use [Executive strategic vision]({{ '/briefings/evp/' | relative_url }}) and [Technical architecture]({{ '/briefings/technical/' | relative_url }}). The Executive deck addresses strategic choices and shared capabilities; this workshop addresses pilot funding and measurement.
 
 ## Structure for a 60-90 minute session
 

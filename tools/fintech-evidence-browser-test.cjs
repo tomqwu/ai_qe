@@ -33,7 +33,7 @@ const route='/case-studies/fintech/evidence/';
     const downloaded=page.waitForEvent('download');await page.locator('[data-fe-export]').click();
     const file=await downloaded;const content=fs.readFileSync(await file.path(),'utf8');
     for(const field of ['title','dependency','modernization','output','measure','gate','fail','question'])assert.ok(content.includes(pilot[field]),field);
-    assert.ok(content.includes('No client readiness or savings is assumed.'));
+    assert.ok(content.includes('Client readiness and savings require validation.'));
     assert.ok(content.includes('An unresolved execution dependency blocks that execution scope.'));
     assert.ok(content.includes('https://tomqwu.github.io/ai_qe/qe-modernization/#workstreams'));
     const href=await page.locator('[data-fe-pilot]:visible [data-fe-readiness]').getAttribute('href');

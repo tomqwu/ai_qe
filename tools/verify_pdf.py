@@ -10,7 +10,8 @@ from pathlib import Path
 from pypdf import PdfReader, PdfWriter
 
 root = Path(__file__).resolve().parents[1]
-source = root / "assets/pdf/ai-qe-discovery-questionnaire-v3.pdf"
+edition = re.search(r'questionnaire_edition: "([^\"]+)"', (root / "_data/release.yml").read_text())[1]
+source = root / f"assets/pdf/ai-qe-discovery-questionnaire-v{edition}.pdf"
 reader = PdfReader(source)
 fields = reader.get_fields()
 
