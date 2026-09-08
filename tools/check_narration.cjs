@@ -227,6 +227,7 @@ async function checkBounds(page) {
       await page.goto(base + '/');
       await page.locator('[data-visual-audience="technical"]').first().click();
       const embedded = await page.locator('#briefing-frame').elementHandle().then(handle => handle.contentFrame());
+      await embedded.waitForURL(url => url.pathname.endsWith('/briefings/technical/') && url.hash === '#slide-2', {waitUntil:'domcontentloaded'});
       await embedded.locator('[data-narration-play]').waitFor();
       await checkBounds(embedded);
       await page.emulateMedia({media:'print'});
