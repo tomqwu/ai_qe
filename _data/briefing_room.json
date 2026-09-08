@@ -18,7 +18,9 @@
       "Client adoption assumptions and foundation ownership",
       "QE modernization, repeatable environments and virtual services",
       "Financial-services evidence and a focused client trial",
-      "Guided client route: connected workflows, prerequisites and concrete architecture"
+      "Guided client route: connected workflows, prerequisites and concrete architecture",
+      "Before / after: manual API work and the target pilot workflow",
+      "Observed time framework for the API pilot and brainstorm questions"
     ]
   },
   {
@@ -31,7 +33,7 @@
     "url": "/briefings/fintech-technical/",
     "pdf_prefix": "ai-qe-fintech-technical",
     "edition": "fintech_edition",
-    "slides": 26,
+    "slides": 27,
     "time": "35–45 min",
     "outline": [
       "Payment behavior and an executable test example",
@@ -40,7 +42,9 @@
       "Client adoption assumptions and foundation ownership",
       "QE modernization, repeatable environments and virtual services",
       "Financial-services evidence and a focused client trial",
-      "Guided client route: connected workflows, prerequisites and concrete architecture"
+      "Guided client route: connected workflows, prerequisites and concrete architecture",
+      "Before / after: manual API work and the target pilot workflow",
+      "Brainstorm questions"
     ]
   },
   {

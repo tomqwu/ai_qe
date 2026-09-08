@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.13.0 · 8 September 2026
+
+Made the executive before/after slide explicit and added a technical API comparison showing manual preparation, shared execution and fragmented evidence alongside reviewed AI drafts, repeatable tests and linked proof. The after state is a pilot target with named platform prerequisites. Both views also appear in the case explorer.
+
+Renamed the director conversation to **Brainstorm questions**. Reframed the engagement slide as **Observed time framework for the API pilot**, with baseline, repeated API runs and second-team reuse phases. Example windows are labelled planning inputs; actual observations remain **not recorded**. The implementation notes include a record for dates, effort, waits, foundation work and quality.
+
+Fintech slide/PDF editions advance to **v1.13.0**: **16 executive / 27 technical slides**. Existing anchors remain valid; guided routes include the before/after comparison and pilot timing discussion. Industry decks remain **v1.12.2**, questionnaire **v4**, research companion **v1.7.0** and film **v1.8.0**. [GitHub release v1.13.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.13.0) packages the current assets.
+
 ## v1.12.3 · 8 September 2026
 
 Labelled the timeout-and-retry example explicitly as a **QE testing scenario** in the case explorer, executive and technical slides, payment diagram and implementation notes. The explanation identifies a deliberately injected duplicate-posting defect and the expected one-transfer outcome. A timeout alone does not imply two debits; the example is not a reported client incident.

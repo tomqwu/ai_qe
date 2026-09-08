@@ -56,14 +56,14 @@
       "chapter": "The proposed change"
     },
     {
-      "title": "AI assistance across the release",
-      "visual": "operating-model",
+      "title": "Before / after: the API testing workflow",
+      "visual": "before-after",
       "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "The same 75-person organization gains reusable capability. Client effort, waiting and value remain to be measured.",
-      "sources": "",
+      "note": "Pilot target; validate foundations and measure effort, review, rework and quality before claiming gains.",
+      "sources": "S1,S2,S5,S6,S7",
       "chapter": ""
     },
     {
@@ -120,13 +120,13 @@
       "chapter": ""
     },
     {
-      "title": "A proposed twelve-week engagement",
+      "title": "Observed time framework for the API pilot",
       "visual": "roadmap",
-      "lead": "A measured pilot creates a reusable delivery pattern and a decision about the next applications.",
+      "lead": "Record actual pilot time from baseline through repeated API runs. Example windows remain subject to readiness.",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Infrastructure, provider access, data and reviewer capacity can extend a phase. Re-estimate remediation before committing to this illustrative schedule.",
+      "note": "Planning windows are illustrative. Environment, data, virtualization and reviewer readiness determine when each phase can progress.",
       "sources": "",
       "chapter": ""
     },
@@ -162,7 +162,7 @@
       "chapter": ""
     },
     {
-      "title": "The senior-director conversation",
+      "title": "Brainstorm questions",
       "visual": null,
       "lead": "",
       "rows": null,
@@ -505,7 +505,7 @@
       "chapter": ""
     },
     {
-      "title": "Architecture questions for the leads",
+      "title": "Brainstorm questions: API architecture",
       "visual": null,
       "lead": "",
       "rows": null,
@@ -607,6 +607,17 @@
       "note": "Proposed integration. Validate access; fund context adapters and joined evidence.",
       "sources": "",
       "chapter": "Connected architecture walkthrough"
+    },
+    {
+      "title": "Before / after: the API test architecture",
+      "visual": "before-after",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Pilot target. AI drafts; people approve intent and changes; assertions verify the payment outcome.",
+      "sources": "S2,S5,S6,S7",
+      "chapter": "Before and after the API pilot"
     }
   ]
 }
