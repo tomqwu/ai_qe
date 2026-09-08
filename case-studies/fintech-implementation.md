@@ -42,6 +42,8 @@ The [platform readiness hub]({{ '/platform-readiness/?preset=harbor' | relative_
 
 No required capability can be compensated for by a higher maturity score elsewhere. The adoption worksheet applies requirements separately to each workflow; second-team rollout additionally requires supported platform operation, evidence reuse and trained handoffs. The illustrative effort profiles below are not adoption approval.
 
+QE modernization is an explicit adoption dependency within this register. For the selected workflow, confirm test strategy, environment lifecycle, service virtualization and contract fidelity, data, CI evidence and shared ownership. Record remediation cost, an owner and acceptance evidence before committing to broader AI execution. The [fintech trial dependencies]({{ "/case-studies/fintech/evidence/#dependencies" | relative_url }}) connect these workstreams to each proposed trial.
+
 ## Stack
 
 The design extends tools that the assumed team already knows. A discovery assessment can substitute the customer's equivalents without changing the workflow responsibilities.

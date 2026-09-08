@@ -9,6 +9,10 @@ description: Dated entries recording what was verified, when, what changed, and 
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+## 2026-09-07: Explicit modernization dependencies (v1.11.1)
+
+Clarified the fintech adoption proposal using the existing six QE modernization workstreams and readiness register. Rechecked DORA's [test automation](https://dora.dev/capabilities/test-automation/) and [test data management](https://dora.dev/capabilities/test-data-management/) guidance. The workflow mappings and readiness decisions are authored proposal rules; no additional client result or savings claim is introduced. Each trial brief now carries modernization prerequisites, a scoped assessment link and the requirement to fund unresolved execution dependencies.
+
 ## 2026-09-07: Financial-services evidence and client adoption (v1.11.0)
 
 **Question.** Which public financial-services results justify a focused AI-assisted QE trial, and what practices make the client proposal credible?

@@ -1,0 +1,22 @@
+<section id="dependencies">
+  <p class="eyebrow">04 / Conditions for adoption</p>
+  <h2>QE modernization is an AI adoption dependency</h2>
+  <p>Assess the required capabilities for the selected application and workflow. Reviewed scenario drafting can begin when its own inputs and reviewers are ready; broader AI execution depends on repeatable tests, controlled environments and trustworthy evidence.</p>
+  <ol class="fe-dependency-path" aria-label="From modernization to AI adoption">
+    <li><strong>Assess the foundation</strong><span>Inspect actual work, reliability and ownership.</span></li>
+    <li><strong>Prove required capabilities</strong><span>Fund gaps; retain evidence of repeatable results.</span></li>
+    <li><strong>Enable the agreed AI scope</strong><span>Review outputs; prove reuse before wider adoption.</span></li>
+  </ol>
+  <div class="fe-practices">
+    {% for stream in site.data.modernization.workstreams %}
+    <article data-fe-modernization="{{ stream.id }}">
+      <h3><a href="{{ '/qe-modernization/#workstream-' | append: stream.id | relative_url }}">{{ stream.title }}</a></h3>
+      <p><strong>Readiness evidence.</strong> {{ stream.proof }}</p>
+      <p><strong>Accountable role.</strong> {{ stream.owner }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  <p><strong>Client assumption.</strong> These capabilities are unverified until the client supplies evidence. A roadmap or license purchase is insufficient. Capture each required gap, a named owner, remediation cost and a review date; unresolved execution dependencies hold that scope.</p>
+  <p>Containerization is an implementation option where suitable. Legacy, mobile and batch testing may need reproducible VMs, devices or reserved integration environments. Service substitutes require owned behavior and separate real-integration checks.</p>
+  <p><a href="{{ '/platform-readiness/?scope=pilot&preset=unknown#assessment' | relative_url }}">Assess client dependencies →</a> · <a href="{{ '/qe-modernization/#evidence' | relative_url }}">Modernization sources and technical guidance →</a></p>
+</section>

@@ -273,7 +273,9 @@
       "measure": "Active minutes per accepted scenario, review/rework, missed critical cases and duplicate cases.",
       "gate": "All required onboarding rules are covered and independently reviewed; net effort improves on comparable work.",
       "fail": "Pause if reviewers cannot establish correctness or critical scenarios are omitted.",
-      "question": "Which onboarding rule is repeatedly missed, and who can judge a proposed test against it?"
+      "question": "Which onboarding rule is repeatedly missed, and who can judge a proposed test against it?",
+      "modernization": "QE modernization for this scope: versioned requirements, a curated scenario catalog, independent expected outcomes and a named domain reviewer. Reviewed drafting may start while execution foundations are improved; generated execution waits for its own prerequisites.",
+      "readiness_workflow": "design"
     },
     {
       "id": "api",
@@ -286,7 +288,9 @@
       "measure": "Effort per accepted change, assertion strength, flaky failures, setup time and repeatability.",
       "gate": "Required checks pass on the intended build and fail on a deliberately broken duplicate-posting variant.",
       "fail": "Stop if a candidate weakens assertions, silently skips required checks or passes the broken variant.",
-      "question": "Can two engineers reproduce the same payment failure in an isolated environment today?"
+      "question": "Can two engineers reproduce the same payment failure in an isolated environment today?",
+      "modernization": "QE modernization for this scope: a maintained unit/API suite, independent financial assertions, resettable synthetic data, repeatable environments, controlled provider behavior and retained CI evidence. Use containers where suitable or a supported reproducible alternative; validate virtual services against contracts and separate real integration.",
+      "readiness_workflow": "automation"
     },
     {
       "id": "triage",
@@ -299,7 +303,9 @@
       "measure": "Time to correct disposition, unsupported claims, wrong grouping, missed product defects and review burden.",
       "gate": "Reviewers can trace every material claim to evidence, and product defects remain visible.",
       "fail": "Pause if the tool invents a cause, hides an unresolved failure or collapses distinct product defects.",
-      "question": "How much time is spent finding evidence versus making the actual diagnosis?"
+      "question": "How much time is spent finding evidence versus making the actual diagnosis?",
+      "modernization": "QE modernization for this scope: reliable test outcomes, stable run IDs, retained logs/traces, known defect dispositions and named owners for tests, data and environments. Recommendations stay in shadow mode until their accuracy is reviewed; missing diagnostics require remediation first.",
+      "readiness_workflow": "triage"
     }
   ],
   "flow": [
