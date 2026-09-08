@@ -7,10 +7,10 @@ that collects evidence and reusable method for AI-assisted quality engineering i
 
 The homepage includes two audience presentations:
 
-- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 23 slides on
+- [EVP strategic vision](https://tomqwu.github.io/ai_qe/briefings/evp/): 25 slides on
   industry outlook, strategic vision, value, ownership and capability expansion.
 - [Technical delivery architecture](https://tomqwu.github.io/ai_qe/briefings/technical/):
-  33 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
+  35 slides on context, test validity, evaluation, agent controls, deployment, recovery and integration.
 
 These are research-informed perspectives and a proposed architecture, not measured bank results.
 
@@ -60,7 +60,7 @@ the site edition; source review dates remain attached to their individual resear
 
 ## Maintaining the briefings
 
-The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 14-slide EVP and 22-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this assumed case distinct from observed industry findings.
+The [fintech case explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/) has its own 16-slide EVP and 24-slide technical decks. `_data/fintech_case.json` holds the fictional assumptions, workflow, sources and maturity profiles. `_data/fintech_decks.json` holds the slide narratives; `_includes/fintech/` contains their editable diagrams and shared layouts. Keep this assumed case distinct from observed industry findings.
 
 Run `node tools/export_decks.cjs --fintech` against the preview to export the case PDFs. The edition in the case data, deck front matter and `fintech_edition` release field must agree. Run `node tools/fintech-browser-test.cjs` and `python tools/verify_fintech.py _site` after the build. `npm test` includes capacity and payment-model checks. The browser case is a deterministic teaching model; it does not connect to a payment service or invoke the example QA frameworks.
 
@@ -214,3 +214,9 @@ The film is a silent render of the Three.js demonstration using the Blender-auth
 `_data/adoption.json` defines twelve explicit client assumptions, evidence, owners, sources and eight workflow mappings. `/platform-readiness/` renders the canonical register. The pure `readiness-model.js` determines required capability gaps without an average score; `readiness.js` provides scenario controls and a local downloadable worksheet. Client inputs are self-assessments and do not authorize adoption. Hub, fintech case and four briefings share editable dependency diagrams in `_includes/adoption/`.
 
 Run `node --test tools/readiness-model.test.cjs` and `node tools/readiness-browser-test.cjs` against a built preview. When changing assumptions, keep the case implementation notes, discovery and pilot prerequisites consistent. Re-export all four decks when their content edition changes.
+
+## Financial-services evidence and client trials
+
+The [fintech evidence explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/evidence/) connects seven cases to bounded client trials. `_data/fintech_evidence.json` is canonical for source records, case boundaries, practices, charts, trial content and the rejection walkthrough. `_includes/fintech-evidence/` supplies shared editable presentation visuals. CSV/JSON exports include the ten source records.
+
+Run `node tools/fintech-evidence-browser-test.cjs` against a built preview. It checks filtering, deep links, trial selection and Markdown download contents, actual rejection-route motion, pause/reduced motion, no-JS reading and responsive layouts. Keep the guided rejection path separate from the context-only accepted path. `research/fintech-evidence-brief.md` records the research contract; downloaded publisher originals stay private.

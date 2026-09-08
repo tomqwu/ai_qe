@@ -17,6 +17,8 @@ For a team of 50–100 offshore QA staff, begin with the work: handoffs, wait ti
 
 <div class="adoption-link-note"><strong>Modernization discovery:</strong> <a href="{{ "/qe-modernization/#workstreams" | relative_url }}">inspect the six QE workstreams</a> alongside the readiness assessment. Observe environment waits, test reliability, data reset and provider constraints before choosing AI execution scope.</div>
 
+<aside class="adoption-link-note"><strong>Financial-services evidence.</strong> Explore seven reported cases, their limits and the first trial that fits the client. <a href="{{ '/case-studies/fintech/evidence/' | relative_url }}">Open fintech results and client pilots →</a></aside>
+
 ## Validate adoption assumptions
 
 Use the [platform readiness hub]({{ '/platform-readiness/' | relative_url }}) with the QA, infrastructure, DevOps and application owners. Inspect all twelve dependency areas, select the intended workflow, and record evidence, a named owner, remediation and a review date for each required capability. Unknown assumptions remain open. Include AI access, data rules, service capacity, supplier handoffs and baseline funding alongside the technical foundations.

@@ -9,6 +9,18 @@ description: Dated entries recording what was verified, when, what changed, and 
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+## 2026-09-07: Financial-services evidence and client adoption (v1.11.0)
+
+**Question.** Which public financial-services results justify a focused AI-assisted QE trial, and what practices make the client proposal credible?
+
+**Evidence.** Seven cases and ten sources are recorded in the [fintech evidence library]({{ '/case-studies/fintech/evidence/#sources' | relative_url }}). Libra and Goldman Sachs provide named vendor accounts of direct AI testing. DBS reports ML change-risk outcomes and a separate unquantified JIRA Assist use case. Fiserv and Bank of Queensland report modernization results while describing AI or virtualization as pilot/future work. ANZ is a controlled coding experiment with self-reported time and excluded unsuccessful tasks. An anonymous TestingXperts case has unreconciled productivity definitions and is excluded from featured charts. KPMG provides context; METR and Diffblue documentation clarify measurement and test-validity limitations.
+
+**Synthesis.** Public examples support scoped trials and stronger QE foundations, not a transferable bank-wide savings rate. Keep generation, reviewed acceptance, coverage, elapsed cycles, incidents and economic capture distinct. No pooled result, customer endorsement or independently audited AI-QE net benefit is asserted.
+
+**Changed.** Added reported-outcome charts, a filterable case explorer, six adoption practices, a candidate-rejection architecture, comparison lanes and a three-workflow trial brief export. Eight new slides and refreshed PDFs carry the evidence and proposal into both audience pairs. Harbor remains fictional and its 12-week planning sequence is unchanged.
+
+**Open evidence.** Client task mix, full effort, quality outcomes, source access, runtime and reviewer availability. Seek original denominators and reference calls before treating vendor cases as procurement evidence. Publisher PDFs were retained privately with retrieval hashes; only authored summaries and source links are published.
+
 ## 2026-09-07: QE modernization and AI enablement (v1.10.0)
 
 **Question.** Which QE foundations enable wider AI execution, and where do service virtualization and containerization fit?

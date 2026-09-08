@@ -214,6 +214,28 @@
       "note": "For Harbor, fund repeatable payment tests and shared QE services alongside reviewed AI assistance. This is an assumed capability path, not a completed client assessment.",
       "sources": "",
       "chapter": "QE modernization"
+    },
+    {
+      "title": "Peer results inform Harbor’s opportunity",
+      "visual": "evidence-results",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Peer results support a trial. Harbor’s outcomes remain unmeasured.",
+      "sources": "",
+      "chapter": "Fintech evidence and adoption"
+    },
+    {
+      "title": "Harbor’s first adoption choice",
+      "visual": "evidence-pilot-paths",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Choose one entry point, validate its prerequisites and agree how reviewers will judge the result. Wider rollout depends on local evidence.",
+      "sources": "",
+      "chapter": "Fintech evidence and adoption"
     }
   ],
   "technical": [
@@ -557,6 +579,28 @@
       "note": "Choose Testcontainers, Compose or an existing supported environment for the test scope. Mobile devices and legacy settlement retain their own integration requirements.",
       "sources": "",
       "chapter": "QE modernization"
+    },
+    {
+      "title": "A candidate test must earn acceptance",
+      "visual": "evidence-validation",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "PAY-142 must catch an incorrect transfer, journal or balance. The guided example rejects the candidate and leaves the maintained suite unchanged.",
+      "sources": "",
+      "chapter": "Fintech evidence and adoption"
+    },
+    {
+      "title": "A fair comparison within the Harbor pilot",
+      "visual": "evidence-comparison",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Use comparable tasks inside the proposed pilot. Include failures and review effort; retain the existing mandatory payment checks.",
+      "sources": "",
+      "chapter": "Fintech evidence and adoption"
     }
   ]
 }
