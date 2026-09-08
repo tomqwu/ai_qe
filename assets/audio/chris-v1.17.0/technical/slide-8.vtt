@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+A successful HTTP response does
+not establish a correct payment.
+
+00:00:04.160 --> 00:00:07.120
+The retry must refer
+to the original transfer.
+
+00:00:07.173 --> 00:00:09.760
+There must be one journal
+with balanced entries,
+
+00:00:09.800 --> 00:00:13.600
+and the payer and recipient balances
+must match the approved contract.
+
+00:00:13.760 --> 00:00:17.200
+Obtain the original identity
+from independent service evidence.
+
+00:00:17.376 --> 00:00:21.520
+Then challenge the same assertions
+against a correct build and a deliberately
+
+00:00:21.568 --> 00:00:24.960
+defective one. Passing
+the first and failing the second
+
+00:00:25.028 --> 00:00:28.080
+demonstrates useful fault
+detection for this scenario.

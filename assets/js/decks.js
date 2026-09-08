@@ -74,7 +74,14 @@
   function share(interaction = false) {
     if (embedded) window.parent.postMessage({ type: 'ai-qe:deck-state', audience: body.classList.contains('technical-deck') ? 'technical' : 'evp', slide: slides[index].id, count: slides.length, title: title(slides[index]), mode, interaction }, location.origin);
   }
-  function render(updateHash = true, interaction = false) {
+  // Recorded narration follows the same sequence as buttons, hashes and guided routes.
+  function deckState(reason = 'navigation') {
+    const order = sequence(), position = order.indexOf(index);
+    return { slide: slides[index].id, index, mode, guided, nextSlide: position < order.length - 1 ? slides[order[position + 1]].id : null, reason };
+  }
+  function notifyDeckState(reason) { document.dispatchEvent(new CustomEvent('qe:deck-state', { detail: deckState(reason) })); }
+  window.QEDeck = Object.freeze({ getState: () => deckState() });
+  function render(updateHash = true, interaction = false, reason = 'navigation') {
     closeDiagramControls();
     diagramButton.hidden = !slides[index].querySelector('.research-figure');
     updateFlowBar();
@@ -89,18 +96,25 @@
     present.setAttribute('aria-pressed', String(mode === 'present'));
     if (updateHash) history.replaceState(null, '', `#${slides[index].id}`);
     share(interaction);
+    notifyDeckState(reason);
   }
-  function goTo(i) {
+  function goTo(i, reason = 'navigation') {
     index = Math.max(0, Math.min(slides.length - 1, i));
     if (guided && !route.includes(index)) { guided = false; syncRouteURL(); }
-    render(true, true);
+    render(true, true, reason);
     if (mode === 'reading') slides[index].scrollIntoView({ block: 'start' });
     else { window.scrollTo(0, 0); slides[index].querySelector('.slide-content')?.scrollTo(0, 0); }
   }
-  function setMode(value) { mode = value; render(true, true); }
+  function setMode(value) { mode = value; render(true, true, 'mode'); }
+  document.addEventListener('qe:deck-command', event => {
+    const command = event.detail;
+    if (command?.action !== 'next' || command.source !== 'narration' || command.expectedSlide !== slides[index].id || mode === 'reading' || document.querySelector('dialog[open]')) return;
+    const target = move(1);
+    if (target !== index) goTo(target, 'narration');
+  });
   previous.addEventListener('click', () => goTo(move(-1)));
   next.addEventListener('click', () => goTo(move(1)));
-  routeButton?.addEventListener('click', () => { guided = !guided; if (guided) { mode = 'slides'; if (!route.includes(index)) index = route[0]; } syncRouteURL(); render(true, true); });
+  routeButton?.addEventListener('click', () => { guided = !guided; if (guided) { mode = 'slides'; if (!route.includes(index)) index = route[0]; } syncRouteURL(); render(true, true, 'route'); });
   picker.addEventListener('change', () => goTo(Number(picker.value)));
   reading.addEventListener('click', () => {
     if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
@@ -134,19 +148,20 @@
       if (!items.length) drawerContent.textContent = 'Source links and explanations are included in this slide.';
     }
     drawer.showModal();
+    document.dispatchEvent(new CustomEvent('qe:deck-dialog-open'));
   }
   document.querySelector('[data-notes]').addEventListener('click', () => openNotes());
   document.querySelector('[data-edition]').addEventListener('click', () => openNotes(true));
   document.querySelector('[data-close-drawer]').addEventListener('click', () => drawer.close());
   drawer.addEventListener('click', event => { if (event.target === drawer) drawer.close(); });
   document.addEventListener('keydown', event => {
-    if (drawer.open) return;
+    if (drawer.open || event.target.closest('dialog[open]')) return;
     if (event.key === 'Escape' && !diagramPanel.hidden) { closeDiagramControls(); diagramButton.focus(); return; }
     if (event.key === 'Escape' && mode === 'present') {
       setMode('slides'); if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); return;
     }
     if (mode === 'reading' || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.defaultPrevented) return;
-    if (event.target.closest('input, select, textarea, [contenteditable], .qe-explorer, .research-figure')) return;
+    if (event.target.closest('input, select, textarea, [contenteditable], .qe-explorer, .research-figure, .narration-panel')) return;
     if (event.key === ' ' && event.target.closest('button, a')) return;
     const directions = { ArrowRight: move(1), PageDown: move(1), ' ': move(1), ArrowLeft: move(-1), PageUp: move(-1), Home: sequence()[0], End: sequence().at(-1) };
     if (event.key in directions) { event.preventDefault(); goTo(directions[event.key]); }
@@ -159,7 +174,7 @@
   const readingObserver = new IntersectionObserver(entries => {
     if (mode !== 'reading') return;
     const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) { closeDiagramControls(); index = slides.indexOf(visible.target); diagramButton.hidden = !slides[index].querySelector('.research-figure'); updateFlowBar(); updatePosition(); share(true); }
+    if (visible) { closeDiagramControls(); index = slides.indexOf(visible.target); diagramButton.hidden = !slides[index].querySelector('.research-figure'); updateFlowBar(); updatePosition(); share(true); notifyDeckState('reading-scroll'); }
   }, { threshold: [.25, .5, .75] });
   slides.forEach(slide => readingObserver.observe(slide));
   document.querySelector('.deck-tools').hidden = false; navigation.hidden = false;

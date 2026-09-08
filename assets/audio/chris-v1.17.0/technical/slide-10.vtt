@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.440
+Publish raw pipeline results
+before AI interpretation.
+
+00:00:03.660 --> 00:00:08.320
+The proposed Azure pipeline publishes
+failures explicitly and treats
+
+00:00:08.360 --> 00:00:12.880
+missing results as a problem. It preserves
+the runner's original exit status.
+
+00:00:13.020 --> 00:00:15.760
+The AI adapter reads retained results,
+
+00:00:15.816 --> 00:00:20.240
+manifests and logs, then produces
+a diagnosis with evidence links.
+
+00:00:20.453 --> 00:00:23.680
+It cannot change test
+status or approve a release.
+
+00:00:23.827 --> 00:00:26.800
+Check required-suite
+completeness separately,
+
+00:00:26.820 --> 00:00:30.240
+and remember that cancellation
+can still interrupt evidence collection.

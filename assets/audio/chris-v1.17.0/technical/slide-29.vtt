@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.400
+Measure test effectiveness
+with explicit denominators.
+
+00:00:03.465 --> 00:00:08.800
+Compare detected critical faults
+with the approved viable fault catalogue.
+
+00:00:08.870 --> 00:00:12.880
+Compare completed critical scenarios
+with the frozen matrix, keeping
+
+00:00:12.930 --> 00:00:16.880
+skipped cases visible.
+Compare complete decision records
+
+00:00:16.976 --> 00:00:21.040
+with every submitted release
+candidate, including missing packs.
+
+00:00:21.340 --> 00:00:26.080
+The clean control must pass
+and the intended fault must fail.
+
+00:00:26.227 --> 00:00:29.240
+These are proposed acceptance measures.
+
+00:00:29.298 --> 00:00:31.840
+Coverage and a complete
+evidence pack can still
+
+00:00:31.890 --> 00:00:33.920
+support a decision to stop a release.

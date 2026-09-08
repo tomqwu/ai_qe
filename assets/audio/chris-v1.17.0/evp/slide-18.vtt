@@ -1,0 +1,56 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.080
+Start on the left. Our Banking Client
+has seventy-five offshore quality
+
+00:00:04.120 --> 00:00:08.080
+assurance staff, including
+forty-five manual and domain testers.
+
+00:00:08.224 --> 00:00:10.760
+They share a few test environments.
+
+00:00:10.825 --> 00:00:15.600
+Backend services are not virtualized,
+and vendor test slots limit parallel runs.
+
+00:00:15.737 --> 00:00:20.480
+Manual execution, reruns and evidence
+collection add coordination work.
+
+00:00:21.030 --> 00:00:24.640
+The proposed target is
+on the right. Squads reuse
+
+00:00:24.696 --> 00:00:28.480
+supported quality engineering
+services: controlled test data,
+
+00:00:28.542 --> 00:00:32.480
+isolated runs, virtualized
+dependencies and retained evidence.
+
+00:00:32.656 --> 00:00:37.280
+This foundation lets teams repeat service
+tests without waiting for every vendor
+
+00:00:37.360 --> 00:00:42.240
+slot. AI adds assistance with test
+preparation and interpretation.
+
+00:00:42.309 --> 00:00:46.480
+People still approve expected behavior,
+review generated changes and make
+
+00:00:46.520 --> 00:00:50.507
+release decisions. Real provider
+checks remain necessary.
+
+00:00:50.840 --> 00:00:53.680
+The next slide shows how we
+will judge this architecture
+
+00:00:53.710 --> 00:00:56.320
+through quality outcomes,
+alongside effort.

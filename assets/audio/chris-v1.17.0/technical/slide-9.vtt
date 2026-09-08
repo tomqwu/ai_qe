@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.080
+Choose the test layer
+that exposes the behavior.
+
+00:00:03.175 --> 00:00:07.840
+Service tests can check idempotency,
+concurrency and journal outcomes directly.
+
+00:00:08.280 --> 00:00:13.360
+A browser journey checks pending states,
+the retry action and the final message.
+
+00:00:13.502 --> 00:00:18.400
+Existing Selenium and Appium suites
+remain where they are owned and useful.
+
+00:00:18.509 --> 00:00:22.960
+Settlement reconciliation and provider
+checks stay scheduled separately.
+
+00:00:23.200 --> 00:00:26.240
+Replacing the browser framework
+does not create another settlement
+
+00:00:26.293 --> 00:00:29.200
+environment or remove
+a vendor access constraint.

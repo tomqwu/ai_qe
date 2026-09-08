@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.440
+The four adoption layers connect
+through different integration paths.
+
+00:00:03.760 --> 00:00:06.800
+A copilot works with an engineer
+in the development environment.
+
+00:00:07.040 --> 00:00:10.960
+A connected assistant reads pipeline
+evidence and prepares a triage brief.
+
+00:00:11.360 --> 00:00:15.840
+A bounded agent can use approved
+tools in an isolated scope and propose
+
+00:00:15.880 --> 00:00:19.840
+a change. Shared platform
+services supply context,
+
+00:00:19.909 --> 00:00:23.200
+models, evaluation
+and execution to all three.
+
+00:00:23.344 --> 00:00:26.240
+They are not four
+consecutive runtime steps.
+
+00:00:26.313 --> 00:00:30.320
+Independent checks and accountable
+owners remain across every path.

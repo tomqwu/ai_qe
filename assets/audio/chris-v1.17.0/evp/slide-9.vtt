@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.040
+The operating model needs
+named owners at every handoff.
+
+00:00:03.166 --> 00:00:08.080
+Domain testers define expected
+behavior and review AI proposals.
+
+00:00:08.131 --> 00:00:10.640
+Automation engineers maintain
+the executable checks.
+
+00:00:10.747 --> 00:00:14.080
+Platform owners support environments,
+fixtures and evidence.
+
+00:00:14.200 --> 00:00:17.360
+Product and release owners
+retain business decisions.
+
+00:00:17.568 --> 00:00:22.400
+Pairing and review can help manual
+testers develop new skills without losing
+
+00:00:22.413 --> 00:00:27.120
+their domain expertise. Agree
+overlap windows, supplier incentives
+
+00:00:27.220 --> 00:00:31.920
+and ownership of reusable assets before
+expanding beyond the pilot squad.

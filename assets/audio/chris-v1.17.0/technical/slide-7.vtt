@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.200
+A repeatable environment needs
+more than a container that starts.
+
+00:00:03.400 --> 00:00:08.680
+Pin the service image, test commit,
+schema, fixtures and provider model.
+
+00:00:08.754 --> 00:00:12.640
+Create isolated accounts and verify
+their initial balances before execution.
+
+00:00:12.834 --> 00:00:17.120
+Shared mutable accounts would
+invalidate the financial assertions.
+
+00:00:17.248 --> 00:00:20.400
+Testcontainers can supply
+disposable dependencies,
+
+00:00:20.480 --> 00:00:23.120
+while WireMock models the provider.
+
+00:00:23.200 --> 00:00:28.000
+Resolve every placeholder to an immutable
+version, retain preflight results,
+
+00:00:28.040 --> 00:00:31.200
+and keep real-provider
+integration as a separate check.

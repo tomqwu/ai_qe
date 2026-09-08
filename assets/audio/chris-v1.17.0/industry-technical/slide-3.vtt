@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.040
+The generated payment test starts with an
+approved rule: reject a negative amount.
+
+00:00:05.200 --> 00:00:08.960
+The agent receives scoped
+contract and repository context,
+
+00:00:08.992 --> 00:00:14.320
+then proposes a candidate. A gateway
+authorizes only the permitted sandbox run.
+
+00:00:14.400 --> 00:00:18.000
+The candidate must catch a selected
+boundary fault, and the reviewer
+
+00:00:18.044 --> 00:00:21.920
+receives the assertions and execution
+evidence before a merge decision.
+
+00:00:22.120 --> 00:00:25.040
+The generated test
+cannot silently redefine
+
+00:00:25.060 --> 00:00:28.400
+the expected behavior to match
+a defective implementation.

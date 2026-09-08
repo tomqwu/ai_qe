@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.320
+A repeatable test environment runs
+real software with controlled inputs.
+
+00:00:04.340 --> 00:00:07.200
+The proposed runner checks
+the payment service and a real
+
+00:00:07.271 --> 00:00:10.640
+database against an isolated
+fixture and provider model.
+
+00:00:10.840 --> 00:00:16.360
+The lifecycle includes readiness,
+reset, retained evidence and cleanup.
+
+00:00:16.480 --> 00:00:19.520
+Failures remain failures after
+the environment is removed.
+
+00:00:19.616 --> 00:00:22.960
+Keep provider and settlement
+integration evidence separately.
+
+00:00:23.100 --> 00:00:25.920
+Another engineer should
+be able to reproduce
+
+00:00:25.940 --> 00:00:28.160
+the result from the same manifest.

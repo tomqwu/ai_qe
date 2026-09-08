@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.880
+The poisoned-document exercise supplies an
+instruction inside a test specification.
+
+00:00:05.013 --> 00:00:08.320
+Treat that content as untrusted task data.
+
+00:00:08.533 --> 00:00:11.520
+If the runtime attempts
+an out-of-scope export,
+
+00:00:11.540 --> 00:00:14.480
+the gateway should deny
+the destination before any side effect.
+
+00:00:14.680 --> 00:00:20.040
+Retain the source, action and correlated
+event, then stop or escalate.
+
+00:00:20.103 --> 00:00:24.480
+Reviewers add the sanitized failure
+case to regression and verify recovery.
+
+00:00:24.656 --> 00:00:29.680
+This illustrates a test to implement, not
+proof that all possible paths are covered.

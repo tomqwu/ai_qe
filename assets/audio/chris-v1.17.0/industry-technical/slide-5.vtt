@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.480
+Evaluate the versioned
+application as a system.
+
+00:00:02.720 --> 00:00:07.280
+Run baseline and candidate configurations
+against representative cases,
+
+00:00:07.312 --> 00:00:10.080
+with independent scoring
+and agreed release floors.
+
+00:00:10.260 --> 00:00:12.800
+Retain outputs and tool actions together.
+
+00:00:13.120 --> 00:00:15.560
+A failed case returns to diagnosis.
+
+00:00:15.653 --> 00:00:18.800
+An accepted candidate proceeds
+through controlled deployment,
+
+00:00:18.865 --> 00:00:21.720
+monitoring and reviewed case curation.
+
+00:00:21.893 --> 00:00:26.640
+Re-evaluate relevant changes
+in prompts, retrieval, memory, tools
+
+00:00:26.740 --> 00:00:31.600
+and authority rather than treating the
+model name as the entire release identity.

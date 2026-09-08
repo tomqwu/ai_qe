@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.320
+This presentation examines the system
+behind AI-enabled quality work.
+
+00:00:04.560 --> 00:00:07.760
+We will connect context,
+independent evaluation,
+
+00:00:07.806 --> 00:00:11.760
+action boundaries, release
+decisions and operational feedback.
+
+00:00:11.860 --> 00:00:16.000
+The architecture covers both
+AI-assisted engineering and assurance
+
+00:00:16.027 --> 00:00:19.840
+of AI applications. Every
+important boundary needs an owner,
+
+00:00:19.880 --> 00:00:22.800
+a versioned contract
+and a failure behavior.
+
+00:00:22.920 --> 00:00:26.960
+The banking engineering blueprint provides
+the more detailed payment implementation
+
+00:00:27.020 --> 00:00:30.960
+example; this deck develops
+the reusable assurance architecture.

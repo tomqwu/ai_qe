@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.840
+Containerization, service virtualization
+and contract testing solve
+
+00:00:03.880 --> 00:00:07.920
+different problems. Containers run
+software with repeatable dependencies.
+
+00:00:08.020 --> 00:00:13.120
+Virtual services simulate selected
+behavior, such as a provider timeout.
+
+00:00:13.182 --> 00:00:16.800
+Contract checks examine agreed
+interactions between a consumer
+
+00:00:16.900 --> 00:00:21.840
+and provider. The capabilities complement
+each other and need supported owners.
+
+00:00:21.968 --> 00:00:24.480
+None establishes every business invariant
+
+00:00:24.587 --> 00:00:27.520
+or removes the need for real
+integration and recovery checks.

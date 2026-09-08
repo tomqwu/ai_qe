@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.240
+The candidate test must earn acceptance.
+
+00:00:02.347 --> 00:00:05.600
+Start with domain-owned
+intent and versioned context.
+
+00:00:05.893 --> 00:00:09.840
+AI produces a proposal, which
+a reviewer checks before execution.
+
+00:00:10.000 --> 00:00:13.840
+The pipeline challenges it
+on the normal build and a known fault.
+
+00:00:14.080 --> 00:00:18.160
+If a required check fails, reject
+the candidate, preserve the evidence
+
+00:00:18.260 --> 00:00:22.480
+and return it for rework.
+The maintained suite stays unchanged.
+
+00:00:22.660 --> 00:00:26.800
+The guided example ends at rejection
+to make that boundary visible.

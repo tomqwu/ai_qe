@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.040
+Operational evidence
+joins application events,
+
+00:00:03.080 --> 00:00:06.960
+gateway decisions and reviewer
+feedback by run identifier.
+
+00:00:07.022 --> 00:00:11.600
+Preserve event integrity while minimizing
+sensitive payloads and applying retention
+
+00:00:11.667 --> 00:00:16.240
+rules. Operations uses failures
+and tail latency; platform owners
+
+00:00:16.290 --> 00:00:20.880
+inspect tool patterns and denials;
+evaluation owners curate reviewed cases.
+
+00:00:21.056 --> 00:00:25.680
+This shared evidence makes incidents
+actionable and feeds future checks.
+
+00:00:26.000 --> 00:00:28.800
+A monitoring dashboard
+without reliable joins
+
+00:00:28.903 --> 00:00:31.920
+cannot explain how a particular
+result was produced.

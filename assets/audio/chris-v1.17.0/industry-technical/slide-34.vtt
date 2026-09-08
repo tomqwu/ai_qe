@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.480
+The generated candidate enters
+a controlled acceptance path.
+
+00:00:03.547 --> 00:00:06.400
+Approved intent defines
+the expected behavior,
+
+00:00:06.507 --> 00:00:10.880
+AI proposes a test, and a human reviews
+the assertions before execution.
+
+00:00:10.980 --> 00:00:15.041
+Independent checks challenge both
+the correct build and a known fault.
+
+00:00:15.400 --> 00:00:19.600
+A failed requirement sends the candidate
+back for rework and leaves the maintained
+
+00:00:19.653 --> 00:00:24.400
+suite unchanged. Only accepted evidence
+and review can promote the change.
+
+00:00:24.600 --> 00:00:27.440
+The diagram makes that
+rejection path explicit.

@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.080
+Start with the application landscape.
+Payment services offer a bounded API
+
+00:00:04.140 --> 00:00:08.400
+surface for the pilot. Web and mobile
+journeys retain their own checks,
+
+00:00:08.413 --> 00:00:11.600
+while provider integration
+and settlement have separate constraints.
+
+00:00:11.747 --> 00:00:15.200
+Today, the scenario has few
+shared environments and no
+
+00:00:15.270 --> 00:00:18.880
+backend virtualization.
+The proposed payment pilot
+
+00:00:18.931 --> 00:00:22.720
+introduces controlled provider
+behavior and per-run isolation.
+
+00:00:22.987 --> 00:00:26.720
+It does not automatically solve
+mobile-device availability,
+
+00:00:26.777 --> 00:00:30.320
+legacy batch scheduling or every
+vendor integration requirement.

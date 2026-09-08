@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.160
+The evaluation corpus
+has its own lifecycle.
+
+00:00:02.340 --> 00:00:05.440
+Curate permitted examples
+and reviewed failures,
+
+00:00:05.497 --> 00:00:08.640
+remove near duplicates,
+and label expected behavior.
+
+00:00:08.800 --> 00:00:14.080
+Keep development cases separate from
+held-out evaluation and adversarial sets.
+
+00:00:14.150 --> 00:00:17.120
+Related cases should stay
+in the same split so duplicated
+
+00:00:17.167 --> 00:00:20.640
+information does not inflate
+confidence. Version the source,
+
+00:00:20.740 --> 00:00:24.400
+expectation, scenario
+tag and review decision.
+
+00:00:24.549 --> 00:00:29.280
+Report important slices rather than
+relying only on an overall result.

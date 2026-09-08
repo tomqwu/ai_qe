@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.240
+The evaluation contract
+has several layers.
+
+00:00:02.400 --> 00:00:05.200
+Task outcomes need
+representative expectations.
+
+00:00:05.337 --> 00:00:09.760
+Retrieval needs relevant, permitted
+evidence and correct citations.
+
+00:00:09.880 --> 00:00:14.240
+Agent actions need checks on tool
+choice, arguments and termination.
+
+00:00:14.387 --> 00:00:17.840
+Model judges need calibration
+against expert labels.
+
+00:00:17.944 --> 00:00:23.320
+Operation needs latency, cost,
+drift and fallback evidence.
+
+00:00:23.394 --> 00:00:25.760
+Report results by meaningful scenario.
+
+00:00:26.120 --> 00:00:28.320
+A single average score
+cannot explain whether
+
+00:00:28.373 --> 00:00:30.720
+every critical behavior
+remains acceptable.

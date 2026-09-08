@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.560
+Expected behavior needs
+an independent basis.
+
+00:00:02.740 --> 00:00:06.880
+For a negative payment, the approved
+contract says rejection with no
+
+00:00:06.930 --> 00:00:11.120
+balance or ledger change.
+The implementation may contain a defect,
+
+00:00:11.200 --> 00:00:14.320
+so copying its current behavior
+is not a trustworthy oracle.
+
+00:00:14.480 --> 00:00:18.560
+Review the generated assertions
+against the contract and challenge
+
+00:00:18.600 --> 00:00:23.360
+their side-effect checks. The candidate
+should pass valid code and fail
+
+00:00:23.440 --> 00:00:27.360
+a relevant seeded fault before
+it is considered useful evidence.

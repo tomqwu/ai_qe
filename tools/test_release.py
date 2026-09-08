@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import zipfile
 from publish_release import publish
 from prepare_release import prepare
 
@@ -82,12 +83,17 @@ class PublicationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
             manifest = prepare(folder)
-            self.assertEqual(len(manifest['assets']), 15)
+            self.assertEqual(len(manifest['assets']), 16)
             self.assertEqual(len(list((folder / 'assets').glob('*.pdf'))), 6)
             for name, digest in manifest['assets'].items():
                 self.assertEqual(hashlib.sha256((folder / 'assets' / name).read_bytes()).hexdigest(), digest)
                 self.assertNotIn('appsec', name)
-            self.assertEqual(len((folder / 'assets/SHA256SUMS.txt').read_text().splitlines()), 14)
+            self.assertEqual(len((folder / 'assets/SHA256SUMS.txt').read_text().splitlines()), 15)
+            bundle = next((folder / 'assets').glob('ai-qe-narration-*.zip'))
+            with zipfile.ZipFile(bundle) as archive:
+                for extension in ('.mp3', '.vtt'):
+                    self.assertEqual(sum(name.endswith(extension) for name in archive.namelist()), 109)
+                self.assertEqual(sum(name.startswith('transcripts/') for name in archive.namelist()), 109)
 
 
 if __name__ == '__main__':

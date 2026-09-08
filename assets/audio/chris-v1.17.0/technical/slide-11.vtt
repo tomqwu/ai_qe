@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.280
+Triage separates
+observations from hypotheses.
+
+00:00:03.480 --> 00:00:06.560
+Two committed journals
+are an observed fact;
+
+00:00:06.600 --> 00:00:09.360
+a replay defect is
+an explanation that needs review.
+
+00:00:09.600 --> 00:00:13.680
+Correlate the test, trace
+and transfer before grouping failures.
+
+00:00:13.827 --> 00:00:18.400
+Route environment problems, product
+assertions and unstable reproduction
+
+00:00:18.507 --> 00:00:22.560
+to the right owners. Missing
+evidence remains unresolved.
+
+00:00:22.667 --> 00:00:25.680
+An approved fix produces
+a new build and a new run.
+
+00:00:25.760 --> 00:00:27.440
+Keep the original failure,
+
+00:00:27.480 --> 00:00:31.200
+and never weaken a financial
+assertion to obtain a green result.

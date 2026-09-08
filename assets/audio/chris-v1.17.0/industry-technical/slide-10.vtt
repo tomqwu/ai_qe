@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.640
+Mutation-guided generation
+starts from a fault concern.
+
+00:00:02.766 --> 00:00:07.360
+Select a meaningful change,
+generate a candidate test, and preserve
+
+00:00:07.380 --> 00:00:10.960
+the intended assertion.
+The candidate must pass the original
+
+00:00:11.013 --> 00:00:14.480
+implementation and fail the faulty
+variant for the intended reason.
+
+00:00:14.630 --> 00:00:19.040
+Exclude invalid or equivalent
+mutations before judging the result.
+
+00:00:19.260 --> 00:00:22.160
+Retain the fault rationale
+with the run evidence.
+
+00:00:22.263 --> 00:00:24.960
+Detecting selected mutations
+improves the challenge
+
+00:00:25.080 --> 00:00:28.080
+but does not prove that
+every real defect is covered.

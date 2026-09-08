@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.480
+Recovery protects
+the underlying business process.
+
+00:00:02.720 --> 00:00:05.360
+A severe regression,
+outage or policy event
+
+00:00:05.480 --> 00:00:08.480
+can trigger containment
+and stop consequential actions.
+
+00:00:08.613 --> 00:00:13.520
+Route work to an approved fallback
+or human queue while preserving evidence.
+
+00:00:13.680 --> 00:00:18.720
+Diagnose and rerun the failing cases
+before an owner authorizes resumption.
+
+00:00:18.880 --> 00:00:22.160
+Reverting a model does not
+undo an external side effect.
+
+00:00:22.252 --> 00:00:27.040
+Compensation and reconciliation
+therefore need their own tested runbooks.

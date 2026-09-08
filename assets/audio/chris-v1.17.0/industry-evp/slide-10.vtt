@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.080
+Quality improves through a feedback loop.
+
+00:00:02.190 --> 00:00:06.880
+Compare a versioned application with a
+baseline on representative and held-out
+
+00:00:06.960 --> 00:00:12.080
+cases. Use independent checks to decide
+whether the candidate meets agreed floors.
+
+00:00:12.190 --> 00:00:15.920
+Release within an appropriate
+boundary, monitor its behavior,
+
+00:00:15.960 --> 00:00:18.960
+and curate important failures
+into future evaluations.
+
+00:00:19.400 --> 00:00:24.320
+A change in prompts, retrieval, tools
+or permissions can change the application.
+
+00:00:24.440 --> 00:00:29.760
+Assurance therefore continues after the
+first release and beyond the model itself.

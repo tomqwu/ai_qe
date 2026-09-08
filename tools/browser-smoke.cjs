@@ -13,9 +13,13 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
    await page.setViewportSize(viewport);
    for (const [audience,count] of industryDecks.map(deck => [deck.audience, deck.slides])) {
     await page.goto(`${base}/briefings/${audience}/`); await page.evaluate(() => document.fonts.ready);
+    await page.locator('[data-narration-play]').waitFor({state:'visible'});
     assert.equal(await page.locator('.slide').count(),count);
     for (let i=0;i<count;i++) {
      await page.locator('.slide-picker-label select').selectOption(String(i));
+     // Narration resizes the frame, then charts redraw in ResizeObserver/rAF.
+     // Measure the settled slide so a fast machine cannot miss late overflow.
+     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
      const metrics=await page.locator(`#slide-${i+1}`).evaluate(s => {
       const c=s.querySelector('.slide-content'), n=document.querySelector('.deck-navigation').getBoundingClientRect();
       return {slideBottom:s.getBoundingClientRect().bottom, navTop:n.top, navBottom:n.bottom, h:innerHeight, overflow:c?c.scrollHeight-c.clientHeight:0, wide:document.documentElement.scrollWidth>innerWidth, visible:document.querySelectorAll('.slide:not([hidden])').length};

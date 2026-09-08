@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.920
+Follow a denied action
+through the gateway.
+
+00:00:02.140 --> 00:00:06.480
+The request carries an action,
+resource and run identifier.
+
+00:00:06.620 --> 00:00:09.680
+The gateway checks policy
+and approval before execution.
+
+00:00:10.040 --> 00:00:14.320
+A denial is recorded with its policy
+version, and the runtime stops
+
+00:00:14.453 --> 00:00:18.520
+or escalates. The scoped
+tool is never invoked.
+
+00:00:18.617 --> 00:00:22.960
+Verify the absence of the prohibited side
+effect and the correlated event record.
+
+00:00:23.400 --> 00:00:27.360
+A reassuring assistant message
+alone does not prove enforcement.

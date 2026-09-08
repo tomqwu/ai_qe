@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.040
+The proposed environment runs
+the real payment application
+
+00:00:03.060 --> 00:00:06.600
+and database against
+a controlled provider model.
+
+00:00:06.710 --> 00:00:11.040
+The test runner supplies reviewed
+cases and isolated fixtures.
+
+00:00:11.240 --> 00:00:14.720
+A lifecycle owner handles
+readiness, reset and cleanup.
+
+00:00:14.870 --> 00:00:19.200
+Results and run identifiers survive
+outside the disposable environment,
+
+00:00:19.253 --> 00:00:21.680
+so removing resources does
+not remove the failure.
+
+00:00:21.813 --> 00:00:24.640
+Provider and settlement
+checks remain separate.
+
+00:00:24.860 --> 00:00:27.680
+The diagram's arrows
+show the design's calls
+
+00:00:27.740 --> 00:00:31.360
+and evidence handoffs,
+rather than live system activity.

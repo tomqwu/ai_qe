@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.280
+The platform separates team workflows
+from shared assurance services.
+
+00:00:03.378 --> 00:00:06.440
+Approved context feeds a bounded runtime.
+
+00:00:06.533 --> 00:00:10.400
+An external gateway checks requested
+actions before tools execute.
+
+00:00:10.487 --> 00:00:15.280
+Independent evaluation and sandbox checks
+produce evidence for a release owner.
+
+00:00:15.413 --> 00:00:18.880
+Reviewed failures return
+to the regression corpus.
+
+00:00:19.060 --> 00:00:23.280
+Inspect the components or use
+the flow controls to follow a path.
+
+00:00:23.380 --> 00:00:26.160
+The arrows represent
+architecture relationships,
+
+00:00:26.220 --> 00:00:27.840
+not a live production trace.

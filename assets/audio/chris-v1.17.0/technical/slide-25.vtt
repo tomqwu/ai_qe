@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.080
+Follow the lifecycle
+from setup through cleanup.
+
+00:00:02.240 --> 00:00:06.400
+Pin and check the resources,
+create isolated synthetic accounts,
+
+00:00:06.440 --> 00:00:08.560
+and configure the owned provider behavior.
+
+00:00:08.710 --> 00:00:12.961
+Execute the required tests
+and challenge the deliberate fault.
+
+00:00:13.140 --> 00:00:16.520
+Retain assertions
+and diagnostics before teardown.
+
+00:00:16.585 --> 00:00:20.960
+Attempt cleanup on both success
+and failure, and escalate cleanup problems
+
+00:00:21.013 --> 00:00:26.240
+to the named owner. Finally, reconcile
+separate provider integration evidence.
+
+00:00:26.400 --> 00:00:31.200
+The pipeline owns execution; AI may
+help explain the retained results.

@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.080
+Challenge the test with controlled faults.
+
+00:00:02.192 --> 00:00:06.320
+Duplicate posting must fail
+the journal and balance assertions.
+
+00:00:06.640 --> 00:00:10.400
+A changed amount under the same key
+must produce a conflict without another
+
+00:00:10.451 --> 00:00:14.320
+submission. Concurrent retries
+must converge on one transfer.
+
+00:00:14.760 --> 00:00:17.121
+A repeated callback must not post again.
+
+00:00:17.303 --> 00:00:21.280
+Define these expectations
+independently of the generated test.
+
+00:00:21.440 --> 00:00:24.640
+The browser demonstration
+illustrates part of this behavior;
+
+00:00:24.680 --> 00:00:27.760
+service-level implementations
+and retained evidence are still required.
