@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/fintech-evidence.css' | relative_url }}?v={{ site.data.release.version }}">
 <link rel="stylesheet" href="{{ '/assets/css/visual-story.css' | relative_url }}?v={{ site.data.release.version }}">
 <script src="{{ '/assets/js/visual-story.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
+{% if page.fintech and page.case_audience == "technical" %}<link rel="stylesheet" href="{{ "/assets/css/technical-blueprint.css" | relative_url }}?v={{ site.data.release.version }}">{% endif %}
 </head>
 <body class="deck-page {{ page.deck_class }}">
   <a class="skip-link" href="#slides">Skip to slides</a>

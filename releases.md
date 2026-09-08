@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.15.0 · 8 September 2026
+
+Rebuilt the [banking technical briefing]({{ '/briefings/fintech-technical/' | relative_url }}) as an engineering walkthrough: separate authoring and execution boundaries, a payment API contract, timeout/retry sequence, versioned context and fixtures, deterministic monetary assertions, Azure CI publication, failure routing, evidence schemas and correlation IDs. Readiness now requires executable proof; adapter contracts define inputs, outputs and failure behavior. The guided technical route follows those engineering decisions.
+
+The executive briefing retains its strategic-vision narrative. Both banking PDF editions advance to **v1.15.0** for a consistent release pair, retaining **17 executive / 28 technical slides** and stable slide anchors. Product task syntax is source-backed; the reference architecture and code examples are labelled authored proposals or pseudocode. Industry PDFs remain **v1.12.2**, questionnaire **v4**, research companion **v1.7.0** and film **v1.8.0**. [GitHub release v1.15.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.15.0) packages the current assets.
+
 ## v1.14.1 · 8 September 2026
 
 Renamed the current client scenario to **Our Banking Client** across the case explorer, adoption roadmap, readiness and modernization material, diagrams, presentation titles, source notes and downloadable trial briefs. The illustrative scenario disclosure and existing links remain valid.

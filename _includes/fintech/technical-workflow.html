@@ -1,0 +1,15 @@
+{% assign detail = site.data.technical_workflows[slide.detail] %}
+<div class="ft-tech-workflow" data-technical-detail="{{ slide.detail | escape }}">
+  <div class="ft-tech-panels">
+    {% for panel in detail.panels %}
+    <section class="ft-tech-panel" aria-label="{{ panel.title | escape }}">
+      <p class="ft-tech-panel-label">{{ panel.label | escape }}</p>
+      <h3>{{ panel.title | escape }}</h3>
+      <pre class="ft-tech-code" aria-label="{{ panel.label | escape }}"><code class="language-{{ panel.language | escape }}">{{ panel.code | escape }}</code></pre>
+    </section>
+    {% endfor %}
+  </div>
+  <ul class="ft-tech-checks">
+    {% for check in detail.checks %}<li>{{ check | escape }}</li>{% endfor %}
+  </ul>
+</div>

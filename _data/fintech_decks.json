@@ -235,13 +235,13 @@
   ],
   "technical": [
     {
-      "title": "Our Banking Client: QA architecture",
-      "visual": "cover",
-      "lead": "A concrete design for AI assistance across a release workflow with 75 offshore QA staff.",
+      "title": "Our Banking Client: engineering blueprint",
+      "visual": "technical-cover",
+      "lead": "Follow one payment test from an approved contract to isolated execution and inspectable evidence.",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Technical SDs and leads • Fictional fintech • Proposed architecture",
+      "note": "Technical design review · Authored reference architecture; validate interfaces and tooling with the client.",
       "sources": "",
       "chapter": "System and behavior"
     },
@@ -257,98 +257,81 @@
       "chapter": ""
     },
     {
-      "title": "The shared QA platform",
-      "visual": "architecture",
-      "lead": "The model proposes artifacts. Reviewers approve them. Existing runners produce evidence.",
+      "title": "Separate authoring from test execution",
+      "visual": "technical-platform",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Adapters, context assembly and evidence linking are integration work to build. No turnkey platform is implied.",
+      "note": "Adapters and joined evidence are integration work to build. Model output cannot change the original assertion result.",
       "sources": "S2,S3",
       "chapter": ""
     },
     {
-      "title": "PAY-142: the payment contract",
-      "visual": null,
+      "title": "PAY-142: request contract and test oracle",
+      "visual": "technical-contract",
       "lead": "",
-      "rows": [
-        [
-          "Same key + same payload",
-          "Return the same transfer ID and result. Post the journal once."
-        ],
-        [
-          "Same key + changed amount",
-          "Reject the conflicting request without another posting."
-        ],
-        [
-          "Concurrent retries / duplicate callbacks",
-          "Converge on one transfer and one balanced journal."
-        ],
-        [
-          "Expected final state",
-          "Payer CAD 900.00; recipient CAD 100.00; one journal with two balancing entries."
-        ]
-      ],
-      "columns": [
-        "Condition",
-        "Expected behavior"
-      ],
+      "rows": null,
+      "columns": null,
       "points": null,
-      "note": "Authored business rules: initial balances CAD 1,000.00 and CAD 0.00; transfer CAD 100.00; no fees, FX or other activity. No regulatory claim.",
+      "note": "Authored contract; minor units are CAD cents. Start at 100000 / 0; no fees, FX or other account activity.",
       "sources": "",
       "chapter": ""
     },
     {
-      "title": "QE testing scenario: detecting a duplicate posting",
-      "visual": "payment",
-      "lead": "Simulate an accepted transfer, a timed-out response and a retry. A deliberately injected defect posts the same transfer twice.",
+      "title": "Timeout and retry: the runtime sequence",
+      "visual": "technical-sequence",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Assert one journal and correct balances. The duplicate-posting variant must fail. This is a QE test scenario, not a reported client incident.",
+      "note": "QE testing scenario. A timeout leaves the outcome unknown; a stable key must resolve to the original transfer.",
       "sources": "",
       "chapter": ""
     },
     {
-      "title": "Requirements and test design",
-      "visual": "workflow",
-      "lead": "PAY-142 starts with an ambiguity: does a timeout mean failure, success or unknown?",
+      "title": "Version the context before asking for a test",
+      "visual": "technical-workflow",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Domain QA and the product owner approve expected behavior before generated tests can validate it.",
+      "note": "Proposed artifacts for the client scenario; identifiers and conflict behavior require agreement with the API owner.",
       "sources": "S2",
       "chapter": "Work at each stage",
       "stages": [
         "requirements",
         "design"
-      ]
+      ],
+      "detail": "context"
     },
     {
-      "title": "Test data and environment preparation",
-      "visual": "workflow",
-      "lead": "Synthetic accounts, known balances and a controlled provider response make the retry repeatable.",
+      "title": "Pin and reset the test environment",
+      "visual": "technical-workflow",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Container-based service tests do not replace real integration, mobile or batch testing. Validate stubs against the provider contract.",
+      "note": "Proposed manifest schema. Digest and commit placeholders must resolve to real immutable versions before execution.",
       "sources": "S5,S7",
       "chapter": "",
       "stages": [
         "data",
         "environment"
-      ]
+      ],
+      "detail": "fixtures"
     },
     {
-      "title": "Generated code enters an ordinary review",
-      "visual": "generation",
-      "lead": "Use the approved case matrix and repository examples to produce a candidate test change.",
+      "title": "Assert money movement, not just HTTP status",
+      "visual": "technical-workflow",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "The reviewer checks the oracle. A deliberate duplicate-posting fault must fail before the candidate joins the required suite.",
+      "note": "Non-runnable pseudocode for this CAD 100 test scenario; a REST Assured/JUnit implementation needs approved API and ledger helpers.",
       "sources": "S3,S6",
-      "chapter": ""
+      "chapter": "",
+      "detail": "assertions"
     },
     {
       "title": "The appropriate test layer",
@@ -382,83 +365,106 @@
       "chapter": ""
     },
     {
-      "title": "Execution retains required coverage",
-      "visual": "workflow",
-      "lead": "CI records the build, fixture, stub and test revisions before runners execute the pack.",
+      "title": "Publish raw CI results before AI interpretation",
+      "visual": "technical-workflow",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "AI test-selection recommendations run in shadow mode first. Required payment checks continue on every eligible release.",
-      "sources": "",
+      "note": "Microsoft task syntax is documented; the AI adapter is proposed integration work. Job cancellation can still prevent artifact collection.",
+      "sources": "AL2",
       "chapter": "",
       "stages": [
         "execution"
-      ]
+      ],
+      "detail": "pipeline"
     },
     {
-      "title": "Triage preserves the original test intent",
-      "visual": "workflow",
-      "lead": "A failed journal assertion belongs to the product defect path until evidence establishes otherwise.",
+      "title": "Route failures without rewriting the verdict",
+      "visual": "technical-workflow",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Capture failed tests, skipped tests and retries. A repair that removes an assertion does not count as a passing outcome.",
-      "sources": "S4",
+      "note": "Proposed diagnostic schema and routing policy. Human review assigns the disposition; the original evidence remains available.",
+      "sources": "AL2",
       "chapter": "",
       "stages": [
         "triage"
-      ]
+      ],
+      "detail": "triage"
     },
     {
-      "title": "A traceable release decision",
-      "visual": "evidence",
-      "lead": "Every generated artifact and run links back to the approved business behavior.",
+      "title": "Define the run evidence contract",
+      "visual": "technical-workflow",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "An absent result remains unknown. The release owner resolves exceptions and the QA lead reviews the evidence pack.",
-      "sources": "",
-      "chapter": ""
+      "note": "Proposed evidence contract and pilot gate. This example does not supply a complete banking release policy.",
+      "sources": "AL2",
+      "chapter": "",
+      "detail": "evidence"
     },
     {
-      "title": "What the demonstration proves",
+      "title": "Challenge the test with failure injection",
       "visual": null,
       "lead": "",
       "rows": [
         [
-          "Normal transfer",
-          "One posting and expected balances: the modeled checks pass."
+          "Duplicate journal defect",
+          "Second posting changes payer to 80000; journal / balance checks fail."
         ],
         [
-          "Retry with injected bug",
-          "Two postings and incorrect balances: the modeled checks block release."
+          "Same key, changed amount",
+          "Conflict returned; no additional provider submission or journal."
         ],
         [
-          "Retry with deduplication",
-          "One posting after two attempts: the modeled checks pass."
+          "Concurrent same-key retries",
+          "One transfer identity and one journal after all attempts settle."
         ],
         [
-          "Duplicate callback",
-          "Repeat the event with the same identity and inspect the journal outcome."
+          "Repeated callback event",
+          "Same event ID produces no additional posting."
         ]
       ],
       "columns": [
-        "Try in the case explorer",
-        "Expected outcome"
+        "Controlled condition",
+        "Required observation"
       ],
       "points": null,
-      "note": "The browser demonstration is a deterministic teaching model. It does not execute REST Assured, call a payment service or prove production correctness.",
+      "note": "Author the expected behavior independently. The browser demo covers a subset; these cases require service-level implementation.",
       "sources": "",
       "chapter": ""
     },
     {
-      "title": "Readiness across six dimensions",
-      "visual": "readiness",
-      "lead": "These dimensions describe the delivery profile in this scenario. Review the wider dependency register before approving a workflow.",
-      "rows": null,
-      "columns": null,
+      "title": "Readiness requires executable proof",
+      "visual": null,
+      "lead": "",
+      "rows": [
+        [
+          "Deploy + reset",
+          "Pinned application digest starts; a fresh run restores the same synthetic balances."
+        ],
+        [
+          "Provider control",
+          "Replay timeout and duplicate callback; identify the model revision and its owner."
+        ],
+        [
+          "Observable outcome",
+          "Read transfer identity and committed journal facts without depending on the AI summary."
+        ],
+        [
+          "Reproduction",
+          "A second engineer reruns the same manifest and obtains an explainable outcome."
+        ]
+      ],
+      "columns": [
+        "Capability",
+        "Evidence before automated execution"
+      ],
       "points": null,
-      "note": "Assess each application separately. Unknown infrastructure, data, virtualization, AI access or ownership must be resolved before the affected workflow can proceed.",
+      "note": "Assess per application. Unknown or failed checks block the dependent execution scope; reviewed drafting has a narrower prerequisite set.",
       "sources": "S1",
       "chapter": "Delivery and evidence"
     },
@@ -474,44 +480,45 @@
       "chapter": ""
     },
     {
-      "title": "Effort includes review and operation",
-      "visual": "capacity",
-      "lead": "Record time at the eight workflow stages using the same boundary for baseline and assisted packs.",
+      "title": "Correlate a failure across the runtime",
+      "visual": "technical-workflow",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Targets assume verified adoption prerequisites. Negative capacity remains possible; do not extrapolate one pack to all 75 staff or combine overlapping benefits.",
+      "note": "Proposed observability contract. Example identifiers are illustrative; the AI hypothesis does not override the failed assertion.",
       "sources": "",
-      "chapter": ""
+      "chapter": "",
+      "detail": "telemetry"
     },
     {
-      "title": "Pilot validation and stop conditions",
+      "title": "Promotion rules for a generated test",
       "visual": null,
       "lead": "",
       "rows": [
         [
-          "Design",
-          "Baseline one current pack. Compare at least two assisted packs with similar scope and matched conventional tasks."
+          "Code + intent review",
+          "Approved behavior and independent assertions; no weakened checks or unexplained skips."
         ],
         [
-          "Record",
-          "Capture task complexity, reviewer time, corrections, failures, waits and environment incidents."
+          "Paired challenge",
+          "Correct build passes; injected duplicate posting fails using identical fixtures."
         ],
         [
-          "Stop or repair",
-          "Pause expansion for an escaped money-movement defect, unreliable fixtures or tests that pass the injected fault."
+          "Reproducibility",
+          "Run manifest, raw evidence and cleanup results are present; repeat failures are classified."
         ],
         [
-          "Expand",
-          "Require trustworthy mandatory coverage, positive net capacity and a successful second-squad reuse trial."
+          "Suite promotion",
+          "QA owner approves the PR; required tests and separate integration checks remain enforced."
         ]
       ],
       "columns": [
-        "Step",
-        "Proposed validation"
+        "Gate",
+        "Engineering acceptance"
       ],
       "points": null,
-      "note": "Small pilot samples support a delivery decision with uncertainty. They do not establish a general causal productivity rate.",
+      "note": "Do not promote a generated test merely because it compiles or passes once. Benchmark pilot effort separately.",
       "sources": "",
       "chapter": ""
     },
@@ -522,23 +529,43 @@
       "rows": null,
       "columns": null,
       "points": [
-        "“Can we deploy a known build, reset the data and replay a provider timeout today?”",
-        "“Where do payment outcomes become observable: API, journal, callback or batch file?”",
-        "“Which framework already has maintainers and reliable CI execution?”",
-        "“Who owns reusable fixtures and who approves the expected financial behavior?”"
+        "Where is idempotency enforced: API, provider request, journal transaction and callback handler?",
+        "Which artifact proves one posting when the response is lost or the callback is duplicated?",
+        "Can two engineers reproduce the same failure from a pinned manifest and fresh fixtures?",
+        "Who owns provider-model drift, failed cleanup and evidence retention?"
       ],
-      "note": "Review the workflow map and a real failed release together. The first implementation backlog should follow those answers.",
+      "note": "Resolve these architecture decisions against the client system before enabling broader agent execution.",
       "sources": "",
       "chapter": "The discussion"
     },
     {
-      "title": "Platform prerequisites for the pilot",
-      "visual": "dependency-scopes",
+      "title": "Map foundation gaps to blocked capabilities",
+      "visual": null,
       "lead": "",
-      "rows": null,
-      "columns": null,
+      "rows": [
+        [
+          "Approved rules + repository context",
+          "Reviewed test drafting; without a trustworthy oracle, keep cases as unapproved proposals."
+        ],
+        [
+          "Isolated runner + resettable fixtures",
+          "Automated service execution; shared mutable data prevents repeatable comparisons."
+        ],
+        [
+          "Provider models + contract owner",
+          "Deterministic negative-path tests; unknown model fidelity needs real integration evidence."
+        ],
+        [
+          "Run IDs + raw results + named owner",
+          "Evidence-linked diagnosis and team reuse; missing evidence routes to investigation."
+        ]
+      ],
+      "columns": [
+        "Required foundation",
+        "Capability unlocked / consequence if missing"
+      ],
       "points": null,
-      "note": "Unknown evidence remains a gap. Platform owners, reviewers and supplier leads must accept named actions and review dates before adoption.",
+      "note": "Foundation work starts with the pilot. Existing DevOps and QE maturity determine which capability can progress.",
       "sources": "",
       "chapter": "Client adoption assumptions"
     },
@@ -587,15 +614,16 @@
       "chapter": "Fintech evidence and adoption"
     },
     {
-      "title": "A fair comparison for the payments pilot",
-      "visual": "evidence-comparison",
+      "title": "Instrument the pilot at run level",
+      "visual": "technical-workflow",
       "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Use comparable tasks inside the proposed pilot. Include failures and review effort; retain the existing mandatory payment checks.",
+      "note": "Authored measurement schema; no pilot timing, cost or effectiveness observations have been recorded.",
       "sources": "",
-      "chapter": "Fintech evidence and adoption"
+      "chapter": "Fintech evidence and adoption",
+      "detail": "measurement"
     },
     {
       "title": "The runtime from setup to cleanup",
@@ -609,14 +637,34 @@
       "chapter": "Connected architecture walkthrough"
     },
     {
-      "title": "Connect the tools behind the platform",
-      "visual": "integration-architecture",
+      "title": "Integration adapters have explicit contracts",
+      "visual": null,
       "lead": "",
-      "rows": null,
-      "columns": null,
+      "rows": [
+        [
+          "Context / QE platform",
+          "Story + API + test revisions → bundle; unresolved rules block approval of affected cases."
+        ],
+        [
+          "Model / AI platform",
+          "Bundle + configuration → patch; timeout or quota → no candidate, bounded retry."
+        ],
+        [
+          "Runner / application QA",
+          "Approved test commit + manifest → raw results; preserve exit status, retain evidence, clean up."
+        ],
+        [
+          "Evidence / QE platform",
+          "Run artifacts → indexed links; incomplete joins stay unknown; AI report is read-only."
+        ]
+      ],
+      "columns": [
+        "Adapter / owner",
+        "Input → output / failure handling"
+      ],
       "points": null,
-      "note": "Proposed integration. Validate access; fund context adapters and joined evidence.",
-      "sources": "",
+      "note": "Proposed adapter contracts. Use request IDs for safe retries and record attempts; platform owners define timeouts and retention.",
+      "sources": "S2,S3,AL2",
       "chapter": "Connected architecture walkthrough"
     },
     {
