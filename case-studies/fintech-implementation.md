@@ -14,9 +14,15 @@ has_toc: true
 
 **QE testing scenario: timeout and retry.** PAY-142 deliberately injects a duplicate-posting defect to test whether the journal-count and balance assertions catch it. The expected outcome is one transfer. This is a test design, not a reported client incident; a timeout alone does not imply two debits.
 
+## The manual QE starting point
+
+The scenario begins with a large offshore QA organization whose delivery is constrained by its test system. Most QE work is manual. Internal test environments are limited, backend services are **not virtualized**, and vendor-provided test-environment availability and booked slots limit how many tests can run at once. Shared accounts and resets create further contention. QA engineers manually rerun tests and assemble screenshots, logs and release evidence.
+
+Some Java API, Selenium and Appium automation and partial CI exist. They do not remove the vendor environment limit or supply independently resettable data. More QE engineers alone cannot create more test-environment capacity. Establish the vendor environment count, concurrent-run limits, booking rules and waiting time during discovery.
+
 ## QE modernization before wider execution
 
-The [modernization guide]({{ "/qe-modernization/#harbor" | relative_url }}) develops the foundation backlog behind this case. Start with one payment journey: reviewed assertions, a reproducible environment, isolated data, a versioned provider substitute and durable evidence. Compare its behavior with the real provider and settlement path. Containerize suitable components; reserve supported environments for systems that cannot be made disposable.
+The [modernization guide]({{ "/qe-modernization/#harbor" | relative_url }}) develops the foundation backlog behind this case. Build and prove the target for one payment journey: reviewed assertions, a reproducible environment, isolated data, a versioned provider substitute and durable evidence. These are modernization deliverables, not existing baseline capabilities. Compare its behavior with the real provider and settlement path. Containerize suitable components; reserve supported environments for systems that cannot be made disposable.
 
 Reviewed AI drafts can begin where their own prerequisites are satisfied. Wider execution depends on demonstrated test reliability, environment repeatability and supported ownership. The 480-hour setup allowance below does not price this modernization backlog.
 
@@ -27,8 +33,10 @@ Reviewed AI drafts can begin where their own prerequisites are satisfied. Wider 
 | Organization | 75 offshore QA staff across five application squads. Primary roles: 45 manual/domain testers, 15 automation engineers, eight data/environment engineers and seven leads/coordinators. These groups do not overlap. |
 | Pilot team | Eight existing QA staff: one lead, four domain testers, two automation engineers and one data/environment engineer. Product, development and platform support are additional contributors whose effort must be recorded. |
 | Application portfolio | Payments, web, mobile, onboarding and settlement. Java/Spring Boot payment services, React web, PostgreSQL journal and an existing Azure test environment. Legacy settlement shares a nightly batch environment. |
+| Current environment constraints | Limited shared internal test environments; backend services are not virtualized. Vendor-provided test-environment availability and booking slots cap parallel integration testing. Shared accounts, resets and settlement windows further restrict runs. Inventory actual capacity and restrictions before sizing the target. |
+| Current manual workflow | Testers prepare cases and data, wait for environments, run and rerun checks, and manually reconcile screenshots, logs, defects and release status. Queue time is recorded separately from active effort. |
 | Current delivery | Fortnightly releases. A bounded release test pack uses 300 person-hours across 10 business days; the pilot team also performs other work. This is not 10 days of full-time effort by all eight people. |
-| Current automation | Some usable Java API tests, an uneven Selenium UI suite and existing Appium mobile coverage. Framework and language versions must be checked against the actual repositories. |
+| Current automation | Some usable Java API tests, an uneven Selenium UI suite, existing Appium mobile coverage and partial CI. These islands of automation still depend on shared environments and vendor slots. Framework and language versions must be checked against the actual repositories. |
 | Payment contract | PAY-142 transfers CAD 100.00 between synthetic accounts starting at CAD 1,000.00 and CAD 0.00. No fees, FX, overdraft, settlement timing or unrelated account activity is modeled. |
 | Expected behavior | The same request key and payload return the original transfer identity. Conflicting payloads are rejected. Retries and duplicate callbacks create one journal with two balancing entries. |
 | Evidence status | Hours, maturity profiles, staffing and simulated outcomes are assumptions. No client baseline or actual pilot result has been collected. |
@@ -51,7 +59,7 @@ QE modernization is an explicit adoption dependency within this register. For th
 {% include visual-story/architecture.html %}
 
 
-The design extends tools that the team in this scenario already knows. A discovery assessment can substitute the customer's equivalents without changing the workflow responsibilities.
+The proposed design extends tools that the team in this scenario already knows. WireMock mappings, isolated fixtures, repeatable environments and joined evidence are new work to implement and verify. A discovery assessment can substitute the customer's equivalents without changing the workflow responsibilities.
 
 | Capability | Example technology | Integration to implement |
 |---|---|---|
@@ -62,7 +70,7 @@ The design extends tools that the team in this scenario already knows. A discove
 | Browser tests | Playwright for the new React payment journey | Reuse a seed fixture and approved plan, review generated tests and store traces from failed CI runs. Retain existing Selenium coverage with named maintainers. |
 | Mobile tests | Existing Appium suite and device pool | Keep device scheduling, app build identity, account reset and evidence collection explicit. API-level coverage does not replace mobile interaction testing. |
 | Data | PostgreSQL synthetic fixtures; Testcontainers for service tests | Assign unique accounts per run, seed exact balances and validate relationships. Container tests require a supported runtime and do not provision the whole estate. |
-| Provider dependency | WireMock test stub plus separate provider sandbox tests | Version timeout, delayed-callback and duplicate-event scenarios. Check the stub contract against integration behavior. |
+| Provider dependency | WireMock test stub plus separate provider sandbox tests | Introduce service virtualization for timeout, delayed-callback and duplicate-event scenarios. Version and validate mappings; reserve vendor slots for real integration and fidelity checks. Virtual runs do not replace provider acceptance or settlement validation. |
 | Execution | Existing Azure Pipelines and test runners | Pin build/test/fixture/stub revisions, run preflight checks, publish original runner evidence and retain the mandatory payment suite. |
 | Reporting | Test Plans and an artifact store | Link requirement, candidate, review, manifest, result and defect disposition. AI drafts a summary with evidence links; the release owner decides. |
 
@@ -101,6 +109,8 @@ Playwright's documented healer may return a skipped test when it believes behavi
 
 **Input:** {{ stage.input }}.
 
+**Current manual work:** {{ stage.manual }}
+
 **Assistance:** {{ stage.ai }}
 
 **Output:** {{ stage.output }}. **Accountable reviewer:** {{ stage.owner }}.
@@ -119,7 +129,7 @@ Assess requirements, DevOps, cloud/environment readiness, application testabilit
 | Condition | First work to commission | Evidence before expanding |
 |---|---|---|
 | Shared environments, manual deployment and fragile scripts | Requirements clarification, reviewed scenario drafts, stable fixtures, a reproducible run and clear ownership | Another engineer can repeat the same test with the same result. |
-| Usable API automation and partial CI, but shared data and noisy UI tests | The payments API pilot, one web journey, provider stubs and evidence integration | Full effort accounting and trustworthy required tests across comparable release packs. |
+| Usable API automation and partial CI, but no backend virtualization, limited vendor slots and shared data | The payments API pilot, one web journey, validated provider stubs and evidence integration | Full effort accounting and trustworthy required tests across comparable release packs. |
 | Repeatable deployment, isolated data and maintained tests | Expand generation and triage, then evaluate selective regression in shadow mode | A second team reuses the pattern and selection retains important defect detection. |
 
 Cloud hosting does not establish maturity by itself. Readiness depends on deployment reproducibility, reset speed, dependency control and observability. DORA's findings motivate attention to the surrounding delivery system; they do not supply this case's numerical assumptions. [DORA 2025 report](https://dora.dev/research/2025/dora-report/).
@@ -134,7 +144,7 @@ Distinguish current work, modernized QE without AI and the same foundation with 
 
 ## Measurement
 
-The unit is **one comparable, bounded release test pack**, not a person, application portfolio or organization. Capture task-level active effort in mutually exclusive workflow stages. Use timestamps and reason codes separately for waits and elapsed release time. Do not add days of waiting to person-hours or claim that every saved task hour shortens the release's critical path.
+The unit is **one comparable, bounded release test pack**, not a person, application portfolio or organization. Capture task-level active effort in mutually exclusive workflow stages. Use timestamps and reason codes separately for waits and elapsed release time. Record vendor-slot waits, internal environment queues, data/reset waits, blocked scenarios and successful concurrent runs, with the same scope and observation window before and after. Do not add days of waiting to person-hours or claim that every saved task hour shortens the release's critical path.
 
 {% assign case = site.data.fintech_case %}
 | Stage | Baseline hours | Mixed-profile work | Mixed-profile review | Assisted total |

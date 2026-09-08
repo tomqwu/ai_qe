@@ -3,7 +3,7 @@
     {
       "title": "Our Banking Client: shared QA platform",
       "visual": "cover",
-      "lead": "A payment-release story for a fictional fintech with 75 offshore QA staff.",
+      "lead": "A payment-release story: 75 offshore QA staff, heavy manual testing and constrained test environments.",
       "rows": null,
       "columns": null,
       "points": null,
@@ -14,11 +14,11 @@
     {
       "title": "The QA organization",
       "visual": "staff",
-      "lead": "Five application squads share 75 offshore QA staff. Each person appears in one primary-role group.",
+      "lead": "75 offshore QA staff across five squads; 45 focus on manual and domain testing. Environments and vendor test slots limit parallel work.",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "The pilot draws eight QA staff from this population. Headcount alone does not establish a savings opportunity.",
+      "note": "The pilot draws eight QA staff from this population. More engineers alone do not create more vendor test capacity.",
       "sources": "",
       "chapter": ""
     },
@@ -239,7 +239,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Pilot target. Application teams retain expected behavior and release decisions; each application must meet its own readiness gates.",
+      "note": "Starting point: heavy manual QE and scarce vendor environments. Pilot target: controlled service tests, with real integration still required.",
       "sources": "",
       "chapter": "Architecture and outcomes"
     },
@@ -274,7 +274,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Example stack: Java/Spring Boot, React, PostgreSQL and Azure. Existing automation remains useful.",
+      "note": "Current baseline: few shared environments and no backend virtualization. WireMock and per-run isolation are proposed pilot capabilities.",
       "sources": "",
       "chapter": ""
     },
@@ -696,7 +696,7 @@
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Proposed topology. Isolate and reset each run; retain evidence outside disposable resources. Real integration remains a separate gate.",
+      "note": "75 offshore QA staff share constrained environments. Proposed isolation and virtualized dependencies support parallel service tests; real integration stays scheduled.",
       "sources": "S2,S5,S6,S7",
       "chapter": "Before and after the API pilot"
     },

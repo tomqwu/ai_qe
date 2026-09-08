@@ -97,6 +97,7 @@
 .ba-services { padding:16px; border:2px solid #749aaf; background:#eaf2f8; }
 .ba-services p { margin:8px 0; }
 .ba-ai { display:block; padding:8px; background:#eee7f8; color:#593480; }
+.ba-constraint { display:block; padding:8px; background:#fbebd2; border-left:3px solid #98651d; color:#69420e; }
 .ba-limits { font-size:15px; margin:12px 0 0; }
 .deck-page .ba-teams span { font-size:1.35cqw; padding:.8cqw .5cqw; }
 .deck-page .ba-connect { font-size:2cqw; margin:1cqw 0; }
@@ -104,6 +105,7 @@
 .deck-page .ba-services { padding:1cqw; font-size:1.6cqw; }
 .deck-page .ba-services p, .deck-page .ba-ai { font-size:1.5cqw; margin:.6cqw 0; }
 .deck-page .ba-ai { padding:.6cqw; }
+.deck-page .ba-constraint { font-size:1.5cqw; margin:.6cqw 0; padding:.6cqw; }
 .deck-page .ba-limits { font-size:1.4cqw; line-height:1.3; margin:1cqw 0 0; }
 @media screen and (max-width:700px) {
  .deck-page .ba-teams span { font-size:13px; padding:10px 5px; }
@@ -112,6 +114,7 @@
  .deck-page .ba-services { font-size:18px; padding:14px; }
  .deck-page .ba-services p, .deck-page .ba-ai, .deck-page .ba-limits { font-size:16px; line-height:1.4; margin:10px 0 0; }
  .deck-page .ba-ai { padding:8px; }
+ .deck-page .ba-constraint { font-size:16px; line-height:1.4; margin:10px 0 0; padding:8px; }
 }
 .fintech-deck .qo-measures tbody th { width:32%; }
 .fintech-deck .qo-measures td:last-child { width:68%; }

@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.16.1 · 8 September 2026
+
+Clarified the [banking before/after story]({{ '/case-studies/fintech/#architecture-before-after' | relative_url }}): 75 offshore QA staff include 45 manual/domain testers, with few shared test environments, no backend service virtualization and limited vendor test capacity. Manual setup, reruns and evidence collection compete for those environments; adding staff alone does not increase available vendor slots.
+
+The executive and technical architecture comparisons, workflow baseline, application landscape, readiness assumptions and modernization backlog now reflect these constraints. Virtualized service tests and isolated runs remain proposed capabilities; real-provider and settlement checks still need reserved capacity. No vendor environment count or measured improvement is invented.
+
+Banking slides/PDFs advance to **v1.16.1**, retaining **19 executive / 30 technical slides** and existing anchors. Industry PDFs remain **v1.12.2**. [GitHub release v1.16.1](https://github.com/tomqwu/ai_qe/releases/tag/v1.16.1) packages the current assets.
+
 ## v1.16.0 · 8 September 2026
 
 Added [before/after architecture and outcomes beyond hours]({{ '/case-studies/fintech/#architecture-before-after' | relative_url }}). The technical comparison shows workstations, runners, application/database boundaries, provider models and retained evidence. The executive comparison shows how squads move from individual tools to supported shared QE services.
