@@ -17,7 +17,8 @@
       "Maturity assumptions, value and the next decision",
       "Client adoption assumptions and foundation ownership",
       "QE modernization, repeatable environments and virtual services",
-      "Financial-services evidence and a focused client trial"
+      "Financial-services evidence and a focused client trial",
+      "Guided client route: connected workflows, prerequisites and concrete architecture"
     ]
   },
   {
@@ -30,7 +31,7 @@
     "url": "/briefings/fintech-technical/",
     "pdf_prefix": "ai-qe-fintech-technical",
     "edition": "fintech_edition",
-    "slides": 24,
+    "slides": 26,
     "time": "35–45 min",
     "outline": [
       "Payment behavior and an executable test example",
@@ -38,7 +39,8 @@
       "DevOps maturity, ownership and implementation",
       "Client adoption assumptions and foundation ownership",
       "QE modernization, repeatable environments and virtual services",
-      "Financial-services evidence and a focused client trial"
+      "Financial-services evidence and a focused client trial",
+      "Guided client route: connected workflows, prerequisites and concrete architecture"
     ]
   },
   {

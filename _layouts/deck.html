@@ -26,13 +26,15 @@
 <link rel="stylesheet" href="{{ '/assets/css/readiness.css' | relative_url }}?v={{ site.data.release.version }}">
 <link rel="stylesheet" href="{{ '/assets/css/modernization.css' | relative_url }}?v={{ site.data.release.version }}">
 <link rel="stylesheet" href="{{ '/assets/css/fintech-evidence.css' | relative_url }}?v={{ site.data.release.version }}">
+<link rel="stylesheet" href="{{ '/assets/css/visual-story.css' | relative_url }}?v={{ site.data.release.version }}">
+<script src="{{ '/assets/js/visual-story.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 </head>
 <body class="deck-page {{ page.deck_class }}">
   <a class="skip-link" href="#slides">Skip to slides</a>
   <header class="deck-header">
     <a href="{{ '/briefings/' | relative_url }}" target="_top" class="deck-brand" aria-label="AI × QE — return to presentation room">{% include brand/mark.svg %}AI × QE <span class="brand-destination">Briefings</span></a>
     <span class="deck-audience">{{ page.audience }}</span>
-    <div class="deck-tools" hidden>{% include motion-toggle.html %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-diagram-tools hidden aria-expanded="false">Diagram controls</button><button type="button" data-notes>Sources &amp; notes</button><button type="button" data-edition>v{{ site.data.release.version }}</button><button type="button" data-fullscreen>Present ↗</button></div>
+    <div class="deck-tools" hidden>{% include motion-toggle.html %}{% if page.fintech %}<button type="button" data-guided-route aria-pressed="false">Guided story</button>{% endif %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-diagram-tools hidden aria-expanded="false">Diagram controls</button><button type="button" data-notes>Sources &amp; notes</button><button type="button" data-edition>v{{ site.data.release.version }}</button><button type="button" data-fullscreen>Present ↗</button></div>
   </header>
   <div class="deck-flow-bar" aria-label="Animated flow playback" hidden>
     <button type="button" data-flow-play aria-pressed="false">▶ Play flow</button>
@@ -49,6 +51,7 @@
   <aside class="deck-diagram-panel" aria-label="Diagram view and flow controls" hidden></aside>
   <dialog class="deck-drawer" aria-labelledby="drawer-title"><div class="drawer-heading"><h2 id="drawer-title">Slide notes</h2><button type="button" data-close-drawer aria-label="Close notes">Close ×</button></div><p class="drawer-dictionary"><a href="{{ '/dictionary/' | relative_url }}" target="_blank" rel="noopener">Dictionary · terms &amp; acronyms ↗</a> <span>(opens in a new tab)</span></p><div data-drawer-content></div></dialog>
   <template data-edition-content>{% include release-banner.html %}<p><a href="{{ '/releases/' | relative_url }}" target="_top">Full release history and downloads →</a></p></template>
+  {% if page.fintech %}<script type="application/json" data-guided-slides>{{ site.data.visual_story.routes[page.case_audience] | jsonify }}</script>{% endif %}
   <p class="deck-message" role="status"></p>
   <noscript><p class="no-script">All slides are shown in reading order. Use your browser’s print command to save a copy.</p></noscript>
 </body>

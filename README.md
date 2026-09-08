@@ -211,7 +211,7 @@ The film is a silent render of the Three.js demonstration using the Blender-auth
 
 ## Adoption dependencies
 
-`_data/adoption.json` defines twelve explicit client assumptions, evidence, owners, sources and eight workflow mappings. `/platform-readiness/` renders the canonical register. The pure `readiness-model.js` determines required capability gaps without an average score; `readiness.js` provides scenario controls and a local downloadable worksheet. Client inputs are self-assessments and do not authorize adoption. Hub, fintech case and four briefings share editable dependency diagrams in `_includes/adoption/`.
+`_data/adoption.json` defines twelve explicit client assumptions, evidence, owners, sources and nine workflow scopes (the eight QA stages plus diagnosis-only evidence review). `/platform-readiness/` renders the canonical register. The pure `readiness-model.js` determines required capability gaps without an average score; `readiness.js` provides scenario controls and a local downloadable worksheet. Client inputs are self-assessments and do not authorize adoption. Hub, fintech case and four briefings share editable dependency diagrams in `_includes/adoption/`.
 
 Run `node --test tools/readiness-model.test.cjs` and `node tools/readiness-browser-test.cjs` against a built preview. When changing assumptions, keep the case implementation notes, discovery and pilot prerequisites consistent. Re-export all four decks when their content edition changes.
 
@@ -220,3 +220,12 @@ Run `node --test tools/readiness-model.test.cjs` and `node tools/readiness-brows
 The [fintech evidence explorer](https://tomqwu.github.io/ai_qe/case-studies/fintech/evidence/) connects seven cases to bounded client trials. `_data/fintech_evidence.json` is canonical for source records, case boundaries, practices, charts, trial content and the rejection walkthrough. `_includes/fintech-evidence/` supplies shared editable presentation visuals. CSV/JSON exports include the ten source records.
 
 Run `node tools/fintech-evidence-browser-test.cjs` against a built preview. It checks filtering, deep links, trial selection and Markdown download contents, actual rejection-route motion, pause/reduced motion, no-JS reading and responsive layouts. Keep the guided rejection path separate from the context-only accepted path. `research/fintech-evidence-brief.md` records the research contract; downloaded publisher originals stay private.
+
+
+## Connected visual story
+
+`_data/visual_story.json` holds the proposed Harbor integration nodes, authored PAY-142 artifacts, lifecycle stages, modernization grouping and curated audience routes. Dependency requirements remain canonical in `_data/adoption.json` and are evaluated by `readiness-model.js`; the map adds no competing maturity score. Diagnosis-only review and execution/retest have distinct prerequisites.
+
+Shared HTML views live in `_includes/visual-story/`, with role styling and progressive enhancement in `assets/css/visual-story.css` and `assets/js/visual-story.js`. The six workstreams group twelve adoption assumptions; a marked matrix cell refers to selected capabilities within that workstream. Original claims and evidence limits remain in the fintech evidence register.
+
+Fintech decks accept `?route=client#slide-N` for a curated sequence. Original anchors, slide picker and full PDF order remain available. `tools/visual-story-browser-test.cjs` checks dependency/model agreement, scoped trial links, artifact deep links, setup/test failure paths, guided navigation, mobile overflow and no-JavaScript access in Chromium and WebKit. Run it against the built site with `QE_TEST_URL` when the preview uses a non-default port.

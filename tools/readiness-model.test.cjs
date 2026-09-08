@@ -3,7 +3,7 @@ const data=require('../_data/adoption.json'),{assess}=require('../assets/js/read
 const levels=n=>Object.fromEntries(data.dependencies.map(d=>[d.id,n]));
 test('every workflow and source points to an explicit adoption assumption',()=>{
  assert.equal(data.dependencies.length,12);assert.equal(new Set(data.dependencies.map(d=>d.id)).size,12);
- assert.equal(data.workflows.length,8);
+ assert.equal(data.workflows.length,9);
  for(const flow of data.workflows)for(const id of flow.needs)assert.ok(data.dependencies.some(d=>d.id===id),`${flow.id}: ${id}`);
  for(const dependency of data.dependencies){for(const field of ['owner','assumption','evidence','action','harbor'])assert.ok(dependency[field]);for(const id of dependency.sources)assert.ok(data.sources.some(s=>s.id===id));}
 });
@@ -27,4 +27,11 @@ test('AI access and funded measurement are prerequisites even for draft workflow
 test('invalid or missing maturity inputs remain unknown',()=>{
  for(const value of [-1,4,NaN,2.5,'3',null]){const current=levels(3);current.ai=value;assert.equal(assess(data,'reporting','pilot',current).gaps[0].level,0);}
  assert.throws(()=>assess(data,'missing','pilot',{}));assert.throws(()=>assess(data,'design','invalid',{}));
+});
+
+test('diagnosis-only evidence review does not require an execution environment',()=>{
+ const current=levels(3); for(const id of ['infra','devops','data','automation'])current[id]=0;
+ assert.equal(assess(data,'diagnosis','pilot',current).ready,true);
+ assert.equal(assess(data,'triage','pilot',current).ready,false);
+ current.evidence=0; assert.equal(assess(data,'diagnosis','pilot',current).ready,false);
 });

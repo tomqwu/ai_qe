@@ -304,8 +304,8 @@
       "gate": "Reviewers can trace every material claim to evidence, and product defects remain visible.",
       "fail": "Pause if the tool invents a cause, hides an unresolved failure or collapses distinct product defects.",
       "question": "How much time is spent finding evidence versus making the actual diagnosis?",
-      "modernization": "QE modernization for this scope: reliable test outcomes, stable run IDs, retained logs/traces, known defect dispositions and named owners for tests, data and environments. Recommendations stay in shadow mode until their accuracy is reviewed; missing diagnostics require remediation first.",
-      "readiness_workflow": "triage"
+      "modernization": "QE modernization for this scope: reliable test outcomes, stable run IDs, retained logs/traces, known defect dispositions and named owners for tests, data and environments. Recommendations stay in shadow mode until their accuracy is reviewed; missing diagnostics require remediation first. This diagnostic-only trial does not execute fixes or retests; assess Triage & retest separately before expanding its scope.",
+      "readiness_workflow": "diagnosis"
     }
   ],
   "flow": [

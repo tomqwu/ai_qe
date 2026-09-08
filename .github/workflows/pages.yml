@@ -61,6 +61,7 @@ jobs:
           node tools/readiness-browser-test.cjs
           node tools/modernization-browser-test.cjs
           node tools/fintech-evidence-browser-test.cjs
+          node tools/visual-story-browser-test.cjs
           node tools/dictionary-test.cjs
           node tools/fintech-browser-test.cjs
           node tools/architecture-demo/browser-test.cjs

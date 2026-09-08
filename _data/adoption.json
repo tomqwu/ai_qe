@@ -166,7 +166,7 @@
       "group": "Operate the work",
       "owner": "QA platform product owner",
       "assumption": "Reusable connectors, templates, data and runner services have an owner, support model, version policy and capacity for onboarding teams.",
-      "evidence": "A second team onboards without the pilot authors; support, upgrade, license and concurrency limits are tested and budgeted.",
+      "evidence": "For a pilot, demonstrate an owned service with usable capacity and reviewed versions. For scale, a second team onboards without the pilot authors; support, upgrade, license and concurrency limits are tested and budgeted.",
       "action": "Name the service owner and first support boundary; sequence adoption by capacity rather than enabling every team at once.",
       "example": "A supported QA service catalog over the existing stack; Kubernetes and a vector database are optional design choices",
       "harbor": "A shared QA service is proposed. Cross-team reuse and support coverage have not been demonstrated.",
@@ -281,6 +281,19 @@
       ]
     },
     {
+      "id": "diagnosis",
+      "title": "Failure diagnosis only",
+      "output": "Reviewed evidence-linked diagnoses from retained failures; no execution or retest",
+      "needs": [
+        "intent",
+        "testability",
+        "ai",
+        "people",
+        "evidence",
+        "measurement"
+      ]
+    },
+    {
       "id": "triage",
       "title": "Triage & retest",
       "output": "Evidence-linked diagnosis and independently verified retest",
@@ -288,6 +301,7 @@
         "intent",
         "infra",
         "devops",
+        "virtualization",
         "data",
         "testability",
         "automation",

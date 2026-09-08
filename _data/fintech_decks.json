@@ -57,28 +57,12 @@
     },
     {
       "title": "AI assistance across the release",
-      "visual": null,
+      "visual": "operating-model",
       "lead": "",
-      "rows": [
-        [
-          "Prepare",
-          "Clarify requirements, draft scenarios, prepare data and diagnose environment readiness."
-        ],
-        [
-          "Deliver",
-          "Draft framework tests, recommend execution scope and summarize failures."
-        ],
-        [
-          "Decide",
-          "Review money-movement evidence and resolve outstanding defects before release."
-        ]
-      ],
-      "columns": [
-        "Work",
-        "Proposed assistance"
-      ],
+      "rows": null,
+      "columns": null,
       "points": null,
-      "note": "The eight-stage walkthrough contains inputs, outputs, technology examples and a named human check for each stage.",
+      "note": "The same 75-person organization gains reusable capability. Client effort, waiting and value remain to be measured.",
       "sources": "",
       "chapter": ""
     },
@@ -195,8 +179,8 @@
     },
     {
       "title": "Adoption depends on funded foundations",
-      "visual": "adoption",
-      "lead": "Validate the selected workflow before promising a rollout.",
+      "visual": "dependency-scopes",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
@@ -538,8 +522,8 @@
     },
     {
       "title": "Platform prerequisites for the pilot",
-      "visual": "adoption",
-      "lead": "Twelve dependency areas connect the platform to each QA workflow.",
+      "visual": "dependency-scopes",
+      "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
@@ -601,6 +585,28 @@
       "note": "Use comparable tasks inside the proposed pilot. Include failures and review effort; retain the existing mandatory payment checks.",
       "sources": "",
       "chapter": "Fintech evidence and adoption"
+    },
+    {
+      "title": "The runtime from setup to cleanup",
+      "visual": "runtime-lifecycle",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Repeatable execution is a platform capability. Retain failure evidence and attempt cleanup on every path; real integration remains separate.",
+      "sources": "",
+      "chapter": "Connected architecture walkthrough"
+    },
+    {
+      "title": "Connect the tools behind the platform",
+      "visual": "integration-architecture",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Proposed integration. Validate access; fund context adapters and joined evidence.",
+      "sources": "",
+      "chapter": "Connected architecture walkthrough"
     }
   ]
 }

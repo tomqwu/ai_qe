@@ -1,0 +1,240 @@
+{
+  "disclosure": "Authored Harbor design and sample artifacts. No live client integration or measured outcome is claimed.",
+  "map_columns": [
+    "design",
+    "automation",
+    "diagnosis",
+    "triage"
+  ],
+  "dependency_groups": [
+    {
+      "id": "test-strategy",
+      "dependencies": [
+        "intent",
+        "testability",
+        "automation"
+      ]
+    },
+    {
+      "id": "environments",
+      "dependencies": [
+        "infra",
+        "devops"
+      ]
+    },
+    {
+      "id": "virtual-services",
+      "dependencies": [
+        "virtualization"
+      ]
+    },
+    {
+      "id": "data",
+      "dependencies": [
+        "data"
+      ]
+    },
+    {
+      "id": "delivery-evidence",
+      "dependencies": [
+        "devops",
+        "evidence"
+      ]
+    },
+    {
+      "id": "platform-people",
+      "dependencies": [
+        "platform",
+        "people"
+      ]
+    }
+  ],
+  "architecture": [
+    {
+      "title": "Approved QA context",
+      "stack": "Azure Boards / Test Plans + repository",
+      "role": "system",
+      "status": "Assumed existing tools",
+      "owner": "Product + domain QA",
+      "output": "Story and test revisions"
+    },
+    {
+      "title": "Context assembly",
+      "stack": "Versioned templates + context adapter",
+      "role": "system",
+      "status": "Build · integration service",
+      "owner": "QA platform owner",
+      "output": "Prompt + source IDs"
+    },
+    {
+      "title": "AI workbench",
+      "stack": "Approved assistant / model endpoint",
+      "role": "ai",
+      "status": "Validate access · configure",
+      "owner": "AI platform owner",
+      "output": "Candidate test + provenance"
+    },
+    {
+      "title": "Human review",
+      "stack": "Domain check + reviewed pull request",
+      "role": "human",
+      "status": "Assumed review · extend checks",
+      "owner": "Domain QA + automation engineer",
+      "output": "Approved test commit"
+    },
+    {
+      "title": "CI and test runners",
+      "stack": "Azure Pipelines · JUnit / REST Assured · Playwright",
+      "role": "system",
+      "status": "Assumed tools · integrate",
+      "owner": "DevOps + application engineers",
+      "output": "Assertions + run manifest"
+    },
+    {
+      "title": "Evidence catalog",
+      "stack": "Pipeline artifacts + Test Plans links",
+      "role": "evidence",
+      "status": "Build · joined evidence",
+      "owner": "QA + release owner",
+      "output": "Accountable release review"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "requirements",
+      "name": "Accepted payment rule",
+      "ref": "PAY-142 / rule-r3",
+      "content": "Requirement: retry an accepted payment after a timeout.\nKey: same request key + same amount → same transfer ID.\nExpected: one journal; payer 90000, recipient 10000 minor units.\nOpen question: key-retention period requires product agreement.",
+      "check": "Expected financial behavior is agreed independently of the generated test. Open questions remain visible.",
+      "handoff": "Approved rule-r3 → domain QA; unresolved rules return to the product owner."
+    },
+    {
+      "id": "design",
+      "name": "Scenario matrix",
+      "ref": "PAY-142 / scenarios-r2",
+      "content": "C1  Timeout → same-key retry    → one transfer\nC2  Concurrent same-key calls   → one transfer\nC3  Same key, different amount  → reject conflict\nC4  Repeated provider callback → one posting",
+      "check": "The matrix includes independent outcomes, concurrency and changed-payload behavior.",
+      "handoff": "Reviewed scenarios-r2 → automation and fixture owners."
+    },
+    {
+      "id": "data",
+      "name": "Synthetic fixture",
+      "ref": "PAY-142 / fixtures-r4",
+      "content": "run_id: sample-142\ncurrency: CAD\npayer_start: 100000 minor units\nrecipient_start: 0 minor units\namount: 10000 minor units\nreset: isolated accounts recreated per run",
+      "check": "Balances and account relationships are valid; separate runs do not share mutable fixtures.",
+      "handoff": "fixtures-r4 + account IDs → the environment preflight."
+    },
+    {
+      "id": "environment",
+      "name": "Run preflight",
+      "ref": "PAY-142 / environment-r2",
+      "content": "app_build: payment-example-a1\nfixture_rev: fixtures-r4\nprovider_model: accepted-then-timeout-r2\nreadiness: app + database health checks required\nretention: evidence stored outside disposable resources\ncleanup_owner: platform on-call",
+      "check": "The provider substitute reproduces the intended failure. The real provider and settlement still need separate checks.",
+      "handoff": "Pinned manifest + usable environment → CI runner."
+    },
+    {
+      "id": "automation",
+      "name": "Reviewed test change",
+      "ref": "PAY-142 / candidate-r1 → review-r2",
+      "content": "AI candidate r1: assert response.status == 200\nReviewer: insufficient; this can miss a duplicate posting.\nRevision r2: assert same transfer ID on retry\n             assert journal count == 1\n             assert balances == 90000 / 10000\nChallenge: deliberate duplicate-posting variant MUST FAIL",
+      "check": "A candidate cannot weaken required assertions or skip the deliberate-defect check. This is sample pseudocode.",
+      "handoff": "Reviewed commit → CI; rejected candidates return to the author."
+    },
+    {
+      "id": "execution",
+      "name": "Original run receipt",
+      "ref": "PAY-142 / sample-run-142",
+      "content": "Candidate: review-r2\nCorrect behavior fixture: required assertions PASS\nDeliberate duplicate variant: journal count 2 → FAIL (expected)\nCandidate disposition: challenge detects the known defect\nRequired suite: other cases must still complete\nEvidence: manifest + assertions + logs",
+      "check": "These are illustrative receipts, not executed results. Detecting the injected defect does not establish complete coverage.",
+      "handoff": "Original receipt + artifact links → QA triage and reviewer."
+    },
+    {
+      "id": "triage",
+      "name": "Evidence-linked disposition",
+      "ref": "PAY-142 / sample-defect-17",
+      "content": "AI draft: duplicate journal observed after retry.\nEvidence: sample-run-142 / assertion journal_count=2\nUncertainty: root cause not established by this assertion.\nHuman disposition: developer investigates transaction handling.\nRetest: new build + fresh run; old failure stays retained.",
+      "check": "The diagnosis is traceable and uncertainty is preserved. A suggested fix does not close the defect.",
+      "handoff": "Named developer + reproducible failure → fix, fresh retest and domain review."
+    },
+    {
+      "id": "reporting",
+      "name": "Release evidence receipt",
+      "ref": "PAY-142 / sample-release-review",
+      "content": "Requirement: rule-r3\nScenarios: scenarios-r2 / all required cases accounted for\nTest + fixture + build: linked in run manifest\nDefects: dispositions + fresh retest links required\nProvider / settlement: separate evidence required\nDecision: HOLD while required evidence is missing",
+      "check": "The release owner resolves required checks and exceptions. An AI summary cannot override a missing result.",
+      "handoff": "Reviewed evidence + explicit decision → accountable release owner."
+    }
+  ],
+  "lifecycle": [
+    {
+      "title": "Create and check",
+      "detail": "Pin the build, tests and configuration. Provision supported resources and wait for health checks."
+    },
+    {
+      "title": "Seed and configure",
+      "detail": "Create isolated synthetic accounts. Load the owned, versioned virtual-provider behavior."
+    },
+    {
+      "title": "Execute and challenge",
+      "detail": "Run required tests. The deliberate duplicate-posting variant must fail its independent assertion."
+    },
+    {
+      "title": "Retain and review",
+      "detail": "Keep original assertions, setup diagnostics and run IDs outside disposable resources. Review omissions."
+    },
+    {
+      "title": "Clean up on every path",
+      "detail": "Attempt teardown after success or failure. Escalate failed cleanup to the named platform owner."
+    },
+    {
+      "title": "Reconcile integration",
+      "detail": "Check the real provider and settlement separately. Contract drift triggers model review and rerun."
+    }
+  ],
+  "case_stories": {
+    "libra": [
+      "Requirement-to-case preparation",
+      "AI-generated cases in the existing toolchain",
+      "Reported: 35% less test-creation time"
+    ],
+    "goldman": [
+      "Legacy Java regression coverage",
+      "AI-generated unit-test candidates",
+      "Reported: selected module coverage 36% → 72%"
+    ],
+    "fiserv": [
+      "Shared testing and delivery reliability",
+      "QE centre of excellence + integrated tooling",
+      "Reported: 65% fewer major incidents"
+    ]
+  },
+  "routes": {
+    "evp": [
+      1,
+      15,
+      3,
+      6,
+      5,
+      13,
+      14,
+      16,
+      12
+    ],
+    "technical": [
+      1,
+      2,
+      3,
+      26,
+      4,
+      8,
+      21,
+      25,
+      19,
+      20,
+      15,
+      23,
+      24,
+      18
+    ]
+  }
+}

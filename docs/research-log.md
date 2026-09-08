@@ -9,6 +9,14 @@ description: Dated entries recording what was verified, when, what changed, and 
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+## 2026-09-08: Connected visual explanation (v1.12.0)
+
+Reused the existing financial-services source register and Harbor assumptions to connect modernization, AI workflows, tool integration and daily QA artifacts. The dependency matrix derives workflow requirements from the readiness model. Diagnostic-only evidence review now has a distinct scope; execution and retest additionally require repeatable environments, controlled dependencies, fixtures and runners.
+
+Added authored PAY-142 samples, a before/after operating model, offshore handoffs, an execution lifecycle with failure/cleanup paths and a concrete proposed tool architecture. None is a deployed client system or a measured outcome. Libra, Goldman Sachs and Fiserv visual summaries reuse their existing attributed findings and retain evidence limitations; broader modernization results are not presented as AI-attributed savings. Source-review dates and the existing research companion remain unchanged.
+
+Guided audience routes preserve the original slide anchors and full-library order. Shared role styling distinguishes AI, human review, real software, virtual services, evidence and failure. The new views are native HTML/CSS so labels stay readable and offline editions retain the explanation.
+
 ## 2026-09-07: Explicit modernization dependencies (v1.11.1)
 
 Clarified the fintech adoption proposal using the existing six QE modernization workstreams and readiness register. Rechecked DORA's [test automation](https://dora.dev/capabilities/test-automation/) and [test data management](https://dora.dev/capabilities/test-data-management/) guidance. The workflow mappings and readiness decisions are authored proposal rules; no additional client result or savings claim is introduced. Each trial brief now carries modernization prerequisites, a scoped assessment link and the requirement to fund unresolved execution dependencies.
