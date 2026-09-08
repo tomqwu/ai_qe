@@ -220,6 +220,17 @@
       "note": "Choose one entry point, validate its prerequisites and agree how reviewers will judge the result. Wider rollout depends on local evidence.",
       "sources": "",
       "chapter": "Fintech evidence and adoption"
+    },
+    {
+      "title": "Four layers of AI-assisted QE",
+      "visual": "ai-layers",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Authored adoption roadmap. Expand with evidence; platform foundations begin on day one. No fixed timeline or savings claim.",
+      "sources": "AL1,AL2,AL3,AL4",
+      "chapter": "The AI adoption roadmap"
     }
   ],
   "technical": [
@@ -618,6 +629,17 @@
       "note": "Pilot target. AI drafts; people approve intent and changes; assertions verify the payment outcome.",
       "sources": "S2,S5,S6,S7",
       "chapter": "Before and after the API pilot"
+    },
+    {
+      "title": "How the four AI adoption layers connect",
+      "visual": "ai-layer-architecture",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Proposed integration paths. The CI assistant is read-only; bounded agents need isolated tools, independent checks and human approval.",
+      "sources": "AL1,AL2,AL3,AL4",
+      "chapter": "The AI adoption roadmap"
     }
   ]
 }

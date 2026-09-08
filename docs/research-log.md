@@ -9,6 +9,17 @@ description: Dated entries recording what was verified, when, what changed, and 
 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
+
+## 8 September 2026 — Four layers of AI-assisted QE
+
+**Question.** How can leadership distinguish individual test-writing assistance, AI within CI reports, bounded task agents and a shared platform without treating them as a fixed vendor maturity ladder?
+
+**Checked.** GitHub's test-writing tutorial, Copilot cloud-agent overview and agent application card; Microsoft’s Publish Test Results v2 documentation. Reviewed on 8 September 2026. Canonical URLs and supported capability notes are recorded in `_data/ai_adoption.json`; no publisher originals were redistributed.
+
+**Synthesis.** Use four capability layers: assist a person, connect a workflow, delegate a bounded task and scale a supported platform. Platform foundations begin at every layer and a platform can scale read-only assistance without adopting agents. Classify by delegated actions and integration, rather than product brand. The Azure result publisher supplies evidence; the AI diagnosis adapter and client agent paths are proposed integration work.
+
+**Destinations.** `/ai-adoption/` provides a selectable PAY-142 walkthrough and evidence gates; fintech executive slide 17 and technical slide 28 explain progression and architecture. The case, navigation, modernization and readiness pages connect this roadmap to the existing dependencies. No observed client maturity, universal timeline or savings uplift is inferred from product documentation.
+
 ## 2026-09-08: Connected visual explanation (v1.12.0)
 
 Reused the existing financial-services source register and Harbor assumptions to connect modernization, AI workflows, tool integration and daily QA artifacts. The dependency matrix derives workflow requirements from the readiness model. Diagnostic-only evidence review now has a distinct scope; execution and retest additionally require repeatable environments, controlled dependencies, fixtures and runners.
