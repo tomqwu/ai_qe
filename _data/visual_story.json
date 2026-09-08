@@ -218,11 +218,13 @@
       13,
       14,
       16,
+      10,
       12
     ],
     "technical": [
       1,
       2,
+      27,
       3,
       26,
       4,
@@ -236,5 +238,78 @@
       24,
       18
     ]
+  },
+  "api_comparison": {
+    "intent": "One retry → one transfer → independently checked balances",
+    "before": {
+      "title": "Before · manual API QA",
+      "steps": [
+        {
+          "title": "Assemble cases",
+          "description": "QA copies scenarios and builds requests by hand.",
+          "stack": "Azure Boards → spreadsheets / manual API requests"
+        },
+        {
+          "title": "Run and investigate",
+          "description": "Shared data and provider availability shape the run.",
+          "stack": "Shared Azure test environment → provider sandbox"
+        },
+        {
+          "title": "Reconcile evidence",
+          "description": "QA collects logs and chases defect and release owners.",
+          "stack": "Screenshots + log files → release spreadsheet"
+        }
+      ]
+    },
+    "after": {
+      "title": "After · target pilot workflow",
+      "steps": [
+        {
+          "title": "Draft, then review",
+          "description": "AI proposes cases; domain QA checks the payment intent.",
+          "stack": "Approved PAY-142 context → AI draft → reviewed commit"
+        },
+        {
+          "title": "Run repeatable tests",
+          "description": "CI runs reviewed assertions with isolated data and controlled faults.",
+          "stack": "Azure Pipelines + REST Assured / JUnit + Testcontainers / WireMock"
+        },
+        {
+          "title": "Review linked proof",
+          "description": "AI summarizes evidence; named owners decide on defects and release.",
+          "stack": "Run ID + assertions + traces → accountable review"
+        }
+      ]
+    },
+    "dependency": "Enable the target: versioned builds, resettable test data, validated provider stubs, CI access and reviewers. Keep real-provider integration checks.",
+    "disclosure": "Illustrative before/after design for the FinTech Client scenario. The after state is a pilot target; elapsed time, effort and quality outcomes have not been measured.",
+    "slide_dependency": "Requires CI, isolated data, validated provider stubs and reviewers. Keep real integration checks."
+  },
+  "pilot_time": {
+    "title": "Observed time framework for the API pilot",
+    "status": "Observation status: not yet recorded",
+    "description": "A framework for collecting actual API pilot timings. The windows below are illustrative planning inputs, not observed client durations.",
+    "phases": [
+      {
+        "window": "Planning window · weeks 1–2",
+        "title": "Observe the baseline",
+        "observe": "Record API test preparation, active effort, waits and rework for one comparable pack.",
+        "gate": "Reviewed API scope + usable baseline"
+      },
+      {
+        "window": "Planning window · weeks 3–8",
+        "title": "Run the API pilot",
+        "observe": "Record setup separately; measure review, execution, triage and retest over repeated packs.",
+        "gate": "Required assertions pass + comparable run evidence"
+      },
+      {
+        "window": "Planning window · weeks 9–12",
+        "title": "Confirm repeatability",
+        "observe": "Measure second-team setup, support effort and repeat runs before choosing the next scope.",
+        "gate": "Reusable pattern + evidence-based next step"
+      }
+    ],
+    "record": "Record actual dates and elapsed time; track active person-hours, waiting reasons, review and rework separately.",
+    "dependency": "Readiness controls the pace: environment, data, virtualization, CI and reviewer gaps can extend a phase. Advance on evidence, not the calendar."
   }
 }

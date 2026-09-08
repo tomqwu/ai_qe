@@ -157,10 +157,30 @@ Tool, cloud and vendor charges are excluded. Staff hours recovered are not autom
 | Weeks 3–8: payment pilot | Context adapter, test matrix, synthetic fixtures, provider stub, reviewed framework changes and pipeline evidence | At least two comparable assisted packs, with matched conventional tasks as a reference. All required payment checks run; the duplicate-posting fault fails. |
 | Weeks 9–12: reuse trial | Second-squad onboarding, maintained templates, operating ownership and rollout backlog | The second squad runs and maintains the pattern without its original authors. Net capacity remains positive and quality evidence remains trustworthy. |
 
-The twelve weeks are a proposed planning sequence. Extend the measurement period if release volume, environment incidents or task differences make the evidence inconclusive. Pause expansion for an escaped money-movement defect, unreliable fixtures or a test that passes the deliberately broken variant. Small samples inform the next delivery decision with uncertainty; they do not establish an industry productivity rate.
+The API pilot windows are illustrative planning inputs, not observed client durations. Extend the measurement period if release volume, environment incidents or task differences make the evidence inconclusive. Pause expansion for an escaped money-movement defect, unreliable fixtures or a test that passes the deliberately broken variant. Small samples inform the next delivery decision with uncertainty; they do not establish an industry productivity rate.
 
-This offers a concrete progression of work: an assessment with a usable baseline, a pilot with reviewable artifacts and measured outcomes, then a rollout tied to application readiness. It avoids a headcount-based savings promise and gives the senior director a specific delivery decision at each phase.
+This offers a concrete progression of work: an assessment with a usable baseline, a pilot with reviewable artifacts and measured outcomes, then a rollout tied to application readiness. It avoids a headcount-based savings promise and gives the team a specific delivery decision at each phase.
+
+## Observed time framework for the API pilot
+{: #pilot-time-observations }
+
+{{ site.data.visual_story.pilot_time.description }}
+
+{% include fintech/roadmap.html %}
+
+Use one record per comparable API test pack. Retain failed runs and foundation work, and record the observation source instead of treating elapsed weeks as effort saved.
+
+| Observation | What to record | Current status |
+|---|---|---|
+| Scope and comparability | Pack ID, acceptance rules, test count, complexity and conventional or assisted approach | Not recorded |
+| Calendar time | Actual start/end dates and elapsed hours for each phase | Not recorded |
+| Human effort | Preparation, review, correction, triage and retest in person-hours | Not recorded |
+| Waiting and prerequisites | Environment, data, provider and reviewer waits with reasons | Not recorded |
+| Foundation and operation | One-time setup effort, recurring support and runner time separately | Not recorded |
+| Quality and reuse | Mandatory assertions, detected faults, escaped defects and second-team handoff | Not recorded |
+
+{{ site.data.visual_story.pilot_time.dependency }} Compare like-for-like packs and report modernization effects separately from incremental AI assistance.
 
 ## External evidence and the client trial
 
-The [financial-services evidence explorer]({{ '/case-studies/fintech/evidence/' | relative_url }}) separates direct AI testing cases from modernization and adjacent engineering results. Use its trial selector to agree the first workflow, reviewer and acceptance criteria. Peer figures do not replace FinTech Client’s illustrative inputs or supply a client forecast. The existing 12-week planning sequence remains a proposal conditional on readiness.
+The [financial-services evidence explorer]({{ '/case-studies/fintech/evidence/' | relative_url }}) separates direct AI testing cases from modernization and adjacent engineering results. Use its trial selector to agree the first workflow, reviewer and acceptance criteria. Peer figures do not replace FinTech Client’s illustrative inputs or supply a client forecast. Record actual API pilot dates and effort against the illustrative planning windows; readiness and sufficient evidence determine progression.
