@@ -55,16 +55,16 @@ jobs:
           mkdir -p /tmp/qe-preview
           ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
           python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
+          node tools/fintech-browser-test.cjs
+          node tools/ai-adoption-browser-test.cjs
           node tools/browser-smoke.cjs
           node tools/sales-navigation-test.cjs
           node tools/search-navigation-test.cjs
           node tools/readiness-browser-test.cjs
-          node tools/ai-adoption-browser-test.cjs
           node tools/modernization-browser-test.cjs
           node tools/fintech-evidence-browser-test.cjs
           node tools/visual-story-browser-test.cjs
           node tools/dictionary-test.cjs
-          node tools/fintech-browser-test.cjs
           node tools/architecture-demo/browser-test.cjs
       - name: Check site links and search index
         run: python tools/verify_site.py _site

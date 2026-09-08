@@ -66,11 +66,11 @@
 /* Slide units follow the existing container-sized master; no global typography overrides. */
 .fintech-deck .al-map, .fintech-deck .al-architecture { margin:0; }
 .fintech-deck .al-levels { gap:1.3cqw; }
-.fintech-deck .al-levels a { border-top-width:.4cqw; padding:1.5cqw 1.3cqw; border-radius:.5cqw; }
+.fintech-deck .al-levels a { border-top-width:.4cqw; padding:1.1cqw 1.3cqw; border-radius:.5cqw; }
 .fintech-deck .al-number { width:3cqw; height:3cqw; font-size:1.8cqw; }
 .fintech-deck .al-verb { font-size:1.1cqw; margin:1cqw 0 .5cqw; }
 .fintech-deck .al-levels strong { font-size:2cqw; min-height:2.4em; }
-.fintech-deck .al-example { font-size:1.45cqw; margin:1cqw 0 1.4cqw; }
+.fintech-deck .al-example { font-size:1.45cqw; margin:.8cqw 0 1cqw; }
 .fintech-deck .al-gate { font-size:1.3cqw; padding-top:.8cqw; min-height:4.8em; }
 .fintech-deck .al-gate b { font-size:.95cqw; margin-bottom:.4cqw; }
 .fintech-deck .al-foundation { padding:1cqw 1.4cqw; margin-top:1.4cqw; gap:.4cqw 1.6cqw; }
