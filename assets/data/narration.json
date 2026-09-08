@@ -1,0 +1,7 @@
+{
+  "edition": "audition-1",
+  "decks": {
+    "evp": {"label": "Executive narration", "slides": {}},
+    "technical": {"label": "Technical narration", "slides": {}}
+  }
+}

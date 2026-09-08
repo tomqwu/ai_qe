@@ -57,6 +57,7 @@ jobs:
           python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
           node tools/fintech-browser-test.cjs
           node tools/ai-adoption-browser-test.cjs
+          node tools/check_narration.cjs
           node tools/browser-smoke.cjs
           node tools/sales-navigation-test.cjs
           node tools/search-navigation-test.cjs

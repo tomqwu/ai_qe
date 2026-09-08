@@ -1,0 +1,42 @@
+/* Recorded narration lives below the slide, with its own reserved space. */
+.narration-panel { width:min(calc(100vw - 32px),1200px); color:#173643; background:#fcfcfa; border:1px solid #b9ceca; border-top:3px solid #087875; border-radius:6px 6px 0 0; padding:7px 12px 5px; z-index:22; }
+.narration-panel[hidden] { display:none!important; }
+.narration-caption { display:flex; align-items:center; justify-content:center; text-align:center; margin:0 auto 5px; min-height:48px; max-width:76ch; line-height:1.25; font-size:17px; font-weight:550; color:#fff; background:#173643; border-radius:4px; padding:2px 12px; white-space:pre-line; overflow:hidden; }
+.narration-caption:empty::before { content:'English subtitles'; color:#bed3dd; font-size:13px; font-weight:400; }
+.narration-panel[data-captions=off] .narration-caption:empty::before { content:'English subtitles off · Select CC to show'; }
+.narration-controls { display:flex; gap:8px; align-items:center; }
+.narration-controls button,.narration-controls select { font:inherit; font-size:13px; min-height:32px; padding:3px 9px; background:#fff; color:#173643; border:1px solid #9db9b8; border-radius:4px; white-space:nowrap; }
+.narration-controls [data-narration-play] { min-width:84px; background:#087875; color:#fff; border-color:#087875; font-weight:650; }
+.narration-controls [data-narration-cc][aria-pressed=true] { color:#fff; background:#173643; border-color:#173643; }
+.narration-seek { flex:1; min-width:54px; }
+.narration-seek input { display:block; accent-color:#087875; width:100%; cursor:pointer; margin:0; min-height:32px; }
+.narration-time { font-variant-numeric:tabular-nums; white-space:nowrap; font-size:12px; }
+.narration-auto { display:flex; align-items:center; gap:3px; font-size:12px; white-space:nowrap; }
+.narration-auto input { accent-color:#087875; width:16px; height:16px; }
+.narration-meta { display:flex; justify-content:space-between; gap:10px; align-items:center; min-height:21px; }
+.narration-meta p { font-size:12px; line-height:1.25; margin:3px 0 0; }
+.narration-meta button { flex-shrink:0; padding:0; border:0; font-size:12px; background:transparent; color:#096d69; text-decoration:underline; text-underline-offset:2px; }
+.narration-panel :focus-visible { outline:3px solid #a76715; outline-offset:3px; }
+.narration-transcript-dialog { width:min(720px,calc(100vw - 32px)); max-height:80dvh; padding:24px; border:1px solid #a7bdba; border-radius:8px; color:#173643; background:#fcfcfa; }
+.narration-transcript-dialog::backdrop { background:#102632b3; }
+.narration-transcript-dialog h2 { margin:0 0 16px; font-size:24px; }
+.narration-transcript-dialog p { white-space:pre-line; font-size:18px; line-height:1.6; }
+@media screen and (min-width:701px) {
+  .deck-page.has-narration { --frame-width:min(calc(100vw - 32px),calc((100dvh - 112px - var(--narration-height,116px)) * 16 / 9)); padding-bottom:calc(64px + var(--narration-height,116px)); }
+  .deck-page.has-narration.has-flow-controls { --frame-width:min(calc(100vw - 32px),calc((100dvh - 160px - var(--narration-height,116px)) * 16 / 9)); }
+  .narration-panel { position:fixed; bottom:56px; left:50%; transform:translateX(-50%); }
+  .has-narration .deck-flow-bar:not([hidden]) { bottom:calc(56px + var(--narration-height,116px)); }
+  .has-narration .deck-message { bottom:calc(60px + var(--narration-height,116px)); }
+}
+@media screen and (max-width:700px) {
+  .narration-panel { width:calc(100vw - 24px); margin:12px auto; padding:10px; }
+  .narration-caption { font-size:16px; min-height:48px; padding:4px 8px; }
+  .narration-controls { flex-wrap:wrap; gap:7px; }
+  .narration-controls button,.narration-controls select { min-height:40px; font-size:14px; }
+  .narration-seek { order:1; flex-basis:calc(100% - 92px); }
+  .narration-time { order:2; margin-left:auto; }
+  .narration-auto { font-size:13px; margin-left:auto; }
+  .narration-meta { gap:8px; margin-top:5px; align-items:start; }
+  .narration-meta button { min-height:32px; }
+}
+@media print { .narration-panel,.narration-transcript-dialog { display:none!important; } }
