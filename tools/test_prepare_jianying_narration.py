@@ -20,7 +20,7 @@ class JianyingPreparationTests(unittest.TestCase):
         source = ROOT / 'assets/data/narration-scripts.json'
         data = json.loads(source.read_text())
         with tempfile.TemporaryDirectory() as tmp:
-            for audience in ('audition', 'evp', 'technical'):
+            for audience in ('audition', 'evp', 'technical', 'industry-evp', 'industry-technical'):
                 output = Path(tmp) / audience
                 result = prepare(source, output, audience)
                 scripts = {'audition': data['audition']} if audience == 'audition' else data['decks'][audience]

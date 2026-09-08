@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.280
+Failure semantics are
+part of the interface.
+
+00:00:02.353 --> 00:00:06.880
+After an unknown result, inspect status
+before retrying instead of launching
+
+00:00:06.936 --> 00:00:11.200
+duplicate work. Stale policy
+requires renewed authorization.
+
+00:00:11.310 --> 00:00:13.441
+Missing evidence holds promotion.
+
+00:00:13.880 --> 00:00:18.000
+A changed artifact or oracle
+invalidates old evaluation results.
+
+00:00:18.133 --> 00:00:22.880
+Recovery proceeds through an owned queue
+and the failing scenario is exercised
+
+00:00:22.937 --> 00:00:26.400
+before resumption. These
+behaviors keep an unavailable
+
+00:00:26.458 --> 00:00:29.760
+dependency from becoming
+an unexplained success.

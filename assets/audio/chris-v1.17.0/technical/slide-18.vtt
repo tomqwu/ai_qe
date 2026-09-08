@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.200
+Use the architecture questions
+to expose unresolved decisions.
+
+00:00:03.320 --> 00:00:06.240
+Where is idempotency
+enforced across the API,
+
+00:00:06.311 --> 00:00:10.080
+provider request,
+journal and callback handler?
+
+00:00:10.160 --> 00:00:13.360
+Which artifact proves one
+posting after a lost response?
+
+00:00:13.580 --> 00:00:17.760
+Can two engineers reproduce the same
+failure from fresh fixtures?
+
+00:00:18.020 --> 00:00:23.240
+Who owns provider-model drift,
+failed cleanup and evidence retention?
+
+00:00:23.315 --> 00:00:25.680
+Resolve these questions
+with the client system owners
+
+00:00:25.726 --> 00:00:28.320
+before giving an agent
+broader execution authority.

@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.200
+Correlation lets a reviewer
+follow the failure across systems.
+
+00:00:03.344 --> 00:00:08.560
+Join the run, test, trace,
+transfer and idempotency key.
+
+00:00:08.656 --> 00:00:13.440
+Link the failing assertion to request
+attempts and committed journal facts,
+
+00:00:13.472 --> 00:00:16.560
+then to the build, fixture
+and provider-model versions.
+
+00:00:16.740 --> 00:00:19.760
+Retries remain separate events
+within the same scenario.
+
+00:00:19.867 --> 00:00:25.120
+Preserve the original artifacts and redact
+sensitive values before AI input.
+
+00:00:25.280 --> 00:00:27.520
+A missing join remains unresolved,
+
+00:00:27.540 --> 00:00:31.200
+and a generated hypothesis cannot
+replace the failed assertion.

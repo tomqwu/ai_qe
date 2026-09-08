@@ -30,16 +30,16 @@
 <link rel="stylesheet" href="{{ '/assets/css/visual-story.css' | relative_url }}?v={{ site.data.release.version }}">
 <script src="{{ '/assets/js/visual-story.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 {% if page.fintech and page.case_audience == "technical" %}<link rel="stylesheet" href="{{ "/assets/css/technical-blueprint.css" | relative_url }}?v={{ site.data.release.version }}">{% endif %}
-{% if page.fintech %}<link rel="stylesheet" href="{{ "/assets/css/qe-outcomes.css" | relative_url }}?v={{ site.data.release.version }}">
+{% if page.fintech %}<link rel="stylesheet" href="{{ "/assets/css/qe-outcomes.css" | relative_url }}?v={{ site.data.release.version }}">{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/narration.css' | relative_url }}?v={{ site.data.release.version }}">
-<script src="{{ '/assets/js/narration.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>{% endif %}
+<script src="{{ '/assets/js/narration.js' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 </head>
-<body class="deck-page {{ page.deck_class }}"{% if page.fintech %} data-narration-manifest="{{ '/assets/data/narration.json' | relative_url }}?v={{ site.data.release.version }}" data-narration-audience="{{ page.case_audience }}" data-site-base="{{ '/' | relative_url }}"{% endif %}>
+<body class="deck-page {{ page.deck_class }}" data-narration-manifest="{{ '/assets/data/narration.json' | relative_url }}?v={{ site.data.release.version }}" data-narration-audience="{{ page.narration_deck }}" data-site-base="{{ '/' | relative_url }}">
   <a class="skip-link" href="#slides">Skip to slides</a>
   <header class="deck-header">
     <a href="{{ '/briefings/' | relative_url }}" target="_top" class="deck-brand" aria-label="AI × QE — return to presentation room">{% include brand/mark.svg %}AI × QE <span class="brand-destination">Briefings</span></a>
     <span class="deck-audience">{{ page.audience }}</span>
-    <div class="deck-tools" hidden>{% include motion-toggle.html %}{% if page.fintech %}<button type="button" data-guided-route aria-pressed="false">Guided story</button>{% endif %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-diagram-tools hidden aria-expanded="false">Diagram controls</button><button type="button" data-notes>Sources &amp; notes</button><button type="button" data-edition>v{{ site.data.release.version }}</button><button type="button" data-fullscreen>Present ↗</button></div>
+    <div class="deck-tools" hidden><button type="button" class="deck-narration-start" data-narration-start hidden aria-pressed="false" title="Narrate from this slide with English subtitles and automatic slide changes">▶ Play narration</button>{% include motion-toggle.html %}{% if page.fintech %}<button type="button" data-guided-route aria-pressed="false">Guided story</button>{% endif %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-diagram-tools hidden aria-expanded="false">Diagram controls</button><button type="button" data-notes>Sources &amp; notes</button><button type="button" data-edition>v{{ site.data.release.version }}</button><button type="button" data-fullscreen>Present ↗</button></div>
   </header>
   <div class="deck-flow-bar" aria-label="Animated flow playback" hidden>
     <button type="button" data-flow-play aria-pressed="false">▶ Play flow</button>

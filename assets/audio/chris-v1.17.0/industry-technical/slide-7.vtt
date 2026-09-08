@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.640
+The context service preserves
+permission and provenance.
+
+00:00:02.711 --> 00:00:06.400
+Retrieve only sources available
+to the current identity,
+
+00:00:06.432 --> 00:00:09.360
+then package minimal task
+evidence with source revisions.
+
+00:00:09.520 --> 00:00:14.440
+Test access revocation, stale
+passages and conflicting information.
+
+00:00:14.530 --> 00:00:17.680
+The runtime treats
+retrieved text as task data.
+
+00:00:17.867 --> 00:00:21.560
+It cannot grant itself tool
+access from a document's wording.
+
+00:00:21.646 --> 00:00:24.880
+Action authorization remains
+a separate check at the gateway,
+
+00:00:24.928 --> 00:00:26.960
+even when retrieval itself was permitted.

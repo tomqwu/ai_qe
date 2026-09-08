@@ -1,0 +1,57 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+On the left, manual API and interface
+runs compete for shared backend services,
+
+00:00:04.064 --> 00:00:07.400
+PostgreSQL accounts
+and limited vendor test slots.
+
+00:00:07.473 --> 00:00:10.320
+There is no backend
+service virtualization.
+
+00:00:10.376 --> 00:00:13.120
+Engineers collect logs
+and screenshots manually.
+
+00:00:13.653 --> 00:00:17.840
+On the right, an approved test commit
+enters a pinned continuous integration
+
+00:00:17.886 --> 00:00:22.080
+runner. The pilot provisions a payment
+service and datastore for each run,
+
+00:00:22.160 --> 00:00:26.320
+resets synthetic balances,
+and uses versioned WireMock behavior
+
+00:00:26.507 --> 00:00:31.680
+to reproduce provider faults. JUnit
+and REST Assured check the transfer,
+
+00:00:31.720 --> 00:00:35.760
+journal and balances.
+An idempotency scenario verifies that
+
+00:00:35.840 --> 00:00:39.600
+a retried payment creates one
+transfer and one balanced journal.
+
+00:00:39.840 --> 00:00:44.560
+Raw assertions, application logs
+and run identifiers survive cleanup.
+
+00:00:45.200 --> 00:00:49.280
+AI assists drafting and evidence
+interpretation under review.
+
+00:00:49.387 --> 00:00:53.760
+Isolated execution and controlled
+dependencies come from quality engineering
+
+00:00:53.817 --> 00:00:58.720
+modernization. Real provider and
+settlement checks remain separate gates.

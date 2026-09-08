@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.840
+Separate reusable services
+from domain-specific knowledge.
+
+00:00:04.160 --> 00:00:06.720
+A shared platform can supply datasets,
+
+00:00:06.778 --> 00:00:10.480
+evaluation runners, identity,
+evidence and recovery tooling.
+
+00:00:10.580 --> 00:00:14.800
+Payment teams still define transaction
+invariants and recovery cases.
+
+00:00:14.893 --> 00:00:18.160
+Other domains own their own
+behavior and acceptance rules.
+
+00:00:18.293 --> 00:00:21.200
+Model and tool adapters
+should remain replaceable.
+
+00:00:21.420 --> 00:00:25.280
+The diagram shows responsibilities,
+not a budget allocation.
+
+00:00:25.456 --> 00:00:28.480
+Fund both the shared
+service and the expertise
+
+00:00:28.542 --> 00:00:30.560
+required to make its output meaningful.

@@ -42,7 +42,7 @@ async function checkBounds(page) {
       page.setDefaultTimeout(12000);
       const errors = []; page.on('pageerror', error => errors.push(error.message));
       let audioFails = false, captionsFail = false, emptyManifest = false, captionGate;
-      await page.route('**/assets/data/narration.json*', route => route.fulfill({ json:{edition:'test-only', decks:emptyManifest ? {} : {evp:{slides:{'slide-17':creditedFixture,'slide-18':creditedFixture}},technical:{slides:{'slide-27':fixture}}}} }));
+      await page.route('**/assets/data/narration.json*', route => route.fulfill({ json:{edition:'test-only', decks:emptyManifest ? {} : {evp:{slides:{'slide-17':creditedFixture,'slide-18':creditedFixture}},technical:{slides:{'slide-27':fixture}},'industry-evp':{slides:{'slide-1':creditedFixture,'slide-2':creditedFixture}},'industry-technical':{slides:{'slide-1':creditedFixture,'slide-2':creditedFixture}}}} }));
       await page.route('**/assets/audio/narration-test.vtt', async route => {
         if (captionGate) await captionGate;
         return route.fulfill({status:captionsFail ? 503 : 200, contentType:'text/vtt', body:captionsFail ? 'Unavailable' : captions});
@@ -112,7 +112,7 @@ async function checkBounds(page) {
       await page.locator('[data-narration-play]').click(); await waitForPlaying(page); await seekNearEnd(page);
       await page.waitForURL(/#slide-19$/);
       assert.equal(await page.locator('.narration-panel').isVisible(),false);
-      assert.match(await page.locator('.deck-message').textContent(),/sample complete/);
+      assert.match(await page.locator('.deck-message').textContent(),/Narration paused/);
       await slide(page,17); await page.locator('[data-narration-play]').click(); await waitForPlaying(page); await seekNearEnd(page);
       await page.waitForURL(/#slide-18$/); await waitForPlaying(page);
       await page.locator('[data-narration-play]').click();
@@ -151,6 +151,29 @@ async function checkBounds(page) {
         await page.locator('[data-narration-play]').scrollIntoViewIfNeeded();
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),`Mobile overflow at ${width}`);
         assert.ok(await page.locator('[data-narration-play]').isVisible());
+      }
+      // The prominent presentation control also works in both industry decks.
+      for (const audience of ['evp', 'technical']) {
+        await page.setViewportSize({width:1280,height:900});
+        await page.goto(base + `/briefings/${audience}/#slide-1`);
+        const start = page.locator('[data-narration-start]');
+        await start.waitFor();
+        assert.equal(await mediaPaused(page),true,'A deck never starts speech without a click');
+        await start.click(); await waitForPlaying(page);
+        assert.match(await start.textContent(),/Pause narration/);
+        await start.click(); assert.equal(await mediaPaused(page),true);
+        await page.locator('[data-reading]').click();
+        await start.click(); await waitForPlaying(page);
+        assert.equal(await page.locator('body').getAttribute('data-deck-mode'),'slides');
+        assert.equal(await page.locator('[data-narration-auto]').isChecked(),true);
+        await seekNearEnd(page); await page.waitForURL(/#slide-2$/); await waitForPlaying(page);
+        await start.click();
+        await checkBounds(page);
+        for (const width of [320,375,700]) {
+          await page.setViewportSize({width,height:812});
+          assert.ok(await start.isVisible(),'Play narration remains in the mobile menu');
+          assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),`Header overflow at ${width}`);
+        }
       }
       await page.emulateMedia({media:'print'});
       assert.equal(await page.locator('.narration-panel').isVisible(),false);

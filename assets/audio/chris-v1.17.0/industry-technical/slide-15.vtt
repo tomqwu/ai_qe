@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.480
+This exercise tests the boundary between
+untrusted content and tool authority.
+
+00:00:04.584 --> 00:00:08.880
+Retrieved documents or tool output
+can contain instructions, but they cannot
+
+00:00:08.949 --> 00:00:13.440
+expand the agent's permissions.
+The runtime proposes an action,
+
+00:00:13.480 --> 00:00:17.280
+and an external gateway checks
+identity, resource and approval.
+
+00:00:17.720 --> 00:00:21.040
+A denied request should
+leave no side effect,
+
+00:00:21.104 --> 00:00:24.880
+terminate or escalate within
+bounds, and retain evidence.
+
+00:00:25.088 --> 00:00:28.240
+Test recovery as well as
+the model's verbal refusal.

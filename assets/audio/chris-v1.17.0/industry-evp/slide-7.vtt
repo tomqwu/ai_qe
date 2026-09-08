@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.040
+Industrial cases reveal
+practices worth testing.
+
+00:00:03.144 --> 00:00:08.080
+Generated tests can pass through build,
+reliability and coverage gates.
+
+00:00:08.196 --> 00:00:12.720
+Diagnostic summaries can cite the log
+lines behind a proposed cause.
+
+00:00:12.933 --> 00:00:17.600
+Flaky-test repair can use execution
+context while preserving the original
+
+00:00:17.656 --> 00:00:22.320
+assertion. The reusable lesson is
+independent verification around
+
+00:00:22.360 --> 00:00:27.440
+the AI output. These company-specific
+cases demonstrate mechanisms;
+
+00:00:27.472 --> 00:00:32.240
+they do not establish a transferable bank
+savings rate or a ranking of products.

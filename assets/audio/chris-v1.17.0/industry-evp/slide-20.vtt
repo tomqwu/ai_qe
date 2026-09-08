@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.960
+Consider a payment rule: negative amounts
+must be rejected without changing balances
+
+00:00:05.040 --> 00:00:10.200
+or the ledger. The target workflow
+starts with that domain-owned contract.
+
+00:00:10.420 --> 00:00:15.200
+A bounded generator proposes a test,
+independent execution challenges it,
+
+00:00:15.240 --> 00:00:18.080
+and a reviewer decides through
+existing release controls.
+
+00:00:18.272 --> 00:00:22.000
+Failures become new cases.
+This is an illustrative
+
+00:00:22.053 --> 00:00:26.080
+workflow to validate with the bank.
+Shared services support the proof,
+
+00:00:26.093 --> 00:00:28.640
+while the payment owner retains
+the meaning of correctness.

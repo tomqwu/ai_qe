@@ -107,7 +107,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', type=Path, default=ROOT / 'assets/data/narration-scripts.json')
     parser.add_argument('--output', type=Path, required=True, help='New local folder outside the public assets')
-    parser.add_argument('--audience', choices=['audition', 'evp', 'technical'], default='audition')
+    parser.add_argument('--audience', choices=['audition', 'evp', 'technical', 'industry-evp', 'industry-technical'], default='audition')
     parser.add_argument('--max-chars', type=int, default=450)
     parser.add_argument('--slot-seconds', type=int, default=60, help='Staging only; never final timing')
     parser.add_argument('--draft', action='store_true', help='Requires optional pyJianYingDraft==0.3.0')

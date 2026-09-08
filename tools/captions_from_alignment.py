@@ -22,6 +22,7 @@ PRONUNCIATIONS = (
     ('A P I', 'API'), ('Postgres Q L', 'PostgreSQL'),
     ('Q A', 'QA'), ('Q E', 'QE'), ('A I', 'AI'), ('C I', 'CI'),
     ('Wire Mock', 'WireMock'), ('J Unit', 'JUnit'), ('Rest Assured', 'REST Assured'),
+    ('Test containers', 'Testcontainers'), ('Postgres', 'PostgreSQL'),
 )
 
 

@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.760
+Control selected dependencies while
+retaining real integration checks.
+
+00:00:04.120 --> 00:00:08.080
+A reviewed payment test runs against
+a pinned service and an owned
+
+00:00:08.124 --> 00:00:11.680
+provider model that can reproduce
+timeouts or duplicate callbacks.
+
+00:00:12.080 --> 00:00:17.360
+A separate gate checks compatibility
+with the real provider and batch process.
+
+00:00:17.430 --> 00:00:19.840
+Refresh the substitute
+when its contract changes.
+
+00:00:20.080 --> 00:00:23.680
+AI may help draft a mapping,
+but it does not establish the model's
+
+00:00:23.760 --> 00:00:27.440
+fidelity or replace its accountable owner.

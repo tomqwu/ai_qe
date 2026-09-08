@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.720
+Integration contracts
+preserve replaceability.
+
+00:00:02.900 --> 00:00:07.120
+Intake defines the task,
+scope, context and deadline.
+
+00:00:07.246 --> 00:00:12.080
+Action requests carry identity,
+schema and authorization context.
+
+00:00:12.180 --> 00:00:17.240
+Runners publish artifact hashes,
+configuration and original results.
+
+00:00:17.302 --> 00:00:20.800
+Evaluation supplies scenario
+evidence to a named release owner.
+
+00:00:20.933 --> 00:00:25.760
+Exercise missing scope, malformed
+requests, mismatched artifacts
+
+00:00:25.800 --> 00:00:30.240
+and stale evidence. A compatible
+adapter is useful only if its failure
+
+00:00:30.284 --> 00:00:34.320
+behavior preserves the contract as
+well as its successful response.

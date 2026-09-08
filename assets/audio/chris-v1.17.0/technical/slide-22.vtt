@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.440
+Three technologies have different
+jobs. Containerization packages
+
+00:00:03.460 --> 00:00:07.200
+and runs real software, such
+as a database for one test run.
+
+00:00:07.320 --> 00:00:12.080
+Service virtualization simulates selected
+dependency behavior, such as a provider
+
+00:00:12.140 --> 00:00:16.960
+timeout. Contract testing checks whether
+consumer and provider interactions agree.
+
+00:00:17.088 --> 00:00:21.760
+They complement one another but do not
+establish complete business correctness.
+
+00:00:21.886 --> 00:00:25.760
+Choose supported tooling for the client
+application, and retain separate
+
+00:00:25.811 --> 00:00:29.920
+strategies for mobile devices,
+batch settlement and real integration.

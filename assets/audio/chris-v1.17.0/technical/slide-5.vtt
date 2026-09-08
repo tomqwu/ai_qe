@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.040
+Follow the timeout sequence.
+The provider accepts
+
+00:00:03.060 --> 00:00:06.560
+the transfer and the journal commits,
+but the response is lost.
+
+00:00:06.680 --> 00:00:09.360
+The client cannot infer
+failure from the timeout.
+
+00:00:09.573 --> 00:00:14.000
+It retries with the same key and payload,
+and the service resolves the original
+
+00:00:14.062 --> 00:00:17.920
+transfer without posting again.
+The test checks identity,
+
+00:00:17.950 --> 00:00:22.400
+journal count and balances.
+Run a duplicate-posting variant as well:
+
+00:00:22.427 --> 00:00:25.280
+those same assertions must fail
+when the defect is present.

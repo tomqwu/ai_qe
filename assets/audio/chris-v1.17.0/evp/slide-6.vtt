@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.760
+Compare the two workflows. Today,
+engineers interpret requirements,
+
+00:00:03.800 --> 00:00:06.960
+prepare cases and data,
+wait for a shared environment,
+
+00:00:07.008 --> 00:00:11.360
+then collect evidence manually.
+The target adds approved context,
+
+00:00:11.406 --> 00:00:14.520
+repeatable execution and retained results.
+
+00:00:14.693 --> 00:00:18.880
+AI can propose a test or draft a
+diagnostic explanation at the appropriate
+
+00:00:18.947 --> 00:00:22.800
+stage. A human reviews
+the result before it progresses.
+
+00:00:22.928 --> 00:00:26.000
+This is a pilot target: foundation work,
+
+00:00:26.046 --> 00:00:30.320
+review effort and rework must be
+measured alongside any faster drafting.

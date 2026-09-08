@@ -25,6 +25,17 @@ def alignment(text):
 
 
 class AlignmentCaptionTests(unittest.TestCase):
+    def test_chris_pronunciation_keeps_natural_acronyms_and_technical_names(self):
+        spoken = 'AI helps quality engineering with API tests, Test containers and Postgres.'
+        display = 'AI helps quality engineering with API tests, Testcontainers and PostgreSQL.'
+        source = alignment(spoken)
+        words = converter.aligned_words(source, display)
+        self.assertEqual(' '.join(word.text for word in words), display)
+        container = next(word for word in words if word.text == 'Testcontainers')
+        start = spoken.index('Test containers')
+        self.assertEqual(container.start, source['character_start_times_seconds'][start])
+        self.assertEqual(container.end, source['character_end_times_seconds'][start + len('Test containers') - 1])
+
     def test_restores_terms_without_changing_measured_group_times(self):
         spoken = 'Q A, Q E, A I, A P I, C I, Wire Mock, Postgres Q L, J Unit, Rest Assured.'
         display = 'QA, QE, AI, API, CI, WireMock, PostgreSQL, JUnit, REST Assured.'

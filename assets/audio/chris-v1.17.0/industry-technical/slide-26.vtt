@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.880
+Architecture decisions should
+point back to their evidence.
+
+00:00:02.990 --> 00:00:06.640
+Measure review and rework because
+generation can shift effort.
+
+00:00:06.760 --> 00:00:11.520
+Challenge generated tests because
+passing alone can be weak proof.
+
+00:00:11.867 --> 00:00:15.600
+Re-evaluate changing
+configurations because assurance
+
+00:00:15.688 --> 00:00:19.680
+continues through operation.
+Enforce tool authority
+
+00:00:19.738 --> 00:00:23.760
+externally because actions can have
+consequences beyond the response.
+
+00:00:23.960 --> 00:00:27.680
+Retain the versions,
+assertions and decisions that let
+
+00:00:27.730 --> 00:00:31.520
+another engineer inspect whether
+these design choices actually hold.

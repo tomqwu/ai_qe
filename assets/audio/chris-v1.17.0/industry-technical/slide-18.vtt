@@ -1,0 +1,27 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.600
+Release decisions begin with comparable
+runs and mandatory floors.
+
+00:00:03.820 --> 00:00:08.640
+Use the same held-out corpus and versioned
+conditions to examine behavior,
+
+00:00:08.691 --> 00:00:12.280
+regression, denial and workflow limits.
+
+00:00:12.580 --> 00:00:16.400
+A failed critical scenario triggers
+a hold and investigation even
+
+00:00:16.453 --> 00:00:19.680
+if the average improves. When floors hold,
+
+00:00:19.728 --> 00:00:24.520
+reviewers inspect remaining regressions
+and uncertainty before a bounded rollout.
+
+00:00:24.620 --> 00:00:29.040
+Agree the thresholds locally and retain
+the scenario-level decision evidence.

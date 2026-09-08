@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.040
+The industrial example
+distinguishes three gates:
+
+00:00:03.093 --> 00:00:07.000
+building, passing reliably
+and adding coverage.
+
+00:00:07.130 --> 00:00:10.800
+The share of qualifying target test
+classes decreases as the requirement
+
+00:00:10.850 --> 00:00:15.600
+becomes stronger. These percentages
+describe test classes, not individual
+
+00:00:15.648 --> 00:00:20.160
+generated tests. A successful build
+is therefore an intermediate result.
+
+00:00:20.300 --> 00:00:23.440
+For a local pilot, preserve
+this distinction and add
+
+00:00:23.543 --> 00:00:27.120
+checks that the assertions
+detect important faults.
+
+00:00:27.289 --> 00:00:31.520
+Coverage alone does not establish
+correct business behavior.

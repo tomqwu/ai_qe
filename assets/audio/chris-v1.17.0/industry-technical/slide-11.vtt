@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.400
+A useful diagnosis points to evidence.
+
+00:00:02.503 --> 00:00:07.440
+Supply the assistant with relevant logs,
+trace identifiers and change context.
+
+00:00:07.653 --> 00:00:12.080
+It proposes a cause with inspectable
+lines, and an engineer confirms
+
+00:00:12.187 --> 00:00:16.160
+or corrects it. The industrial
+example separates the manually
+
+00:00:16.204 --> 00:00:20.240
+reviewed accuracy sample from the much
+larger deployment population.
+
+00:00:20.560 --> 00:00:25.600
+Do the same locally: evaluate sampled
+diagnoses, citation correctness
+
+00:00:25.680 --> 00:00:31.040
+and total investigation effort without
+claiming accuracy on unreviewed cases.

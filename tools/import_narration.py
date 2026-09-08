@@ -1,4 +1,4 @@
-"""Import a reviewed audio recording and its timed captions into a banking deck.
+"""Import a reviewed audio recording and its timed captions into a presentation.
 
 Does not generate speech, estimate timings, or contact a provider. ffprobe is
 required to check that every caption fits the actual recording duration.
@@ -61,19 +61,27 @@ def captions(source, duration):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--audience', choices=('evp', 'technical'), required=True)
+    parser.add_argument('--audience', choices=('evp', 'technical', 'industry-evp', 'industry-technical'), required=True)
     parser.add_argument('--slide', required=True, help='Existing stable slide ID, such as slide-18')
     parser.add_argument('--audio', type=Path, required=True)
     parser.add_argument('--captions', type=Path, required=True, help='Reviewed English .srt or .vtt')
     parser.add_argument('--voice', required=True, help='Provider and voice name for provenance')
+    parser.add_argument('--caption-method', default='Reviewed audio-timed captions',
+                        help='How the supplied caption timestamps were obtained')
     parser.add_argument('--recording-edition', required=True, help='Immutable asset folder, such as audition-1')
     args = parser.parse_args()
     if not re.fullmatch(r'slide-[1-9]\d*', args.slide):
         parser.error('Use an existing slide-N ID')
     if not re.fullmatch(r'[a-z0-9][a-z0-9.-]*', args.recording_edition):
         parser.error('Recording edition may contain lowercase letters, digits, dots and hyphens')
-    deck = json.loads((ROOT / '_data/fintech_decks.json').read_text())[args.audience]
-    if int(args.slide[6:]) > len(deck):
+    if args.audience.startswith('industry-'):
+        name = args.audience.removeprefix('industry-')
+        html = (ROOT / 'briefings' / (name + '.html')).read_text()
+        valid = args.slide in re.findall(r'id="(slide-\d+)"', html)
+    else:
+        deck = json.loads((ROOT / '_data/fintech_decks.json').read_text())[args.audience]
+        valid = int(args.slide[6:]) <= len(deck)
+    if not valid:
         parser.error('Slide does not exist in this audience deck')
     if args.audio.suffix.lower() not in ('.mp3', '.wav', '.m4a', '.ogg'):
         parser.error('Unsupported audio extension')
@@ -100,11 +108,13 @@ def main():
     caption_path.write_text('WEBVTT\n\n' + '\n\n'.join(
         f'{timestamp(start)} --> {timestamp(end)}\n{body}' for start, end, body in cues) + '\n')
     manifest['edition'] = args.recording_edition
+    manifest['decks'].setdefault(args.audience, {'label': args.audience, 'slides': {}})
     manifest['decks'][args.audience]['slides'][args.slide] = {
         'audio': '/' + audio_path.relative_to(ROOT).as_posix(),
         'captions': '/' + caption_path.relative_to(ROOT).as_posix(),
         'transcript': ' '.join(body.replace('\n', ' ') for _, _, body in cues),
         'voice': args.voice,
+        'caption_method': args.caption_method,
         'duration': round(duration, 3),
         'sha256': hashlib.sha256(audio_path.read_bytes()).hexdigest()
     }

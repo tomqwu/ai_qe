@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import shutil
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +34,35 @@ def prepare(output):
         assert source.is_file(), f'Missing publication asset: {filename}'
         shutil.copyfile(source, assets / source.name)
         hashes[source.name] = hashlib.sha256(source.read_bytes()).hexdigest()
+    narration = json.loads((ROOT / 'assets/data/narration.json').read_text())
+    assert narration.get('complete'), 'The narration release requires all slide recordings'
+    bundle = assets / f'ai-qe-narration-v{release["version"]}.zip'
+    records = []
+    for audience, deck in narration['decks'].items():
+        for slide, entry in deck['slides'].items():
+            for field in ('audio', 'captions'):
+                source = (ROOT / entry[field].lstrip('/')).resolve()
+                assert source.is_relative_to(ROOT / 'assets/audio') and source.is_file(), 'Missing narration asset'
+                if field == 'audio':
+                    assert hashlib.sha256(source.read_bytes()).hexdigest() == entry['sha256'], 'Changed narration audio'
+                records.append((source.relative_to(ROOT).as_posix(), source.read_bytes()))
+            records.append((f'transcripts/{audience}/{slide}.txt', (entry['transcript'] + '\n').encode()))
+    assert len(records) == 109 * 3, 'Narration bundle must cover all 109 slides'
+    records.append(('narration.json', json.dumps(narration, ensure_ascii=False, indent=2).encode()))
+    records.append(('README.txt', (
+        'AI x QE — Chris / ElevenLabs English narration\n\n'
+        'One MP3, timed WebVTT subtitle file and transcript per slide. '
+        'Folder keys: evp = banking executive, technical = banking architecture, '
+        'industry-evp = industry executive, industry-technical = industry architecture.\n\n'
+        'Open https://tomqwu.github.io/ai_qe/briefings/ and select Play narration '
+        'for synchronized slide playback. The original PDF content editions are unchanged.\n'
+    ).encode()))
+    with zipfile.ZipFile(bundle, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
+        for name, content in sorted(records):
+            info = zipfile.ZipInfo(name, date_time=(2026, 9, 8, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            archive.writestr(info, content)
+    hashes[bundle.name] = hashlib.sha256(bundle.read_bytes()).hexdigest()
     checksums = assets / 'SHA256SUMS.txt'
     checksums.write_text(''.join(f'{digest}  {name}\n' for name, digest in sorted(hashes.items())))
     hashes[checksums.name] = hashlib.sha256(checksums.read_bytes()).hexdigest()
@@ -56,7 +86,7 @@ Publication editions:
 - Research companion: **v{release["research_edition"]}** — 13 pages
 - Fillable discovery questionnaire: **v{release["questionnaire_edition"]}**
 
-Assets include all six PDFs, the architecture film and captions, and the industry, modernization and fintech-evidence CSV/JSON source registers. SHA256SUMS.txt covers all fourteen downloadable publication files. The PDF filenames identify their content edition, which may precede a site-navigation release. The existing architecture film retains its v1.8.0 edition.
+Assets include all six PDFs, the architecture film and captions, the industry, modernization and fintech-evidence CSV/JSON source registers, and the complete 109-slide Chris narration bundle with English subtitles and transcripts. SHA256SUMS.txt covers all fifteen downloadable publication files. The PDF filenames identify their content edition, which may precede a player release. The existing architecture film retains its v1.8.0 edition.
 
 Published only after the site build, browser checks, PDF checks and GitHub Pages deployment succeed. The fintech case is fictional; its estimates and outcomes are illustrative assumptions.
 '''

@@ -36,6 +36,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium webkit
+      - name: Check complete narration and measured caption timing
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m unittest discover -s tools -p "test_*narration.py"
+          python -m unittest discover -s tools -p "test_captions_from_alignment.py"
+          python tools/validate_narration.py --require-complete
       - name: Check economics, pilot gates and reference contracts
         run: |
           node --test tools/qe-model.test.cjs tools/pilot-decision.test.cjs tools/fintech-model.test.cjs
@@ -58,6 +65,7 @@ jobs:
           node tools/fintech-browser-test.cjs
           node tools/ai-adoption-browser-test.cjs
           node tools/check_narration.cjs
+          node tools/check_recorded_narration.cjs
           node tools/browser-smoke.cjs
           node tools/sales-navigation-test.cjs
           node tools/search-navigation-test.cjs

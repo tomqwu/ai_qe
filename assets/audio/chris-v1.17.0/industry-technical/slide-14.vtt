@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.440
+A model judge is another
+component that needs evaluation.
+
+00:00:03.480 --> 00:00:06.160
+Compare its decisions
+with independently reviewed labels
+
+00:00:06.260 --> 00:00:09.200
+and inspect false acceptance
+of incorrect outputs.
+
+00:00:09.337 --> 00:00:12.880
+Repeat ambiguous cases and test
+sensitivity to answer order.
+
+00:00:13.024 --> 00:00:17.040
+Keep calibration examples
+separate from final evaluation.
+
+00:00:17.093 --> 00:00:21.440
+Recheck the judge when its prompt,
+model or task population changes.
+
+00:00:21.476 --> 00:00:24.160
+Critical disagreements may
+require a deterministic check
+
+00:00:24.213 --> 00:00:27.440
+or expert gate instead
+of a larger average score.

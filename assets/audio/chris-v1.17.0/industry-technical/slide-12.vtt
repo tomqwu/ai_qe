@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.160
+Flaky-test repair
+must preserve test meaning.
+
+00:00:04.280 --> 00:00:08.000
+Reproduce the unstable behavior
+and collect its conditions before
+
+00:00:08.048 --> 00:00:11.600
+proposing a change. Execution paths,
+
+00:00:11.680 --> 00:00:14.720
+timing and shared state
+can guide diagnosis.
+
+00:00:14.853 --> 00:00:19.960
+Validate the candidate under varied
+conditions and inspect the assertions.
+
+00:00:20.027 --> 00:00:24.000
+Deleting a check may make a test stable
+while hiding the original problem.
+
+00:00:24.160 --> 00:00:28.800
+Retain repeatability evidence and reject
+repairs that trade away fault detection.

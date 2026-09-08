@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.160
+Repair follows evidence-based triage.
+
+00:00:02.380 --> 00:00:06.080
+Reproduce the failure,
+identify its owner, propose
+
+00:00:06.120 --> 00:00:09.760
+a change and run independent checks
+while preserving the domain assertion.
+
+00:00:10.200 --> 00:00:14.320
+A temporary quarantine is a different
+path for a confirmed flaky test.
+
+00:00:14.480 --> 00:00:19.040
+It needs an owner, expiry, repair
+ticket and replacement coverage.
+
+00:00:19.220 --> 00:00:23.280
+Retain the resolution and versions,
+and recheck the exception until
+
+00:00:23.333 --> 00:00:27.600
+it is restored. Hiding a failing
+test is not the same as fixing it.

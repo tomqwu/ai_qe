@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.200
+Here is the payment test scenario.
+A one-hundred-dollar Canadian
+
+00:00:03.253 --> 00:00:06.240
+transfer is accepted,
+but the response times out.
+
+00:00:06.400 --> 00:00:09.280
+The customer retries.
+We deliberately inject
+
+00:00:09.320 --> 00:00:13.200
+a duplicate-posting defect to see
+whether our tests catch a second debit.
+
+00:00:13.400 --> 00:00:16.160
+The correct result is one transfer,
+
+00:00:16.200 --> 00:00:19.600
+one balanced journal and one
+customer-visible outcome.
+
+00:00:19.792 --> 00:00:23.120
+This is a testing scenario,
+not a reported banking incident.
+
+00:00:23.307 --> 00:00:26.560
+It gives the modernization effort
+a concrete behavior to prove.

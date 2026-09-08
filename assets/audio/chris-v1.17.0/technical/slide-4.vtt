@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.080
+The request contract defines the oracle.
+
+00:00:02.224 --> 00:00:06.880
+This example transfers ten thousand
+Canadian cents with a stable idempotency
+
+00:00:06.960 --> 00:00:11.200
+key. Repeating the same key and payload
+must return the original transfer.
+
+00:00:11.333 --> 00:00:15.600
+Changing the payload under that
+key must produce a conflict.
+
+00:00:15.620 --> 00:00:19.600
+The expected journal has one
+transaction and two balanced entries,
+
+00:00:19.632 --> 00:00:22.320
+with the agreed payer
+and recipient balances.
+
+00:00:22.620 --> 00:00:24.400
+Key scope,
+
+00:00:24.448 --> 00:00:28.320
+retention and recovery rules need
+explicit agreement with the service owner.

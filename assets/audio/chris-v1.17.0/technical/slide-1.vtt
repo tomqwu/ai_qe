@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.920
+This engineering blueprint follows one
+payment test from an approved contract
+
+00:00:04.053 --> 00:00:08.800
+to inspectable evidence.
+The proposed stack uses Java services,
+
+00:00:08.840 --> 00:00:13.360
+a real database, existing test frameworks
+and a controlled provider model.
+
+00:00:13.760 --> 00:00:16.640
+AI participates
+in authoring and diagnosis.
+
+00:00:16.738 --> 00:00:21.360
+Deterministic assertions establish what
+happened to the transfer and journal.
+
+00:00:21.627 --> 00:00:26.480
+We will inspect the interfaces,
+execution lifecycle and failure behavior.
+
+00:00:26.560 --> 00:00:29.040
+This is an authored reference
+architecture to validate
+
+00:00:29.056 --> 00:00:31.920
+with the client,
+not a deployed system claim.

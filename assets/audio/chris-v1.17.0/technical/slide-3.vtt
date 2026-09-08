@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.400
+Separate the design plane from execution.
+
+00:00:02.760 --> 00:00:05.920
+A context adapter packages
+approved source revisions.
+
+00:00:06.060 --> 00:00:11.040
+The model proposes a test patch,
+and repository review produces an approved
+
+00:00:11.109 --> 00:00:15.760
+commit. A conventional runner executes
+that commit against pinned resources.
+
+00:00:15.960 --> 00:00:19.880
+Raw results enter the evidence
+store before AI prepares a summary.
+
+00:00:19.970 --> 00:00:22.560
+The quality owner then
+assigns a disposition.
+
+00:00:22.720 --> 00:00:26.080
+The model is outside
+the money-movement assertion path,
+
+00:00:26.120 --> 00:00:28.960
+and its interpretation cannot
+overwrite the original result.

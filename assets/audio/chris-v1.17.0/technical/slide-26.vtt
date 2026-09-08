@@ -1,0 +1,56 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.160
+Read this slide as four
+owned integration contracts.
+
+00:00:03.420 --> 00:00:08.400
+The context adapter packages versioned
+stories, API contracts and test
+
+00:00:08.464 --> 00:00:12.840
+revisions. Unresolved behavior blocks
+approval of the affected cases.
+
+00:00:13.040 --> 00:00:16.800
+The model adapter accepts that
+bundle and its configuration,
+
+00:00:16.848 --> 00:00:21.920
+then returns a proposed patch. A timeout
+or quota failure produces no candidate.
+
+00:00:22.140 --> 00:00:24.587
+Retries are bounded and recorded.
+
+00:00:25.020 --> 00:00:28.560
+The runner accepts an approved
+test commit and run manifest.
+
+00:00:28.747 --> 00:00:33.360
+It executes deterministic checks,
+preserves the original exit status,
+
+00:00:33.430 --> 00:00:36.520
+retains raw evidence, and then
+cleans up the environment.
+
+00:00:36.760 --> 00:00:41.760
+The evidence adapter indexes those
+artifacts using traceable run identifiers.
+
+00:00:41.870 --> 00:00:45.920
+Missing joins remain unknown.
+AI can draft a read-only
+
+00:00:45.980 --> 00:00:50.000
+explanation; it cannot turn missing
+or failed evidence into a pass.
+
+00:00:50.200 --> 00:00:52.880
+These contracts connect
+the controlled execution
+
+00:00:52.927 --> 00:00:55.680
+environment to traceable
+API test evidence.

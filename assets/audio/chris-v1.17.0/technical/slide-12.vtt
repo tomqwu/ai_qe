@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.160
+The evidence contract makes
+the decision reproducible.
+
+00:00:03.307 --> 00:00:07.840
+It joins the requirement, test commit,
+build, fixture, run results
+
+00:00:07.900 --> 00:00:12.160
+and defect disposition.
+Missing artifacts remain unknown.
+
+00:00:12.373 --> 00:00:15.120
+Skipped required tests remain incomplete.
+
+00:00:15.480 --> 00:00:18.240
+A failed ledger invariant
+blocks this case.
+
+00:00:18.338 --> 00:00:23.040
+Complete passing evidence makes the case
+eligible for review; it does not supply
+
+00:00:23.067 --> 00:00:26.400
+an entire banking release policy.
+The release owner still
+
+00:00:26.448 --> 00:00:30.160
+considers required provider integration
+and the other agreed checks.

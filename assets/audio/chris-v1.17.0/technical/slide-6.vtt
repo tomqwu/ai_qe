@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.160
+Version the context
+before requesting a draft.
+
+00:00:02.304 --> 00:00:06.960
+Bind the requirement, API contract,
+fixture and test examples to named
+
+00:00:07.032 --> 00:00:11.600
+revisions. The proposed matrix
+covers unchanged retries,
+
+00:00:11.640 --> 00:00:16.000
+conflicting payloads, concurrent
+requests and duplicate callbacks.
+
+00:00:16.240 --> 00:00:19.440
+An unresolved retention window
+remains an open question.
+
+00:00:19.707 --> 00:00:23.680
+AI may draft candidate cases
+with references, but domain reviewers
+
+00:00:23.749 --> 00:00:27.520
+define the ledger expectations.
+A missing business rule should block
+
+00:00:27.582 --> 00:00:31.200
+approval of the affected case instead
+of being filled in by the model.

@@ -1,7 +1,1013 @@
 {
-  "edition": "audition-1",
+  "edition": "chris-v1.17.0",
   "decks": {
-    "evp": {"label": "Executive narration", "slides": {}},
-    "technical": {"label": "Technical narration", "slides": {}}
-  }
+    "evp": {
+      "label": "Banking executive narration",
+      "slides": {
+        "slide-1": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-1.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-1.vtt",
+          "transcript": "Let's start with a practical question. How does a banking team improve release confidence when more testers are sharing the same constrained environments? Our Banking Client is a fictional payment scenario with seventy-five offshore quality assurance staff. We will follow the manual work, the platform foundations, and the places where AI can assist. The ambition is repeatable quality at scale. The story describes a proposed path and testable outcomes, not a reported client transformation.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.12,
+          "sha256": "6017d008061f0357662bdadada0d1d7b3162c2b6f6669779207a6e99653653e7"
+        },
+        "slide-2": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-2.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-2.vtt",
+          "transcript": "The constraint is visible in the team model. Seventy-five people work across five squads, and forty-five focus on manual and domain testing. They depend on limited shared environments and vendor test slots. Adding people does not automatically create more execution capacity. The proposed pilot draws eight people from this organization. The opportunity is to make their work easier to repeat, review and reuse, while keeping domain knowledge close to the decisions.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.76,
+          "sha256": "35c916307038339b5464b6ac170671a78741861b68fbcce5885a8d9bb250b589"
+        },
+        "slide-3": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-3.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-3.vtt",
+          "transcript": "Here is the payment test scenario. A one-hundred-dollar Canadian transfer is accepted, but the response times out. The customer retries. We deliberately inject a duplicate-posting defect to see whether our tests catch a second debit. The correct result is one transfer, one balanced journal and one customer-visible outcome. This is a testing scenario, not a reported banking incident. It gives the modernization effort a concrete behavior to prove.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 26.56,
+          "sha256": "9d4c3ae1ff2dba9952e9c0d53a5f69c4cf18152f1496c505a44106f5b5f67a78"
+        },
+        "slide-4": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-4.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-4.vtt",
+          "transcript": "The model follows a bounded release test pack through eight stages. The baseline adds to three hundred hours of hands-on work over a ten-business-day window. That is human effort, not elapsed waiting time. Requirements clarification, data preparation, execution, triage and evidence all contribute. Before buying another tool, identify where people are repeating work and where they are simply blocked. Those two problems require different interventions and different measurements.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.92,
+          "sha256": "169db6592fcd36c042adb3d0c9dfaa83720f345cc22ff1f678e105a1bf0c5a3d"
+        },
+        "slide-5": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-5.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-5.vtt",
+          "transcript": "The platform investment makes useful capabilities available to every squad. Versioned context explains what should happen. Fixtures and controlled dependencies make tests repeatable. Existing frameworks and pipelines run approved changes, and an evidence service preserves the original results. AI helps prepare tests and interpret failures. Application teams still own payment behavior, code review and release decisions. The value comes from connecting these capabilities into the team's existing work.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.36,
+          "sha256": "9e54de8c1559e4fe9e51b79d594bb443d12fdd537f6fcf98e630461a4c6419ae"
+        },
+        "slide-6": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-6.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-6.vtt",
+          "transcript": "Compare the two workflows. Today, engineers interpret requirements, prepare cases and data, wait for a shared environment, then collect evidence manually. The target adds approved context, repeatable execution and retained results. AI can propose a test or draft a diagnostic explanation at the appropriate stage. A human reviews the result before it progresses. This is a pilot target: foundation work, review effort and rework must be measured alongside any faster drafting.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.32,
+          "sha256": "fd637dc8c0b9c6ebaef59881ed029c25c8143c569e500a72400a9de4a011ba15"
+        },
+        "slide-7": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-7.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-7.vtt",
+          "transcript": "Delivery maturity changes the first move. A team with reliable pipelines and resettable data can test AI-generated candidates quickly. A team waiting for vendor access may benefit first from reviewed scenario design while the environment improves. The readiness profiles illustrate effort; they do not approve adoption. Infrastructure, test data, dependency control, ownership and reviewer capacity all matter. Assess the selected application and workflow before committing to a date or a benefit.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.0,
+          "sha256": "32f4f8e0030fab732b9a1cb3733006a85399b80234d7da9943e13784821dd944"
+        },
+        "slide-8": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-8.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-8.vtt",
+          "transcript": "The mixed-maturity example moves from three hundred hours to two hundred and twenty-two. That is seventy-eight hours of gross capacity, with forty hours of review already included in the target. It is conditional arithmetic, not observed AI impact. The adoption prerequisites remain unverified, and tool, cloud and vendor charges are outside this comparison. Treat the result as a hypothesis to test. Turning capacity into financial value requires a separate, agreed plan.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.16,
+          "sha256": "5259ec936e489436086afc8cbf924f944e9c1a8a73180a087347871e9eaa9baa"
+        },
+        "slide-9": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-9.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-9.vtt",
+          "transcript": "The operating model needs named owners at every handoff. Domain testers define expected behavior and review AI proposals. Automation engineers maintain the executable checks. Platform owners support environments, fixtures and evidence. Product and release owners retain business decisions. Pairing and review can help manual testers develop new skills without losing their domain expertise. Agree overlap windows, supplier incentives and ownership of reusable assets before expanding beyond the pilot squad.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.92,
+          "sha256": "6d817bc57efcc21e2302ce12aa358f8856a14ba27ba7b4d0329d178b30a58ffe"
+        },
+        "slide-10": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-10.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-10.vtt",
+          "transcript": "This is an observed-time framework for an API pilot. Start by recording the current workflow. Establish the required foundations, run comparable work, and repeat the checks before deciding what can expand. The windows shown are planning examples. A phase progresses when its environment, data, virtualization and reviewer requirements are ready. Record active effort and waiting separately. That makes delays visible and prevents setup work from disappearing inside an attractive productivity percentage.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.24,
+          "sha256": "4a0b1de20f759f1a76440a7517888e878dd40484bf2949bba79ce68c84074cba"
+        },
+        "slide-11": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-11.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-11.vtt",
+          "transcript": "Expansion needs evidence that the work is useful and repeatable. Did the test detect an important fault? Did reviewers accept the result without excessive correction? Can another engineer reproduce the run and inspect the original evidence? Compare work of similar scope and retain conventional work as a reference. Faster text generation alone does not answer these questions. The next investment should follow demonstrated quality and net workflow improvement.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.36,
+          "sha256": "02d01ad29f945560b840124cf67190a0d51dd286bf892ab03479f1a3e9a42ea8"
+        },
+        "slide-12": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-12.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-12.vtt",
+          "transcript": "Use these questions to open a working discussion. Where does the team lose the most time today? Which payment behavior can the domain owner define clearly? What prevents a second engineer from repeating the same test? Who can fund and support the missing foundation? The next step is a workflow assessment with quality assurance, development and platform leads. Agree one bounded pilot and its evidence before promising an organization-wide rollout.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 26.8,
+          "sha256": "4db384239b9a44f4988393f75b1226cc2157e148e42c166eeda807961b738607"
+        },
+        "slide-13": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-13.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-13.vtt",
+          "transcript": "Adoption depends on funded foundations. The stack includes people and business ownership, runnable engineering, and supported services. Infrastructure, pipelines, test data, service virtualization and observability need accountable owners. Our Banking Client has not been assessed, so the dependency backlog can still change scope, cost and timing. The setup allowance is a planning input, not a client quote. Leadership should approve the enabling work together with the AI use case.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.36,
+          "sha256": "d1f094ac5c549419a9da62a9edcf457302cf0570b83b27ac619d5f130f8f2cb7"
+        },
+        "slide-14": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-14.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-14.vtt",
+          "transcript": "Modernization makes broader AI participation practical. Begin with trusted requirements and reviewed expectations. Build reliable tests, resettable data and controlled dependencies. Turn those capabilities into supported services that another squad can reuse. Only then expand execution authority where the evidence supports it. Reviewed assistance can start while foundations improve. The roadmap is about earning reliable capability, rather than waiting for every application to reach an identical maturity level.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.4,
+          "sha256": "8d52514073a72a93c9ad3bfceac22cd7a98f18df53e1c170156055f9a8cd725c"
+        },
+        "slide-15": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-15.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-15.vtt",
+          "transcript": "Peer evidence gives us reasons to try, with careful interpretation. The financial-services cases report different measures: test creation time, selected-module coverage and major incidents. Some outcomes come from wider modernization rather than AI. Those results cannot be combined into one savings rate for our banking scenario. Use the cases to identify a plausible practice, then measure the local baseline, review effort and quality. Our Banking Client's outcomes remain unmeasured.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.6,
+          "sha256": "d6f38bcd9f808e79021c5ba3c7b0f7ac581805419c6d2d1e836b105aa5dc51c1"
+        },
+        "slide-16": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-16.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-16.vtt",
+          "transcript": "Choose the entry point that matches today's constraints. If requirements are ready, start with reviewed onboarding scenarios. If execution is repeatable, test AI-assisted payment cases in the existing framework. If useful diagnostics are available, trial an evidence-linked triage assistant. Each option has a concrete output and a reviewer who can judge it. Begin with one, capture what works, and use that evidence to decide the next step.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 26.32,
+          "sha256": "ac0de6d9d15c57e69fcd1f8f857891f5357b004db771297b1655547199610317"
+        },
+        "slide-17": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-17.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-17.vtt",
+          "transcript": "The four layers explain how adoption can grow. Individual copilots help an engineer draft tests and code. Connected workflow assistants use pipeline results to prepare reports. Bounded agents perform several approved steps with independent checks and human approval. Shared platform services provide context, evaluation, execution and evidence across those layers. These are capability choices, not four mandatory runtime steps. The platform supports the journey, while each increase in authority needs its own proof.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.32,
+          "sha256": "cfdab00bdf37f2e380da8abdac65e84fb1cb65579cc4f69f48d2bd3b8298e248"
+        },
+        "slide-18": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-18.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-18.vtt",
+          "transcript": "Start on the left. Our Banking Client has seventy-five offshore quality assurance staff, including forty-five manual and domain testers. They share a few test environments. Backend services are not virtualized, and vendor test slots limit parallel runs. Manual execution, reruns and evidence collection add coordination work. The proposed target is on the right. Squads reuse supported quality engineering services: controlled test data, isolated runs, virtualized dependencies and retained evidence. This foundation lets teams repeat service tests without waiting for every vendor slot. AI adds assistance with test preparation and interpretation. People still approve expected behavior, review generated changes and make release decisions. Real provider checks remain necessary. The next slide shows how we will judge this architecture through quality outcomes, alongside effort.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 56.32,
+          "sha256": "e468d3a46fac1267e7037ef0e8d4281add54db4a1fecbd769b4f66cb9b980c81"
+        },
+        "slide-19": {
+          "audio": "/assets/audio/chris-v1.17.0/evp/slide-19.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/evp/slide-19.vtt",
+          "transcript": "Success needs evidence beyond hours saved. We propose three primary measures for the banking pilot. First, detect every approved critical payment fault that we deliberately introduce. Second, exercise every critical scenario with reviewed assertions and a valid result. Third, make each release decision traceable to its requirements, build, test data and raw results. Then check the foundation: can the team repeat runs reliably, validate agreed behaviors against the real provider, and help a second squad run independently? These measures have no recorded baseline or after result yet. We will compare today's workflow, modernized quality engineering, and AI assistance on that foundation. Fewer escaped defects and emergency fixes are business aims to validate across releases. A complete evidence pack can still recommend stopping a release.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 53.36,
+          "sha256": "3576429426c5f2d1f6feb7039fd0da48768aefc7dce819ce638fee66c4268af9"
+        }
+      },
+      "duration": 611.2
+    },
+    "technical": {
+      "label": "Banking technical narration",
+      "slides": {
+        "slide-1": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-1.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-1.vtt",
+          "transcript": "This engineering blueprint follows one payment test from an approved contract to inspectable evidence. The proposed stack uses Java services, a real database, existing test frameworks and a controlled provider model. AI participates in authoring and diagnosis. Deterministic assertions establish what happened to the transfer and journal. We will inspect the interfaces, execution lifecycle and failure behavior. This is an authored reference architecture to validate with the client, not a deployed system claim.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.0,
+          "sha256": "dafe6765f022bbd704c5de115181685a996998ddcb5347f20017c8dda636785d"
+        },
+        "slide-2": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-2.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-2.vtt",
+          "transcript": "Start with the application landscape. Payment services offer a bounded API surface for the pilot. Web and mobile journeys retain their own checks, while provider integration and settlement have separate constraints. Today, the scenario has few shared environments and no backend virtualization. The proposed payment pilot introduces controlled provider behavior and per-run isolation. It does not automatically solve mobile-device availability, legacy batch scheduling or every vendor integration requirement.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.32,
+          "sha256": "3d832098a20d75316575f57a63b6572c4d0057b2136b5e886a67a2d3e11c05bc"
+        },
+        "slide-3": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-3.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-3.vtt",
+          "transcript": "Separate the design plane from execution. A context adapter packages approved source revisions. The model proposes a test patch, and repository review produces an approved commit. A conventional runner executes that commit against pinned resources. Raw results enter the evidence store before AI prepares a summary. The quality owner then assigns a disposition. The model is outside the money-movement assertion path, and its interpretation cannot overwrite the original result.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.96,
+          "sha256": "33109a1b7ec723255c985869d140784931e34a4a50d6e99a70b713a6c352bca1"
+        },
+        "slide-4": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-4.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-4.vtt",
+          "transcript": "The request contract defines the oracle. This example transfers ten thousand Canadian cents with a stable idempotency key. Repeating the same key and payload must return the original transfer. Changing the payload under that key must produce a conflict. The expected journal has one transaction and two balanced entries, with the agreed payer and recipient balances. Key scope, retention and recovery rules need explicit agreement with the service owner.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.32,
+          "sha256": "6829bcbd781813b7c6434ec1c7607586e99ea827f712d07d229f82e464c2ca06"
+        },
+        "slide-5": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-5.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-5.vtt",
+          "transcript": "Follow the timeout sequence. The provider accepts the transfer and the journal commits, but the response is lost. The client cannot infer failure from the timeout. It retries with the same key and payload, and the service resolves the original transfer without posting again. The test checks identity, journal count and balances. Run a duplicate-posting variant as well: those same assertions must fail when the defect is present.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 25.28,
+          "sha256": "8843848652b2102855c399ed3963b95010ad438b5b442a6ce9a7aa63631cfdc7"
+        },
+        "slide-6": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-6.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-6.vtt",
+          "transcript": "Version the context before requesting a draft. Bind the requirement, API contract, fixture and test examples to named revisions. The proposed matrix covers unchanged retries, conflicting payloads, concurrent requests and duplicate callbacks. An unresolved retention window remains an open question. AI may draft candidate cases with references, but domain reviewers define the ledger expectations. A missing business rule should block approval of the affected case instead of being filled in by the model.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.2,
+          "sha256": "c8fac6a7223aedb67fdf4558170e9ba8eede894d91f8e451e98489940b0314fe"
+        },
+        "slide-7": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-7.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-7.vtt",
+          "transcript": "A repeatable environment needs more than a container that starts. Pin the service image, test commit, schema, fixtures and provider model. Create isolated accounts and verify their initial balances before execution. Shared mutable accounts would invalidate the financial assertions. Testcontainers can supply disposable dependencies, while WireMock models the provider. Resolve every placeholder to an immutable version, retain preflight results, and keep real-provider integration as a separate check.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.2,
+          "sha256": "6f74fbfc23b0dc35c5586b9bc7e98a2d9202bd282462c1c23595f6eecb3cb8da"
+        },
+        "slide-8": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-8.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-8.vtt",
+          "transcript": "A successful HTTP response does not establish a correct payment. The retry must refer to the original transfer. There must be one journal with balanced entries, and the payer and recipient balances must match the approved contract. Obtain the original identity from independent service evidence. Then challenge the same assertions against a correct build and a deliberately defective one. Passing the first and failing the second demonstrates useful fault detection for this scenario.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.08,
+          "sha256": "635841d9d05ce4854030647f82afa13b459dda783fb3b5df5faf836234efa37a"
+        },
+        "slide-9": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-9.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-9.vtt",
+          "transcript": "Choose the test layer that exposes the behavior. Service tests can check idempotency, concurrency and journal outcomes directly. A browser journey checks pending states, the retry action and the final message. Existing Selenium and Appium suites remain where they are owned and useful. Settlement reconciliation and provider checks stay scheduled separately. Replacing the browser framework does not create another settlement environment or remove a vendor access constraint.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.2,
+          "sha256": "24364558187c1e123c954c745ad4da2c1c50b9004553db7da0465d5fca608164"
+        },
+        "slide-10": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-10.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-10.vtt",
+          "transcript": "Publish raw pipeline results before AI interpretation. The proposed Azure pipeline publishes failures explicitly and treats missing results as a problem. It preserves the runner's original exit status. The AI adapter reads retained results, manifests and logs, then produces a diagnosis with evidence links. It cannot change test status or approve a release. Check required-suite completeness separately, and remember that cancellation can still interrupt evidence collection.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.24,
+          "sha256": "9997afad37a927bba8722323dc9dd8487a10b230466af8ed5ce7a150f17cc06d"
+        },
+        "slide-11": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-11.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-11.vtt",
+          "transcript": "Triage separates observations from hypotheses. Two committed journals are an observed fact; a replay defect is an explanation that needs review. Correlate the test, trace and transfer before grouping failures. Route environment problems, product assertions and unstable reproduction to the right owners. Missing evidence remains unresolved. An approved fix produces a new build and a new run. Keep the original failure, and never weaken a financial assertion to obtain a green result.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.6,
+          "sha256": "e63cad9a27e0f557f939ea33a2ddec5d5de59a7766ce63c640e760761f681f2a"
+        },
+        "slide-12": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-12.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-12.vtt",
+          "transcript": "The evidence contract makes the decision reproducible. It joins the requirement, test commit, build, fixture, run results and defect disposition. Missing artifacts remain unknown. Skipped required tests remain incomplete. A failed ledger invariant blocks this case. Complete passing evidence makes the case eligible for review; it does not supply an entire banking release policy. The release owner still considers required provider integration and the other agreed checks.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.16,
+          "sha256": "e2cfd0ca68f01b46b00c5929329d819086770e39d44df93fde3df2e4e9584504"
+        },
+        "slide-13": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-13.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-13.vtt",
+          "transcript": "Challenge the test with controlled faults. Duplicate posting must fail the journal and balance assertions. A changed amount under the same key must produce a conflict without another submission. Concurrent retries must converge on one transfer. A repeated callback must not post again. Define these expectations independently of the generated test. The browser demonstration illustrates part of this behavior; service-level implementations and retained evidence are still required.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.76,
+          "sha256": "d81e744f6bae1ff3bbf692d7ee5aff7d0b418a2c8f9afe24a563c910d606ac20"
+        },
+        "slide-14": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-14.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-14.vtt",
+          "transcript": "Readiness needs executable proof. Can the team start a pinned build and restore the same synthetic balances? Can it replay a timeout and duplicate callback through an owned provider model? Can it read committed journal facts without depending on an AI summary? Can another engineer reproduce the result? Unknown or failed prerequisites block the dependent execution scope. Reviewed drafting can have a narrower starting requirement than automated execution.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.2,
+          "sha256": "a19d8156cb953d279a0b7330c592e01efe959be2dee29164b00c34abe0cdaa72"
+        },
+        "slide-15": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-15.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-15.vtt",
+          "transcript": "An offshore handoff should carry an artifact and a named next owner. Product and domain reviewers approve the behavior. Engineers draft, review and execute the case. Platform owners provide the pinned runner, reset procedure and evidence retention. The proposed pilot team includes a lead, domain testers, automation engineers and an environment specialist. Rejected work returns to its author. Missing evidence or an unresolved payment defect holds the affected scope until ownership is clear.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.56,
+          "sha256": "a63b6326b050ec9d596605420c644c271d7e58461da086110b5a06f9e2f63096"
+        },
+        "slide-16": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-16.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-16.vtt",
+          "transcript": "Correlation lets a reviewer follow the failure across systems. Join the run, test, trace, transfer and idempotency key. Link the failing assertion to request attempts and committed journal facts, then to the build, fixture and provider-model versions. Retries remain separate events within the same scenario. Preserve the original artifacts and redact sensitive values before AI input. A missing join remains unresolved, and a generated hypothesis cannot replace the failed assertion.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.2,
+          "sha256": "d8b38a8e91b4e3572d84e12cf9451f81d3d36e509683acbc2b425649de6bbbd4"
+        },
+        "slide-17": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-17.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-17.vtt",
+          "transcript": "A generated test earns promotion through several checks. Review its code and intent first. Use identical fixtures to show that the correct build passes and the duplicate-posting variant fails. Retain the manifest, raw evidence and cleanup results so another engineer can repeat the run. The quality owner approves the proposed change through the existing repository controls. Compilation and a single passing run are intermediate results, not sufficient evidence for promotion.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.68,
+          "sha256": "562c240d81cde726354b5ddad29144448254927ff552d4a0c33feae89a77abd9"
+        },
+        "slide-18": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-18.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-18.vtt",
+          "transcript": "Use the architecture questions to expose unresolved decisions. Where is idempotency enforced across the API, provider request, journal and callback handler? Which artifact proves one posting after a lost response? Can two engineers reproduce the same failure from fresh fixtures? Who owns provider-model drift, failed cleanup and evidence retention? Resolve these questions with the client system owners before giving an agent broader execution authority.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.32,
+          "sha256": "d3eec86eb1938d815bc20c09cd5afc053cfb6fc4338ca78e3fa80e9bdf24abd4"
+        },
+        "slide-19": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-19.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-19.vtt",
+          "transcript": "Map each foundation gap to the capability it blocks. Approved rules and repository context enable reviewed drafting. Isolated runners and resettable data enable comparable execution. Owned provider models enable deterministic negative-path tests. Joined results and named owners enable useful diagnosis and reuse. A missing prerequisite is a specific engineering backlog item, not a generic maturity score. Foundation work starts with the pilot and determines which capability can progress next.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 34.08,
+          "sha256": "9c00e6caa0535e58bbbe074d0e0273f55ddf8a6ac7289af11b1a2740b85f7c6d"
+        },
+        "slide-20": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-20.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-20.vtt",
+          "transcript": "Service virtualization controls a dependency so the team can repeat selected conditions. In this payment example, the model can accept once, time out or send a duplicate callback. A separate integration gate checks agreed behavior against the real provider and settlement process. Contract changes trigger review of the substitute. A passing model proves only the behavior it represents. Assign owners for fidelity, state reset and refresh before relying on it for the pilot.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.76,
+          "sha256": "10c98b48658f1bf05f2283302be1f1f8db75b83b12941a82268c7c7c35793e6a"
+        },
+        "slide-21": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-21.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-21.vtt",
+          "transcript": "The proposed environment runs the real payment application and database against a controlled provider model. The test runner supplies reviewed cases and isolated fixtures. A lifecycle owner handles readiness, reset and cleanup. Results and run identifiers survive outside the disposable environment, so removing resources does not remove the failure. Provider and settlement checks remain separate. The diagram's arrows show the design's calls and evidence handoffs, rather than live system activity.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.36,
+          "sha256": "6c246b068770275412579af7d9d9a80a3f79c347f00831f01f29223a5b5de9a3"
+        },
+        "slide-22": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-22.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-22.vtt",
+          "transcript": "Three technologies have different jobs. Containerization packages and runs real software, such as a database for one test run. Service virtualization simulates selected dependency behavior, such as a provider timeout. Contract testing checks whether consumer and provider interactions agree. They complement one another but do not establish complete business correctness. Choose supported tooling for the client application, and retain separate strategies for mobile devices, batch settlement and real integration.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.92,
+          "sha256": "803813bb8b3e0f5547c63d80bc3cf36320c296769b5d3da44da251079de55de1"
+        },
+        "slide-23": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-23.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-23.vtt",
+          "transcript": "The candidate test must earn acceptance. Start with domain-owned intent and versioned context. AI produces a proposal, which a reviewer checks before execution. The pipeline challenges it on the normal build and a known fault. If a required check fails, reject the candidate, preserve the evidence and return it for rework. The maintained suite stays unchanged. The guided example ends at rejection to make that boundary visible.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.44,
+          "sha256": "ddaa9ebe06216c278f69e5ca33d0842a8be626c4a8eabafd82d974cecfb2d0fd"
+        },
+        "slide-24": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-24.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-24.vtt",
+          "transcript": "Instrument the pilot at run level. Capture mode, scope, raw result, review time, model cost and rerun count. Compare conventional and assisted work under the same environment and acceptance rules. Include unsuccessful attempts, correction and operation. Keep setup separate from recurring effort, and report quality alongside speed. This slide defines a proposed measurement schema; no pilot observations have been recorded. Generated-test volume does not establish headcount savings.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.96,
+          "sha256": "96c7310a050db25eee3f67c3e482f6310a7b0e2d3b99102e849b3c793b8f6693"
+        },
+        "slide-25": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-25.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-25.vtt",
+          "transcript": "Follow the lifecycle from setup through cleanup. Pin and check the resources, create isolated synthetic accounts, and configure the owned provider behavior. Execute the required tests and challenge the deliberate fault. Retain assertions and diagnostics before teardown. Attempt cleanup on both success and failure, and escalate cleanup problems to the named owner. Finally, reconcile separate provider integration evidence. The pipeline owns execution; AI may help explain the retained results.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.2,
+          "sha256": "e7e517e8849c647448dfe06e5fb1968b6b2e8c3dcf2ca82e0ce8fc9bdf3a4d6d"
+        },
+        "slide-26": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-26.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-26.vtt",
+          "transcript": "Read this slide as four owned integration contracts. The context adapter packages versioned stories, API contracts and test revisions. Unresolved behavior blocks approval of the affected cases. The model adapter accepts that bundle and its configuration, then returns a proposed patch. A timeout or quota failure produces no candidate. Retries are bounded and recorded. The runner accepts an approved test commit and run manifest. It executes deterministic checks, preserves the original exit status, retains raw evidence, and then cleans up the environment. The evidence adapter indexes those artifacts using traceable run identifiers. Missing joins remain unknown. AI can draft a read-only explanation; it cannot turn missing or failed evidence into a pass. These contracts connect the controlled execution environment to traceable API test evidence.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 55.68,
+          "sha256": "a8e95ef454f13c734391e627760c39d0f9e3a96efa347ef6ee883b99e4a5a571"
+        },
+        "slide-27": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-27.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-27.vtt",
+          "transcript": "On the left, manual API and interface runs compete for shared backend services, PostgreSQL accounts and limited vendor test slots. There is no backend service virtualization. Engineers collect logs and screenshots manually. On the right, an approved test commit enters a pinned continuous integration runner. The pilot provisions a payment service and datastore for each run, resets synthetic balances, and uses versioned WireMock behavior to reproduce provider faults. JUnit and REST Assured check the transfer, journal and balances. An idempotency scenario verifies that a retried payment creates one transfer and one balanced journal. Raw assertions, application logs and run identifiers survive cleanup. AI assists drafting and evidence interpretation under review. Isolated execution and controlled dependencies come from quality engineering modernization. Real provider and settlement checks remain separate gates.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 58.72,
+          "sha256": "a469b58d27862ba815e98f883f6b92c9b0a3f4e5042147df25ea4cc08997ba39"
+        },
+        "slide-28": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-28.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-28.vtt",
+          "transcript": "The four adoption layers connect through different integration paths. A copilot works with an engineer in the development environment. A connected assistant reads pipeline evidence and prepares a triage brief. A bounded agent can use approved tools in an isolated scope and propose a change. Shared platform services supply context, models, evaluation and execution to all three. They are not four consecutive runtime steps. Independent checks and accountable owners remain across every path.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.32,
+          "sha256": "5400b33cd4addedb5063cdc0094a09c5c647b2cc83801b9b81133369cd867851"
+        },
+        "slide-29": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-29.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-29.vtt",
+          "transcript": "Measure test effectiveness with explicit denominators. Compare detected critical faults with the approved viable fault catalogue. Compare completed critical scenarios with the frozen matrix, keeping skipped cases visible. Compare complete decision records with every submitted release candidate, including missing packs. The clean control must pass and the intended fault must fail. These are proposed acceptance measures. Coverage and a complete evidence pack can still support a decision to stop a release.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 33.92,
+          "sha256": "a463218e2e8fbb7e7196d5ade9cb6df8a9f99315e2c7b640bb08e444b3b5c83a"
+        },
+        "slide-30": {
+          "audio": "/assets/audio/chris-v1.17.0/technical/slide-30.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/technical/slide-30.vtt",
+          "transcript": "The last checks are reliability, integration and reuse. Repeat unchanged configurations and report unstable results without erasing the original failure. Verify agreed behavior against the real provider and report simulated outcomes separately. Ask a second squad to configure, run and evidence the assigned journeys independently, recording help from the pilot authors. Freeze definitions before comparing results. These checks show whether the capability is dependable enough to extend beyond its first team.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.08,
+          "sha256": "79e3a65a90f2083276c7c22a425af11808d1cacde8712331642f9d468b6c398e"
+        }
+      },
+      "duration": 960.72
+    },
+    "industry-evp": {
+      "label": "Industry executive narration",
+      "slides": {
+        "slide-1": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-1.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-1.vtt",
+          "transcript": "Quality engineering has two connected opportunities in the AI era. We can use AI to help design tests, investigate failures and maintain suites. We also need to evaluate the behavior of AI-enabled applications. This presentation connects the industry evidence to a shared capability, an operating model and a measured adoption path. The central question is how to improve validated delivery while strengthening the organization's ability to judge the work.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.96,
+          "sha256": "da4fca583f24552f30d851091aa45f784af181d2c6f36e774ad3da9b48cd51e4"
+        },
+        "slide-2": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-2.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-2.vtt",
+          "transcript": "The diagram brings the two quality missions together. AI-assisted engineering and assurance of AI applications both need testable intent, independent checks and operational learning. Shared services can provide those foundations while domain teams own expected behavior. Faster change, trustworthy outcomes and reuse are ambitions to validate. The platform is valuable when teams can inspect evidence and repeat useful work, rather than simply generate more output.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.44,
+          "sha256": "0d90713eab48c2f6e59c398350ec910e068a4b3b4a2e06041c39ab62cfdbd752"
+        },
+        "slide-3": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-3.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-3.vtt",
+          "transcript": "The adoption barriers are broader than model capability. The industry survey highlights privacy, integration complexity, reliability and skill gaps. These are overlapping responses, so the bars are not slices of a single total. For leadership, the implication is practical: budget for integration, reviewer capacity and learning alongside the tool. A successful demonstration does not remove the organizational work needed to operate the capability consistently.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.0,
+          "sha256": "91b5b640eb1c18a2da24b049f12406800f1acb2cda9c5c4667ebe37bf37b9cce"
+        },
+        "slide-4": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-4.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-4.vtt",
+          "transcript": "The two studies measure different outcomes in different settings. One reports more completed tasks across field experiments. The other reports longer completion time for experienced developers working in familiar repositories. Neither supplies a universal quality-engineering savings rate. Task mix, developer experience and verification demands matter. Use the contrast to design a local comparison that measures complete work, including review and correction, rather than transferring a headline percentage.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.52,
+          "sha256": "f3a22896b4fe23b6fe4b41614e8d066c6bdc377dcee7be3a9a503ea449939e40"
+        },
+        "slide-5": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-5.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-5.vtt",
+          "transcript": "This calculator separates capacity from realized value. Adoption, eligible work and net task savings determine the effort equivalent that may be released. The captured share, costs and quality allowance then affect the economic result. The default numbers are illustrative and will change when you adjust the controls. A financial claim requires an agreed capture mechanism. The useful discussion is which assumptions the client can actually measure and influence.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.0,
+          "sha256": "710f5008d7670fc3849bca6f982282358fc96afb9e2e2ad69cd0af610dba839a"
+        },
+        "slide-6": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-6.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-6.vtt",
+          "transcript": "The industry sources point toward broader assisted work, with important limits. Gartner provides a forecast of tool adoption. McKinsey provides survey evidence about organizational change and delivery. DORA examines how AI interacts with the surrounding engineering system. These are different kinds of evidence. Together they support investment in workflow, testing and platform foundations. They do not prove that installing an assistant causes a particular productivity or quality outcome.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.6,
+          "sha256": "d01b863d613c2586e94de53b85a4fe3a22c4baaeed0466b4559ea9a12169c2ef"
+        },
+        "slide-7": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-7.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-7.vtt",
+          "transcript": "Industrial cases reveal practices worth testing. Generated tests can pass through build, reliability and coverage gates. Diagnostic summaries can cite the log lines behind a proposed cause. Flaky-test repair can use execution context while preserving the original assertion. The reusable lesson is independent verification around the AI output. These company-specific cases demonstrate mechanisms; they do not establish a transferable bank savings rate or a ranking of products.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.24,
+          "sha256": "a91dc98de1c601a7eead2fbdbfb471b2867955b4adf6ab4e9c3153de3e701881"
+        },
+        "slide-8": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-8.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-8.vtt",
+          "transcript": "Use two questions to screen the first workflows. How easy is it to verify the result, and how much authority does the system need? Reviewed test drafts and evidence-linked failure summaries can have bounded starting scopes. Multi-step execution requires stronger controls and recovery. Exploratory ideas need expert judgment. Begin where a reviewer can recognize a useful or incorrect result, then earn wider authority through evidence.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 26.88,
+          "sha256": "cb956eb919795bb4ee611c0727a07000aab035ed88886177d312ad9c3e42b91c"
+        },
+        "slide-9": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-9.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-9.vtt",
+          "transcript": "Each research finding should change a design decision. If generation shifts work into review, measure total workflow effort. If passing tests can still be weak, add independent quality checks. If behavior changes with configuration and use, retain versions and feed failures into evaluation. If tools increase the impact of errors, enforce authority outside the model. The evidence we retain should make each of these decisions inspectable.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.0,
+          "sha256": "086963f74221be5d60d3f4de70da205a2205ee0aee407f4949a75d759099b14b"
+        },
+        "slide-10": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-10.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-10.vtt",
+          "transcript": "Quality improves through a feedback loop. Compare a versioned application with a baseline on representative and held-out cases. Use independent checks to decide whether the candidate meets agreed floors. Release within an appropriate boundary, monitor its behavior, and curate important failures into future evaluations. A change in prompts, retrieval, tools or permissions can change the application. Assurance therefore continues after the first release and beyond the model itself.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.76,
+          "sha256": "7d8035f20dcf76185fa284dd913290242778ea744fcf3deeae0af74c7bd700c1"
+        },
+        "slide-11": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-11.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-11.vtt",
+          "transcript": "Ownership must cover the whole lifecycle. Product and quality owners define behavior and outcomes. Platform teams support context, execution and evidence services. Delivery teams own tests and review. Independent challenge examines exceptions and open risks, while operations and value owners follow incidents and actual capacity use. These responsibilities should fit existing institutional accountability. Shared infrastructure should make ownership clearer, rather than move business decisions into an undefined central team.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 34.4,
+          "sha256": "0f60a4c67e8aa2eb4c8a26b03f744179abd018434812de3ee68984b6886c0433"
+        },
+        "slide-12": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-12.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-12.vtt",
+          "transcript": "The quality role gains several disciplines. Practitioners need to define independent expectations, curate representative evaluations, inspect agent actions and measure complete workflows. Learning should produce observable evidence: a test catches a relevant fault, a judgment survives expert review, or a denied action leaves no side effect. This is a capability agenda. It is not evidence that domain expertise or human review can be removed from the operating model.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.68,
+          "sha256": "eb43130063012e6db0a66c26f45e18510d50c58b1e05daa09ae74072c62e18b3"
+        },
+        "slide-13": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-13.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-13.vtt",
+          "transcript": "The platform should outlast a particular model. Team workflows connect to approved context, bounded execution, independent checks and retained evidence through replaceable adapters. Release authority stays with accountable owners. Reviewed failures improve the regression corpus. This separation lets the institution change models and tools without losing its quality contracts or history. The strategic asset is the ability to evaluate and operate the workflow consistently.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.36,
+          "sha256": "0f076ba996be2a3f4f6c66251daae8d2fa2e843146eb229dc8430cc1659b85ca"
+        },
+        "slide-14": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-14.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-14.vtt",
+          "transcript": "Separate reusable services from domain-specific knowledge. A shared platform can supply datasets, evaluation runners, identity, evidence and recovery tooling. Payment teams still define transaction invariants and recovery cases. Other domains own their own behavior and acceptance rules. Model and tool adapters should remain replaceable. The diagram shows responsibilities, not a budget allocation. Fund both the shared service and the expertise required to make its output meaningful.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.56,
+          "sha256": "d2062b6b364ba27e78cbdea380336ac10e8ac05409a6b233bd322fdfec9bf16d"
+        },
+        "slide-15": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-15.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-15.vtt",
+          "transcript": "The roadmap advances through evidence gates. Start with trusted assistance and human approval. Connect context, evaluation and evidence across teams once the workflow is repeatable. Consider more autonomous agents when action controls and recovery have been demonstrated. These horizons are capability choices rather than calendar promises. Local quality, complete effort and reliable cross-team outcomes should determine the next step, not pressure to reach a fashionable maturity label.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.36,
+          "sha256": "5d257913d087de0956fcfc0bb97c63e5092246eeab559d16d6b464285275fc87"
+        },
+        "slide-16": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-16.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-16.vtt",
+          "transcript": "The leadership scorecard connects an outcome to evidence and a decision. Net effort informs whether capacity can be redeployed. Fault detection and escaped defects test whether quality is holding. Results across teams show whether shared services deserve further investment. Denial and recovery exercises inform authority limits. Every readout needs scope, sample, period, costs and uncertainty. An attractive aggregate result should not hide a failed critical scenario.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.84,
+          "sha256": "bce255497ed06f25b659d210d72d94d4935b215e24f720ce50d54355b8b9500b"
+        },
+        "slide-17": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-17.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-17.vtt",
+          "transcript": "Governance follows the system lifecycle. Inventory the purpose and dependencies, assign an accountable owner, and define allowed data and actions. Review evaluation evidence and open exceptions before approving scope. Operational incidents and service changes then feed back into that decision. Apply the institution's existing risk processes to the actual use case. The goal is a working cycle of evidence and accountability, not a one-time model approval.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.68,
+          "sha256": "0ddf01cddf903db87aecd86400b7de2c1b5c795338dccbd0047460c1a0abed42"
+        },
+        "slide-18": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-18.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-18.vtt",
+          "transcript": "Leadership has three connected choices. Define the quality capability the organization wants to build. Invest in the foundations and people that make it usable. Expand where outcomes and controls support a broader scope. The vision is that AI contributes more work while the institution becomes better at judging that work. The presentation's examples provide a way to discuss those choices; local evidence determines the commitment.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 25.04,
+          "sha256": "f48371af3fc02a78f036659b1dde4a1b9b0f32436f8797a403f26863b0550da9"
+        },
+        "slide-19": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-19.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-19.vtt",
+          "transcript": "Local assistants are useful for learning individual tasks, but context and checks can remain fragmented. Shared assurance services make expectations and evidence portable across teams. Bounded agents can perform more steps, with greater recovery obligations. The recommended strategic center is shared assurance. Standardize the proof and ownership before expanding delegated authority. That approach preserves the value of local experimentation while building a capability the institution can operate.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.08,
+          "sha256": "78e8dfd23b392bb83fe22f156a28e46ed795fab46890251343d0d5355328a98b"
+        },
+        "slide-20": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-20.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-20.vtt",
+          "transcript": "Consider a payment rule: negative amounts must be rejected without changing balances or the ledger. The target workflow starts with that domain-owned contract. A bounded generator proposes a test, independent execution challenges it, and a reviewer decides through existing release controls. Failures become new cases. This is an illustrative workflow to validate with the bank. Shared services support the proof, while the payment owner retains the meaning of correctness.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.64,
+          "sha256": "f083ffef75b1daa31fccd91841be87ee72210d12bf405f3eebfa9c9cf6c1c95d"
+        },
+        "slide-21": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-21.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-21.vtt",
+          "transcript": "Sequence the reusable assets before wider agency. First, establish task identity, approved tools, baseline measurement and an evidence contract. Next, make runners and failure cases usable across teams. Then consider scoped tool adapters and recovery exercises for delegated actions. Each horizon retains domain ownership and an explicit trade-off. Shared services need funded operators, and broader authority needs owners who accept the consequences and recovery duty.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.28,
+          "sha256": "1e9a86d1b5ff95cb844b2fce5343c848e90dcbda884e31a42a70221e3a1c9b86"
+        },
+        "slide-22": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-22.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-22.vtt",
+          "transcript": "Client adoption requires funded foundations. Business outcomes and reviewer capacity sit alongside infrastructure, pipelines, test data and application testability. Supported frameworks, approved AI access and retained run evidence complete the operating picture. Assess these requirements for the selected workflow. Unknown evidence remains open. A pilot can progress when its own prerequisites are accepted, with accountable owners and funding for the capability gaps.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.2,
+          "sha256": "76fc049729a68ddf7f292e4debfc8df4213c9343d2808c8b852cfc585cf8cf93"
+        },
+        "slide-23": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-23.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-23.vtt",
+          "transcript": "Quality modernization and AI adoption should progress together. Trusted work establishes clear scenarios and expected outcomes. Repeatable execution adds reliable suites, isolated data and controlled dependencies. Shared services make those assets reusable. Broader AI execution then adds bounded tools and tested recovery. Reviewed assistance can begin while foundations improve. The evidence required becomes stronger as the system takes on more execution and a wider operating scope.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.4,
+          "sha256": "a19b75aac5c8acbeee36d696cc16b83e3eda2333bbde1ef0ef15c2ab67c5f57c"
+        },
+        "slide-24": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-24.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-24.vtt",
+          "transcript": "These financial-services outcomes have separate meanings. The examples report test-creation time, coverage of a selected module and major incidents. The incident reduction comes from a wider modernization case, with AI testing introduced later as a pilot. Do not combine the numbers or attribute every improvement to AI. Use each case to identify a practice worth testing, then establish the client's own baseline and evaluation conditions.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 26.24,
+          "sha256": "e817a814ef5c7e6784144152c92a859a723080ecbb455b9bf21b47cb66007eae"
+        },
+        "slide-25": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-25.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-evp/slide-25.vtt",
+          "transcript": "Choose one focused entry point. Requirements-ready teams can trial reviewed scenario design. Teams with repeatable execution can test generated API candidates. Teams with useful diagnostics can assess evidence-linked failure triage. Define the output, reviewer and acceptance evidence before starting. Build reusable assets as the work progresses. The result should support a specific next adoption decision, with quality, effort and prerequisites visible together.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.52,
+          "sha256": "18a1cc2acaaad7838d4f7a21145abc3449a2aa26b1edeeac09cf95b0917cd4d2"
+        }
+      },
+      "duration": 737.68
+    },
+    "industry-technical": {
+      "label": "Industry technical narration",
+      "slides": {
+        "slide-1": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-1.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-1.vtt",
+          "transcript": "This presentation examines the system behind AI-enabled quality work. We will connect context, independent evaluation, action boundaries, release decisions and operational feedback. The architecture covers both AI-assisted engineering and assurance of AI applications. Every important boundary needs an owner, a versioned contract and a failure behavior. The banking engineering blueprint provides the more detailed payment implementation example; this deck develops the reusable assurance architecture.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.12,
+          "sha256": "56d97bcdecb12bb1d7947ce5fc3403358140c526d8fae8c927315e7e52ababf7"
+        },
+        "slide-2": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-2.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-2.vtt",
+          "transcript": "The platform separates team workflows from shared assurance services. Approved context feeds a bounded runtime. An external gateway checks requested actions before tools execute. Independent evaluation and sandbox checks produce evidence for a release owner. Reviewed failures return to the regression corpus. Inspect the components or use the flow controls to follow a path. The arrows represent architecture relationships, not a live production trace.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.84,
+          "sha256": "15c8e458f1124f7c705c2fa283989280c43d90d8c725309a47dcb9ea4d22b7bc"
+        },
+        "slide-3": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-3.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-3.vtt",
+          "transcript": "The generated payment test starts with an approved rule: reject a negative amount. The agent receives scoped contract and repository context, then proposes a candidate. A gateway authorizes only the permitted sandbox run. The candidate must catch a selected boundary fault, and the reviewer receives the assertions and execution evidence before a merge decision. The generated test cannot silently redefine the expected behavior to match a defective implementation.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.4,
+          "sha256": "a102fa7f2231255c5ad8e2135e04085d6ae7da72bcb3779abdd9acf700c04815"
+        },
+        "slide-4": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-4.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-4.vtt",
+          "transcript": "The industrial example distinguishes three gates: building, passing reliably and adding coverage. The share of qualifying target test classes decreases as the requirement becomes stronger. These percentages describe test classes, not individual generated tests. A successful build is therefore an intermediate result. For a local pilot, preserve this distinction and add checks that the assertions detect important faults. Coverage alone does not establish correct business behavior.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.52,
+          "sha256": "3c7222076f9057bc124520ecb73844b1e4015e4cc84fad1f60e6d2d689e5bcd9"
+        },
+        "slide-5": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-5.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-5.vtt",
+          "transcript": "Evaluate the versioned application as a system. Run baseline and candidate configurations against representative cases, with independent scoring and agreed release floors. Retain outputs and tool actions together. A failed case returns to diagnosis. An accepted candidate proceeds through controlled deployment, monitoring and reviewed case curation. Re-evaluate relevant changes in prompts, retrieval, memory, tools and authority rather than treating the model name as the entire release identity.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.6,
+          "sha256": "f1d616bec47f39f0dcd2c8e1d5a89f91b1e169307a7827f6cef6515e94d7a603"
+        },
+        "slide-6": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-6.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-6.vtt",
+          "transcript": "The evaluation contract has several layers. Task outcomes need representative expectations. Retrieval needs relevant, permitted evidence and correct citations. Agent actions need checks on tool choice, arguments and termination. Model judges need calibration against expert labels. Operation needs latency, cost, drift and fallback evidence. Report results by meaningful scenario. A single average score cannot explain whether every critical behavior remains acceptable.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 30.72,
+          "sha256": "8202e0a0a9b55027ba6f84859eb36020943180382dbacdc8f285b04101f1170d"
+        },
+        "slide-7": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-7.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-7.vtt",
+          "transcript": "The context service preserves permission and provenance. Retrieve only sources available to the current identity, then package minimal task evidence with source revisions. Test access revocation, stale passages and conflicting information. The runtime treats retrieved text as task data. It cannot grant itself tool access from a document's wording. Action authorization remains a separate check at the gateway, even when retrieval itself was permitted.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 26.96,
+          "sha256": "08264a25af5c91adfdf158bf257930ed17f3d979a3742e3666025b26528a81ed"
+        },
+        "slide-8": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-8.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-8.vtt",
+          "transcript": "A release identity must cover the whole evaluated configuration. Record the model and prompts, retrieval snapshots, tool schemas, allowed actions and memory rules. Bind these to the dataset, rubric, judge and threshold versions used in evaluation. The manifest and code revision connect baseline and candidate runs to the approving owner. A material component change creates a new candidate and triggers the relevant checks.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.32,
+          "sha256": "06a1984f27edb1b7b8c71e88797f947af0bdca6339de3f35c87c63213760cedf"
+        },
+        "slide-9": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-9.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-9.vtt",
+          "transcript": "Expected behavior needs an independent basis. For a negative payment, the approved contract says rejection with no balance or ledger change. The implementation may contain a defect, so copying its current behavior is not a trustworthy oracle. Review the generated assertions against the contract and challenge their side-effect checks. The candidate should pass valid code and fail a relevant seeded fault before it is considered useful evidence.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.36,
+          "sha256": "2b2c2a9372e7728e44f80a2bd1beba8d90ce676ad9c5e91e88127a5256dd1eea"
+        },
+        "slide-10": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-10.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-10.vtt",
+          "transcript": "Mutation-guided generation starts from a fault concern. Select a meaningful change, generate a candidate test, and preserve the intended assertion. The candidate must pass the original implementation and fail the faulty variant for the intended reason. Exclude invalid or equivalent mutations before judging the result. Retain the fault rationale with the run evidence. Detecting selected mutations improves the challenge but does not prove that every real defect is covered.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.08,
+          "sha256": "f238b421007bf4bfe9b10e1c8091c658c4297dd47aa0ef5663a7656c7aca69f6"
+        },
+        "slide-11": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-11.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-11.vtt",
+          "transcript": "A useful diagnosis points to evidence. Supply the assistant with relevant logs, trace identifiers and change context. It proposes a cause with inspectable lines, and an engineer confirms or corrects it. The industrial example separates the manually reviewed accuracy sample from the much larger deployment population. Do the same locally: evaluate sampled diagnoses, citation correctness and total investigation effort without claiming accuracy on unreviewed cases.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.04,
+          "sha256": "6b43208456f4e7678b44d74bf5a47856c9ebb96bf2a7333ea992c973cbdacb2c"
+        },
+        "slide-12": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-12.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-12.vtt",
+          "transcript": "Flaky-test repair must preserve test meaning. Reproduce the unstable behavior and collect its conditions before proposing a change. Execution paths, timing and shared state can guide diagnosis. Validate the candidate under varied conditions and inspect the assertions. Deleting a check may make a test stable while hiding the original problem. Retain repeatability evidence and reject repairs that trade away fault detection.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.8,
+          "sha256": "71ed4c3505a6049a3d242fee42b4598d72af09b6a0cfec26423ac4ff1d558142"
+        },
+        "slide-13": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-13.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-13.vtt",
+          "transcript": "The evaluation corpus has its own lifecycle. Curate permitted examples and reviewed failures, remove near duplicates, and label expected behavior. Keep development cases separate from held-out evaluation and adversarial sets. Related cases should stay in the same split so duplicated information does not inflate confidence. Version the source, expectation, scenario tag and review decision. Report important slices rather than relying only on an overall result.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.28,
+          "sha256": "ecab44efa156a4a46f6fa8d5ab8df8201066800432b89f46dcacad35ec650b8d"
+        },
+        "slide-14": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-14.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-14.vtt",
+          "transcript": "A model judge is another component that needs evaluation. Compare its decisions with independently reviewed labels and inspect false acceptance of incorrect outputs. Repeat ambiguous cases and test sensitivity to answer order. Keep calibration examples separate from final evaluation. Recheck the judge when its prompt, model or task population changes. Critical disagreements may require a deterministic check or expert gate instead of a larger average score.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.44,
+          "sha256": "0061496f58990f876f9c6d4c4873ca58ae80889f8d5dacd4fea88dd5003e7c43"
+        },
+        "slide-15": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-15.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-15.vtt",
+          "transcript": "This exercise tests the boundary between untrusted content and tool authority. Retrieved documents or tool output can contain instructions, but they cannot expand the agent's permissions. The runtime proposes an action, and an external gateway checks identity, resource and approval. A denied request should leave no side effect, terminate or escalate within bounds, and retain evidence. Test recovery as well as the model's verbal refusal.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.24,
+          "sha256": "2fdfbb9560265e5eb8a2f48cdb534569031faa0d3eaa8941219abb71f4e20005"
+        },
+        "slide-16": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-16.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-16.vtt",
+          "transcript": "Follow a denied action through the gateway. The request carries an action, resource and run identifier. The gateway checks policy and approval before execution. A denial is recorded with its policy version, and the runtime stops or escalates. The scoped tool is never invoked. Verify the absence of the prohibited side effect and the correlated event record. A reassuring assistant message alone does not prove enforcement.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.36,
+          "sha256": "bd764bd2249fc3de2eb436251a3e68b29fd6aad6a9b7242c1c9120924e2f9e7a"
+        },
+        "slide-17": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-17.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-17.vtt",
+          "transcript": "Separate orchestration, sandbox execution and production authority. The runtime receives a bounded task and retry budget. An ephemeral runner uses scoped identity, approved fixtures and explicit destinations. Reviewed artifacts cross into existing release systems under a different authority. Preserve logs and provenance while enforcing retention. Sandboxing reduces consequences, but it still needs access controls, escape testing and artifact validation.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.92,
+          "sha256": "2911becc4091e9e03b611fe947571a90ab2b3501ab08e842a5fd420f624ebc2c"
+        },
+        "slide-18": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-18.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-18.vtt",
+          "transcript": "Release decisions begin with comparable runs and mandatory floors. Use the same held-out corpus and versioned conditions to examine behavior, regression, denial and workflow limits. A failed critical scenario triggers a hold and investigation even if the average improves. When floors hold, reviewers inspect remaining regressions and uncertainty before a bounded rollout. Agree the thresholds locally and retain the scenario-level decision evidence.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.04,
+          "sha256": "e67fdeda0579d22fa7f6b2efc49a78566d7f7d9dd0f37597148b73add2e29bad"
+        },
+        "slide-19": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-19.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-19.vtt",
+          "transcript": "Recovery protects the underlying business process. A severe regression, outage or policy event can trigger containment and stop consequential actions. Route work to an approved fallback or human queue while preserving evidence. Diagnose and rerun the failing cases before an owner authorizes resumption. Reverting a model does not undo an external side effect. Compensation and reconciliation therefore need their own tested runbooks.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.04,
+          "sha256": "7b424d8a7094626a7068df38903b8277b55407725ecd13546f817ade08ca9cad"
+        },
+        "slide-20": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-20.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-20.vtt",
+          "transcript": "Operational evidence joins application events, gateway decisions and reviewer feedback by run identifier. Preserve event integrity while minimizing sensitive payloads and applying retention rules. Operations uses failures and tail latency; platform owners inspect tool patterns and denials; evaluation owners curate reviewed cases. This shared evidence makes incidents actionable and feeds future checks. A monitoring dashboard without reliable joins cannot explain how a particular result was produced.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.92,
+          "sha256": "bd5e6e6615a57e213dfe999b00b65f1f0d066659d7f24dc18d784817d7aba0a3"
+        },
+        "slide-21": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-21.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-21.vtt",
+          "transcript": "Join tasks, runs, reviews and outcomes to measure complete work. A task record defines scope and complexity. Run records identify configuration, tools, cost and elapsed time. Reviews capture acceptance, correction and human effort. Outcomes connect those artifacts to rework and quality over a defined period. Compare matched cohorts and include preparation, verification and unsuccessful attempts. Time saved requires a separate mechanism before it becomes realized value.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 32.08,
+          "sha256": "761604348d38b4e9136a60f341a3451a0a1844e3c9bd257140756c7779292f54"
+        },
+        "slide-22": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-22.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-22.vtt",
+          "transcript": "Tools occupy different assurance layers. Test-asset tools need validation of the resulting tests. Coding assistants need review of issues found and missed. Evaluation platforms need suitable datasets, calibrated judgments and exportable evidence. Adversarial tools need coverage of the actual authority boundary. The examples are representative documentation, not an independent product ranking. Select tools against the client's workflow and the proof each layer must produce.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.16,
+          "sha256": "e2d5c081f6abe785f62eed1a688f73e17513015712ab542bd7d0bc00bbcb2b38"
+        },
+        "slide-23": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-23.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-23.vtt",
+          "transcript": "Integration contracts preserve replaceability. Intake defines the task, scope, context and deadline. Action requests carry identity, schema and authorization context. Runners publish artifact hashes, configuration and original results. Evaluation supplies scenario evidence to a named release owner. Exercise missing scope, malformed requests, mismatched artifacts and stale evidence. A compatible adapter is useful only if its failure behavior preserves the contract as well as its successful response.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 34.32,
+          "sha256": "9952cfdad3907487fe28d2061f5aa127b4ce7bec8b03e4388cec9e453a89277a"
+        },
+        "slide-24": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-24.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-24.vtt",
+          "transcript": "Apply the decision rules in order. A breached quality or authority floor holds the workflow. Missing baseline or review evidence remains unknown. Only then examine the proposed saving, adoption and cost criteria for a limited scope. Borderline results can justify a bounded redesign with one clear hypothesis. These are the example pilot's rules, not a universal benchmark. Financial claims still need the agreed capture and validation process.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.0,
+          "sha256": "85185c481f7d3b9e81ad21340d84e3e4af5a15d031ca24a44c52d1083adff9df"
+        },
+        "slide-25": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-25.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-25.vtt",
+          "transcript": "The poisoned-document exercise supplies an instruction inside a test specification. Treat that content as untrusted task data. If the runtime attempts an out-of-scope export, the gateway should deny the destination before any side effect. Retain the source, action and correlated event, then stop or escalate. Reviewers add the sanitized failure case to regression and verify recovery. This illustrates a test to implement, not proof that all possible paths are covered.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.68,
+          "sha256": "c7062db738b9e33ef70e775137fef0310b73e311dbde7ed9fdf29d598d116a5e"
+        },
+        "slide-26": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-26.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-26.vtt",
+          "transcript": "Architecture decisions should point back to their evidence. Measure review and rework because generation can shift effort. Challenge generated tests because passing alone can be weak proof. Re-evaluate changing configurations because assurance continues through operation. Enforce tool authority externally because actions can have consequences beyond the response. Retain the versions, assertions and decisions that let another engineer inspect whether these design choices actually hold.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 31.52,
+          "sha256": "5d984a5fe075b9840deaa520147d08cbcc1f2ff9069abcade4ed10202c1334fd"
+        },
+        "slide-27": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-27.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-27.vtt",
+          "transcript": "A payment-test run joins four contracts. The task envelope defines scope, versions, expiry and budget. The policy decision binds identity and authority. The evaluation manifest links the candidate to independent checks. The evidence record connects the artifacts and review. Every boundary verifies the same relevant identity and digest. Missing durable evidence, stale authorization or a mismatch should hold promotion rather than be repaired by an optimistic summary.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.44,
+          "sha256": "3cf3a6494a3464e33ed53b10bfcaa15582493ff59fd06e2420ac0e83852b63a0"
+        },
+        "slide-28": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-28.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-28.vtt",
+          "transcript": "Failure semantics are part of the interface. After an unknown result, inspect status before retrying instead of launching duplicate work. Stale policy requires renewed authorization. Missing evidence holds promotion. A changed artifact or oracle invalidates old evaluation results. Recovery proceeds through an owned queue and the failing scenario is exercised before resumption. These behaviors keep an unavailable dependency from becoming an unexplained success.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 29.76,
+          "sha256": "2a5d829102821780e2b8f2d1c56c42df6f10de55076a7e6fb2ea36e84aed942f"
+        },
+        "slide-29": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-29.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-29.vtt",
+          "transcript": "Repair follows evidence-based triage. Reproduce the failure, identify its owner, propose a change and run independent checks while preserving the domain assertion. A temporary quarantine is a different path for a confirmed flaky test. It needs an owner, expiry, repair ticket and replacement coverage. Retain the resolution and versions, and recheck the exception until it is restored. Hiding a failing test is not the same as fixing it.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.6,
+          "sha256": "5a68c095e4f11de7cb184053de82157f7f84008b92f51d953b1d09cf2bcb5ec5"
+        },
+        "slide-30": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-30.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-30.vtt",
+          "transcript": "Assess prerequisites for the selected workflow. Infrastructure and pipelines, resettable data, controlled dependencies and observable applications determine what can run reliably. Approved model access, retained evidence and operating ownership determine what can be supported. Add domain review and a measured baseline. Unknown requirements remain open. The adoption decision follows accepted evidence and funded owners rather than a generic maturity label.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.64,
+          "sha256": "9935b992e1a9d55065fe87485f2a7ee06b7a83b4a143a836dabf2c0a3a4582ae"
+        },
+        "slide-31": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-31.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-31.vtt",
+          "transcript": "Control selected dependencies while retaining real integration checks. A reviewed payment test runs against a pinned service and an owned provider model that can reproduce timeouts or duplicate callbacks. A separate gate checks compatibility with the real provider and batch process. Refresh the substitute when its contract changes. AI may help draft a mapping, but it does not establish the model's fidelity or replace its accountable owner.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.44,
+          "sha256": "002294ade91b80758a1d8e9ab8b51742af9955b0e39ddfe9f30864f75a8ea058"
+        },
+        "slide-32": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-32.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-32.vtt",
+          "transcript": "A repeatable test environment runs real software with controlled inputs. The proposed runner checks the payment service and a real database against an isolated fixture and provider model. The lifecycle includes readiness, reset, retained evidence and cleanup. Failures remain failures after the environment is removed. Keep provider and settlement integration evidence separately. Another engineer should be able to reproduce the result from the same manifest.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 28.16,
+          "sha256": "c00b96ae6997f73bf968fffc7c5f1e898e3a83ade83abc7d10c03f5b7d71dc34"
+        },
+        "slide-33": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-33.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-33.vtt",
+          "transcript": "Containerization, service virtualization and contract testing solve different problems. Containers run software with repeatable dependencies. Virtual services simulate selected behavior, such as a provider timeout. Contract checks examine agreed interactions between a consumer and provider. The capabilities complement each other and need supported owners. None establishes every business invariant or removes the need for real integration and recovery checks.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.52,
+          "sha256": "b9e9049b69d21893e8cc300362a3288f2638d1bcf50e522feb654962a5e45673"
+        },
+        "slide-34": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-34.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-34.vtt",
+          "transcript": "The generated candidate enters a controlled acceptance path. Approved intent defines the expected behavior, AI proposes a test, and a human reviews the assertions before execution. Independent checks challenge both the correct build and a known fault. A failed requirement sends the candidate back for rework and leaves the maintained suite unchanged. Only accepted evidence and review can promote the change. The diagram makes that rejection path explicit.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 27.44,
+          "sha256": "68359a0c5cd32af59c42669710f45f16e4740b5fbad99fae7c1c217525c29cff"
+        },
+        "slide-35": {
+          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-35.mp3",
+          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-35.vtt",
+          "transcript": "Measure the incremental AI effect under shared conditions. Conventional and assisted work should use comparable tasks, frameworks, environments and acceptance rules. Reviewers inspect both, and independent tests challenge the behavior. Record every attempt, including correction, unsuccessful proposals and operating costs. First separate modernization improvements from the additional effect of AI. The decision to expand should follow accepted outcomes and complete effort, with uncertainty visible.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment, restored display terminology",
+          "duration": 33.44,
+          "sha256": "ebf1588c359257ebba0ba55677f36dfdcbe18f80e11a66f85b11ed32b6530a6c"
+        }
+      },
+      "duration": 1025.2
+    }
+  },
+  "complete": true,
+  "voice": "ElevenLabs / Chris",
+  "model_id": "eleven_v3"
 }

@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.720
+A generated test earns promotion
+through several checks.
+
+00:00:02.846 --> 00:00:05.280
+Review its code and intent first.
+
+00:00:05.500 --> 00:00:08.400
+Use identical fixtures
+to show that the correct build
+
+00:00:08.503 --> 00:00:11.760
+passes and the duplicate-posting
+variant fails.
+
+00:00:11.960 --> 00:00:13.760
+Retain the manifest,
+
+00:00:13.840 --> 00:00:18.000
+raw evidence and cleanup results so
+another engineer can repeat the run.
+
+00:00:18.260 --> 00:00:22.320
+The quality owner approves the proposed
+change through the existing
+
+00:00:22.378 --> 00:00:26.000
+repository controls.
+Compilation and a single passing run
+
+00:00:26.040 --> 00:00:29.680
+are intermediate results,
+not sufficient evidence for promotion.

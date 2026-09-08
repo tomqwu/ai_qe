@@ -3,6 +3,7 @@
   const body = document.body;
   const manifestPath = body.dataset.narrationManifest;
   if (!manifestPath || !window.QEDeck) return;
+  const startButton = document.querySelector('[data-narration-start]');
 
   let entries = {}, state = window.QEDeck.getState(), currentSlide = null, clip = null;
   let cueList = [], captionRequest, clipVersion = 0, audioFailed = false, captionFailed = false;
@@ -100,6 +101,10 @@
     panel.dataset.narrationState = audioFailed ? 'error' : playing ? 'playing' : audio.ended ? 'ended' : 'paused';
     ui.play.textContent = audioFailed ? 'Retry audio' : playing ? 'Ⅱ Pause' : '▶ Play';
     ui.play.setAttribute('aria-label', audioFailed ? 'Retry narration audio' : playing ? 'Pause narration' : 'Play narration');
+    if (startButton) {
+      startButton.textContent = playing ? 'Ⅱ Pause narration' : '▶ Play narration';
+      startButton.setAttribute('aria-pressed', String(playing));
+    }
     cancelAnimationFrame(frame);
     if (playing) frame = requestAnimationFrame(tick);
   }
@@ -131,6 +136,11 @@
   function loadSlide(newState) {
     state = newState;
     const entry = entries[state.slide];
+    if (startButton) {
+      startButton.hidden = false;
+      startButton.disabled = !entry;
+      startButton.title = entry ? 'Narrate from this slide with English subtitles and automatic slide changes' : 'No recording is available for this slide';
+    }
     const canContinue = continuing && state.reason === 'narration';
     if (currentSlide === state.slide && clip && state.mode !== 'reading') { setVisible(true); return; }
     stop();
@@ -146,7 +156,7 @@
       document.querySelector('.deck-message').textContent = '';
       if (canContinue) {
         const message = document.querySelector('.deck-message');
-        message.textContent = 'Narration sample complete. This next slide has no recording; continue with the slide controls.';
+        message.textContent = 'Narration paused: this slide has no recording. Continue with the slide controls.';
       }
       return;
     }
@@ -175,6 +185,12 @@
     });
   }
   function connectControls() {
+    startButton?.addEventListener('click', () => {
+      if (!audio.paused && !audio.ended) { stop(); return; }
+      if (window.QEDeck.getState().mode === 'reading') document.querySelector('[data-reading]').click();
+      ui.auto.checked = true;
+      play();
+    });
     ui.play.addEventListener('click', () => audio.paused || audio.ended ? play() : stop());
     ui.replay.addEventListener('click', () => { if (clip) { clearCaption(); audio.currentTime = 0; play(); } });
     ui.seek.addEventListener('input', () => { clipStarted = true; clearCaption(); audio.currentTime = Number(ui.seek.value); updateTime(); });

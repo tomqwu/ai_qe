@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.17.0 · 8 September 2026
+
+Added English narration by **Chris / ElevenLabs** to all **109 slides** across the four [presentations]({{ '/briefings/' | relative_url }}). Select **Play narration** to listen from the current slide with synchronized captions and automatic advancement when each recording finishes. Pause, replay, seek, playback speed, a caption toggle and a readable transcript support both full decks and guided stories.
+
+Captions use the recordings' character timestamps, with technical names restored for reading. The scripts explain the diagrams and distinguish the proposed banking scenario from reported industry evidence. Narration assets use edition **chris-v1.17.0**; banking PDFs remain **v1.16.1**, and industry PDFs remain **v1.12.2**.
+
+[GitHub release v1.17.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.17.0) includes the current PDFs and source registers, plus a downloadable narration bundle containing slide audio, subtitles and transcripts.
+
 ## v1.16.1 · 8 September 2026
 
 Clarified the [banking before/after story]({{ '/case-studies/fintech/#architecture-before-after' | relative_url }}): 75 offshore QA staff include 45 manual/domain testers, with few shared test environments, no backend service virtualization and limited vendor test capacity. Manual setup, reruns and evidence collection compete for those environments; adding staff alone does not increase available vendor slots.

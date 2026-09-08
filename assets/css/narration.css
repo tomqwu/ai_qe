@@ -1,4 +1,10 @@
 /* Recorded narration lives below the slide, with its own reserved space. */
+.deck-tools .deck-narration-start { background:#087875; border-color:#087875; color:#fff; font-weight:650; white-space:nowrap; }
+.deck-tools .deck-narration-start[aria-pressed=true] { background:#173643; border-color:#173643; }
+.deck-tools .deck-narration-start:disabled { opacity:.55; }
+.deck-narration-start[hidden] { display:none!important; }
+@media screen and (max-width:1280px) { .deck-header .deck-audience { display:none; } }
+@media screen and (max-width:700px) { .deck-tools { flex-wrap:wrap; } .deck-tools .deck-narration-start { min-height:40px; padding:5px 10px; } }
 .narration-panel { width:min(calc(100vw - 32px),1200px); color:#173643; background:#fcfcfa; border:1px solid #b9ceca; border-top:3px solid #087875; border-radius:6px 6px 0 0; padding:7px 12px 5px; z-index:22; }
 .narration-panel[hidden] { display:none!important; }
 .narration-caption { display:flex; align-items:center; justify-content:center; text-align:center; margin:0 auto 5px; min-height:48px; max-width:76ch; line-height:1.25; font-size:17px; font-weight:550; color:#fff; background:#173643; border-radius:4px; padding:2px 12px; white-space:pre-line; overflow:hidden; }
@@ -23,6 +29,17 @@
 .narration-transcript-dialog p { white-space:pre-line; font-size:18px; line-height:1.6; }
 .narration-transcript-dialog .narration-provenance { font-size:14px; line-height:1.45; padding-bottom:12px; border-bottom:1px solid #b9ceca; color:#405563; }
 @media screen and (min-width:701px) {
+  /* Keep inherited diagram typography and spacing proportional to the smaller
+     slide frame; fixed rem gaps otherwise clip dense narrated slides. */
+  .deck-page.has-narration:not(.reading-view) .slide { font-size:1.75cqw; }
+  .deck-page.has-narration:not(.reading-view) .slide .ft-note { font-size:1.3cqw; }
+  .has-narration:not(.reading-view) .slide .vs-operating-lanes ol { margin:.6cqw 0; }
+  .has-narration:not(.reading-view) .slide .vs-operating-lanes h3 { margin:.55cqw 0!important; }
+  .has-narration:not(.reading-view) .slide .vs-operating-lanes li { margin-bottom:.85cqw; }
+  .has-narration:not(.reading-view) .slide .fe-result-grid article { padding:.7cqw 0; }
+  .has-narration:not(.reading-view) .slide .virtualization-route { gap:1cqw; }
+  .has-narration:not(.reading-view) .slide .virtualization-route>div { min-height:12cqw; padding:1cqw; gap:.7cqw; }
+  .has-narration:not(.reading-view) .slide .virtualization-validation { padding:1cqw; margin-top:1cqw; gap:.6cqw 1.2cqw; }
   .deck-page.has-narration { --frame-width:min(calc(100vw - 32px),calc((100dvh - 112px - var(--narration-height,116px)) * 16 / 9)); padding-bottom:calc(64px + var(--narration-height,116px)); }
   .deck-page.has-narration.has-flow-controls { --frame-width:min(calc(100vw - 32px),calc((100dvh - 160px - var(--narration-height,116px)) * 16 / 9)); }
   .narration-panel { position:fixed; bottom:56px; left:50%; transform:translateX(-50%); }

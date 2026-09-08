@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.080
+Separate orchestration, sandbox
+execution and production authority.
+
+00:00:04.260 --> 00:00:07.600
+The runtime receives a bounded
+task and retry budget.
+
+00:00:07.813 --> 00:00:12.800
+An ephemeral runner uses scoped identity,
+approved fixtures and explicit
+
+00:00:12.855 --> 00:00:17.440
+destinations. Reviewed artifacts cross
+into existing release systems under
+
+00:00:17.480 --> 00:00:21.760
+a different authority. Preserve logs
+and provenance while enforcing retention.
+
+00:00:21.968 --> 00:00:26.880
+Sandboxing reduces consequences,
+but it still needs access controls,
+
+00:00:26.937 --> 00:00:29.920
+escape testing and artifact validation.

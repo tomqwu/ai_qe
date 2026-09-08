@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.880
+A release identity must cover
+the whole evaluated configuration.
+
+00:00:03.954 --> 00:00:08.880
+Record the model and prompts,
+retrieval snapshots, tool schemas,
+
+00:00:08.920 --> 00:00:13.040
+allowed actions and memory rules.
+Bind these to the dataset,
+
+00:00:13.100 --> 00:00:17.200
+rubric, judge and threshold
+versions used in evaluation.
+
+00:00:17.400 --> 00:00:21.520
+The manifest and code revision
+connect baseline and candidate runs
+
+00:00:21.653 --> 00:00:25.120
+to the approving owner.
+A material component change
+
+00:00:25.180 --> 00:00:28.320
+creates a new candidate
+and triggers the relevant checks.
