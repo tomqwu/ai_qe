@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.16.0 · 8 September 2026
+
+Added [before/after architecture and outcomes beyond hours]({{ '/case-studies/fintech/#architecture-before-after' | relative_url }}). The technical comparison shows workstations, runners, application/database boundaries, provider models and retained evidence. The executive comparison shows how squads move from individual tools to supported shared QE services.
+
+Three primary pilot measures cover payment-fault detection, critical-scenario coverage and complete release-decision evidence; repeatability, real-integration fidelity and second-squad reuse supply supporting proof. Definitions include denominators, proposed acceptance criteria, owners and limits. Baseline and observed after results remain **not recorded**. The measurement approach separates QE modernization from the incremental contribution of AI.
+
+Banking slides/PDFs advance to **v1.16.0**: **19 executive / 30 technical slides**. Existing anchors remain valid; guided routes and featured jumps include the new material. Industry PDFs remain **v1.12.2**, questionnaire **v4**, research companion **v1.7.0** and film **v1.8.0**. [GitHub release v1.16.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.16.0) packages the current assets.
+
 ## v1.15.0 · 8 September 2026
 
 Rebuilt the [banking technical briefing]({{ '/briefings/fintech-technical/' | relative_url }}) as an engineering walkthrough: separate authoring and execution boundaries, a payment API contract, timeout/retry sequence, versioned context and fixtures, deterministic monetary assertions, Azure CI publication, failure routing, evidence schemas and correlation IDs. Readiness now requires executable proof; adapter contracts define inputs, outputs and failure behavior. The guided technical route follows those engineering decisions.

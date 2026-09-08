@@ -1,0 +1,6 @@
+{% assign outcomes = site.data.qe_outcomes %}
+<div class="qo-scorecard">
+  <div class="qo-primary">{% for metric in outcomes.measures %}{% if metric.role == 'primary' %}<article><span class="qo-number">0{{ forloop.index }}</span><h3>{{ metric.executive_label }}</h3><p class="qo-target">{{ metric.target }}</p><p class="qo-mechanism">{{ metric.mechanism }}</p></article>{% endif %}{% endfor %}</div>
+  <div class="qo-support"><strong>Supporting proof</strong>{% for metric in outcomes.measures %}{% if metric.role == 'supporting' %}<span>{{ metric.executive_label }}</span>{% endif %}{% endfor %}</div>
+  <p class="qo-status">Baseline: {{ outcomes.baseline_status }} · Observed after: {{ outcomes.after_status }} · Targets proposed for pilot agreement.</p>
+</div>

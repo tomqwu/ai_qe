@@ -10,6 +10,16 @@ description: Dated entries recording what was verified, when, what changed, and 
 Newest first. Each entry records the question, what was checked, the outcome, and what changed on the site. Add an entry before editing a topic page.
 
 
+## 8 September 2026 — Architecture and quality outcomes beyond hours
+
+**Question.** How does the banking target architecture change delivery capability, and what would demonstrate value beyond returned QA hours?
+
+**Checked.** Reused the current PAY-142 scenario and modernization prerequisites. Reviewed [PIT mutation concepts](https://pitest.org/quickstart/basic_concepts/) and [Playwright retry classifications](https://playwright.dev/docs/test-retries) on 8 September 2026. They support fault-challenge and retry interpretation; the client scorecard, repeat protocol and acceptance targets are authored proposals.
+
+**Design outcome.** Compare individual tools/shared environments with reviewed test commits, isolated execution, versioned provider models and retained evidence. Three primary measures cover critical fault detection, critical-scenario coverage and complete decision evidence. Supporting proof covers repeatability, integration fidelity and second-squad reuse. Denominators include missing/incomplete work as specified; clean controls, original failures and real-integration evidence prevent misleading success claims.
+
+**Attribution and status.** Baseline and observed after results are not recorded. Compare existing work, modernized QE without AI and the same foundation with AI where feasible; otherwise report joint contribution. Seeded-fault detection does not establish fewer production incidents or customer losses. The case page and audience briefings link the architecture change to the proposed evidence, with source metadata in `_data/qe_outcomes.json`.
+
 ## 8 September 2026 — Banking engineering blueprint
 
 **Question.** What must technical leads inspect beyond the executive strategic-vision story?

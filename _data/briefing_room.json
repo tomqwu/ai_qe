@@ -9,7 +9,7 @@
     "url": "/briefings/fintech-evp/",
     "pdf_prefix": "ai-qe-fintech-evp",
     "edition": "fintech_edition",
-    "slides": 17,
+    "slides": 19,
     "time": "25–30 min",
     "outline": [
       "The payment story and manual-work baseline",
@@ -21,7 +21,8 @@
       "Guided client route: connected workflows, prerequisites and concrete architecture",
       "Before / after: manual API work and the target pilot workflow",
       "Observed time framework for the API pilot and brainstorm questions",
-      "Four AI adoption layers: individual copilots, connected workflows, bounded agents and shared platform services"
+      "Four AI adoption layers: individual copilots, connected workflows, bounded agents and shared platform services",
+      "Before/after architecture and outcomes beyond hours · slides 18–19"
     ]
   },
   {
@@ -34,14 +35,15 @@
     "url": "/briefings/fintech-technical/",
     "pdf_prefix": "ai-qe-fintech-technical",
     "edition": "fintech_edition",
-    "slides": 28,
+    "slides": 30,
     "time": "35–45 min",
     "outline": [
       "System boundaries and payment API contract · slides 1–5",
       "Versioned context, fixtures, assertions and CI artifacts · slides 6–12",
       "Failure injection, readiness proof and promotion rules · slides 13–19",
       "Virtualization, deployment and candidate validation · slides 20–25",
-      "Adapter contracts, before/after and AI integration layers · slides 26–28"
+      "Adapter contracts, before/after and AI integration layers · slides 26–28",
+      "Before/after architecture and outcomes beyond hours · slides 27, 29–30"
     ]
   },
   {

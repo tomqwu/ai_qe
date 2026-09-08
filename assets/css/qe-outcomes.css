@@ -1,0 +1,123 @@
+/* Before/after architecture and an evidence-led outcome scorecard. */
+.ba-architecture { margin:0; }
+.ba-scroll { overflow:auto; }
+.ba-scroll:focus-visible { outline:3px solid #a76816; outline-offset:3px; }
+.ba-svg { width:100%; display:block; font-family:"Source Sans 3",sans-serif; color:#233f50; }
+.ba-svg text { fill:#233f50; }
+.ba-heading, .ba-title, .ba-zone-title { font-weight:650; }
+.ba-node rect { fill:#eef4f9; stroke:#3a789d; stroke-width:1.5; }
+.ba-human rect { fill:#fbf0df; stroke:#947029; }
+.ba-virtual rect { fill:#f3edf8; stroke:#76529a; stroke-dasharray:5 4; }
+.ba-evidence rect { fill:#e7f5ee; stroke:#26725c; }
+.ba-zone { fill:#f7fafb; stroke:#8aabb9; stroke-dasharray:5 4; }
+.ba-edge { fill:none; stroke:#44677c; stroke-width:2; }
+.ba-divider { fill:none; stroke:#c1cfd4; }
+.ba-edge-label { paint-order:stroke; stroke:#fff; stroke-width:4px; }
+.ba-mobile { display:none; }
+.ba-value { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.ba-value section { border:1px solid #b9c9d0; background:#f5f8fa; padding:20px; }
+.ba-value section.ba-value-after { border-top:3px solid #25705e; background:#f0f7f3; }
+.ba-value .ba-eyebrow { text-transform:uppercase; letter-spacing:.06em; color:#587079; font-size:13px; margin:0 0 8px; }
+.ba-value h3 { margin:0 0 18px; }
+.ba-value ol { list-style:none; padding:0; margin:0; }
+.ba-value li { border-top:1px solid #cbd8dc; padding:12px 0; }
+.ba-value li::before { content:none !important; }
+.ba-value strong, .ba-value li span { display:block; }
+.ba-value li span { margin-top:5px; }
+.ba-contribution, .qo-status { background:#edf3f7; border-left:3px solid #37769b; padding:12px 16px; font-size:14px; }
+.qo-primary { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.qo-primary article { border:1px solid #b7c9cc; border-top:4px solid #226f5e; padding:22px; background:#f1f7f4; }
+.qo-number { color:#287565; font-size:32px; font-weight:650; }
+.qo-primary h3 { margin:8px 0 16px; }
+.qo-primary .qo-target { font-weight:650; color:#154f42; }
+.qo-primary p { margin:12px 0; }
+.qo-support { display:flex; flex-wrap:wrap; gap:12px 20px; padding:18px 0; border-bottom:1px solid #c5d3d7; }
+.qo-support span { border-left:2px solid #7e9da9; padding-left:16px; }
+.qo-register { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0; }
+.qo-register details { border:1px solid #b7c9cc; border-radius:5px; padding:16px; background:#fff; scroll-margin-top:24px; }
+.qo-register summary { cursor:pointer; font-weight:650; color:#183f4d; }
+.qo-register summary:focus-visible { outline:3px solid #a76816; outline-offset:4px; }
+.qo-register p { font-size:16px; margin:12px 0; }
+.qo-role { font-size:12px; text-transform:uppercase; color:#55727b; margin-right:8px; }
+.qo-guardrail { border-left:3px solid #967236; padding-left:12px; }
+.qo-attribution { padding:22px; background:#eef4f7; border-top:3px solid #397595; }
+.qo-attribution h3 { margin-top:0; }
+.qo-attribution ol { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding:0; list-style:none; }
+.qo-attribution li::before { content:none !important; }
+.qo-attribution strong, .qo-attribution span { display:block; }
+.qo-attribution span { margin-top:8px; }
+.deck-page .ba-svg { max-height:31cqw; }
+.deck-page .ba-architecture figcaption { font-size:1.25cqw; line-height:1.35; margin-top:.7cqw; }
+.deck-page .ba-value { gap:2cqw; }
+.deck-page .ba-value section { padding:1.4cqw; }
+.deck-page .ba-value .ba-eyebrow { font-size:1.2cqw; margin:0 0 .6cqw; }
+.deck-page .ba-value h3 { font-size:2.2cqw; margin:0 0 1cqw; }
+.deck-page .ba-value li { font-size:1.65cqw; line-height:1.3; padding:.8cqw 0; }
+.deck-page .ba-value li span { font-size:1.5cqw; margin-top:.4cqw; }
+.deck-page .ba-contribution, .deck-page .qo-status { font-size:1.3cqw; line-height:1.35; margin:1cqw 0 0; padding:.8cqw 1.1cqw; }
+.deck-page .qo-primary { gap:2cqw; }
+.deck-page .qo-primary article { padding:1.5cqw; }
+.deck-page .qo-number { font-size:3cqw; }
+.deck-page .qo-primary h3 { font-size:2.1cqw; margin:.6cqw 0 1.2cqw; }
+.deck-page .qo-primary p { font-size:1.6cqw; line-height:1.35; margin:.9cqw 0; }
+.deck-page .qo-support { gap:1cqw 2cqw; padding:1.5cqw 0; font-size:1.4cqw; }
+.deck-page .qo-support span { padding-left:1.2cqw; }
+.fintech-deck .qo-measures th, .fintech-deck .qo-measures td { font-size:1.65cqw; padding:1.1cqw 1.4cqw 1.1cqw 0; }
+.fintech-deck .qo-measures tbody th { width:23%; }
+.fintech-deck .qo-measures td:last-child { width:25%; }
+@media screen and (max-width:700px) {
+ .ba-value, .qo-primary, .qo-register, .qo-attribution ol { grid-template-columns:1fr; }
+ .ba-scroll { display:none; }
+ .ba-mobile { display:grid; gap:20px; }
+ .ba-mobile section { padding:16px; background:#edf4f8; border-left:3px solid #3a789d; margin:0; }
+ .ba-mobile section:last-child { background:#edf6f0; border-color:#28705d; }
+ .ba-mobile h3 { margin:0 0 12px; }
+ .deck-page .ba-architecture figcaption { font-size:14px; }
+ .deck-page .ba-value section { padding:18px; }
+ .deck-page .ba-value .ba-eyebrow { font-size:12px; }
+ .deck-page .ba-value h3, .deck-page .qo-primary h3 { font-size:22px; margin:10px 0; }
+ .deck-page .ba-value li, .deck-page .ba-value li span, .deck-page .qo-primary p { font-size:17px; line-height:1.45; }
+ .deck-page .ba-value li { padding:14px 0; }
+ .deck-page .ba-contribution, .deck-page .qo-status { font-size:14px; padding:12px; margin:16px 0 0; }
+ .deck-page .qo-primary { gap:16px; }
+ .deck-page .qo-primary article { padding:18px; }
+ .deck-page .qo-number { font-size:32px; }
+ .deck-page .qo-support { font-size:16px; gap:12px; padding:16px 0; }
+ .fintech-deck .qo-measures, .fintech-deck .qo-measures tbody, .fintech-deck .qo-measures tr, .fintech-deck .qo-measures th, .fintech-deck .qo-measures td { display:block; width:100%; }
+ .fintech-deck .qo-measures thead { display:none; }
+ .fintech-deck .qo-measures tr { border-top:2px solid #8dabb7; margin-bottom:20px; }
+ .fintech-deck .qo-measures th, .fintech-deck .qo-measures td { font-size:17px; padding:10px 0; border:0; }
+ .fintech-deck .qo-measures td:last-child { width:100%; }
+ .fintech-deck .qo-measures td:last-child::before { content:'Proposed acceptance: '; font-weight:650; }
+}
+.ba-teams { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.ba-teams span { display:grid; place-items:center; text-align:center; border:1px solid #7a9daf; padding:10px 8px; background:#fff; font-size:15px; font-weight:600; }
+.ba-connect { display:flex; justify-content:space-around; align-items:center; gap:10px; margin:12px 0; font-size:26px; color:#456c7c; }
+.ba-connect span { font-size:14px; }
+.ba-services { padding:16px; border:2px solid #749aaf; background:#eaf2f8; }
+.ba-services p { margin:8px 0; }
+.ba-ai { display:block; padding:8px; background:#eee7f8; color:#593480; }
+.ba-limits { font-size:15px; margin:12px 0 0; }
+.deck-page .ba-teams span { font-size:1.35cqw; padding:.8cqw .5cqw; }
+.deck-page .ba-connect { font-size:2cqw; margin:1cqw 0; }
+.deck-page .ba-connect span { font-size:1.2cqw; }
+.deck-page .ba-services { padding:1cqw; font-size:1.6cqw; }
+.deck-page .ba-services p, .deck-page .ba-ai { font-size:1.5cqw; margin:.6cqw 0; }
+.deck-page .ba-ai { padding:.6cqw; }
+.deck-page .ba-limits { font-size:1.4cqw; line-height:1.3; margin:1cqw 0 0; }
+@media screen and (max-width:700px) {
+ .deck-page .ba-teams span { font-size:13px; padding:10px 5px; }
+ .deck-page .ba-connect { font-size:24px; margin:12px 0; }
+ .deck-page .ba-connect span { font-size:13px; }
+ .deck-page .ba-services { font-size:18px; padding:14px; }
+ .deck-page .ba-services p, .deck-page .ba-ai, .deck-page .ba-limits { font-size:16px; line-height:1.4; margin:10px 0 0; }
+ .deck-page .ba-ai { padding:8px; }
+}
+.fintech-deck .qo-measures tbody th { width:32%; }
+.fintech-deck .qo-measures td:last-child { width:68%; }
+.qo-acceptance { display:block; margin-top:.7cqw; color:#536f79; font-size:1.4cqw; font-weight:400; }
+@media screen and (max-width:700px) {
+ .fintech-deck .qo-measures tbody th, .fintech-deck .qo-measures td:last-child { width:100%; }
+ .fintech-deck .qo-measures td:last-child::before { content:'Measure: '; }
+ .qo-acceptance { font-size:16px; margin-top:10px; }
+}

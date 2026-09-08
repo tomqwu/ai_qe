@@ -1,0 +1,3 @@
+{% assign outcomes = site.data.qe_outcomes %}
+<table class="ft-table qo-measures"><thead><tr><th scope="col">Measure / proposed acceptance</th><th scope="col">Calculation / explicit denominator</th></tr></thead><tbody>{% for metric in outcomes.measures %}{% if metric.role == slide.metric_role %}<tr><th scope="row">{{ metric.executive_label }}<span class="qo-acceptance">Target: {{ metric.target }}</span></th><td>{{ metric.technical_definition }}</td></tr>{% endif %}{% endfor %}</tbody></table>
+<p class="qo-status">Baseline and observed after: {{ outcomes.baseline_status }}. Freeze scope and definitions before comparing.</p>
