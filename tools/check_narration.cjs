@@ -24,6 +24,7 @@ async function seekNearEnd(page) { await page.locator('[data-narration-seek]').f
 async function slide(page, number) { await page.locator('.deck-navigation select').selectOption(String(number - 1)); }
 async function checkBounds(page) {
   await page.evaluate(() => document.fonts.ready);
+  await page.waitForFunction(() => Math.ceil(document.querySelector('.narration-panel').getBoundingClientRect().height) === parseFloat(document.body.style.getPropertyValue('--narration-height')));
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   const bounds = await page.evaluate(() => {
     const content = document.querySelector('.slide:not([hidden])').getBoundingClientRect();
