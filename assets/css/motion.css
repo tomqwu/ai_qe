@@ -24,7 +24,19 @@
 .motion-inview .flow-effect { opacity: 1; }
 /* Context paths stay fully legible; only the explicitly selected paths move. */
 .research-figure[data-flow-mode='tour'] .flow-effect:not(.route-focus),
+.research-figure[data-flow-mode='narration'] .flow-effect:not(.route-focus),
 .research-figure[data-flow-mode='inspect'] .flow-effect:not(.route-focus) { display: none; }
+.research-figure[data-flow-mode='narration'] .flow-effect.route-focus { opacity: 1; }
+/* Current state survives pause and reduced motion; do not rely on a glow or
+   color alone. These selectors cover light, dark, banking and sequence nodes. */
+.research-figure .research-diagram [data-flow-node].state-current > rect {
+  fill: #fff0c9; stroke: #986018; stroke-width: 4; stroke-dasharray: none;
+}
+.research-figure .research-diagram [data-flow-node].state-current > text { fill: #152e40; }
+.research-figure .diagram-overview [data-flow-node].state-current {
+  background: #fff0c9; border: 2px solid #986018; border-left-width: 6px;
+}
+.research-figure .diagram-overview [data-flow-node].state-current strong::before { content: '▸ '; }
 .research-figure .research-diagram .edge.route-focus { stroke: var(--flow-active); stroke-width: 3; }
 .research-figure .research-diagram .flow-focus-arrow path { stroke: var(--flow-active); }
 .motion-inview .flow-effect.route-focus .packet-core { filter: drop-shadow(0 0 3px #d2a252); }

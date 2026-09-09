@@ -10,6 +10,7 @@
   let captionsOn = true, continuing = false, clipStarted = false, frame = 0, resizeFrame = 0, panel;
   const slidePauseMs = 2000;
   let advanceTimer = 0, pendingAdvance = null;
+  let flows = [];
   const audio = document.createElement('audio');
   audio.preload = 'metadata';
   audio.setAttribute('aria-label', 'Recorded slide narration');
@@ -139,7 +140,7 @@
       if (!response.ok) throw new Error('Caption request failed');
       const cues = parseCaptions(await response.text());
       if (version !== clipVersion) return;
-      cueList = cues; ui.cc.disabled = false; renderCaption();
+      cueList = cues; flows.forEach(flow => flow.setCaptions(cues)); ui.cc.disabled = false; renderCaption();
       if (!audioFailed) announce(audio.paused ? 'English narration · Press Play to listen.' : 'English narration · Captions synchronized to audio.');
     } catch (error) {
       if (error.name === 'AbortError' || version !== clipVersion) return;
@@ -159,6 +160,7 @@
     const canContinue = continuing && state.reason === 'narration';
     if (currentSlide === state.slide && clip && state.mode !== 'reading') { setVisible(true); return; }
     stop();
+    flows.forEach(flow => flow.destroy()); flows = [];
     currentSlide = state.slide;
     clipVersion += 1;
     clipStarted = false;
@@ -178,6 +180,10 @@
     document.querySelector('.deck-message').textContent = '';
     audioFailed = false;
     audio.src = clip.audio;
+    document.getElementById(currentSlide).querySelectorAll('.research-figure').forEach(target => {
+      const flow = window.QENarrationFlow?.connect(audio, target, `${body.dataset.narrationAudience}/${currentSlide}`);
+      if (flow) flows.push(flow);
+    });
     audio.playbackRate = Number(ui.speed.value);
     audio.load();
     ui.transcript.hidden = !clip.transcript;
@@ -263,6 +269,9 @@
       if (clip) announce('Narration paused for slide notes. Close the notes and select Play to resume.');
     });
     document.addEventListener('qe:narration-interrupt', stop);
+    // Manual diagram exploration also cancels the breathing pause after audio
+    // ended, when audio.pause() alone cannot emit another pause event.
+    document.addEventListener('qe:flow-manual', stop);
     window.addEventListener('pagehide', stop);
     window.addEventListener('beforeprint', stop);
   }

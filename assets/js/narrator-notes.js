@@ -33,6 +33,7 @@
     const caption = element('p', 'narrator-guide-caption'); caption.dataset.guideCaption = '';
     caption.setAttribute('aria-label', 'English subtitles'); caption.setAttribute('aria-live', 'off');
     const audio = document.createElement('audio'); audio.controls = true; audio.preload = 'none'; audio.src = audioURL;
+    const flow = window.QENarrationFlow?.connect(audio, target, `${definition.deck}/${definition.slide}`);
     audio.setAttribute('aria-label', 'Audio explanation playback'); audio.dataset.guideAudio = '';
     const status = element('p', 'narrator-guide-status'); status.setAttribute('role', 'status');
     const cc = element('button', 'narrator-guide-cc', 'CC'); cc.type = 'button'; cc.setAttribute('aria-label', 'English subtitles'); cc.setAttribute('aria-pressed', 'true');
@@ -68,8 +69,8 @@
       try {
         const response = await fetch(captionURL, {signal:request.signal});
         if (!response.ok) throw new Error('Caption request failed');
-        cues = parseCaptions(await response.text()); renderCaption();
-        status.textContent = definition.baseline ? 'Published baseline explanation · English captions' : demo ? 'Scenario overview · English captions · Use the stage controls to inspect the flow.' : 'English captions synchronized to the explanation.';
+        cues = parseCaptions(await response.text()); flow?.setCaptions(cues); renderCaption();
+        status.textContent = definition.baseline ? 'Published baseline explanation · English captions' : demo ? 'Scenario overview · English captions · Use the stage controls to inspect the flow.' : flow ? 'English captions and highlighted components follow the audio.' : 'English captions synchronized to the explanation.';
       } catch (error) {
         if (error.name === 'AbortError') return;
         cuesRequested = false;
@@ -88,7 +89,7 @@
       // An overview recording must not race the independent diagram timer.
       pausingFlow = true;
       if (demo) document.querySelector('[data-play][aria-pressed="true"]')?.click();
-      target.querySelector('[data-tour-play][aria-pressed="true"]')?.click();
+      if (!flow) target.querySelector('[data-tour-play][aria-pressed="true"]')?.click();
       pausingFlow = false;
       loadCaptions(); sync();
     });
@@ -102,7 +103,7 @@
     // Exploring a different step pauses its overview, but never restarts it.
     const onExplore = event => { if (!pausingFlow && event.target.closest('[data-tour-play], [data-tour-next], [data-tour-reset], [data-layer]')) audio.pause(); };
     target.addEventListener('click', onExplore);
-    const controller = {audio, destroy() { audio.pause(); request?.abort(); cancelAnimationFrame(frame); target.removeEventListener('click', onExplore); audio.removeAttribute('src'); audio.load(); wrapper.remove(); players.delete(controller); }};
+    const controller = {audio, destroy() { audio.pause(); flow?.destroy(); request?.abort(); cancelAnimationFrame(frame); target.removeEventListener('click', onExplore); audio.removeAttribute('src'); audio.load(); wrapper.remove(); players.delete(controller); }};
     players.add(controller);
     return controller;
   }

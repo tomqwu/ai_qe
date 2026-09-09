@@ -6,6 +6,12 @@
   const ns = 'http://www.w3.org/2000/svg';
   const controls = [...document.querySelectorAll('[data-motion-toggle]')];
   const records = [];
+  const controllers = new WeakMap();
+  window.QEFlow = Object.freeze({
+    has: host => controllers.has(host),
+    follow: (host, cue, progress, paused) => controllers.get(host)?.follow(cue, progress, paused),
+    release: (host, preserveSelection) => controllers.get(host)?.release(preserveSelection)
+  });
   let preference = 'on';
   let printing = false;
   try { preference = localStorage.getItem(storageKey) || 'on'; } catch (_) { /* Storage is optional. */ }
@@ -71,12 +77,22 @@
       flow.path.setAttribute('marker-end', active && flow.focusMarker ? `url(#${flow.focusMarker.id})` : flow.marker);
       flow.animations.forEach(animation => {
         // A guided pulse completes before the next stage (3.2 seconds).
-        animation.setAttribute('dur', `${mode === 'tour' ? 2.4 : flow.duration}s`);
-        animation.setAttribute('begin', mode === 'tour' ? '0s' : `-${flow.phase}s`);
-        animation.setAttribute('repeatCount', mode === 'tour' ? '1' : 'indefinite');
+        const guided = mode === 'tour' || mode === 'narration';
+        animation.setAttribute('dur', `${guided ? 2.4 : flow.duration}s`);
+        animation.setAttribute('begin', guided ? '0s' : `-${flow.phase}s`);
+        animation.setAttribute('repeatCount', guided ? '1' : 'indefinite');
       });
     });
     record.svg.setCurrentTime(0);
+  }
+  function setNodes(record, ids) {
+    const selected = new Set(ids);
+    record.host.querySelectorAll('[data-flow-node]').forEach(node => {
+      const active = selected.has(node.dataset.flowNode);
+      node.classList.toggle('state-current', active);
+      if (active) node.setAttribute('aria-current', 'step');
+      else node.removeAttribute('aria-current');
+    });
   }
   function attachTour(record) {
     const host = record.host;
@@ -97,6 +113,8 @@
     let timer;
     let remaining = 3200;
     let deadline;
+    let narration = null;
+    const manual = () => host.dispatchEvent(new CustomEvent('qe:flow-manual', { bubbles: true }));
     const clear = () => {
       if (timer !== undefined) {
         clearTimeout(timer);
@@ -105,6 +123,18 @@
       }
     };
     function update() {
+      if (narration) {
+        play.textContent = '▶ Explore flow';
+        play.setAttribute('aria-pressed', 'false');
+        play.disabled = !enabled();
+        play.title = 'Pause the audio and explore the workflow independently';
+        legend.textContent = 'Gold boxes = spoken focus. Arrows follow the audio; other relationships stay visible.';
+        host.dispatchEvent(new CustomEvent('qe:flow-state', { bubbles: true, detail: {
+          playing: false, enabled: enabled(), label: play.textContent,
+          status: `${record.flowPaused ? 'Audio paused' : 'Audio'} · ${narration.title}`
+        } }));
+        return;
+      }
       play.textContent = playing ? 'Ⅱ Pause flow' : index >= 0 ? '▶ Resume flow' : completed ? '↻ Replay flow' : '▶ Play flow';
       play.setAttribute('aria-pressed', String(playing));
       play.disabled = !enabled();
@@ -114,7 +144,7 @@
       if (mode === 'overview') {
         legend.textContent = moving ? 'Static arrows = relationships. Play flow highlights only the current step.' : 'All connections remain visible. Next step works with motion off.';
       } else {
-        legend.textContent = `${mode === 'tour' ? 'Gold = current step.' : 'Gold = direct connections.'} Teal = static context.${moving ? '' : ' Motion paused.'}`;
+        legend.textContent = `${mode === 'tour' ? 'Gold box = current destination.' : 'Gold box = selected component.'} Gold arrows = current handoff. Other connections stay visible.${moving ? '' : ' Motion paused.'}`;
       }
       host.dispatchEvent(new CustomEvent('qe:flow-state', { bubbles: true, detail: {
         playing, enabled: enabled(), label: play.textContent,
@@ -126,9 +156,8 @@
       remaining = 3200;
       index = number;
       const step = steps[index];
-      if (host.dataset.diagram === 'fallback-state') {
-        host.querySelectorAll('.diagram-node').forEach((node, i) => node.classList.toggle('state-current', i === (index + 1) % 4));
-      }
+      const destinations = step.routes.map(route => route.split(':')[1]);
+      setNodes(record, [...destinations, step.node].filter(Boolean));
       status.replaceChildren();
       const heading = document.createElement('strong');
       heading.textContent = `${playing ? '' : 'Paused · '}${step.title}`;
@@ -151,7 +180,7 @@
       completed = finished;
       record.flowPaused = false;
       clear();
-      host.querySelectorAll('.state-current').forEach(node => node.classList.remove('state-current'));
+      setNodes(record, []);
       setRoutes(record, 'overview');
       host.dispatchEvent(new CustomEvent('qe:overview'));
       status.textContent = finished ? 'Flow complete · overview restored.' : 'Overview · all connections have equal emphasis.';
@@ -159,7 +188,7 @@
     }
     function schedule() {
       clear();
-      if (!playing || !canRun(record)) return;
+      if (narration || !playing || !canRun(record)) return;
       deadline = performance.now() + remaining;
       timer = setTimeout(() => {
         timer = undefined;
@@ -171,6 +200,7 @@
     }
     play.addEventListener('click', () => {
       if (!enabled()) return;
+      manual();
       previewStarted = true;
       playing = !playing;
       record.flowPaused = !playing;
@@ -179,6 +209,7 @@
       syncRecord(record);
     });
     next.addEventListener('click', () => {
+      manual();
       previewStarted = true;
       playing = false;
       record.flowPaused = true;
@@ -186,16 +217,18 @@
       show((index + 1) % steps.length);
       syncRecord(record);
     });
-    reset.addEventListener('click', () => overview());
+    reset.addEventListener('click', () => { manual(); overview(); });
     host.addEventListener('qe:flow-command', event => {
       ({ play, next, reset })[event.detail.action]?.click();
     });
     branch?.addEventListener('change', () => {
+      manual();
       steps = allSteps.filter((step, i) => (branch.value === 'fix' ? [0, 1, 2, 4] : [0, 3, 5]).includes(i));
       overview();
     });
     host.addEventListener('qe:component-selected', event => {
       if (event.detail.source === 'manual') {
+        manual();
         previewStarted = true;
         playing = false;
         index = -1;
@@ -204,11 +237,13 @@
         clear();
         const routes = record.flows.filter(({ path }) => path.dataset.from === event.detail.node || path.dataset.to === event.detail.node).map(({ path }) => `${path.dataset.from}:${path.dataset.to}`);
         setRoutes(record, 'inspect', routes);
+        setNodes(record, [event.detail.node]);
         status.textContent = `Inspecting ${host.querySelector('[data-inspector-name]').textContent} · incoming and outgoing connections, without a step sequence.`;
         syncRecord(record);
       }
     });
     record.updateTour = () => {
+      if (narration) { update(); return; }
       // One guided preview when the actual diagram enters view. Explicit pause,
       // overview, inspection and reduced motion always take precedence.
       if (!previewStarted && canRun(record)) {
@@ -224,6 +259,44 @@
       update();
       schedule();
     };
+    controllers.set(host, {
+      follow(cue, progress, paused) {
+        const changed = narration !== cue || record.flowPaused !== paused;
+        previewStarted = true;
+        playing = false;
+        clear();
+        record.externalClock = true;
+        record.flowPaused = paused;
+        if (narration !== cue) {
+          narration = cue;
+          index = -1;
+          host.dispatchEvent(new CustomEvent('qe:overview'));
+          setRoutes(record, 'narration', cue.routes);
+          setNodes(record, cue.nodes);
+          if (branch && cue.branch) {
+            branch.value = cue.branch;
+            steps = allSteps.filter((step, i) => (cue.branch === 'fix' ? [0, 1, 2, 4] : [0, 3, 5]).includes(i));
+          }
+        }
+        const message = `${paused ? 'Audio paused' : 'Audio'} · ${cue.title}`;
+        if (status.textContent !== message) status.textContent = message;
+        // The audio is the only clock: buffering, seeking, speed and pause all
+        // leave the SVG at the matching point in this spoken passage.
+        record.svg.pauseAnimations();
+        record.svg.setCurrentTime(Math.max(0, Math.min(1, progress)) * 2.4);
+        if (changed) syncRecord(record);
+      },
+      release(preserveSelection = false) {
+        if (!narration) return;
+        narration = null;
+        record.externalClock = false;
+        record.flowPaused = true;
+        if (preserveSelection) {
+          setRoutes(record, 'overview');
+          setNodes(record, []);
+        } else overview();
+      }
+    });
     setRoutes(record, 'overview');
     toolbar.hidden = false;
     update();
@@ -233,7 +306,7 @@
     record.host.classList.toggle('motion-inview', running);
     record.host.dataset.motionRunning = String(Boolean(running));
     if (record.svg) {
-      if (running) record.svg.unpauseAnimations();
+      if (running && !record.externalClock) record.svg.unpauseAnimations();
       else record.svg.pauseAnimations();
     }
     record.updateTour?.();

@@ -3,7 +3,7 @@
     {
       "title": "1 / Task contract",
       "detail": "The domain owner requires rejection of negative payment amounts.",
-      "node": "",
+      "node": "agent",
       "routes": [
         "edge:0"
       ]
@@ -11,7 +11,7 @@
     {
       "title": "2 / Request context",
       "detail": "The runtime requests only approved contract and test patterns.",
-      "node": "",
+      "node": "gateway",
       "routes": [
         "edge:1"
       ]
@@ -19,7 +19,7 @@
     {
       "title": "3 / Scoped context",
       "detail": "The policy boundary returns versioned permitted evidence.",
-      "node": "",
+      "node": "agent",
       "routes": [
         "edge:2"
       ]
@@ -27,7 +27,7 @@
     {
       "title": "4 / Candidate test",
       "detail": "The runtime submits a candidate and a requested runner.",
-      "node": "",
+      "node": "gateway",
       "routes": [
         "edge:3"
       ]
@@ -35,7 +35,7 @@
     {
       "title": "5 / Authorize sandbox",
       "detail": "Authorization is checked before any tool runs.",
-      "node": "",
+      "node": "sandbox",
       "routes": [
         "edge:4"
       ]
@@ -43,7 +43,7 @@
     {
       "title": "6 / Independent test",
       "detail": "The original passes and the seeded faulty behavior fails.",
-      "node": "",
+      "node": "gateway",
       "routes": [
         "edge:5"
       ]
@@ -51,7 +51,7 @@
     {
       "title": "7 / Evidence bundle",
       "detail": "Checks, versions and artifact digest go to the reviewer.",
-      "node": "",
+      "node": "reviewer",
       "routes": [
         "edge:6"
       ]
@@ -59,7 +59,7 @@
     {
       "title": "8 / Human decision",
       "detail": "Existing repository controls govern approval and merge.",
-      "node": "",
+      "node": "engineer",
       "routes": [
         "edge:7"
       ]
@@ -69,7 +69,7 @@
     {
       "title": "1 / Attempt production write",
       "detail": "The sandbox-only task requests an unauthorized resource.",
-      "node": "",
+      "node": "gateway",
       "routes": [
         "edge:0"
       ]
@@ -77,7 +77,7 @@
     {
       "title": "2 / Evaluate policy",
       "detail": "The gateway checks identity, scope and approval before execution.",
-      "node": "",
+      "node": "gateway",
       "routes": [
         "edge:1"
       ]
@@ -85,7 +85,7 @@
     {
       "title": "3 / Record denial",
       "detail": "Persist reason and policy version. The tool is never invoked.",
-      "node": "",
+      "node": "evidence",
       "routes": [
         "edge:2"
       ]
@@ -93,7 +93,7 @@
     {
       "title": "4 / Return denied",
       "detail": "Stop this action; escalate through a separate authorized workflow.",
-      "node": "",
+      "node": "runtime",
       "routes": [
         "edge:3"
       ]
@@ -103,7 +103,7 @@
     {
       "title": "1 / Contain",
       "detail": "A breach or outage stops consequential agent actions.",
-      "node": "",
+      "node": "containment",
       "routes": [
         "edge:0"
       ]
@@ -111,7 +111,7 @@
     {
       "title": "2 / Route to fallback",
       "detail": "Use the approved manual queue or last validated service.",
-      "node": "",
+      "node": "fallback",
       "routes": [
         "edge:1"
       ]
@@ -119,7 +119,7 @@
     {
       "title": "3 / Recovery review",
       "detail": "Validate the fix and exercise the original failure case.",
-      "node": "",
+      "node": "recovery",
       "routes": [
         "edge:2"
       ]
@@ -127,7 +127,7 @@
     {
       "title": "4 / Authorized resumption",
       "detail": "An owner authorizes normal service. Reconcile prior side effects separately.",
-      "node": "",
+      "node": "normal",
       "routes": [
         "edge:3"
       ]
@@ -137,7 +137,7 @@
     {
       "title": "1 / Failure \u2192 triage",
       "detail": "Capture CI traces, fixture versions and repeatability evidence.",
-      "node": "",
+      "node": "triage",
       "routes": [
         "edge:0"
       ]
@@ -145,7 +145,7 @@
     {
       "title": "2 / Repair branch",
       "detail": "An owner confirms the cause and requests a product, test, data or environment repair.",
-      "node": "",
+      "node": "repair",
       "routes": [
         "edge:1"
       ]
@@ -153,7 +153,7 @@
     {
       "title": "3 / Independent retest",
       "detail": "Reproduce the original failure, verify the repair and run relevant regression cases.",
-      "node": "",
+      "node": "retest",
       "routes": [
         "edge:2"
       ]
@@ -161,7 +161,7 @@
     {
       "title": "Quarantine branch",
       "detail": "Only a confirmed flaky test can enter a time-limited exception with replacement coverage.",
-      "node": "",
+      "node": "quarantine",
       "routes": [
         "edge:3"
       ]
@@ -169,7 +169,7 @@
     {
       "title": "4 / Repair evidence",
       "detail": "Retain the verified outcome, reviewer and versions.",
-      "node": "",
+      "node": "record",
       "routes": [
         "edge:4"
       ]
@@ -177,7 +177,7 @@
     {
       "title": "3 / Open exception record",
       "detail": "Keep the owner, expiry, repair ticket and coverage plan. Recheck until the test is restored.",
-      "node": "",
+      "node": "record",
       "routes": [
         "edge:5"
       ]

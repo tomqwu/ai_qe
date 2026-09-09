@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.19.0 · 8 September 2026
+
+Active destinations now use a **gold fill, strong border and readable dark text** across all nine animated 2D workflow diagrams. Highlights remain visible when paused and in the mobile readable overview. Other components and connections remain legible.
+
+The existing page explanations and all four decks now use **78 caption-anchored visual cues across 12 recordings** to synchronize these diagrams with the spoken explanation. Audio controls the highlighted components and arrow position; pause, seeking, speed changes and replay stay on the same timeline. Manual flow controls pause narration and return control to the presenter. Rejection and quarantine stay separate from acceptance and repair.
+
+The [technical platform slide]({{ '/briefings/technical/#slide-2' | relative_url }}) and the [homepage architecture]({{ '/#explore' | relative_url }}) demonstrate the update. The existing recordings, captions, two-second slide pause and PDF editions are retained. The 3D demo still uses its separately labelled scenario overview. [GitHub release v1.19.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.19.0) includes the new visual cue definitions in the narration bundle.
+
 ## v1.18.1 · 8 September 2026
 
 The audio narration panel now matches the slide width with a **12-pixel gap** and consistent borders across standalone and embedded presentations. It stays next to its slide on tall screens, with separate room for diagram controls and navigation.

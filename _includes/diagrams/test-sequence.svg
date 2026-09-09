@@ -1,18 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 530" class="research-diagram" role="img" aria-labelledby="test-sequence-title"><title id="test-sequence-title">Illustrative payment API test-generation sequence: contract, scoped context, candidate, policy-mediated execution, independent mutation test and reviewer approval</title><defs><marker id="test-sequence-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
+<g class="diagram-node on-dark" data-flow-node="engineer">
 <rect x="9" y="15" width="212" height="53" rx="4" class="actor"/>
 <text x="115" y="47" class="node-title" text-anchor="middle">Engineer / QE</text>
+</g>
 <path d="M 115 68 V 476" class="lifeline"/>
+<g class="diagram-node on-dark" data-flow-node="agent">
 <rect x="249" y="15" width="212" height="53" rx="4" class="actor"/>
 <text x="355" y="47" class="node-title" text-anchor="middle">QE agent</text>
+</g>
 <path d="M 355 68 V 476" class="lifeline"/>
+<g class="diagram-node on-dark" data-flow-node="gateway">
 <rect x="489" y="15" width="212" height="53" rx="4" class="actor"/>
 <text x="595" y="47" class="node-title" text-anchor="middle">Policy gateway</text>
+</g>
 <path d="M 595 68 V 476" class="lifeline"/>
+<g class="diagram-node on-dark" data-flow-node="sandbox">
 <rect x="729" y="15" width="212" height="53" rx="4" class="actor"/>
 <text x="835" y="47" class="node-title" text-anchor="middle">Sandbox / CI</text>
+</g>
 <path d="M 835 68 V 476" class="lifeline"/>
+<g class="diagram-node on-dark" data-flow-node="reviewer">
 <rect x="974" y="15" width="212" height="53" rx="4" class="actor"/>
 <text x="1080" y="47" class="node-title" text-anchor="middle">Reviewer</text>
+</g>
 <path d="M 1080 68 V 476" class="lifeline"/>
 <path d="M 115 106 H 355" class="edge" marker-end="url(#test-sequence-arrow)"/>
 <text x="25" y="96" class="sequence-label" text-anchor="start">1  Contract: reject a negative payment amount</text>

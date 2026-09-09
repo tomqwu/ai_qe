@@ -40,5 +40,6 @@
 {% if page.fintech %}<link rel="stylesheet" href="{{ "/assets/css/qe-outcomes.css" | relative_url }}?v={{ site.data.release.version }}">{% endif %}
 
 <script src="{{ "/assets/js/narration-media.js" | relative_url }}?v={{ site.data.release.version }}" defer></script>
+<script src="{{ '/assets/js/narration-flow.js' | relative_url }}?v={{ site.data.release.version }}" data-narration-flows="{{ '/assets/data/narration-flows.json' | relative_url }}?v={{ site.data.release.version }}" defer></script>
 <link rel="stylesheet" href="{{ "/assets/css/narrator-notes.css" | relative_url }}?v={{ site.data.release.version }}">
 <script src="{{ "/assets/js/narrator-notes.js" | relative_url }}?v={{ site.data.release.version }}" data-narrator-guides="{{ "/assets/data/narration-guides.json" | relative_url }}?v={{ site.data.release.version }}" data-manifest="{{ "/assets/data/narration.json" | relative_url }}?v={{ site.data.release.version }}" data-site-base="{{ "/" | relative_url }}" defer></script>

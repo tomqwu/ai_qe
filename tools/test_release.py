@@ -93,6 +93,9 @@ class PublicationTests(unittest.TestCase):
             with zipfile.ZipFile(bundle) as archive:
                 guides = json.loads(archive.read('narration-guides.json'))
                 self.assertEqual(set(guides['demo']), {'generate', 'evaluate', 'deny', 'hold'})
+                flows = json.loads(archive.read('narration-flows.json'))
+                self.assertEqual(len(flows['profiles']), 12)
+                self.assertEqual(sum(len(profile['cues']) for profile in flows['profiles']), 78)
                 for extension in ('.mp3', '.vtt'):
                     self.assertEqual(sum(name.endswith(extension) for name in archive.namelist()), 109)
                 self.assertEqual(sum(name.startswith('transcripts/') for name in archive.namelist()), 109)
