@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.21.1 · 9 September 2026
+
+Starting audio now pauses other AI × QE players across **open tabs and windows on the same site**, page explanations and nested embedded presentations. Playback requests claim focus before loading finishes; a cancelled request cannot interrupt the newer player when its audio arrives.
+
+Taking over audio also cancels the previous deck's pending automatic transition. The existing **two-second pause between slides**, synchronized captions and diagram highlights remain. Interrupted players stay paused until selected again. Refresh existing presentation tabs to load this player update.
+
+Recordings, scripts and slide/PDF editions are unchanged. [GitHub release v1.21.1](https://github.com/tomqwu/ai_qe/releases/tag/v1.21.1) packages the current publication.
+
 ## v1.21.0 · 9 September 2026
 
 The [technical platform slide]({{ '/briefings/technical/#slide-2' | relative_url }}) and its existing page explanations now have a **4-minute-50-second full walkthrough**, replacing the short technical summary. The recording explains all **11 components** across **13 synchronized sections**, with **72 audio-timed English captions**.
