@@ -197,7 +197,7 @@ finish(s,'A01,T03,T06','Proposed corpus design · set sizes depend on the task a
 s = SVG('gateway-sequence','Proposed sequence for a denied tool action: policy enforcement happens before execution',1200,520)
 actors=[(20,'Agent runtime'),(320,'Policy gateway'),(620,'Scoped tool'),(920,'Evidence store')]
 for x,title in actors:
-    s.node(x,15,260,70,title,(),'node node-navy');s.path(f'M {x+130} 85 V 384','lifeline',False)
+    s.node(x,15,260,70,title,(),'node node-navy',flow_key={20:'runtime',320:'gateway',620:'tool',920:'evidence'}[x]);s.path(f'M {x+130} 85 V 384','lifeline',False)
 events=[(150,450,132,'1  Request action + resource + run ID'),(450,450,210,'2  Check identity, policy and approval'),(450,1050,287,'3  Record denial + policy version'),(450,150,364,'4  Return denial; stop or escalate')]
 for a,b,y,t in events:
     if a==b:s.path(f'M {a} {y-18} H {a+60} V {y+18} H {a}');s.text(a+78,y,t,'sequence-label')
@@ -240,12 +240,12 @@ finish(s,'A01,A02,T06','Proposed release logic · no universal score threshold i
        'Comparable runs reach a mandatory-floor check. Failure holds the candidate. Passing candidates proceed to review of scenario-level regressions and remaining uncertainty.')
 
 s = SVG('fallback-state','Proposed recovery state machine for an AI workflow with bounded recovery authority',1200,510)
-s.node(20,60,260,120,'Normal operation',('Approved configuration','Active monitoring'), 'node node-teal')
-s.node(360,60,280,120,'Containment',('Stop consequential actions','Preserve relevant evidence'), 'node node-sand')
-s.node(760,60,420,120,'Fallback service',('Approved prior route or manual queue','Protect the underlying business process'))
+s.node(20,60,260,120,'Normal operation',('Approved configuration','Active monitoring'), 'node node-teal',flow_key='normal')
+s.node(360,60,280,120,'Containment',('Stop consequential actions','Preserve relevant evidence'), 'node node-sand',flow_key='containment')
+s.node(760,60,420,120,'Fallback service',('Approved prior route or manual queue','Protect the underlying business process'),flow_key='fallback')
 s.path('M 280 119 H 358');s.text(287,42,'trigger', 'edge-label')
 s.path('M 640 119 H 758');s.text(666,102,'route', 'edge-label')
-s.node(760,328,420,113,'Recovery review',('Diagnose, patch and rerun failure scenarios','Owner authorizes resumption'))
+s.node(760,328,420,113,'Recovery review',('Diagnose, patch and rerun failure scenarios','Owner authorizes resumption'),flow_key='recovery')
 s.path('M 970 180 V 326');s.text(984,249,'stable fallback', 'edge-label')
 s.path('M 760 386 H 10 V 120 H 18','edge edge-dashed');s.text(227,369,'approved recovery', 'edge-label')
 s.text(32,252,'Example triggers', 'lane-title');s.text(32,288,'Provider outage, policy breach,', 'label');s.text(32,320,'budget limit or severe regression', 'label')

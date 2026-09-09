@@ -67,6 +67,7 @@ jobs:
           node tools/check_narration.cjs
           node tools/check_recorded_narration.cjs
           node tools/check_presenter_notes.cjs
+          node tools/check_flow_narration.cjs
           node tools/browser-smoke.cjs
           node tools/sales-navigation-test.cjs
           node tools/search-navigation-test.cjs

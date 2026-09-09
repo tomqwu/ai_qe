@@ -44,6 +44,7 @@
       const label = node.querySelector('.node-title');
       if (!label) return;
       const item = document.createElement('li'), heading = document.createElement('strong'); heading.textContent = label.textContent;
+      if (node.dataset.flowNode) item.dataset.flowNode = node.dataset.flowNode;
       const detail = [...node.querySelectorAll('.node-text')].map(el => el.textContent).join(' · ');
       item.append(heading, document.createTextNode(detail)); overview.append(item);
     });

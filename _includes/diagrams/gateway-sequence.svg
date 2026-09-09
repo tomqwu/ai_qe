@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" class="research-diagram" role="img" aria-labelledby="gateway-sequence-title"><title id="gateway-sequence-title">Proposed sequence for a denied tool action: policy enforcement happens before execution</title><defs><marker id="gateway-sequence-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
-<g class="diagram-node on-dark">
+<g class="diagram-node on-dark" data-flow-node="runtime">
 <rect x="20" y="15" width="260" height="70" rx="8" class="node node-navy"/>
 <text x="36" y="43" class="node-title" text-anchor="start">Agent runtime</text>
 </g>
 <path d="M 150 85 V 384" class="lifeline"/>
-<g class="diagram-node on-dark">
+<g class="diagram-node on-dark" data-flow-node="gateway">
 <rect x="320" y="15" width="260" height="70" rx="8" class="node node-navy"/>
 <text x="336" y="43" class="node-title" text-anchor="start">Policy gateway</text>
 </g>
 <path d="M 450 85 V 384" class="lifeline"/>
-<g class="diagram-node on-dark">
+<g class="diagram-node on-dark" data-flow-node="tool">
 <rect x="620" y="15" width="260" height="70" rx="8" class="node node-navy"/>
 <text x="636" y="43" class="node-title" text-anchor="start">Scoped tool</text>
 </g>
 <path d="M 750 85 V 384" class="lifeline"/>
-<g class="diagram-node on-dark">
+<g class="diagram-node on-dark" data-flow-node="evidence">
 <rect x="920" y="15" width="260" height="70" rx="8" class="node node-navy"/>
 <text x="936" y="43" class="node-title" text-anchor="start">Evidence store</text>
 </g>

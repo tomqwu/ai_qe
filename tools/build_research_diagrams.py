@@ -13,9 +13,10 @@ class SVG:
   connection=f' data-from="{link[0]}" data-to="{link[1]}"' if link else ''
   self.parts.append(f'<path d="{d}" class="{cls}"'+(f' marker-end="url(#{self.name}-arrow)"' if arrow else '')+connection+'/>')
  def circle(self,x,y,r,cls='dot'):self.parts.append(f'<circle cx="{x}" cy="{y}" r="{r}" class="{cls}"/>')
- def node(self,x,y,w,h,title,lines=(),cls='node',key=None):
+ def node(self,x,y,w,h,title,lines=(),cls='node',key=None,flow_key=None):
   if key:self.parts.append(f'<g role="button" tabindex="0" aria-label="Inspect {escape(title)}" data-architecture-node="{key}" aria-pressed="false">')
-  self.parts.append(f'<g class="diagram-node {"on-dark" if "node-navy" in cls else ""}">')
+  flow_attr=f' data-flow-node="{flow_key or key}"' if flow_key or key else ''
+  self.parts.append(f'<g class="diagram-node {"on-dark" if "node-navy" in cls else ""}"{flow_attr}>')
   self.rect(x,y,w,h,cls)
   self.text(x+16,y+28,title,'node-title')
   for j,t in enumerate(lines):self.text(x+16,y+51+20*j,t,'node-text')
@@ -28,7 +29,7 @@ class SVG:
 
 s=SVG('platform','Proposed enterprise AI and quality engineering platform: delivery interfaces, governed context and agent execution, independent assurance, release and evidence feedback',1200,600)
 s.rect(14,20,1172,112,'lane lane-teal');s.text(32,46,'DELIVERY EXPERIENCE','lane-title')
-for x,title,lines in [(240,'Engineer / QE',('IDE · pull request · test workbench',)),(570,'Delivery systems',('Repository · CI · issue tracker',)),(890,'AI applications',('Product workflows · agents',))]:s.node(x,35,278,78,title,lines)
+for x,title,lines in [(240,'Engineer / QE',('IDE · pull request · test workbench',)),(570,'Delivery systems',('Repository · CI · issue tracker',)),(890,'AI applications',('Product workflows · agents',))]:s.node(x,35,278,78,title,lines,flow_key={240:'experience',570:'delivery',890:'application'}[x])
 s.text(32,75,'Work enters through', 'node-text');s.text(32,95,'existing team workflows','node-text')
 s.rect(14,165,730,233,'lane');s.text(32,193,'GOVERNED EXECUTION','lane-title')
 s.node(32,212,214,145,'Context service',('Classify + minimize','Permitted retrieval','Versioned input snapshot'),'node', 'context')
@@ -101,7 +102,8 @@ s.save()
 s=SVG('test-sequence','Illustrative payment API test-generation sequence: contract, scoped context, candidate, policy-mediated execution, independent mutation test and reviewer approval',1200,530)
 actors=[(115,'Engineer / QE'),(355,'QE agent'),(595,'Policy gateway'),(835,'Sandbox / CI'),(1080,'Reviewer')]
 for x,t in actors:
- s.rect(x-106,15,212,53,'actor',4);s.text(x,47,t,'node-title','middle');s.path(f'M {x} 68 V 476','lifeline',False)
+ s.parts.append(f'<g class="diagram-node on-dark" data-flow-node="{dict(zip([115,355,595,835,1080],["engineer","agent","gateway","sandbox","reviewer"]))[x]}">')
+ s.rect(x-106,15,212,53,'actor',4);s.text(x,47,t,'node-title','middle');s.parts.append('</g>');s.path(f'M {x} 68 V 476','lifeline',False)
 rows=[(106,115,355,'1  Contract: reject a negative payment amount'),(164,355,595,'2  Request approved API contract + test patterns'),(214,595,355,'3  Return scoped, versioned context'),(266,355,595,'4  Submit candidate test + requested runner'),(318,595,835,'5  Authorize sandbox run; no production access'),(372,835,595,'6  Test must catch a seeded boundary fault'),(420,595,1080,'7  Evidence bundle: assertions, CI, mutation result'),(475,1080,115,'8  Human approval → existing merge controls')]
 for y,x1,x2,t in rows:
  s.path(f'M {x1} {y} H {x2}', 'edge edge-dashed' if x1>x2 else 'edge')

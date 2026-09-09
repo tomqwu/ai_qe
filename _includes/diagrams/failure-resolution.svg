@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" class="research-diagram" role="img" aria-labelledby="failure-resolution-title"><title id="failure-resolution-title">Failed test through reviewed repair, with a separate temporary quarantine and coverage path</title><defs><marker id="failure-resolution-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="failure">
 <rect x="20" y="45" width="350" height="120" rx="8" class="node"/>
 <text x="36" y="73" class="node-title" text-anchor="start">Failed test</text>
 <text x="36" y="96" class="node-text" text-anchor="start">CI trace + fixture + source hash</text>
 <text x="36" y="116" class="node-text" text-anchor="start">Capture repeatability evidence</text>
 </g>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="triage">
 <rect x="420" y="45" width="350" height="120" rx="8" class="node node-teal"/>
 <text x="436" y="73" class="node-title" text-anchor="start">Evidence-based triage</text>
 <text x="436" y="96" class="node-text" text-anchor="start">Product / test / data / environment</text>
 <text x="436" y="116" class="node-text" text-anchor="start">Owner confirms the cause</text>
 </g>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="repair">
 <rect x="820" y="45" width="350" height="120" rx="8" class="node"/>
 <text x="836" y="73" class="node-title" text-anchor="start">Draft repair</text>
 <text x="836" y="96" class="node-text" text-anchor="start">Product or test change proposal</text>
@@ -19,7 +19,7 @@
 </g>
 <path d="M 370 106 H 418" class="edge" marker-end="url(#failure-resolution-arrow)"/>
 <path d="M 770 106 H 818" class="edge" marker-end="url(#failure-resolution-arrow)"/>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="retest">
 <rect x="820" y="270" width="350" height="125" rx="8" class="node"/>
 <text x="836" y="298" class="node-title" text-anchor="start">Independent retest</text>
 <text x="836" y="321" class="node-text" text-anchor="start">Reproduce, then verify the repair</text>
@@ -27,7 +27,7 @@
 <text x="836" y="361" class="node-text" text-anchor="start">Reviewer approves the change</text>
 </g>
 <path d="M 994 165 V 268" class="edge" marker-end="url(#failure-resolution-arrow)"/>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="quarantine">
 <rect x="420" y="270" width="350" height="125" rx="8" class="node node-sand"/>
 <text x="436" y="298" class="node-title" text-anchor="start">Temporary quarantine</text>
 <text x="436" y="321" class="node-text" text-anchor="start">Only a confirmed flaky test</text>
@@ -36,7 +36,7 @@
 </g>
 <path d="M 595 165 V 268" class="edge edge-dashed" marker-end="url(#failure-resolution-arrow)"/>
 <text x="612" y="225" class="edge-label" text-anchor="start">if flaky</text>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="record">
 <rect x="20" y="270" width="350" height="125" rx="8" class="node"/>
 <text x="36" y="298" class="node-title" text-anchor="start">Resolution record</text>
 <text x="36" y="321" class="node-text" text-anchor="start">Verified fix / tracked exception</text>

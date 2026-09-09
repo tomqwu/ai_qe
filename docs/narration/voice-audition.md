@@ -58,6 +58,10 @@ Every slide exposes its spoken explanation in the existing **Sources & notes** d
 
 The 3D architecture's four scenarios each have a narrated overview. Starting an overview pauses the independent story timer. Stage selection pauses the overview; the recording does not claim word-by-word synchronization with the 3D stages. Calculators explicitly label narration as an explanation of the published baseline and method, not a reading of current selections.
 
+Animated 2D diagrams use `assets/data/narration-flows.json`: each authored cue identifies an exact caption, highlighted component IDs and directed routes. `narration-flow.js` resolves the cue against the recording's VTT and drives `motion.js` from `audio.currentTime`. No independent tour timer runs during narration. One spoken passage may emphasize multiple components; introductory and concluding overviews do not invent a handoff. A changed or missing caption anchor leaves a static overview until the mapping is reviewed.
+
+Use `data-flow-node` for stable component IDs in SVGs and preserve them in diagram generators. Standalone tours highlight every current destination; legacy numbered sequence edges require an explicit step node. Pause and reduced motion preserve the gold fill, border, dark text and accessible current-step state. Manual diagram controls and component inspection pause audio and hand control back to the presenter. Replay and seeking restore the corresponding spoken focus; rejection and quarantine cues never imply a successful result.
+
 This update creates no new pages, regenerates no audio and preserves the recorded audio and PDF editions.
 
 The existing silent architecture film also retains its original output hashes. `assets/data/architecture-film.json` points its original HTML input hash to `tools/architecture-demo/film-v1.8.0-page.html`; that exact source snapshot is excluded from site publishing. The current page can add narrator controls without relabeling the older film as newly rendered. Narrator guides are disabled in film capture mode.
@@ -70,6 +74,7 @@ python3 -m unittest discover -s tools -p 'test_*narration.py'
 python3 -m unittest discover -s tools -p 'test_captions_from_alignment.py'
 QE_TEST_URL=http://127.0.0.1:61601/ai_qe node tools/check_narration.cjs
 QE_TEST_URL=http://127.0.0.1:61601/ai_qe node tools/check_presenter_notes.cjs
+QE_TEST_URL=http://127.0.0.1:61601/ai_qe node tools/check_flow_narration.cjs
 ```
 
 Validate all slide IDs, transcripts, audio hashes, measured durations, caption bounds and provenance before publishing. Check real audio in Chromium and WebKit, including mobile layout, manual navigation, the final slide and a guided route. Review screenshots with subtitles visible so labels remain readable.

@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="research-diagram" role="group" aria-labelledby="platform-title"><title id="platform-title">Proposed enterprise AI and quality engineering platform: delivery interfaces, governed context and agent execution, independent assurance, release and evidence feedback</title><defs><marker id="platform-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096d69" stroke-width="1.6"/></marker></defs>
 <rect x="14" y="20" width="1172" height="112" rx="8" class="lane lane-teal"/>
 <text x="32" y="46" class="lane-title" text-anchor="start">DELIVERY EXPERIENCE</text>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="experience">
 <rect x="240" y="35" width="278" height="78" rx="8" class="node"/>
 <text x="256" y="63" class="node-title" text-anchor="start">Engineer / QE</text>
 <text x="256" y="86" class="node-text" text-anchor="start">IDE · pull request · test workbench</text>
 </g>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="delivery">
 <rect x="570" y="35" width="278" height="78" rx="8" class="node"/>
 <text x="586" y="63" class="node-title" text-anchor="start">Delivery systems</text>
 <text x="586" y="86" class="node-text" text-anchor="start">Repository · CI · issue tracker</text>
 </g>
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="application">
 <rect x="890" y="35" width="278" height="78" rx="8" class="node"/>
 <text x="906" y="63" class="node-title" text-anchor="start">AI applications</text>
 <text x="906" y="86" class="node-text" text-anchor="start">Product workflows · agents</text>
@@ -21,7 +21,7 @@
 <rect x="14" y="165" width="730" height="233" rx="8" class="lane"/>
 <text x="32" y="193" class="lane-title" text-anchor="start">GOVERNED EXECUTION</text>
 <g role="button" tabindex="0" aria-label="Inspect Context service" data-architecture-node="context" aria-pressed="false">
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="context">
 <rect x="32" y="212" width="214" height="145" rx="8" class="node"/>
 <text x="48" y="240" class="node-title" text-anchor="start">Context service</text>
 <text x="48" y="263" class="node-text" text-anchor="start">Classify + minimize</text>
@@ -30,7 +30,7 @@
 </g>
 </g>
 <g role="button" tabindex="0" aria-label="Inspect QE agent runtime" data-architecture-node="runtime" aria-pressed="false">
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="runtime">
 <rect x="276" y="212" width="208" height="145" rx="8" class="node node-teal"/>
 <text x="292" y="240" class="node-title" text-anchor="start">QE agent runtime</text>
 <text x="292" y="263" class="node-text" text-anchor="start">Task plan + model router</text>
@@ -39,7 +39,7 @@
 </g>
 </g>
 <g role="button" tabindex="0" aria-label="Inspect Action gateway" data-architecture-node="gateway" aria-pressed="false">
-<g class="diagram-node on-dark">
+<g class="diagram-node on-dark" data-flow-node="gateway">
 <rect x="514" y="212" width="210" height="145" rx="8" class="node node-navy"/>
 <text x="530" y="240" class="node-title" text-anchor="start">Action gateway</text>
 <text x="530" y="263" class="node-text" text-anchor="start">Agent identity + policy</text>
@@ -56,14 +56,14 @@
 <rect x="772" y="165" width="414" height="233" rx="8" class="lane lane-sand"/>
 <text x="790" y="193" class="lane-title" text-anchor="start">INDEPENDENT ASSURANCE</text>
 <g role="button" tabindex="0" aria-label="Inspect Sandbox + deterministic checks" data-architecture-node="checks" aria-pressed="false">
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="checks">
 <rect x="792" y="212" width="374" height="65" rx="8" class="node"/>
 <text x="808" y="240" class="node-title" text-anchor="start">Sandbox + deterministic checks</text>
 <text x="808" y="263" class="node-text" text-anchor="start">Build · repeatability · mutation · fixtures</text>
 </g>
 </g>
 <g role="button" tabindex="0" aria-label="Inspect Evaluation service" data-architecture-node="evaluation" aria-pressed="false">
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="evaluation">
 <rect x="792" y="293" width="374" height="65" rx="8" class="node"/>
 <text x="808" y="321" class="node-title" text-anchor="start">Evaluation service</text>
 <text x="808" y="344" class="node-text" text-anchor="start">Held-out cases · judges · human labels</text>
@@ -77,7 +77,7 @@
 <rect x="14" y="432" width="730" height="148" rx="8" class="lane"/>
 <text x="32" y="459" class="lane-title" text-anchor="start">EVIDENCE + FEEDBACK</text>
 <g role="button" tabindex="0" aria-label="Inspect Evidence store" data-architecture-node="evidence" aria-pressed="false">
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="evidence">
 <rect x="32" y="477" width="328" height="79" rx="8" class="node"/>
 <text x="48" y="505" class="node-title" text-anchor="start">Evidence store</text>
 <text x="48" y="528" class="node-text" text-anchor="start">Task / run / artifact / decision IDs</text>
@@ -85,7 +85,7 @@
 </g>
 </g>
 <g role="button" tabindex="0" aria-label="Inspect Curated regression corpus" data-architecture-node="corpus" aria-pressed="false">
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="corpus">
 <rect x="388" y="477" width="336" height="79" rx="8" class="node"/>
 <text x="404" y="505" class="node-title" text-anchor="start">Curated regression corpus</text>
 <text x="404" y="528" class="node-text" text-anchor="start">Accepted failures + reviewed expectations</text>
@@ -96,7 +96,7 @@
 <path d="M 620 357 V 417 H 25 V 516 H 30" class="edge edge-dashed" marker-end="url(#platform-arrow)" data-from="gateway" data-to="evidence"/>
 <text x="634" y="417" class="edge-label" text-anchor="start">run traces</text>
 <g role="button" tabindex="0" aria-label="Inspect Release authority" data-architecture-node="release" aria-pressed="false">
-<g class="diagram-node ">
+<g class="diagram-node " data-flow-node="release">
 <rect x="792" y="448" width="374" height="109" rx="8" class="node node-teal"/>
 <text x="808" y="476" class="node-title" text-anchor="start">Release authority</text>
 <text x="808" y="499" class="node-text" text-anchor="start">Reviewer + existing CI / change gates</text>
