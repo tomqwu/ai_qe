@@ -3,7 +3,7 @@
   const loader = document.querySelector('script[data-narrator-guides]');
   if (!loader || !window.QENarrationMedia) return;
   if (document.querySelector('#architecture-demo') && new URLSearchParams(location.search).get('capture') === '1') return;
-  const {parseCaptions, claim} = window.QENarrationMedia;
+  const {parseCaptions} = window.QENarrationMedia;
   const base = new URL(loader.dataset.siteBase, location.origin);
   const players = new Set();
   let pausingFlow = false;
@@ -88,10 +88,14 @@
       if (audio.ended) audio.currentTime = 0;
       status.textContent = 'Starting explanation…';
       readyStatus();
-      audio.play().catch(() => { sync(); status.textContent = 'Playback could not start. Select Listen to retry, or read Narrator notes.'; });
+      window.QENarrationMedia.play(audio).catch(error => {
+        if (error.name === 'AbortError') return;
+        sync(); status.textContent = 'Playback could not start. Select Listen to retry, or read Narrator notes.';
+      });
     });
     audio.addEventListener('play', () => {
-      claim(audio); player.hidden = false;
+      if (audio.paused) { sync(); return; }
+      player.hidden = false;
       // The diagram clock follows audio whenever a cue connection is available.
       pausingFlow = true;
       if (!demo && !flow) target.querySelector('[data-tour-play][aria-pressed="true"]')?.click();

@@ -108,7 +108,7 @@
       const expected = pendingAdvance;
       advanceTimer = 0; pendingAdvance = null;
       const fresh = window.QEDeck.getState();
-      if (!expected || fresh.slide !== expected.slide || fresh.nextSlide !== expected.nextSlide || fresh.mode === 'reading' || document.hidden || document.querySelector('dialog[open]') || !ui.auto.checked) { updatePlaying(); return; }
+      if (!expected || !window.QENarrationMedia.owns(audio) || fresh.slide !== expected.slide || fresh.nextSlide !== expected.nextSlide || fresh.mode === 'reading' || document.hidden || document.querySelector('dialog[open]') || !ui.auto.checked) { updatePlaying(); return; }
       continuing = true;
       document.dispatchEvent(new CustomEvent('qe:deck-command', { detail: { action: 'next', source: 'narration', expectedSlide: expected.slide } }));
       continuing = false;
@@ -194,12 +194,12 @@
   }
   function play() {
     if (!clip || document.hidden || state.mode === 'reading') return;
-    if (pendingAdvance) { beginAdvance(); return; }
+    if (pendingAdvance) { window.QENarrationMedia.claim(audio); beginAdvance(); return; }
     clipStarted = true;
     if (audioFailed) { audioFailed = false; audio.load(); }
     if (audio.ended) audio.currentTime = 0;
     const version = clipVersion;
-    audio.play().catch(error => {
+    window.QENarrationMedia.play(audio).catch(error => {
       // An intentional pause or source switch can reject a pending play promise.
       if (version !== clipVersion || error.name === 'AbortError') return;
       updatePlaying();
@@ -236,7 +236,7 @@
       if (provenance.textContent) dialog.append(provenance);
       dialog.append(text, close); body.append(dialog); dialog.showModal();
     });
-    audio.addEventListener('play', () => { window.QENarrationMedia.claim(audio); updatePlaying(); if (!captionFailed) announce(cueList.length ? 'English narration · Captions synchronized to audio.' : 'English narration · Loading captions.'); });
+    audio.addEventListener('play', () => { updatePlaying(); if (!audio.paused && !captionFailed) announce(cueList.length ? 'English narration · Captions synchronized to audio.' : 'English narration · Loading captions.'); });
     audio.addEventListener('pause', () => { updatePlaying(); if (!audio.ended && clip && !audioFailed && !captionFailed) announce('Narration paused.'); });
     for (const event of ['loadedmetadata', 'durationchange', 'timeupdate', 'seeked']) audio.addEventListener(event, updateTime);
     audio.addEventListener('seeking', clearCaption);
@@ -247,6 +247,7 @@
     });
     audio.addEventListener('ended', () => {
       clearCaption(); updatePlaying();
+      if (!audio.ended || !window.QENarrationMedia.owns(audio)) return;
       const fresh = window.QEDeck.getState();
       if (fresh.slide !== currentSlide || fresh.mode === 'reading' || document.hidden || document.querySelector('dialog[open]')) return;
       if (ui.auto.checked && fresh.nextSlide) {
@@ -268,7 +269,12 @@
       stop();
       if (clip) announce('Narration paused for slide notes. Close the notes and select Play to resume.');
     });
-    document.addEventListener('qe:narration-interrupt', stop);
+    document.addEventListener('qe:narration-interrupt', event => {
+      if (event.detail?.except === audio) return;
+      const interrupted = pendingAdvance || panel?.dataset.narrationState === 'playing';
+      stop();
+      if (interrupted) announce('Narration paused because another player started or this page was left. Select Play to resume.');
+    });
     // Manual diagram exploration also cancels the breathing pause after audio
     // ended, when audio.pause() alone cannot emit another pause event.
     document.addEventListener('qe:flow-manual', stop);

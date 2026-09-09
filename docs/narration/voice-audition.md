@@ -50,6 +50,8 @@ Every presentation has a **Play narration** button. It begins on the current sli
 
 Pause for discussion, replay a slide, seek or change speed. Captions follow the audio clock. Manual navigation, switching to reading mode, opening notes or a transcript, and hiding the tab pause playback. The next slide never plays automatically on initial page load.
 
+The shared media controller grants one player audio focus across the same-origin page/frame tree and open tabs or windows for this site. Starting another recording pauses the previous player and cancels its pending automatic transition, including a transition already in the two-second gap. Playback requests claim focus before buffering completes; cancelled requests and delayed native play events cannot reclaim it. BroadcastChannel coordinates windows, with storage events as a fallback. Native audio/video controls use the same handoff. Interrupted players do not resume automatically. Existing tabs need a refresh after a player update; different site origins and separate browser profiles have independent playback.
+
 The audio panel shares the slide frame width and follows it with a 12-pixel gap. It reserves room for captions and controls, including in embedded and presentation views. A CC toggle and readable transcript are available. Public labels use **Audio narration**, with no voice-name branding; exact production provenance remains in the recording manifest and voice configuration. Existing media URLs and audio hashes are preserved. Missing media offers a retry, and missing captions offer their own retry without blocking audio.
 
 ## In-place diagram explanations and narrator notes
