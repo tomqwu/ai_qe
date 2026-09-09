@@ -111,7 +111,7 @@ async function playing(page){await page.waitForFunction(()=>{const a=document.qu
    // Latch native replay events so a slow renderer cannot hide the brief start state.
    await page.evaluate(()=>{
     const audio=document.querySelector('[data-guide-audio]');window.__qeReplay={seek:null,played:false};
-    audio.addEventListener('seeking',()=>{window.__qeReplay.seek=audio.currentTime},{once:true,capture:true});
+    document.querySelector('[data-replay]').addEventListener('click',()=>{window.__qeReplay.seek=audio.currentTime},{once:true});
     audio.addEventListener('play',()=>{window.__qeReplay.played=true},{once:true,capture:true});
    });
    await page.locator('[data-replay]').click();
@@ -119,6 +119,7 @@ async function playing(page){await page.waitForFunction(()=>{const a=document.qu
    assert.ok(await page.evaluate(()=>window.__qeReplay.seek<.15),'Replay seeks to the beginning and starts the real recording');
    await page.locator('[data-guide-audio]').evaluate(a=>a.pause());
    assert.equal(await page.locator('#component-select').inputValue(),'','Replay restores narration focus');
+   if(rendered)assert.equal(await page.locator('.scene-label[data-inspected="true"]').count(),0,'Replay removes the previous inspection highlight');
    const duration=await page.locator('[data-guide-audio]').evaluate(a=>a.duration);
    await seek(page,duration-.25);await page.locator('[data-play]').click();
    await page.waitForFunction(()=>document.querySelector('[data-guide-audio]').ended);
