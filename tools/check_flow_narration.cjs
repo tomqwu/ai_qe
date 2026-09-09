@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const {chromium, webkit} = require('playwright');
 const base = (process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe').replace(/\/$/, '');
-const profiles = JSON.parse(fs.readFileSync('assets/data/narration-flows.json')).profiles;
+const profiles = JSON.parse(fs.readFileSync('assets/data/narration-flows.json')).profiles.filter(p => p.renderer !== 'lifecycle');
 const manifest = JSON.parse(fs.readFileSync('assets/data/narration.json'));
 const routes = {'evp':'fintech-evp','technical':'fintech-technical','industry-evp':'evp','industry-technical':'technical'};
 const sorted = values => [...new Set(values)].sort();

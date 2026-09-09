@@ -23,5 +23,31 @@
     const payer = 100000 - journals * 10000, recipient = journals * 10000;
     return { attempts: scenario === 'retry' ? 2 : 1, callbacks: scenario === 'callback' ? 2 : 1, journals, entries: journals * 2, payer, recipient, pass: journals === 1 && payer === 90000 && recipient === 10000 };
   }
-  return { capacity, payment };
+  function compare(data, observations) {
+    const ids = data.workflow.map(s => s.id).sort();
+    const states = {};
+    for (const key of ['existing','modernized','ai']) {
+      const value = observations?.[key], gaps = [];
+      if (!value) { states[key] = {status:'unknown', gaps:['Observation not recorded']}; continue; }
+      for (const field of ['scope','acceptanceVersion','applicationBuild','environmentVersion','fixtureVersion','providerVersion','testVersion','owner','evidenceRef']) {
+        if (typeof value[field] !== 'string' || !value[field].trim()) gaps.push(field);
+      }
+      if (JSON.stringify([...(Array.isArray(value.workflowIds) ? value.workflowIds : [])].sort()) !== JSON.stringify(ids)) gaps.push('Same eight-stage QA scope required');
+      for (const field of ['workHours','reviewHours','reworkHours','operatingHours','setupHours','failedAttempts','attempts','packs']) {
+        if (!Number.isFinite(value[field]) || value[field] < 0) gaps.push(field);
+      }
+      if (!Number.isInteger(value.packs) || value.packs < 1 || !Number.isInteger(value.attempts) || value.attempts < value.packs || !Number.isInteger(value.failedAttempts) || value.failedAttempts > value.attempts) gaps.push('Complete pack and attempt counts required');
+      if (value.allAttemptsIncluded !== true) gaps.push('Include failed attempts and incomplete work');
+      states[key] = gaps.length ? {status:'unknown',gaps} : {status:'entered',gaps:[],hoursPerPack:(value.workHours + value.reviewHours + value.reworkHours + value.operatingHours) / value.packs,setupHours:value.setupHours};
+    }
+    function delta(from, to, aiOnly = false) {
+      if (states[from].status !== 'entered' || states[to].status !== 'entered') return {status:'unknown',hours:null,reason:'Complete both observations and their evidence.'};
+      const fields = ['scope','acceptanceVersion','applicationBuild', ...(aiOnly ? ['environmentVersion','fixtureVersion','providerVersion'] : [])];
+      const mismatch = fields.filter(field => observations[from][field].trim() !== observations[to][field].trim());
+      if (mismatch.length) return {status:'unmatched',hours:null,reason:`Comparison differs in ${mismatch.join(', ')}. Record a matched control.`};
+      return {status:'entered',hours:states[from].hoursPerPack - states[to].hoursPerPack,reason:'Entered observations; owner review required. Positive = less effort; negative = added effort.'};
+    }
+    return {states,modernization:delta('existing','modernized'),ai:delta('modernized','ai',true)};
+  }
+  return { capacity, payment, compare };
 });

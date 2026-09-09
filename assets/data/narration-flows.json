@@ -1594,6 +1594,83 @@
           ]
         }
       ]
+    },
+    {
+      "clip": "technical/slide-25",
+      "diagram": "qe-lifecycle",
+      "renderer": "lifecycle",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "Follow the lifecycle from setup through cleanup.",
+          "title": "Lifecycle overview",
+          "nodes": [],
+          "routes": []
+        },
+        {
+          "caption": 1,
+          "text": "Pin and check the resources, create isolated synthetic accounts,",
+          "title": "Create, check and seed",
+          "nodes": [
+            "create",
+            "seed"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 2,
+          "text": "and configure the owned provider behavior.",
+          "title": "Configure provider behavior",
+          "nodes": [
+            "seed"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 3,
+          "text": "Execute the required tests and challenge the deliberate fault.",
+          "title": "Execute and challenge",
+          "nodes": [
+            "execute"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 4,
+          "text": "Retain assertions and diagnostics before teardown.",
+          "title": "Retain and review",
+          "nodes": [
+            "retain"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 5,
+          "text": "Attempt cleanup on both success and failure, and escalate cleanup problems",
+          "title": "Clean up on every path",
+          "nodes": [
+            "cleanup"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 6,
+          "text": "to the named owner. Finally, reconcile separate provider integration evidence.",
+          "title": "Escalate and reconcile integration",
+          "nodes": [
+            "cleanup",
+            "integration"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 7,
+          "text": "The pipeline owns execution; AI may help explain the retained results.",
+          "title": "Execution ownership",
+          "nodes": [],
+          "routes": []
+        }
+      ]
     }
   ]
 }

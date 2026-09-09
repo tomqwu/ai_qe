@@ -59,6 +59,8 @@ def prepare(output):
     records.append(('narration-guides.json', json.dumps(guides, ensure_ascii=False, indent=2).encode()))
     flows = json.loads((ROOT / 'assets/data/narration-flows.json').read_text())
     records.append(('narration-flows.json', json.dumps(flows, ensure_ascii=False, indent=2).encode()))
+    reviews = json.loads((ROOT / 'assets/data/narration-review.json').read_text())
+    records.append(('narration-review.json', json.dumps(reviews, ensure_ascii=False, indent=2).encode()))
     records.append(('README.txt', (
         'AI x QE — English audio narration\n\n'
         'Every slide maps to MP3 audio, timed WebVTT captions and a transcript. Shared explanations may reuse a recording. '

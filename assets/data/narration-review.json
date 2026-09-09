@@ -1,0 +1,1976 @@
+{
+  "schemaVersion": 1,
+  "reviews": {
+    "guide:/ai-adoption/:figure.al-map:0": {
+      "clip": "evp/slide-17",
+      "source": "/ai-adoption/",
+      "diagrams": [],
+      "contentSha256": "e3d4a79804cd9455d53c28ce176c5c55c2cd3d5ce234dedcb82051639ee128aa",
+      "scriptSha256": "3d3653bb4671fab0ab5c0c26c16d744e03280276ad3ffc736249a75f0682e5d0",
+      "audioSha256": "cfdab00bdf37f2e380da8abdac65e84fb1cb65579cc4f69f48d2bd3b8298e248",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/ai-adoption/:figure.al-architecture:0": {
+      "clip": "technical/slide-28",
+      "source": "/ai-adoption/",
+      "diagrams": [],
+      "contentSha256": "d235bf408e6e7c92b8ff9c2f5e984b07c428a12d3ef47168aaf224465b7cd445",
+      "scriptSha256": "7e01ba1b1aa73237cc278349810b13af1b682266e1689da7fda2202e4422565a",
+      "audioSha256": "5400b33cd4addedb5063cdc0094a09c5c647b2cc83801b9b81133369cd867851",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-1": {
+      "clip": "industry-evp/slide-1",
+      "source": "/briefings/evp/#slide-1",
+      "diagrams": [],
+      "contentSha256": "2a4d8d443f303bf1935515f6757ed32bbd948105e2f3bdd0b1b4f010dd89582c",
+      "scriptSha256": "9c46eb6ea2087a23b04a627f3de067e4390946fa5a60e95837024202d90cd973",
+      "audioSha256": "da4fca583f24552f30d851091aa45f784af181d2c6f36e774ad3da9b48cd51e4",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-2": {
+      "clip": "industry-evp/slide-2",
+      "source": "/briefings/evp/#slide-2",
+      "diagrams": [
+        "strategic-system"
+      ],
+      "contentSha256": "bb9e38596f5ae954b3dd95910442a913f538c8762eebd6f4bcb710fd3f0699fb",
+      "scriptSha256": "57b7333bf2074bb92bd83d0f5ec4e1e3a60749c3a3cf6997fbc0617e970e929d",
+      "audioSha256": "0d90713eab48c2f6e59c398350ec910e068a4b3b4a2e06041c39ab62cfdbd752",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-3": {
+      "clip": "industry-evp/slide-3",
+      "source": "/briefings/evp/#slide-3",
+      "diagrams": [],
+      "contentSha256": "489d97efca6344d468ee85e4cedabac1eadd2c5d93174060df0bcef47b7380a8",
+      "scriptSha256": "4c3ed4959b4b29859988d0b4d1918806916f2a721d1767248ba406586ba786c4",
+      "audioSha256": "91b5b640eb1c18a2da24b049f12406800f1acb2cda9c5c4667ebe37bf37b9cce",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-4": {
+      "clip": "industry-evp/slide-4",
+      "source": "/briefings/evp/#slide-4",
+      "diagrams": [
+        "evidence-contrasts"
+      ],
+      "contentSha256": "2f46e094fa707564c9e2db38c83cdffe222905800e2195dcb7740069e60675b8",
+      "scriptSha256": "9691ff1665389140805fc93d76f5d0c6ef18cb09a0b74822d09069491a81361b",
+      "audioSha256": "f3a22896b4fe23b6fe4b41614e8d066c6bdc377dcee7be3a9a503ea449939e40",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-5": {
+      "clip": "industry-evp/slide-5",
+      "source": "/briefings/evp/#slide-5",
+      "diagrams": [],
+      "contentSha256": "435104acca882b6bbefb61f0fe9c51c258edaf44127be23bf76cc8ab7d8d58dc",
+      "scriptSha256": "a8e602826258145e6f8326a417200c1b6a3767bba0b90da8277e60edde51416d",
+      "audioSha256": "710f5008d7670fc3849bca6f982282358fc96afb9e2e2ad69cd0af610dba839a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-6": {
+      "clip": "industry-evp/slide-6",
+      "source": "/briefings/evp/#slide-6",
+      "diagrams": [],
+      "contentSha256": "88b647745ed2a7c45879ab030e7f9b87e42816bad62e23f051295289651a0f83",
+      "scriptSha256": "bfe751bcc89861b63bf9d2031cfbfd1d7da6ac5071caa9a3ab5b57eadffc5cf3",
+      "audioSha256": "d01b863d613c2586e94de53b85a4fe3a22c4baaeed0466b4559ea9a12169c2ef",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-7": {
+      "clip": "industry-evp/slide-7",
+      "source": "/briefings/evp/#slide-7",
+      "diagrams": [],
+      "contentSha256": "6bb0c123ae3a2cac66f4a189a938b265fb2d3f737e9abfec354e02af240d658c",
+      "scriptSha256": "85303f0c7a209f08261505fa49a9766a9a94871570ae66f629733fe7c10ae898",
+      "audioSha256": "a91dc98de1c601a7eead2fbdbfb471b2867955b4adf6ab4e9c3153de3e701881",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-8": {
+      "clip": "industry-evp/slide-8",
+      "source": "/briefings/evp/#slide-8",
+      "diagrams": [
+        "opportunity-map"
+      ],
+      "contentSha256": "685d9a2552f5c89662c9517565b50b5cad0226b70a816a32433ede0725d82ba1",
+      "scriptSha256": "de81e34084419f8ce618a108f03c799acac99eaf11cafa66b5b45b9b7fc54348",
+      "audioSha256": "cb956eb919795bb4ee611c0727a07000aab035ed88886177d312ad9c3e42b91c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-9": {
+      "clip": "industry-evp/slide-9",
+      "source": "/briefings/evp/#slide-9",
+      "diagrams": [
+        "research-decisions"
+      ],
+      "contentSha256": "197e1ae9474eb59d18d4c754b2a38d964085841bf519ebb22179151fc46f7a96",
+      "scriptSha256": "52ed02a4b42ffbb8c9c9a08820dac80d56db80df3668a365e7dfc18b016f8326",
+      "audioSha256": "086963f74221be5d60d3f4de70da205a2205ee0aee407f4949a75d759099b14b",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-10": {
+      "clip": "industry-evp/slide-10",
+      "source": "/briefings/evp/#slide-10",
+      "diagrams": [
+        "evaluation-system"
+      ],
+      "contentSha256": "9e3b3f9ee355479aad9b28eff76e44862fe42f21d442abff96f5400046ae62c7",
+      "scriptSha256": "6cc4d478e0582a3ca9fb50aeac312b8649e0bf8d89074b7daf3416d81c6e4e6a",
+      "audioSha256": "7d8035f20dcf76185fa284dd913290242778ea744fcf3deeae0af74c7bd700c1",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-11": {
+      "clip": "industry-evp/slide-11",
+      "source": "/briefings/evp/#slide-11",
+      "diagrams": [
+        "ownership-system"
+      ],
+      "contentSha256": "c238f4550ef8a453db1414a1b3e7fc905672d892a4df85a07fa2bfd8c8d48612",
+      "scriptSha256": "9fd233832f042c7baf87267047243f75fa3bdb96a9f4c329b07fafdb2040aee3",
+      "audioSha256": "0f60a4c67e8aa2eb4c8a26b03f744179abd018434812de3ee68984b6886c0433",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-12": {
+      "clip": "industry-evp/slide-12",
+      "source": "/briefings/evp/#slide-12",
+      "diagrams": [],
+      "contentSha256": "07430b93e50c6c9c2541551c3e86f3622fd762efb8372067ee1d2808cacfca10",
+      "scriptSha256": "36ca86ae51acd54388198cce70d1bd058be3be067d5898a48f1aee2404ebddfd",
+      "audioSha256": "eb43130063012e6db0a66c26f45e18510d50c58b1e05daa09ae74072c62e18b3",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-13": {
+      "clip": "industry-evp/slide-13",
+      "source": "/briefings/evp/#slide-13",
+      "diagrams": [
+        "platform"
+      ],
+      "contentSha256": "3684b09df5ea245b1293c62a969bf76322f5af88c2435da5575a109b4c998b26",
+      "scriptSha256": "c915b743ae80a467d7bae2d45a56421ae576b107fe92d5789b9f67b0b2e87647",
+      "audioSha256": "0f076ba996be2a3f4f6c66251daae8d2fa2e843146eb229dc8430cc1659b85ca",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-14": {
+      "clip": "industry-evp/slide-14",
+      "source": "/briefings/evp/#slide-14",
+      "diagrams": [
+        "investment-stack"
+      ],
+      "contentSha256": "969f52322ae94069a845024c0516ec4ff0dfb78ac803c08910d1ed6301326680",
+      "scriptSha256": "d7719a2dac637b0cb5ea303fa516e6e791a6830e9245f07015fb235b74d8728e",
+      "audioSha256": "d2062b6b364ba27e78cbdea380336ac10e8ac05409a6b233bd322fdfec9bf16d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-15": {
+      "clip": "industry-evp/slide-15",
+      "source": "/briefings/evp/#slide-15",
+      "diagrams": [
+        "capability-horizons"
+      ],
+      "contentSha256": "5a6eb809740a9a6b9646891fac3bf72ded4e890687c85ddab41b77aa8836eead",
+      "scriptSha256": "87a149b4d8474cc9ffa83c43e2565192ee456872d9cae9a1eedc57b617e33d63",
+      "audioSha256": "5d257913d087de0956fcfc0bb97c63e5092246eeab559d16d6b464285275fc87",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-16": {
+      "clip": "industry-evp/slide-16",
+      "source": "/briefings/evp/#slide-16",
+      "diagrams": [
+        "strategic-scorecard"
+      ],
+      "contentSha256": "711c3523de43f18c3a3eb397506ec2167d98ce3a8cb9006f86efbf90afea6a98",
+      "scriptSha256": "90bb33d8b42c388d950ac33f1fd62218394cd6776d1a5bb8ce4983aeefeb2906",
+      "audioSha256": "bce255497ed06f25b659d210d72d94d4935b215e24f720ce50d54355b8b9500b",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-17": {
+      "clip": "industry-evp/slide-17",
+      "source": "/briefings/evp/#slide-17",
+      "diagrams": [
+        "governance-loop"
+      ],
+      "contentSha256": "05caffd7a8b950bed9b133604d661f6504836c23f25f77b75757bc23151d32a6",
+      "scriptSha256": "aa3e776a93ad6eb24a42c89662b1e8c081f3389aed28d479b68c66d25912b000",
+      "audioSha256": "0ddf01cddf903db87aecd86400b7de2c1b5c795338dccbd0047460c1a0abed42",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-18": {
+      "clip": "industry-evp/slide-18",
+      "source": "/briefings/evp/#slide-18",
+      "diagrams": [],
+      "contentSha256": "66d4797ec38d91b208853f0bc8cc701ccdffa5474fd2aeea31013d151bd1e80f",
+      "scriptSha256": "943c9be2a2910279bf4440697553d939315b9fda9edd59dc925e4539d5479b36",
+      "audioSha256": "f48371af3fc02a78f036659b1dde4a1b9b0f32436f8797a403f26863b0550da9",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-19": {
+      "clip": "industry-evp/slide-19",
+      "source": "/briefings/evp/#slide-19",
+      "diagrams": [
+        "strategy-choices"
+      ],
+      "contentSha256": "7e1b5743506074126d2e67600a81949dddf8615b1bbe2bc3f98ecfff550c9cbd",
+      "scriptSha256": "5dfbe549e89c0cda8817be2b1ad99bed31b0efba02f3c56d34c353b9ff35a838",
+      "audioSha256": "78e8dfd23b392bb83fe22f156a28e46ed795fab46890251343d0d5355328a98b",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-20": {
+      "clip": "industry-evp/slide-20",
+      "source": "/briefings/evp/#slide-20",
+      "diagrams": [
+        "bank-workflow"
+      ],
+      "contentSha256": "cdc7c433a7388ef5b1990ad98a6426b3f3d00489eb878d631156cb0a1a60d5b0",
+      "scriptSha256": "59040ae4522bce88272e57bcaa9136f8a365205457d1ad2cad3fd974126877f3",
+      "audioSha256": "f083ffef75b1daa31fccd91841be87ee72210d12bf405f3eebfa9c9cf6c1c95d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-21": {
+      "clip": "industry-evp/slide-21",
+      "source": "/briefings/evp/#slide-21",
+      "diagrams": [],
+      "contentSha256": "b2c8b28577904ab44bbed1cc7a812223f2846b95484b1aeed37ad0ea0dda9fe3",
+      "scriptSha256": "8d15d6948d139d65e83488c1c5b878d7bd6ab44dbd168061ef78571b8d307109",
+      "audioSha256": "1e9a86d1b5ff95cb844b2fce5343c848e90dcbda884e31a42a70221e3a1c9b86",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-22": {
+      "clip": "industry-evp/slide-22",
+      "source": "/briefings/evp/#slide-22",
+      "diagrams": [],
+      "contentSha256": "3305410b701bb726aafd53b3427f5721c4229f2876322e0116db8438458838c4",
+      "scriptSha256": "a784400ed76ebcc2d2cbcaffafc9fe7ee85aef52fba7c426a465a79068cc942a",
+      "audioSha256": "76fc049729a68ddf7f292e4debfc8df4213c9343d2808c8b852cfc585cf8cf93",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-23": {
+      "clip": "industry-evp/slide-23",
+      "source": "/briefings/evp/#slide-23",
+      "diagrams": [],
+      "contentSha256": "c77a5cec614eb533164e490f0357583f856db4fd817e285a80f012cf90c69b59",
+      "scriptSha256": "813e68a3de4a3a6e0881847c5b2dc5ed806fca6e9837af3bc37ece3fd967f092",
+      "audioSha256": "a19b75aac5c8acbeee36d696cc16b83e3eda2333bbde1ef0ef15c2ab67c5f57c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-24": {
+      "clip": "industry-evp/slide-24",
+      "source": "/briefings/evp/#slide-24",
+      "diagrams": [],
+      "contentSha256": "da25e087565f73823c2488b1d6b16ec768217f4a86348f24646556f7168ddf2d",
+      "scriptSha256": "6c3cc69315173f13fe6c33c35397f8046b6730af0a7baa8c5d0f4c0d6f3b3cb8",
+      "audioSha256": "e817a814ef5c7e6784144152c92a859a723080ecbb455b9bf21b47cb66007eae",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-25": {
+      "clip": "industry-evp/slide-25",
+      "source": "/briefings/evp/#slide-25",
+      "diagrams": [],
+      "contentSha256": "a970ca21019a1bc004a1792f620a4e6c4a7848cda34842683f5b8ed2a3f26c0c",
+      "scriptSha256": "221eda4464eaecee0c0d7962d81097f83b0de29d5e80cd8b1fb54e842599f0ba",
+      "audioSha256": "18a1cc2acaaad7838d4f7a21145abc3449a2aa26b1edeeac09cf95b0917cd4d2",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-evp/slide-26": {
+      "clip": "industry-evp/slide-26",
+      "source": "/briefings/evp/#slide-26",
+      "diagrams": [
+        "qe-journey"
+      ],
+      "contentSha256": "56df91aee7b83b8b090a3a537e7f5b0617b6261185dd7af9df7015dec0853962",
+      "scriptSha256": "765f20a42c7c1760cbb9d5df83d9023722482261720d3b1b2953ddbff4758a66",
+      "audioSha256": "51bff8a242e0c0f414284bfffc7a6c2d1e38d21a8f2955a1a786f99486bc15eb",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-1": {
+      "clip": "evp/slide-1",
+      "source": "/briefings/fintech-evp/#slide-1",
+      "diagrams": [],
+      "contentSha256": "a1960cce54de77fe7acf2386a08bb35b0a9354abf5611cd046f45e686208fe85",
+      "scriptSha256": "2680a598bdd61f9c98e30479ad1c855c6c6666339f0dce042a6aa253e8916ebf",
+      "audioSha256": "6017d008061f0357662bdadada0d1d7b3162c2b6f6669779207a6e99653653e7",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-2": {
+      "clip": "evp/slide-2",
+      "source": "/briefings/fintech-evp/#slide-2",
+      "diagrams": [],
+      "contentSha256": "c7511c93dff4fff8287b35fe4014abc5f8554db62355c9eeb5778787ee4b9c83",
+      "scriptSha256": "81c98604c6d7974e07b53da6b9a8b5b1dd67165a3fce5b523756b4d5f2a73372",
+      "audioSha256": "35c916307038339b5464b6ac170671a78741861b68fbcce5885a8d9bb250b589",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-3": {
+      "clip": "evp/slide-3",
+      "source": "/briefings/fintech-evp/#slide-3",
+      "diagrams": [],
+      "contentSha256": "df6cbce9ebe81d1f471010c3e6f1d62f628e74cfbd82024425aa87a005ae5e42",
+      "scriptSha256": "e406a7d41a03043dc968d109af0aa426e30c7160974ef5ea27332e14c43b161e",
+      "audioSha256": "9d4c3ae1ff2dba9952e9c0d53a5f69c4cf18152f1496c505a44106f5b5f67a78",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-4": {
+      "clip": "evp/slide-4",
+      "source": "/briefings/fintech-evp/#slide-4",
+      "diagrams": [],
+      "contentSha256": "c4f5415d8917b3ca095f9af67b4368867583875dd1846ed09672a7f1fba6f2af",
+      "scriptSha256": "f23c0d922927df7ad6f8d3703ae6763731670ee1c5e7fb8a0beb472394813020",
+      "audioSha256": "169db6592fcd36c042adb3d0c9dfaa83720f345cc22ff1f678e105a1bf0c5a3d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-5": {
+      "clip": "evp/slide-5",
+      "source": "/briefings/fintech-evp/#slide-5",
+      "diagrams": [
+        "fintech-platform"
+      ],
+      "contentSha256": "1ab329fa9ed269a5c825dc0d7d35286f9fd6f3507d10e0dddd5c995510eb5808",
+      "scriptSha256": "0c4efd5be14db5b32bc78f1bc05bbf6f732c577f8e360561c3a96a159c95abb0",
+      "audioSha256": "9e54de8c1559e4fe9e51b79d594bb443d12fdd537f6fcf98e630461a4c6419ae",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-6": {
+      "clip": "evp/slide-6",
+      "source": "/briefings/fintech-evp/#slide-6",
+      "diagrams": [
+        "qe-three-states"
+      ],
+      "contentSha256": "4c47de2e162240a0ed6bc4bdbc53279ac70f28732497cf0c58168758f7b0c10c",
+      "scriptSha256": "79108a58035d79a0970638582276d4247265ba8b9b44cf64ea709560735621cc",
+      "audioSha256": "c2fdf6329c6d32a30f1fe94f872a3c874b3107cc8975cfe861c7ae2d8f446340",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-7": {
+      "clip": "evp/slide-7",
+      "source": "/briefings/fintech-evp/#slide-7",
+      "diagrams": [],
+      "contentSha256": "67b945e9122d564c9996e69f8ace249844e0fe1f9ca692191ec0ad820fe7a2ff",
+      "scriptSha256": "cb3df1ad770eb438d1e3d130211a385ea96cb00de7f0d65932ce5a90732e1bdd",
+      "audioSha256": "32f4f8e0030fab732b9a1cb3733006a85399b80234d7da9943e13784821dd944",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-8": {
+      "clip": "evp/slide-8",
+      "source": "/briefings/fintech-evp/#slide-8",
+      "diagrams": [],
+      "contentSha256": "148491ded43cad9450b4127fd919aafa3fa2ccb8b591883cd0d4235507938ece",
+      "scriptSha256": "9f5a9b3370768e8a81f72c206f171aede9835ad1dad0edaa561ca233c842e5e9",
+      "audioSha256": "5259ec936e489436086afc8cbf924f944e9c1a8a73180a087347871e9eaa9baa",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-9": {
+      "clip": "evp/slide-9",
+      "source": "/briefings/fintech-evp/#slide-9",
+      "diagrams": [],
+      "contentSha256": "798c18297072f13dd96131c07d5abf21b8e47913ca0ba2f56edab5d4a280c6d1",
+      "scriptSha256": "0a6cd9ddae011e07f11292ff81caad16a73073b810bf786514eb71b9107a0b4a",
+      "audioSha256": "6d817bc57efcc21e2302ce12aa358f8856a14ba27ba7b4d0329d178b30a58ffe",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-10": {
+      "clip": "evp/slide-10",
+      "source": "/briefings/fintech-evp/#slide-10",
+      "diagrams": [],
+      "contentSha256": "4da03bf59c4953a42ea53b48be0d1546c2369bf1633cb3efb2e9e63c246c301a",
+      "scriptSha256": "6cadc6dddb9520fd2dcafe1c83e0c6987d56f843a98b933a0a5c44ef655e54f8",
+      "audioSha256": "4a0b1de20f759f1a76440a7517888e878dd40484bf2949bba79ce68c84074cba",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-11": {
+      "clip": "evp/slide-11",
+      "source": "/briefings/fintech-evp/#slide-11",
+      "diagrams": [],
+      "contentSha256": "85b86d8979350bee126d62c0c0989f8653d7e26b2088335c53de763b66c9c302",
+      "scriptSha256": "0e6fe50a574b0f8a77cefe5215dfca7626bb2db2c48dc7b9383c9ba8e7a2dc41",
+      "audioSha256": "02d01ad29f945560b840124cf67190a0d51dd286bf892ab03479f1a3e9a42ea8",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-12": {
+      "clip": "evp/slide-12",
+      "source": "/briefings/fintech-evp/#slide-12",
+      "diagrams": [],
+      "contentSha256": "f49ce02d3f63d8ddfb16380b7cff3a358688228c6ef2967e3c0347561fba9979",
+      "scriptSha256": "e024a501c97b426dca66d7ff5f3a6cae65f10feec481e821fbef5ed858d0d470",
+      "audioSha256": "4db384239b9a44f4988393f75b1226cc2157e148e42c166eeda807961b738607",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-13": {
+      "clip": "evp/slide-13",
+      "source": "/briefings/fintech-evp/#slide-13",
+      "diagrams": [],
+      "contentSha256": "2bbb1e87443d1997893cbdc780161656fdc2c0f7b500b1babe0add1a97fc5cb1",
+      "scriptSha256": "9f7e10d9024e3786ee374979626857ac4f113476f04cd04c705eb9a5a955927b",
+      "audioSha256": "d1f094ac5c549419a9da62a9edcf457302cf0570b83b27ac619d5f130f8f2cb7",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-14": {
+      "clip": "evp/slide-14",
+      "source": "/briefings/fintech-evp/#slide-14",
+      "diagrams": [],
+      "contentSha256": "5030f42ae6cde4a08bafbecd7dafeb42278a6713848d87be13c8e0aad20c463b",
+      "scriptSha256": "0d83fe339d2dbc46afcf974b211933174e13582d411f4fea4d021d0fc9c049ed",
+      "audioSha256": "8d52514073a72a93c9ad3bfceac22cd7a98f18df53e1c170156055f9a8cd725c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-15": {
+      "clip": "evp/slide-15",
+      "source": "/briefings/fintech-evp/#slide-15",
+      "diagrams": [],
+      "contentSha256": "da6c1fb563240161395d85a34b02f1b067ea7a4d9d8d2d8efbcb151f716fbd7f",
+      "scriptSha256": "62ec2c879cd97208484f8aa9a210e8add597bcdee936e8836875bfaa5c6051a6",
+      "audioSha256": "d6f38bcd9f808e79021c5ba3c7b0f7ac581805419c6d2d1e836b105aa5dc51c1",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-16": {
+      "clip": "evp/slide-16",
+      "source": "/briefings/fintech-evp/#slide-16",
+      "diagrams": [],
+      "contentSha256": "819052db423fe56082fcfca95dff9753f5991f7299045a5f1797604e3b072bf5",
+      "scriptSha256": "92dd355e4702fa894671b929021b0434bedc692d6789259ba5a6c077169bd5ad",
+      "audioSha256": "ac0de6d9d15c57e69fcd1f8f857891f5357b004db771297b1655547199610317",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-17": {
+      "clip": "evp/slide-17",
+      "source": "/briefings/fintech-evp/#slide-17",
+      "diagrams": [],
+      "contentSha256": "549950f9132cf5ded6bd45e63f0dd97804c3c9445547459db6deace7bbcef8bb",
+      "scriptSha256": "3d3653bb4671fab0ab5c0c26c16d744e03280276ad3ffc736249a75f0682e5d0",
+      "audioSha256": "cfdab00bdf37f2e380da8abdac65e84fb1cb65579cc4f69f48d2bd3b8298e248",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-18": {
+      "clip": "evp/slide-18",
+      "source": "/briefings/fintech-evp/#slide-18",
+      "diagrams": [],
+      "contentSha256": "4e17475e7a8eab1b50d6b40435779beafec6f35b3b29c9745c53e1291b9fcf86",
+      "scriptSha256": "1075e79be718960f87e54dd369ad30a0c2df460da433d17bb56947b168fea376",
+      "audioSha256": "e468d3a46fac1267e7037ef0e8d4281add54db4a1fecbd769b4f66cb9b980c81",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-19": {
+      "clip": "evp/slide-19",
+      "source": "/briefings/fintech-evp/#slide-19",
+      "diagrams": [],
+      "contentSha256": "b445aae2c2f4ec3ead3ab984b5d2b74f2abfee7f561c170251610d0a495e22e8",
+      "scriptSha256": "5b52c11bbe52988c52cbcc4d40e1bef5580367ffd97d1ad7f2632d44b33469f2",
+      "audioSha256": "3576429426c5f2d1f6feb7039fd0da48768aefc7dce819ce638fee66c4268af9",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-20": {
+      "clip": "evp/slide-20",
+      "source": "/briefings/fintech-evp/#slide-20",
+      "diagrams": [
+        "qe-journey"
+      ],
+      "contentSha256": "1af7e4893f9a929c9fec61c511c3082f540044286b4bbb798ea5bf4994ba20ec",
+      "scriptSha256": "765f20a42c7c1760cbb9d5df83d9023722482261720d3b1b2953ddbff4758a66",
+      "audioSha256": "51bff8a242e0c0f414284bfffc7a6c2d1e38d21a8f2955a1a786f99486bc15eb",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:evp/slide-21": {
+      "clip": "evp/slide-21",
+      "source": "/briefings/fintech-evp/#slide-21",
+      "diagrams": [
+        "qe-artifact-trace"
+      ],
+      "contentSha256": "c2bb236331f3464b0994137d062e1f72ef023a7d04f7cdfd3da04933edfa6ced",
+      "scriptSha256": "657c1ffa2c1eec166574a54d04f46000e36c92ee82ea915ec5b633f188eff267",
+      "audioSha256": "14277c21eaeea153f4ae57944c636c48e2cb8df3d77e2ef7cdf4d3ac3c170aa0",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-1": {
+      "clip": "technical/slide-1",
+      "source": "/briefings/fintech-technical/#slide-1",
+      "diagrams": [],
+      "contentSha256": "7e51c15f0962cfe7fc775e537d4a6cff086d4d5a8f11a27468db4bb8194d830d",
+      "scriptSha256": "0d210a608facc8d2f567dd4f26711e1194a7aad8c3cedaacbe9bd79813d7f1c5",
+      "audioSha256": "dafe6765f022bbd704c5de115181685a996998ddcb5347f20017c8dda636785d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-2": {
+      "clip": "technical/slide-2",
+      "source": "/briefings/fintech-technical/#slide-2",
+      "diagrams": [],
+      "contentSha256": "217cbc21ac45649b7e36c1ab68997bd974f9882739b5fb7bbff988f01f258c00",
+      "scriptSha256": "3de028c8a6eda14f95ba7d9b0bd979d80a879ec26bcde23e26c42c757f0a6301",
+      "audioSha256": "3d832098a20d75316575f57a63b6572c4d0057b2136b5e886a67a2d3e11c05bc",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-3": {
+      "clip": "technical/slide-3",
+      "source": "/briefings/fintech-technical/#slide-3",
+      "diagrams": [
+        "technical-runtime"
+      ],
+      "contentSha256": "7a9c78bb483953ec0dd7e8fbbcfffd8fe093b3c76005cc7856e9ee9691fb2b3f",
+      "scriptSha256": "13220296de5fd87aa12fca5b66c2c9d2324404cdc2f541f2d84fc361bda6dcea",
+      "audioSha256": "33109a1b7ec723255c985869d140784931e34a4a50d6e99a70b713a6c352bca1",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-4": {
+      "clip": "technical/slide-4",
+      "source": "/briefings/fintech-technical/#slide-4",
+      "diagrams": [],
+      "contentSha256": "22415fd6e3487bc96836d0f5a60bec6a5d8bdd1b974053c78599ff5d606fde31",
+      "scriptSha256": "6ebc99c595cb577159e9ef5d3594adbf769b3aedda9176ea52c17670306272d1",
+      "audioSha256": "6829bcbd781813b7c6434ec1c7607586e99ea827f712d07d229f82e464c2ca06",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-5": {
+      "clip": "technical/slide-5",
+      "source": "/briefings/fintech-technical/#slide-5",
+      "diagrams": [],
+      "contentSha256": "474f84e9087a83cfea5660e1eaee84d11726194f10eb3bede5f8cfcf58bc98c3",
+      "scriptSha256": "dcd505973aeb7d181ea80063f8aba46facdc0f166d5357e8943d3153a2d028fe",
+      "audioSha256": "8843848652b2102855c399ed3963b95010ad438b5b442a6ce9a7aa63631cfdc7",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-6": {
+      "clip": "technical/slide-6",
+      "source": "/briefings/fintech-technical/#slide-6",
+      "diagrams": [],
+      "contentSha256": "386f7629d688c80273099e296d1cbf4b83e3718f3531adbc218475c29e2546d3",
+      "scriptSha256": "5ffa2c0d72178735882128e555e24086c924521daba8f25d3736f204227f969d",
+      "audioSha256": "c8fac6a7223aedb67fdf4558170e9ba8eede894d91f8e451e98489940b0314fe",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-7": {
+      "clip": "technical/slide-7",
+      "source": "/briefings/fintech-technical/#slide-7",
+      "diagrams": [],
+      "contentSha256": "36749d689045f25a1f34de8066673826a07eca38075655d2ce0bf95b3abab5c2",
+      "scriptSha256": "15adc08349be927d1adbf04aeef88538424f615591597907cf2e35f09b6242cb",
+      "audioSha256": "6f74fbfc23b0dc35c5586b9bc7e98a2d9202bd282462c1c23595f6eecb3cb8da",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-8": {
+      "clip": "technical/slide-8",
+      "source": "/briefings/fintech-technical/#slide-8",
+      "diagrams": [],
+      "contentSha256": "beddddb4c22d652aeb95eb006c591ba03e388e69b575f1752968d5f8a37ca784",
+      "scriptSha256": "147ee8c53e609dd202447b6a6549744d2a6820266e0249d34155825198594885",
+      "audioSha256": "635841d9d05ce4854030647f82afa13b459dda783fb3b5df5faf836234efa37a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-9": {
+      "clip": "technical/slide-9",
+      "source": "/briefings/fintech-technical/#slide-9",
+      "diagrams": [],
+      "contentSha256": "cf08fd8ebf58357b94655f77e8de6e035562790aabe0e7b8f3f7620917a80363",
+      "scriptSha256": "a29d91b9394a1014a4ef6751f70912d42fd3e63d082d68a99dde37c80ed779ee",
+      "audioSha256": "f2bc620e93e33f193e37f89a6344ac09e9acf2facc196a6b52a0b968e4f9504a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-10": {
+      "clip": "technical/slide-10",
+      "source": "/briefings/fintech-technical/#slide-10",
+      "diagrams": [],
+      "contentSha256": "f2d801d3cd173b15debe4d3777457284167f7870f6cb291b2c0a69869d0334b7",
+      "scriptSha256": "0a350c68549dff585adfafda27a87674b61fc3fcf97c951369158290cb0fe5bb",
+      "audioSha256": "9997afad37a927bba8722323dc9dd8487a10b230466af8ed5ce7a150f17cc06d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-11": {
+      "clip": "technical/slide-11",
+      "source": "/briefings/fintech-technical/#slide-11",
+      "diagrams": [],
+      "contentSha256": "8c23330b05cfd207831e9536525c0c360aa6a8111322950790f68d562e3e4db9",
+      "scriptSha256": "18c8a4b8003b8c31c80cdd0889d9a76f4e84062caba959a4bdb70b41efc173cb",
+      "audioSha256": "e63cad9a27e0f557f939ea33a2ddec5d5de59a7766ce63c640e760761f681f2a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-12": {
+      "clip": "technical/slide-12",
+      "source": "/briefings/fintech-technical/#slide-12",
+      "diagrams": [],
+      "contentSha256": "9c0d52d5f88151e493522316b25389583ab975821646880426f62a9863b32604",
+      "scriptSha256": "9117ed6baec904228fa4d72f99eadb424ed4eeb9568d34bea85db7e2deb56685",
+      "audioSha256": "e2cfd0ca68f01b46b00c5929329d819086770e39d44df93fde3df2e4e9584504",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-13": {
+      "clip": "technical/slide-13",
+      "source": "/briefings/fintech-technical/#slide-13",
+      "diagrams": [],
+      "contentSha256": "945b885edf8c209e21d6c24ec25732a9c80519ed0ecbd74b1cc2fadce694263e",
+      "scriptSha256": "087f6636e954e23ef9347b547384a80a20d7549310a59e588d21dd7d1093c6b1",
+      "audioSha256": "d81e744f6bae1ff3bbf692d7ee5aff7d0b418a2c8f9afe24a563c910d606ac20",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-14": {
+      "clip": "technical/slide-14",
+      "source": "/briefings/fintech-technical/#slide-14",
+      "diagrams": [],
+      "contentSha256": "0db097ee8327ab665652b9ff55b97e724a854cdb7b3530aee7532c711f8a5385",
+      "scriptSha256": "b918b9de3db842d9ce543e043956683cb76fe6d5865fd510e9e5a5530d93f89c",
+      "audioSha256": "a19d8156cb953d279a0b7330c592e01efe959be2dee29164b00c34abe0cdaa72",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-15": {
+      "clip": "technical/slide-15",
+      "source": "/briefings/fintech-technical/#slide-15",
+      "diagrams": [],
+      "contentSha256": "fedcbd5219ff1ac8bcc5d096b4bf8ce383ed0bf10a44e4aa1da88a66d627fc89",
+      "scriptSha256": "62d9a45d2875095c5f4ba174db07807dff4978f920ebc318adb259126f0c72e6",
+      "audioSha256": "a63b6326b050ec9d596605420c644c271d7e58461da086110b5a06f9e2f63096",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-16": {
+      "clip": "technical/slide-16",
+      "source": "/briefings/fintech-technical/#slide-16",
+      "diagrams": [],
+      "contentSha256": "6ad0291d4bb2770a0d4f7075383ec388b3e89ca5a63e1424b33f2ef972409bcf",
+      "scriptSha256": "697e2fbbad05045925172251524ff02e22ce5239c8e70d9f9fe2eaf5eee42b79",
+      "audioSha256": "d8b38a8e91b4e3572d84e12cf9451f81d3d36e509683acbc2b425649de6bbbd4",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-17": {
+      "clip": "technical/slide-17",
+      "source": "/briefings/fintech-technical/#slide-17",
+      "diagrams": [],
+      "contentSha256": "e9b24cc1c4bb16fc5d884caecb6d25f4d3fd3bed83c4122930da2247183ce158",
+      "scriptSha256": "3cb00cdd6cf331fa575c328d1bd397a4e0873074a85e632086e0587176d2aec2",
+      "audioSha256": "562c240d81cde726354b5ddad29144448254927ff552d4a0c33feae89a77abd9",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-18": {
+      "clip": "technical/slide-18",
+      "source": "/briefings/fintech-technical/#slide-18",
+      "diagrams": [],
+      "contentSha256": "2644d6509bbf9ab382cc7e530551a38927f75d5b0f3bed3de3dea4dd9ec2770d",
+      "scriptSha256": "78d70d724318b5973b5a604eeaa147181a3bef40213c9c8bf756c154ca30c44c",
+      "audioSha256": "d3eec86eb1938d815bc20c09cd5afc053cfb6fc4338ca78e3fa80e9bdf24abd4",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-19": {
+      "clip": "technical/slide-19",
+      "source": "/briefings/fintech-technical/#slide-19",
+      "diagrams": [],
+      "contentSha256": "8ded70e8db2a805b964b22ab744fcc37a3f2b6dd090e02601242f77bba41e38b",
+      "scriptSha256": "e41f85502f404a6d0e2ac6c8df8f7d3d55994371397ae2a81a42722aad74961e",
+      "audioSha256": "9c00e6caa0535e58bbbe074d0e0273f55ddf8a6ac7289af11b1a2740b85f7c6d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-20": {
+      "clip": "technical/slide-20",
+      "source": "/briefings/fintech-technical/#slide-20",
+      "diagrams": [],
+      "contentSha256": "e4b9fa16ba9bea4b74c0b62806e8d46ba0e2b060cc7f80f7130bd7fdc2a44848",
+      "scriptSha256": "67c44cfa6c09721803e40bf0a1fb9e8352e4980d5c0f2d7e8f6af2995aa0196d",
+      "audioSha256": "10c98b48658f1bf05f2283302be1f1f8db75b83b12941a82268c7c7c35793e6a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-21": {
+      "clip": "technical/slide-21",
+      "source": "/briefings/fintech-technical/#slide-21",
+      "diagrams": [
+        "modernization-environment"
+      ],
+      "contentSha256": "30f05cf29961ed7b4bb1cf5ffcf32e4d5da32609ace14c817a78d39791aaebd1",
+      "scriptSha256": "c526ccff0a02e76610ab9e225c8675d77aee948702ecf8b1a083f9d47555b9c3",
+      "audioSha256": "6c246b068770275412579af7d9d9a80a3f79c347f00831f01f29223a5b5de9a3",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-22": {
+      "clip": "technical/slide-22",
+      "source": "/briefings/fintech-technical/#slide-22",
+      "diagrams": [],
+      "contentSha256": "1e3a5f36a771910d0d92d20c4a9f996b4ddf956414a9ca1ab561bb6ffd610d69",
+      "scriptSha256": "51135284b3c7d84834f9a0a7c2b028fe042caadd62537ae92651d61a6ea161d8",
+      "audioSha256": "803813bb8b3e0f5547c63d80bc3cf36320c296769b5d3da44da251079de55de1",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-23": {
+      "clip": "technical/slide-23",
+      "source": "/briefings/fintech-technical/#slide-23",
+      "diagrams": [
+        "fintech-candidate-validation"
+      ],
+      "contentSha256": "7d1bd8b70163c07dd506231a82ab507862fb73cfb7ff7721a5a947bb42768924",
+      "scriptSha256": "b4b8cbc3b4f3e6e23d2cef27d0631be709900e161fc174f0a9b2912f9d6ef82a",
+      "audioSha256": "ddaa9ebe06216c278f69e5ca33d0842a8be626c4a8eabafd82d974cecfb2d0fd",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-24": {
+      "clip": "technical/slide-24",
+      "source": "/briefings/fintech-technical/#slide-24",
+      "diagrams": [],
+      "contentSha256": "4e58c2484fad655b859b8d0170d47ee7738f7f62f12471ebfd15f0522e87d38b",
+      "scriptSha256": "f7c9d33b35d0ced4ed3d9695410aa87b2cb1ff123f5ad6d1236d011d2da2e77d",
+      "audioSha256": "96c7310a050db25eee3f67c3e482f6310a7b0e2d3b99102e849b3c793b8f6693",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-25": {
+      "clip": "technical/slide-25",
+      "source": "/briefings/fintech-technical/#slide-25",
+      "diagrams": [
+        "qe-lifecycle"
+      ],
+      "contentSha256": "80abc4160ae776c9c45a9e47f797823c524fbdecb140edf5dd11913f291e9332",
+      "scriptSha256": "960f915501573ee55bf8a00115f791477316dc2b62e404a6ad507d3982402ad1",
+      "audioSha256": "e7e517e8849c647448dfe06e5fb1968b6b2e8c3dcf2ca82e0ce8fc9bdf3a4d6d",
+      "decision": "retained",
+      "reason": "Reviewed the six lifecycle steps against the existing recording and all eight exact VTT anchors. The explanation remains the normal setup, execution, evidence and cleanup path; new highlights follow it and manual failure exploration pauses it.",
+      "reviewedOn": "2026-09-09"
+    },
+    "slide:technical/slide-26": {
+      "clip": "technical/slide-26",
+      "source": "/briefings/fintech-technical/#slide-26",
+      "diagrams": [],
+      "contentSha256": "e0f580a7542f86e6654acd5be8ced846b56d1c62dc28897b12eb1c3b0860622c",
+      "scriptSha256": "911033e40b712be5f1a8c4b73edd3f00718b25eddc07c8043782281e1054222b",
+      "audioSha256": "a8e95ef454f13c734391e627760c39d0f9e3a96efa347ef6ee883b99e4a5a571",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-27": {
+      "clip": "technical/slide-27",
+      "source": "/briefings/fintech-technical/#slide-27",
+      "diagrams": [],
+      "contentSha256": "1d0ad01221313335f1ef54017ff82c86fb34c5c2afc485f053ff26b3ea115ea8",
+      "scriptSha256": "cd9cc945b22eb3eb4a7ff4c5952fbaf1cf0fd092114227b61a223348cede4e06",
+      "audioSha256": "a469b58d27862ba815e98f883f6b92c9b0a3f4e5042147df25ea4cc08997ba39",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-28": {
+      "clip": "technical/slide-28",
+      "source": "/briefings/fintech-technical/#slide-28",
+      "diagrams": [],
+      "contentSha256": "5e3e674206b64f42f1189484fd2744a86c6b50d1e648ff30d3e0045218f5ce31",
+      "scriptSha256": "7e01ba1b1aa73237cc278349810b13af1b682266e1689da7fda2202e4422565a",
+      "audioSha256": "5400b33cd4addedb5063cdc0094a09c5c647b2cc83801b9b81133369cd867851",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-29": {
+      "clip": "technical/slide-29",
+      "source": "/briefings/fintech-technical/#slide-29",
+      "diagrams": [],
+      "contentSha256": "7078e4c8fc59b94090d027007366cd9022a17f702fd471f2f00b2e749a67fac3",
+      "scriptSha256": "6552180f5d709161010986a97f2d4c6884afe6bd86c26ec27042fa663b36fd81",
+      "audioSha256": "a463218e2e8fbb7e7196d5ade9cb6df8a9f99315e2c7b640bb08e444b3b5c83a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-30": {
+      "clip": "technical/slide-30",
+      "source": "/briefings/fintech-technical/#slide-30",
+      "diagrams": [],
+      "contentSha256": "4924a68fc2de30ca3b65c329b5806bc6369aadc18fc7b059951222f4b1b24d15",
+      "scriptSha256": "b74773108715bed943a918697dc53af0c94c15c8099d52b1c64dc582a88dad63",
+      "audioSha256": "79e3a65a90f2083276c7c22a425af11808d1cacde8712331642f9d468b6c398e",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-31": {
+      "clip": "technical/slide-31",
+      "source": "/briefings/fintech-technical/#slide-31",
+      "diagrams": [
+        "qe-journey"
+      ],
+      "contentSha256": "13a579ef76aaae9b1b85dfcf375e6b4a8810dba9ba852daf08a424af2e83c551",
+      "scriptSha256": "54be281eca9f443ab5a520916bf13a1aa07dedad6e2b54e6a8de2e924154fb5d",
+      "audioSha256": "a3d24c7646517acd5344a359b294ccb308401b793e8b7edd20d3abb158fbe095",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-32": {
+      "clip": "technical/slide-32",
+      "source": "/briefings/fintech-technical/#slide-32",
+      "diagrams": [
+        "qe-artifact-trace"
+      ],
+      "contentSha256": "ca66c1eafb6d709c64826fee49f796e4289d4c24c28b2589601d2e6e12217856",
+      "scriptSha256": "74f3b874dafa413b641734116e997d146c5ebf8a354dc478010954143bef63bb",
+      "audioSha256": "c692bde7540abeb4bc3f939a1057cf5c7a714f4613bda6ef32183df2f205bdc5",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:technical/slide-33": {
+      "clip": "technical/slide-33",
+      "source": "/briefings/fintech-technical/#slide-33",
+      "diagrams": [
+        "qe-three-states"
+      ],
+      "contentSha256": "1851cb7156bc4322a602bcd078b968cf543ec6428842dd0b418c3a8fed67ac31",
+      "scriptSha256": "fded2a4001290c84762934c1ade173a4e4a0acaa0e2d172db391a7b448cd0a16",
+      "audioSha256": "7e3426502372771118d6b85186ea10418d88bb59209bd7ee2b7ca9fd6ecf9622",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-1": {
+      "clip": "industry-technical/slide-1",
+      "source": "/briefings/technical/#slide-1",
+      "diagrams": [],
+      "contentSha256": "8a06f65aca489858563bb0089deb6ed777e1a9ae56dd090b98738b382ab94926",
+      "scriptSha256": "113aec91237d3b4fb3e829604155049c7478b5df20006355c19a9becdb853f78",
+      "audioSha256": "97ca4704cdc2205397cc1001b3fa64d67e4089376e2df0bad9620ec57b27d9fe",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-2": {
+      "clip": "industry-technical/slide-2",
+      "source": "/briefings/technical/#slide-2",
+      "diagrams": [
+        "platform"
+      ],
+      "contentSha256": "0b70433d6172abf155696351de5f9dd7eddce2689e2875437ae3d40b864a6eda",
+      "scriptSha256": "0db7ced6369d955819260d6d650749711d33c19d717cd3301bcc658e98b36875",
+      "audioSha256": "9620061571aea2741bad6da0418cb32bb2e688be24dbcb3556582940cf728026",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-3": {
+      "clip": "industry-technical/slide-3",
+      "source": "/briefings/technical/#slide-3",
+      "diagrams": [
+        "test-sequence"
+      ],
+      "contentSha256": "1ef88eec9f389bad779a5cdfc32eaa0c75b082489e1955fe2ccc4541eaffbe5e",
+      "scriptSha256": "2953ca2e5f8011a9e3b7c8ddf1161766069c1bc3aaad7a5a668c6d3929ca5d82",
+      "audioSha256": "a102fa7f2231255c5ad8e2135e04085d6ae7da72bcb3779abdd9acf700c04815",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-4": {
+      "clip": "industry-technical/slide-4",
+      "source": "/briefings/technical/#slide-4",
+      "diagrams": [
+        "testgen-evidence"
+      ],
+      "contentSha256": "966088dda4461cfbd810d85456ee228104ae240d58652975a8cde8e249c60eab",
+      "scriptSha256": "3eff94d0e046d8c759331b8fbd9b5a1bd95535e7cf4c3692f4d83feed60cab28",
+      "audioSha256": "3c7222076f9057bc124520ecb73844b1e4015e4cc84fad1f60e6d2d689e5bcd9",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-5": {
+      "clip": "industry-technical/slide-5",
+      "source": "/briefings/technical/#slide-5",
+      "diagrams": [
+        "evaluation-system"
+      ],
+      "contentSha256": "ec12afc81da3903c8cf1af012d7daaf71f392aa5fbf4d8266e346a52df291b14",
+      "scriptSha256": "e1e4a6bde5a2666ec7e958bb095b22a3ca0411fb9459e02fb7c6059c2098f3a7",
+      "audioSha256": "f1d616bec47f39f0dcd2c8e1d5a89f91b1e169307a7827f6cef6515e94d7a603",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-6": {
+      "clip": "industry-technical/slide-6",
+      "source": "/briefings/technical/#slide-6",
+      "diagrams": [],
+      "contentSha256": "dc8f9b7dc6a9b0d9fdfa8af62606a7455a988905e913f98ddc2f69aa992cb994",
+      "scriptSha256": "385e2a5baccc5cfd5179fd7e43b0a0ca535323d153b8bf0dd826247934cc9915",
+      "audioSha256": "8202e0a0a9b55027ba6f84859eb36020943180382dbacdc8f285b04101f1170d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-7": {
+      "clip": "industry-technical/slide-7",
+      "source": "/briefings/technical/#slide-7",
+      "diagrams": [
+        "context-route"
+      ],
+      "contentSha256": "2a55aa27e06dc908910efe3a746c6074b8c554570233ec4382ba665460486c74",
+      "scriptSha256": "9168a2c826aec5f0d0aa557580f294b08e9548d4401c13fbf9aca778e70b64ce",
+      "audioSha256": "08264a25af5c91adfdf158bf257930ed17f3d979a3742e3666025b26528a81ed",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-8": {
+      "clip": "industry-technical/slide-8",
+      "source": "/briefings/technical/#slide-8",
+      "diagrams": [
+        "configuration-bundle"
+      ],
+      "contentSha256": "7a7dc04692bd266a403d438975df49dfb1b219ab2208d8383bf3e501209a4cf3",
+      "scriptSha256": "b5b53c60eb1ffb63ba54f091620e1e5b918c08335ca2b96d84736d49a972504c",
+      "audioSha256": "06a1984f27edb1b7b8c71e88797f947af0bdca6339de3f35c87c63213760cedf",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-9": {
+      "clip": "industry-technical/slide-9",
+      "source": "/briefings/technical/#slide-9",
+      "diagrams": [
+        "test-oracle"
+      ],
+      "contentSha256": "9b55754a5e2ffaa595404c6f7dccb7a4f31e1bb67586fdb1a111c23fdd7e321a",
+      "scriptSha256": "cf5183aa2fe018815465c3363b77666b4f8c725c422ceac5fa9e9ce88923fd4c",
+      "audioSha256": "2b2c2a9372e7728e44f80a2bd1beba8d90ce676ad9c5e91e88127a5256dd1eea",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-10": {
+      "clip": "industry-technical/slide-10",
+      "source": "/briefings/technical/#slide-10",
+      "diagrams": [
+        "mutation-loop"
+      ],
+      "contentSha256": "5876a27589eda0df9b1490ddc2e6d2e5852ce4279aa171201b83955faeb07a35",
+      "scriptSha256": "7d9a08ad6ee25f039706f0b9f3503e67a49295bbad4871317ca05ab9a50b09e2",
+      "audioSha256": "f238b421007bf4bfe9b10e1c8091c658c4297dd47aa0ef5663a7656c7aca69f6",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-11": {
+      "clip": "industry-technical/slide-11",
+      "source": "/briefings/technical/#slide-11",
+      "diagrams": [
+        "diagnosis-workflow"
+      ],
+      "contentSha256": "db3f5791dff4896842af2d93824c2b230ceff6f89f5bb9c7e7de4dbfd0474d05",
+      "scriptSha256": "f6f6e6dded9ffa7fbcf9022eb017ae6eb5a2ef785c818a1908c7798b3fb38528",
+      "audioSha256": "6b43208456f4e7678b44d74bf5a47856c9ebb96bf2a7333ea992c973cbdacb2c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-12": {
+      "clip": "industry-technical/slide-12",
+      "source": "/briefings/technical/#slide-12",
+      "diagrams": [
+        "flaky-repair"
+      ],
+      "contentSha256": "44470493f43e57c94a0baa4797388bcf6d8ccda623d5194a2137f989529e4c2c",
+      "scriptSha256": "2f9252abbd176f6aa41de9bfecf1d14c5eb993dce36811e97bfa3370337c8c7e",
+      "audioSha256": "71ed4c3505a6049a3d242fee42b4598d72af09b6a0cfec26423ac4ff1d558142",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-13": {
+      "clip": "industry-technical/slide-13",
+      "source": "/briefings/technical/#slide-13",
+      "diagrams": [
+        "corpus-design"
+      ],
+      "contentSha256": "b28b77b56c8738260ebee8e94477adbe0a8386e9e29bf2a4f822f0729021262a",
+      "scriptSha256": "7f8ab7d2b498abed91e45e9affe068c1def0c9cb3f2d00029dc6cd56c25876a9",
+      "audioSha256": "ecab44efa156a4a46f6fa8d5ab8df8201066800432b89f46dcacad35ec650b8d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-14": {
+      "clip": "industry-technical/slide-14",
+      "source": "/briefings/technical/#slide-14",
+      "diagrams": [],
+      "contentSha256": "85ecb177fa085b046e95750c4a79c65e7032bc33939779f94826d2fd87a62f36",
+      "scriptSha256": "b8a16be91343b81068ac27fffd15b29109da38636d9aee2ef9a5aaf1aeef9458",
+      "audioSha256": "0061496f58990f876f9c6d4c4873ca58ae80889f8d5dacd4fea88dd5003e7c43",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-15": {
+      "clip": "industry-technical/slide-15",
+      "source": "/briefings/technical/#slide-15",
+      "diagrams": [
+        "threat-boundary"
+      ],
+      "contentSha256": "7a17a1e5ca1836c29d54f8e14614d3b92a8c8cc2439ba11d7fe65b597c9540fc",
+      "scriptSha256": "7e9325cc263f4843c11d908bf831ef773e74b19487b72bd9455088ccbd1aac75",
+      "audioSha256": "2fdfbb9560265e5eb8a2f48cdb534569031faa0d3eaa8941219abb71f4e20005",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-16": {
+      "clip": "industry-technical/slide-16",
+      "source": "/briefings/technical/#slide-16",
+      "diagrams": [
+        "gateway-sequence"
+      ],
+      "contentSha256": "50be394c530ffb40c06920c73b61fe55cf33ce188a7f0e7fb4071376f23c5982",
+      "scriptSha256": "df9336d3036a117ac571201949dcc796d92421dc297302c239c42378cd1091bb",
+      "audioSha256": "bd764bd2249fc3de2eb436251a3e68b29fd6aad6a9b7242c1c9120924e2f9e7a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-17": {
+      "clip": "industry-technical/slide-17",
+      "source": "/briefings/technical/#slide-17",
+      "diagrams": [
+        "execution-isolation"
+      ],
+      "contentSha256": "bdf9a74349089c0b511ac764c7ca30a7503f577e0dae87bea67858ec1aec01e4",
+      "scriptSha256": "55290abb0e0e57c1b716c3774922ee8cf4f7d7fc1f841e98d90d0bfce8305c58",
+      "audioSha256": "2911becc4091e9e03b611fe947571a90ab2b3501ab08e842a5fd420f624ebc2c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-18": {
+      "clip": "industry-technical/slide-18",
+      "source": "/briefings/technical/#slide-18",
+      "diagrams": [
+        "release-gate"
+      ],
+      "contentSha256": "81ac8e54eb273ab8d7433d139dd468231da865b9adecb1dacc4e5e3c48ac9c6f",
+      "scriptSha256": "52e9f34cdd3400b215a794a58b1911aac3f088c7785caaf2a3cafd95b8f49db1",
+      "audioSha256": "e67fdeda0579d22fa7f6b2efc49a78566d7f7d9dd0f37597148b73add2e29bad",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-19": {
+      "clip": "industry-technical/slide-19",
+      "source": "/briefings/technical/#slide-19",
+      "diagrams": [
+        "fallback-state"
+      ],
+      "contentSha256": "e4e2d40d8c28f08c155196e4d5f3d26e8f6b633213a8cfc80b7e066d3a5e3b1b",
+      "scriptSha256": "a456178a6f448fad6f566d7882501090d163a7af72e390716200c6b5b46c9aac",
+      "audioSha256": "7b424d8a7094626a7068df38903b8277b55407725ecd13546f817ade08ca9cad",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-20": {
+      "clip": "industry-technical/slide-20",
+      "source": "/briefings/technical/#slide-20",
+      "diagrams": [
+        "trace-pipeline"
+      ],
+      "contentSha256": "8bd027932163da1d0d9e38557251816c294f635d65ed9bc4685ca34835449d38",
+      "scriptSha256": "a4741c0bca6d1ee8f0387fb017beb9d035b77901a3554420d020d09e545154f9",
+      "audioSha256": "bd5e6e6615a57e213dfe999b00b65f1f0d066659d7f24dc18d784817d7aba0a3",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-21": {
+      "clip": "industry-technical/slide-21",
+      "source": "/briefings/technical/#slide-21",
+      "diagrams": [
+        "evidence-model"
+      ],
+      "contentSha256": "a0829f47123eeab2367e33e59644e9dd7e013c526cd437725498c4fe0afa1f05",
+      "scriptSha256": "892baa816fb1327ae635adf7f3a3d81b801e6070c91fe0e3c3f3d64d2bb827a3",
+      "audioSha256": "761604348d38b4e9136a60f341a3451a0a1844e3c9bd257140756c7779292f54",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-22": {
+      "clip": "industry-technical/slide-22",
+      "source": "/briefings/technical/#slide-22",
+      "diagrams": [],
+      "contentSha256": "b2500792b5566e8f48db8eb63a4720d8ff6d8ed97ff7d080f5d7d3a26d652576",
+      "scriptSha256": "d482b269a608a2d7ae355fde7f914d66888cdabeacf15da4d7093f4b512fb917",
+      "audioSha256": "e2d5c081f6abe785f62eed1a688f73e17513015712ab542bd7d0bc00bbcb2b38",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-23": {
+      "clip": "industry-technical/slide-23",
+      "source": "/briefings/technical/#slide-23",
+      "diagrams": [],
+      "contentSha256": "ee2a69ae71598a2368246333c3f6109ebdde108b7a74a60fd834e7a8bd5a9213",
+      "scriptSha256": "9624757466971c48e57f96fbb328cecba0f8c877436a80b12a4818e268acd9d6",
+      "audioSha256": "9952cfdad3907487fe28d2061f5aa127b4ce7bec8b03e4388cec9e453a89277a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-24": {
+      "clip": "industry-technical/slide-24",
+      "source": "/briefings/technical/#slide-24",
+      "diagrams": [],
+      "contentSha256": "ced53f4074e5fa8ebb44b5dcb8819f850ecc66c406ee7e9e2bd50d41280d43c0",
+      "scriptSha256": "364b1db063f5e7d8d8be6df46bfd072033615df621dbe47dc31725e39a5853c2",
+      "audioSha256": "8a404ce2ad3de0fb3775b98d266e8f094f00799012b5608ddf833e8163012fc9",
+      "decision": "refreshed",
+      "reason": "Rewrote and regenerated the pilot decision explanation for sponsor-selected objectives, universal floors and evidence, economic-only effort bands, and Finance validation for cash claims. Reviewed the rendered table against the new script and thirteen measured caption cues.",
+      "reviewedOn": "2026-09-09"
+    },
+    "slide:industry-technical/slide-25": {
+      "clip": "industry-technical/slide-25",
+      "source": "/briefings/technical/#slide-25",
+      "diagrams": [],
+      "contentSha256": "6dba2c8ed69d9a1e6766450b0301600a929cb6d93f6b828187c66ff9f99e1ed3",
+      "scriptSha256": "a6160da3b1beac0dc8d4766335d7fcfbaf02a50f8caec74d70c5e941a84f364b",
+      "audioSha256": "c7062db738b9e33ef70e775137fef0310b73e311dbde7ed9fdf29d598d116a5e",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-26": {
+      "clip": "industry-technical/slide-26",
+      "source": "/briefings/technical/#slide-26",
+      "diagrams": [
+        "research-decisions"
+      ],
+      "contentSha256": "38b00bee3e6ab35e12707e3508eef64f8cffb60c275d56ce153df014ea55c9e9",
+      "scriptSha256": "2cc0423348472fa8de8f671b1eee5c7dbb82690332b4197faa5f9bd440d0deca",
+      "audioSha256": "5d984a5fe075b9840deaa520147d08cbcc1f2ff9069abcade4ed10202c1334fd",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-27": {
+      "clip": "industry-technical/slide-27",
+      "source": "/briefings/technical/#slide-27",
+      "diagrams": [
+        "contract-chain"
+      ],
+      "contentSha256": "b98a89cfd1a25307f63c63c4f67362c0cdb32bb739414faa979515d957dc3dcf",
+      "scriptSha256": "b3b4f8e48c18692e775ab9b86de4c3c503d3f28f6f567e31e97d3afbb951e10d",
+      "audioSha256": "3cf3a6494a3464e33ed53b10bfcaa15582493ff59fd06e2420ac0e83852b63a0",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-28": {
+      "clip": "industry-technical/slide-28",
+      "source": "/briefings/technical/#slide-28",
+      "diagrams": [],
+      "contentSha256": "dad1f6a4e1dfd387d67e70ebd31bace9a9d66963ee8fd304bcc44e5cb6c6c0e2",
+      "scriptSha256": "f8c7a2b1d105faf37e2dafbd0d8d7ffec2c5cf56e27e627cd9a143f95dd9579e",
+      "audioSha256": "2a5d829102821780e2b8f2d1c56c42df6f10de55076a7e6fb2ea36e84aed942f",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-29": {
+      "clip": "industry-technical/slide-29",
+      "source": "/briefings/technical/#slide-29",
+      "diagrams": [
+        "failure-resolution"
+      ],
+      "contentSha256": "9a6790f2a1064edc9d6945584a1665cd9757ca13d45bab762b3e211bbbfcb0eb",
+      "scriptSha256": "2a8e4520d77603409ec693e578d4b7e8d2a32b2df47ea111583c2a8d6a9fea48",
+      "audioSha256": "5a68c095e4f11de7cb184053de82157f7f84008b92f51d953b1d09cf2bcb5ec5",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-30": {
+      "clip": "industry-technical/slide-30",
+      "source": "/briefings/technical/#slide-30",
+      "diagrams": [],
+      "contentSha256": "c5521b1ea81398cc971094154f632ba1c6151208080ce976f1d04c482e0e7d1b",
+      "scriptSha256": "5d7efbc6bf40d6dc5342b305fafa121163945ce630a48b7486db8674d6aad382",
+      "audioSha256": "9935b992e1a9d55065fe87485f2a7ee06b7a83b4a143a836dabf2c0a3a4582ae",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-31": {
+      "clip": "industry-technical/slide-31",
+      "source": "/briefings/technical/#slide-31",
+      "diagrams": [],
+      "contentSha256": "1a1fa61a57204224b11fa750b424101d012baa58bdb50cc0b07053a7ea081ff1",
+      "scriptSha256": "90e9a232f585e85ba7873f061182559cebb2a947b1ec40d740269139d614a802",
+      "audioSha256": "002294ade91b80758a1d8e9ab8b51742af9955b0e39ddfe9f30864f75a8ea058",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-32": {
+      "clip": "industry-technical/slide-32",
+      "source": "/briefings/technical/#slide-32",
+      "diagrams": [
+        "modernization-environment"
+      ],
+      "contentSha256": "311c7d7c5213e4c1399036e4b255f8135f009c5f68e1da369a89527a109ccd2a",
+      "scriptSha256": "710c0062f56c6eb93bea09a37f81e6a1f6523ba365164e8e6649fa283fe83b9d",
+      "audioSha256": "c00b96ae6997f73bf968fffc7c5f1e898e3a83ade83abc7d10c03f5b7d71dc34",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-33": {
+      "clip": "industry-technical/slide-33",
+      "source": "/briefings/technical/#slide-33",
+      "diagrams": [],
+      "contentSha256": "5672504bee7e9afdb5a096dd5be7bb442ba50bb7fbb8eafa2c2e78dfa39210a6",
+      "scriptSha256": "ac7c24fb7e96f69998fdb71c4040c62bfb8a531b3447e0fa2fe85ba8433ce87d",
+      "audioSha256": "b9e9049b69d21893e8cc300362a3288f2638d1bcf50e522feb654962a5e45673",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-34": {
+      "clip": "industry-technical/slide-34",
+      "source": "/briefings/technical/#slide-34",
+      "diagrams": [
+        "fintech-candidate-validation"
+      ],
+      "contentSha256": "b9bf7c21dc66844f205d29a8662710624660279f37e6ed76d7db1f3bf1e37068",
+      "scriptSha256": "07de75010988862d4cba42da054fb7076c320033870cb8f5e8d35ee463a212b8",
+      "audioSha256": "68359a0c5cd32af59c42669710f45f16e4740b5fbad99fae7c1c217525c29cff",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-35": {
+      "clip": "industry-technical/slide-35",
+      "source": "/briefings/technical/#slide-35",
+      "diagrams": [],
+      "contentSha256": "198a43f2c022ff68deb494b10f435e7466592ebae52818365f74e790a8612baf",
+      "scriptSha256": "b8c9912e8f5e983d7b78d7266ed5d0c0e5413a062a895aa07baa6aef4cc6bbe6",
+      "audioSha256": "ebf1588c359257ebba0ba55677f36dfdcbe18f80e11a66f85b11ed32b6530a6c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "slide:industry-technical/slide-36": {
+      "clip": "industry-technical/slide-36",
+      "source": "/briefings/technical/#slide-36",
+      "diagrams": [
+        "qe-journey"
+      ],
+      "contentSha256": "5dfd4f5ca3a7298ba5826b62a61100663a09d19bd0cdd55132e77698947bc8ea",
+      "scriptSha256": "54be281eca9f443ab5a520916bf13a1aa07dedad6e2b54e6a8de2e924154fb5d",
+      "audioSha256": "a3d24c7646517acd5344a359b294ccb308401b793e8b7edd20d3abb158fbe095",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/evidence/:figure.fe-results:0": {
+      "clip": "industry-evp/slide-24",
+      "source": "/case-studies/fintech/evidence/",
+      "diagrams": [],
+      "contentSha256": "05f8955f723b9394127fa29e225eafcf70aabc0d83858d7b072973f80d19f20a",
+      "scriptSha256": "6c3cc69315173f13fe6c33c35397f8046b6730af0a7baa8c5d0f4c0d6f3b3cb8",
+      "audioSha256": "e817a814ef5c7e6784144152c92a859a723080ecbb455b9bf21b47cb66007eae",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/evidence/:figure.fe-paths:0": {
+      "clip": "industry-evp/slide-25",
+      "source": "/case-studies/fintech/evidence/",
+      "diagrams": [],
+      "contentSha256": "cba4da6eaaff85211645e7cda45047d3c08cbab8692c62c31ec07f1a87ee8c10",
+      "scriptSha256": "221eda4464eaecee0c0d7962d81097f83b0de29d5e80cd8b1fb54e842599f0ba",
+      "audioSha256": "18a1cc2acaaad7838d4f7a21145abc3449a2aa26b1edeeac09cf95b0917cd4d2",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/evidence/:figure.research-figure[data-diagram=\"fintech-candidate-validation\"]:0": {
+      "clip": "technical/slide-23",
+      "source": "/case-studies/fintech/evidence/",
+      "diagrams": [
+        "fintech-candidate-validation"
+      ],
+      "contentSha256": "bc1625bd8602c7ff9415c35f0f0ea16b9815ef6932a74db77a5bf14592004252",
+      "scriptSha256": "b4b8cbc3b4f3e6e23d2cef27d0631be709900e161fc174f0a9b2912f9d6ef82a",
+      "audioSha256": "ddaa9ebe06216c278f69e5ca33d0842a8be626c4a8eabafd82d974cecfb2d0fd",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/evidence/:figure.fe-comparison:0": {
+      "clip": "industry-technical/slide-35",
+      "source": "/case-studies/fintech/evidence/",
+      "diagrams": [],
+      "contentSha256": "484a0f0b262cd5a1d254bce87c633c2277aa5c7a6d60f3318c898aeca520a21a",
+      "scriptSha256": "b8c9912e8f5e983d7b78d7266ed5d0c0e5413a062a895aa07baa6aef4cc6bbe6",
+      "audioSha256": "ebf1588c359257ebba0ba55677f36dfdcbe18f80e11a66f85b11ed32b6530a6c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/implementation/:figure.ft-pilot-time:0": {
+      "clip": "evp/slide-10",
+      "source": "/case-studies/fintech/implementation/",
+      "diagrams": [],
+      "contentSha256": "7ff755ac27e6ed45c2746a751a1c58ca8f369a3e6ab26f5141179f557e466d93",
+      "scriptSha256": "6cadc6dddb9520fd2dcafe1c83e0c6987d56f843a98b933a0a5c44ef655e54f8",
+      "audioSha256": "4a0b1de20f759f1a76440a7517888e878dd40484bf2949bba79ce68c84074cba",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/implementation/:figure.vs-architecture:0": {
+      "clip": "technical/slide-26",
+      "source": "/case-studies/fintech/implementation/",
+      "diagrams": [],
+      "contentSha256": "d32c865c2334c047680a9259a324a2d55a2870c1c073dac7d99f3675fb171c2b",
+      "scriptSha256": "911033e40b712be5f1a8c4b73edd3f00718b25eddc07c8043782281e1054222b",
+      "audioSha256": "a8e95ef454f13c734391e627760c39d0f9e3a96efa347ef6ee883b99e4a5a571",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure.ft-staff:0": {
+      "clip": "evp/slide-2",
+      "source": "/case-studies/fintech/",
+      "diagrams": [],
+      "contentSha256": "9ba3a808ddaff98c2f71c9ee66bb6e2c645f26e56b1144ddfe46fba020848891",
+      "scriptSha256": "81c98604c6d7974e07b53da6b9a8b5b1dd67165a3fce5b523756b4d5f2a73372",
+      "audioSha256": "35c916307038339b5464b6ac170671a78741861b68fbcce5885a8d9bb250b589",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure.ft-diagram[data-diagram=\"fintech-platform\"]:0": {
+      "clip": "evp/slide-5",
+      "source": "/case-studies/fintech/",
+      "diagrams": [
+        "fintech-platform"
+      ],
+      "contentSha256": "cf93c5b89a233200fd10a2af35fa6d2c5c38e31e39339ce619771186296b8f63",
+      "scriptSha256": "0c4efd5be14db5b32bc78f1bc05bbf6f732c577f8e360561c3a96a159c95abb0",
+      "audioSha256": "9e54de8c1559e4fe9e51b79d594bb443d12fdd537f6fcf98e630461a4c6419ae",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure.ft-before-after:0": {
+      "clip": "evp/slide-6",
+      "source": "/case-studies/fintech/",
+      "diagrams": [
+        "qe-three-states"
+      ],
+      "contentSha256": "cc1ccc90911d982702dd4dea33e6db3fe02ed80b5aedfa3ab5a27da5214afc4e",
+      "scriptSha256": "79108a58035d79a0970638582276d4247265ba8b9b44cf64ea709560735621cc",
+      "audioSha256": "c2fdf6329c6d32a30f1fe94f872a3c874b3107cc8975cfe861c7ae2d8f446340",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure.ft-pilot-time:0": {
+      "clip": "evp/slide-10",
+      "source": "/case-studies/fintech/",
+      "diagrams": [],
+      "contentSha256": "7ff755ac27e6ed45c2746a751a1c58ca8f369a3e6ab26f5141179f557e466d93",
+      "scriptSha256": "6cadc6dddb9520fd2dcafe1c83e0c6987d56f843a98b933a0a5c44ef655e54f8",
+      "audioSha256": "4a0b1de20f759f1a76440a7517888e878dd40484bf2949bba79ce68c84074cba",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure.adoption-foundations:0": {
+      "clip": "industry-technical/slide-30",
+      "source": "/case-studies/fintech/",
+      "diagrams": [],
+      "contentSha256": "09d32591174b4796cec17ffaa5cafc8f2e990199f7f74fc3b6e40a7f0d2f3182",
+      "scriptSha256": "5d7efbc6bf40d6dc5342b305fafa121163945ce630a48b7486db8674d6aad382",
+      "audioSha256": "9935b992e1a9d55065fe87485f2a7ee06b7a83b4a143a836dabf2c0a3a4582ae",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure.al-map:0": {
+      "clip": "evp/slide-17",
+      "source": "/case-studies/fintech/",
+      "diagrams": [],
+      "contentSha256": "e3d4a79804cd9455d53c28ce176c5c55c2cd3d5ce234dedcb82051639ee128aa",
+      "scriptSha256": "3d3653bb4671fab0ab5c0c26c16d744e03280276ad3ffc736249a75f0682e5d0",
+      "audioSha256": "cfdab00bdf37f2e380da8abdac65e84fb1cb65579cc4f69f48d2bd3b8298e248",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure.ba-architecture:0": {
+      "clip": "technical/slide-27",
+      "source": "/case-studies/fintech/",
+      "diagrams": [],
+      "contentSha256": "d589e978f83f733335662b6bc45412b2849882dbf11daa8c611be6d422bbd39c",
+      "scriptSha256": "cd9cc945b22eb3eb4a7ff4c5952fbaf1cf0fd092114227b61a223348cede4e06",
+      "audioSha256": "a469b58d27862ba815e98f883f6b92c9b0a3f4e5042147df25ea4cc08997ba39",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure.ft-comparison:0": {
+      "clip": "evp/slide-8",
+      "source": "/case-studies/fintech/",
+      "diagrams": [],
+      "contentSha256": "d3352bd2e43d221d265449911833ade35aec4d518fd5f024de65de0a8c9a2de4",
+      "scriptSha256": "9f5a9b3370768e8a81f72c206f171aede9835ad1dad0edaa561ca233c842e5e9",
+      "audioSha256": "5259ec936e489436086afc8cbf924f944e9c1a8a73180a087347871e9eaa9baa",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:#payment-demo:0": {
+      "clip": "evp/slide-3",
+      "source": "/case-studies/fintech/",
+      "diagrams": [],
+      "contentSha256": "5ff24bc9a04c361330f97ec1511c99a438a11592b1cfcb3f243c74ee99fadce5",
+      "scriptSha256": "e406a7d41a03043dc968d109af0aa426e30c7160974ef5ea27332e14c43b161e",
+      "audioSha256": "9d4c3ae1ff2dba9952e9c0d53a5f69c4cf18152f1496c505a44106f5b5f67a78",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:#outcomes:0": {
+      "clip": "evp/slide-19",
+      "source": "/case-studies/fintech/",
+      "diagrams": [],
+      "contentSha256": "dd83e2a5c5055b8dbd4a3f725246b3dfc6b795eb1b6ce92fcc4c1e9c492da125",
+      "scriptSha256": "5b52c11bbe52988c52cbcc4d40e1bef5580367ffd97d1ad7f2632d44b33469f2",
+      "audioSha256": "3576429426c5f2d1f6feb7039fd0da48768aefc7dce819ce638fee66c4268af9",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure[data-diagram=\"qe-journey\"]:0": {
+      "clip": "technical/slide-31",
+      "source": "/case-studies/fintech/",
+      "diagrams": [
+        "qe-journey"
+      ],
+      "contentSha256": "503e87205c5f2819cdeccb8e75c812e22efabcda3075432f4c1e34fb9e8f6aa7",
+      "scriptSha256": "54be281eca9f443ab5a520916bf13a1aa07dedad6e2b54e6a8de2e924154fb5d",
+      "audioSha256": "a3d24c7646517acd5344a359b294ccb308401b793e8b7edd20d3abb158fbe095",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/case-studies/fintech/:figure[data-diagram=\"qe-artifact-trace\"]:0": {
+      "clip": "technical/slide-32",
+      "source": "/case-studies/fintech/",
+      "diagrams": [
+        "qe-artifact-trace"
+      ],
+      "contentSha256": "e762004afbd8ea8b4fc9825696e3b2945baff3bc17e632495dbc1bdd69a63eaa",
+      "scriptSha256": "74f3b874dafa413b641734116e997d146c5ebf8a354dc478010954143bef63bb",
+      "audioSha256": "c692bde7540abeb4bc3f939a1057cf5c7a714f4613bda6ef32183df2f205bdc5",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/dictionary/:figure.dictionary-map:0": {
+      "clip": "industry-technical/slide-22",
+      "source": "/dictionary/",
+      "diagrams": [],
+      "contentSha256": "17ca3685960ffba7f3dc967d1f83cccf554e1469cec7145dd022fa18acb7c15f",
+      "scriptSha256": "d482b269a608a2d7ae355fde7f914d66888cdabeacf15da4d7093f4b512fb917",
+      "audioSha256": "e2d5c081f6abe785f62eed1a688f73e17513015712ab542bd7d0bc00bbcb2b38",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/architecture/:figure[data-diagram=\"platform\"]:0": {
+      "clip": "industry-technical/slide-2",
+      "source": "/docs/industry/architecture/",
+      "diagrams": [
+        "platform"
+      ],
+      "contentSha256": "a77b3f4980afe3dc9d4995c91ed42b91ba430d7704c7c63c7d1114fc7b280af9",
+      "scriptSha256": "0db7ced6369d955819260d6d650749711d33c19d717cd3301bcc658e98b36875",
+      "audioSha256": "9620061571aea2741bad6da0418cb32bb2e688be24dbcb3556582940cf728026",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/architecture/:figure[data-diagram=\"test-sequence\"]:0": {
+      "clip": "industry-technical/slide-3",
+      "source": "/docs/industry/architecture/",
+      "diagrams": [
+        "test-sequence"
+      ],
+      "contentSha256": "15a6185b36dcf1a09a5233cceef05ef940e74faedb3f749c2f4167f2738837f4",
+      "scriptSha256": "2953ca2e5f8011a9e3b7c8ddf1161766069c1bc3aaad7a5a668c6d3929ca5d82",
+      "audioSha256": "a102fa7f2231255c5ad8e2135e04085d6ae7da72bcb3779abdd9acf700c04815",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/architecture/:figure[data-diagram=\"evaluation-system\"]:0": {
+      "clip": "industry-technical/slide-5",
+      "source": "/docs/industry/architecture/",
+      "diagrams": [
+        "evaluation-system"
+      ],
+      "contentSha256": "5016c6556a04e2acb9db870504651189568d29571f4e167437800f9d0a7c692d",
+      "scriptSha256": "e1e4a6bde5a2666ec7e958bb095b22a3ca0411fb9459e02fb7c6059c2098f3a7",
+      "audioSha256": "f1d616bec47f39f0dcd2c8e1d5a89f91b1e169307a7827f6cef6515e94d7a603",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/architecture/:figure[data-diagram=\"threat-boundary\"]:0": {
+      "clip": "industry-technical/slide-15",
+      "source": "/docs/industry/architecture/",
+      "diagrams": [
+        "threat-boundary"
+      ],
+      "contentSha256": "ac5b30a9753d1f5ae5b527e2add3692fec81b763b43519435443dab6f44247e0",
+      "scriptSha256": "7e9325cc263f4843c11d908bf831ef773e74b19487b72bd9455088ccbd1aac75",
+      "audioSha256": "2fdfbb9560265e5eb8a2f48cdb534569031faa0d3eaa8941219abb71f4e20005",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/coverage/:figure[data-diagram=\"failure-resolution\"]:0": {
+      "clip": "industry-technical/slide-29",
+      "source": "/docs/industry/coverage/",
+      "diagrams": [
+        "failure-resolution"
+      ],
+      "contentSha256": "93b477af72b3a89cf34c61c069e88edec0c62ed9754fe80b4ae33037e05e6846",
+      "scriptSha256": "2a8e4520d77603409ec693e578d4b7e8d2a32b2df47ea111583c2a8d6a9fea48",
+      "audioSha256": "5a68c095e4f11de7cb184053de82157f7f84008b92f51d953b1d09cf2bcb5ec5",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/evidence/:figure[data-diagram=\"testgen-evidence\"]:0": {
+      "clip": "industry-technical/slide-4",
+      "source": "/docs/industry/evidence/",
+      "diagrams": [
+        "testgen-evidence"
+      ],
+      "contentSha256": "cb18f1c33e39710364ae41d6d90e48d63c03ef3307a92d8635ea0e0bbc2f5e1c",
+      "scriptSha256": "3eff94d0e046d8c759331b8fbd9b5a1bd95535e7cf4c3692f4d83feed60cab28",
+      "audioSha256": "3c7222076f9057bc124520ecb73844b1e4015e4cc84fad1f60e6d2d689e5bcd9",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/evidence/:.value-explorer:0": {
+      "clip": "industry-evp/slide-5",
+      "source": "/docs/industry/evidence/",
+      "diagrams": [],
+      "contentSha256": "a3f57249b8d94aa75e4d5f7fc253303a61daa95161b77028501c88295be5beb3",
+      "scriptSha256": "a8e602826258145e6f8326a417200c1b6a3767bba0b90da8277e60edde51416d",
+      "audioSha256": "710f5008d7670fc3849bca6f982282358fc96afb9e2e2ad69cd0af610dba839a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/evidence/:figure.system-figure:has(.test-pipeline):0": {
+      "clip": "industry-technical/slide-4",
+      "source": "/docs/industry/evidence/",
+      "diagrams": [],
+      "contentSha256": "c34404c075a2ba44aabbdbab2068178d8f504df25c65cb9faf7a6ecdb462d905",
+      "scriptSha256": "3eff94d0e046d8c759331b8fbd9b5a1bd95535e7cf4c3692f4d83feed60cab28",
+      "audioSha256": "3c7222076f9057bc124520ecb73844b1e4015e4cc84fad1f60e6d2d689e5bcd9",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/evidence/:.evidence-explorer:0": {
+      "clip": "industry-evp/slide-4",
+      "source": "/docs/industry/evidence/",
+      "diagrams": [],
+      "contentSha256": "9fb349f60fd0508ff8f03cdec44a8221e1b80a7bd1d1d01b9a349614345a1148",
+      "scriptSha256": "9691ff1665389140805fc93d76f5d0c6ef18cb09a0b74822d09069491a81361b",
+      "audioSha256": "f3a22896b4fe23b6fe4b41614e8d066c6bdc377dcee7be3a9a503ea449939e40",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/:figure[data-diagram=\"research-decisions\"]:0": {
+      "clip": "industry-evp/slide-9",
+      "source": "/docs/industry/",
+      "diagrams": [
+        "research-decisions"
+      ],
+      "contentSha256": "28f4bc9aed69945e5ebea5b3e33bd0c75742b34bf180838aff2b92802e588465",
+      "scriptSha256": "52ed02a4b42ffbb8c9c9a08820dac80d56db80df3668a365e7dfc18b016f8326",
+      "audioSha256": "086963f74221be5d60d3f4de70da205a2205ee0aee407f4949a75d759099b14b",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/operating-model/:figure.ownership-map:0": {
+      "clip": "industry-evp/slide-11",
+      "source": "/docs/industry/operating-model/",
+      "diagrams": [],
+      "contentSha256": "d52d58c1e541d486c5205efb865080fc62d52894999c8d7ecc2d78215f21ab91",
+      "scriptSha256": "9fd233832f042c7baf87267047243f75fa3bdb96a9f4c329b07fafdb2040aee3",
+      "audioSha256": "0f60a4c67e8aa2eb4c8a26b03f744179abd018434812de3ee68984b6886c0433",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/outlook/:figure.industry-chart:0": {
+      "clip": "industry-evp/slide-3",
+      "source": "/docs/industry/outlook/",
+      "diagrams": [],
+      "contentSha256": "924fd787d0cfa2ac9a5b04ba93e9aabc784f91e6a01bd2cdea760704179bdbb4",
+      "scriptSha256": "4c3ed4959b4b29859988d0b4d1918806916f2a721d1767248ba406586ba786c4",
+      "audioSha256": "91b5b640eb1c18a2da24b049f12406800f1acb2cda9c5c4667ebe37bf37b9cce",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/reference-contracts/:figure[data-diagram=\"contract-chain\"]:0": {
+      "clip": "industry-technical/slide-27",
+      "source": "/docs/industry/reference-contracts/",
+      "diagrams": [
+        "contract-chain"
+      ],
+      "contentSha256": "2a6a13a46201863505aae4051717df1bdb1d27f0c2d4dc4e6931e90b7bd47058",
+      "scriptSha256": "b3b4f8e48c18692e775ab9b86de4c3c503d3f28f6f567e31e97d3afbb951e10d",
+      "audioSha256": "3cf3a6494a3464e33ed53b10bfcaa15582493ff59fd06e2420ac0e83852b63a0",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/strategic-choices/:figure[data-diagram=\"strategy-choices\"]:0": {
+      "clip": "industry-evp/slide-19",
+      "source": "/docs/industry/strategic-choices/",
+      "diagrams": [
+        "strategy-choices"
+      ],
+      "contentSha256": "0ff520b7170e214a35866ddceb8da0268a590108c4d31b60431d2f63e867dcbf",
+      "scriptSha256": "5dfbe549e89c0cda8817be2b1ad99bed31b0efba02f3c56d34c353b9ff35a838",
+      "audioSha256": "78e8dfd23b392bb83fe22f156a28e46ed795fab46890251343d0d5355328a98b",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/docs/industry/strategic-choices/:figure[data-diagram=\"bank-workflow\"]:0": {
+      "clip": "industry-evp/slide-20",
+      "source": "/docs/industry/strategic-choices/",
+      "diagrams": [
+        "bank-workflow"
+      ],
+      "contentSha256": "e3a1fea501f8fbc5579aa291f6f2d276bd4b21484cb16ba4e1a0715c606a2a14",
+      "scriptSha256": "59040ae4522bce88272e57bcaa9136f8a365205457d1ad2cad3fd974126877f3",
+      "audioSha256": "f083ffef75b1daa31fccd91841be87ee72210d12bf405f3eebfa9c9cf6c1c95d",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/:figure[data-diagram=\"platform\"]:0": {
+      "clip": "industry-technical/slide-2",
+      "source": "/",
+      "diagrams": [
+        "platform"
+      ],
+      "contentSha256": "a77b3f4980afe3dc9d4995c91ed42b91ba430d7704c7c63c7d1114fc7b280af9",
+      "scriptSha256": "0db7ced6369d955819260d6d650749711d33c19d717cd3301bcc658e98b36875",
+      "audioSha256": "9620061571aea2741bad6da0418cb32bb2e688be24dbcb3556582940cf728026",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/:.value-explorer:0": {
+      "clip": "industry-evp/slide-5",
+      "source": "/",
+      "diagrams": [],
+      "contentSha256": "a3f57249b8d94aa75e4d5f7fc253303a61daa95161b77028501c88295be5beb3",
+      "scriptSha256": "a8e602826258145e6f8326a417200c1b6a3767bba0b90da8277e60edde51416d",
+      "audioSha256": "710f5008d7670fc3849bca6f982282358fc96afb9e2e2ad69cd0af610dba839a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/:.evidence-explorer:0": {
+      "clip": "industry-evp/slide-4",
+      "source": "/",
+      "diagrams": [],
+      "contentSha256": "9fb349f60fd0508ff8f03cdec44a8221e1b80a7bd1d1d01b9a349614345a1148",
+      "scriptSha256": "9691ff1665389140805fc93d76f5d0c6ef18cb09a0b74822d09069491a81361b",
+      "audioSha256": "f3a22896b4fe23b6fe4b41614e8d066c6bdc377dcee7be3a9a503ea449939e40",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/platform-readiness/:figure.dependency-map:0": {
+      "clip": "industry-technical/slide-30",
+      "source": "/platform-readiness/",
+      "diagrams": [],
+      "contentSha256": "bcba75ac2ca26bc30c48d4e7819010ec108be33627b0d248d75bdbf10c8aa8ab",
+      "scriptSha256": "5d7efbc6bf40d6dc5342b305fafa121163945ce630a48b7486db8674d6aad382",
+      "audioSha256": "9935b992e1a9d55065fe87485f2a7ee06b7a83b4a143a836dabf2c0a3a4582ae",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/platform-readiness/:figure.virtualization-diagram:0": {
+      "clip": "technical/slide-20",
+      "source": "/platform-readiness/",
+      "diagrams": [],
+      "contentSha256": "eb8c292c971d212e638ea495fe3712cf2c06d605092c02e2cb39e1fe94b0de87",
+      "scriptSha256": "67c44cfa6c09721803e40bf0a1fb9e8352e4980d5c0f2d7e8f6af2995aa0196d",
+      "audioSha256": "10c98b48658f1bf05f2283302be1f1f8db75b83b12941a82268c7c7c35793e6a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/platform-readiness/:#assessment:0": {
+      "clip": "technical/slide-14",
+      "source": "/platform-readiness/",
+      "diagrams": [],
+      "contentSha256": "dea11fc6406f57d01be0003b7180ca15a0a15fe217b81695c93f6a9b13ed6c9d",
+      "scriptSha256": "b918b9de3db842d9ce543e043956683cb76fe6d5865fd510e9e5a5530d93f89c",
+      "audioSha256": "a19d8156cb953d279a0b7330c592e01efe959be2dee29164b00c34abe0cdaa72",
+      "decision": "retained",
+      "reason": "The scope label now distinguishes supported rollout from bounded second-team validation. The existing baseline explanation still correctly requires evidence specific to the selected workflow and distinguishes drafting from executable testing; it does not claim to read live assessment results.",
+      "reviewedOn": "2026-09-09"
+    },
+    "guide:/qe-modernization/:figure.mod-roadmap:0": {
+      "clip": "evp/slide-14",
+      "source": "/qe-modernization/",
+      "diagrams": [],
+      "contentSha256": "1d4b3909245bbcdb24d9889f8b06a6836db78d5ed8cb1cb85f166fc5e2cbbbcc",
+      "scriptSha256": "0d83fe339d2dbc46afcf974b211933174e13582d411f4fea4d021d0fc9c049ed",
+      "audioSha256": "8d52514073a72a93c9ad3bfceac22cd7a98f18df53e1c170156055f9a8cd725c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/qe-modernization/:figure.mod-distinctions:0": {
+      "clip": "technical/slide-22",
+      "source": "/qe-modernization/",
+      "diagrams": [],
+      "contentSha256": "52e6e9af3ca96356a390bbed8f3ea541a8f5cba0702759b0889b212b50e51aae",
+      "scriptSha256": "51135284b3c7d84834f9a0a7c2b028fe042caadd62537ae92651d61a6ea161d8",
+      "audioSha256": "803813bb8b3e0f5547c63d80bc3cf36320c296769b5d3da44da251079de55de1",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/qe-modernization/:figure.research-figure[data-diagram=\"modernization-environment\"]:0": {
+      "clip": "technical/slide-21",
+      "source": "/qe-modernization/",
+      "diagrams": [
+        "modernization-environment"
+      ],
+      "contentSha256": "29a7ff5d863a248441af80e5c61db63c36d2bb19357947804714c486b0ec7087",
+      "scriptSha256": "c526ccff0a02e76610ab9e225c8675d77aee948702ecf8b1a083f9d47555b9c3",
+      "audioSha256": "6c246b068770275412579af7d9d9a80a3f79c347f00831f01f29223a5b5de9a3",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "guide:/qe-modernization/:figure.vs-lifecycle:0": {
+      "clip": "technical/slide-25",
+      "source": "/qe-modernization/",
+      "diagrams": [
+        "qe-lifecycle"
+      ],
+      "contentSha256": "84a39e950de2825211804f1ab487f057f9e14d204e92e83e159b59173140595f",
+      "scriptSha256": "960f915501573ee55bf8a00115f791477316dc2b62e404a6ad507d3982402ad1",
+      "audioSha256": "e7e517e8849c647448dfe06e5fb1968b6b2e8c3dcf2ca82e0ce8fc9bdf3a4d6d",
+      "decision": "retained",
+      "reason": "Reviewed this inline destination separately from the shared slide recording: all lifecycle components match the normal narrated path. Manual outcomes now pause the normal-path explanation, preserve failed-state evidence and clear its captions; playback restores the authored baseline with exact VTT highlights.",
+      "reviewedOn": "2026-09-09"
+    },
+    "guide:/qe-modernization/:#workstreams:0": {
+      "clip": "evp/slide-14",
+      "source": "/qe-modernization/",
+      "diagrams": [],
+      "contentSha256": "7f55ebd7a4f0fd80b961fce2b0c492ebce98d7d2de9fa7eb649b86fbf9d11f62",
+      "scriptSha256": "0d83fe339d2dbc46afcf974b211933174e13582d411f4fea4d021d0fc9c049ed",
+      "audioSha256": "8d52514073a72a93c9ad3bfceac22cd7a98f18df53e1c170156055f9a8cd725c",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "demo:generate": {
+      "clip": "industry-technical/slide-3",
+      "source": "/demos/architecture/?scenario=generate",
+      "diagrams": [],
+      "contentSha256": "88d4bd2e5dd976c01b3df69dd61144fc37df3b7600e0dcdcb903b0cc10b6fd38",
+      "scriptSha256": "2953ca2e5f8011a9e3b7c8ddf1161766069c1bc3aaad7a5a668c6d3929ca5d82",
+      "audioSha256": "a102fa7f2231255c5ad8e2135e04085d6ae7da72bcb3779abdd9acf700c04815",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "demo:evaluate": {
+      "clip": "industry-technical/slide-5",
+      "source": "/demos/architecture/?scenario=evaluate",
+      "diagrams": [],
+      "contentSha256": "3ac432877245182bcdacf2fc49051aeaee2b51fff2a01eb10e9db5db3f9d8208",
+      "scriptSha256": "e1e4a6bde5a2666ec7e958bb095b22a3ca0411fb9459e02fb7c6059c2098f3a7",
+      "audioSha256": "f1d616bec47f39f0dcd2c8e1d5a89f91b1e169307a7827f6cef6515e94d7a603",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "demo:deny": {
+      "clip": "industry-technical/slide-16",
+      "source": "/demos/architecture/?scenario=deny",
+      "diagrams": [],
+      "contentSha256": "9b6ab9fd9ac08cdd52c7d5c0e588f611734881564c25948263a49ab53dc26258",
+      "scriptSha256": "df9336d3036a117ac571201949dcc796d92421dc297302c239c42378cd1091bb",
+      "audioSha256": "bd764bd2249fc3de2eb436251a3e68b29fd6aad6a9b7242c1c9120924e2f9e7a",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    },
+    "demo:hold": {
+      "clip": "industry-technical/slide-18",
+      "source": "/demos/architecture/?scenario=hold",
+      "diagrams": [],
+      "contentSha256": "3303885c2f78abbcc28c6a411905ce888b967eefc2cfd6faf2460f12ff99049b",
+      "scriptSha256": "52e9f34cdd3400b215a794a58b1911aac3f088c7785caaf2a3cafd95b8f49db1",
+      "audioSha256": "e67fdeda0579d22fa7f6b2efc49a78566d7f7d9dd0f37597148b73add2e29bad",
+      "decision": "baseline",
+      "reviewedOn": "2026-09-09",
+      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+    }
+  }
+}

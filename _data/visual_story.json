@@ -168,27 +168,33 @@
   "lifecycle": [
     {
       "title": "Create and check",
-      "detail": "Pin the build, tests and configuration. Provision supported resources and wait for health checks."
+      "detail": "Pin the build, tests and configuration. Provision supported resources and wait for health checks.",
+      "id": "create"
     },
     {
       "title": "Seed and configure",
-      "detail": "Create isolated synthetic accounts. Load the owned, versioned virtual-provider behavior."
+      "detail": "Create isolated synthetic accounts. Load the owned, versioned virtual-provider behavior.",
+      "id": "seed"
     },
     {
       "title": "Execute and challenge",
-      "detail": "Run required tests. The deliberate duplicate-posting variant must fail its independent assertion."
+      "detail": "Run required tests. The deliberate duplicate-posting variant must fail its independent assertion.",
+      "id": "execute"
     },
     {
       "title": "Retain and review",
-      "detail": "Keep original assertions, setup diagnostics and run IDs outside disposable resources. Review omissions."
+      "detail": "Keep original assertions, setup diagnostics and run IDs outside disposable resources. Review omissions.",
+      "id": "retain"
     },
     {
       "title": "Clean up on every path",
-      "detail": "Attempt teardown after success or failure. Escalate failed cleanup to the named platform owner."
+      "detail": "Attempt teardown after success or failure. Escalate failed cleanup to the named platform owner.",
+      "id": "cleanup"
     },
     {
       "title": "Reconcile integration",
-      "detail": "Check the real provider and settlement separately. Contract drift triggers model review and rerun."
+      "detail": "Check the real provider and settlement separately. Contract drift triggers model review and rerun.",
+      "id": "integration"
     }
   ],
   "case_stories": {

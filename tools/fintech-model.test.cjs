@@ -1,5 +1,5 @@
 const {test}=require('node:test'), assert=require('node:assert/strict');
-const {capacity,payment}=require('../assets/js/fintech-model.js');
+const {capacity,payment,compare}=require('../assets/js/fintech-model.js');
 const data=require('../_data/fintech_case.json');
 test('one bounded pack includes every workflow stage and all review effort',()=>{
  const r=capacity(data,'mixed',50);
@@ -33,4 +33,19 @@ test('duplicate delivery must fail even when the duplicated journals balance',()
   assert.equal(good.journals,1);assert.equal(good.payer,90000);assert.equal(good.recipient,10000);assert.equal(good.pass,true);
  }
  assert.equal(payment('normal',true).pass,true);assert.throws(()=>payment('unknown',false));
+});
+
+test('three-state attribution stays unknown without matched observations',()=>{
+ const make=(hours,extra={})=>({scope:'PAY-142 pack',acceptanceVersion:'AC-142',applicationBuild:'build-1',environmentVersion:'env-1',fixtureVersion:'fix-1',providerVersion:'provider-1',testVersion:'tests-1',owner:'QA lead',evidenceRef:'run register',workflowIds:data.workflow.map(s=>s.id),workHours:hours,reviewHours:10,reworkHours:5,operatingHours:5,setupHours:100,packs:2,attempts:3,failedAttempts:1,allAttemptsIncluded:true,...extra});
+ const observations={existing:make(200),modernized:make(120),ai:make(140)};
+ const result=compare(data,observations);
+ assert.equal(result.modernization.hours,40);
+ assert.equal(result.ai.hours,-10,'AI slowdown must remain visible');
+ assert.equal(result.states.ai.setupHours,100);
+ assert.equal(compare(data,{...observations,existing:make(200,{applicationBuild:'other'})}).modernization.status,'unmatched');
+ assert.equal(compare(data,{existing:observations.existing,ai:observations.ai}).ai.hours,null);
+ assert.equal(compare(data,{...observations,ai:make(100,{environmentVersion:'other'})}).ai.status,'unmatched');
+ assert.equal(compare(data,{...observations,modernized:make(100,{acceptanceVersion:'other'})}).modernization.hours,null);
+ assert.equal(compare(data,{...observations,ai:make(100,{allAttemptsIncluded:false})}).ai.hours,null);
+ assert.equal(compare(data,{...observations,ai:make(100,{workHours:null})}).ai.hours,null);
 });

@@ -73,7 +73,7 @@
       "evidence": "Observe second-team onboarding, support effort, cost per accepted artifact, quality and repeatable operation. Compare against copying the workflow manually before expanding the service catalog.",
       "next": "Expand to another journey only where its own prerequisites and value evidence support it. There is no universal date or requirement to reach every layer.",
       "stack": "Reuse existing repository and CI platforms; add shared connectors, prompt/model versioning, evaluations, telemetry and test services as needed. Kubernetes or a new portal is not a universal prerequisite.",
-      "readiness": "automation",
+      "readiness": null,
       "architecture": ["Versioned context + templates", "Models, evaluations + run services", "Supported squad workflows"],
       "sources": []
     }

@@ -1,6 +1,5 @@
 """Publish a prepared release from GitHub Actions after a successful deployment."""
 import argparse
-import hashlib
 import json
 import mimetypes
 import os
@@ -8,6 +7,7 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
+from release_identity import check_identity, validate_package
 
 
 class GitHub:
@@ -34,17 +34,11 @@ class GitHub:
 
 
 def publish(package, sha, api):
-    manifest = json.loads((package / 'manifest.json').read_text())
+    manifest = validate_package(package)
     files = manifest['assets']
-    for name, digest in files.items():
-        assert Path(name).name == name, 'Invalid asset name'
-        assert hashlib.sha256((package / 'assets' / name).read_bytes()).hexdigest() == digest, f'Changed asset: {name}'
-    release = api.request('GET', f'{api.root}/releases/tags/{quote(manifest["tag"])}')
+    release = check_identity(manifest, sha, api)
     if release:
-        assert release['target_commitish'] == sha, 'This version belongs to another commit; increment the site version'
         if not release['draft']:
-            actual = {asset['name']: asset.get('digest') for asset in release['assets']}
-            assert actual == {name: f'sha256:{digest}' for name, digest in files.items()}, 'Published release asset mismatch; do not overwrite a published edition'
             print(f'Already published and verified: {release["html_url"]}')
             return release
     else:
