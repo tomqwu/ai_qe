@@ -5,7 +5,8 @@
       "selector": "figure[data-diagram=\"platform\"]",
       "deck": "industry-technical",
       "slide": "slide-2",
-      "guide": "Engineers and delivery systems supply tasks and approved context. The runtime proposes actions through a policy gateway. Independent sandbox checks and application evaluations supply evidence to the release authority. Traces and decisions feed the evidence store; curated failures become regression cases."
+      "guide": "Follow all eleven components across thirteen spoken sections. Begin with the payment-retry testing scenario, then trace approved inputs, the context service, runtime, gateway and independent sandbox. Treat AI application evaluation as a separate assurance input. Finish with release authority, retained evidence, reviewed regression cases and the QE modernization prerequisites. Each highlighted component follows the recording; the complete explanation is also readable below.",
+      "format": "Full architecture walkthrough"
     },
     {
       "selector": "figure[data-diagram=\"test-sequence\"]",

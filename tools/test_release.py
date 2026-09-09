@@ -96,7 +96,7 @@ class PublicationTests(unittest.TestCase):
                 self.assertEqual(sum(len(guide['story']) for guide in guides['demo'].values()), 24)
                 flows = json.loads(archive.read('narration-flows.json'))
                 self.assertEqual(len(flows['profiles']), 12)
-                self.assertEqual(sum(len(profile['cues']) for profile in flows['profiles']), 78)
+                self.assertEqual(sum(len(profile['cues']) for profile in flows['profiles']), 85)
                 for extension in ('.mp3', '.vtt'):
                     self.assertEqual(sum(name.endswith(extension) for name in archive.namelist()), 109)
                 self.assertEqual(sum(name.startswith('transcripts/') for name in archive.namelist()), 109)

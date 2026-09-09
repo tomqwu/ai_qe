@@ -13,7 +13,7 @@ The shared configuration is [`assets/data/narration-voice.json`](../../assets/da
 | Industry executive briefing | `industry-evp` | 25 |
 | Industry technical briefing | `industry-technical` | 35 |
 
-All 109 scripts are in [`assets/data/narration-scripts.json`](../../assets/data/narration-scripts.json). Their spoken input totals 53,244 characters. Each recording explains its slide; guided routes can reorder or omit slides without depending on an unselected slide's narration.
+All 109 scripts are in [`assets/data/narration-scripts.json`](../../assets/data/narration-scripts.json). Their spoken input totals 57,182 characters. Each recording explains its slide; guided routes can reorder or omit slides without depending on an unselected slide's narration.
 
 ## Delivery and pronunciation
 
@@ -54,7 +54,7 @@ The audio panel shares the slide frame width and follows it with a 12-pixel gap.
 
 ## In-place diagram explanations and narrator notes
 
-Every slide exposes its spoken explanation in the existing **Sources & notes** drawer. On the existing site pages, **Listen to explanation** reuses the matching narration recording; **Narrator notes** adds a visual walkthrough and the transcript. The mapping lives in `assets/data/narration-guides.json`. These players load MP3s only on demand, show synchronized English captions and share audio focus with embedded decks.
+Every slide exposes its spoken explanation in the existing **Sources & notes** drawer. On the existing site pages, **Listen to explanation** reuses the matching narration recording; **Narrator notes** adds a visual walkthrough and the transcript. The mapping lives in `assets/data/narration-guides.json`. These players load MP3s only on demand, show synchronized English captions and share audio focus with embedded decks. A detailed technical diagram needs enough narration to explain its components, inputs, outputs, branches and concrete example. The platform player explicitly labels its complete recording **Full architecture walkthrough**; a short executive summary is not a substitute for that explanation.
 
 The 3D architecture's four scenarios use 24 authored audio sections in the `demo` entries of `assets/data/narration-guides.json`. `tools/architecture-demo/narration-clock.js` resolves exact caption anchors and makes `audio.currentTime` the story clock. The sections follow the recording, with grouped highlights where a sentence covers multiple components; they do not compress the original silent walkthrough into an unrelated duration. Story and audio controls share pause, replay, seeking and speed. Inspection pauses the recording; **Explore without audio** restores the original stages. Reduced motion keeps static destinations, and missing or changed anchors leave a static overview. Denial never invokes a tool, and the failed-proof scenario stays on hold during discussion of an alternative passing path. Calculators label recordings as explanations of the published baseline and method.
 
@@ -79,7 +79,7 @@ QE_TEST_URL=http://127.0.0.1:61601/ai_qe node tools/check_flow_narration.cjs
 
 Validate all slide IDs, transcripts, audio hashes, measured durations, caption bounds and provenance before publishing. Check real audio in Chromium and WebKit, including mobile layout, manual navigation, the final slide and a guided route. Review screenshots with subtitles visible so labels remain readable.
 
-The recording edition is **v1.17.0**. Site v1.17.0 retains the existing slide-content/PDF editions. The GitHub release adds a complete narration bundle containing all MP3s, VTT captions and transcripts. Publishing proceeds only after the normal site, PDF, browser and deployment checks pass.
+Most recordings retain the original **v1.17.0** edition. The technical platform walkthrough (`industry-technical/slide-2`) uses the immutable **architecture-v1.21.0** assets: 289.52 seconds, 72 measured caption cues and 13 visual sections covering all eleven components. It replaces the short technical overview wherever that clip is used, including the homepage and architecture documentation. The executive summary and four 3D scenario recordings retain their existing audio. Slide-content/PDF editions are unchanged. Each GitHub release bundles the current 109 MP3s, VTT captions and transcripts; publication follows the site, PDF, browser and deployment checks.
 
 ## Existing 剪映 preparation tools
 

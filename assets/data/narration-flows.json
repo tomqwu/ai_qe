@@ -7,44 +7,108 @@
       "cues": [
         {
           "caption": 0,
-          "text": "The platform separates team workflows from shared assurance services.",
-          "title": "Team workflows and shared assurance",
-          "nodes": [
-            "experience",
-            "delivery"
-          ],
+          "text": "Let's walk through the whole architecture. These boxes are responsibilities;",
+          "title": "Read the architecture",
+          "nodes": [],
           "routes": []
         },
         {
-          "caption": 1,
-          "text": "Approved context feeds a bounded runtime.",
-          "title": "Approved context → bounded runtime",
+          "caption": 5,
+          "text": "Start with the engineer. A payment provider accepts a transfer,",
+          "title": "Engineer: define the expected behavior",
           "nodes": [
-            "context",
-            "runtime"
+            "experience"
           ],
           "routes": [
+            "experience:runtime"
+          ]
+        },
+        {
+          "caption": 10,
+          "text": "Delivery systems supply the source material: the payment story,",
+          "title": "Delivery systems: version the inputs",
+          "nodes": [
+            "delivery"
+          ],
+          "routes": [
+            "delivery:context"
+          ]
+        },
+        {
+          "caption": 15,
+          "text": "The context service selects the material this task is allowed to use.",
+          "title": "Context service: prepare approved material",
+          "nodes": [
+            "context"
+          ],
+          "routes": [
+            "delivery:context",
             "context:runtime"
           ]
         },
         {
-          "caption": 2,
-          "text": "An external gateway checks requested actions before tools execute.",
-          "title": "Gateway checks requested actions",
+          "caption": 20,
+          "text": "The quality engineering runtime turns that context into",
+          "title": "QE runtime: propose a bounded change",
           "nodes": [
-            "gateway"
+            "runtime"
           ],
           "routes": [
+            "context:runtime",
             "runtime:gateway"
           ]
         },
         {
-          "caption": 3,
-          "text": "Independent evaluation and sandbox checks produce evidence for a release owner.",
-          "title": "Independent checks → release evidence",
+          "caption": 25,
+          "text": "Next, the action gateway checks the requested operation,",
+          "title": "Action gateway: authorize execution",
           "nodes": [
-            "checks",
-            "evaluation",
+            "gateway"
+          ],
+          "routes": [
+            "runtime:gateway",
+            "gateway:checks"
+          ]
+        },
+        {
+          "caption": 30,
+          "text": "The sandbox runs the real payment service and database against controlled fixtures.",
+          "title": "Sandbox: prove the payment assertion",
+          "nodes": [
+            "checks"
+          ],
+          "routes": [
+            "gateway:checks"
+          ]
+        },
+        {
+          "caption": 36,
+          "text": "Now look at AI applications at the top right.",
+          "title": "AI applications: a separate evaluation input",
+          "nodes": [
+            "application"
+          ],
+          "routes": [
+            "application:evaluation"
+          ]
+        },
+        {
+          "caption": 41,
+          "text": "The evaluation service compares candidate behavior with independent",
+          "title": "Evaluation service: independent expected results",
+          "nodes": [
+            "evaluation"
+          ],
+          "routes": [
+            "application:evaluation",
+            "corpus:evaluation"
+          ]
+        },
+        {
+          "caption": 48,
+          "text": "Sandbox checks and applicable AI evaluations send their evidence",
+          "title": "Release authority: decide from evidence",
+          "nodes": [
             "release"
           ],
           "routes": [
@@ -53,21 +117,38 @@
           ]
         },
         {
-          "caption": 4,
-          "text": "Reviewed failures return to the regression corpus.",
-          "title": "Reviewed failures → regression corpus",
+          "caption": 53,
+          "text": "The evidence store retains run identifiers, input versions,",
+          "title": "Evidence store: retain the original record",
+          "nodes": [
+            "evidence"
+          ],
+          "routes": [
+            "gateway:evidence",
+            "release:evidence"
+          ]
+        },
+        {
+          "caption": 59,
+          "text": "Finally, people curate useful failures into the regression corpus.",
+          "title": "Regression corpus: learn from reviewed failures",
           "nodes": [
             "corpus"
           ],
           "routes": [
-            "evidence:corpus"
+            "evidence:corpus",
+            "corpus:evaluation"
           ]
         },
         {
-          "caption": 5,
-          "text": "Inspect the components or use the flow controls to follow a path.",
-          "title": "Explore the architecture",
-          "nodes": [],
+          "caption": 65,
+          "text": "This depends on repeatable environments, controlled test data,",
+          "title": "Foundations and outcome",
+          "nodes": [
+            "delivery",
+            "checks",
+            "evidence"
+          ],
           "routes": []
         }
       ]

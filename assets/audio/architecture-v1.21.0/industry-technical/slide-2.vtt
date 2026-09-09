@@ -1,0 +1,283 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+Let's walk through the whole architecture.
+These boxes are responsibilities;
+
+00:00:04.016 --> 00:00:06.240
+they do not require eleven new products.
+
+00:00:06.366 --> 00:00:10.800
+Follow one banking test
+from a request to reviewed evidence.
+
+00:00:10.880 --> 00:00:14.560
+This is a proposed design
+and an authored testing scenario,
+
+00:00:14.600 --> 00:00:16.800
+not a report of a live
+client implementation.
+
+00:00:17.313 --> 00:00:20.880
+Start with the engineer.
+A payment provider accepts a transfer,
+
+00:00:20.920 --> 00:00:23.440
+but the customer sees
+a timeout and retries.
+
+00:00:23.600 --> 00:00:28.480
+The test must prove that the retry
+creates one transfer and one balanced
+
+00:00:28.520 --> 00:00:33.120
+journal, not two debits.
+The product owner and domain tester
+
+00:00:33.210 --> 00:00:37.387
+approve that expected behavior
+before AI drafts anything.
+
+00:00:37.861 --> 00:00:42.160
+Delivery systems supply the source
+material: the payment story,
+
+00:00:42.280 --> 00:00:47.200
+API contract, repository
+revision and previous defects.
+
+00:00:47.280 --> 00:00:49.760
+Azure Boards or Jira can hold the story;
+
+00:00:49.829 --> 00:00:53.120
+GitHub or Azure DevOps
+can hold the code and pipeline.
+
+00:00:53.240 --> 00:00:57.760
+The important output is a traceable set
+of versions, not a particular vendor.
+
+00:00:57.980 --> 00:01:01.920
+The context service selects the material
+this task is allowed to use.
+
+00:01:02.107 --> 00:01:06.160
+It removes unnecessary data
+and records an input snapshot.
+
+00:01:06.380 --> 00:01:09.920
+For our retry test, that
+includes the idempotency rule,
+
+00:01:09.964 --> 00:01:13.440
+provider behavior
+and relevant test helpers.
+
+00:01:13.520 --> 00:01:18.053
+Missing or contradictory requirements
+go back to a person for clarification.
+
+00:01:18.420 --> 00:01:21.040
+The quality engineering
+runtime turns that context into
+
+00:01:21.080 --> 00:01:23.840
+a plan and a proposed test change.
+
+00:01:24.053 --> 00:01:28.720
+It records the model and prompt versions,
+with limits on retries and resource use.
+
+00:01:29.120 --> 00:01:33.480
+A coding assistant can draft
+a JUnit test with REST Assured.
+
+00:01:33.568 --> 00:01:37.813
+That draft still needs review;
+it cannot redefine the payment rule.
+
+00:01:38.261 --> 00:01:41.680
+Next, the action gateway
+checks the requested operation,
+
+00:01:41.726 --> 00:01:46.640
+target environment and approval. It can
+permit a test run in the approved sandbox.
+
+00:01:47.000 --> 00:01:50.720
+A request outside that scope
+is stopped or escalated,
+
+00:01:50.736 --> 00:01:54.640
+with a recorded reason.
+Permission comes from this control,
+
+00:01:54.680 --> 00:01:57.000
+not from the model saying
+that an action is safe.
+
+00:01:57.240 --> 00:02:02.440
+The sandbox runs the real payment service
+and database against controlled fixtures.
+
+00:02:02.528 --> 00:02:07.120
+Testcontainers can provide isolated
+resources; WireMock can reproduce
+
+00:02:07.140 --> 00:02:11.080
+the provider accepting a payment
+before returning a timeout.
+
+00:02:11.190 --> 00:02:15.440
+The test retries with the same key
+and checks transfers, journal entries
+
+00:02:15.540 --> 00:02:19.760
+and balances. A deliberately
+introduced duplicate-debit fault
+
+00:02:19.840 --> 00:02:24.080
+should make the test fail.
+A green build alone is insufficient.
+
+00:02:24.580 --> 00:02:26.960
+Now look at AI applications
+at the top right.
+
+00:02:27.088 --> 00:02:29.440
+This is a second entry into assurance.
+
+00:02:29.653 --> 00:02:32.720
+If the bank changes
+an AI assistant or agent,
+
+00:02:32.780 --> 00:02:36.680
+its versioned application
+configuration enters evaluation.
+
+00:02:36.800 --> 00:02:40.680
+It is not a required extra step
+inside every payment API call.
+
+00:02:40.900 --> 00:02:44.800
+The evaluation service compares
+candidate behavior with independent
+
+00:02:44.871 --> 00:02:47.840
+expected results on held-out cases.
+
+00:02:47.936 --> 00:02:51.600
+Held-out means those cases
+were reserved for assessment,
+
+00:02:51.646 --> 00:02:55.600
+rather than used to tune the candidate.
+Human reviewers label
+
+00:02:55.648 --> 00:03:00.000
+important examples and calibrate
+any model-based judges.
+
+00:03:00.040 --> 00:03:04.640
+For an AI failure-summary assistant, check
+whether its explanation matches the raw
+
+00:03:04.704 --> 00:03:08.920
+test evidence. It must not turn
+a failed assertion into a pass.
+
+00:03:09.100 --> 00:03:13.360
+Sandbox checks and applicable AI
+evaluations send their evidence
+
+00:03:13.387 --> 00:03:17.760
+to the release authority. The accountable
+reviewer uses existing pipeline
+
+00:03:17.780 --> 00:03:21.680
+and change gates to approve,
+hold or roll back.
+
+00:03:21.750 --> 00:03:26.040
+Missing evidence or a failed critical
+payment assertion means hold.
+
+00:03:26.150 --> 00:03:29.440
+The agent that generated
+the change cannot approve itself.
+
+00:03:29.660 --> 00:03:33.840
+The evidence store retains run
+identifiers, input versions,
+
+00:03:33.893 --> 00:03:37.760
+proposed artifacts, raw results
+and the release decision.
+
+00:03:37.940 --> 00:03:42.880
+The dashed arrows represent these
+context and evidence relationships,
+
+00:03:42.940 --> 00:03:45.360
+not another execution sequence.
+
+00:03:45.480 --> 00:03:49.680
+For the retry scenario, a reviewer
+should be able to trace the one-transfer
+
+00:03:49.752 --> 00:03:53.000
+assertion back to its rule
+and reproduce the run.
+
+00:03:53.190 --> 00:03:58.560
+Finally, people curate useful
+failures into the regression corpus.
+
+00:03:58.656 --> 00:04:02.640
+Each accepted case has a reviewed
+expectation and a version.
+
+00:04:02.820 --> 00:04:06.560
+The feedback path challenges
+later AI application versions.
+
+00:04:06.720 --> 00:04:10.560
+Keep assessment cases
+separate from tuning examples,
+
+00:04:10.600 --> 00:04:14.400
+and maintain payment regression
+tests in the normal test repository.
+
+00:04:14.516 --> 00:04:19.280
+Learning is reviewed curation,
+not automatic acceptance of model output.
+
+00:04:19.504 --> 00:04:23.680
+This depends on repeatable
+environments, controlled test data,
+
+00:04:23.730 --> 00:04:28.160
+service virtualization,
+reliable pipelines and named owners.
+
+00:04:28.240 --> 00:04:32.960
+Where vendor test slots are scarce,
+controlled substitutes expand repeatable
+
+00:04:33.010 --> 00:04:37.120
+testing; separate checks against
+the real provider remain necessary.
+
+00:04:37.340 --> 00:04:41.120
+The outcome to demonstrate
+is a repeatable payment test,
+
+00:04:41.173 --> 00:04:44.960
+an independently detected
+fault and a traceable decision.
+
+00:04:45.120 --> 00:04:48.880
+AI assists the work. Modernized
+testing makes it dependable.
