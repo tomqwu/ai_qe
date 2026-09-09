@@ -40,6 +40,8 @@ Routing: executive sponsor, Finance and procurement answer Sections 1, 5B and 6;
 | 3 | Which outcomes must NOT deteriorate for a pilot to count as a success? | Multi | Escaped defects or production incidents; Release stability or change-failure rate; Payment correctness and critical defect resolution; Privacy and sensitive-data handling; Audit and release evidence; Engineer adoption and morale |
 | 4 | Greatest concerns with current or previous AI initiatives | Up to 3 | Unclear or unproven business value; Excessive consulting or implementation cost; High licensing, token or model-consumption cost; Too many overlapping tools; Low adoption or weak workflow fit; Security, privacy or data-residency risk; Difficulty moving beyond pilots; Weak governance, controls or accountability; Productivity gains that do not become budget savings; Quality regressions from AI-generated artifacts; Regulatory or audit scrutiny; Previous AI pilots that did not deliver |
 
+Use the selected answer to question 2 in the [pilot outcome charter]({{ "/docs/method/phased-pilot/#select-the-outcome-before-the-pilot" | relative_url }}). Freeze its criterion before observing results. A quality-led case does not need a cash forecast; any cash claim still requires Finance validation.
+
 ### Section 2. Delivery scope and QA operating model (engineering route)
 
 | # | Question | Type | Options |

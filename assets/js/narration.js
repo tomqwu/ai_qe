@@ -155,7 +155,7 @@
     if (startButton) {
       startButton.hidden = false;
       startButton.disabled = !entry;
-      startButton.title = entry ? 'Narrate from this slide with English subtitles and automatic slide changes' : 'No recording is available for this slide';
+      startButton.title = entry ? 'Narrate this slide with English subtitles; Auto-next controls slide changes' : 'No recording is available for this slide';
     }
     const canContinue = continuing && state.reason === 'narration';
     if (currentSlide === state.slide && clip && state.mode !== 'reading') { setVisible(true); return; }
@@ -180,7 +180,7 @@
     document.querySelector('.deck-message').textContent = '';
     audioFailed = false;
     audio.src = clip.audio;
-    document.getElementById(currentSlide).querySelectorAll('.research-figure').forEach(target => {
+    document.getElementById(currentSlide).querySelectorAll('.research-figure, [data-vs-lifecycle]').forEach(target => {
       const flow = window.QENarrationFlow?.connect(audio, target, `${body.dataset.narrationAudience}/${currentSlide}`);
       if (flow) flows.push(flow);
     });
@@ -210,7 +210,6 @@
     startButton?.addEventListener('click', () => {
       if (advanceTimer || (!audio.paused && !audio.ended)) { pausePlayback(); return; }
       if (window.QEDeck.getState().mode === 'reading') document.querySelector('[data-reading]').click();
-      ui.auto.checked = true;
       play();
     });
     ui.play.addEventListener('click', () => advanceTimer || (!audio.paused && !audio.ended) ? pausePlayback() : play());

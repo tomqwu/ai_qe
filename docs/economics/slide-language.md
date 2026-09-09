@@ -13,7 +13,7 @@ These are wording notes for the pilot business case. The **visual audience brief
 ## Use
 
 - "Working hypothesis, to be tested on the bank's own data."
-- "Proposed pilot gate: at least 15% net saving on one use case, subject to quality floors and sufficient evidence. Use the full decision protocol for the 10-15% band and uncertainty."
+- "Agree the primary outcome before the pilot. The economic route uses a proposed 15% net-effort gate; quality, reliability and evidence routes use their own approved criteria. Every route retains floors, a funded ceiling and sufficient evidence."
 - "Capacity released is not a saving until Finance confirms how it is captured."
 - "External evidence supports task-level gains and warns of quality degradation without discipline."
 - "Every phase has a cost ceiling and a stop rule."
@@ -39,3 +39,7 @@ That AI will allow a squad to move from N QA staff to one or two quality enginee
 > AI can probably reduce repetitive QA effort, but nobody, including the vendors, can say by how much. The credible external evidence supports task-level gains and warns that unmanaged adoption degrades stability. The proposal is a capped, phased programme on one or two applications that measures net effort on the bank's own data, keeps humans in control of every code change and release decision, maps its controls to what the regulator published in 2026, and only counts a saving when Finance can name the budget line. Each phase has a ceiling and a stop rule. The decision today is whether to fund the first two phases, not whether to transform QA.
 
 Use the [canonical pilot decision protocol]({{ "/docs/method/phased-pilot/" | relative_url }}#decision-protocol-and-exact-boundaries) and [exact scenario table]({{ "/docs/economics/savings-model/" | relative_url }}#canonical-scenario-assumptions) when preparing slides.
+
+## Missing inputs stay unknown
+
+A top-three effort ranking does not establish an activity percentage. Report **not yet estimable** until a time allocation exists. Keep explicit sensitivity assumptions separate from client observations. No mature savings range is established; use the [worked conversion examples](../savings-model/#worked-conversion-examples).

@@ -1,0 +1,35 @@
+{
+  "status": "Blank discussion template; no client result or approval recorded",
+  "charter": {
+    "objective": null,
+    "owner": "",
+    "valueRationale": "",
+    "approved": false,
+    "fundedCostCeiling": false,
+    "criterion": {
+      "metric": "",
+      "unit": "",
+      "target": null,
+      "direction": null,
+      "minTasksPerArm": null,
+      "reference": ""
+    }
+  },
+  "adoption": null,
+  "withinCostCap": null,
+  "complete": false,
+  "breach": false,
+  "cases": [],
+  "outcome": {
+    "low": null,
+    "high": null,
+    "baselineTasks": null,
+    "pilotTasks": null,
+    "reference": ""
+  },
+  "cashClaim": {
+    "netSaving": null,
+    "financeValidated": false,
+    "reference": ""
+  }
+}

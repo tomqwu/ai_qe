@@ -1,5 +1,5 @@
 {
-  "edition": "banking-journey-v1.22.0",
+  "edition": "v1.23.0",
   "decks": {
     "evp": {
       "label": "Banking executive narration",
@@ -950,13 +950,13 @@
           "sha256": "9952cfdad3907487fe28d2061f5aa127b4ce7bec8b03e4388cec9e453a89277a"
         },
         "slide-24": {
-          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-24.mp3",
-          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-24.vtt",
-          "transcript": "Apply the decision rules in order. A breached quality or authority floor holds the workflow. Missing baseline or review evidence remains unknown. Only then examine the proposed saving, adoption and cost criteria for a limited scope. Borderline results can justify a bounded redesign with one clear hypothesis. These are the example pilot's rules, not a universal benchmark. Financial claims still need the agreed capture and validation process.",
+          "audio": "/assets/audio/v1.23.0/industry-technical/slide-24.mp3",
+          "captions": "/assets/audio/v1.23.0/industry-technical/slide-24.vtt",
+          "transcript": "Start with the sponsor's chosen outcome. Record the metric, target, owner, evidence and funded cost ceiling before the pilot. A breached quality or authority floor holds every route. Missing baseline, exposure or review evidence remains unknown. For an effort-led case, apply the proposed fifteen percent threshold and the defined uncertainty rules. Any cash-saving claim also needs Finance-validated capture and costs. Quality, reliability, evidence and reuse cases use their own agreed targets; they do not need an invented cash conversion. Adoption, cost limits and independent review still apply. Borderline results may justify one bounded redesign. Freeze the criteria before seeing the results, and authorize only the scope the evidence supports.",
           "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
           "caption_method": "ElevenLabs character alignment, restored display terminology",
-          "duration": 28.0,
-          "sha256": "85185c481f7d3b9e81ad21340d84e3e4af5a15d031ca24a44c52d1083adff9df"
+          "duration": 50.88,
+          "sha256": "8a404ce2ad3de0fb3775b98d266e8f094f00799012b5608ddf833e8163012fc9"
         },
         "slide-25": {
           "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-25.mp3",

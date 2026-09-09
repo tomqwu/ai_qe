@@ -9,6 +9,16 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.23.0 · 9 September 2026
+
+Presenter controls preserve **Auto-next** across pause, resume, replay and manual navigation. The [environment lifecycle]({{ '/qe-modernization/#environment' | relative_url }}) follows the recording's measured caption cues. Choosing a failure, Next step or Overview pauses the explanation; resuming restores its narrated baseline.
+
+Pilot decisions now follow the **sponsor-selected outcome**: effort, cash, quality, reliability, evidence or reuse. Every route retains quality floors, evidence requirements and a funded cost ceiling. Cash claims require Finance-validated capture. Ranking-only discovery answers leave activity shares unknown.
+
+The existing [banking comparison]({{ '/case-studies/fintech/#value-attribution' | relative_url }}) now accepts three evidence-linked observations: existing QE, modernized QE with AI off, and AI on with the same foundation. Modernization and incremental AI effort are calculated separately, including slowdowns. Missing or unmatched controls remain unknown. Shared-platform readiness asks which workflow is being reused and distinguishes second-team validation from supported rollout.
+
+A new narration review gate binds explanations to rendered content; semantic changes require an explicit review or a refreshed recording. Release identity and package integrity are checked **before Pages deployment**, including existing tag targets. All four PDF editions advance to **v1.23.0**, with **116 narrated slides** and an updated pilot-decision recording. [GitHub release v1.23.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.23.0) includes the current publication and narration review record.
+
 ## v1.22.0 · 9 September 2026
 
 The [banking case]({{ '/case-studies/fintech/#ai-journey' | relative_url }}) now follows **nine explicit AI-assisted steps**, from approved requirements and developer unit tests through API/UI tests, fixtures, CI execution, investigation, repair and release evidence. A connected artifact trail preserves the original injected-defect failure, reviewed fix and fresh retest.

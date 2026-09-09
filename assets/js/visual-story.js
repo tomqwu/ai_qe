@@ -46,13 +46,24 @@
     window.addEventListener('hashchange', () => show(location.hash.replace('#sample-', ''), false));
     show(location.hash.replace('#sample-', ''), false);
   });
+  const lifecycles = new WeakMap();
+  window.QELifecycle = Object.freeze({
+    has: host => lifecycles.has(host),
+    follow: (host, cue) => lifecycles.get(host)?.follow(cue),
+    release: (host, preserve) => lifecycles.get(host)?.release(preserve)
+  });
   document.querySelectorAll('[data-vs-lifecycle]').forEach(host => {
     const steps = [...host.querySelectorAll('[data-vs-life-step]')], outcome = host.querySelector('[data-vs-life-outcome]');
     const next = host.querySelector('[data-vs-life-next]'), status = host.querySelector('[data-vs-life-status]'); let position = -1;
     const route = () => outcome.value === 'setup-failure' ? [0,3,4,5] : [0,1,2,3,4,5];
-    function render() {
+    function render(focus) {
       const current = route()[position];
-      steps.forEach((step,i) => { step.classList.toggle('vs-current', i === current); step.classList.toggle('vs-skipped', position >= 0 && !route().includes(i)); });
+      steps.forEach((step,i) => {
+        const active = focus ? focus.includes(step.dataset.flowNode) : i === current;
+        step.classList.toggle('vs-current', active);
+        if (active) step.setAttribute('aria-current', 'step'); else step.removeAttribute('aria-current');
+        step.classList.toggle('vs-skipped', position >= 0 && !route().includes(i));
+      });
       next.disabled = position === route().length - 1;
       let message = position < 0 ? 'Evidence survives cleanup. A missing or failed required check holds the release.' : `Step ${current + 1}: ${steps[current].innerText.replace(/\s+/g,' ').replace(/^\d+\s*/,'')}`;
       if (position >= 0 && outcome.value === 'setup-failure') message += ' Setup failed: execution is skipped; retain diagnostics and attempt cleanup. Release held.';
@@ -60,9 +71,22 @@
       else if (position === route().length - 1) message += ' Passing these checks still requires complete integration evidence and human release review.';
       status.textContent = message; status.classList.toggle('vs-failure', position >= 0 && outcome.value !== 'pass');
     }
+    const manual = () => { host.dispatchEvent(new CustomEvent('qe:flow-manual', {bubbles:true})); host.dataset.flowMode = 'manual'; };
+    lifecycles.set(host, {
+      follow(cue) {
+        // This recording explains the normal lifecycle. Manual failure branches
+        // pause it; playing or seeking explicitly restores the narrated baseline.
+        outcome.value = 'pass';
+        position = steps.findLastIndex(step => cue.nodes.includes(step.dataset.flowNode));
+        host.dataset.flowMode = 'narration';
+        render(cue.nodes);
+        status.textContent = `Audio walkthrough · Required checks pass · ${cue.title}`;
+      },
+      release(preserve) { host.dataset.flowMode = 'manual'; if (!preserve) { position = -1; render(); } }
+    });
     host.querySelector('[data-vs-life-controls]').hidden = false;
-    next.addEventListener('click', () => {position = Math.min(position + 1, route().length - 1); render();});
-    host.querySelector('[data-vs-life-reset]').addEventListener('click', () => {position = -1; render();});
-    outcome.addEventListener('change', () => {position = -1; render();}); render();
+    next.addEventListener('click', () => {manual(); position = Math.min(position + 1, route().length - 1); render();});
+    host.querySelector('[data-vs-life-reset]').addEventListener('click', () => {manual(); position = -1; render();});
+    outcome.addEventListener('change', () => {manual(); position = -1; render();}); render();
   });
 })();

@@ -49,14 +49,14 @@
     for (const paragraph of clip.transcript.split(/\n\s*\n/)) notes.append(element('p', '', paragraph));
     wrapper.append(toolbar, player, notes);
     if (demo) target.append(wrapper); else target.after(wrapper);
-    let cues = [], cuesRequested = false, captionsOn = true, frame = 0, request;
+    let cues = [], cuesRequested = false, captionsOn = true, exploring = false, frame = 0, request;
     function renderCaption() {
-      const text = captionsOn && !audio.seeking ? cues.find(cue => audio.currentTime >= cue.start && audio.currentTime < cue.end)?.text || '' : '';
+      const text = captionsOn && !exploring && !audio.seeking ? cues.find(cue => audio.currentTime >= cue.start && audio.currentTime < cue.end)?.text || '' : '';
       if (caption.textContent !== text) caption.textContent = text;
     }
     function tick() { renderCaption(); if (!audio.paused && !audio.ended) frame = requestAnimationFrame(tick); }
     function readyStatus() {
-      if (!cues.length || audio.ended || audio.error) return;
+      if (!cues.length || audio.ended || audio.error || exploring) return;
       status.textContent = definition.baseline ? 'Published baseline explanation · English captions' : demo ? (flow?.valid ? 'Audio, captions and story follow one timeline. Stage controls seek the recording.' : 'Audio explanation · Timed story cues unavailable. Read the captions or explore without audio.') : flow ? 'English captions and highlighted components follow the audio.' : 'English captions synchronized to the explanation.';
     }
     function sync() {
@@ -95,6 +95,7 @@
     });
     audio.addEventListener('play', () => {
       if (audio.paused) { sync(); return; }
+      exploring = false;
       player.hidden = false;
       // The diagram clock follows audio whenever a cue connection is available.
       pausingFlow = true;
@@ -108,7 +109,7 @@
     audio.addEventListener('ended', () => { caption.textContent = ''; sync(); status.textContent = 'Explanation complete. Replay or continue exploring when ready.'; });
     audio.addEventListener('error', () => { caption.textContent = ''; sync(); status.textContent = 'Audio could not load. Select Retry explanation, or read Narrator notes.'; });
     for (const event of ['timeupdate', 'seeked']) audio.addEventListener(event, renderCaption);
-    audio.addEventListener('seeking', () => { caption.textContent = ''; readyStatus(); });
+    audio.addEventListener('seeking', () => { exploring = false; caption.textContent = ''; readyStatus(); });
     cc.addEventListener('click', () => { captionsOn = !captionsOn; cc.setAttribute('aria-pressed', String(captionsOn)); renderCaption(); });
     speed.addEventListener('change', () => { audio.playbackRate = Number(speed.value); });
     audio.addEventListener('ratechange', () => { speed.value = String(audio.playbackRate); });
@@ -121,7 +122,9 @@
     // Exploring a different step pauses its overview, but never restarts it.
     const onExplore = event => { if (!pausingFlow && event.target.closest('[data-tour-play], [data-tour-next], [data-tour-reset], [data-layer]')) audio.pause(); };
     target.addEventListener('click', onExplore);
-    const controller = {audio, destroy() { audio.pause(); flow?.destroy(); window.removeEventListener('qe:architecture-api', connectDemo); request?.abort(); cancelAnimationFrame(frame); target.removeEventListener('click', onExplore); audio.removeAttribute('src'); audio.load(); wrapper.remove(); players.delete(controller); }};
+    const onManual = () => { exploring = true; audio.pause(); caption.textContent = ''; status.textContent = 'Exploring manually. Play the explanation to return to its narrated walkthrough.'; };
+    target.addEventListener('qe:flow-manual', onManual);
+    const controller = {audio, destroy() { audio.pause(); flow?.destroy(); window.removeEventListener('qe:architecture-api', connectDemo); request?.abort(); cancelAnimationFrame(frame); target.removeEventListener('click', onExplore); target.removeEventListener('qe:flow-manual', onManual); audio.removeAttribute('src'); audio.load(); wrapper.remove(); players.delete(controller); }};
     players.add(controller);
     return controller;
   }

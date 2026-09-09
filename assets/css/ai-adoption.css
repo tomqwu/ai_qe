@@ -99,3 +99,5 @@
  .al-path li:not(:last-child)::after, .fintech-deck .al-path li:not(:last-child)::after { content:'↓'; right:auto; left:50%; top:100%; transform:translateX(-50%); font-size:20px; }
 }
 @media print { .al-controls { display:none; } }
+
+.al-platform-assessment{padding:1rem;border:1px solid #9dbab7;border-radius:8px;background:#f2f8f6}.al-platform-assessment label{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;font-weight:700}.al-platform-assessment select{max-width:100%;padding:.5rem}.al-platform-assessment button{margin-top:.8rem;padding:.6rem 1rem}.al-platform-assessment p{font-size:.9rem;margin-bottom:0}

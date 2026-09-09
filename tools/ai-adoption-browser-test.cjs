@@ -35,7 +35,7 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
       assert.equal(await page.locator('[data-al-select][aria-current="true"]').count(), 0);
       await page.reload();
       assert.equal(await page.locator('[data-al-detail]:visible').count(), 4);
-      for (const [id,workflow,scope] of [['copilot','design','pilot'],['workflow','diagnosis','pilot'],['agent','automation','pilot'],['platform','automation','scale']]) {
+      for (const [id,workflow,scope] of [['copilot','design','pilot'],['workflow','diagnosis','pilot'],['agent','automation','pilot']]) {
         await page.goto(base + '/ai-adoption/#layer-' + id);
         await page.locator(`#layer-${id} a[href*="/platform-readiness/"]`).click();
         assert.equal(new URL(page.url()).searchParams.get('workflow'), workflow);
