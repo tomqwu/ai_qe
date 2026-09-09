@@ -62,6 +62,7 @@ jobs:
           mkdir -p /tmp/qe-preview
           ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
           python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
+          node tools/architecture-demo/narration-test.cjs
           node tools/fintech-browser-test.cjs
           node tools/ai-adoption-browser-test.cjs
           node tools/check_narration.cjs
@@ -77,7 +78,6 @@ jobs:
           node tools/visual-story-browser-test.cjs
           node tools/dictionary-test.cjs
           node tools/architecture-demo/browser-test.cjs
-          node tools/architecture-demo/narration-test.cjs
       - name: Check site links and search index
         run: python tools/verify_site.py _site
       - name: Check research provenance and briefing completeness

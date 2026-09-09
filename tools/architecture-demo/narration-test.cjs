@@ -5,6 +5,19 @@ const base=(process.env.QE_TEST_URL||'http://127.0.0.1:61600/ai_qe').replace(/\/
 const guides=require('../../assets/data/narration-guides.json').demo;
 const captions=id=>fs.readFileSync(`assets/audio/chris-v1.17.0/industry-technical/${guides[id].slide}.vtt`,'utf8').trim().split('\n\n').slice(1).map(block=>{const [h,m,s]=block.split(' --> ')[0].split(':').map(Number);return h*3600+m*60+s});
 async function seek(page,time){await page.locator('[data-guide-audio]').evaluate((a,t)=>{a.pause();a.currentTime=t},time);await page.waitForFunction(t=>{const a=document.querySelector('[data-guide-audio]');return !a.seeking&&Math.abs(a.currentTime-t)<.1&&Math.abs(window.qeArchitecture.snapshot.elapsed-t)<.1},time)}
+async function settlePause(page){
+ await page.locator('[data-guide-audio]').evaluate(a=>new Promise(resolve=>{
+  if(a.paused){resolve();return;}a.addEventListener('pause',resolve,{once:true});a.pause();
+ }));
+ // WebKit can reconcile its estimated media position after acknowledging pause.
+ await page.evaluate(()=>{window.__qePauseSample=null});
+ await page.waitForFunction(()=>{
+  const a=document.querySelector('[data-guide-audio]'),now=performance.now(),sample=window.__qePauseSample;
+  if(!a.paused||a.seeking||Math.abs(window.qeArchitecture.snapshot.elapsed-a.currentTime)>.01)return false;
+  if(!sample||sample.time!==a.currentTime){window.__qePauseSample={time:a.currentTime,since:now};return false;}
+  return now-sample.since>300;
+ });
+}
 async function playing(page){await page.waitForFunction(()=>{const a=document.querySelector('[data-guide-audio]');return !a.paused&&!a.seeking&&a.currentTime>.1&&window.qeArchitecture.snapshot.synced})}
 (async()=>{for(const engine of [chromium,webkit]){
  const browser=await engine.launch(engine===chromium?{args:['--enable-unsafe-swiftshader']}:{});
@@ -63,14 +76,20 @@ async function playing(page){await page.waitForFunction(()=>{const a=document.qu
    }
    // Let the actual recording cross a cue boundary: the next section and destination must follow.
    await seek(page,times[cues[1].caption]-.35);
-   await page.locator('[data-play]').click();await playing(page);
-   await page.waitForFunction(()=>window.qeArchitecture.snapshot.stage===1);
-   await page.locator('[data-guide-play]').click();
+   await page.locator('[data-play]').click();
+   // Software-rendered frames can outlast a short section. Observe forward
+   // progress, then verify the paused section against the real audio position.
+   await page.waitForFunction(t=>window.qeArchitecture.snapshot.elapsed>=t,times[cues[1].caption]+1);
+   await settlePause(page);
    await page.waitForFunction(()=>document.querySelector('[data-guide-audio]').paused&&!window.qeArchitecture.snapshot.playing);
    const frozen=await page.evaluate(()=>window.qeArchitecture.snapshot);
+   const expected=cues.findLastIndex(cue=>times[cue.caption]<=frozen.elapsed+.001);
+   assert.ok(expected>=1,'The real recording crossed the section boundary');
+   assert.equal(frozen.stage,expected,'The scene follows the current spoken section even on a slow renderer');
    await page.waitForTimeout(180);
    const paused=await page.evaluate(()=>window.qeArchitecture.snapshot);
    assert.equal(paused.elapsed,frozen.elapsed);assert.deepEqual(paused.signals,frozen.signals,'Audio pause freezes packets');
+   await seek(page,times[cues[1].caption]+.12);
    // Both speed selectors affect the same recording and clock.
    await page.locator('#playback-rate').selectOption('1.5');
    await page.waitForFunction(()=>document.querySelector('[aria-label="Explanation speed"]').value==='1.5');
@@ -89,8 +108,16 @@ async function playing(page){await page.waitForFunction(()=>{const a=document.qu
    }
    await page.locator('#component-select').selectOption('gateway');
    assert.equal(await page.locator('[data-guide-audio]').evaluate(a=>a.paused),true,'Inspection pauses the explanation');
-   await page.locator('[data-replay]').click();await playing(page);
-   await page.waitForFunction(()=>window.qeArchitecture.snapshot.stage===0);
+   // Latch native replay events so a slow renderer cannot hide the brief start state.
+   await page.evaluate(()=>{
+    const audio=document.querySelector('[data-guide-audio]');window.__qeReplay={seek:null,played:false};
+    audio.addEventListener('seeking',()=>{window.__qeReplay.seek=audio.currentTime},{once:true,capture:true});
+    audio.addEventListener('play',()=>{window.__qeReplay.played=true},{once:true,capture:true});
+   });
+   await page.locator('[data-replay]').click();
+   await page.waitForFunction(()=>window.__qeReplay.played&&window.__qeReplay.seek!==null);
+   assert.ok(await page.evaluate(()=>window.__qeReplay.seek<.15),'Replay seeks to the beginning and starts the real recording');
+   await page.locator('[data-guide-audio]').evaluate(a=>a.pause());
    assert.equal(await page.locator('#component-select').inputValue(),'','Replay restores narration focus');
    const duration=await page.locator('[data-guide-audio]').evaluate(a=>a.duration);
    await seek(page,duration-.25);await page.locator('[data-play]').click();
@@ -98,6 +125,7 @@ async function playing(page){await page.waitForFunction(()=>{const a=document.qu
    await page.waitForFunction(()=>!window.qeArchitecture.snapshot.playing);
    assert.equal(await page.locator('[data-play]').getAttribute('aria-pressed'),'false');
    assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.stage),cues.length-1,'Stop at final spoken section');
+   console.log(engine.name(),id,'caption anchors and shared audio transport passed');
   }
   // Reduced motion keeps destination highlights and captions while suppressing travel.
   await page.locator('[data-scenario="generate"]').click();await page.locator('[data-narrator-guide="industry-technical/slide-3"]').waitFor();
