@@ -200,3 +200,37 @@ Use one record per comparable API test pack. Retain failed runs and foundation w
 ## External evidence and the client trial
 
 The [financial-services evidence explorer]({{ '/case-studies/fintech/evidence/' | relative_url }}) separates direct AI testing cases from modernization and adjacent engineering results. Use its trial selector to agree the first workflow, reviewer and acceptance criteria. Peer figures do not replace Our Banking Client’s illustrative inputs or supply a client forecast. Record actual API pilot dates and effort against the illustrative planning windows; readiness and sufficient evidence determine progression.
+
+## From a unit-test candidate to API proof {#unit-to-api}
+
+The [nine-step walkthrough]({{ '/case-studies/fintech/#ai-journey' | relative_url }}) follows one authored payment scenario. Its identifiers connect the handoffs; they are not records from a deployed bank. Developer unit testing is shown alongside the existing eight-stage QA effort model, without adding an unsupported savings estimate.
+
+**Approved input:** AC-142 requires the same idempotency key and payload to return the original transfer without another posting. CASE-142-R exercises a timeout after provider acceptance and a same-key retry. Domain QA sets the expected outcome before AI drafts the code.
+
+An AI assistant can draft this **JUnit-style pseudocode** from the accepted behavior and existing test patterns. The handler, request and fake repository below illustrate interfaces that the application team must implement; this snippet is not an executable bank integration.
+
+```java
+@Test void sameKeyReturnsOriginalTransfer() {
+    var repository = new RecordingFakeTransferRepository();
+    var handler = new TransferHandler(repository);
+    var request = transfer("pay-142", "payer", "recipient", 10000);
+
+    var original = handler.create(request);
+    var retry = handler.create(request);
+
+    assertEquals(original.id(), retry.id());
+    assertEquals(1, repository.insertions());
+}
+```
+
+**Developer review:** verify that the fake records real calls, that assertions reflect AC-142, and that the test fails when deduplication is deliberately bypassed. This unit test does not exercise network timeouts, actual database constraints, provider acceptance, or concurrent transactions. Those need separate API, concurrency and integration cases.
+
+**API handoff:** PR-142 carries the reviewed executable test. FIX-142 supplies synthetic accounts starting at 100000 and 0 minor units. STUB-142 models provider acceptance followed by a lost response. A REST Assured/JUnit test must check the original transfer ID, exactly one balanced journal, payer 90000 and recipient 10000 minor units after retry. Selected Playwright checks cover the pending state and customer retry action.
+
+**Failure and repair:** the deliberately faulty variant produces two journals in RUN-142. AI can draft DEF-142 with assertion, trace and journal references; an engineer confirms the cause. Keep the original FAIL record. After a reviewed production fix, RERUN-143 uses fresh data and unchanged expected behavior. The corrected build must pass and the deliberate duplicate-posting variant must still fail. These are expected sample outcomes, not executed client results.
+
+**Release handoff:** PACK-142 links AC-142, CASE-142-R, the test commit, fixture/stub revisions, original run, reviewed defect, fix and rerun. Required real-provider checks and settlement evidence remain release gates. AI drafts the summary; the release owner decides.
+
+**Measure three states:** compare manual QE with repeatable automated QE, then compare equivalent automated packs with and without AI assistance. Record critical-scenario coverage, candidate acceptance after review, injected-fault detection, environment wait, feedback time and evidence completeness. Include review, rework and platform overhead. Service virtualization benefits must not be counted as an isolated AI gain.
+
+Mechanism references: [Copilot test generation and review](https://docs.github.com/en/copilot/tutorials/write-tests), [WireMock service virtualization](https://wiremock.org/docs/solutions/service-virtualization/), and [Azure Pipelines test-result publishing](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/publish-test-results-v2?view=azure-pipelines).

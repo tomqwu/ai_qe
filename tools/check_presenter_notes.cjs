@@ -2,6 +2,8 @@
 const assert = require('node:assert/strict');
 const {chromium, webkit} = require('playwright');
 const base = (process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe').replace(/\/$/, '');
+const deckCounts = require('../_data/briefing_room.json').map(deck => [deck.url.split('/').filter(Boolean).at(-1), deck.slides]);
+const slideCount = deckCounts.reduce((sum, [, count]) => sum + count, 0);
 const routes = ['', 'ai-adoption/', 'qe-modernization/', 'dictionary/', 'platform-readiness/',
   'case-studies/fintech/', 'case-studies/fintech/evidence/', 'case-studies/fintech/implementation/',
   'docs/industry/', 'docs/industry/operating-model/', 'docs/industry/evidence/',
@@ -41,7 +43,7 @@ async function playing(audio) { await audio.page().waitForFunction(a => !a.pause
         assert.doesNotMatch(await page.locator('body').innerText(), /\bChris\b/, 'Public narration uses neutral audio labels');
       }
       assert.equal(requestedAudio,0,'Collapsed in-place guides do not download MP3 files');
-      for(const [route,count] of [['fintech-evp',19],['fintech-technical',30],['evp',25],['technical',35]]){
+      for(const [route,count] of deckCounts){
         await page.goto(base+`/briefings/${route}/`);
         await page.waitForFunction(n=>document.querySelectorAll('.slide-narrator-notes').length===n,count);
         assert.equal(await page.locator('[data-narrator-guide]').count(),0,'No duplicate page player inside slides');
@@ -101,7 +103,7 @@ async function playing(audio) { await audio.page().waitForFunction(a => !a.pause
       await page.emulateMedia({media:'print'});
       assert.equal(await page.locator('[data-narrator-guide]').isVisible(),false);
       assert.deepEqual(errors,[]);
-      console.log(`${engine.name()}: all 109 slide notes; diagram coverage on 16 existing pages; actual recorded audio/captions, lazy loading, audio focus, mobile and four architecture scenarios passed`);
+      console.log(`${engine.name()}: all ${slideCount} slide notes; diagram coverage on 16 existing pages; actual recorded audio/captions, lazy loading, audio focus, mobile and four architecture scenarios passed`);
     }finally{await browser.close();}
   }
 })().catch(error=>{console.error(error);process.exit(1);});

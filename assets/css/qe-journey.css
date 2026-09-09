@@ -1,0 +1,29 @@
+/* The same authored handoffs are used by the reading page and narrated decks. */
+.qe-journey-figure .node-title { font-size:20px; }
+.qe-journey-figure .node-text { font-size:18px; }
+.qe-journey-details { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:20px 0; }
+.qe-journey-details > details { border:1px solid #bdcfca; border-radius:8px; padding:14px 18px; background:#fff; }
+.qe-journey-details summary { cursor:pointer; color:#173744; font-weight:650; }
+.qe-journey-details dl { margin:12px 0 0; }
+.qe-journey-details dt { text-align:left; color:#096d69; margin-top:12px; font-weight:650; }
+.qe-journey-details dd { margin:4px 0 0; }
+.qe-journey-details code { white-space:normal; }
+.qe-journey-boundary { padding:14px 18px; background:#eef5f2; border-left:4px solid #096d69; }
+.qe-journey-links { display:flex; flex-wrap:wrap; gap:10px 20px; margin:16px 0; }
+.ft-slide:has(.qe-journey-figure) .slide-content { gap:8px; }
+.ft-slide:has(.qe-journey-figure) .ft-note { margin-top:6px; }
+.ft-slide:has([data-diagram="qe-journey"]) .qe-journey-figure .research-diagram { max-height:48cqw; }
+@media(max-width:700px) { .qe-journey-details { grid-template-columns:1fr; } }
+@media print {
+  .qe-journey-figure .diagram-view-controls,.qe-journey-figure .diagram-tour,.qe-journey-figure .diagram-overview { display:none!important; }
+  .qe-journey-figure .diagram-shell { display:block!important; }
+}
+
+.qe-state-measures { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin:18px 0; }
+.qe-state-measures > div { padding:14px 16px; border-top:3px solid #68a99c; background:#eef5f2; }
+.qe-state-measures strong,.qe-state-measures span { display:block; }
+.qe-state-measures span { margin-top:8px; color:#425f6d; }
+.deck-page .qe-state-measures { margin:1.3cqw 0; gap:1.5cqw; font-size:1.6cqw; line-height:1.35; }
+.deck-page .qe-state-measures > div { padding:1.2cqw; }
+.qe-cover-route { display:block; margin-top:12px; font-size:.85em; line-height:1.4; }
+@media(max-width:700px) { .qe-state-measures { grid-template-columns:1fr; }.deck-page .qe-state-measures { font-size:16px; } }

@@ -56,14 +56,14 @@
       "chapter": "The proposed change"
     },
     {
-      "title": "Before / after: the API testing workflow",
+      "title": "Before / after: separate modernization from AI",
       "visual": "before-after",
       "lead": "",
       "rows": null,
       "columns": null,
       "points": null,
-      "note": "Pilot target; validate foundations and measure effort, review, rework and quality before claiming gains.",
-      "sources": "S1,S2,S5,S6,S7",
+      "note": "Same payment scope. The two target states are proposed; no productivity or quality improvement has been measured.",
+      "sources": "AL1,AL2,S5,S6,S7",
       "chapter": ""
     },
     {
@@ -253,6 +253,28 @@
       "note": "Business aims: fewer escaped payment defects and emergency fixes. These proposed pilot measures do not establish those outcomes.",
       "sources": "QO1,QO2",
       "chapter": "Architecture and outcomes"
+    },
+    {
+      "title": "What AI contributes, from requirement to release",
+      "visual": "ai-journey",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "PAY-142 is an authored scenario. Each AI output needs review; test runners execute and people decide.",
+      "sources": "AL1,AL2,S5,S6,S7",
+      "chapter": "AI through the release"
+    },
+    {
+      "title": "Follow one payment test through the handoffs",
+      "visual": "artifact-trace",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Illustrative artifacts and outcomes. Preserve failed evidence; a passing retest alone does not approve release.",
+      "sources": "AL1,AL2,S5,S6,S7",
+      "chapter": "AI through the release"
     }
   ],
   "technical": [
@@ -361,6 +383,10 @@
       "lead": "",
       "rows": [
         [
+          "Developer unit",
+          "Copilot drafts JUnit tests for idempotency logic; developers review. A fake repository cannot prove real payment integration."
+        ],
+        [
           "Service and API",
           "REST Assured + JUnit. Cover retry, concurrent requests, idempotency conflicts and journal outcomes."
         ],
@@ -383,7 +409,7 @@
       ],
       "points": null,
       "note": "Test distribution follows behavior and observability. A new browser framework does not solve a shared settlement environment.",
-      "sources": "S6,S8",
+      "sources": "AL1,S6,S8",
       "chapter": ""
     },
     {
@@ -734,6 +760,39 @@
       "sources": "QO2",
       "chapter": "Outcomes beyond hours",
       "metric_role": "supporting"
+    },
+    {
+      "title": "Nine AI-assisted steps, with explicit handoffs",
+      "visual": "ai-journey",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "AI drafts; reviewers approve; CI executes. Context, artifacts and evidence remain versioned.",
+      "sources": "AL1,AL2,S5,S6,S7",
+      "chapter": "AI through the release"
+    },
+    {
+      "title": "PAY-142: requirement, test, failure, fix and proof",
+      "visual": "artifact-trace",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Authored trace IDs. Fixed assertions: original transfer ID, one journal, payer 90000 and recipient 10000 minor units.",
+      "sources": "AL1,AL2,S5,S6,S7",
+      "chapter": "AI through the release"
+    },
+    {
+      "title": "Three states: isolate the incremental AI contribution",
+      "visual": "before-after",
+      "lead": "",
+      "rows": null,
+      "columns": null,
+      "points": null,
+      "note": "Compare equivalent payment packs. Retain real-provider checks and measure review, rework and platform overhead.",
+      "sources": "AL1,AL2,S5,S6,S7",
+      "chapter": "AI through the release"
     }
   ]
 }

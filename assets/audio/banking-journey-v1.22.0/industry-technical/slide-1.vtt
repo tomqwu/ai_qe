@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.960
+This industry briefing explains assurance
+across the AI lifecycle: context,
+
+00:00:05.024 --> 00:00:10.080
+generated tests, independent evaluation,
+action controls and release evidence.
+
+00:00:10.320 --> 00:00:15.200
+It includes testing AI applications as
+well as using AI in quality engineering.
+
+00:00:15.440 --> 00:00:20.400
+If your immediate question is how AI
+helps an existing banking QA team,
+
+00:00:20.457 --> 00:00:22.960
+follow the banking workflow
+link on this slide.
+
+00:00:23.024 --> 00:00:27.440
+That engineering walkthrough traces one
+payment requirement through unit tests,
+
+00:00:27.540 --> 00:00:31.120
+API tests, fixtures, execution,
+
+00:00:31.192 --> 00:00:34.080
+diagnosis, repair and release evidence.
+
+00:00:34.300 --> 00:00:38.400
+The final slide here also
+provides that nine-step overview.
+
+00:00:38.446 --> 00:00:41.600
+Choose the banking route
+for concrete delivery handoffs,
+
+00:00:41.640 --> 00:00:44.640
+and this industry route
+for the wider assurance architecture.

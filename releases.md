@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.22.0 · 9 September 2026
+
+The [banking case]({{ '/case-studies/fintech/#ai-journey' | relative_url }}) now follows **nine explicit AI-assisted steps**, from approved requirements and developer unit tests through API/UI tests, fixtures, CI execution, investigation, repair and release evidence. A connected artifact trail preserves the original injected-defect failure, reviewed fix and fresh retest.
+
+The comparison distinguishes **manual QE, modernized QE and AI-assisted QE**, with separate contributions and measures. Existing slide links remain valid. Guided banking routes bring the new workflow, comparison and evidence trail into the presentation sequence; the industry decks link to the banking implementation story.
+
+All **116 slides** have narration and timed English captions. Changed explanations use new recordings; workflow, comparison and artifact highlights follow those recordings, including pause and seek. Existing two-second slide pauses and shared audio focus remain. All four slide/PDF editions advance to **v1.22.0**: banking **21 executive / 33 technical**, industry **26 executive / 36 technical**. The film retains its original edition. [GitHub release v1.22.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.22.0) packages the current publication.
+
 ## v1.21.2 · 9 September 2026
 
 The [3D architecture]({{ '/demos/architecture/?scenario=generate' | relative_url }}) now opens from a **higher, more front-facing camera angle**, so the platform's depth is easier to read. Framing fits the model with space around its edges and preserves its proportions across wide, short and mobile windows. Camera motion keeps the same elevated view.

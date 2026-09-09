@@ -968,6 +968,632 @@
           "routes": []
         }
       ]
+    },
+    {
+      "diagram": "qe-three-states",
+      "clip": "evp/slide-6",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "Start with today's manual workflow. People copy cases, prepare shared accounts,",
+          "title": "01 / Manual QE",
+          "nodes": [
+            "manual"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 3,
+          "text": "Now separate the modernization step.",
+          "title": "02 / Modernized QE",
+          "nodes": [
+            "modernized"
+          ],
+          "routes": [
+            "manual:modernized"
+          ]
+        },
+        {
+          "caption": 9,
+          "text": "Then add AI assistance. It helps draft cases, test code and fixtures,",
+          "title": "03 / AI-assisted QE",
+          "nodes": [
+            "assisted"
+          ],
+          "routes": [
+            "modernized:assisted"
+          ]
+        }
+      ]
+    },
+    {
+      "diagram": "qe-journey",
+      "clip": "evp/slide-20",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "Let's follow what AI contributes to one banking release.",
+          "title": "01 / Understand the change",
+          "nodes": [
+            "intent"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 5,
+          "text": "Second, AI drafts the test scenarios: normal payment,",
+          "title": "02 / Design test cases",
+          "nodes": [
+            "design"
+          ],
+          "routes": [
+            "intent:design"
+          ]
+        },
+        {
+          "caption": 8,
+          "text": "Third, AI helps developers write unit tests for retry and duplicate-request",
+          "title": "03 / Draft unit tests",
+          "nodes": [
+            "unit"
+          ],
+          "routes": [
+            "design:unit"
+          ]
+        },
+        {
+          "caption": 11,
+          "text": "Fourth, AI turns accepted cases into candidate",
+          "title": "04 / Build API / UI tests",
+          "nodes": [
+            "code"
+          ],
+          "routes": [
+            "unit:code"
+          ]
+        },
+        {
+          "caption": 15,
+          "text": "Fifth, AI helps draft synthetic data",
+          "title": "05 / Prepare data and stubs",
+          "nodes": [
+            "fixtures"
+          ],
+          "routes": [
+            "code:fixtures"
+          ]
+        },
+        {
+          "caption": 18,
+          "text": "Sixth, AI recommends relevant tests or requests an authorized pipeline run.",
+          "title": "06 / Select and run tests",
+          "nodes": [
+            "run"
+          ],
+          "routes": [
+            "fixtures:run"
+          ]
+        },
+        {
+          "caption": 21,
+          "text": "Seventh, AI connects failed assertions",
+          "title": "07 / Investigate failures",
+          "nodes": [
+            "triage"
+          ],
+          "routes": [
+            "run:triage"
+          ]
+        },
+        {
+          "caption": 24,
+          "text": "Eighth, AI can propose a repair.",
+          "title": "08 / Repair and retest",
+          "nodes": [
+            "repair"
+          ],
+          "routes": [
+            "triage:repair"
+          ]
+        },
+        {
+          "caption": 27,
+          "text": "Ninth, AI assembles a linked release summary and suggests reviewed",
+          "title": "09 / Review release evidence",
+          "nodes": [
+            "evidence"
+          ],
+          "routes": [
+            "repair:evidence"
+          ]
+        }
+      ]
+    },
+    {
+      "diagram": "qe-artifact-trace",
+      "clip": "evp/slide-21",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "Follow the same payment test through six handoffs.",
+          "title": "01 / Approved intent",
+          "nodes": [
+            "criteria"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 4,
+          "text": "AI drafts a candidate test.",
+          "title": "02 / AI candidate",
+          "nodes": [
+            "candidate"
+          ],
+          "routes": [
+            "criteria:candidate"
+          ]
+        },
+        {
+          "caption": 8,
+          "text": "Now challenge the test with a deliberately faulty build.",
+          "title": "03 / Challenge the test",
+          "nodes": [
+            "failed"
+          ],
+          "routes": [
+            "candidate:failed"
+          ]
+        },
+        {
+          "caption": 11,
+          "text": "AI links the failed assertion to the journal and trace evidence,",
+          "title": "04 / Investigate and repair",
+          "nodes": [
+            "diagnosis"
+          ],
+          "routes": [
+            "failed:diagnosis"
+          ]
+        },
+        {
+          "caption": 14,
+          "text": "The pipeline performs a fresh retest.",
+          "title": "05 / Fresh retest",
+          "nodes": [
+            "retest"
+          ],
+          "routes": [
+            "diagnosis:retest"
+          ]
+        },
+        {
+          "caption": 17,
+          "text": "Finally, the release pack links the requirement, reviewed test, failed run,",
+          "title": "06 / Release review",
+          "nodes": [
+            "decision"
+          ],
+          "routes": [
+            "retest:decision"
+          ]
+        }
+      ]
+    },
+    {
+      "diagram": "qe-journey",
+      "clip": "technical/slide-31",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "Trace one release through nine handoffs.",
+          "title": "01 / Understand the change",
+          "nodes": [
+            "intent"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 7,
+          "text": "Next, test design produces a reviewed matrix.",
+          "title": "02 / Design test cases",
+          "nodes": [
+            "design"
+          ],
+          "routes": [
+            "intent:design"
+          ]
+        },
+        {
+          "caption": 12,
+          "text": "The developer unit-test step uses the handler source and accepted behavior.",
+          "title": "03 / Draft unit tests",
+          "nodes": [
+            "unit"
+          ],
+          "routes": [
+            "design:unit"
+          ]
+        },
+        {
+          "caption": 17,
+          "text": "The API and user-interface step turns the reviewed matrix into a pull request.",
+          "title": "04 / Build API / UI tests",
+          "nodes": [
+            "code"
+          ],
+          "routes": [
+            "unit:code"
+          ]
+        },
+        {
+          "caption": 23,
+          "text": "Data and provider behavior are versioned inputs.",
+          "title": "05 / Prepare data and stubs",
+          "nodes": [
+            "fixtures"
+          ],
+          "routes": [
+            "code:fixtures"
+          ]
+        },
+        {
+          "caption": 28,
+          "text": "For execution, AI may recommend affected tests or request an authorized",
+          "title": "06 / Select and run tests",
+          "nodes": [
+            "run"
+          ],
+          "routes": [
+            "fixtures:run"
+          ]
+        },
+        {
+          "caption": 33,
+          "text": "During investigation, AI reads retained evidence and proposes a cause.",
+          "title": "07 / Investigate failures",
+          "nodes": [
+            "triage"
+          ],
+          "routes": [
+            "run:triage"
+          ]
+        },
+        {
+          "caption": 38,
+          "text": "For repair, AI may propose a source change for developer review.",
+          "title": "08 / Repair and retest",
+          "nodes": [
+            "repair"
+          ],
+          "routes": [
+            "triage:repair"
+          ]
+        },
+        {
+          "caption": 43,
+          "text": "For release evidence, AI drafts a summary of coverage,",
+          "title": "09 / Review release evidence",
+          "nodes": [
+            "evidence"
+          ],
+          "routes": [
+            "repair:evidence"
+          ]
+        }
+      ]
+    },
+    {
+      "diagram": "qe-artifact-trace",
+      "clip": "technical/slide-32",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "Begin with the approved requirement and its test-case reference.",
+          "title": "01 / Approved intent",
+          "nodes": [
+            "criteria"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 4,
+          "text": "The AI candidate becomes a reviewed pull request.",
+          "title": "02 / AI candidate",
+          "nodes": [
+            "candidate"
+          ],
+          "routes": [
+            "criteria:candidate"
+          ]
+        },
+        {
+          "caption": 9,
+          "text": "The first run pins the fixture and provider-model revisions.",
+          "title": "03 / Challenge the test",
+          "nodes": [
+            "failed"
+          ],
+          "routes": [
+            "candidate:failed"
+          ]
+        },
+        {
+          "caption": 14,
+          "text": "The defect record links that failed run.",
+          "title": "04 / Investigate and repair",
+          "nodes": [
+            "diagnosis"
+          ],
+          "routes": [
+            "failed:diagnosis"
+          ]
+        },
+        {
+          "caption": 19,
+          "text": "A fresh retest uses a new run identifier and unchanged",
+          "title": "05 / Fresh retest",
+          "nodes": [
+            "retest"
+          ],
+          "routes": [
+            "diagnosis:retest"
+          ]
+        },
+        {
+          "caption": 23,
+          "text": "The release pack includes the approved requirement, test commit, fixture and stub",
+          "title": "06 / Release review",
+          "nodes": [
+            "decision"
+          ],
+          "routes": [
+            "retest:decision"
+          ]
+        }
+      ]
+    },
+    {
+      "diagram": "qe-three-states",
+      "clip": "technical/slide-33",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "The starting state has manual API requests and spreadsheets,",
+          "title": "01 / Manual QE",
+          "nodes": [
+            "manual"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 4,
+          "text": "The modernized state introduces reviewed REST Assured and JUnit tests,",
+          "title": "02 / Modernized QE",
+          "nodes": [
+            "modernized"
+          ],
+          "routes": [
+            "manual:modernized"
+          ]
+        },
+        {
+          "caption": 9,
+          "text": "The AI-assisted state adds approved context, candidate",
+          "title": "03 / AI-assisted QE",
+          "nodes": [
+            "assisted"
+          ],
+          "routes": [
+            "modernized:assisted"
+          ]
+        }
+      ]
+    },
+    {
+      "diagram": "qe-journey",
+      "clip": "industry-evp/slide-26",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "Let's follow what AI contributes to one banking release.",
+          "title": "01 / Understand the change",
+          "nodes": [
+            "intent"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 5,
+          "text": "Second, AI drafts the test scenarios: normal payment,",
+          "title": "02 / Design test cases",
+          "nodes": [
+            "design"
+          ],
+          "routes": [
+            "intent:design"
+          ]
+        },
+        {
+          "caption": 8,
+          "text": "Third, AI helps developers write unit tests for retry and duplicate-request",
+          "title": "03 / Draft unit tests",
+          "nodes": [
+            "unit"
+          ],
+          "routes": [
+            "design:unit"
+          ]
+        },
+        {
+          "caption": 11,
+          "text": "Fourth, AI turns accepted cases into candidate",
+          "title": "04 / Build API / UI tests",
+          "nodes": [
+            "code"
+          ],
+          "routes": [
+            "unit:code"
+          ]
+        },
+        {
+          "caption": 15,
+          "text": "Fifth, AI helps draft synthetic data",
+          "title": "05 / Prepare data and stubs",
+          "nodes": [
+            "fixtures"
+          ],
+          "routes": [
+            "code:fixtures"
+          ]
+        },
+        {
+          "caption": 18,
+          "text": "Sixth, AI recommends relevant tests or requests an authorized pipeline run.",
+          "title": "06 / Select and run tests",
+          "nodes": [
+            "run"
+          ],
+          "routes": [
+            "fixtures:run"
+          ]
+        },
+        {
+          "caption": 21,
+          "text": "Seventh, AI connects failed assertions",
+          "title": "07 / Investigate failures",
+          "nodes": [
+            "triage"
+          ],
+          "routes": [
+            "run:triage"
+          ]
+        },
+        {
+          "caption": 24,
+          "text": "Eighth, AI can propose a repair.",
+          "title": "08 / Repair and retest",
+          "nodes": [
+            "repair"
+          ],
+          "routes": [
+            "triage:repair"
+          ]
+        },
+        {
+          "caption": 27,
+          "text": "Ninth, AI assembles a linked release summary and suggests reviewed",
+          "title": "09 / Review release evidence",
+          "nodes": [
+            "evidence"
+          ],
+          "routes": [
+            "repair:evidence"
+          ]
+        }
+      ]
+    },
+    {
+      "diagram": "qe-journey",
+      "clip": "industry-technical/slide-36",
+      "cues": [
+        {
+          "caption": 0,
+          "text": "Trace one release through nine handoffs.",
+          "title": "01 / Understand the change",
+          "nodes": [
+            "intent"
+          ],
+          "routes": []
+        },
+        {
+          "caption": 7,
+          "text": "Next, test design produces a reviewed matrix.",
+          "title": "02 / Design test cases",
+          "nodes": [
+            "design"
+          ],
+          "routes": [
+            "intent:design"
+          ]
+        },
+        {
+          "caption": 12,
+          "text": "The developer unit-test step uses the handler source and accepted behavior.",
+          "title": "03 / Draft unit tests",
+          "nodes": [
+            "unit"
+          ],
+          "routes": [
+            "design:unit"
+          ]
+        },
+        {
+          "caption": 17,
+          "text": "The API and user-interface step turns the reviewed matrix into a pull request.",
+          "title": "04 / Build API / UI tests",
+          "nodes": [
+            "code"
+          ],
+          "routes": [
+            "unit:code"
+          ]
+        },
+        {
+          "caption": 23,
+          "text": "Data and provider behavior are versioned inputs.",
+          "title": "05 / Prepare data and stubs",
+          "nodes": [
+            "fixtures"
+          ],
+          "routes": [
+            "code:fixtures"
+          ]
+        },
+        {
+          "caption": 28,
+          "text": "For execution, AI may recommend affected tests or request an authorized",
+          "title": "06 / Select and run tests",
+          "nodes": [
+            "run"
+          ],
+          "routes": [
+            "fixtures:run"
+          ]
+        },
+        {
+          "caption": 33,
+          "text": "During investigation, AI reads retained evidence and proposes a cause.",
+          "title": "07 / Investigate failures",
+          "nodes": [
+            "triage"
+          ],
+          "routes": [
+            "run:triage"
+          ]
+        },
+        {
+          "caption": 38,
+          "text": "For repair, AI may propose a source change for developer review.",
+          "title": "08 / Repair and retest",
+          "nodes": [
+            "repair"
+          ],
+          "routes": [
+            "triage:repair"
+          ]
+        },
+        {
+          "caption": 43,
+          "text": "For release evidence, AI drafts a summary of coverage,",
+          "title": "09 / Review release evidence",
+          "nodes": [
+            "evidence"
+          ],
+          "routes": [
+            "repair:evidence"
+          ]
+        }
+      ]
     }
   ]
 }

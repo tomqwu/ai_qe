@@ -1,0 +1,24 @@
+{% assign journey = site.data.qe_journey.figures[include.name] %}
+<figure class="research-figure qe-journey-figure{% if include.name == 'qe-three-states' %} ft-before-after{% endif %}" data-diagram="{{ include.name }}">
+  <div class="diagram-tour" data-diagram-tour hidden>
+    <div class="tour-actions"><button type="button" data-tour-play aria-pressed="false">▶ Play flow</button><button type="button" data-tour-next>Next step →</button><button type="button" data-tour-reset>Overview</button></div>
+    <div class="tour-copy"><p class="tour-status" data-tour-status aria-live="polite" aria-atomic="true">Overview · follow the numbered steps.</p><p class="flow-legend" data-flow-legend>Gold = current focus. Arrows show a proposed handoff, not live activity.</p></div>
+    <script type="application/json" data-tour-steps>{{ journey.flows | jsonify }}</script>
+  </div>
+  <div class="diagram-shell" tabindex="0" role="region" aria-label="{{ journey.caption | escape }}">
+    <svg class="research-diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 {{ journey.height }}" role="img" aria-label="{{ journey.caption | escape }}">
+      <defs><marker id="{{ include.name }}-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+      {% for edge in journey.edges %}<path class="edge" data-from="{{ edge.from }}" data-to="{{ edge.to }}" d="{{ edge.d }}" marker-end="url(#{{ include.name }}-arrow)"/>{% endfor %}
+      {% for node in journey.nodes %}
+      <g class="diagram-node" data-flow-node="{{ node.id }}" transform="translate({{ node.x }} {{ node.y }})">
+        <rect class="node{% if node.id == 'failed' %} node-sand{% endif %}" x="0" y="0" width="360" height="{{ journey.node_height }}" rx="8"/>
+        <text class="node-title" x="16" y="31">{{ node.title | escape }}</text>
+        {% assign lines = node.lines %}{% if page.case_audience == 'technical' or page.narration_deck == 'industry-technical' or include.technical %}{% assign lines = node.technical %}{% endif %}
+        {% for line in lines %}<text class="node-text" x="16" y="{{ forloop.index0 | times: 26 | plus: 66 }}">{{ line | escape }}</text>{% endfor %}
+      </g>
+      {% endfor %}
+    </svg>
+  </div>
+  {% if include.name == "qe-three-states" %}<div class="qe-state-measures">{% for node in journey.nodes %}<div><strong>{{ node.measure }}</strong><span>{{ node.measure_detail }}</span></div>{% endfor %}</div>{% endif %}
+  <figcaption>{{ journey.caption }}</figcaption>
+</figure>

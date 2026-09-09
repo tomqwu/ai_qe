@@ -1,0 +1,112 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.520
+Begin with the approved requirement
+and its test-case reference.
+
+00:00:03.660 --> 00:00:08.080
+The same idempotency key and payload
+must return the original transfer.
+
+00:00:08.280 --> 00:00:13.160
+The test matrix carries that criterion
+into the unit and API layers.
+
+00:00:13.250 --> 00:00:16.321
+The identifiers in this diagram
+are authored trace examples.
+
+00:00:16.600 --> 00:00:19.680
+The AI candidate becomes
+a reviewed pull request.
+
+00:00:19.820 --> 00:00:23.360
+The unit test checks one insertion
+through a fake repository.
+
+00:00:23.540 --> 00:00:27.520
+The API test independently
+checks the original transfer ID,
+
+00:00:27.580 --> 00:00:32.240
+one balanced journal, payer balance
+ninety thousand, and recipient balance
+
+00:00:32.320 --> 00:00:36.561
+ten thousand minor units.
+A response-status check alone is rejected.
+
+00:00:36.820 --> 00:00:40.320
+The first run pins the fixture
+and provider-model revisions.
+
+00:00:40.450 --> 00:00:45.280
+Execute the deliberate duplicate-posting
+variant: one journal is expected,
+
+00:00:45.380 --> 00:00:48.720
+but two are observed.
+JUnit reports a failure.
+
+00:00:48.940 --> 00:00:53.240
+Retain the assertion, trace
+and journal identifiers before cleanup.
+
+00:00:53.312 --> 00:00:57.120
+This is a designed challenge,
+not a reported banking incident.
+
+00:00:57.340 --> 00:00:59.840
+The defect record links that failed run.
+
+00:01:00.133 --> 00:01:05.040
+AI proposes duplicate posting as
+a hypothesis, with evidence references.
+
+00:01:05.227 --> 00:01:08.720
+An engineer confirms the cause
+and reviews a production-code repair.
+
+00:01:08.850 --> 00:01:11.760
+Neither the AI summary
+nor the repair process
+
+00:01:11.900 --> 00:01:14.640
+may turn the original
+failed run into a pass.
+
+00:01:15.080 --> 00:01:19.680
+A fresh retest uses a new
+run identifier and unchanged
+
+00:01:19.720 --> 00:01:23.360
+payment expectations.
+The corrected build should pass,
+
+00:01:23.373 --> 00:01:25.920
+while the deliberately faulty
+variant must still fail.
+
+00:01:26.112 --> 00:01:30.920
+Link the source change and both results so
+the reviewer can inspect the difference.
+
+00:01:31.120 --> 00:01:35.920
+The release pack includes the approved
+requirement, test commit, fixture and stub
+
+00:01:35.984 --> 00:01:40.960
+revisions, failed run,
+reviewed defect, repair and retest.
+
+00:01:41.107 --> 00:01:44.720
+Check required coverage and real-provider
+evidence before deciding.
+
+00:01:44.853 --> 00:01:48.320
+If integration proof is absent,
+the pack records that gap;
+
+00:01:48.460 --> 00:01:50.880
+the diagram does not
+grant release approval.

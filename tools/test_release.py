@@ -6,7 +6,7 @@ import tempfile
 import unittest
 import zipfile
 from publish_release import publish
-from prepare_release import prepare
+from prepare_release import prepare, ROOT
 
 SHA = 'a' * 40
 
@@ -95,11 +95,20 @@ class PublicationTests(unittest.TestCase):
                 self.assertEqual(set(guides['demo']), {'generate', 'evaluate', 'deny', 'hold'})
                 self.assertEqual(sum(len(guide['story']) for guide in guides['demo'].values()), 24)
                 flows = json.loads(archive.read('narration-flows.json'))
-                self.assertEqual(len(flows['profiles']), 12)
-                self.assertEqual(sum(len(profile['cues']) for profile in flows['profiles']), 85)
-                for extension in ('.mp3', '.vtt'):
-                    self.assertEqual(sum(name.endswith(extension) for name in archive.namelist()), 109)
-                self.assertEqual(sum(name.startswith('transcripts/') for name in archive.namelist()), 109)
+                self.assertEqual(flows, json.loads((ROOT / 'assets/data/narration-flows.json').read_text()))
+                self.assertEqual(len(archive.namelist()), len(set(archive.namelist())), 'Shared recordings must not duplicate ZIP paths')
+                narration = json.loads(archive.read('narration.json'))
+                scripts = json.loads((ROOT / 'assets/data/narration-scripts.json').read_text())['decks']
+                expected_media = set()
+                for audience, slides in scripts.items():
+                    self.assertEqual(set(narration['decks'][audience]['slides']), set(slides))
+                    for slide in slides:
+                        entry = narration['decks'][audience]['slides'][slide]
+                        expected_media.update(entry[field].lstrip('/') for field in ('audio','captions'))
+                        self.assertEqual(archive.read(f'transcripts/{audience}/{slide}.txt').decode().strip(), entry['transcript'])
+                        self.assertEqual(hashlib.sha256(archive.read(entry['audio'].lstrip('/'))).hexdigest(), entry['sha256'])
+                self.assertEqual({name for name in archive.namelist() if name.endswith(('.mp3','.vtt'))}, expected_media)
+                self.assertEqual(sum(name.startswith('transcripts/') for name in archive.namelist()), sum(map(len,scripts.values())))
 
 
 if __name__ == '__main__':

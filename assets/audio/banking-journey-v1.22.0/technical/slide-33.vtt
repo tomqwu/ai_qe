@@ -1,0 +1,69 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.440
+The starting state has manual
+API requests and spreadsheets,
+
+00:00:03.474 --> 00:00:06.560
+shared environments, and no
+virtualized provider backend.
+
+00:00:06.720 --> 00:00:09.280
+QA engineers collect
+and reconcile evidence.
+
+00:00:09.394 --> 00:00:12.960
+Vendor test-slot availability
+constrains parallel execution.
+
+00:00:13.360 --> 00:00:18.400
+The modernized state introduces
+reviewed REST Assured and JUnit tests,
+
+00:00:18.444 --> 00:00:23.200
+delivery-pipeline execution, isolated
+fixtures and a validated WireMock provider
+
+00:00:23.253 --> 00:00:28.160
+model. Testcontainers supports
+repeatable service-test resources.
+
+00:00:28.320 --> 00:00:32.320
+Raw assertions, traces and run
+identifiers survive cleanup.
+
+00:00:32.480 --> 00:00:35.960
+This foundation creates repeatability
+without depending on AI.
+
+00:00:36.140 --> 00:00:40.080
+The AI-assisted state adds
+approved context, candidate
+
+00:00:40.136 --> 00:00:44.240
+artifacts and evidence-based assistance
+around that same execution path.
+
+00:00:44.560 --> 00:00:50.240
+AI drafts tests and fixtures, proposes
+relevant scope and diagnoses failures.
+
+00:00:50.366 --> 00:00:55.040
+Reviewers approve changes before
+existing runners execute them.
+
+00:00:55.110 --> 00:00:58.640
+Compare equivalent payment packs
+to distinguish modernization
+
+00:00:58.693 --> 00:01:02.400
+gains from incremental AI
+benefit. Include review,
+
+00:01:02.451 --> 00:01:06.081
+correction, platform overhead
+and real-provider checks.
+
+00:01:06.293 --> 00:01:08.800
+No measured improvement is
+claimed in this scenario.

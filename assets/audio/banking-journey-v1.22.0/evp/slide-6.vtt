@@ -1,0 +1,59 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.720
+Start with today's manual workflow. People
+copy cases, prepare shared accounts,
+
+00:00:04.768 --> 00:00:08.240
+wait for a vendor test slot,
+and reconcile screenshots and logs.
+
+00:00:08.411 --> 00:00:12.840
+Seventy-five testers still face
+the same environment bottleneck.
+
+00:00:13.040 --> 00:00:15.360
+Now separate the modernization step.
+
+00:00:15.456 --> 00:00:18.560
+Engineers create reviewed automated tests,
+
+00:00:18.622 --> 00:00:22.440
+isolated data, and validated
+simulations of the payment provider.
+
+00:00:22.570 --> 00:00:26.880
+The delivery pipeline runs those
+tests and retains the evidence.
+
+00:00:26.976 --> 00:00:29.760
+That repeatability is
+valuable even without AI.
+
+00:00:29.952 --> 00:00:33.040
+Real-provider checks still
+need vendor capacity.
+
+00:00:33.568 --> 00:00:38.960
+Then add AI assistance. It helps
+draft cases, test code and fixtures,
+
+00:00:39.004 --> 00:00:43.200
+recommends relevant coverage, and helps
+explain failures and summarize proof.
+
+00:00:43.328 --> 00:00:48.240
+Engineers review the outputs,
+existing runners execute, and people make
+
+00:00:48.280 --> 00:00:53.200
+release decisions. Compare equivalent
+payment packs at all three stages.
+
+00:00:53.310 --> 00:00:58.080
+Measure waiting and reliability
+separately from AI drafting, review
+
+00:00:58.200 --> 00:01:03.440
+and rework. These are proposed states,
+not measured client improvements.
