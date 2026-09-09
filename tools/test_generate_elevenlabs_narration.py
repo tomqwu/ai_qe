@@ -18,7 +18,7 @@ class GenerationTests(unittest.TestCase):
 
     def test_all_slide_scripts_restore_to_the_display_text(self):
         plan = generator.build_plan(self.scripts, self.profile, generator.DECKS)
-        self.assertEqual(len(plan['jobs']), 109)
+        self.assertEqual({(job['audience'], job['slide']) for job in plan['jobs']}, {(audience, slide) for audience, slides in self.scripts['decks'].items() for slide in slides})
         for job in plan['jobs']:
             text = job['speakText']
             fixture = {'characters': list(text),

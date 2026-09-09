@@ -37,8 +37,12 @@ def prepare(output):
     narration = json.loads((ROOT / 'assets/data/narration.json').read_text())
     assert narration.get('complete'), 'The narration release requires all slide recordings'
     bundle = assets / f'ai-qe-narration-v{release["version"]}.zip'
+    scripts = json.loads((ROOT / 'assets/data/narration-scripts.json').read_text())['decks']
+    assert set(narration['decks']) == set(scripts), 'Narration audiences differ from the slide scripts'
+    total_slides = sum(len(slides) for slides in scripts.values())
     records = []
     for audience, deck in narration['decks'].items():
+        assert set(deck['slides']) == set(scripts[audience]), f'{audience}: incomplete narration coverage'
         for slide, entry in deck['slides'].items():
             for field in ('audio', 'captions'):
                 source = (ROOT / entry[field].lstrip('/')).resolve()
@@ -47,7 +51,7 @@ def prepare(output):
                     assert hashlib.sha256(source.read_bytes()).hexdigest() == entry['sha256'], 'Changed narration audio'
                 records.append((source.relative_to(ROOT).as_posix(), source.read_bytes()))
             records.append((f'transcripts/{audience}/{slide}.txt', (entry['transcript'] + '\n').encode()))
-    assert len(records) == 109 * 3, 'Narration bundle must cover all 109 slides'
+    assert len(records) == total_slides * 3, 'Narration bundle must cover every slide'
     records.append(('narration.json', json.dumps(narration, ensure_ascii=False, indent=2).encode()))
     guides = json.loads((ROOT / 'assets/data/narration-guides.json').read_text())
     for guide in [*guides['guides'], *guides['demo'].values()]:
@@ -57,7 +61,7 @@ def prepare(output):
     records.append(('narration-flows.json', json.dumps(flows, ensure_ascii=False, indent=2).encode()))
     records.append(('README.txt', (
         'AI x QE — English audio narration\n\n'
-        'One MP3, timed WebVTT subtitle file and transcript per slide. '
+        'Every slide maps to MP3 audio, timed WebVTT captions and a transcript. Shared explanations may reuse a recording. '
         'Folder keys: evp = banking executive, technical = banking architecture, '
         'industry-evp = industry executive, industry-technical = industry architecture.\n\n'
         'Open https://tomqwu.github.io/ai_qe/briefings/ and select Play narration '
@@ -65,10 +69,10 @@ def prepare(output):
         'narration-guides.json maps existing diagram and scenario explanations to these recordings '
         'and supplies presenter walkthrough notes and the 3D story caption anchors. narration-flows.json maps exact recorded caption '
         'cues to diagram components and arrows for audio-driven visual focus. '
-        'The original PDF content editions are unchanged.\n'
+        f'Industry PDFs: v{release["slide_edition"]}; banking PDFs: v{release["fintech_edition"]}.\n'
     ).encode()))
     with zipfile.ZipFile(bundle, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
-        for name, content in sorted(records):
+        for name, content in sorted(dict(records).items()):
             info = zipfile.ZipInfo(name, date_time=(2026, 9, 8, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             archive.writestr(info, content)
@@ -96,7 +100,7 @@ Publication editions:
 - Research companion: **v{release["research_edition"]}** — 13 pages
 - Fillable discovery questionnaire: **v{release["questionnaire_edition"]}**
 
-Assets include all six PDFs, the architecture film and captions, the industry, modernization and fintech-evidence CSV/JSON source registers, and the complete 109-slide audio narration bundle with English subtitles and transcripts. SHA256SUMS.txt covers all fifteen downloadable publication files. The PDF filenames identify their content edition, which may precede a player release. The existing architecture film retains its v1.8.0 edition.
+Assets include all six PDFs, the architecture film and captions, the industry, modernization and fintech-evidence CSV/JSON source registers, and the complete {total_slides}-slide audio narration bundle with English subtitles and transcripts. SHA256SUMS.txt covers all fifteen downloadable publication files. The PDF filenames identify their content edition, which may precede a player release. The existing architecture film retains its v1.8.0 edition.
 
 Published only after the site build, browser checks, PDF checks and GitHub Pages deployment succeed. The fintech case is fictional; its estimates and outcomes are illustrative assumptions.
 '''

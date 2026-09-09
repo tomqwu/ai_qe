@@ -216,7 +216,7 @@
       "selector": "figure.ft-before-after",
       "deck": "evp",
       "slide": "slide-6",
-      "guide": "Compare the two lanes from left to right. Point out the new environment and evidence capabilities before discussing AI assistance."
+      "guide": "Compare manual QE, modernized QE and AI-assisted QE for the same payment scope. Separate repeatability and environment capacity from incremental AI drafting and investigation. Each state follows the spoken explanation."
     },
     {
       "selector": "figure.ft-pilot-time",
@@ -411,6 +411,20 @@
       "slide": "slide-4",
       "guide": "Read the estimates with their confidence intervals and study populations. The overview explains why different task-level results cannot be pooled into a bank-wide saving.",
       "baseline": true
+    },
+    {
+      "selector": "figure[data-diagram=\"qe-journey\"]",
+      "deck": "technical",
+      "slide": "slide-31",
+      "guide": "Follow nine caption-timed steps from approved intent through unit and API test candidates, fixtures, CI execution, diagnosis, repair and release evidence. AI outputs require review; the runner preserves its own verdict. The numbered path tells one proposed delivery story, not a mandatory order for every team.",
+      "format": "Full workflow walkthrough"
+    },
+    {
+      "selector": "figure[data-diagram=\"qe-artifact-trace\"]",
+      "deck": "technical",
+      "slide": "slide-32",
+      "guide": "Follow the same PAY-142 references through approved intent, rejected and repaired candidate assertions, injected-defect failure, reviewed diagnosis, fresh retest and release review. The original failure stays in the evidence pack.",
+      "format": "Artifact walkthrough"
     }
   ],
   "demo": {

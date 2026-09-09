@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.640
+Choose the test layer
+for the behavior you need to prove.
+
+00:00:02.773 --> 00:00:06.800
+Start with developer unit tests
+for idempotency-key validation
+
+00:00:06.900 --> 00:00:11.920
+and duplicate-request logic.
+Copilot can draft JUnit candidates,
+
+00:00:11.940 --> 00:00:14.560
+but developers review
+the assertions and test doubles.
+
+00:00:14.960 --> 00:00:18.560
+A fake repository cannot establish
+real payment integration.
+
+00:00:18.853 --> 00:00:23.920
+At the service and API layer,
+REST Assured and JUnit cover retry,
+
+00:00:23.973 --> 00:00:26.880
+concurrency, conflicts
+and journal outcomes.
+
+00:00:27.093 --> 00:00:30.560
+At the web layer, Playwright
+checks the pending state,
+
+00:00:30.640 --> 00:00:33.720
+retry action and final customer message.
+
+00:00:33.808 --> 00:00:37.920
+Keep the owned Selenium and Appium
+coverage for existing browser and mobile
+
+00:00:37.982 --> 00:00:42.800
+journeys. Batch settlement reconciliation
+and real-provider sandbox checks
+
+00:00:42.891 --> 00:00:47.920
+remain separate requirements. Generate
+tests within the appropriate layer;
+
+00:00:47.954 --> 00:00:51.760
+adding a browser framework does not
+resolve a scarce settlement environment.

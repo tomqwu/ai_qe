@@ -1,0 +1,120 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.120
+Let's follow what AI contributes
+to one banking release.
+
+00:00:03.320 --> 00:00:06.960
+Our example is a payment that
+times out after acceptance.
+
+00:00:07.080 --> 00:00:12.080
+The customer retries, and the team
+must prove that the money moves once.
+
+00:00:12.160 --> 00:00:14.560
+First, AI helps clarify the requirement.
+
+00:00:14.720 --> 00:00:17.640
+The product owner confirms
+the expected behavior.
+
+00:00:17.829 --> 00:00:22.400
+Second, AI drafts the test
+scenarios: normal payment,
+
+00:00:22.460 --> 00:00:27.600
+timeout, repeated callback, concurrent
+retry, and a conflicting request.
+
+00:00:27.760 --> 00:00:31.440
+Domain testers review the coverage
+and expected outcomes.
+
+00:00:31.953 --> 00:00:36.720
+Third, AI helps developers write unit
+tests for retry and duplicate-request
+
+00:00:36.787 --> 00:00:40.400
+logic. These are fast
+checks of code behavior;
+
+00:00:40.432 --> 00:00:42.641
+they do not replace
+payment integration tests.
+
+00:00:42.937 --> 00:00:46.480
+Fourth, AI turns accepted
+cases into candidate
+
+00:00:46.700 --> 00:00:49.800
+API and user-interface tests.
+
+00:00:49.886 --> 00:00:52.400
+Reviewers require
+money-movement assertions,
+
+00:00:52.460 --> 00:00:54.280
+not just a successful response.
+
+00:00:54.480 --> 00:00:57.760
+Fifth, AI helps draft synthetic data
+
+00:00:57.780 --> 00:01:00.880
+and provider simulations.
+Engineers validate them.
+
+00:01:01.200 --> 00:01:05.760
+Isolated environments and service
+virtualization make the work repeatable.
+
+00:01:06.647 --> 00:01:12.000
+Sixth, AI recommends relevant tests
+or requests an authorized pipeline run.
+
+00:01:12.180 --> 00:01:14.880
+The delivery pipeline executes the tests.
+
+00:01:14.984 --> 00:01:17.840
+Mandatory payment coverage stays in place.
+
+00:01:18.060 --> 00:01:21.200
+Seventh, AI connects failed assertions
+
+00:01:21.232 --> 00:01:24.560
+with logs and traces,
+and drafts a diagnosis.
+
+00:01:24.740 --> 00:01:28.720
+The team checks the evidence
+before accepting the explanation.
+
+00:01:29.177 --> 00:01:32.080
+Eighth, AI can propose a repair.
+
+00:01:32.280 --> 00:01:37.360
+A developer reviews the change, and the
+pipeline reruns the tests with fresh data.
+
+00:01:37.540 --> 00:01:40.400
+The expected payment behavior stays fixed.
+
+00:01:41.107 --> 00:01:45.520
+Ninth, AI assembles a linked release
+summary and suggests reviewed
+
+00:01:45.582 --> 00:01:50.000
+failures for the regression suite. People
+decide whether the evidence is sufficient.
+
+00:01:50.144 --> 00:01:55.120
+That is the end-to-end opportunity: less
+repetitive preparation and investigation,
+
+00:01:55.160 --> 00:01:58.960
+supported by dependable
+execution and accountable review.
+
+00:01:59.056 --> 00:02:02.240
+This is a proposed workflow
+to validate in a pilot.

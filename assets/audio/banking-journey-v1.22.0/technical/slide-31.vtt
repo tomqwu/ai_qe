@@ -1,0 +1,194 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.360
+Trace one release through nine handoffs.
+
+00:00:02.448 --> 00:00:05.920
+This is AI assistance to an existing
+payments testing team,
+
+00:00:05.973 --> 00:00:08.480
+distinct from evaluating
+an AI application.
+
+00:00:08.667 --> 00:00:13.280
+Start with approved context:
+the payment story, API contract
+
+00:00:13.360 --> 00:00:17.440
+and relevant defects.
+AI drafts clarification questions.
+
+00:00:17.580 --> 00:00:21.760
+Product and domain QA approve
+the rule that a same-key,
+
+00:00:21.824 --> 00:00:26.853
+same-payload retry returns the original
+transfer without a second posting.
+
+00:00:27.301 --> 00:00:30.240
+Next, test design produces
+a reviewed matrix.
+
+00:00:30.560 --> 00:00:33.920
+AI proposes timeout, duplicate callback,
+
+00:00:33.987 --> 00:00:37.080
+concurrency and conflicting-payload cases.
+
+00:00:37.154 --> 00:00:42.200
+Domain QA supplies the expected behavior
+independently of the implementation.
+
+00:00:42.420 --> 00:00:46.480
+A written case is an input to executable
+test code, not the code itself.
+
+00:00:46.880 --> 00:00:51.280
+The developer unit-test step uses
+the handler source and accepted behavior.
+
+00:00:51.520 --> 00:00:56.720
+Copilot can draft JUnit candidates for key
+validation and duplicate-request logic.
+
+00:00:56.900 --> 00:01:00.400
+The developer checks the fake
+repository and verifies
+
+00:01:00.460 --> 00:01:04.080
+one insertion for repeated
+calls. A passing unit test
+
+00:01:04.176 --> 00:01:07.733
+does not establish correctness across
+the real database and provider.
+
+00:01:08.100 --> 00:01:12.720
+The API and user-interface step turns
+the reviewed matrix into a pull request.
+
+00:01:12.880 --> 00:01:16.480
+REST Assured tests exercise
+the payment service;
+
+00:01:16.533 --> 00:01:21.000
+selected Playwright checks cover the
+customer's pending state and retry action.
+
+00:01:21.074 --> 00:01:24.960
+Reviewers require the original
+transfer identifier, one journal,
+
+00:01:24.980 --> 00:01:28.560
+and balances of ninety thousand
+and ten thousand minor units.
+
+00:01:28.760 --> 00:01:30.880
+A status-only assertion is rejected.
+
+00:01:31.552 --> 00:01:34.560
+Data and provider behavior
+are versioned inputs.
+
+00:01:34.880 --> 00:01:40.160
+AI can draft synthetic seed scripts and
+WireMock mappings for acceptance followed
+
+00:01:40.187 --> 00:01:44.640
+by a timeout. Engineers validate those
+mappings against the provider contract.
+
+00:01:44.768 --> 00:01:48.880
+Testcontainers and the delivery
+pipeline supply repeatable resources.
+
+00:01:49.072 --> 00:01:52.680
+Real-provider and settlement checks
+remain separate requirements.
+
+00:01:52.900 --> 00:01:57.840
+For execution, AI may recommend
+affected tests or request an authorized
+
+00:01:57.893 --> 00:02:02.560
+pipeline job. Azure Pipelines runs
+the approved suite and publishes raw
+
+00:02:02.760 --> 00:02:08.160
+JUnit results and traces. The mandatory
+payment suite cannot be silently omitted.
+
+00:02:08.286 --> 00:02:10.880
+Record the build, test commit,
+
+00:02:10.960 --> 00:02:14.480
+fixture and stub versions
+under the run identifier.
+
+00:02:14.846 --> 00:02:19.800
+During investigation, AI reads
+retained evidence and proposes a cause.
+
+00:02:19.947 --> 00:02:24.400
+In our injected-defect example, the
+assertion expects one journal but observes
+
+00:02:24.480 --> 00:02:28.280
+two. The defect draft
+must link that evidence.
+
+00:02:28.460 --> 00:02:30.480
+A reviewer confirms the diagnosis,
+
+00:02:30.500 --> 00:02:33.280
+and the original failing
+verdict remains unchanged.
+
+00:02:33.481 --> 00:02:37.961
+For repair, AI may propose a source
+change for developer review.
+
+00:02:38.049 --> 00:02:40.321
+Keep the accepted
+payment assertions fixed.
+
+00:02:40.481 --> 00:02:45.601
+The pipeline uses a fresh run identifier
+and isolated data for the retest.
+
+00:02:45.821 --> 00:02:48.481
+The corrected build must pass,
+
+00:02:48.521 --> 00:02:51.801
+and the deliberate duplicate-posting
+variant must still fail.
+
+00:02:52.041 --> 00:02:55.601
+For release evidence,
+AI drafts a summary of coverage,
+
+00:02:55.641 --> 00:02:59.481
+run results, reviewed
+dispositions and missing checks.
+
+00:02:59.591 --> 00:03:04.081
+The release owner reviews the linked pack,
+including required real-provider evidence.
+
+00:03:04.205 --> 00:03:08.441
+Accepted defects can become
+reviewed regression cases.
+
+00:03:08.531 --> 00:03:11.361
+The shared platform
+provides context access,
+
+00:03:11.405 --> 00:03:15.041
+artifact versions, scoped
+pipeline access and evidence
+
+00:03:15.097 --> 00:03:18.961
+retention across these steps;
+it does not replace the named owners.

@@ -89,13 +89,13 @@ async function advanced(page, id) {
       }
       await page.goto(base+'/briefings/fintech-technical/?route=client#slide-26');
       await page.locator('[data-narration-start]').click(); await playing(page);
-      await nearEnd(page); await advanced(page, 'slide-28'); await playing(page);
-      await page.goto(base+'/briefings/fintech-evp/#slide-19');
+      await nearEnd(page); await advanced(page, 'slide-19'); await playing(page);
+      await page.goto(base+'/briefings/fintech-evp/#slide-21');
       await page.locator('[data-narration-start]').click(); await playing(page);
       await nearEnd(page);
       await page.waitForFunction(()=>document.querySelector('[data-narration-audio]').ended &&
         document.querySelector('[data-narration-start]').getAttribute('aria-pressed') === 'false');
-      assert.match(page.url(), /#slide-19$/);
+      assert.match(page.url(), /#slide-21$/);
       assert.equal(await page.locator('[data-narration-start]').getAttribute('aria-pressed'),'false');
       assert.deepEqual(errors,[]);
       console.log(`${engine.name()}: guided-route order and final-slide stop passed`);

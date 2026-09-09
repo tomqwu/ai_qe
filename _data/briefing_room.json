@@ -9,7 +9,7 @@
     "url": "/briefings/fintech-evp/",
     "pdf_prefix": "ai-qe-fintech-evp",
     "edition": "fintech_edition",
-    "slides": 19,
+    "slides": 21,
     "time": "25–30 min",
     "outline": [
       "The payment story and manual-work baseline",
@@ -22,7 +22,8 @@
       "Before / after: manual API work and the target pilot workflow",
       "Observed time framework for the API pilot and brainstorm questions",
       "Four AI adoption layers: individual copilots, connected workflows, bounded agents and shared platform services",
-      "Before/after architecture and outcomes beyond hours · slides 18–19"
+      "Before/after architecture and outcomes beyond hours · slides 18–19",
+      "AI contribution and artifact handoffs · slides 20–21"
     ]
   },
   {
@@ -35,7 +36,7 @@
     "url": "/briefings/fintech-technical/",
     "pdf_prefix": "ai-qe-fintech-technical",
     "edition": "fintech_edition",
-    "slides": 30,
+    "slides": 33,
     "time": "35–45 min",
     "outline": [
       "System boundaries and payment API contract · slides 1–5",
@@ -43,7 +44,8 @@
       "Failure injection, readiness proof and promotion rules · slides 13–19",
       "Virtualization, deployment and candidate validation · slides 20–25",
       "Adapter contracts, before/after and AI integration layers · slides 26–28",
-      "Before/after architecture and outcomes beyond hours · slides 27, 29–30"
+      "Before/after architecture and outcomes beyond hours · slides 27, 29–30",
+      "Nine-step workflow, artifact trace and three-state comparison · slides 31–33"
     ]
   },
   {
@@ -56,7 +58,7 @@
     "url": "/briefings/evp/",
     "pdf_prefix": "ai-qe-evp",
     "edition": "slide_edition",
-    "slides": 25,
+    "slides": 26,
     "time": "30–40 min",
     "outline": [
       "Vision and value · slides 1–5",
@@ -64,7 +66,8 @@
       "Roadmap, leadership and proof · slides 15–21",
       "Client adoption assumptions and foundation ownership",
       "QE modernization, repeatable environments and virtual services",
-      "Financial-services evidence and a focused client trial"
+      "Financial-services evidence and a focused client trial",
+      "AI-assisted banking QE: end-to-end workflow · final slide"
     ]
   },
   {
@@ -77,7 +80,7 @@
     "url": "/briefings/technical/",
     "pdf_prefix": "ai-qe-technical",
     "edition": "slide_edition",
-    "slides": 35,
+    "slides": 36,
     "time": "45–60 min",
     "outline": [
       "Architecture, context and test validity · slides 1–12",
@@ -85,7 +88,8 @@
       "Integration, delivery and failure resolution · slides 22–29",
       "Client adoption assumptions and foundation ownership",
       "QE modernization, repeatable environments and virtual services",
-      "Financial-services evidence and a focused client trial"
+      "Financial-services evidence and a focused client trial",
+      "AI-assisted banking QE: end-to-end workflow · final slide"
     ]
   }
 ]

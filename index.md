@@ -25,14 +25,14 @@ has_toc: false
   <div class="section-heading"><div><p class="eyebrow">A path through the conversation</p><h2 id="conversation-title">Start with the audience. Go deeper together.</h2></div></div>
   <div class="path-grid">
     <a class="path-card" href="{{ '/briefings/' | relative_url }}?for=evp"><span class="path-number">01 / VISION</span><strong>Set the direction</strong><p>For executives and sponsors: the opportunity, target state and leadership choices.</p><span class="path-action">Open executive briefings →</span></a>
-    <a class="path-card" href="{{ '/case-studies/fintech/' | relative_url }}"><span class="path-number">02 / THE STORY</span><strong>Make it concrete</strong><p>75 offshore QA staff. A payment retry. Eight workflows to improve.</p><span class="path-action">Explore the client scenario →</span></a>
+    <a class="path-card" href="{{ '/case-studies/fintech/' | relative_url }}"><span class="path-number">02 / THE STORY</span><strong>Make it concrete</strong><p>75 offshore QA staff. A payment retry. Nine AI-assisted handoffs to inspect.</p><span class="path-action">Explore the client scenario →</span></a>
     <a class="path-card" href="{{ '/briefings/' | relative_url }}?for=technical"><span class="path-number">03 / ARCHITECTURE</span><strong>Show how it works</strong><p>For technical SDs and leads: shared services, toolchains and delivery maturity.</p><span class="path-action">Open architecture briefings →</span></a>
     <a class="path-card" href="{{ '/discovery/' | relative_url }}"><span class="path-number">04 / NEXT STEP</span><strong>Scope the opportunity</strong><p>Pick a workflow, understand the baseline and agree what a pilot must prove.</p><span class="path-action">Plan the discovery →</span></a>
   </div>
 </section>
 
 <section class="sales-case-feature" aria-labelledby="fintech-case-title">
-  <div><p class="eyebrow">The fintech story / Illustrative case</p><h2 id="fintech-case-title">75 QA staff.<br>One payment release.</h2><p>What happens when the payment provider accepts a transfer, but the customer sees a timeout? Use this familiar problem to explain the platform, the workflows and the human decisions.</p><a class="text-link" href="{{ '/case-studies/fintech/' | relative_url }}">Walk through the case →</a></div>
+  <div><p class="eyebrow">The fintech story / Illustrative case</p><h2 id="fintech-case-title">75 QA staff.<br>One payment release.</h2><p>What happens when the payment provider accepts a transfer, but the customer sees a timeout? Use this familiar problem to explain the platform, the workflows and the human decisions.</p><a class="text-link" href="{{ '/case-studies/fintech/#ai-journey' | relative_url }}">Follow AI from requirement to release →</a></div>
   <ol class="case-steps"><li><b>1</b><span>See the payment failure<small>Retry, duplicate prevention and reconciliation</small></span></li><li><b>2</b><span>Break down the QA work<small>Manual work → AI assistance → human check</small></span></li><li><b>3</b><span>Change the delivery assumptions<small>DevOps, cloud and testing maturity affect the opportunity</small></span></li></ol>
 </section>
 

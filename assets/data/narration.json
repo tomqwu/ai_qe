@@ -1,5 +1,5 @@
 {
-  "edition": "architecture-v1.21.0",
+  "edition": "banking-journey-v1.22.0",
   "decks": {
     "evp": {
       "label": "Banking executive narration",
@@ -50,13 +50,13 @@
           "sha256": "9e54de8c1559e4fe9e51b79d594bb443d12fdd537f6fcf98e630461a4c6419ae"
         },
         "slide-6": {
-          "audio": "/assets/audio/chris-v1.17.0/evp/slide-6.mp3",
-          "captions": "/assets/audio/chris-v1.17.0/evp/slide-6.vtt",
-          "transcript": "Compare the two workflows. Today, engineers interpret requirements, prepare cases and data, wait for a shared environment, then collect evidence manually. The target adds approved context, repeatable execution and retained results. AI can propose a test or draft a diagnostic explanation at the appropriate stage. A human reviews the result before it progresses. This is a pilot target: foundation work, review effort and rework must be measured alongside any faster drafting.",
+          "audio": "/assets/audio/banking-journey-v1.22.0/evp/slide-6.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/evp/slide-6.vtt",
+          "transcript": "Start with today's manual workflow. People copy cases, prepare shared accounts, wait for a vendor test slot, and reconcile screenshots and logs. Seventy-five testers still face the same environment bottleneck. Now separate the modernization step. Engineers create reviewed automated tests, isolated data, and validated simulations of the payment provider. The delivery pipeline runs those tests and retains the evidence. That repeatability is valuable even without AI. Real-provider checks still need vendor capacity. Then add AI assistance. It helps draft cases, test code and fixtures, recommends relevant coverage, and helps explain failures and summarize proof. Engineers review the outputs, existing runners execute, and people make release decisions. Compare equivalent payment packs at all three stages. Measure waiting and reliability separately from AI drafting, review and rework. These are proposed states, not measured client improvements.",
           "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
-          "caption_method": "ElevenLabs character alignment, restored display terminology",
-          "duration": 30.32,
-          "sha256": "fd637dc8c0b9c6ebaef59881ed029c25c8143c569e500a72400a9de4a011ba15"
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 63.44,
+          "sha256": "c2fdf6329c6d32a30f1fe94f872a3c874b3107cc8975cfe861c7ae2d8f446340"
         },
         "slide-7": {
           "audio": "/assets/audio/chris-v1.17.0/evp/slide-7.mp3",
@@ -174,6 +174,24 @@
           "caption_method": "ElevenLabs character alignment, restored display terminology",
           "duration": 53.36,
           "sha256": "3576429426c5f2d1f6feb7039fd0da48768aefc7dce819ce638fee66c4268af9"
+        },
+        "slide-20": {
+          "audio": "/assets/audio/banking-journey-v1.22.0/evp/slide-20.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/evp/slide-20.vtt",
+          "transcript": "Let's follow what AI contributes to one banking release. Our example is a payment that times out after acceptance. The customer retries, and the team must prove that the money moves once. First, AI helps clarify the requirement. The product owner confirms the expected behavior. Second, AI drafts the test scenarios: normal payment, timeout, repeated callback, concurrent retry, and a conflicting request. Domain testers review the coverage and expected outcomes. Third, AI helps developers write unit tests for retry and duplicate-request logic. These are fast checks of code behavior; they do not replace payment integration tests. Fourth, AI turns accepted cases into candidate API and user-interface tests. Reviewers require money-movement assertions, not just a successful response. Fifth, AI helps draft synthetic data and provider simulations. Engineers validate them. Isolated environments and service virtualization make the work repeatable. Sixth, AI recommends relevant tests or requests an authorized pipeline run. The delivery pipeline executes the tests. Mandatory payment coverage stays in place. Seventh, AI connects failed assertions with logs and traces, and drafts a diagnosis. The team checks the evidence before accepting the explanation. Eighth, AI can propose a repair. A developer reviews the change, and the pipeline reruns the tests with fresh data. The expected payment behavior stays fixed. Ninth, AI assembles a linked release summary and suggests reviewed failures for the regression suite. People decide whether the evidence is sufficient. That is the end-to-end opportunity: less repetitive preparation and investigation, supported by dependable execution and accountable review. This is a proposed workflow to validate in a pilot.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 122.24,
+          "sha256": "51bff8a242e0c0f414284bfffc7a6c2d1e38d21a8f2955a1a786f99486bc15eb"
+        },
+        "slide-21": {
+          "audio": "/assets/audio/banking-journey-v1.22.0/evp/slide-21.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/evp/slide-21.vtt",
+          "transcript": "Follow the same payment test through six handoffs. The approved requirement says a retry with the same key returns the original transfer and creates no second posting. The reviewed test matrix carries that intent forward. AI drafts a candidate test. A response-status check alone is too weak, so the reviewer requires the original transfer identifier, one journal, and independently agreed balances. That reviewed test becomes the change we can inspect. Now challenge the test with a deliberately faulty build. Our illustrative run finds two journals where one was expected. The test fails, and the original failure evidence is retained. AI links the failed assertion to the journal and trace evidence, and proposes a duplicate-posting diagnosis. An engineer confirms the cause and reviews the proposed fix. The pipeline performs a fresh retest. The corrected build must pass, while the deliberately faulty variant must still fail. Changing the test simply to accept two debits would invalidate the result. Finally, the release pack links the requirement, reviewed test, failed run, fix and retest. The release owner checks remaining coverage and real-provider integration evidence. A passing retest is an input to that decision, not automatic approval. All identifiers and results here are authored examples.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 84.08,
+          "sha256": "14277c21eaeea153f4ae57944c636c48e2cb8df3d77e2ef7cdf4d3ac3c170aa0"
         }
       },
       "duration": 611.2
@@ -254,13 +272,13 @@
           "sha256": "635841d9d05ce4854030647f82afa13b459dda783fb3b5df5faf836234efa37a"
         },
         "slide-9": {
-          "audio": "/assets/audio/chris-v1.17.0/technical/slide-9.mp3",
-          "captions": "/assets/audio/chris-v1.17.0/technical/slide-9.vtt",
-          "transcript": "Choose the test layer that exposes the behavior. Service tests can check idempotency, concurrency and journal outcomes directly. A browser journey checks pending states, the retry action and the final message. Existing Selenium and Appium suites remain where they are owned and useful. Settlement reconciliation and provider checks stay scheduled separately. Replacing the browser framework does not create another settlement environment or remove a vendor access constraint.",
+          "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-9.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/technical/slide-9.vtt",
+          "transcript": "Choose the test layer for the behavior you need to prove. Start with developer unit tests for idempotency-key validation and duplicate-request logic. Copilot can draft JUnit candidates, but developers review the assertions and test doubles. A fake repository cannot establish real payment integration. At the service and API layer, REST Assured and JUnit cover retry, concurrency, conflicts and journal outcomes. At the web layer, Playwright checks the pending state, retry action and final customer message. Keep the owned Selenium and Appium coverage for existing browser and mobile journeys. Batch settlement reconciliation and real-provider sandbox checks remain separate requirements. Generate tests within the appropriate layer; adding a browser framework does not resolve a scarce settlement environment.",
           "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
-          "caption_method": "ElevenLabs character alignment, restored display terminology",
-          "duration": 29.2,
-          "sha256": "24364558187c1e123c954c745ad4da2c1c50b9004553db7da0465d5fca608164"
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 51.92,
+          "sha256": "f2bc620e93e33f193e37f89a6344ac09e9acf2facc196a6b52a0b968e4f9504a"
         },
         "slide-10": {
           "audio": "/assets/audio/chris-v1.17.0/technical/slide-10.mp3",
@@ -450,6 +468,33 @@
           "caption_method": "ElevenLabs character alignment, restored display terminology",
           "duration": 32.08,
           "sha256": "79e3a65a90f2083276c7c22a425af11808d1cacde8712331642f9d468b6c398e"
+        },
+        "slide-31": {
+          "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-31.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/technical/slide-31.vtt",
+          "transcript": "Trace one release through nine handoffs. This is AI assistance to an existing payments testing team, distinct from evaluating an AI application. Start with approved context: the payment story, API contract and relevant defects. AI drafts clarification questions. Product and domain QA approve the rule that a same-key, same-payload retry returns the original transfer without a second posting. Next, test design produces a reviewed matrix. AI proposes timeout, duplicate callback, concurrency and conflicting-payload cases. Domain QA supplies the expected behavior independently of the implementation. A written case is an input to executable test code, not the code itself. The developer unit-test step uses the handler source and accepted behavior. Copilot can draft JUnit candidates for key validation and duplicate-request logic. The developer checks the fake repository and verifies one insertion for repeated calls. A passing unit test does not establish correctness across the real database and provider. The API and user-interface step turns the reviewed matrix into a pull request. REST Assured tests exercise the payment service; selected Playwright checks cover the customer's pending state and retry action. Reviewers require the original transfer identifier, one journal, and balances of ninety thousand and ten thousand minor units. A status-only assertion is rejected. Data and provider behavior are versioned inputs. AI can draft synthetic seed scripts and WireMock mappings for acceptance followed by a timeout. Engineers validate those mappings against the provider contract. Testcontainers and the delivery pipeline supply repeatable resources. Real-provider and settlement checks remain separate requirements. For execution, AI may recommend affected tests or request an authorized pipeline job. Azure Pipelines runs the approved suite and publishes raw JUnit results and traces. The mandatory payment suite cannot be silently omitted. Record the build, test commit, fixture and stub versions under the run identifier. During investigation, AI reads retained evidence and proposes a cause. In our injected-defect example, the assertion expects one journal but observes two. The defect draft must link that evidence. A reviewer confirms the diagnosis, and the original failing verdict remains unchanged. For repair, AI may propose a source change for developer review. Keep the accepted payment assertions fixed. The pipeline uses a fresh run identifier and isolated data for the retest. The corrected build must pass, and the deliberate duplicate-posting variant must still fail. For release evidence, AI drafts a summary of coverage, run results, reviewed dispositions and missing checks. The release owner reviews the linked pack, including required real-provider evidence. Accepted defects can become reviewed regression cases. The shared platform provides context access, artifact versions, scoped pipeline access and evidence retention across these steps; it does not replace the named owners.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 199.04,
+          "sha256": "a3d24c7646517acd5344a359b294ccb308401b793e8b7edd20d3abb158fbe095"
+        },
+        "slide-32": {
+          "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-32.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/technical/slide-32.vtt",
+          "transcript": "Begin with the approved requirement and its test-case reference. The same idempotency key and payload must return the original transfer. The test matrix carries that criterion into the unit and API layers. The identifiers in this diagram are authored trace examples. The AI candidate becomes a reviewed pull request. The unit test checks one insertion through a fake repository. The API test independently checks the original transfer ID, one balanced journal, payer balance ninety thousand, and recipient balance ten thousand minor units. A response-status check alone is rejected. The first run pins the fixture and provider-model revisions. Execute the deliberate duplicate-posting variant: one journal is expected, but two are observed. JUnit reports a failure. Retain the assertion, trace and journal identifiers before cleanup. This is a designed challenge, not a reported banking incident. The defect record links that failed run. AI proposes duplicate posting as a hypothesis, with evidence references. An engineer confirms the cause and reviews a production-code repair. Neither the AI summary nor the repair process may turn the original failed run into a pass. A fresh retest uses a new run identifier and unchanged payment expectations. The corrected build should pass, while the deliberately faulty variant must still fail. Link the source change and both results so the reviewer can inspect the difference. The release pack includes the approved requirement, test commit, fixture and stub revisions, failed run, reviewed defect, repair and retest. Check required coverage and real-provider evidence before deciding. If integration proof is absent, the pack records that gap; the diagram does not grant release approval.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 110.88,
+          "sha256": "c692bde7540abeb4bc3f939a1057cf5c7a714f4613bda6ef32183df2f205bdc5"
+        },
+        "slide-33": {
+          "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-33.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/technical/slide-33.vtt",
+          "transcript": "The starting state has manual API requests and spreadsheets, shared environments, and no virtualized provider backend. QA engineers collect and reconcile evidence. Vendor test-slot availability constrains parallel execution. The modernized state introduces reviewed REST Assured and JUnit tests, delivery-pipeline execution, isolated fixtures and a validated WireMock provider model. Testcontainers supports repeatable service-test resources. Raw assertions, traces and run identifiers survive cleanup. This foundation creates repeatability without depending on AI. The AI-assisted state adds approved context, candidate artifacts and evidence-based assistance around that same execution path. AI drafts tests and fixtures, proposes relevant scope and diagnoses failures. Reviewers approve changes before existing runners execute them. Compare equivalent payment packs to distinguish modernization gains from incremental AI benefit. Include review, correction, platform overhead and real-provider checks. No measured improvement is claimed in this scenario.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 68.8,
+          "sha256": "7e3426502372771118d6b85186ea10418d88bb59209bd7ee2b7ca9fd6ecf9622"
         }
       },
       "duration": 960.72
@@ -681,6 +726,15 @@
           "caption_method": "ElevenLabs character alignment, restored display terminology",
           "duration": 31.52,
           "sha256": "18a1cc2acaaad7838d4f7a21145abc3449a2aa26b1edeeac09cf95b0917cd4d2"
+        },
+        "slide-26": {
+          "audio": "/assets/audio/banking-journey-v1.22.0/evp/slide-20.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/evp/slide-20.vtt",
+          "transcript": "Let's follow what AI contributes to one banking release. Our example is a payment that times out after acceptance. The customer retries, and the team must prove that the money moves once. First, AI helps clarify the requirement. The product owner confirms the expected behavior. Second, AI drafts the test scenarios: normal payment, timeout, repeated callback, concurrent retry, and a conflicting request. Domain testers review the coverage and expected outcomes. Third, AI helps developers write unit tests for retry and duplicate-request logic. These are fast checks of code behavior; they do not replace payment integration tests. Fourth, AI turns accepted cases into candidate API and user-interface tests. Reviewers require money-movement assertions, not just a successful response. Fifth, AI helps draft synthetic data and provider simulations. Engineers validate them. Isolated environments and service virtualization make the work repeatable. Sixth, AI recommends relevant tests or requests an authorized pipeline run. The delivery pipeline executes the tests. Mandatory payment coverage stays in place. Seventh, AI connects failed assertions with logs and traces, and drafts a diagnosis. The team checks the evidence before accepting the explanation. Eighth, AI can propose a repair. A developer reviews the change, and the pipeline reruns the tests with fresh data. The expected payment behavior stays fixed. Ninth, AI assembles a linked release summary and suggests reviewed failures for the regression suite. People decide whether the evidence is sufficient. That is the end-to-end opportunity: less repetitive preparation and investigation, supported by dependable execution and accountable review. This is a proposed workflow to validate in a pilot.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 122.24,
+          "sha256": "51bff8a242e0c0f414284bfffc7a6c2d1e38d21a8f2955a1a786f99486bc15eb"
         }
       },
       "duration": 737.68
@@ -689,13 +743,13 @@
       "label": "Industry technical narration",
       "slides": {
         "slide-1": {
-          "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-1.mp3",
-          "captions": "/assets/audio/chris-v1.17.0/industry-technical/slide-1.vtt",
-          "transcript": "This presentation examines the system behind AI-enabled quality work. We will connect context, independent evaluation, action boundaries, release decisions and operational feedback. The architecture covers both AI-assisted engineering and assurance of AI applications. Every important boundary needs an owner, a versioned contract and a failure behavior. The banking engineering blueprint provides the more detailed payment implementation example; this deck develops the reusable assurance architecture.",
+          "audio": "/assets/audio/banking-journey-v1.22.0/industry-technical/slide-1.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/industry-technical/slide-1.vtt",
+          "transcript": "This industry briefing explains assurance across the AI lifecycle: context, generated tests, independent evaluation, action controls and release evidence. It includes testing AI applications as well as using AI in quality engineering. If your immediate question is how AI helps an existing banking QA team, follow the banking workflow link on this slide. That engineering walkthrough traces one payment requirement through unit tests, API tests, fixtures, execution, diagnosis, repair and release evidence. The final slide here also provides that nine-step overview. Choose the banking route for concrete delivery handoffs, and this industry route for the wider assurance architecture.",
           "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
-          "caption_method": "ElevenLabs character alignment, restored display terminology",
-          "duration": 31.12,
-          "sha256": "56d97bcdecb12bb1d7947ce5fc3403358140c526d8fae8c927315e7e52ababf7"
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 44.64,
+          "sha256": "97ca4704cdc2205397cc1001b3fa64d67e4089376e2df0bad9620ec57b27d9fe"
         },
         "slide-2": {
           "audio": "/assets/audio/architecture-v1.21.0/industry-technical/slide-2.mp3",
@@ -1002,6 +1056,15 @@
           "caption_method": "ElevenLabs character alignment, restored display terminology",
           "duration": 33.44,
           "sha256": "ebf1588c359257ebba0ba55677f36dfdcbe18f80e11a66f85b11ed32b6530a6c"
+        },
+        "slide-36": {
+          "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-31.mp3",
+          "captions": "/assets/audio/banking-journey-v1.22.0/technical/slide-31.vtt",
+          "transcript": "Trace one release through nine handoffs. This is AI assistance to an existing payments testing team, distinct from evaluating an AI application. Start with approved context: the payment story, API contract and relevant defects. AI drafts clarification questions. Product and domain QA approve the rule that a same-key, same-payload retry returns the original transfer without a second posting. Next, test design produces a reviewed matrix. AI proposes timeout, duplicate callback, concurrency and conflicting-payload cases. Domain QA supplies the expected behavior independently of the implementation. A written case is an input to executable test code, not the code itself. The developer unit-test step uses the handler source and accepted behavior. Copilot can draft JUnit candidates for key validation and duplicate-request logic. The developer checks the fake repository and verifies one insertion for repeated calls. A passing unit test does not establish correctness across the real database and provider. The API and user-interface step turns the reviewed matrix into a pull request. REST Assured tests exercise the payment service; selected Playwright checks cover the customer's pending state and retry action. Reviewers require the original transfer identifier, one journal, and balances of ninety thousand and ten thousand minor units. A status-only assertion is rejected. Data and provider behavior are versioned inputs. AI can draft synthetic seed scripts and WireMock mappings for acceptance followed by a timeout. Engineers validate those mappings against the provider contract. Testcontainers and the delivery pipeline supply repeatable resources. Real-provider and settlement checks remain separate requirements. For execution, AI may recommend affected tests or request an authorized pipeline job. Azure Pipelines runs the approved suite and publishes raw JUnit results and traces. The mandatory payment suite cannot be silently omitted. Record the build, test commit, fixture and stub versions under the run identifier. During investigation, AI reads retained evidence and proposes a cause. In our injected-defect example, the assertion expects one journal but observes two. The defect draft must link that evidence. A reviewer confirms the diagnosis, and the original failing verdict remains unchanged. For repair, AI may propose a source change for developer review. Keep the accepted payment assertions fixed. The pipeline uses a fresh run identifier and isolated data for the retest. The corrected build must pass, and the deliberate duplicate-posting variant must still fail. For release evidence, AI drafts a summary of coverage, run results, reviewed dispositions and missing checks. The release owner reviews the linked pack, including required real-provider evidence. Accepted defects can become reviewed regression cases. The shared platform provides context access, artifact versions, scoped pipeline access and evidence retention across these steps; it does not replace the named owners.",
+          "voice": "ElevenLabs / Chris — Charming, Down-to-Earth",
+          "caption_method": "ElevenLabs character alignment; authored section boundaries",
+          "duration": 199.04,
+          "sha256": "a3d24c7646517acd5344a359b294ccb308401b793e8b7edd20d3abb158fbe095"
         }
       },
       "duration": 1025.2

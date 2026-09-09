@@ -1,11 +1,1 @@
-{% assign comparison = site.data.visual_story.api_comparison %}
-<figure class="vs-operating-model ft-before-after" aria-label="Before and after the API testing workflow">
-  <div class="vs-operating-head"><strong>{{ comparison.intent }}</strong></div>
-  <div class="vs-operating-lanes">
-    {% assign sides = 'before,after' | split: ',' %}{% for side in sides %}{% assign lane = comparison[side] %}
-    <div class="{% if side == 'before' %}vs-manual{% else %}vs-assisted{% endif %}"><h3>{{ lane.title }}</h3><ol>{% for step in lane.steps %}<li><strong>{{ step.title }}</strong>{% if page.case_audience == 'technical' %}<span>{{ step.stack }}</span>{% else %}<span>{{ step.description }}</span>{% if page.layout != 'deck' %}<small class="ft-comparison-stack">{{ step.stack }}</small>{% endif %}{% endif %}</li>{% endfor %}</ol></div>
-    {% endfor %}
-  </div>
-  <p class="vs-boundary">{% if page.layout == 'deck' %}{{ comparison.slide_dependency }}{% else %}{{ comparison.dependency }}{% endif %}</p>
-  <figcaption>{{ comparison.disclosure }}</figcaption>
-</figure>
+{% include fintech/journey-figure.html name="qe-three-states" %}

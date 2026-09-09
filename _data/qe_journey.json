@@ -1,0 +1,560 @@
+{
+  "disclosure": "Authored PAY-142 walkthrough for Our Banking Client. Proposed capabilities and sample artifacts; no live bank integration or measured result.",
+  "figures": {
+    "qe-journey": {
+      "nodes": [
+        {
+          "id": "intent",
+          "title": "01 / Understand the change",
+          "lines": [
+            "Clarify retry behavior",
+            "PAY-142 · accepted criteria"
+          ],
+          "technical": [
+            "Story + contract + prior defects",
+            "Clarification questions → AC-142"
+          ],
+          "owner": "Product owner + domain QA",
+          "before": "Copy the story; chase ambiguous retry rules.",
+          "detail": "AI drafts questions about a timeout after acceptance. The product owner confirms that the same key and payload return the original transfer.",
+          "input": "Approved PAY-142 revision + payment contract",
+          "artifact": "AC-142: retry must preserve the transfer ID and create no second posting.",
+          "x": 12,
+          "y": 12
+        },
+        {
+          "id": "design",
+          "title": "02 / Design test cases",
+          "lines": [
+            "Draft scenarios and boundaries",
+            "MATRIX-142 · reviewed cases"
+          ],
+          "technical": [
+            "Accepted criteria + risk history",
+            "Scenario matrix → CASE-142-R"
+          ],
+          "owner": "Domain QA",
+          "before": "Assemble spreadsheet cases and check gaps by hand.",
+          "detail": "AI proposes normal, timeout, duplicate callback, concurrent retry and conflicting-payload cases. Domain QA defines expected results independently.",
+          "input": "AC-142",
+          "artifact": "CASE-142-R: timeout after acceptance; retry same key; expect one transfer.",
+          "x": 402,
+          "y": 12
+        },
+        {
+          "id": "unit",
+          "title": "03 / Draft unit tests",
+          "lines": [
+            "Test retry and dedupe logic",
+            "UNIT-142 · developer review"
+          ],
+          "technical": [
+            "Service source + approved behavior",
+            "JUnit candidate → reviewed unit test"
+          ],
+          "owner": "Application developer",
+          "before": "Developers handwrite unit tests; QA finds missing behavior later.",
+          "detail": "AI drafts a unit test for the idempotency handler. The developer reviews the fake repository and verifies repeated calls do not create a second transfer. This does not prove integration.",
+          "input": "AC-142 + handler source",
+          "artifact": "JUnit: create twice with the same key; verify one repository insertion.",
+          "x": 792,
+          "y": 12
+        },
+        {
+          "id": "code",
+          "title": "04 / Build API / UI tests",
+          "lines": [
+            "Turn cases into test code",
+            "PR-142 · reviewed test commit"
+          ],
+          "technical": [
+            "Matrix + helpers + API contract",
+            "REST Assured / Playwright → PR-142"
+          ],
+          "owner": "Automation engineer + domain QA",
+          "before": "Handwrite requests, selectors, assertions and helpers.",
+          "detail": "AI drafts API tests and selected UI checks. Reviewers reject a status-only assertion and require the original transfer ID, one journal and agreed balances.",
+          "input": "CASE-142-R + reviewed test patterns",
+          "artifact": "PR-142: API assertions for transfer ID, journal count and balances; UI pending/retry state.",
+          "x": 792,
+          "y": 160
+        },
+        {
+          "id": "fixtures",
+          "title": "05 / Prepare data and stubs",
+          "lines": [
+            "Draft isolated test inputs",
+            "FIX-142 + STUB-142 · validated"
+          ],
+          "technical": [
+            "Synthetic accounts + provider contract",
+            "Seed scripts + WireMock mappings"
+          ],
+          "owner": "Data / platform engineer",
+          "before": "Find usable accounts; book vendor slots; wait for shared resets.",
+          "detail": "AI drafts seed scripts and timeout mappings. Engineers validate fixtures and the provider model; containers and CI create repeatable runs. Real-provider checks still need vendor slots.",
+          "input": "Known balances + provider behavior",
+          "artifact": "FIX-142: payer 100000, recipient 0 minor units; STUB-142: accept then timeout.",
+          "x": 402,
+          "y": 160
+        },
+        {
+          "id": "run",
+          "title": "06 / Select and run tests",
+          "lines": [
+            "Recommend affected coverage",
+            "RUN-142 · runner verdict"
+          ],
+          "technical": [
+            "Approved commit + mandatory suite",
+            "Azure Pipelines → JUnit XML + traces"
+          ],
+          "owner": "DevOps + application QA",
+          "before": "Run manual regression packs, collect screenshots and queue reruns.",
+          "detail": "AI recommends affected tests or requests an authorized pipeline. Azure Pipelines and test runners execute approved tests. Required payment coverage cannot be silently omitted.",
+          "input": "PR-142 + FIX-142 + STUB-142",
+          "artifact": "RUN-142: immutable build, test, fixture and stub versions; raw assertion results.",
+          "x": 12,
+          "y": 160
+        },
+        {
+          "id": "triage",
+          "title": "07 / Investigate failures",
+          "lines": [
+            "Link evidence to a hypothesis",
+            "DEF-142 · reviewed diagnosis"
+          ],
+          "technical": [
+            "Assertion + trace + journal evidence",
+            "Evidence-linked defect draft"
+          ],
+          "owner": "QA lead + application developer",
+          "before": "Compare logs across systems and reconstruct the failure.",
+          "detail": "AI groups related failures and proposes duplicate posting as a cause, linking the assertion and journal evidence. A person confirms the diagnosis; AI cannot rewrite the failing verdict.",
+          "input": "RUN-142 failing assertion + trace",
+          "artifact": "DEF-142: expected 1 journal; observed 2 in the injected-defect example.",
+          "x": 12,
+          "y": 308
+        },
+        {
+          "id": "repair",
+          "title": "08 / Repair and retest",
+          "lines": [
+            "Propose reviewed changes",
+            "RERUN-143 · fresh proof"
+          ],
+          "technical": [
+            "Reviewed defect + source + tests",
+            "Approved fix → fresh required suite"
+          ],
+          "owner": "Developer + QA reviewer",
+          "before": "Coordinate fixes, reset shared data and wait for another test slot.",
+          "detail": "AI can propose a repair. The developer reviews the production change; test expectations stay fixed. CI performs a fresh run and challenges the tests with the duplicate-posting variant.",
+          "input": "Confirmed DEF-142 + reviewed fix",
+          "artifact": "RERUN-143: corrected build passes; deliberately faulty variant must still fail.",
+          "x": 402,
+          "y": 308
+        },
+        {
+          "id": "evidence",
+          "title": "09 / Review release evidence",
+          "lines": [
+            "Summarize gaps and retain cases",
+            "PACK-142 · human decision"
+          ],
+          "technical": [
+            "Raw runs + coverage + dispositions",
+            "Evidence pack + regression case"
+          ],
+          "owner": "Release owner + QA lead",
+          "before": "Reconcile screenshots and spreadsheets; chase approvals.",
+          "detail": "AI drafts a release summary and suggests reviewed defects for regression. Owners inspect required coverage, real-provider checks and unresolved gaps before deciding.",
+          "input": "RUN-142 + RERUN-143 + integration evidence",
+          "artifact": "PACK-142: retain the failed run, repaired run, review and remaining release gates.",
+          "x": 792,
+          "y": 308
+        }
+      ],
+      "flows": [
+        {
+          "node": "intent",
+          "title": "01 / Understand the change",
+          "detail": "AI drafts questions about a timeout after acceptance. The product owner confirms that the same key and payload return the original transfer.",
+          "routes": []
+        },
+        {
+          "node": "design",
+          "title": "02 / Design test cases",
+          "detail": "AI proposes normal, timeout, duplicate callback, concurrent retry and conflicting-payload cases. Domain QA defines expected results independently.",
+          "routes": [
+            "intent:design"
+          ]
+        },
+        {
+          "node": "unit",
+          "title": "03 / Draft unit tests",
+          "detail": "AI drafts a unit test for the idempotency handler. The developer reviews the fake repository and verifies repeated calls do not create a second transfer. This does not prove integration.",
+          "routes": [
+            "design:unit"
+          ]
+        },
+        {
+          "node": "code",
+          "title": "04 / Build API / UI tests",
+          "detail": "AI drafts API tests and selected UI checks. Reviewers reject a status-only assertion and require the original transfer ID, one journal and agreed balances.",
+          "routes": [
+            "unit:code"
+          ]
+        },
+        {
+          "node": "fixtures",
+          "title": "05 / Prepare data and stubs",
+          "detail": "AI drafts seed scripts and timeout mappings. Engineers validate fixtures and the provider model; containers and CI create repeatable runs. Real-provider checks still need vendor slots.",
+          "routes": [
+            "code:fixtures"
+          ]
+        },
+        {
+          "node": "run",
+          "title": "06 / Select and run tests",
+          "detail": "AI recommends affected tests or requests an authorized pipeline. Azure Pipelines and test runners execute approved tests. Required payment coverage cannot be silently omitted.",
+          "routes": [
+            "fixtures:run"
+          ]
+        },
+        {
+          "node": "triage",
+          "title": "07 / Investigate failures",
+          "detail": "AI groups related failures and proposes duplicate posting as a cause, linking the assertion and journal evidence. A person confirms the diagnosis; AI cannot rewrite the failing verdict.",
+          "routes": [
+            "run:triage"
+          ]
+        },
+        {
+          "node": "repair",
+          "title": "08 / Repair and retest",
+          "detail": "AI can propose a repair. The developer reviews the production change; test expectations stay fixed. CI performs a fresh run and challenges the tests with the duplicate-posting variant.",
+          "routes": [
+            "triage:repair"
+          ]
+        },
+        {
+          "node": "evidence",
+          "title": "09 / Review release evidence",
+          "detail": "AI drafts a release summary and suggests reviewed defects for regression. Owners inspect required coverage, real-provider checks and unresolved gaps before deciding.",
+          "routes": [
+            "repair:evidence"
+          ]
+        }
+      ],
+      "height": 454,
+      "caption": "Nine steps, one payment scenario. AI drafts or recommends; engineers review; CI executes; release owners decide.",
+      "node_height": 120,
+      "edges": [
+        {
+          "from": "intent",
+          "to": "design",
+          "d": "M372 72.0H399"
+        },
+        {
+          "from": "design",
+          "to": "unit",
+          "d": "M762 72.0H789"
+        },
+        {
+          "from": "unit",
+          "to": "code",
+          "d": "M972 132V157"
+        },
+        {
+          "from": "code",
+          "to": "fixtures",
+          "d": "M792 220.0H765"
+        },
+        {
+          "from": "fixtures",
+          "to": "run",
+          "d": "M402 220.0H375"
+        },
+        {
+          "from": "run",
+          "to": "triage",
+          "d": "M192 280V305"
+        },
+        {
+          "from": "triage",
+          "to": "repair",
+          "d": "M372 368.0H399"
+        },
+        {
+          "from": "repair",
+          "to": "evidence",
+          "d": "M762 368.0H789"
+        }
+      ]
+    },
+    "qe-artifact-trace": {
+      "nodes": [
+        {
+          "id": "criteria",
+          "title": "01 / Approved intent",
+          "lines": [
+            "PAY-142 → AC-142",
+            "Same-key retry = one transfer"
+          ],
+          "technical": [
+            "Input: accepted contract",
+            "AC-142 → CASE-142-R"
+          ],
+          "x": 12,
+          "y": 12
+        },
+        {
+          "id": "candidate",
+          "title": "02 / AI candidate",
+          "lines": [
+            "Status-only test rejected",
+            "PR-142 adds money assertions"
+          ],
+          "technical": [
+            "UNIT-142 + PR-142",
+            "One insert + one journal + balances"
+          ],
+          "x": 402,
+          "y": 12
+        },
+        {
+          "id": "failed",
+          "title": "03 / Challenge the test",
+          "lines": [
+            "RUN-142 · injected defect",
+            "Expected 1 journal; observed 2"
+          ],
+          "technical": [
+            "FIX-142 + STUB-142",
+            "JUnit FAIL → trace + journal IDs"
+          ],
+          "x": 792,
+          "y": 12
+        },
+        {
+          "id": "diagnosis",
+          "title": "04 / Investigate and repair",
+          "lines": [
+            "DEF-142 links the evidence",
+            "Human approves the proposed fix"
+          ],
+          "technical": [
+            "RUN-142 → DEF-142 → fix commit",
+            "AI hypothesis; reviewer confirms"
+          ],
+          "x": 792,
+          "y": 162
+        },
+        {
+          "id": "retest",
+          "title": "05 / Fresh retest",
+          "lines": [
+            "RERUN-143 · retained evidence",
+            "Correct build passes; mutant fails"
+          ],
+          "technical": [
+            "New run ID; unchanged oracle",
+            "Original failed run remains stored"
+          ],
+          "x": 402,
+          "y": 162
+        },
+        {
+          "id": "decision",
+          "title": "06 / Release review",
+          "lines": [
+            "PACK-142 links both runs",
+            "Owner checks remaining gates"
+          ],
+          "technical": [
+            "Coverage + dispositions + source IDs",
+            "Real-provider evidence still required"
+          ],
+          "x": 12,
+          "y": 162
+        }
+      ],
+      "flows": [
+        {
+          "node": "criteria",
+          "title": "01 / Approved intent",
+          "detail": "PAY-142 → AC-142 · Same-key retry = one transfer",
+          "routes": []
+        },
+        {
+          "node": "candidate",
+          "title": "02 / AI candidate",
+          "detail": "Status-only test rejected · PR-142 adds money assertions",
+          "routes": [
+            "criteria:candidate"
+          ]
+        },
+        {
+          "node": "failed",
+          "title": "03 / Challenge the test",
+          "detail": "RUN-142 · injected defect · Expected 1 journal; observed 2",
+          "routes": [
+            "candidate:failed"
+          ]
+        },
+        {
+          "node": "diagnosis",
+          "title": "04 / Investigate and repair",
+          "detail": "DEF-142 links the evidence · Human approves the proposed fix",
+          "routes": [
+            "failed:diagnosis"
+          ]
+        },
+        {
+          "node": "retest",
+          "title": "05 / Fresh retest",
+          "detail": "RERUN-143 · retained evidence · Correct build passes; mutant fails",
+          "routes": [
+            "diagnosis:retest"
+          ]
+        },
+        {
+          "node": "decision",
+          "title": "06 / Release review",
+          "detail": "PACK-142 links both runs · Owner checks remaining gates",
+          "routes": [
+            "retest:decision"
+          ]
+        }
+      ],
+      "height": 310,
+      "caption": "An illustrative failure-to-fix trace. A deliberately faulty build must fail; a passing retest alone is not release approval.",
+      "node_height": 120,
+      "edges": [
+        {
+          "from": "criteria",
+          "to": "candidate",
+          "d": "M372 72.0H399"
+        },
+        {
+          "from": "candidate",
+          "to": "failed",
+          "d": "M762 72.0H789"
+        },
+        {
+          "from": "failed",
+          "to": "diagnosis",
+          "d": "M972 132V159"
+        },
+        {
+          "from": "diagnosis",
+          "to": "retest",
+          "d": "M792 222.0H765"
+        },
+        {
+          "from": "retest",
+          "to": "decision",
+          "d": "M402 222.0H375"
+        }
+      ]
+    },
+    "qe-three-states": {
+      "nodes": [
+        {
+          "id": "manual",
+          "title": "01 / Manual QE",
+          "lines": [
+            "Copy cases and run by hand",
+            "Shared data + scarce vendor slots",
+            "Reconcile screenshots and logs"
+          ],
+          "technical": [
+            "Manual API requests / spreadsheets",
+            "Shared environments; no provider model",
+            "QA collects and reconciles evidence"
+          ],
+          "x": 12,
+          "y": 15,
+          "measure": "Establish the baseline",
+          "measure_detail": "Active work · vendor waits · coverage gaps"
+        },
+        {
+          "id": "modernized",
+          "title": "02 / Modernized QE",
+          "lines": [
+            "Reviewed automated tests",
+            "Isolated data + virtual services",
+            "CI retains repeatable run evidence"
+          ],
+          "technical": [
+            "REST Assured / JUnit + CI",
+            "Testcontainers + validated WireMock",
+            "Raw assertions, traces and run IDs"
+          ],
+          "x": 402,
+          "y": 15,
+          "measure": "Prove repeatability",
+          "measure_detail": "Environment readiness · reruns · raw evidence"
+        },
+        {
+          "id": "assisted",
+          "title": "03 / AI-assisted QE",
+          "lines": [
+            "Draft cases, code and fixtures",
+            "Suggest scope, diagnosis and repair",
+            "Summarize proof for human review"
+          ],
+          "technical": [
+            "Approved context → AI candidates",
+            "Reviewed PRs → existing CI runners",
+            "Evidence → AI summary → owner"
+          ],
+          "x": 792,
+          "y": 15,
+          "measure": "Isolate added AI value",
+          "measure_detail": "Candidate acceptance · review · rework"
+        }
+      ],
+      "flows": [
+        {
+          "node": "manual",
+          "title": "01 / Manual QE",
+          "detail": "Copy cases and run by hand · Shared data + scarce vendor slots · Reconcile screenshots and logs",
+          "routes": []
+        },
+        {
+          "node": "modernized",
+          "title": "02 / Modernized QE",
+          "detail": "Reviewed automated tests · Isolated data + virtual services · CI retains repeatable run evidence",
+          "routes": [
+            "manual:modernized"
+          ]
+        },
+        {
+          "node": "assisted",
+          "title": "03 / AI-assisted QE",
+          "detail": "Draft cases, code and fixtures · Suggest scope, diagnosis and repair · Summarize proof for human review",
+          "routes": [
+            "modernized:assisted"
+          ]
+        }
+      ],
+      "height": 205,
+      "caption": "Compare the same payment scope. Modernization removes execution bottlenecks; assess incremental AI value against that repeatable baseline.",
+      "node_height": 175,
+      "edges": [
+        {
+          "from": "manual",
+          "to": "modernized",
+          "d": "M372 102.5H399"
+        },
+        {
+          "from": "modernized",
+          "to": "assisted",
+          "d": "M762 102.5H789"
+        }
+      ]
+    }
+  }
+}

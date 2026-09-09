@@ -93,7 +93,7 @@ async function snapshot(figure) {
      cueCount++;
     }
    }
-   assert.equal(toured.size,9);
+   assert.equal(toured.size,new Set(profiles.map(profile=>profile.diagram)).size);
    // Paused frame, playback speed, backwards seek, replay and manual inspection.
    await page.goto(base+'/briefings/technical/#slide-2');
    const figure=page.locator('#slide-2 [data-diagram="platform"]'),audio=page.locator('[data-narration-audio]');
