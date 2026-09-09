@@ -22,6 +22,17 @@ async function playing(page){await page.waitForFunction(()=>{const a=document.qu
     return route.fulfill({status:206,contentType:'audio/mpeg',headers,body:bytes.subarray(start,end+1)});
    });
 
+  // A visitor can start narration while the authored GLB is still loading.
+  let releaseModel;const modelGate=new Promise(resolve=>{releaseModel=resolve});
+  const delayedModel=async route=>{await modelGate;await route.continue()};
+  await page.route('**/assets/models/*.glb*',delayedModel);
+  await page.goto(base+'/demos/architecture/?scenario=deny');
+  await page.locator('[data-guide-play]').click();await playing(page);releaseModel();
+  await page.waitForFunction(()=>['ready','fallback'].includes(document.querySelector('#architecture-demo').dataset.status));
+  assert.equal(await page.locator('[data-scenario][aria-pressed="true"]').getAttribute('data-scenario'),'deny');
+  assert.equal(await page.locator('[data-scenario-label]').innerText(),'DENY UNSAFE ACTION');
+  assert.equal(await page.locator('[data-guide-audio]').evaluate(a=>a.paused),false,'Model readiness does not interrupt narration');
+  await page.unroute('**/assets/models/*.glb*',delayedModel);
   await page.goto(base+'/demos/architecture/?scenario=generate');
   await page.waitForFunction(()=>['ready','fallback'].includes(document.querySelector('#architecture-demo').dataset.status));
   const rendered=await page.evaluate(()=>window.qeArchitecture.ready);
