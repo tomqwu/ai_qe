@@ -49,7 +49,3 @@ body.capture .film-edition{position:absolute;display:flex;justify-content:space-
 
 .component-inspector [data-component-definition]{display:block;margin-top:8px}
 @media(max-width:400px){.demo-header{gap:12px}.demo-brand{font-size:20px}.demo-header nav{gap:8px}}
-
-/* Both transports share the audio clock; retain room for the readable timeline. */
-[data-clock="audio"] .playback{flex-wrap:wrap}
-[data-clock="audio"] .scrubber{min-width:220px}

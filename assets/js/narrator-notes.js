@@ -33,7 +33,7 @@
     const caption = element('p', 'narrator-guide-caption'); caption.dataset.guideCaption = '';
     caption.setAttribute('aria-label', 'English subtitles'); caption.setAttribute('aria-live', 'off');
     const audio = document.createElement('audio'); audio.controls = true; audio.preload = 'none'; audio.src = audioURL;
-    const flow = window.QENarrationFlow?.connect(audio, target, `${definition.deck}/${definition.slide}`);
+    let flow = demo ? null : window.QENarrationFlow?.connect(audio, target, `${definition.deck}/${definition.slide}`);
     audio.setAttribute('aria-label', 'Audio explanation playback'); audio.dataset.guideAudio = '';
     const status = element('p', 'narrator-guide-status'); status.setAttribute('role', 'status');
     const cc = element('button', 'narrator-guide-cc', 'CC'); cc.type = 'button'; cc.setAttribute('aria-label', 'English subtitles'); cc.setAttribute('aria-pressed', 'true');
@@ -70,7 +70,7 @@
         const response = await fetch(captionURL, {signal:request.signal});
         if (!response.ok) throw new Error('Caption request failed');
         cues = parseCaptions(await response.text()); flow?.setCaptions(cues); renderCaption();
-        status.textContent = definition.baseline ? 'Published baseline explanation · English captions' : demo ? 'Scenario overview · English captions · Use the stage controls to inspect the flow.' : flow ? 'English captions and highlighted components follow the audio.' : 'English captions synchronized to the explanation.';
+        status.textContent = definition.baseline ? 'Published baseline explanation · English captions' : demo ? (flow?.valid ? 'Audio, captions and story follow one timeline. Stage controls seek the recording.' : 'Audio explanation · Timed story cues unavailable. Read the captions or explore without audio.') : flow ? 'English captions and highlighted components follow the audio.' : 'English captions synchronized to the explanation.';
       } catch (error) {
         if (error.name === 'AbortError') return;
         cuesRequested = false;
@@ -86,10 +86,9 @@
     });
     audio.addEventListener('play', () => {
       claim(audio); player.hidden = false;
-      // An overview recording must not race the independent diagram timer.
+      // The diagram clock follows audio whenever a cue connection is available.
       pausingFlow = true;
-      if (demo) document.querySelector('[data-play][aria-pressed="true"]')?.click();
-      if (!flow) target.querySelector('[data-tour-play][aria-pressed="true"]')?.click();
+      if (!demo && !flow) target.querySelector('[data-tour-play][aria-pressed="true"]')?.click();
       pausingFlow = false;
       loadCaptions(); sync();
     });
@@ -100,10 +99,17 @@
     audio.addEventListener('seeking', () => { caption.textContent = ''; });
     cc.addEventListener('click', () => { captionsOn = !captionsOn; cc.setAttribute('aria-pressed', String(captionsOn)); renderCaption(); });
     speed.addEventListener('change', () => { audio.playbackRate = Number(speed.value); });
+    audio.addEventListener('ratechange', () => { speed.value = String(audio.playbackRate); });
+    const connectDemo = () => {
+      if (!demo || flow || !window.qeArchitecture) return;
+      flow = window.qeArchitecture.connectNarration(audio, {...definition, duration:clip.duration});
+      if (cues.length) flow.setCaptions(cues);
+    };
+    if (demo) { connectDemo(); window.addEventListener('qe:architecture-api', connectDemo); }
     // Exploring a different step pauses its overview, but never restarts it.
     const onExplore = event => { if (!pausingFlow && event.target.closest('[data-tour-play], [data-tour-next], [data-tour-reset], [data-layer]')) audio.pause(); };
     target.addEventListener('click', onExplore);
-    const controller = {audio, destroy() { audio.pause(); flow?.destroy(); request?.abort(); cancelAnimationFrame(frame); target.removeEventListener('click', onExplore); audio.removeAttribute('src'); audio.load(); wrapper.remove(); players.delete(controller); }};
+    const controller = {audio, destroy() { audio.pause(); flow?.destroy(); window.removeEventListener('qe:architecture-api', connectDemo); request?.abort(); cancelAnimationFrame(frame); target.removeEventListener('click', onExplore); audio.removeAttribute('src'); audio.load(); wrapper.remove(); players.delete(controller); }};
     players.add(controller);
     return controller;
   }
@@ -126,9 +132,7 @@
       update(new URLSearchParams(location.search).get('scenario') || 'generate');
       const scenarios = document.querySelector('.scenario-tabs');
       new MutationObserver(() => update(scenarios.querySelector('[aria-pressed="true"]').dataset.scenario)).observe(scenarios, {subtree:true,attributes:true,attributeFilter:['aria-pressed']});
-      document.querySelectorAll('[data-play], [data-previous], [data-next], [data-replay], [data-watch-film], #component-select, #story-progress').forEach(control => {
-        control.addEventListener(control.matches('input,select') ? 'input' : 'click', () => { if (!pausingFlow) controller?.audio.pause(); });
-      });
+
     }
   }).catch(() => { /* Core diagrams and their existing descriptions remain available. */ });
   function pauseAll() { for (const player of players) player.audio.pause(); }

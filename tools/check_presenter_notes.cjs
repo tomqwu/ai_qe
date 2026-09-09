@@ -88,9 +88,11 @@ async function playing(audio) { await audio.page().waitForFunction(a => !a.pause
         const guide=page.locator(`[data-narrator-guide="industry-technical/slide-${slide}"]`);await guide.waitFor();
         assert.equal(await page.locator('[data-guide-audio]').count(),1);
         await guide.locator('[data-guide-play]').click();await playing(guide.locator('audio'));
-        assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.playing),false,'Overview narration pauses the independent stage timer');
+        await page.waitForFunction(()=>window.qeArchitecture.snapshot.synced);
+        assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.clock),'audio','Narration owns the 3D story clock');
         await page.locator('[data-next]').click();
-        assert.equal(await guide.locator('audio').evaluate(a=>a.paused),true,'Inspecting another stage pauses the overview');
+        assert.equal(await guide.locator('audio').evaluate(a=>a.paused),true,'Inspecting another audio section pauses the recording');
+        await page.waitForFunction(()=>window.qeArchitecture.snapshot.stage===1);
       }
       await page.emulateMedia({media:'print'});
       assert.equal(await page.locator('[data-narrator-guide]').isVisible(),false);

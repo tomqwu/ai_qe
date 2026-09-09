@@ -416,22 +416,409 @@
     "generate": {
       "deck": "industry-technical",
       "slide": "slide-3",
-      "guide": "Listen to the scenario overview, then use Next architecture stage to inspect the handoffs. The overview recording does not drive the stage timer."
+      "guide": "Select Listen to explanation to synchronize the story, highlighted components and arrows with the recorded English audio. The audio sections follow the spoken explanation; a section can highlight several components together. Use the stage arrows or timeline to seek the recording, or Explore without audio for the original manual walkthrough.",
+      "story": [
+        {
+          "caption": 0,
+          "text": "The generated payment test starts with an approved rule: reject a negative amount.",
+          "title": "Start with the approved rule",
+          "node": "context",
+          "routes": [],
+          "nodes": [
+            "context"
+          ],
+          "state": "active",
+          "flow": "Approved rule → expected behavior",
+          "body": "Reject a negative payment amount. The approved rule is the test oracle; the generated code cannot replace it.",
+          "artifact": "An explicit expected result"
+        },
+        {
+          "caption": 1,
+          "text": "The agent receives scoped contract and repository context,",
+          "title": "Supply scoped context",
+          "node": "context",
+          "routes": [
+            "delivery:context"
+          ],
+          "nodes": [
+            "context"
+          ],
+          "state": "active",
+          "flow": "Source systems → approved context",
+          "body": "Give the agent the permitted API contract and repository context. Keep the source versions traceable.",
+          "artifact": "Scoped contract and repository versions"
+        },
+        {
+          "caption": 2,
+          "text": "then proposes a candidate. A gateway authorizes only the permitted sandbox run.",
+          "title": "Draft, then authorize the run",
+          "node": "gateway",
+          "routes": [
+            "context:runtime",
+            "runtime:gateway"
+          ],
+          "nodes": [
+            "runtime",
+            "gateway"
+          ],
+          "state": "active",
+          "flow": "AI test author → permission gate",
+          "body": "The agent proposes a candidate. The gateway permits only the sandbox run; generation alone grants no authority.",
+          "artifact": "Candidate test + bounded execution permission"
+        },
+        {
+          "caption": 3,
+          "text": "The candidate must catch a selected boundary fault, and the reviewer",
+          "title": "Prove the test catches a fault",
+          "node": "checks",
+          "routes": [
+            "gateway:checks"
+          ],
+          "nodes": [
+            "checks"
+          ],
+          "state": "active",
+          "flow": "Permission gate → test sandbox",
+          "body": "Run the permitted candidate against the selected boundary fault. Prepare the assertions and results for a reviewer.",
+          "artifact": "Evidence that the selected fault is detected"
+        },
+        {
+          "caption": 4,
+          "text": "receives the assertions and execution evidence before a merge decision.",
+          "title": "Review the execution evidence",
+          "node": "release",
+          "routes": [
+            "checks:release"
+          ],
+          "nodes": [
+            "release",
+            "evidence"
+          ],
+          "state": "review",
+          "flow": "Test results → human approval",
+          "body": "The reviewer receives assertions and execution evidence before deciding whether the candidate can merge.",
+          "artifact": "An accountable merge decision"
+        },
+        {
+          "caption": 5,
+          "text": "The generated test cannot silently redefine",
+          "title": "Keep the expected behavior independent",
+          "node": "context",
+          "routes": [],
+          "nodes": [
+            "context",
+            "checks"
+          ],
+          "state": "review",
+          "flow": "Approved rule + independent verification",
+          "body": "The generated test must not redefine the expected behavior to match a defective implementation.",
+          "artifact": "The approved rule remains the source of truth"
+        }
+      ]
     },
     "evaluate": {
       "deck": "industry-technical",
       "slide": "slide-5",
-      "guide": "Follow the versioned application through independent evaluation, release review and operational feedback. The recording is a scenario overview."
+      "guide": "Select Listen to explanation to synchronize the story, highlighted components and arrows with the recorded English audio. The audio sections follow the spoken explanation; a section can highlight several components together. Use the stage arrows or timeline to seek the recording, or Explore without audio for the original manual walkthrough.",
+      "story": [
+        {
+          "caption": 0,
+          "text": "Evaluate the versioned application as a system.",
+          "title": "Identify the application version",
+          "node": "application",
+          "routes": [],
+          "nodes": [
+            "application"
+          ],
+          "state": "active",
+          "flow": "Current focus: versioned AI application",
+          "body": "Evaluate the whole application configuration, including prompts, retrieved context and tools.",
+          "artifact": "A reproducible application identity"
+        },
+        {
+          "caption": 1,
+          "text": "Run baseline and candidate configurations against representative cases,",
+          "title": "Compare baseline and candidate",
+          "node": "evaluation",
+          "routes": [
+            "application:evaluation"
+          ],
+          "nodes": [
+            "application",
+            "evaluation"
+          ],
+          "state": "active",
+          "flow": "AI application → independent evaluator",
+          "body": "Use representative cases, independent scoring and agreed release floors for both configurations.",
+          "artifact": "Comparable evaluation results"
+        },
+        {
+          "caption": 3,
+          "text": "Retain outputs and tool actions together.",
+          "title": "Retain the evaluation evidence",
+          "node": "evidence",
+          "routes": [],
+          "nodes": [
+            "evaluation",
+            "evidence"
+          ],
+          "state": "active",
+          "flow": "Evaluation outputs + tool-action records",
+          "body": "Keep outputs and tool actions together so an independent reviewer can examine what happened.",
+          "artifact": "Traceable outputs and action records"
+        },
+        {
+          "caption": 4,
+          "text": "A failed case returns to diagnosis.",
+          "title": "Diagnose the failed case",
+          "node": "evaluation",
+          "routes": [],
+          "nodes": [
+            "evaluation"
+          ],
+          "state": "review",
+          "flow": "Failed case → diagnosis",
+          "body": "Investigate the failed case before accepting a candidate. A generated explanation is not a passing result.",
+          "artifact": "A failure to investigate"
+        },
+        {
+          "caption": 5,
+          "text": "An accepted candidate proceeds through controlled deployment,",
+          "title": "Review before controlled deployment",
+          "node": "release",
+          "routes": [
+            "evaluation:release"
+          ],
+          "nodes": [
+            "release"
+          ],
+          "state": "review",
+          "flow": "Evaluation results → release review",
+          "body": "An accepted candidate proceeds through controlled deployment. The release owner remains accountable.",
+          "artifact": "A reviewed deployment decision"
+        },
+        {
+          "caption": 6,
+          "text": "monitoring and reviewed case curation.",
+          "title": "Curate operational feedback",
+          "node": "corpus",
+          "routes": [
+            "evidence:corpus"
+          ],
+          "nodes": [
+            "corpus",
+            "evidence"
+          ],
+          "state": "review",
+          "flow": "Reviewed evidence → reusable cases",
+          "body": "Monitoring and reviewed case curation feed the next evaluation cycle.",
+          "artifact": "Reviewed cases for subsequent versions"
+        },
+        {
+          "caption": 7,
+          "text": "Re-evaluate relevant changes in prompts, retrieval, memory, tools",
+          "title": "Re-evaluate relevant changes",
+          "node": "evaluation",
+          "routes": [
+            "application:evaluation",
+            "corpus:evaluation"
+          ],
+          "nodes": [
+            "application",
+            "evaluation"
+          ],
+          "state": "active",
+          "flow": "Changed application + reviewed cases → evaluation",
+          "body": "Changes to prompts, retrieval, memory, tools or authority need evaluation. A model name alone is not the release identity.",
+          "artifact": "Evidence tied to the complete configuration"
+        }
+      ]
     },
     "deny": {
       "deck": "industry-technical",
       "slide": "slide-16",
-      "guide": "Point to the permission boundary and the stopped path. The prohibited tool never runs; retained denial evidence is part of the outcome."
+      "guide": "Select Listen to explanation to synchronize the story, highlighted components and arrows with the recorded English audio. The audio sections follow the spoken explanation; a section can highlight several components together. Use the stage arrows or timeline to seek the recording, or Explore without audio for the original manual walkthrough.",
+      "story": [
+        {
+          "caption": 0,
+          "text": "Follow a denied action through the gateway.",
+          "title": "Inspect the requested action",
+          "node": "gateway",
+          "routes": [
+            "runtime:gateway"
+          ],
+          "nodes": [
+            "gateway"
+          ],
+          "state": "active",
+          "flow": "AI test author → permission gate",
+          "body": "Follow the request with its action, resource and run identifier to the authorization boundary.",
+          "artifact": "An identifiable action request"
+        },
+        {
+          "caption": 2,
+          "text": "The gateway checks policy and approval before execution.",
+          "title": "Check policy before execution",
+          "node": "gateway",
+          "routes": [],
+          "nodes": [
+            "gateway"
+          ],
+          "state": "review",
+          "flow": "Permission check · no tool action yet",
+          "body": "The gateway checks policy and approval before a tool can execute.",
+          "artifact": "Authorization evaluated before side effects"
+        },
+        {
+          "caption": 3,
+          "text": "A denial is recorded with its policy version, and the runtime stops",
+          "title": "Record the denial",
+          "node": "evidence",
+          "routes": [
+            "gateway:evidence"
+          ],
+          "nodes": [
+            "gateway",
+            "evidence"
+          ],
+          "state": "denied",
+          "flow": "Denied request → evidence log",
+          "body": "Record the denial and policy version. The runtime stops; the denied request does not reach a tool.",
+          "artifact": "A correlated denial record"
+        },
+        {
+          "caption": 4,
+          "text": "or escalates. The scoped tool is never invoked.",
+          "title": "Stop or escalate",
+          "node": "gateway",
+          "routes": [],
+          "nodes": [
+            "gateway",
+            "release"
+          ],
+          "state": "hold",
+          "flow": "STOP · the scoped tool is never invoked",
+          "body": "Stop or escalate the request. Escalation does not itself grant permission to execute.",
+          "artifact": "No prohibited tool invocation"
+        },
+        {
+          "caption": 5,
+          "text": "Verify the absence of the prohibited side effect and the correlated event record.",
+          "title": "Verify enforcement and evidence",
+          "node": "evidence",
+          "routes": [
+            "gateway:evidence"
+          ],
+          "nodes": [
+            "gateway",
+            "evidence"
+          ],
+          "state": "denied",
+          "flow": "Verify no side effect + retained denial record",
+          "body": "Check both the absence of the prohibited side effect and the correlated event record.",
+          "artifact": "Verified enforcement evidence"
+        },
+        {
+          "caption": 6,
+          "text": "A reassuring assistant message alone does not prove enforcement.",
+          "title": "Require proof, not reassurance",
+          "node": "gateway",
+          "routes": [],
+          "nodes": [
+            "gateway",
+            "evidence"
+          ],
+          "state": "denied",
+          "flow": "DENIED · no outgoing tool action",
+          "body": "A reassuring assistant message alone cannot prove that the gateway enforced the boundary.",
+          "artifact": "The denied action remains blocked"
+        }
+      ]
     },
     "hold": {
       "deck": "industry-technical",
       "slide": "slide-18",
-      "guide": "Show why a failed critical check holds the release even when other checks pass. The recording explains the release decision, not a measured client result."
+      "guide": "Select Listen to explanation to synchronize the story, highlighted components and arrows with the recorded English audio. The audio sections follow the spoken explanation; a section can highlight several components together. Use the stage arrows or timeline to seek the recording, or Explore without audio for the original manual walkthrough. The alternative passing path is explained conditionally; this failed-proof scenario remains on hold.",
+      "story": [
+        {
+          "caption": 0,
+          "text": "Release decisions begin with comparable runs and mandatory floors.",
+          "title": "Define comparable runs and floors",
+          "node": "checks",
+          "routes": [],
+          "nodes": [
+            "checks",
+            "evaluation"
+          ],
+          "state": "review",
+          "flow": "Comparable runs + mandatory release floors",
+          "body": "Agree mandatory floors and comparable evaluation conditions before deciding on release.",
+          "artifact": "A decision framework for the candidate"
+        },
+        {
+          "caption": 1,
+          "text": "Use the same held-out corpus and versioned conditions to examine behavior,",
+          "title": "Check under versioned conditions",
+          "node": "checks",
+          "routes": [],
+          "nodes": [
+            "checks",
+            "evaluation"
+          ],
+          "state": "active",
+          "flow": "Versioned conditions → independent checks",
+          "body": "Use the same held-out corpus to examine behavior, regressions and workflow limits.",
+          "artifact": "Comparable scenario-level results"
+        },
+        {
+          "caption": 3,
+          "text": "A failed critical scenario triggers a hold and investigation even",
+          "title": "Hold when a critical scenario fails",
+          "node": "release",
+          "routes": [
+            "checks:release"
+          ],
+          "nodes": [
+            "checks",
+            "release"
+          ],
+          "state": "hold",
+          "flow": "Failed critical result → release hold",
+          "body": "A failed critical scenario triggers a hold and investigation, even when average performance improves.",
+          "artifact": "HOLD · the mandatory floor was missed"
+        },
+        {
+          "caption": 5,
+          "text": "reviewers inspect remaining regressions and uncertainty before a bounded rollout.",
+          "title": "Review the conditional release path",
+          "node": "release",
+          "routes": [],
+          "nodes": [
+            "release"
+          ],
+          "state": "hold",
+          "flow": "This failed-proof scenario remains on hold",
+          "body": "The recording explains the alternative when all floors hold. Here, the critical failure still blocks rollout.",
+          "artifact": "No rollout until the failed floor is resolved"
+        },
+        {
+          "caption": 6,
+          "text": "Agree the thresholds locally and retain the scenario-level decision evidence.",
+          "title": "Retain the decision evidence",
+          "node": "evidence",
+          "routes": [
+            "release:evidence"
+          ],
+          "nodes": [
+            "release",
+            "evidence"
+          ],
+          "state": "hold",
+          "flow": "Hold decision → evidence log",
+          "body": "Agree thresholds locally and retain the scenario-level decision evidence, including the reason for the hold.",
+          "artifact": "A traceable hold decision"
+        }
+      ]
     }
   }
 }

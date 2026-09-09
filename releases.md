@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.20.0 · 8 September 2026
+
+The [3D architecture demonstration]({{ '/demos/architecture/?scenario=generate' | relative_url }}) now follows its English audio across **all four scenarios**. Select **Listen to explanation**: the spoken section, highlighted components, flowing arrows and captions share the recording's timeline. Both sets of playback controls pause, replay, seek and change speed together.
+
+The **24 authored audio sections** use exact caption anchors. A section can highlight several components when the recording discusses them together. The denied-action path never invokes a tool, and the failed-proof scenario stays on hold when the narration describes an alternative passing path. Reduced motion retains static highlights. **Explore without audio** returns to the original stage walkthrough.
+
+Existing recordings, captions, PDF editions and the original 49-second silent film are retained. The [GitHub release v1.20.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.20.0) includes the 3D cue definitions in the narration bundle.
+
 ## v1.19.0 · 8 September 2026
 
 Active destinations now use a **gold fill, strong border and readable dark text** across all nine animated 2D workflow diagrams. Highlights remain visible when paused and in the mobile readable overview. Other components and connections remain legible.

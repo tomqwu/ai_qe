@@ -93,6 +93,7 @@ class PublicationTests(unittest.TestCase):
             with zipfile.ZipFile(bundle) as archive:
                 guides = json.loads(archive.read('narration-guides.json'))
                 self.assertEqual(set(guides['demo']), {'generate', 'evaluate', 'deny', 'hold'})
+                self.assertEqual(sum(len(guide['story']) for guide in guides['demo'].values()), 24)
                 flows = json.loads(archive.read('narration-flows.json'))
                 self.assertEqual(len(flows['profiles']), 12)
                 self.assertEqual(sum(len(profile['cues']) for profile in flows['profiles']), 78)

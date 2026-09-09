@@ -63,7 +63,7 @@ def prepare(output):
         'Open https://tomqwu.github.io/ai_qe/briefings/ and select Play narration '
         'for synchronized slide playback with a two-second pause between slides. '
         'narration-guides.json maps existing diagram and scenario explanations to these recordings '
-        'and supplies presenter walkthrough notes. narration-flows.json maps exact recorded caption '
+        'and supplies presenter walkthrough notes and the 3D story caption anchors. narration-flows.json maps exact recorded caption '
         'cues to diagram components and arrows for audio-driven visual focus. '
         'The original PDF content editions are unchanged.\n'
     ).encode()))

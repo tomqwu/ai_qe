@@ -56,7 +56,7 @@ The audio panel shares the slide frame width and follows it with a 12-pixel gap.
 
 Every slide exposes its spoken explanation in the existing **Sources & notes** drawer. On the existing site pages, **Listen to explanation** reuses the matching narration recording; **Narrator notes** adds a visual walkthrough and the transcript. The mapping lives in `assets/data/narration-guides.json`. These players load MP3s only on demand, show synchronized English captions and share audio focus with embedded decks.
 
-The 3D architecture's four scenarios each have a narrated overview. Starting an overview pauses the independent story timer. Stage selection pauses the overview; the recording does not claim word-by-word synchronization with the 3D stages. Calculators explicitly label narration as an explanation of the published baseline and method, not a reading of current selections.
+The 3D architecture's four scenarios use 24 authored audio sections in the `demo` entries of `assets/data/narration-guides.json`. `tools/architecture-demo/narration-clock.js` resolves exact caption anchors and makes `audio.currentTime` the story clock. The sections follow the recording, with grouped highlights where a sentence covers multiple components; they do not compress the original silent walkthrough into an unrelated duration. Story and audio controls share pause, replay, seeking and speed. Inspection pauses the recording; **Explore without audio** restores the original stages. Reduced motion keeps static destinations, and missing or changed anchors leave a static overview. Denial never invokes a tool, and the failed-proof scenario stays on hold during discussion of an alternative passing path. Calculators label recordings as explanations of the published baseline and method.
 
 Animated 2D diagrams use `assets/data/narration-flows.json`: each authored cue identifies an exact caption, highlighted component IDs and directed routes. `narration-flow.js` resolves the cue against the recording's VTT and drives `motion.js` from `audio.currentTime`. No independent tour timer runs during narration. One spoken passage may emphasize multiple components; introductory and concluding overviews do not invent a handoff. A changed or missing caption anchor leaves a static overview until the mapping is reviewed.
 
@@ -64,7 +64,7 @@ Use `data-flow-node` for stable component IDs in SVGs and preserve them in diagr
 
 This update creates no new pages, regenerates no audio and preserves the recorded audio and PDF editions.
 
-The existing silent architecture film also retains its original output hashes. `assets/data/architecture-film.json` points its original HTML input hash to `tools/architecture-demo/film-v1.8.0-page.html`; that exact source snapshot is excluded from site publishing. The current page can add narrator controls without relabeling the older film as newly rendered. Narrator guides are disabled in film capture mode.
+The existing silent architecture film also retains its original output hashes. `assets/data/architecture-film.json` points its original HTML, renderer and style input hashes to `tools/architecture-demo/film-v1.8.0-page.html` `film-v1.8.0-main.js` and `film-v1.8.0-style.css`; these exact source snapshots are excluded from site publishing. The current page can add narrator controls without relabeling the older film as newly rendered. Narrator guides are disabled in film capture mode.
 
 ## Verification and publication
 
