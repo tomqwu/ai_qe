@@ -63,6 +63,7 @@ jobs:
           ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
           python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
           node tools/check_audio_focus.cjs
+          node tools/architecture-demo/framing-test.cjs
           node tools/architecture-demo/narration-test.cjs
           node tools/fintech-browser-test.cjs
           node tools/ai-adoption-browser-test.cjs
