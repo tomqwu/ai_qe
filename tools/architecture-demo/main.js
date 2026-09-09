@@ -186,5 +186,6 @@ if(!capture){
  explore.addEventListener('click',exploreWithoutAudio);$('.playback').append(explore);
  const rate=document.createElement('option');rate.value='1.25';rate.textContent='1.25×';$('#playback-rate').insertBefore(rate,$('#playback-rate option[value="1.5"]'));
 }
+document.fonts.ready.then(()=>{labelLayoutKey='';if(ready)render();});
 window.dispatchEvent(new Event('qe:architecture-api'));
 init();

@@ -145,9 +145,13 @@ async function playing(page){await page.waitForFunction(()=>{const a=document.qu
   // The original seven-stage walkthrough remains available, followed by audio re-entry.
   await page.locator('[data-guide-play]').click();await playing(page);
   await seek(page,10);
+  await page.evaluate(()=>document.fonts.ready);
   for(const width of [320,390,760,820,1024,1440]){
    await page.setViewportSize({width,height:1000});
-   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1),'Audio controls fit the viewport');
+   await page.waitForFunction(w=>innerWidth===w,width);
+   await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+   const layout=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,offenders:[...document.body.querySelectorAll('*')].filter(e=>getComputedStyle(e).display!=='none'&&e.getBoundingClientRect().right>innerWidth+1).slice(0,15).map(e=>({tag:e.tagName,cls:String(e.className),text:e.textContent?.slice(0,60),right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width}))}));
+   assert.ok(layout.scroll-layout.width<=1,'Audio controls fit the viewport: '+JSON.stringify(layout));
   }
   await page.locator('[data-guide-play]').click();
   // Invalid anchors fail safely instead of running an unrelated timer.

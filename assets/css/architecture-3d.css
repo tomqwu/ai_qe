@@ -1,4 +1,4 @@
-@font-face{font-family:Source Sans 3;src:url('../fonts/source-sans-3.woff2') format('woff2');font-weight:200 900;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url('../fonts/source-sans-3.woff2') format('woff2');font-weight:200 900;font-display:swap}
 *{box-sizing:border-box}
 body{margin:0;background:#0b1424;color:#f3f6fc;font:16px/1.45 'Source Sans 3',sans-serif}
 button,select,input{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button,a,select{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-decoration:none}
@@ -53,3 +53,12 @@ body.capture .film-edition{position:absolute;display:flex;justify-content:space-
 /* Both transports share the audio clock; retain room for the readable timeline. */
 [data-clock="audio"] .playback{flex-wrap:wrap}
 [data-clock="audio"] .scrubber{min-width:220px}
+
+@media(max-width:760px){
+ .playback-buttons,.view-controls>div{flex-wrap:wrap;max-width:100%}
+ .view-controls>div{justify-content:center}
+ .role-legend{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .role-legend>span{min-width:0;white-space:normal}
+ .role-legend b{flex-shrink:0}
+}
+@media(max-width:400px){.demo-header{flex-wrap:wrap}}
