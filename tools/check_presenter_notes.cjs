@@ -90,9 +90,13 @@ async function playing(audio) { await audio.page().waitForFunction(a => !a.pause
         await guide.locator('[data-guide-play]').click();await playing(guide.locator('audio'));
         await page.waitForFunction(()=>window.qeArchitecture.snapshot.synced);
         assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.clock),'audio','Narration owns the 3D story clock');
+        // On slower graphics runners, audio may have crossed its first section
+        // while Playwright scrolled the controls into view. Seek a known origin.
+        await guide.locator('audio').evaluate(a=>{a.pause();a.currentTime=0});
+        await page.waitForFunction(()=>{const a=document.querySelector('[data-guide-audio]');return !a.seeking&&a.currentTime<.01&&window.qeArchitecture.snapshot.stage===0});
         await page.locator('[data-next]').click();
         assert.equal(await guide.locator('audio').evaluate(a=>a.paused),true,'Inspecting another audio section pauses the recording');
-        await page.waitForFunction(()=>window.qeArchitecture.snapshot.stage===1);
+        await page.waitForFunction(()=>window.qeArchitecture.snapshot.stage===1).catch(async error=>{console.error('Section seek diagnostic',scenario,await page.evaluate(()=>({snapshot:window.qeArchitecture.snapshot,audioTime:document.querySelector('[data-guide-audio]').currentTime,seeking:document.querySelector('[data-guide-audio]').seeking})));throw error});
       }
       await page.emulateMedia({media:'print'});
       assert.equal(await page.locator('[data-narrator-guide]').isVisible(),false);

@@ -64,7 +64,7 @@ Use `data-flow-node` for stable component IDs in SVGs and preserve them in diagr
 
 This update creates no new pages, regenerates no audio and preserves the recorded audio and PDF editions.
 
-The existing silent architecture film also retains its original output hashes. `assets/data/architecture-film.json` points its original HTML, renderer and style input hashes to `tools/architecture-demo/film-v1.8.0-page.html` `film-v1.8.0-main.js` and `film-v1.8.0-style.css`; these exact source snapshots are excluded from site publishing. The current page can add narrator controls without relabeling the older film as newly rendered. Narrator guides are disabled in film capture mode.
+The existing silent architecture film also retains its original output hashes. `assets/data/architecture-film.json` points its original HTML, renderer and style input hashes to `tools/architecture-demo/film-v1.8.0-page.html`, `film-v1.8.0-main.js` and `film-v1.8.0-style.css`; these exact source snapshots are excluded from site publishing. The current page can add narrator controls without relabeling the older film as newly rendered. Narrator guides are disabled in film capture mode.
 
 ## Verification and publication
 
