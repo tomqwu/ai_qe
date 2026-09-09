@@ -22,7 +22,9 @@
     "assets/images/architecture-3d-poster.jpg": "d52cfb6dcc3c5740b19a3cd07e693ce5ef0f1a9334074725aa98479526b4962a"
   },
   "input_snapshots": {
-    "demos/architecture.html": "tools/architecture-demo/film-v1.8.0-page.html"
+    "demos/architecture.html": "tools/architecture-demo/film-v1.8.0-page.html",
+    "tools/architecture-demo/main.js": "tools/architecture-demo/film-v1.8.0-main.js",
+    "assets/css/architecture-3d.css": "tools/architecture-demo/film-v1.8.0-style.css"
   },
-  "snapshot_note": "The v1.8.0 film retains its original page input and output hashes. The current architecture page adds in-place narration controls in v1.18.0; the film was not regenerated."
+  "snapshot_note": "The v1.8.0 film retains its original page, renderer and style inputs and output hashes. The current interactive experience supports audio-driven stories and responsive narration controls; the film was not regenerated."
 }

@@ -1,5 +1,5 @@
 """Validate the authored 3D graph and the reproducible scene/film delivery assets."""
-import json,struct,hashlib
+import json,struct,hashlib,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 data=json.loads((ROOT/'assets/data/architecture-demo.json').read_text())
@@ -28,4 +28,24 @@ for name,digest in manifest['outputs'].items():assert hashlib.sha256((ROOT/name)
 assert sum(s['duration'] for s in data['scenarios'][0]['steps'])==manifest['duration']
 assert (ROOT/'assets/video/assurance-architecture.vtt').read_text().startswith('WEBVTT')
 assert (ROOT/'assets/video/assurance-architecture.vtt').read_text().count(' --> ')==7
-print('Passed: 11 Blender modules, 12 directed routes, four scenario graphs and matching 1080p film/source assets')
+guides=json.loads((ROOT/'assets/data/narration-guides.json').read_text())['demo']
+narration=json.loads((ROOT/'assets/data/narration.json').read_text())
+assert set(guides)=={s['id'] for s in data['scenarios']}
+count=0
+for scenario,guide in guides.items():
+ clip=narration['decks'][guide['deck']]['slides'][guide['slide']]
+ blocks=(ROOT/clip['captions'].lstrip('/')).read_text().strip().split('\n\n')[1:]
+ last=-1
+ for cue in guide['story']:
+  assert cue['caption']>last and (last!=-1 or cue['caption']==0)
+  last=cue['caption']
+  block=blocks[cue['caption']].splitlines()
+  assert re.sub(r'\s+',' ',' '.join(block[1:])).strip()==cue['text'],f'Changed narration anchor: {scenario}'
+  assert cue['node'] in ids and cue['node'] in cue['nodes'] and set(cue['nodes'])<=ids
+  assert set(cue['routes'])<=routes
+  assert all(cue[key] for key in ['title','body','artifact','flow'])
+  if scenario=='deny':assert not any(r.endswith(':checks') for r in cue['routes'])
+  if scenario=='hold' and cue['caption']>=3:assert cue['state']=='hold'
+  count+=1
+assert count==24
+print('Passed: 11 Blender modules, 12 directed routes, four scenario graphs, 24 caption-anchored narration sections and matching original 1080p film/source assets')

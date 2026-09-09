@@ -18,6 +18,8 @@ const base=process.env.QE_TEST_URL||'http://127.0.0.1:61600/ai_qe';
  const signal=await page.evaluate(()=>window.qeArchitecture.snapshot.signals[0].position);
  await page.waitForFunction(p=>{const q=window.qeArchitecture.snapshot.signals[0].position;return Math.hypot(...q.map((v,i)=>v-p[i]))>.03},signal,{timeout:10000});
  await page.locator('[data-play]').click();const paused=await page.evaluate(()=>window.qeArchitecture.snapshot.elapsed);await page.waitForTimeout(180);assert.equal(await page.evaluate(()=>window.qeArchitecture.snapshot.elapsed),paused,'Pause must freeze the story');
+ const idleFrames=await page.locator('#architecture-demo').getAttribute('data-render-frame');await page.waitForTimeout(250);assert.equal(await page.locator('#architecture-demo').getAttribute('data-render-frame'),idleFrames,'A steady paused scene does not redraw needlessly');
+ const canvas=page.locator('#architecture-canvas'),rect=await canvas.boundingBox();await page.mouse.move(rect.x+rect.width*.5,rect.y+rect.height*.5);await page.mouse.down();await page.mouse.move(rect.x+rect.width*.5+70,rect.y+rect.height*.5+25,{steps:5});await page.mouse.up();await page.waitForFunction(frame=>document.querySelector('#architecture-demo').dataset.renderFrame!==frame,idleFrames);await page.locator('[data-reset-camera]').click();
  await page.locator('[data-scenario="deny"]').click();await page.locator('[data-next]').click();
  assert.equal(await page.locator('[data-state]').innerText(),'DENIED');
  assert.deepEqual(await page.evaluate(()=>window.qeArchitecture.snapshot.routes),[],'A denied request must not reach a tool');
