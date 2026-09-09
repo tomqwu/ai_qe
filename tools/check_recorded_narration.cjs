@@ -12,7 +12,30 @@ async function playing(page) {
 }
 async function nearEnd(page) {
   const duration = await page.locator('[data-narration-audio]').evaluate(a => a.duration);
-  await page.locator('[data-narration-seek]').fill(String(Math.floor(duration) - 1));
+  const target = Math.floor(duration) - 1;
+  await page.locator('[data-narration-seek]').fill(String(target));
+  await page.waitForFunction(target => {
+    const audio = document.querySelector('[data-narration-audio]');
+    return !audio.seeking && audio.currentTime >= target - .2;
+  }, target);
+}
+async function advanced(page, id) {
+  try {
+    // Observe the visible slide and document hash together, independently of
+    // automation lifecycle notifications for same-document history changes.
+    await page.waitForFunction(id => location.hash === `#${id}` &&
+      document.querySelector('.slide:not([hidden])')?.id === id, id);
+  } catch (error) {
+    const state = await page.evaluate(() => {
+      const audio = document.querySelector('[data-narration-audio]');
+      return {url:location.href, hidden:document.hidden, slide:window.QEDeck.getState(),
+        status:document.querySelector('[data-narration-status]').textContent,
+        currentTime:audio.currentTime, duration:audio.duration, paused:audio.paused,
+        ended:audio.ended, seeking:audio.seeking, readyState:audio.readyState,
+        error:audio.error?.message};
+    });
+    throw new Error(`Narration did not advance to ${id}: ${JSON.stringify(state)}; ${error.message}`);
+  }
 }
 
 (async () => {
@@ -52,11 +75,12 @@ async function nearEnd(page) {
         assert.ok((await page.locator('[data-narration-caption]').textContent()).trim());
         const actualDuration = await page.locator('[data-narration-audio]').evaluate(a=>a.duration);
         assert.ok(Math.abs(actualDuration-manifest.decks[key].slides['slide-1'].duration)<.2);
-        await nearEnd(page); await page.waitForURL(/#slide-2$/); await playing(page);
+        await nearEnd(page); await advanced(page, 'slide-2'); await playing(page);
         await page.locator('[data-narration-start]').click();
         assert.equal(await page.locator('[data-narration-audio]').evaluate(a=>a.paused), true);
         await page.locator('[data-narration-transcript]').click();
-        assert.match(await page.locator('.narration-provenance').textContent(), /ElevenLabs.*Chris/);
+        assert.match(await page.locator('.narration-provenance').textContent(), /Audio narration · English/);
+        assert.doesNotMatch(await page.locator('.narration-transcript-dialog').textContent(), /Chris|ElevenLabs/);
         await page.keyboard.press('Escape');
         await page.setViewportSize({width:390,height:844});
         assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
@@ -65,7 +89,7 @@ async function nearEnd(page) {
       }
       await page.goto(base+'/briefings/fintech-technical/?route=client#slide-26');
       await page.locator('[data-narration-start]').click(); await playing(page);
-      await nearEnd(page); await page.waitForURL(/#slide-28$/); await playing(page);
+      await nearEnd(page); await advanced(page, 'slide-28'); await playing(page);
       await page.goto(base+'/briefings/fintech-evp/#slide-19');
       await page.locator('[data-narration-start]').click(); await playing(page);
       await nearEnd(page);

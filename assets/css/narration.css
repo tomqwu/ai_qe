@@ -5,12 +5,13 @@
 .deck-narration-start[hidden] { display:none!important; }
 @media screen and (max-width:1280px) { .deck-header .deck-audience { display:none; } }
 @media screen and (max-width:700px) { .deck-tools { flex-wrap:wrap; } .deck-tools .deck-narration-start { min-height:40px; padding:5px 10px; } }
-.narration-panel { width:min(calc(100vw - 32px),1200px); color:#173643; background:#fcfcfa; border:1px solid #b9ceca; border-top:3px solid #087875; border-radius:6px 6px 0 0; padding:7px 12px 5px; z-index:22; }
+.deck-page { --narration-gap:12px; }
+.narration-panel { width:var(--frame-width); margin:var(--narration-gap) auto 0; color:#173643; background:#fcfcfa; border:1px solid #b9ceca; border-top:3px solid #087875; border-radius:6px; padding:7px 12px 5px; }
 .narration-panel[hidden] { display:none!important; }
 .narration-caption { display:flex; align-items:center; justify-content:center; text-align:center; margin:0 auto 5px; min-height:48px; max-width:76ch; line-height:1.25; font-size:17px; font-weight:550; color:#fff; background:#173643; border-radius:4px; padding:2px 12px; white-space:pre-line; overflow:hidden; }
 .narration-caption:empty::before { content:'English subtitles'; color:#bed3dd; font-size:13px; font-weight:400; }
 .narration-panel[data-captions=off] .narration-caption:empty::before { content:'English subtitles off · Select CC to show'; }
-.narration-controls { display:flex; gap:8px; align-items:center; }
+.narration-controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
 .narration-controls button,.narration-controls select { font:inherit; font-size:13px; min-height:32px; padding:3px 9px; background:#fff; color:#173643; border:1px solid #9db9b8; border-radius:4px; white-space:nowrap; }
 .narration-controls [data-narration-play] { min-width:84px; background:#087875; color:#fff; border-color:#087875; font-weight:650; }
 .narration-controls [data-narration-cc][aria-pressed=true] { color:#fff; background:#173643; border-color:#173643; }
@@ -37,16 +38,18 @@
   .has-narration:not(.reading-view) .slide .vs-operating-lanes h3 { margin:.55cqw 0!important; }
   .has-narration:not(.reading-view) .slide .vs-operating-lanes li { margin-bottom:.85cqw; }
   .has-narration:not(.reading-view) .slide .fe-result-grid article { padding:.7cqw 0; }
+  .has-narration:not(.reading-view) .slide .fe-bars>div:not(.fe-axis) { margin:.8cqw 0; }
+  .has-narration:not(.reading-view) .slide .adoption-foundation-layers>div { gap:1cqw; padding-top:1cqw; }
   .has-narration:not(.reading-view) .slide .virtualization-route { gap:1cqw; }
   .has-narration:not(.reading-view) .slide .virtualization-route>div { min-height:12cqw; padding:1cqw; gap:.7cqw; }
   .has-narration:not(.reading-view) .slide .virtualization-validation { padding:1cqw; margin-top:1cqw; gap:.6cqw 1.2cqw; }
   .has-narration:not(.reading-view) .explore-compact .model-chart svg { width:100%; height:auto; max-height:21cqw; }
   .has-narration:not(.reading-view) .explore-compact .value-headline { padding-bottom:.4cqw; margin-bottom:.4cqw; }
   .has-narration:not(.reading-view) .explore-compact .scenario-presets { margin-bottom:.5cqw; }
-  .deck-page.has-narration { --frame-width:min(calc(100vw - 32px),calc((100dvh - 112px - var(--narration-height,116px)) * 16 / 9)); padding-bottom:calc(64px + var(--narration-height,116px)); }
-  .deck-page.has-narration.has-flow-controls { --frame-width:min(calc(100vw - 32px),calc((100dvh - 160px - var(--narration-height,116px)) * 16 / 9)); }
-  .narration-panel { position:fixed; bottom:56px; left:50%; transform:translateX(-50%); }
-  .has-narration .deck-flow-bar:not([hidden]) { bottom:calc(56px + var(--narration-height,116px)); }
+  /* The panel follows the slide in document flow, so their gap also stays
+     consistent when a tall viewport constrains the frame by width. */
+  .deck-page.has-narration { --frame-width:min(calc(100vw - 32px),calc((100dvh - 112px - var(--narration-height,116px) - var(--narration-gap)) * 16 / 9)); padding-bottom:56px; }
+  .deck-page.has-narration.has-flow-controls { --frame-width:min(calc(100vw - 32px),calc((100dvh - 160px - var(--narration-height,116px) - var(--narration-gap)) * 16 / 9)); padding-bottom:104px; }
   .has-narration .deck-message { bottom:calc(60px + var(--narration-height,116px)); }
 }
 @media screen and (max-width:700px) {

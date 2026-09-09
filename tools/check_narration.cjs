@@ -24,14 +24,22 @@ async function seekNearEnd(page) { await page.locator('[data-narration-seek]').f
 async function slide(page, number) { await page.locator('.deck-navigation select').selectOption(String(number - 1)); }
 async function checkBounds(page) {
   await page.evaluate(() => document.fonts.ready);
+  await page.waitForFunction(() => Math.ceil(document.querySelector('.narration-panel').getBoundingClientRect().height) === parseFloat(document.body.style.getPropertyValue('--narration-height')));
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   const bounds = await page.evaluate(() => {
     const content = document.querySelector('.slide:not([hidden])').getBoundingClientRect();
     const panel = document.querySelector('.narration-panel').getBoundingClientRect();
     const nav = document.querySelector('.deck-navigation').getBoundingClientRect();
-    return { slideBottom:content.bottom, panelTop:panel.top, panelBottom:panel.bottom, navTop:nav.top, overflow:document.documentElement.scrollWidth - innerWidth };
+    const flow = document.querySelector('.deck-flow-bar:not([hidden])')?.getBoundingClientRect();
+    const panelElement = document.querySelector('.narration-panel');
+    return { slideLeft:content.left, slideRight:content.right, panelLeft:panel.left, panelRight:panel.right,
+      gap:panel.top-content.bottom, panelBottom:panel.bottom, controlsTop:flow?.top ?? nav.top,
+      panelOverflow:panelElement.scrollWidth-panelElement.clientWidth, overflow:document.documentElement.scrollWidth-innerWidth };
   });
-  assert.ok(bounds.slideBottom <= bounds.panelTop + 1, JSON.stringify(bounds));
-  assert.ok(bounds.panelBottom <= bounds.navTop + 1, JSON.stringify(bounds));
+  assert.ok(Math.abs(bounds.slideLeft-bounds.panelLeft) <= 1 && Math.abs(bounds.slideRight-bounds.panelRight) <= 1, 'Audio aligns with both slide edges: '+JSON.stringify(bounds));
+  assert.ok(bounds.gap >= 11 && bounds.gap <= 13, 'Consistent gap below the slide: '+JSON.stringify(bounds));
+  assert.ok(bounds.panelBottom <= bounds.controlsTop + 1, JSON.stringify(bounds));
+  assert.ok(bounds.panelOverflow <= 1, JSON.stringify(bounds));
   assert.ok(bounds.overflow <= 1, JSON.stringify(bounds));
 }
 (async () => {
@@ -88,7 +96,7 @@ async function checkBounds(page) {
       await page.locator('[data-narration-transcript]').click();
       assert.equal(await mediaPaused(page),true);
       assert.match(await page.locator('.narration-transcript-dialog').textContent(),/A test narration transcript/);
-      assert.equal(await page.locator('.narration-provenance').textContent(),'Voice: Test studio / Narrator\nCaption timing: Word alignment from final audio');
+      assert.equal(await page.locator('.narration-provenance').textContent(),'Audio narration · English\nEnglish captions synchronized to the recording.');
       await page.keyboard.press('ArrowRight'); assert.equal(await currentSlide(page),'slide-18');
       await page.keyboard.press('Escape');
       await page.locator('[data-reading]').click(); assert.equal(await page.locator('.narration-panel').isVisible(),false);
@@ -201,14 +209,29 @@ async function checkBounds(page) {
         await seekNearEnd(page); await page.waitForURL(/#slide-2$/); await waitForPlaying(page);
         await start.click();
         await checkBounds(page);
+        // Cover the former 1200px cap, tall windows and short presentation frames.
+        for (const viewport of [{width:1920,height:1080},{width:2560,height:1600},{width:900,height:1400},{width:1024,height:500}]) {
+          await page.setViewportSize(viewport); await checkBounds(page);
+        }
+        await page.setViewportSize({width:1280,height:900});
+        await page.locator('[data-fullscreen]').click(); await checkBounds(page);
+        await page.locator('[data-fullscreen]').click(); await checkBounds(page);
         for (const width of [320,375,700]) {
           await page.setViewportSize({width,height:812});
           assert.ok(await start.isVisible(),'Play narration remains in the mobile menu');
           assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),`Header overflow at ${width}`);
         }
       }
+      // Use the real host page and its embedded technical deck, including flow controls.
+      await page.setViewportSize({width:1920,height:1080});
+      await page.goto(base + '/');
+      await page.locator('[data-visual-audience="technical"]').first().click();
+      const embedded = await page.locator('#briefing-frame').elementHandle().then(handle => handle.contentFrame());
+      await embedded.waitForURL(url => url.pathname.endsWith('/briefings/technical/') && url.hash === '#slide-2', {waitUntil:'domcontentloaded'});
+      await embedded.locator('[data-narration-play]').waitFor();
+      await checkBounds(embedded);
       await page.emulateMedia({media:'print'});
-      assert.equal(await page.locator('.narration-panel').isVisible(),false);
+      assert.equal(await embedded.locator('.narration-panel').isVisible(),false);
       await page.emulateMedia({media:'screen'});
       emptyManifest = true;
       await page.goto(base + '/briefings/fintech-evp/#slide-18');

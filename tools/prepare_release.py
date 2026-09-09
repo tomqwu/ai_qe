@@ -54,7 +54,7 @@ def prepare(output):
         assert guide['slide'] in narration['decks'][guide['deck']]['slides'], 'Unrecorded presenter guide'
     records.append(('narration-guides.json', json.dumps(guides, ensure_ascii=False, indent=2).encode()))
     records.append(('README.txt', (
-        'AI x QE — Chris / ElevenLabs English narration\n\n'
+        'AI x QE — English audio narration\n\n'
         'One MP3, timed WebVTT subtitle file and transcript per slide. '
         'Folder keys: evp = banking executive, technical = banking architecture, '
         'industry-evp = industry executive, industry-technical = industry architecture.\n\n'
@@ -92,7 +92,7 @@ Publication editions:
 - Research companion: **v{release["research_edition"]}** — 13 pages
 - Fillable discovery questionnaire: **v{release["questionnaire_edition"]}**
 
-Assets include all six PDFs, the architecture film and captions, the industry, modernization and fintech-evidence CSV/JSON source registers, and the complete 109-slide Chris narration bundle with English subtitles and transcripts. SHA256SUMS.txt covers all fifteen downloadable publication files. The PDF filenames identify their content edition, which may precede a player release. The existing architecture film retains its v1.8.0 edition.
+Assets include all six PDFs, the architecture film and captions, the industry, modernization and fintech-evidence CSV/JSON source registers, and the complete 109-slide audio narration bundle with English subtitles and transcripts. SHA256SUMS.txt covers all fifteen downloadable publication files. The PDF filenames identify their content edition, which may precede a player release. The existing architecture film retains its v1.8.0 edition.
 
 Published only after the site build, browser checks, PDF checks and GitHub Pages deployment succeed. The fintech case is fictional; its estimates and outcomes are illustrative assumptions.
 '''

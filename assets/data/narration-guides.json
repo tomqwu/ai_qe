@@ -1,5 +1,5 @@
 {
-  "description": "Existing Chris recordings reused in place; no new pages or generated voices. Diagram notes describe the published design, not live telemetry.",
+  "description": "Existing narration recordings reused in place; no new pages or generated voices. Diagram notes describe the published design, not live telemetry.",
   "guides": [
     {
       "selector": "figure[data-diagram=\"platform\"]",
