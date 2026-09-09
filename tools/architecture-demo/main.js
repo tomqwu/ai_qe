@@ -16,11 +16,13 @@ let motionPreference=reduce.matches;
 const capture=new URLSearchParams(location.search).get('capture')==='1';
 if(capture)document.body.classList.add('capture');
 let data,renderer,scene,camera,controls,composer,model,ready=false,playing=false,cinematic=false,overview=false,playbackRate=1,elapsed=0,scenario,stageIndex=-1,inspected='',lastFrame=0,lastUI=0,renderFailed=false;
-let narration=null,viewDirty=false;
+let narration=null,viewDirty=false,modelCorners=[];
 let modules=new Map(),paths=new Map(),labels=new Map(),halos=new Map(),materials=[],leaders=new Map(),labelLayoutKey='';
 const activeGold=new THREE.Color('#ffffff'),alertCoral=new THREE.Color('#ff746d');
 const direction=new THREE.Vector3(),labelPosition=new THREE.Vector3();
-const homePosition=new THREE.Vector3(14,20,24),homeTarget=new THREE.Vector3(0,.3,.5);
+// A higher, near-frontal view keeps the board's depth legible instead of
+// foreshortening it into a wide, shallow parallelogram.
+const homePosition=new THREE.Vector3(8,35,26),homeTarget=new THREE.Vector3(0,.4,.65);
 const stateNames={active:'IN PROGRESS',review:'REVIEW',denied:'DENIED',failed:'FAILED',hold:'HOLD'};
 function steps(){return narration?.active?narration.steps:scenario?.steps||[]}
 function total(){return narration?.active?narration.duration:steps().reduce((sum,s)=>sum+s.duration,0)}
@@ -103,9 +105,32 @@ function highlight(){
  host.dataset.overview=String(overview);host.dataset.activeNodes=[...focused].join(',');host.dataset.activeNode=step.node;host.dataset.activeRoutes=step.routes.join(',');
 }
 function updateStage(force=false){if(!scenario)return;const {step,index}=current();if(force||index!==stageIndex){stageIndex=index;$('[data-step-number]').replaceChildren(document.createTextNode(String(index+1).padStart(2,'0')+' '));const suffix=document.createElement('span');suffix.textContent='/ '+String(steps().length).padStart(2,'0');$('[data-step-number]').append(suffix);$('[data-step-title]').textContent=step.title;$('[data-step-body]').textContent=step.body;$('[data-flow-summary]').textContent=step.flow;$('[data-artifact]').textContent=step.artifact;$('[data-state]').textContent=stateNames[step.state];$('[data-state]').dataset.state=step.state;$('[data-announcement]').textContent=`${scenario.title}. Stage ${index+1} of ${steps().length}: ${step.title}. ${step.body}`;$('[data-progress-label]').textContent=`${narration?.active?'Audio section':'Stage'} ${index+1} of ${steps().length}`;host.dataset.stage=String(index);highlight();}$('[data-time]').textContent=`${seconds(elapsed)} / ${seconds(total())}`;$('#story-progress').value=elapsed;$('[data-previous]').disabled=index===0;$('[data-next]').disabled=index===steps().length-1;$('[data-run-label]').textContent=capture?'GUIDED ARCHITECTURE FILM':narration?.active?(elapsed>=total()?'AUDIO STORY COMPLETE · REPLAY AVAILABLE':!narration.valid?'AUDIO EXPLANATION · STATIC OVERVIEW':reduce.matches?'AUDIO SYNC · STATIC HIGHLIGHTS':playing?(narration.moving?'AUDIO + STORY · SYNCHRONIZED':'AUDIO + STORY · BUFFERING'):'AUDIO + STORY · PAUSED'):reduce.matches?'REDUCED MOTION · STEP THROUGH':playing?'GUIDED DEMONSTRATION':elapsed>=total()?'STORY COMPLETE · REPLAY AVAILABLE':'PAUSED · EXPLORE THE ARCHITECTURE';}
-function resize(){if(!renderer)return;const w=view.clientWidth,h=view.clientHeight;renderer.setSize(w,h,false);composer?.setSize(w,h);const halfW=Math.max(capture?13.3:12.5,7.8*w/h),halfH=halfW*h/w;camera.left=-halfW;camera.right=halfW;camera.top=halfH;camera.bottom=-halfH;camera.updateProjectionMatrix();render();}
-function resetCamera(){if(!camera)return;camera.position.copy(homePosition);controls.target.copy(homeTarget);camera.lookAt(homeTarget);controls.update();render();}
-function render(updateControls=true){if(!renderer||!composer||!scenario||renderFailed)return;const {step,local}=current();if(cinematic&&!reduce.matches&&step.node){const phase=elapsed/total();camera.position.set(14+Math.sin(phase*Math.PI*2)*2.1,20,24-Math.sin(phase*Math.PI*2)*1.2);const pos=data.nodes.find(n=>n.id===step.node).position;controls.target.set(pos[0]*.10,.3,.5+pos[2]*.07);camera.lookAt(controls.target);}if(updateControls)controls.update();for(const path of paths.values()){if(!path.packet.visible)continue;const t=narration?.active?Math.min(1,local/Math.max(.01,step.duration)):(local%3.5)/3.5;path.packet.position.copy(path.curve.getPointAt(t));path.packet.scale.setScalar(1);}camera.updateMatrixWorld();positionLabels();composer.render();viewDirty=false;host.dataset.renderFrame=String(Number(host.dataset.renderFrame||0)+1);}
+function resize(){
+ if(!renderer||!modelCorners.length)return;
+ const {width:w,height:h}=view.getBoundingClientRect();if(w<=0||h<=0)return;
+ renderer.setSize(w,h,false);composer?.setSize(w,h);camera.updateMatrixWorld();
+ // Fit the actual model in camera space, with breathing room on every edge.
+ // One scale for both axes preserves geometry at every viewport aspect ratio.
+ const points=modelCorners.map(p=>p.clone().applyMatrix4(camera.matrixWorldInverse));
+ const halfH=Math.max(...points.map(p=>Math.max(Math.abs(p.y),Math.abs(p.x)*h/w)))*1.14;
+ const halfW=halfH*w/h;
+ camera.left=-halfW;camera.right=halfW;camera.top=halfH;camera.bottom=-halfH;camera.updateProjectionMatrix();render();
+}
+function resetCamera(){
+ if(!camera)return;
+ // Flush orbit damping before restoring the view, so an in-flight drag cannot
+ // pull the reset camera off its home angle on the following frame.
+ const damping=controls.enableDamping;controls.enableDamping=false;controls.update();
+ camera.position.copy(homePosition);controls.target.copy(homeTarget);camera.zoom=1;
+ controls.update();controls.enableDamping=damping;resize();
+}
+function framingSnapshot(){
+ if(!camera)return null;
+ camera.updateMatrixWorld();
+ const rect=view.getBoundingClientRect(),forward=camera.getWorldDirection(new THREE.Vector3());
+ return {width:rect.width,height:rect.height,projectionAspect:(camera.right-camera.left)/(camera.top-camera.bottom),zoom:camera.zoom,position:camera.position.toArray(),target:controls.target.toArray(),groundDepth:Math.abs(forward.y),corners:modelCorners.map(point=>point.clone().project(camera).toArray())};
+}
+function render(updateControls=true){if(!renderer||!composer||!scenario||renderFailed)return;const {step,local}=current();if(cinematic&&!reduce.matches&&step.node){const phase=elapsed/total();camera.position.set(8+Math.sin(phase*Math.PI*2)*1.3,35,26-Math.sin(phase*Math.PI*2)*.8);const pos=data.nodes.find(n=>n.id===step.node).position;controls.target.set(pos[0]*.06,.4,.65+pos[2]*.04);camera.lookAt(controls.target);}if(updateControls)controls.update();for(const path of paths.values()){if(!path.packet.visible)continue;const t=narration?.active?Math.min(1,local/Math.max(.01,step.duration)):(local%3.5)/3.5;path.packet.position.copy(path.curve.getPointAt(t));path.packet.scale.setScalar(1);}camera.updateMatrixWorld();positionLabels();composer.render();viewDirty=false;host.dataset.renderFrame=String(Number(host.dataset.renderFrame||0)+1);}
 function positionLabels(){
  const w=view.clientWidth,h=view.clientHeight,placed=[];
  const key=[w,h,current().index,overview,inspected,camera.zoom,...camera.position.toArray(),...controls.target.toArray()].join(':');
@@ -140,9 +165,11 @@ async function init(){try{
  if(new URLSearchParams(location.search).has('no3d'))throw new Error('Static fallback preview');
  renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});renderer.setPixelRatio(capture?1:Math.min(devicePixelRatio,1.75));renderer.setClearColor(0x091f29,0);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;
  scene=new THREE.Scene();camera=new THREE.OrthographicCamera(-14,14,9,-9,.1,100);camera.position.copy(homePosition);camera.lookAt(homeTarget);
- controls=new OrbitControls(camera,canvas);controls.enableDamping=!capture&&!reduce.matches;controls.dampingFactor=.1;controls.enablePan=false;controls.minZoom=.75;controls.maxZoom=2.8;controls.minPolarAngle=.4;controls.maxPolarAngle=1.16;controls.target.copy(homeTarget);controls.addEventListener('start',()=>{cinematic=false;updateButtons();});controls.addEventListener('change',()=>{viewDirty=true;if(!playing)lastUI=0;});
+ controls=new OrbitControls(camera,canvas);controls.enableDamping=!capture&&!reduce.matches;controls.dampingFactor=.1;controls.enablePan=false;controls.minZoom=.75;controls.maxZoom=2.8;controls.minPolarAngle=.4;controls.maxPolarAngle=Math.PI/3;controls.target.copy(homeTarget);controls.update();controls.addEventListener('start',()=>{cinematic=false;updateButtons();});controls.addEventListener('change',()=>{viewDirty=true;if(!playing)lastUI=0;});
  const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),.03).texture;scene.environmentIntensity=.22;pmrem.dispose();scene.add(new THREE.HemisphereLight('#c5e6dd','#133641',.8));const key=new THREE.DirectionalLight('#fff0ce',2.0);key.position.set(-6,16,10);key.castShadow=true;key.shadow.mapSize.set(1024,1024);Object.assign(key.shadow.camera,{left:-14,right:14,top:13,bottom:-13,near:.1,far:50});key.shadow.bias=-.0006;key.shadow.normalBias=.025;scene.add(key);const rim=new THREE.DirectionalLight('#77cfc3',1.0);rim.position.set(6,8,-10);scene.add(rim);
  const gltf=await new GLTFLoader().loadAsync(host.dataset.model);model=gltf.scene;model.traverse(o=>{if(o.userData.nodeId)modules.set(o.userData.nodeId,o);if(o.isMesh){o.castShadow=true;o.receiveShadow=true;o.material.envMapIntensity=.35;if(['Deep ceramic','Plinth basalt'].includes(o.material.name)){o.material.metalness=.15;o.material.roughness=.62;}materials.push(o.material);}});scene.add(model);
+ const bounds=new THREE.Box3().setFromObject(model);
+ for(const x of [bounds.min.x,bounds.max.x])for(const y of [bounds.min.y,bounds.max.y])for(const z of [bounds.min.z,bounds.max.z])modelCorners.push(new THREE.Vector3(x,y,z));
  for(const node of data.nodes){const group=data.groups.find(g=>g.id===node.group),label=document.createElement('span');label.className='scene-label';label.dataset.node=node.id;label.style.setProperty('--role-color',group.color);const badge=document.createElement('b');badge.className='node-role';badge.textContent=group.badge;const name=document.createElement('span');name.textContent=node.title;const step=document.createElement('b');step.className='node-step';label.append(badge,name,step);const leader=document.createElement('i');leader.className='label-leader';leader.style.setProperty('--role-color',group.color);$('.scene-labels').append(leader,label);leaders.set(node.id,leader);labels.set(node.id,label);const halo=new THREE.Mesh(new THREE.TorusGeometry(1.57,.055,8,64),new THREE.MeshStandardMaterial({color:activeGold,emissive:activeGold,emissiveIntensity:1.5}));halo.rotation.x=Math.PI/2;halo.scale.set(1,.82,1);halo.position.set(node.position[0],.25,node.position[2]);scene.add(halo);halos.set(node.id,halo);}
  setupRoutes();composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));composer.addPass(new UnrealBloomPass(new THREE.Vector2(1024,600),.13,.20,1.9));composer.addPass(new OutputPass());
  const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();let down;
@@ -157,7 +184,7 @@ $('#story-progress').addEventListener('input',e=>{if(!scenario)return;if(narrati
 $('[data-replay]').addEventListener('click',()=>{if(!scenario)return;if(narration?.active){narration.restart();return;}elapsed=0;setPlaying(true);updateStage(true);render()});
 $('#component-select').addEventListener('change',e=>{narration?.pause();inspect(e.target.value);setPlaying(false);render()});
 $('[data-reset-camera]').addEventListener('click',()=>{cinematic=false;updateButtons();resetCamera()});
-$('[data-cinematic]').addEventListener('click',()=>{cinematic=!cinematic;updateButtons();render()});
+$('[data-cinematic]').addEventListener('click',()=>{cinematic=!cinematic;if(cinematic)resetCamera();updateButtons();render()});
 $('[data-overview]').addEventListener('click',e=>{overview=!overview;e.currentTarget.setAttribute('aria-pressed',String(overview));highlight();render()});
 $('#playback-rate').addEventListener('change',e=>{playbackRate=Number(e.target.value);if(narration?.active)narration.setRate(playbackRate)});
 // Some browsers coalesce media-query change events during rapid viewport changes.
@@ -174,7 +201,7 @@ document.addEventListener('visibilitychange',()=>{lastFrame=0;if(document.hidden
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();fail(new Error('Graphics context was lost'))});
 const dialog=document.querySelector('.film-dialog'),video=dialog.querySelector('video');$('[data-watch-film]').addEventListener('click',()=>{narration?.pause();setPlaying(false);dialog.showModal();video.play().catch(()=>{})});document.querySelector('[data-close-film]').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>video.pause());
 // A deterministic frame interface drives the downloadable film and regression checks.
-window.qeArchitecture={get ready(){return ready&&!renderFailed},get snapshot(){return {clock:narration?.active?'audio':'story',synced:Boolean(narration?.active&&narration.valid),duration:total(),activeNodes:(current()?.step.nodes||[current()?.step.node]),scenario:scenario?.id,stage:stageIndex,elapsed,playing,cinematic,overview,playbackRate,reducedMotion:reduce.matches,node:current()?.step.node,routes:current()?.step.routes,modules:modules.size,signals:[...paths].filter(([,p])=>p.packet.visible).map(([route,p])=>({route,position:p.packet.position.toArray()}))}},seek(time,id){if(narration?.active)exploreWithoutAudio();if(id&&id!==scenario.id)selectScenario(id);setPlaying(false);elapsed=Math.max(0,Math.min(total(),Number(time)));updateStage(true);render();return this.snapshot;},setCameraCinema(value){cinematic=Boolean(value)&&!reduce.matches;render();},
+window.qeArchitecture={get ready(){return ready&&!renderFailed},get framing(){return framingSnapshot()},get snapshot(){return {clock:narration?.active?'audio':'story',synced:Boolean(narration?.active&&narration.valid),duration:total(),activeNodes:(current()?.step.nodes||[current()?.step.node]),scenario:scenario?.id,stage:stageIndex,elapsed,playing,cinematic,overview,playbackRate,reducedMotion:reduce.matches,node:current()?.step.node,routes:current()?.step.routes,modules:modules.size,signals:[...paths].filter(([,p])=>p.packet.visible).map(([route,p])=>({route,position:p.packet.position.toArray()}))}},seek(time,id){if(narration?.active)exploreWithoutAudio();if(id&&id!==scenario.id)selectScenario(id);setPlaying(false);elapsed=Math.max(0,Math.min(total(),Number(time)));updateStage(true);render();return this.snapshot;},setCameraCinema(value){cinematic=Boolean(value)&&!reduce.matches;if(cinematic)resetCamera();updateButtons();render();},
  connectNarration(audio,definition){
   narration?.destroy();
   const clock=createNarrationClock(audio,definition,refreshNarration);narration=clock;

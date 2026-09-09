@@ -9,6 +9,12 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.21.2 · 9 September 2026
+
+The [3D architecture]({{ '/demos/architecture/?scenario=generate' | relative_url }}) now opens from a **higher, more front-facing camera angle**, so the platform's depth is easier to read. Framing fits the model with space around its edges and preserves its proportions across wide, short and mobile windows. Camera motion keeps the same elevated view.
+
+**Reset view** restores both the original angle and zoom, including after an orbit drag. The model, recordings, narration synchronization and original downloadable film retain their existing editions. [GitHub release v1.21.2](https://github.com/tomqwu/ai_qe/releases/tag/v1.21.2) packages the current publication.
+
 ## v1.21.1 · 9 September 2026
 
 Starting audio now pauses other AI × QE players across **open tabs and windows on the same site**, page explanations and nested embedded presentations. Playback requests claim focus before loading finishes; a cancelled request cannot interrupt the newer player when its audio arrives.
