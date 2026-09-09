@@ -28,7 +28,7 @@
     const play = element('button', 'narrator-guide-play', '▶ Listen to explanation');
     play.type = 'button'; play.dataset.guidePlay = ''; play.setAttribute('aria-pressed', 'false');
     const duration = Math.round(clip.duration);
-    toolbar.append(play, element('span', 'narrator-guide-credit', `Audio narration · ${Math.floor(duration / 60)}:${String(duration % 60).padStart(2, '0')}`));
+    toolbar.append(play, element('span', 'narrator-guide-credit', `${definition.format || 'Audio narration'} · ${Math.floor(duration / 60)}:${String(duration % 60).padStart(2, '0')}`));
     const player = element('div', 'narrator-guide-player'); player.hidden = true;
     const caption = element('p', 'narrator-guide-caption'); caption.dataset.guideCaption = '';
     caption.setAttribute('aria-label', 'English subtitles'); caption.setAttribute('aria-live', 'off');
@@ -55,6 +55,10 @@
       if (caption.textContent !== text) caption.textContent = text;
     }
     function tick() { renderCaption(); if (!audio.paused && !audio.ended) frame = requestAnimationFrame(tick); }
+    function readyStatus() {
+      if (!cues.length || audio.ended || audio.error) return;
+      status.textContent = definition.baseline ? 'Published baseline explanation · English captions' : demo ? (flow?.valid ? 'Audio, captions and story follow one timeline. Stage controls seek the recording.' : 'Audio explanation · Timed story cues unavailable. Read the captions or explore without audio.') : flow ? 'English captions and highlighted components follow the audio.' : 'English captions synchronized to the explanation.';
+    }
     function sync() {
       const playing = !audio.paused && !audio.ended;
       play.textContent = playing ? 'Ⅱ Pause explanation' : audio.error ? 'Retry explanation' : '▶ Listen to explanation';
@@ -70,7 +74,7 @@
         const response = await fetch(captionURL, {signal:request.signal});
         if (!response.ok) throw new Error('Caption request failed');
         cues = parseCaptions(await response.text()); flow?.setCaptions(cues); renderCaption();
-        status.textContent = definition.baseline ? 'Published baseline explanation · English captions' : demo ? (flow?.valid ? 'Audio, captions and story follow one timeline. Stage controls seek the recording.' : 'Audio explanation · Timed story cues unavailable. Read the captions or explore without audio.') : flow ? 'English captions and highlighted components follow the audio.' : 'English captions synchronized to the explanation.';
+        readyStatus();
       } catch (error) {
         if (error.name === 'AbortError') return;
         cuesRequested = false;
@@ -82,6 +86,8 @@
       player.hidden = false;
       if (audio.error) audio.load();
       if (audio.ended) audio.currentTime = 0;
+      status.textContent = 'Starting explanation…';
+      readyStatus();
       audio.play().catch(() => { sync(); status.textContent = 'Playback could not start. Select Listen to retry, or read Narrator notes.'; });
     });
     audio.addEventListener('play', () => {
@@ -90,13 +96,15 @@
       pausingFlow = true;
       if (!demo && !flow) target.querySelector('[data-tour-play][aria-pressed="true"]')?.click();
       pausingFlow = false;
-      loadCaptions(); sync();
+      loadCaptions(); readyStatus(); sync();
     });
     audio.addEventListener('pause', sync);
+    audio.addEventListener('playing', readyStatus);
+    audio.addEventListener('seeked', readyStatus);
     audio.addEventListener('ended', () => { caption.textContent = ''; sync(); status.textContent = 'Explanation complete. Replay or continue exploring when ready.'; });
     audio.addEventListener('error', () => { caption.textContent = ''; sync(); status.textContent = 'Audio could not load. Select Retry explanation, or read Narrator notes.'; });
     for (const event of ['timeupdate', 'seeked']) audio.addEventListener(event, renderCaption);
-    audio.addEventListener('seeking', () => { caption.textContent = ''; });
+    audio.addEventListener('seeking', () => { caption.textContent = ''; readyStatus(); });
     cc.addEventListener('click', () => { captionsOn = !captionsOn; cc.setAttribute('aria-pressed', String(captionsOn)); renderCaption(); });
     speed.addEventListener('change', () => { audio.playbackRate = Number(speed.value); });
     audio.addEventListener('ratechange', () => { speed.value = String(audio.playbackRate); });

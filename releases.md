@@ -9,6 +9,14 @@ The version identifies the site and presentation player. A player-only patch can
 
 <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/tomqwu/ai_qe/releases">GitHub releases &amp; assets ↗</a><a class="text-link" href="{{ '/briefings/' | relative_url }}">Open the presentation room →</a></div>
 
+## v1.21.0 · 9 September 2026
+
+The [technical platform slide]({{ '/briefings/technical/#slide-2' | relative_url }}) and its existing page explanations now have a **4-minute-50-second full walkthrough**, replacing the short technical summary. The recording explains all **11 components** across **13 synchronized sections**, with **72 audio-timed English captions**.
+
+An authored payment-retry testing scenario connects approved expected behavior, versioned context, AI drafting, authorized execution, isolated tests, release review and retained evidence. The walkthrough also explains the separate AI application evaluation path, reviewed regression cases and QE modernization prerequisites. The executive summary retains its shorter recording.
+
+Replay clears the completed status when an explanation starts again. Existing pages, slide/PDF editions and the four 3D scenario recordings are retained. [GitHub release v1.21.0](https://github.com/tomqwu/ai_qe/releases/tag/v1.21.0) includes the new technical recording, transcript, captions and visual cues in the narration bundle.
+
 ## v1.20.0 · 8 September 2026
 
 The [3D architecture demonstration]({{ '/demos/architecture/?scenario=generate' | relative_url }}) now follows its English audio across **all four scenarios**. Select **Listen to explanation**: the spoken section, highlighted components, flowing arrows and captions share the recording's timeline. Both sets of playback controls pause, replay, seek and change speed together.

@@ -7,6 +7,8 @@ const profiles = JSON.parse(fs.readFileSync('assets/data/narration-flows.json'))
 const manifest = JSON.parse(fs.readFileSync('assets/data/narration.json'));
 const routes = {'evp':'fintech-evp','technical':'fintech-technical','industry-evp':'evp','industry-technical':'technical'};
 const sorted = values => [...new Set(values)].sort();
+const platformProfile=profiles.find(p=>p.diagram==='platform'&&p.clip==='industry-technical/slide-2');
+assert.deepEqual(sorted(platformProfile.cues.flatMap(c=>c.nodes)),sorted(['experience','delivery','context','runtime','gateway','checks','application','evaluation','release','evidence','corpus']),'Full walkthrough covers all eleven responsibilities');
 async function seek(audio, time) {
   await audio.evaluate((a,t) => { a.pause(); a.currentTime=t; },time);
   await audio.page().waitForFunction(({a,t}) => !a.seeking && Math.abs(a.currentTime-t)<.15, {a:await audio.elementHandle(),t:time});
@@ -97,20 +99,27 @@ async function snapshot(figure) {
    const figure=page.locator('#slide-2 [data-diagram="platform"]'),audio=page.locator('[data-narration-audio]');
    await page.locator('[data-narration-start]').click();
    await page.waitForFunction(a=>a.currentTime>.15,await audio.elementHandle());
-   await seek(audio,7.5);let before=await snapshot(figure);
+   const platformCaptions=await page.evaluate(text=>window.QENarrationMedia.parseCaptions(text),fs.readFileSync(manifest.decks['industry-technical'].slides['slide-2'].captions.slice(1),'utf8'));
+   const chapter=node=>{
+    const index=platformProfile.cues.findIndex(c=>c.nodes.length===1&&c.nodes[0]===node);
+    assert.ok(index>=0,'Component has a dedicated explanation: '+node);
+    return {start:platformCaptions[platformProfile.cues[index].caption].start,end:platformCaptions[platformProfile.cues[index+1].caption].start};
+   };
+   const gateway=chapter('gateway'),context=chapter('context');
+   await seek(audio,gateway.start+.5);let before=await snapshot(figure);
    await page.waitForTimeout(300);assert.equal((await snapshot(figure)).clock,before.clock,'Pause freezes the actual SVG clock');
    await page.locator('[data-narration-speed]').selectOption('1.5');
    await page.locator('[data-narration-play]').click();
-   await page.waitForFunction(a=>a.currentTime>=8.2,await audio.elementHandle());
+   await page.waitForFunction(({a,time})=>a.currentTime>=time,{a:await audio.elementHandle(),time:gateway.start+1.2});
    before=await snapshot(figure);
    assert.equal(await audio.evaluate(a=>a.playbackRate),1.5);
-   assert.ok(Math.abs(before.clock-(await audio.evaluate(a=>a.currentTime)-6.533)/(10.487-6.533)*2.4)<.08,'Motion follows faster narration');
-   await seek(audio,4);assert.deepEqual((await snapshot(figure)).nodes,['context','runtime']);
+   assert.ok(Math.abs(before.clock-(await audio.evaluate(a=>a.currentTime)-gateway.start)/(gateway.end-gateway.start)*2.4)<.08,'Motion follows faster narration');
+   await seek(audio,context.start+.5);assert.deepEqual((await snapshot(figure)).nodes,['context']);
    await page.locator('[data-narration-replay]').click();
    await page.waitForFunction(f=>f.dataset.audioCue==='0',await figure.elementHandle());
    await page.locator('[data-flow-next]').click();
    assert.ok(await audio.evaluate(a=>a.paused),'Manual flow takes control and pauses audio');
-   await page.locator('[data-narration-play]').click();await seek(audio,7.5);
+   await page.locator('[data-narration-play]').click();await seek(audio,gateway.start+.5);
    await page.locator('#slide-2 [data-architecture-node="context"]').click();
    assert.ok(await audio.evaluate(a=>a.paused));
    assert.match(await figure.locator('[data-inspector-name]').textContent(),/Context/,'Manual inspector retains the requested component');
@@ -125,12 +134,21 @@ async function snapshot(figure) {
    const home=page.locator('figure[data-diagram="platform"]'),guide=page.locator('[data-narrator-guide="industry-technical/slide-2"]');
    await guide.locator('[data-guide-play]').click();
    const narration=guide.locator('audio');await page.waitForFunction(a=>a.currentTime>.15,await narration.elementHandle());
-   await seek(narration,7.5);assert.deepEqual((await snapshot(home)).nodes,['gateway']);
+   await seek(narration,gateway.start+.5);assert.deepEqual((await snapshot(home)).nodes,['gateway']);
+   assert.match(await guide.locator('.narrator-guide-credit').textContent(),/Full architecture walkthrough/);
+   await seek(narration,await narration.evaluate(a=>a.duration-.3));
+   await guide.locator('[data-guide-play]').click();
+   await page.waitForFunction(a=>a.ended,await narration.elementHandle());
+   await page.waitForFunction(g=>g.querySelector('.narrator-guide-status').textContent.includes('Explanation complete'),await guide.elementHandle());
+   assert.match(await guide.locator('.narrator-guide-status').textContent(),/Explanation complete/);
+   await guide.locator('[data-guide-play]').click();
+   await page.waitForFunction(a=>!a.paused&&a.currentTime>.15,await narration.elementHandle());
+   assert.doesNotMatch(await guide.locator('.narrator-guide-status').textContent(),/Explanation complete/,'Replay restores the active explanation status');
    await page.setViewportSize({width:390,height:844});
    await page.emulateMedia({reducedMotion:'reduce'});
-   await seek(narration,4);
-   assert.deepEqual((await snapshot(home)).nodes,['context','runtime']);
-   assert.equal(await home.locator('.diagram-overview [aria-current="step"]').count(),2,'Readable summary follows the same current state');
+   await seek(narration,context.start+.5);
+   assert.deepEqual((await snapshot(home)).nodes,['context']);
+   assert.equal(await home.locator('.diagram-overview [aria-current="step"]').count(),1,'Readable summary follows the same current state');
    assert.equal(await home.locator('.flow-effect.route-focus').first().isVisible(),false,'Reduced motion keeps focus without moving packets');
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    // A changed recording must not silently inherit stale visual timing.
