@@ -3,7 +3,7 @@
 {% for slide in deck %}
 {% if slide.chapter != '' %}{% assign current_chapter = slide.chapter %}{% endif %}
 <section class="slide ft-slide{% if forloop.first %} ft-cover{% endif %}" id="slide-{{ forloop.index }}" data-chapter="{{ current_chapter | escape }}" aria-labelledby="title-{{ forloop.index }}">
-  <p class="kicker">{{ site.data.fintech_case.company }} / Fictional fintech case / {% if page.case_audience == 'evp' %}Executive{% else %}Technical{% endif %}</p>
+  <p class="kicker">{{ site.data.fintech_case.company }} / Illustrative banking scenario / {% if page.case_audience == 'evp' %}Executive{% else %}Technical{% endif %}</p>
   <h2 id="title-{{ forloop.index }}">{{ slide.title | escape }}</h2>
   <div class="slide-content">
     {% if slide.lead != '' %}<p class="ft-lead">{{ slide.lead | escape }}</p>{% endif %}

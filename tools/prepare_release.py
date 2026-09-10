@@ -20,6 +20,7 @@ def prepare(output):
     assert not list(output.iterdir()), 'Use an empty directory for the release package'
     filenames = [f'assets/pdf/ai-qe-{audience}-v{release["slide_edition"]}.pdf' for audience in ('evp', 'technical')]
     filenames += [f'assets/pdf/ai-qe-fintech-{audience}-v{release["fintech_edition"]}.pdf' for audience in ('evp', 'technical')]
+    filenames += [f'assets/pdf/ai-qe-{audience}-guided-v{release[field]}.pdf' for audiences,field in [(('evp','technical'),'slide_edition'),(('fintech-evp','fintech-technical'),'fintech_edition')] for audience in audiences]
     filenames += [f'assets/pdf/ai-qe-industry-research-v{release["research_edition"]}.pdf',
                   f'assets/pdf/ai-qe-discovery-questionnaire-v{release["questionnaire_edition"]}.pdf',
                   'assets/video/assurance-architecture.mp4', 'assets/video/assurance-architecture.vtt',
@@ -61,8 +62,11 @@ def prepare(output):
     records.append(('narration-flows.json', json.dumps(flows, ensure_ascii=False, indent=2).encode()))
     reviews = json.loads((ROOT / 'assets/data/narration-review.json').read_text())
     records.append(('narration-review.json', json.dumps(reviews, ensure_ascii=False, indent=2).encode()))
+    for filename in ['narration-provenance.json']:
+        records.append((filename,(ROOT / 'assets/data' / filename).read_bytes()))
+    records.append(('briefing-routes.json',(ROOT / '_data/briefing_routes.json').read_bytes()))
     records.append(('README.txt', (
-        'AI x QE — English audio narration\n\n'
+        'AI x QE — English audio narration\n\nPrepared by Tom Wu. Synthetic voice produced with ElevenLabs; narration-provenance.json records the available basis for each recording.\n\n'
         'Every slide maps to MP3 audio, timed WebVTT captions and a transcript. Shared explanations may reuse a recording. '
         'Folder keys: evp = banking executive, technical = banking architecture, '
         'industry-evp = industry executive, industry-technical = industry architecture.\n\n'
@@ -98,11 +102,11 @@ Publication editions:
 
 - Site and presentation player: **v{release["version"]}**
 - Industry decks: **v{release["slide_edition"]}** — {counts[('Industry perspective', 'evp')]} Executive slides and {counts[('Industry perspective', 'technical')]} technical slides
-- Fintech decks: **v{release["fintech_edition"]}** — {counts[('Fintech case', 'evp')]} Executive slides and {counts[('Fintech case', 'technical')]} technical slides
+- Fintech decks: **v{release["fintech_edition"]}** — {counts[('Banking scenario', 'evp')]} Executive slides and {counts[('Banking scenario', 'technical')]} technical slides
 - Research companion: **v{release["research_edition"]}** — 13 pages
 - Fillable discovery questionnaire: **v{release["questionnaire_edition"]}**
 
-Assets include all six PDFs, the architecture film and captions, the industry, modernization and fintech-evidence CSV/JSON source registers, and the complete {total_slides}-slide audio narration bundle with English subtitles and transcripts. SHA256SUMS.txt covers all fifteen downloadable publication files. The PDF filenames identify their content edition, which may precede a player release. The existing architecture film retains its v1.8.0 edition.
+Assets include all ten PDFs, the architecture film and captions, the industry, modernization and fintech-evidence CSV/JSON source registers, and the complete {total_slides}-slide audio narration bundle with English subtitles and transcripts. SHA256SUMS.txt covers all nineteen downloadable publication files. The PDF filenames identify their content edition, which may precede a player release. The existing architecture film retains its v1.8.0 edition.
 
 Published only after the site build, browser checks, PDF checks and GitHub Pages deployment succeed. The fintech case is fictional; its estimates and outcomes are illustrative assumptions.
 '''

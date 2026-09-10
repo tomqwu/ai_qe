@@ -8,7 +8,7 @@ try {
   await page.setViewportSize(viewport);
   for(const [audience,slides] of Object.entries(decks)) {
    await page.goto(`${base}/briefings/fintech-${audience}/`);await page.evaluate(()=>document.fonts.ready);
-   await page.locator('[data-narration-play]').waitFor({state:'visible'});
+   await page.locator('[data-narration-start]').waitFor({state:'visible'});
    assert.equal(await page.locator('.slide').count(),slides.length);
    for(let i=0;i<slides.length;i++) {
     await page.locator('.deck-navigation select').selectOption(String(i));

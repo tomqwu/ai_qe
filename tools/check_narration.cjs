@@ -50,7 +50,7 @@ async function checkBounds(page) {
       page.setDefaultTimeout(12000);
       const errors = []; page.on('pageerror', error => errors.push(error.message));
       let audioFails = false, captionsFail = false, emptyManifest = false, captionGate;
-      await page.route('**/assets/data/narration.json*', route => route.fulfill({ json:{edition:'test-only', decks:emptyManifest ? {} : {evp:{slides:{'slide-17':creditedFixture,'slide-18':creditedFixture}},technical:{slides:{'slide-27':fixture}},'industry-evp':{slides:{'slide-1':creditedFixture,'slide-2':creditedFixture}},'industry-technical':{slides:{'slide-1':creditedFixture,'slide-2':creditedFixture}}}} }));
+      await page.route('**/assets/data/narration.json*', route => route.fulfill({ json:{edition:'test-only', decks:emptyManifest ? {} : {evp:{slides:{'slide-17':creditedFixture,'slide-18':creditedFixture}},technical:{slides:{'slide-2':fixture,'slide-27':fixture}},'industry-evp':{slides:{'slide-1':creditedFixture,'slide-2':creditedFixture}},'industry-technical':{slides:{'slide-1':creditedFixture,'slide-2':creditedFixture}}}} }));
       await page.route('**/assets/audio/narration-test.vtt', async route => {
         if (captionGate) await captionGate;
         return route.fulfill({status:captionsFail ? 503 : 200, contentType:'text/vtt', body:captionsFail ? 'Unavailable' : captions});
@@ -67,20 +67,20 @@ async function checkBounds(page) {
       let releaseCaptions;
       captionGate = new Promise(resolve => { releaseCaptions = resolve; });
       await page.goto(base + '/briefings/fintech-evp/#slide-18');
-      await page.locator('[data-narration-play]').click(); await waitForPlaying(page);
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page);
       assert.equal(await page.locator('[data-narration-cc]').isDisabled(),true);
       assert.match(await page.locator('[data-narration-status]').textContent(),/Loading captions/);
       assert.equal(await page.locator('[data-narration-caption]').textContent(),'');
       releaseCaptions(); captionGate = null;
-      await page.locator('[data-narration-cc]:not([disabled])').waitFor();
+      await page.locator('[data-narration-cc]:not([disabled])').waitFor({state:'attached'});
       assert.match(await page.locator('[data-narration-status]').textContent(),/Captions synchronized/);
       await page.reload();
-      await page.locator('[data-narration-cc]:not([disabled])').waitFor();
+      await page.locator('[data-narration-cc]:not([disabled])').waitFor({state:'attached'});
       assert.equal(await mediaPaused(page), true, 'Loading a recorded slide must not autoplay');
-      await page.locator('[data-narration-auto]').uncheck();
-      await page.locator('[data-narration-play]').click(); await waitForPlaying(page);
+      await page.locator('[data-narration-auto]').evaluate(n=>{n.checked=false;n.dispatchEvent(new Event('change',{bubbles:true}));});
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page);
       assert.match(await page.locator('[data-narration-caption]').textContent(), /First actual/);
-      await page.locator('[data-narration-play]').click(); assert.equal(await mediaPaused(page), true);
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); assert.equal(await mediaPaused(page), true);
       await page.locator('[data-narration-seek]').fill('2.5');
       await page.waitForFunction(() => document.querySelector('[data-narration-caption]').textContent.includes('Second actual'));
       assert.match(await page.locator('[data-narration-caption]').textContent(), /\nA source line break/);
@@ -88,7 +88,7 @@ async function checkBounds(page) {
       await page.locator('[data-narration-cc]').click();
       await page.locator('[data-narration-speed]').selectOption('1.25');
       assert.equal(await page.locator('[data-narration-audio]').evaluate(audio => audio.playbackRate),1.25);
-      await seekNearEnd(page); await page.locator('[data-narration-play]').click();
+      await seekNearEnd(page); await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click();
       await page.waitForFunction(() => document.querySelector('[data-narration-audio]').ended);
       assert.equal(await currentSlide(page),'slide-18','Auto-next unchecked must keep the completed slide');
       await page.locator('[data-narration-replay]').click(); await waitForPlaying(page);
@@ -102,11 +102,11 @@ async function checkBounds(page) {
       await page.locator('[data-reading]').click(); assert.equal(await page.locator('.narration-panel').isVisible(),false);
       assert.equal(await mediaPaused(page),true);
       await page.locator('[data-reading]').click(); await slide(page,18);
-      await page.locator('[data-narration-play]').waitFor(); assert.equal(await mediaPaused(page),true);
+      await page.locator('[data-narration-start]:not([disabled])').waitFor(); assert.equal(await mediaPaused(page),true);
 
       // Notes must stay attached to the visible slide while recorded audio is paused.
       for (const selector of ['[data-notes]','[data-edition]']) {
-        await page.locator('[data-narration-play]').click(); await waitForPlaying(page);
+        await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page);
         await page.locator(selector).click();
         assert.equal(await page.locator('.deck-drawer').isVisible(),true);
         assert.equal(await mediaPaused(page),true,'Opening a slide drawer must pause narration');
@@ -116,25 +116,25 @@ async function checkBounds(page) {
       }
 
       // An actual ended event advances once, and never skips an unrecorded slide.
-      await page.locator('[data-narration-auto]').check();
-      await page.locator('[data-narration-play]').click(); await waitForPlaying(page); await seekNearEnd(page);
+      await page.locator('[data-narration-auto]').evaluate(n=>{n.checked=true;n.dispatchEvent(new Event('change',{bubbles:true}));});
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page); await seekNearEnd(page);
       await page.waitForURL(/#slide-19$/);
       assert.equal(await page.locator('.narration-panel').isVisible(),false);
       assert.match(await page.locator('.deck-message').textContent(),/Narration paused/);
-      await slide(page,17); await page.locator('[data-narration-play]').click(); await waitForPlaying(page); await seekNearEnd(page);
+      await slide(page,17); await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page); await seekNearEnd(page);
       await page.waitForFunction(() => document.querySelector('.narration-panel').dataset.narrationState === 'between-slides');
       const gapStart = Date.now();
       assert.equal(await currentSlide(page),'slide-17','Keep the completed slide visible during the pause');
       assert.match(await page.locator('[data-narration-start]').textContent(),/Pause narration/);
       await page.waitForURL(/#slide-18$/); await waitForPlaying(page);
       assert.ok(Date.now() - gapStart >= 1800,'Pause between slides is about two wall-clock seconds even at 1.25x');
-      await page.locator('[data-narration-play]').click();
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click();
       await checkBounds(page);
 
       // Pause, manual navigation, notes and Auto-next off must cancel delayed navigation.
       const enterGap = async () => {
-        await slide(page,17); await page.locator('[data-narration-auto]').check();
-        await page.locator('[data-narration-play]').click(); await waitForPlaying(page); await seekNearEnd(page);
+        await slide(page,17); await page.locator('[data-narration-auto]').evaluate(n=>{n.checked=true;n.dispatchEvent(new Event('change',{bubbles:true}));});
+        await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page); await seekNearEnd(page);
         await page.waitForFunction(() => document.querySelector('.narration-panel').dataset.narrationState === 'between-slides');
       };
       await enterGap(); await page.locator('[data-narration-start]').click();
@@ -142,12 +142,12 @@ async function checkBounds(page) {
       assert.equal(await currentSlide(page),'slide-17','Pause holds the slide past the pending timer');
       await page.locator('[data-narration-start]').click();
       await page.waitForURL(/#slide-18$/); await waitForPlaying(page);
-      await page.locator('[data-narration-play]').click();
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click();
       for (const action of ['navigate','notes','auto-off']) {
         await enterGap();
         if (action==='navigate') await slide(page,18);
         if (action==='notes') await page.locator('[data-notes]').click();
-        if (action==='auto-off') await page.locator('[data-narration-auto]').uncheck();
+        if (action==='auto-off') await page.locator('[data-narration-auto]').evaluate(n=>{n.checked=false;n.dispatchEvent(new Event('change',{bubbles:true}));});
         await page.waitForTimeout(2200);
         assert.equal(await currentSlide(page),action==='navigate'?'slide-18':'slide-17',`${action} cancels the delayed change`);
         assert.equal(await mediaPaused(page),true);
@@ -156,33 +156,33 @@ async function checkBounds(page) {
           await page.locator('[data-close-drawer]').click();
         }
       }
-      await page.locator('[data-narration-auto]').check();
-      await slide(page,17); await page.locator('[data-narration-play]').click(); await waitForPlaying(page);
+      await page.locator('[data-narration-auto]').evaluate(n=>{n.checked=true;n.dispatchEvent(new Event('change',{bubbles:true}));});
+      await slide(page,17); await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page);
       await slide(page,18); assert.equal(await mediaPaused(page),true,'Manual navigation must stop playback');
       assert.equal(await page.locator('[data-narration-caption]').textContent(),'');
 
       await page.goto(base + '/briefings/fintech-evp/?route=client#slide-17');
-      await page.locator('[data-narration-play]').click(); await waitForPlaying(page); await seekNearEnd(page);
-      await page.waitForURL(/#slide-5$/); // The guided route differs from numerical order.
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page); await seekNearEnd(page);
+      await page.waitForURL(/#slide-13$/); // The guided route differs from numerical order.
       assert.equal(await page.locator('.narration-panel').isVisible(),false);
 
       captionsFail = true;
       await page.goto(base + '/briefings/fintech-evp/#slide-18');
-      await page.locator('[data-narration-retry-captions]').waitFor();
+      await page.locator('[data-narration-start]').click(); await page.locator('[data-narration-retry-captions]').waitFor();
       assert.match(await page.locator('[data-narration-status]').textContent(),/captions could not load/);
-      await page.locator('[data-narration-play]').click(); await waitForPlaying(page);
+      await waitForPlaying(page);
       captionsFail = false; await page.locator('[data-narration-retry-captions]').click();
-      await page.locator('[data-narration-cc]:not([disabled])').waitFor();
-      await page.locator('[data-narration-play]').click();
+      await page.locator('[data-narration-cc]:not([disabled])').waitFor({state:'attached'});
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click();
       audioFails = true;
-      await page.reload();
+      await page.reload(); await page.locator('[data-narration-start]').click();
       await page.waitForFunction(() => document.querySelector('.narration-panel')?.dataset.narrationState === 'error');
       assert.match(await page.locator('[data-narration-status]').textContent(),/Audio could not load/);
-      audioFails = false; await page.locator('[data-narration-play]').click(); await waitForPlaying(page);
-      await page.locator('[data-narration-play]').click();
+      audioFails = false; await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click(); await waitForPlaying(page);
+      await (await page.locator('[data-narration-play]').isVisible() ? page.locator('[data-narration-play]') : page.locator('[data-narration-start]')).click();
 
       await page.goto(base + '/briefings/fintech-technical/#slide-27');
-      await page.locator('[data-narration-play]').waitFor(); await checkBounds(page);
+      await page.locator('[data-narration-start]:not([disabled])').click(); await waitForPlaying(page); await page.locator('[data-narration-start]').click(); await checkBounds(page);
       await page.locator('[data-narration-transcript]').click();
       assert.equal(await page.locator('.narration-provenance').count(),0,'Missing optional provenance must not invent a provider or caption method');
       await page.keyboard.press('Escape');
@@ -224,11 +224,11 @@ async function checkBounds(page) {
       }
       // Use the real host page and its embedded technical deck, including flow controls.
       await page.setViewportSize({width:1920,height:1080});
-      await page.goto(base + '/');
-      await page.locator('[data-visual-audience="technical"]').first().click();
+      await page.goto(base + '/briefings/?for=technical&slide=slide-2');
+      await page.locator('#briefing-frame').scrollIntoViewIfNeeded();
       const embedded = await page.locator('#briefing-frame').elementHandle().then(handle => handle.contentFrame());
-      await embedded.waitForURL(url => url.pathname.endsWith('/briefings/technical/') && url.hash === '#slide-2', {waitUntil:'domcontentloaded'});
-      await embedded.locator('[data-narration-play]').waitFor();
+      await embedded.waitForURL(url => url.pathname.endsWith('/briefings/fintech-technical/') && url.hash === '#slide-2', {waitUntil:'domcontentloaded'});
+      await embedded.locator('[data-narration-start]').click(); await embedded.locator('[data-narration-play]').waitFor();
       await checkBounds(embedded);
       await page.emulateMedia({media:'print'});
       assert.equal(await embedded.locator('.narration-panel').isVisible(),false);

@@ -51,7 +51,7 @@ These are the studies that matter for pilot design because they report acceptanc
 
 **Sponsor and caveats:** Single company and language; time savings self-estimated
 
-**Pilot use:** Reference for automation-maintenance use cases: about half of reproducible flaky tests fixable, about half of fixes accepted
+**Local measurement:** How many eligible failures can we reproduce, repair without weakening assertions, and have independently accepted? {% include flakyguard-claim.html %}
 
 <details markdown="block">
 <summary>Sample and method details</summary>

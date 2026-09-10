@@ -27,6 +27,8 @@ Effort figures are ranges of person-days for the advisory team and for the bank'
 | 3. Limited production validation | Expand only successful capabilities to three to five additional teams or one additional technology stack; validate repeatability, adoption, support load, controls, model cost and benefits realization across at least two releases | 1-2 quarters | Advisory 30-50 per quarter; bank owns run cost | Playbook per capability; enablement material; support model; control evidence pack for second line and audit; outcome evidence and sponsor review; Finance-validated register entries for cash claims; scale decision memo | Capped per quarter. Go if the agreed outcome repeats on at least two of three new teams, floors hold across two releases and support and cost limits hold. Booked savings are required only when claiming realized cash savings |
 | 4. Incremental scale | Scale capability by capability after validated value against the chosen outcome; consider shared integrations, broader tooling, AI control-plane functions and limited agentic execution only where justified | Ongoing | Sized per capability | Business case per capability using measured data; platform decision only if existing tools demonstrably cannot meet the requirement | Each capability has its own ceiling and stop rule; no enterprise platform purchase without Phase 3 evidence |
 
+{% include pilot-timelines.html %}
+
 ## Applications and use cases
 
 Recommended scope is one modern cloud or API-based application with an existing automated pipeline and a regression suite of meaningful size, plus optionally one mainframe-integrated or packaged application, so the sponsor sees both the best case and the realistic case. Do not start with a mobile application (tooling variance) or a data platform (test semantics differ).
@@ -35,7 +37,7 @@ Recommended scope is one modern cloud or API-based application with an existing 
 
 **Default QA use case 2: executable API or component test generation from specifications and existing tests.** Measurable (acceptance rate, coverage delta, time to first passing test, maintenance effort over subsequent sprints); Meta's results support staged validation gates; they do not predict bank acceptance. Report candidate-level acceptance and class-level yield separately against the bank baseline. Requires an API specification or existing scaffolds, which is why the modern application is the primary target.
 
-**Alternates.** Automation maintenance and flaky-test remediation where quarantine rates are high (FlakyGuard: about half of reproducible flaky tests fixable, about half of fixes accepted). Change-impact analysis and regression selection only where requirements-to-test traceability already exists; without it the use case becomes a data project. Requirement and test-scenario generation is popular but its net effort is hard to measure because the baseline activity is diffuse; keep it for a later phase.
+**Alternates.** Automation maintenance and flaky-test remediation where quarantine rates are high {% include flakyguard-claim.html %} Change-impact analysis and regression selection only where requirements-to-test traceability already exists; without it the use case becomes a data project. Requirement and test-scenario generation is popular but its net effort is hard to measure because the baseline activity is diffuse; keep it for a later phase.
 
 ## Adoption prerequisites
 

@@ -13,5 +13,5 @@
       {% for extra in group.extra %}<li><a href="{{ extra.url | relative_url }}"{% if page.url == extra.url %} aria-current="page"{% endif %}>{{ extra.title }}</a></li>{% endfor %}
     </ul>
   </details>{% endfor %}
-  <ul class="sales-nav-list sales-nav-utility"><li><a href="{{ '/dictionary/' | relative_url }}"{% if page.url == '/dictionary/' %} aria-current="page"{% endif %}>Dictionary</a></li><li><a href="{{ '/releases/' | relative_url }}"{% if page.url == '/releases/' %} aria-current="page"{% endif %}>Downloads &amp; releases</a></li></ul>
+  <ul class="sales-nav-list sales-nav-utility mobile-utility"><li><a href="{{ '/dictionary/' | relative_url }}"{% if page.url == '/dictionary/' %} aria-current="page"{% endif %}>Dictionary</a></li><li><a href="{{ '/releases/' | relative_url }}"{% if page.url == '/releases/' %} aria-current="page"{% endif %}>Downloads &amp; releases</a></li></ul>
 </nav>

@@ -128,9 +128,19 @@
     players.add(controller);
     return controller;
   }
-  Promise.all([loader.dataset.narratorGuides, loader.dataset.manifest].map(async path => {
-    const response = await fetch(path); if (!response.ok) throw new Error('Narrator notes unavailable'); return response.json();
-  })).then(([config, manifest]) => {
+  (async () => {
+    const response = await fetch(loader.dataset.narratorGuides);
+    if (!response.ok) throw new Error('Narrator notes unavailable');
+    const config = await response.json();
+    const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
+    const needed = document.querySelector('[data-demo-narrator]') || config.guides.some(g => (!g.path || g.path === path) && [...document.querySelectorAll(g.selector)].some(t => !t.closest('.slide')));
+    if (!needed) return null;
+    const media = await fetch(loader.dataset.manifest);
+    if (!media.ok) throw new Error('Narrator notes unavailable');
+    return [config, await media.json()];
+  })().then(result => {
+    if (!result) return;
+    const [config, manifest] = result;
     const annotated = new Set();
     const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
     for (const guide of config.guides) {

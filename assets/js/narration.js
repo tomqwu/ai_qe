@@ -7,12 +7,13 @@
 
   let entries = {}, state = window.QEDeck.getState(), currentSlide = null, clip = null;
   let cueList = [], captionRequest, clipVersion = 0, audioFailed = false, captionFailed = false;
+  let narrationEnabled = false;
   let captionsOn = true, continuing = false, clipStarted = false, frame = 0, resizeFrame = 0, panel;
   const slidePauseMs = 2000;
   let advanceTimer = 0, pendingAdvance = null;
   let flows = [];
   const audio = document.createElement('audio');
-  audio.preload = 'metadata';
+  audio.preload = 'none';
   audio.setAttribute('aria-label', 'Recorded slide narration');
   audio.dataset.narrationAudio = '';
 
@@ -75,7 +76,7 @@
   }
   function updateTime() {
     if (!ui) return;
-    const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
+    const duration = Number.isFinite(audio.duration) ? audio.duration : clip?.duration || 0;
     ui.seek.max = String(duration);
     ui.seek.disabled = !duration || audioFailed;
     ui.seek.value = String(Math.min(audio.currentTime || 0, duration));
@@ -158,7 +159,7 @@
       startButton.title = entry ? 'Narrate this slide with English subtitles; Auto-next controls slide changes' : 'No recording is available for this slide';
     }
     const canContinue = continuing && state.reason === 'narration';
-    if (currentSlide === state.slide && clip && state.mode !== 'reading') { setVisible(true); return; }
+    if (currentSlide === state.slide && clip && state.mode !== 'reading') { setVisible(narrationEnabled); return; }
     stop();
     flows.forEach(flow => flow.destroy()); flows = [];
     currentSlide = state.slide;
@@ -168,7 +169,7 @@
     cueList = []; clearCaption();
     audio.removeAttribute('src'); audio.load();
     clip = state.mode === 'reading' ? null : entry || null;
-    setVisible(Boolean(clip));
+    setVisible(Boolean(clip) && narrationEnabled);
     if (!clip) {
       document.querySelector('.deck-message').textContent = '';
       if (canContinue) {
@@ -179,13 +180,11 @@
     }
     document.querySelector('.deck-message').textContent = '';
     audioFailed = false;
-    audio.src = clip.audio;
     document.getElementById(currentSlide).querySelectorAll('.research-figure, [data-vs-lifecycle]').forEach(target => {
       const flow = window.QENarrationFlow?.connect(audio, target, `${body.dataset.narrationAudience}/${currentSlide}`);
       if (flow) flows.push(flow);
     });
     audio.playbackRate = Number(ui.speed.value);
-    audio.load();
     ui.transcript.hidden = !clip.transcript;
     updatePlaying(); updateTime();
     announce('English narration · Loading captions.');
@@ -195,7 +194,9 @@
   function play() {
     if (!clip || document.hidden || state.mode === 'reading') return;
     if (pendingAdvance) { window.QENarrationMedia.claim(audio); beginAdvance(); return; }
-    clipStarted = true;
+    clipStarted = true; narrationEnabled = true;
+    setVisible(true);
+    if (!audio.getAttribute('src')) { audio.src = clip.audio; audio.load(); audio.playbackRate = Number(ui.speed.value); }
     if (audioFailed) { audioFailed = false; audio.load(); }
     if (audio.ended) audio.currentTime = 0;
     const version = clipVersion;

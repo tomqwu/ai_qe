@@ -164,7 +164,7 @@
     {
       "title": "Brainstorm questions",
       "visual": null,
-      "lead": "",
+      "lead": "The next decision: assess one payment workflow with QA, development and platform leads.",
       "rows": null,
       "columns": null,
       "points": [
@@ -173,7 +173,7 @@
         "“Could one platform team remove duplicated work across the squads?”",
         "“If we return capacity, which backlog or release commitment will use it?”"
       ],
-      "note": "Proposed next step: a workflow assessment with the QA, development and platform leads. Agree a bounded pilot after reviewing the baseline.",
+      "note": "Agree the bounded pilot and its evidence before promising wider rollout. See the discovery brief for owners, commercial scope and timing.",
       "sources": "",
       "chapter": "The discussion"
     },
@@ -582,7 +582,7 @@
         "Can two engineers reproduce the same failure from a pinned manifest and fresh fixtures?",
         "Who owns provider-model drift, failed cleanup and evidence retention?"
       ],
-      "note": "Resolve these architecture decisions against the client system before enabling broader agent execution.",
+      "note": "Resolve the contract, repeatability, ownership and evidence questions with system owners before expanding execution authority.",
       "sources": "",
       "chapter": "The discussion"
     },
@@ -687,7 +687,7 @@
     {
       "title": "Integration adapters have explicit contracts",
       "visual": null,
-      "lead": "",
+      "lead": "Reuse CI execution and artifact storage. Add owned context, model and evidence adapters around those systems.",
       "rows": [
         [
           "Context / QE platform",

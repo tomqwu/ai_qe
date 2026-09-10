@@ -68,7 +68,7 @@
 .case-steps{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
 .case-steps li{display:grid;grid-template-columns:28px 1fr;align-items:center;gap:12px;background:#fff;border:1px solid #cdded5;border-radius:7px;padding:13px;font-size:14px}
 .case-steps b{display:grid;place-items:center;background:#def0e5;color:#12675e;border-radius:50%;width:27px;height:27px;font-size:12px}
-.case-steps small{display:block;color:#697d78;font-size:12px}
+.case-steps small{display:block;color:#56696a;font-size:12px}
 .room-intro{max-width:700px}
 .room-intro p:not(.eyebrow){font-size:18px;line-height:1.55}
 .room-filters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 12px}
@@ -98,7 +98,7 @@
 .meeting-route ol{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0;margin:0;list-style:none}
 .meeting-route li{font-size:14px;line-height:1.5}
 .meeting-route strong{display:block;color:#183f43}
-.meeting-route small{display:block;font-size:12px;color:#5f7474}
+.meeting-route small{display:block;font-size:12px;color:#56696a}
 .conversation-footer{display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding:16px 0}
 .conversation-footer>div{flex:1;min-width:200px}
 .conversation-footer .eyebrow{font-size:10px!important;margin:0 0 5px}
@@ -201,3 +201,6 @@
 @media(max-width:49.99rem){.search-active .sales-close-search{display:block;position:fixed;top:6px;right:8px;z-index:6;height:36px;padding:6px 12px;border:1px solid #c0d2cd;border-radius:5px;background:#fff;color:#15544e;font:inherit;font-size:13px;cursor:pointer}
 .search-active .search-input{padding-right:90px}
 }
+
+@media(min-width:50rem){.mobile-utility{display:none}.sales-sidebar-footer .sales-nav-utility{margin:0;padding:0;border:0}.sales-sidebar-footer .sales-nav-utility a{padding:7px 0;min-height:32px}.sales-nav{scrollbar-width:thin;scrollbar-color:#729f9c transparent}.sales-sidebar-footer .nav-caption{display:none}}
+.main-content>p,.ft-story>p,.dictionary-page>p{max-width:72ch}

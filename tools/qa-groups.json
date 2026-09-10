@@ -1,0 +1,33 @@
+{
+  "playback": [
+    "check_review_playback",
+    "check_audio_focus",
+    "check_narration",
+    "check_recorded_narration",
+    "check_presenter_notes"
+  ],
+  "flows": [
+    "check_flow_narration",
+    "visual-story-browser-test",
+    "architecture-demo/narration-test"
+  ],
+  "site": [
+    "browser-smoke",
+    "sales-navigation-test",
+    "search-navigation-test",
+    "dictionary-test",
+    "presentation-review-test"
+  ],
+  "models": [
+    "review-model-browser-test",
+    "fintech-browser-test",
+    "ai-adoption-browser-test",
+    "readiness-browser-test",
+    "modernization-browser-test",
+    "fintech-evidence-browser-test"
+  ],
+  "architecture": [
+    "architecture-demo/framing-test",
+    "architecture-demo/browser-test"
+  ]
+}

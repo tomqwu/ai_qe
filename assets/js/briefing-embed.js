@@ -18,7 +18,8 @@
     panel.setAttribute('aria-labelledby', tab.id);
     frame.title = tab.dataset.deckTitle ? `${tab.dataset.deckTitle} presentation` : audience === 'evp' ? 'Executive strategic vision presentation' : 'Technical assurance architecture presentation';
     openLink.textContent = tab.dataset.deckTitle ? `Open ${tab.dataset.deckTitle} ↗` : audience === 'evp' ? 'Open strategic vision ↗' : 'Open assurance architecture ↗';
-    const target = new URL(tab.href); target.hash = slide || positions[audience]; frame.src = target.href;
+    const target = new URL(tab.href); target.hash = slide || positions[audience]; positions[audience] = target.hash.slice(1);
+    if (frame.src !== target.href) frame.src = target.href;
     updateURL(target.hash.slice(1), writeHistory);
   }
   tabs.forEach((tab, i) => {
@@ -42,6 +43,7 @@
     if (event.data.audience !== audience || !/^slide-[1-9]\d*$/.test(event.data.slide)) return;
     positions[audience] = event.data.slide; updateURL(event.data.slide, event.data.interaction === true);
   });
-  const params = new URLSearchParams(location.search), requested = params.get('audience'), slide = params.get('slide');
+  document.addEventListener('qe:audience', e => { if (e.detail !== 'all' && e.detail !== audience) selectTab(tabs.find(t => t.dataset.audience === e.detail)); });
+  const params = new URLSearchParams(location.search), requested = params.get('audience') || params.get('for'), slide = params.get('slide');
   if (['evp', 'technical'].includes(requested)) selectTab(tabs.find(t => t.dataset.audience === requested), /^slide-[1-9]\d*$/.test(slide) ? slide : 'slide-1', false);
 })();

@@ -1,6 +1,6 @@
 # English audio narration
 
-The selected English presentation voice uses **Eleven v3**; its exact provider voice and model remain in the shared production configuration. The user selected the 40-second conversational English audition on 8 September 2026. Production recordings are generated after the account's Creator activation; earlier free-plan auditions and the rejected 剪映 voice are not production sources.
+The selected English presentation voice uses **Eleven v3**; its exact provider voice and model remain in the shared production configuration. The user selected the 40-second conversational English audition on 8 September 2026. The production history records Creator activation; per-recording receipts are available only for part of the archive. `assets/data/narration-provenance.json` distinguishes receipt-backed records from published production history and leaves unverified tier details null. Earlier free-plan auditions and the rejected 剪映 voice are not production sources.
 
 The shared configuration is [`assets/data/narration-voice.json`](../../assets/data/narration-voice.json). It preserves the accepted audition's voice, model and settings: natural stability (0.5), similarity 0.75, style 0, normal speed and English language. Credentials are never part of this file, the site, repository, release assets or documentation.
 
@@ -13,7 +13,7 @@ The shared configuration is [`assets/data/narration-voice.json`](../../assets/da
 | Industry executive briefing | `industry-evp` | 25 |
 | Industry technical briefing | `industry-technical` | 35 |
 
-All 109 scripts are in [`assets/data/narration-scripts.json`](../../assets/data/narration-scripts.json). Their spoken input totals 57,182 characters. Each recording explains its slide; guided routes can reorder or omit slides without depending on an unselected slide's narration.
+All 116 scripts are in [`assets/data/narration-scripts.json`](../../assets/data/narration-scripts.json). Their spoken input totals 57,182 characters. Each recording explains its slide; guided routes can reorder or omit slides without depending on an unselected slide's narration.
 
 ## Delivery and pronunciation
 
@@ -46,7 +46,7 @@ Completed recordings are reused when the plan and checksums match. Saved respons
 
 ## Presenting with narration
 
-Every presentation has a **Play narration** button. It begins on the current slide, shows synchronized English captions and enables automatic advancement. The `audio.ended` event starts a two-second breathing pause, then advances through the current full deck or guided route. The pause uses wall-clock time and is not shortened by playback speed. Pausing holds the transition; resuming completes its remaining pause. Manual navigation, notes, Auto-next off and hidden tabs cancel a pending transition.
+Every presentation has a **Play narration** button. It begins on the current slide, shows synchronized English captions and respects the optional Auto-next setting. The `audio.ended` event starts a two-second breathing pause, then advances through the current full deck or guided route. The pause uses wall-clock time and is not shortened by playback speed. Pausing holds the transition; resuming completes its remaining pause. Manual navigation, notes, Auto-next off and hidden tabs cancel a pending transition.
 
 Pause for discussion, replay a slide, seek or change speed. Captions follow the audio clock. Manual navigation, switching to reading mode, opening notes or a transcript, and hiding the tab pause playback. The next slide never plays automatically on initial page load.
 
@@ -81,7 +81,7 @@ QE_TEST_URL=http://127.0.0.1:61601/ai_qe node tools/check_flow_narration.cjs
 
 Validate all slide IDs, transcripts, audio hashes, measured durations, caption bounds and provenance before publishing. Check real audio in Chromium and WebKit, including mobile layout, manual navigation, the final slide and a guided route. Review screenshots with subtitles visible so labels remain readable.
 
-Most recordings retain the original **v1.17.0** edition. The technical platform walkthrough (`industry-technical/slide-2`) uses the immutable **architecture-v1.21.0** assets: 289.52 seconds, 72 measured caption cues and 13 visual sections covering all eleven components. It replaces the short technical overview wherever that clip is used, including the homepage and architecture documentation. The executive summary and four 3D scenario recordings retain their existing audio. Slide-content/PDF editions are unchanged. Each GitHub release bundles the current 109 MP3s, VTT captions and transcripts; publication follows the site, PDF, browser and deployment checks.
+Most recordings retain the original **v1.17.0** edition. The technical platform walkthrough (`industry-technical/slide-2`) uses the immutable **architecture-v1.21.0** assets: 289.52 seconds, 72 measured caption cues and 13 visual sections covering all eleven components. It replaces the short technical overview wherever that clip is used, including the homepage and architecture documentation. The executive summary and four 3D scenario recordings retain their existing audio. Slide-content/PDF editions are unchanged. Each new publication bundles all 116 slide mappings (114 unique MP3s), VTT captions and transcripts; publication follows the site, PDF, browser and deployment checks.
 
 ## Existing 剪映 preparation tools
 

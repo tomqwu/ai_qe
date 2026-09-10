@@ -1,8 +1,18 @@
 ---
+search_exclude: true
 title: Downloads & releases
 nav_order: 9
 permalink: /releases/
 ---
+
+## v1.24.0 · Presentation and decision clarity
+
+Larger, stable slides; on-demand audio; outcome-first routes with matching PDFs; explicit pilot scope and ownership; separate validation and release publication.
+
+Current downloads are below. Superseded editions remain in [immutable GitHub releases](https://github.com/tomqwu/ai_qe/releases). Send a guided PDF for a short meeting and the full deck for reference.
+
+{% include media-credit.html %}
+
 # Publication editions
 
 The version identifies the site and presentation player. A player-only patch can retain the previous slide-content and PDF edition, as noted below. Source publication dates remain separate from the site release date. All diagrams are proposed designs or authored synthesis unless explicitly described as study results.
@@ -211,12 +221,12 @@ This is a site and presentation-player update. **All four slide/PDF editions and
 
 Focused the publication on AI-assisted quality engineering across the homepage, shared branding, research pages, presentations, diagrams, dictionary and questionnaire. The interactive capability map now includes test maintenance. The technical deck closes with repair, retest and a time-limited flaky-test quarantine, with separate animated paths and an explicit unresolved-work record.
 
-- [Executive strategic vision · 21 slides · v1.7.0 PDF]({{ '/assets/pdf/ai-qe-evp-v1.7.0.pdf' | relative_url }})
-- [Technical architecture · 29 slides · v1.7.0 PDF]({{ '/assets/pdf/ai-qe-technical-v1.7.0.pdf' | relative_url }})
+- [Executive strategic vision · 21 slides · v1.7.0 PDF](https://github.com/tomqwu/ai_qe/releases/tag/v1.7.0)
+- [Technical architecture · 29 slides · v1.7.0 PDF](https://github.com/tomqwu/ai_qe/releases/tag/v1.7.0)
 - [QA research companion · 13 pages · v1.7.0 PDF]({{ '/assets/pdf/ai-qe-industry-research-v1.7.0.pdf' | relative_url }})
-- [QA discovery questionnaire · fillable v3 PDF]({{ '/assets/pdf/ai-qe-discovery-questionnaire-v3.pdf' | relative_url }})
+- [QA discovery questionnaire · fillable v3 PDF](https://github.com/tomqwu/ai_qe/releases/tag/v1.7.0)
 
-The current library contains 30 sources and the dictionary contains 62 terms. Superseded mixed-scope downloads are no longer published. The architecture film has been refreshed to match the site edition. Fintech case decks and PDFs are also re-exported as **v1.7.0** to remove the old branding from PDF metadata; their QA narrative is unchanged. [Fintech Executive PDF]({{ '/assets/pdf/ai-qe-fintech-evp-v1.7.0.pdf' | relative_url }}) · [Fintech technical PDF]({{ '/assets/pdf/ai-qe-fintech-technical-v1.7.0.pdf' | relative_url }}).
+The current library contains 30 sources and the dictionary contains 62 terms. Superseded mixed-scope downloads are no longer published. The architecture film has been refreshed to match the site edition. Fintech case decks and PDFs are also re-exported as **v1.7.0** to remove the old branding from PDF metadata; their QA narrative is unchanged. [Fintech Executive PDF](https://github.com/tomqwu/ai_qe/releases/tag/v1.7.0) · [Fintech technical PDF](https://github.com/tomqwu/ai_qe/releases/tag/v1.7.0).
 
 ## v1.6.1 · 7 September 2026
 

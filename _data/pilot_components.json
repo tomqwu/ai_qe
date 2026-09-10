@@ -1,0 +1,32 @@
+[
+  {
+    "component": "Task and context",
+    "existing": "Azure Boards, repository and API contract",
+    "change": "Add a read-only versioned context adapter",
+    "owner": "QE platform + application lead"
+  },
+  {
+    "component": "Model access",
+    "existing": "Approved model endpoint and identity",
+    "change": "Configure a scoped model adapter, quotas and timeout handling",
+    "owner": "AI platform owner"
+  },
+  {
+    "component": "Execution and authorization",
+    "existing": "Azure Pipelines, protected branches, service identities",
+    "change": "Configure isolated runners and independent action allowlists",
+    "owner": "DevOps + service owner"
+  },
+  {
+    "component": "Data and provider behavior",
+    "existing": "Current test database and vendor integration slots",
+    "change": "Add resettable fixtures and validated WireMock scenarios; retain real-provider checks",
+    "owner": "Test-data + integration lead"
+  },
+  {
+    "component": "Evidence and review",
+    "existing": "Pipeline artifacts, results and release approval",
+    "change": "Add stable joins, a read-only summary and missing-evidence holds",
+    "owner": "QA + release owner"
+  }
+]
