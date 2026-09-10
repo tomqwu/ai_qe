@@ -10,7 +10,7 @@
 .narrator-guide-baseline { border-left:3px solid #ab771d; padding-left:12px; }
 .narrator-guide-player { margin-top:12px; }
 .narrator-guide-player[hidden] { display:none!important; }
-.narrator-guide-caption { min-height:56px; margin:0 0 8px!important; padding:10px 14px; border-radius:4px; color:#fff; background:#173643; font-size:17px; line-height:1.4; white-space:pre-line; text-align:center; }
+.narrator-guide-caption { display:flex; align-items:center; justify-content:center; min-height:56px; margin:0 0 8px!important; padding:10px 14px; border-radius:4px; color:#fff; background:#173643; font-size:17px; line-height:1.4; white-space:normal; overflow-wrap:anywhere; text-align:center; }
 .narrator-guide-caption:empty::before { content:'English subtitles'; color:#bed3dd; font-size:14px; }
 .narrator-guide-controls { display:flex; align-items:center; gap:8px; }
 .narrator-guide-controls audio { flex:1; width:100%; min-width:0; height:44px; }
