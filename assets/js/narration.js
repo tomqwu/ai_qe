@@ -7,12 +7,13 @@
 
   let entries = {}, state = window.QEDeck.getState(), currentSlide = null, clip = null;
   let cueList = [], captionRequest, clipVersion = 0, audioFailed = false, captionFailed = false;
+  let narrationEnabled = false;
   let captionsOn = true, continuing = false, clipStarted = false, frame = 0, resizeFrame = 0, panel;
   const slidePauseMs = 2000;
   let advanceTimer = 0, pendingAdvance = null;
   let flows = [];
   const audio = document.createElement('audio');
-  audio.preload = 'metadata';
+  audio.preload = 'none';
   audio.setAttribute('aria-label', 'Recorded slide narration');
   audio.dataset.narrationAudio = '';
 
@@ -75,9 +76,9 @@
   }
   function updateTime() {
     if (!ui) return;
-    const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
+    const duration = Number.isFinite(audio.duration) ? audio.duration : clip?.duration || 0;
     ui.seek.max = String(duration);
-    ui.seek.disabled = !duration || audioFailed;
+    ui.seek.disabled = !duration || audioFailed || !audio.getAttribute('src');
     ui.seek.value = String(Math.min(audio.currentTime || 0, duration));
     ui.seek.setAttribute('aria-valuetext', `${clock(audio.currentTime)} of ${clock(duration)}`);
     ui.time.textContent = `${clock(audio.currentTime)} / ${clock(duration)}`;
@@ -158,7 +159,7 @@
       startButton.title = entry ? 'Narrate this slide with English subtitles; Auto-next controls slide changes' : 'No recording is available for this slide';
     }
     const canContinue = continuing && state.reason === 'narration';
-    if (currentSlide === state.slide && clip && state.mode !== 'reading') { setVisible(true); return; }
+    if (currentSlide === state.slide && clip && state.mode !== 'reading') { setVisible(narrationEnabled); return; }
     stop();
     flows.forEach(flow => flow.destroy()); flows = [];
     currentSlide = state.slide;
@@ -168,7 +169,7 @@
     cueList = []; clearCaption();
     audio.removeAttribute('src'); audio.load();
     clip = state.mode === 'reading' ? null : entry || null;
-    setVisible(Boolean(clip));
+    setVisible(Boolean(clip) && narrationEnabled);
     if (!clip) {
       document.querySelector('.deck-message').textContent = '';
       if (canContinue) {
@@ -179,13 +180,11 @@
     }
     document.querySelector('.deck-message').textContent = '';
     audioFailed = false;
-    audio.src = clip.audio;
     document.getElementById(currentSlide).querySelectorAll('.research-figure, [data-vs-lifecycle]').forEach(target => {
       const flow = window.QENarrationFlow?.connect(audio, target, `${body.dataset.narrationAudience}/${currentSlide}`);
       if (flow) flows.push(flow);
     });
     audio.playbackRate = Number(ui.speed.value);
-    audio.load();
     ui.transcript.hidden = !clip.transcript;
     updatePlaying(); updateTime();
     announce('English narration · Loading captions.');
@@ -195,7 +194,9 @@
   function play() {
     if (!clip || document.hidden || state.mode === 'reading') return;
     if (pendingAdvance) { window.QENarrationMedia.claim(audio); beginAdvance(); return; }
-    clipStarted = true;
+    clipStarted = true; narrationEnabled = true;
+    setVisible(true);
+    if (!audio.getAttribute('src')) { audio.src = clip.audio; audio.load(); audio.playbackRate = Number(ui.speed.value); }
     if (audioFailed) { audioFailed = false; audio.load(); }
     if (audio.ended) audio.currentTime = 0;
     const version = clipVersion;
@@ -280,32 +281,47 @@
     window.addEventListener('pagehide', stop);
     window.addEventListener('beforeprint', stop);
   }
-  fetch(manifestPath).then(response => {
-    if (!response.ok) throw new Error('Narration manifest unavailable');
-    return response.json();
-  }).then(manifest => {
-    const slides = manifest?.decks?.[body.dataset.narrationAudience]?.slides;
-    if (!slides || typeof slides !== 'object') return;
-    for (const [id, entry] of Object.entries(slides)) {
-      const audioURL = assetURL(entry?.audio), captionsURL = assetURL(entry?.captions);
-      if (document.getElementById(id)?.classList.contains('slide') && audioURL && captionsURL) entries[id] = {
-        audio: audioURL, captions: captionsURL,
-        transcript: typeof entry.transcript === 'string' ? entry.transcript : '',
-        voice: typeof entry.voice === 'string' ? entry.voice.trim() : '',
-        caption_method: typeof entry.caption_method === 'string' ? entry.caption_method.trim() : ''
-      };
-    }
-    if (!Object.keys(entries).length) return;
-    for (const [id, entry] of Object.entries(entries)) {
-      if (!entry.transcript) continue;
-      const notes = document.createElement('aside'); notes.className = 'slide-narrator-notes'; notes.hidden = true;
-      const heading = document.createElement('h3'); heading.textContent = 'Narrator notes';
-      notes.append(heading);
-      for (const paragraph of entry.transcript.split(/\n\s*\n/)) {
-        const text = document.createElement('p'); text.textContent = paragraph; notes.append(text);
+  let manifestRequest, manifestLoaded = false;
+  function initialize() {
+    if (manifestLoaded) return;
+    manifestRequest?.abort();
+    const request = manifestRequest = new AbortController();
+    fetch(manifestPath, {signal: request.signal}).then(response => {
+      if (!response.ok) throw new Error('Narration manifest unavailable');
+      return response.json();
+    }).then(manifest => {
+      if (request.signal.aborted) return;
+      const slides = manifest?.decks?.[body.dataset.narrationAudience]?.slides;
+      if (!slides || typeof slides !== 'object') return;
+      for (const [id, entry] of Object.entries(slides)) {
+        const audioURL = assetURL(entry?.audio), captionsURL = assetURL(entry?.captions);
+        if (document.getElementById(id)?.classList.contains('slide') && audioURL && captionsURL) entries[id] = {
+          audio: audioURL, captions: captionsURL, duration: Number(entry.duration) || 0,
+          transcript: typeof entry.transcript === 'string' ? entry.transcript : '',
+          voice: typeof entry.voice === 'string' ? entry.voice.trim() : '',
+          caption_method: typeof entry.caption_method === 'string' ? entry.caption_method.trim() : ''
+        };
       }
-      document.getElementById(id).append(notes);
-    }
-    ui = buildPanel(); connectControls(); loadSlide(window.QEDeck.getState());
-  }).catch(() => { /* A missing optional recording never prevents slide navigation. */ });
+      if (!Object.keys(entries).length) return;
+      for (const [id, entry] of Object.entries(entries)) {
+        if (!entry.transcript) continue;
+        const notes = document.createElement('aside'); notes.className = 'slide-narrator-notes'; notes.hidden = true;
+        const heading = document.createElement('h3'); heading.textContent = 'Narrator notes';
+        notes.append(heading);
+        for (const paragraph of entry.transcript.split(/\n\s*\n/)) {
+          const text = document.createElement('p'); text.textContent = paragraph; notes.append(text);
+        }
+        document.getElementById(id).append(notes);
+      }
+      ui = buildPanel(); connectControls(); loadSlide(window.QEDeck.getState());
+      manifestLoaded = true;
+    }).catch(() => { /* A missing optional recording never prevents slide navigation. */ });
+  }
+  initialize();
+  window.addEventListener('pagehide', () => { manifestRequest?.abort(); captionRequest?.abort(); });
+  window.addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+    if (!manifestLoaded) initialize();
+    else if (clip && !cueList.length) loadCaptions(clip, clipVersion);
+  });
 })();

@@ -194,7 +194,7 @@
           "sha256": "14277c21eaeea153f4ae57944c636c48e2cb8df3d77e2ef7cdf4d3ac3c170aa0"
         }
       },
-      "duration": 611.2
+      "duration": 850.64
     },
     "technical": {
       "label": "Banking technical narration",
@@ -497,7 +497,7 @@
           "sha256": "7e3426502372771118d6b85186ea10418d88bb59209bd7ee2b7ca9fd6ecf9622"
         }
       },
-      "duration": 960.72
+      "duration": 1362.16
     },
     "industry-evp": {
       "label": "Industry executive narration",
@@ -737,7 +737,7 @@
           "sha256": "51bff8a242e0c0f414284bfffc7a6c2d1e38d21a8f2955a1a786f99486bc15eb"
         }
       },
-      "duration": 737.68
+      "duration": 859.92
     },
     "industry-technical": {
       "label": "Industry technical narration",
@@ -1067,7 +1067,7 @@
           "sha256": "a3d24c7646517acd5344a359b294ccb308401b793e8b7edd20d3abb158fbe095"
         }
       },
-      "duration": 1025.2
+      "duration": 1522.32
     }
   },
   "complete": true,

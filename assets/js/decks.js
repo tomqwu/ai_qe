@@ -15,7 +15,9 @@
   const routeData = document.querySelector('[data-guided-slides]');
   const route = routeData ? JSON.parse(routeData.textContent).map(n => n - 1).filter(n => n >= 0 && n < slides.length) : [];
   let guided = new URLSearchParams(location.search).get('route') === 'client' && route.includes(index);
-  const sequence = () => guided ? route : slides.map((_, i) => i);
+  const fullData = document.querySelector('[data-full-slides]');
+  const fullOrder = fullData ? JSON.parse(fullData.textContent).map(n => n - 1) : slides.map((_, i) => i);
+  const sequence = () => guided ? route : fullOrder;
   const move = delta => { const order = sequence(); return order[Math.max(0, Math.min(order.length - 1, order.indexOf(index) + delta))]; };
   function syncRouteURL() {
     const url = new URL(location.href);
@@ -25,7 +27,8 @@
   function updatePosition() {
     const order = sequence(), position = order.indexOf(index);
     previous.disabled = position === 0; next.disabled = position === order.length - 1; picker.value = String(index);
-    status.textContent = (guided ? `Story ${position + 1}/${order.length} · Slide ` : '') + `${index + 1} / ${slides.length} · ${title(slides[index])}`;
+    status.textContent = `${guided ? 'Story' : 'Slide'} ${position + 1}/${order.length} · ${title(slides[index])}`;
+    status.title = `Reference slide ${index + 1} · ${title(slides[index])}`;
     if (routeButton) { routeButton.setAttribute('aria-pressed', String(guided)); routeButton.textContent = guided ? 'Full deck' : 'Guided story'; }
   }
 

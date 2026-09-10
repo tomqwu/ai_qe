@@ -109,12 +109,12 @@ class PublicationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
             manifest = prepare(folder)
-            self.assertEqual(len(manifest['assets']), 16)
-            self.assertEqual(len(list((folder / 'assets').glob('*.pdf'))), 6)
+            self.assertEqual(len(manifest['assets']), 20)
+            self.assertEqual(len(list((folder / 'assets').glob('*.pdf'))), 10)
             for name, digest in manifest['assets'].items():
                 self.assertEqual(hashlib.sha256((folder / 'assets' / name).read_bytes()).hexdigest(), digest)
                 self.assertNotIn('appsec', name)
-            self.assertEqual(len((folder / 'assets/SHA256SUMS.txt').read_text().splitlines()), 15)
+            self.assertEqual(len((folder / 'assets/SHA256SUMS.txt').read_text().splitlines()), 19)
             bundle = next((folder / 'assets').glob('ai-qe-narration-*.zip'))
             with zipfile.ZipFile(bundle) as archive:
                 guides = json.loads(archive.read('narration-guides.json'))

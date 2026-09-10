@@ -17,8 +17,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      publish: ${{ steps.scope.outputs.publish }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
@@ -28,7 +32,18 @@ jobs:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: tools/requirements.txt
+      - name: Determine publication intent
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          IS_MAIN: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          base="${BASE_SHA:-$(git rev-parse HEAD^)}"
+          args=()
+          if [ "$IS_MAIN" = true ]; then args+=(--deploy); fi
+          python tools/publication_scope.py --base "$base" "${args[@]}"
       - name: Prepare and preflight the release before deployment
+        if: steps.scope.outputs.publish == 'true'
         run: |
           python tools/prepare_release.py --output /tmp/ai-qe-release
           python tools/preflight_release.py --package /tmp/ai-qe-release
@@ -68,31 +83,11 @@ jobs:
         run: |
           node --test tools/narration-review.test.cjs
           node tools/narration-review.cjs --site _site
-      - name: Browser navigation and viewport regression checks
-        run: |
-          mkdir -p /tmp/qe-preview
-          ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
-          python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
-          node tools/check_review_playback.cjs
-          node tools/review-model-browser-test.cjs
-          node tools/check_audio_focus.cjs
-          node tools/architecture-demo/framing-test.cjs
-          node tools/architecture-demo/narration-test.cjs
-          node tools/fintech-browser-test.cjs
-          node tools/ai-adoption-browser-test.cjs
-          node tools/check_narration.cjs
-          node tools/check_recorded_narration.cjs
-          node tools/check_presenter_notes.cjs
-          node tools/check_flow_narration.cjs
-          node tools/browser-smoke.cjs
-          node tools/sales-navigation-test.cjs
-          node tools/search-navigation-test.cjs
-          node tools/readiness-browser-test.cjs
-          node tools/modernization-browser-test.cjs
-          node tools/fintech-evidence-browser-test.cjs
-          node tools/visual-story-browser-test.cjs
-          node tools/dictionary-test.cjs
-          node tools/architecture-demo/browser-test.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: browser-site
+          path: _site
+          retention-days: 2
       - name: Check site links and search index
         run: python tools/verify_site.py _site
       - name: Check research provenance and briefing completeness
@@ -101,23 +96,53 @@ jobs:
         run: |
           python tools/verify_publication.py _site
           python tools/verify_fintech.py _site
+          python tools/verify_routes.py _site
           python -m unittest discover -s tools -p "test_release.py"
+          python -m unittest discover -s tools -p "test_publication_scope.py"
       - name: Check questionnaire fields and response ranges
         run: python tools/verify_pdf.py
       - name: Check QA-only publication scope
         run: python tools/verify_qe_scope.py _site
       - uses: actions/upload-artifact@v4
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && steps.scope.outputs.publish == 'true'
         with:
           name: verified-release-package
           path: /tmp/ai-qe-release
           retention-days: 7
       - uses: actions/upload-pages-artifact@v3
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && steps.scope.outputs.publish == 'true'
+
+  browser:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [playback, flows, site, models, architecture]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium webkit
+      - uses: actions/download-artifact@v4
+        with:
+          name: browser-site
+          path: _site
+      - name: Check browser group
+        env:
+          QA_GROUP: ${{ matrix.group }}
+        run: |
+          mkdir -p /tmp/qe-preview
+          ln -s "$GITHUB_WORKSPACE/_site" /tmp/qe-preview/ai_qe
+          python -m http.server 61600 --bind 127.0.0.1 --directory /tmp/qe-preview > /tmp/qe-http.log 2>&1 &
+          node tools/qa.cjs browser "$QA_GROUP"
 
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.build.outputs.publish == 'true'
+    needs: [build, browser]
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -130,8 +155,8 @@ jobs:
         uses: actions/deploy-pages@v4
 
   release:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: deploy
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.build.outputs.publish == 'true'
+    needs: [build, deploy]
     runs-on: ubuntu-latest
     permissions:
       contents: write

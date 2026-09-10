@@ -1,0 +1,32 @@
+{
+  "recommendation": "Assess one payment workflow, then authorize a bounded pilot only when its foundations and evidence are ready.",
+  "owners": [
+    "Sponsor: outcome, funded ceiling and next decision",
+    "QA + development: payment rule, baseline and reviewed tests",
+    "Platform owner: environments, data, provider behavior and support"
+  ],
+  "commercial": "Proposed commercial basis: fixed-fee or capped discovery; separately capped pilot after scope and readiness review. No client price or start date has been agreed.",
+  "engagement": [
+    {
+      "stage": "Sponsor alignment",
+      "weeks": "2",
+      "purpose": "Scope, outcome charter, funding and authority"
+    },
+    {
+      "stage": "Baseline and readiness",
+      "weeks": "4\u20136",
+      "purpose": "Includes measurement and foundation discovery"
+    },
+    {
+      "stage": "Capped pilot",
+      "weeks": "8\u201310",
+      "purpose": "Includes setup and repeated execution; agree the exact window before starting"
+    },
+    {
+      "stage": "Limited validation",
+      "weeks": "1\u20132 quarters",
+      "purpose": "Repeat the result across releases and teams before scale"
+    }
+  ],
+  "api_example": "These windows are a separate planning example, not the approved measurement protocol or an observed client duration."
+}

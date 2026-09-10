@@ -18,10 +18,12 @@ for audience,slides in decks.items():
     assert len(re.findall(r'<section class="slide ',page))==len(slides)
     pdf=PdfReader(ROOT/f'assets/pdf/ai-qe-fintech-{audience}-v{case["edition"]}.pdf')
     assert len(pdf.pages)==len(slides)
-    for n,(slide,leaf) in enumerate(zip(slides,pdf.pages),1):
+    order=json.loads((ROOT/'_data/briefing_routes.json').read_text())[audience]['full_order']
+    for n,leaf in zip(order,pdf.pages):
+        slide=slides[n-1]
         words=normalized(leaf.extract_text())
         assert normalized(slide['title']) in words,f'{audience}/{n}: missing title'
-        assert f'v{case["edition"]}' in words and 'fictionalfintechcase' in words.lower()
+        assert f'v{case["edition"]}' in words and 'illustrativebankingscenario' in words.lower()
         assert normalized(slide['note']) in words,f'{audience}/{n}: missing disclosure'
         assert set(filter(None,slide['sources'].split(',')))<=source_ids
         for row in slide.get('rows') or []:

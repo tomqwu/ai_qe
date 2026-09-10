@@ -28,6 +28,8 @@
     if (!['all','evp','technical'].includes(audience)) audience = 'all';
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.roomFilter === audience)));
     cards.forEach(card => { card.hidden = audience !== 'all' && card.dataset.deckAudience !== audience; });
+    document.querySelectorAll('[data-route-audience]').forEach(card => { card.hidden = audience !== 'all' && card.dataset.routeAudience !== audience; });
+    if (write) document.dispatchEvent(new CustomEvent('qe:audience', {detail: audience}));
     status.textContent = `${cards.filter(card => !card.hidden).length} briefings · ${audience === 'all' ? 'all audiences' : audience === 'evp' ? 'Executives & sponsors' : 'Technical SDs & leads'}`;
     if (write) { const url = new URL(location.href); audience === 'all' ? url.searchParams.delete('for') : url.searchParams.set('for', audience); history.replaceState(null, '', url); }
   }

@@ -5,5 +5,12 @@
     "claim": "75% of target test classes had at least one generated test that built; 57% had one that also passed; 25% had one that also increased coverage. These are cumulative class-level yields, not percentages of individual generated tests.",
     "separate_cohort": "In separate Instagram/Facebook test-a-thons, engineers accepted 73% of recommendations; 11.5% of all classes to which the tool was applied were improved.",
     "limit": "The cohorts and denominators differ. Neither acceptance rate is a predicted result for a bank pilot."
+  },
+  "flakyguard": {
+    "source": "E07",
+    "url": "https://arxiv.org/html/2511.14002v1",
+    "reviewed": "2026-09-10",
+    "claim": "In the reported Uber deployment, FlakyGuard produced fixes for 47.6% of reproducible flaky tests; developers accepted 51.8% of generated fixes.",
+    "limit": "Reproducible tests and generated fixes are different denominators. This Go-monorepo case does not predict bank repair yield, acceptance or savings."
   }
 }

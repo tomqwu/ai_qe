@@ -37,7 +37,7 @@ has_toc: false
 </section>
 
 <section class="home-section" id="capabilities" aria-labelledby="capabilities-title">
-  <div class="section-heading"><div><p class="eyebrow">The expanded quality mandate</p><h2 id="capabilities-title">AI for QE. QE for AI.</h2></div><a class="text-link" href="{{ '/docs/industry/library/' | relative_url }}">Browse the document library →</a></div>
+  <div class="section-heading"><div><p class="eyebrow">The expanded quality mandate</p><h2 id="capabilities-title">Start with AI-assisted QE. Extend to assurance of AI.</h2></div><a class="text-link" href="{{ '/docs/industry/library/' | relative_url }}">Browse the document library →</a></div>
   {% include industry/capabilities.html %}
 </section>
 
@@ -49,7 +49,7 @@ has_toc: false
 
 <section class="home-section" id="briefings" aria-labelledby="briefings-title">
   <div class="section-heading"><div><p class="eyebrow">Start with your perspective</p><h2 id="briefings-title">Visual briefings for<br>strategy and architecture.</h2></div><p>Strategy for executive leaders.<br>Architecture for the teams who deliver it.</p></div>
-  {% include briefing-embed.html %}
+  <div class="resource-grid">{% for key in site.data.briefing_routes %}{% assign route = key[1] %}<a class="resource-link" href="{{ route.url | relative_url }}?route=client#slide-1"><span class="resource-number">{{ route.audience | replace: 'evp', 'Executive' | capitalize }} · Guided presentation</span><h3>{{ route.title }}</h3><p>{{ route.slides.size }} selected slides. Open a full-size presentation with optional audio.</p></a>{% endfor %}</div>
   <p>New to the terminology? <a href="{{ '/dictionary/' | relative_url }}">Open the AI × QE dictionary →</a> Plain-language definitions, examples and a guide to the architecture components.</p>
 </section>
 

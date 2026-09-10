@@ -73,3 +73,11 @@ The expanded technical briefing develops the logical platform into concrete boun
 OSFI's July 2026 Technology Risk Bulletin discusses identity, tool restrictions, testing, traceability and resilience for generative and agentic AI. It complements existing guidelines with sound practices. E-23's revised model-risk guideline is **effective 1 May 2027**; determine system applicability with the institution's model-risk function. {% include industry/cite.html ids="R01,R02" %}
 
 These references inform the design. They do not establish that the proposed architecture, or any named product, complies with every applicable requirement.
+
+## Reuse first: the minimum payment pilot
+
+These are logical responsibilities, not a shopping list of new products. Confirm which capabilities the client already operates before estimating integration work.
+
+<table><thead><tr><th>Responsibility</th><th>Reuse / verify</th><th>Minimum change</th><th>Owner</th></tr></thead><tbody>{% for row in site.data.pilot_components %}<tr><th>{{ row.component }}</th><td>{{ row.existing }}</td><td>{{ row.change }}</td><td>{{ row.owner }}</td></tr>{% endfor %}</tbody></table>
+
+Build thin adapters only where supported integration is missing. Select an existing approved product when it can provide the same interface, evidence export and operational ownership. A shared model router, Kubernetes cluster or vector store is not a universal prerequisite.

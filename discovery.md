@@ -25,6 +25,10 @@ Use the [platform readiness hub]({{ '/platform-readiness/' | relative_url }}) wi
 
 A tool license or cloud environment does not establish readiness. Separate foundational engineering work from AI assistance in the scope, effort and adoption plan. Download the hub's assumption worksheet for the discovery record.
 
+{% include decision-brief.html %}
+
+{% include pilot-timelines.html %}
+
 ## Leave with a concrete next step
 
 Record the candidate application and workflow, a delivery owner and platform owner, the baseline evidence to collect, and the decision the pilot must support. The existing tools and maturity assessment should determine the implementation path.

@@ -1,0 +1,1146 @@
+{
+  "schema": 1,
+  "reviewed": "2026-09-10",
+  "recordings": [
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-1.mp3",
+      "sha256": "6017d008061f0357662bdadada0d1d7b3162c2b6f6669779207a6e99653653e7",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-2.mp3",
+      "sha256": "35c916307038339b5464b6ac170671a78741861b68fbcce5885a8d9bb250b589",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-3.mp3",
+      "sha256": "9d4c3ae1ff2dba9952e9c0d53a5f69c4cf18152f1496c505a44106f5b5f67a78",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-4.mp3",
+      "sha256": "169db6592fcd36c042adb3d0c9dfaa83720f345cc22ff1f678e105a1bf0c5a3d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-5.mp3",
+      "sha256": "9e54de8c1559e4fe9e51b79d594bb443d12fdd537f6fcf98e630461a4c6419ae",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/banking-journey-v1.22.0/evp/slide-6.mp3",
+      "sha256": "c2fdf6329c6d32a30f1fe94f872a3c874b3107cc8975cfe861c7ae2d8f446340",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T14:49:01.020756+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-7.mp3",
+      "sha256": "32f4f8e0030fab732b9a1cb3733006a85399b80234d7da9943e13784821dd944",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-8.mp3",
+      "sha256": "5259ec936e489436086afc8cbf924f944e9c1a8a73180a087347871e9eaa9baa",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-9.mp3",
+      "sha256": "6d817bc57efcc21e2302ce12aa358f8856a14ba27ba7b4d0329d178b30a58ffe",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-10.mp3",
+      "sha256": "4a0b1de20f759f1a76440a7517888e878dd40484bf2949bba79ce68c84074cba",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-11.mp3",
+      "sha256": "02d01ad29f945560b840124cf67190a0d51dd286bf892ab03479f1a3e9a42ea8",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-12.mp3",
+      "sha256": "4db384239b9a44f4988393f75b1226cc2157e148e42c166eeda807961b738607",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-13.mp3",
+      "sha256": "d1f094ac5c549419a9da62a9edcf457302cf0570b83b27ac619d5f130f8f2cb7",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-14.mp3",
+      "sha256": "8d52514073a72a93c9ad3bfceac22cd7a98f18df53e1c170156055f9a8cd725c",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-15.mp3",
+      "sha256": "d6f38bcd9f808e79021c5ba3c7b0f7ac581805419c6d2d1e836b105aa5dc51c1",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-16.mp3",
+      "sha256": "ac0de6d9d15c57e69fcd1f8f857891f5357b004db771297b1655547199610317",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-17.mp3",
+      "sha256": "cfdab00bdf37f2e380da8abdac65e84fb1cb65579cc4f69f48d2bd3b8298e248",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-18.mp3",
+      "sha256": "e468d3a46fac1267e7037ef0e8d4281add54db4a1fecbd769b4f66cb9b980c81",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/evp/slide-19.mp3",
+      "sha256": "3576429426c5f2d1f6feb7039fd0da48768aefc7dce819ce638fee66c4268af9",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/banking-journey-v1.22.0/evp/slide-20.mp3",
+      "sha256": "51bff8a242e0c0f414284bfffc7a6c2d1e38d21a8f2955a1a786f99486bc15eb",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T14:49:01.020935+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/banking-journey-v1.22.0/evp/slide-21.mp3",
+      "sha256": "14277c21eaeea153f4ae57944c636c48e2cb8df3d77e2ef7cdf4d3ac3c170aa0",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T14:49:01.020859+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-1.mp3",
+      "sha256": "dafe6765f022bbd704c5de115181685a996998ddcb5347f20017c8dda636785d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-2.mp3",
+      "sha256": "3d832098a20d75316575f57a63b6572c4d0057b2136b5e886a67a2d3e11c05bc",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-3.mp3",
+      "sha256": "33109a1b7ec723255c985869d140784931e34a4a50d6e99a70b713a6c352bca1",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-4.mp3",
+      "sha256": "6829bcbd781813b7c6434ec1c7607586e99ea827f712d07d229f82e464c2ca06",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-5.mp3",
+      "sha256": "8843848652b2102855c399ed3963b95010ad438b5b442a6ce9a7aa63631cfdc7",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-6.mp3",
+      "sha256": "c8fac6a7223aedb67fdf4558170e9ba8eede894d91f8e451e98489940b0314fe",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-7.mp3",
+      "sha256": "6f74fbfc23b0dc35c5586b9bc7e98a2d9202bd282462c1c23595f6eecb3cb8da",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-8.mp3",
+      "sha256": "635841d9d05ce4854030647f82afa13b459dda783fb3b5df5faf836234efa37a",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-9.mp3",
+      "sha256": "f2bc620e93e33f193e37f89a6344ac09e9acf2facc196a6b52a0b968e4f9504a",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T14:49:41.337168+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-10.mp3",
+      "sha256": "9997afad37a927bba8722323dc9dd8487a10b230466af8ed5ce7a150f17cc06d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-11.mp3",
+      "sha256": "e63cad9a27e0f557f939ea33a2ddec5d5de59a7766ce63c640e760761f681f2a",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-12.mp3",
+      "sha256": "e2cfd0ca68f01b46b00c5929329d819086770e39d44df93fde3df2e4e9584504",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-13.mp3",
+      "sha256": "d81e744f6bae1ff3bbf692d7ee5aff7d0b418a2c8f9afe24a563c910d606ac20",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-14.mp3",
+      "sha256": "a19d8156cb953d279a0b7330c592e01efe959be2dee29164b00c34abe0cdaa72",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-15.mp3",
+      "sha256": "a63b6326b050ec9d596605420c644c271d7e58461da086110b5a06f9e2f63096",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-16.mp3",
+      "sha256": "d8b38a8e91b4e3572d84e12cf9451f81d3d36e509683acbc2b425649de6bbbd4",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-17.mp3",
+      "sha256": "562c240d81cde726354b5ddad29144448254927ff552d4a0c33feae89a77abd9",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-18.mp3",
+      "sha256": "d3eec86eb1938d815bc20c09cd5afc053cfb6fc4338ca78e3fa80e9bdf24abd4",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-19.mp3",
+      "sha256": "9c00e6caa0535e58bbbe074d0e0273f55ddf8a6ac7289af11b1a2740b85f7c6d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-20.mp3",
+      "sha256": "10c98b48658f1bf05f2283302be1f1f8db75b83b12941a82268c7c7c35793e6a",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-21.mp3",
+      "sha256": "6c246b068770275412579af7d9d9a80a3f79c347f00831f01f29223a5b5de9a3",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-22.mp3",
+      "sha256": "803813bb8b3e0f5547c63d80bc3cf36320c296769b5d3da44da251079de55de1",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-23.mp3",
+      "sha256": "ddaa9ebe06216c278f69e5ca33d0842a8be626c4a8eabafd82d974cecfb2d0fd",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-24.mp3",
+      "sha256": "96c7310a050db25eee3f67c3e482f6310a7b0e2d3b99102e849b3c793b8f6693",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-25.mp3",
+      "sha256": "e7e517e8849c647448dfe06e5fb1968b6b2e8c3dcf2ca82e0ce8fc9bdf3a4d6d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-26.mp3",
+      "sha256": "a8e95ef454f13c734391e627760c39d0f9e3a96efa347ef6ee883b99e4a5a571",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-27.mp3",
+      "sha256": "a469b58d27862ba815e98f883f6b92c9b0a3f4e5042147df25ea4cc08997ba39",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-28.mp3",
+      "sha256": "5400b33cd4addedb5063cdc0094a09c5c647b2cc83801b9b81133369cd867851",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-29.mp3",
+      "sha256": "a463218e2e8fbb7e7196d5ade9cb6df8a9f99315e2c7b640bb08e444b3b5c83a",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/technical/slide-30.mp3",
+      "sha256": "79e3a65a90f2083276c7c22a425af11808d1cacde8712331642f9d468b6c398e",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-31.mp3",
+      "sha256": "a3d24c7646517acd5344a359b294ccb308401b793e8b7edd20d3abb158fbe095",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T14:49:41.337239+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-32.mp3",
+      "sha256": "c692bde7540abeb4bc3f939a1057cf5c7a714f4613bda6ef32183df2f205bdc5",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T14:49:41.336803+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/banking-journey-v1.22.0/technical/slide-33.mp3",
+      "sha256": "7e3426502372771118d6b85186ea10418d88bb59209bd7ee2b7ca9fd6ecf9622",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T14:50:41.772341+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-1.mp3",
+      "sha256": "da4fca583f24552f30d851091aa45f784af181d2c6f36e774ad3da9b48cd51e4",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-2.mp3",
+      "sha256": "0d90713eab48c2f6e59c398350ec910e068a4b3b4a2e06041c39ab62cfdbd752",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-3.mp3",
+      "sha256": "91b5b640eb1c18a2da24b049f12406800f1acb2cda9c5c4667ebe37bf37b9cce",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-4.mp3",
+      "sha256": "f3a22896b4fe23b6fe4b41614e8d066c6bdc377dcee7be3a9a503ea449939e40",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-5.mp3",
+      "sha256": "710f5008d7670fc3849bca6f982282358fc96afb9e2e2ad69cd0af610dba839a",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-6.mp3",
+      "sha256": "d01b863d613c2586e94de53b85a4fe3a22c4baaeed0466b4559ea9a12169c2ef",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-7.mp3",
+      "sha256": "a91dc98de1c601a7eead2fbdbfb471b2867955b4adf6ab4e9c3153de3e701881",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-8.mp3",
+      "sha256": "cb956eb919795bb4ee611c0727a07000aab035ed88886177d312ad9c3e42b91c",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-9.mp3",
+      "sha256": "086963f74221be5d60d3f4de70da205a2205ee0aee407f4949a75d759099b14b",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-10.mp3",
+      "sha256": "7d8035f20dcf76185fa284dd913290242778ea744fcf3deeae0af74c7bd700c1",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-11.mp3",
+      "sha256": "0f60a4c67e8aa2eb4c8a26b03f744179abd018434812de3ee68984b6886c0433",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-12.mp3",
+      "sha256": "eb43130063012e6db0a66c26f45e18510d50c58b1e05daa09ae74072c62e18b3",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-13.mp3",
+      "sha256": "0f076ba996be2a3f4f6c66251daae8d2fa2e843146eb229dc8430cc1659b85ca",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-14.mp3",
+      "sha256": "d2062b6b364ba27e78cbdea380336ac10e8ac05409a6b233bd322fdfec9bf16d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-15.mp3",
+      "sha256": "5d257913d087de0956fcfc0bb97c63e5092246eeab559d16d6b464285275fc87",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-16.mp3",
+      "sha256": "bce255497ed06f25b659d210d72d94d4935b215e24f720ce50d54355b8b9500b",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-17.mp3",
+      "sha256": "0ddf01cddf903db87aecd86400b7de2c1b5c795338dccbd0047460c1a0abed42",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-18.mp3",
+      "sha256": "f48371af3fc02a78f036659b1dde4a1b9b0f32436f8797a403f26863b0550da9",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-19.mp3",
+      "sha256": "78e8dfd23b392bb83fe22f156a28e46ed795fab46890251343d0d5355328a98b",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-20.mp3",
+      "sha256": "f083ffef75b1daa31fccd91841be87ee72210d12bf405f3eebfa9c9cf6c1c95d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-21.mp3",
+      "sha256": "1e9a86d1b5ff95cb844b2fce5343c848e90dcbda884e31a42a70221e3a1c9b86",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-22.mp3",
+      "sha256": "76fc049729a68ddf7f292e4debfc8df4213c9343d2808c8b852cfc585cf8cf93",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-23.mp3",
+      "sha256": "a19b75aac5c8acbeee36d696cc16b83e3eda2333bbde1ef0ef15c2ab67c5f57c",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-24.mp3",
+      "sha256": "e817a814ef5c7e6784144152c92a859a723080ecbb455b9bf21b47cb66007eae",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-evp/slide-25.mp3",
+      "sha256": "18a1cc2acaaad7838d4f7a21145abc3449a2aa26b1edeeac09cf95b0917cd4d2",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/banking-journey-v1.22.0/industry-technical/slide-1.mp3",
+      "sha256": "97ca4704cdc2205397cc1001b3fa64d67e4089376e2df0bad9620ec57b27d9fe",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T14:51:08.761875+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/architecture-v1.21.0/industry-technical/slide-2.mp3",
+      "sha256": "9620061571aea2741bad6da0418cb32bb2e688be24dbcb3556582940cf728026",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/43",
+      "note": "Published production record states that generation provenance was retained privately; a matching per-file receipt is not in this local archive. Subscription tier is unverified for this recording."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-3.mp3",
+      "sha256": "a102fa7f2231255c5ad8e2135e04085d6ae7da72bcb3779abdd9acf700c04815",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-4.mp3",
+      "sha256": "3c7222076f9057bc124520ecb73844b1e4015e4cc84fad1f60e6d2d689e5bcd9",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-5.mp3",
+      "sha256": "f1d616bec47f39f0dcd2c8e1d5a89f91b1e169307a7827f6cef6515e94d7a603",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-6.mp3",
+      "sha256": "8202e0a0a9b55027ba6f84859eb36020943180382dbacdc8f285b04101f1170d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-7.mp3",
+      "sha256": "08264a25af5c91adfdf158bf257930ed17f3d979a3742e3666025b26528a81ed",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-8.mp3",
+      "sha256": "06a1984f27edb1b7b8c71e88797f947af0bdca6339de3f35c87c63213760cedf",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-9.mp3",
+      "sha256": "2b2c2a9372e7728e44f80a2bd1beba8d90ce676ad9c5e91e88127a5256dd1eea",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-10.mp3",
+      "sha256": "f238b421007bf4bfe9b10e1c8091c658c4297dd47aa0ef5663a7656c7aca69f6",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-11.mp3",
+      "sha256": "6b43208456f4e7678b44d74bf5a47856c9ebb96bf2a7333ea992c973cbdacb2c",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-12.mp3",
+      "sha256": "71ed4c3505a6049a3d242fee42b4598d72af09b6a0cfec26423ac4ff1d558142",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-13.mp3",
+      "sha256": "ecab44efa156a4a46f6fa8d5ab8df8201066800432b89f46dcacad35ec650b8d",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-14.mp3",
+      "sha256": "0061496f58990f876f9c6d4c4873ca58ae80889f8d5dacd4fea88dd5003e7c43",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-15.mp3",
+      "sha256": "2fdfbb9560265e5eb8a2f48cdb534569031faa0d3eaa8941219abb71f4e20005",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-16.mp3",
+      "sha256": "bd764bd2249fc3de2eb436251a3e68b29fd6aad6a9b7242c1c9120924e2f9e7a",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-17.mp3",
+      "sha256": "2911becc4091e9e03b611fe947571a90ab2b3501ab08e842a5fd420f624ebc2c",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-18.mp3",
+      "sha256": "e67fdeda0579d22fa7f6b2efc49a78566d7f7d9dd0f37597148b73add2e29bad",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-19.mp3",
+      "sha256": "7b424d8a7094626a7068df38903b8277b55407725ecd13546f817ade08ca9cad",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-20.mp3",
+      "sha256": "bd5e6e6615a57e213dfe999b00b65f1f0d066659d7f24dc18d784817d7aba0a3",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-21.mp3",
+      "sha256": "761604348d38b4e9136a60f341a3451a0a1844e3c9bd257140756c7779292f54",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-22.mp3",
+      "sha256": "e2d5c081f6abe785f62eed1a688f73e17513015712ab542bd7d0bc00bbcb2b38",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-23.mp3",
+      "sha256": "9952cfdad3907487fe28d2061f5aa127b4ce7bec8b03e4388cec9e453a89277a",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/v1.23.0/industry-technical/slide-24.mp3",
+      "sha256": "8a404ce2ad3de0fb3775b98d266e8f094f00799012b5608ddf833e8163012fc9",
+      "provider": "ElevenLabs",
+      "basis": "generation-receipt",
+      "subscription_tier": "creator",
+      "generated_at": "2026-09-09T19:22:24.185634+00:00",
+      "evidence": "Private recording receipt matched by SHA-256",
+      "note": "Paid-tier generation recorded."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-25.mp3",
+      "sha256": "c7062db738b9e33ef70e775137fef0310b73e311dbde7ed9fdf29d598d116a5e",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-26.mp3",
+      "sha256": "5d984a5fe075b9840deaa520147d08cbcc1f2ff9069abcade4ed10202c1334fd",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-27.mp3",
+      "sha256": "3cf3a6494a3464e33ed53b10bfcaa15582493ff59fd06e2420ac0e83852b63a0",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-28.mp3",
+      "sha256": "2a5d829102821780e2b8f2d1c56c42df6f10de55076a7e6fb2ea36e84aed942f",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-29.mp3",
+      "sha256": "5a68c095e4f11de7cb184053de82157f7f84008b92f51d953b1d09cf2bcb5ec5",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-30.mp3",
+      "sha256": "9935b992e1a9d55065fe87485f2a7ee06b7a83b4a143a836dabf2c0a3a4582ae",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-31.mp3",
+      "sha256": "002294ade91b80758a1d8e9ab8b51742af9955b0e39ddfe9f30864f75a8ea058",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-32.mp3",
+      "sha256": "c00b96ae6997f73bf968fffc7c5f1e898e3a83ade83abc7d10c03f5b7d71dc34",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-33.mp3",
+      "sha256": "b9e9049b69d21893e8cc300362a3288f2638d1bcf50e522feb654962a5e45673",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-34.mp3",
+      "sha256": "68359a0c5cd32af59c42669710f45f16e4740b5fbad99fae7c1c217525c29cff",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    },
+    {
+      "audio": "/assets/audio/chris-v1.17.0/industry-technical/slide-35.mp3",
+      "sha256": "ebf1588c359257ebba0ba55677f36dfdcbe18f80e11a66f85b11ed32b6530a6c",
+      "provider": "ElevenLabs",
+      "basis": "published-production-record",
+      "subscription_tier": null,
+      "generated_at": null,
+      "evidence": "https://github.com/tomqwu/ai_qe/pull/38",
+      "note": "Production history states paid subscription; a matching per-file receipt is not in this local archive."
+    }
+  ]
+}

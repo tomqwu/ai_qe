@@ -236,12 +236,12 @@
       "clip": "industry-evp/slide-18",
       "source": "/briefings/evp/#slide-18",
       "diagrams": [],
-      "contentSha256": "66d4797ec38d91b208853f0bc8cc701ccdffa5474fd2aeea31013d151bd1e80f",
+      "contentSha256": "55669ed6a6f63666e5e1e56d058f7143dfed8a438f67403a7e013f464448f45e",
       "scriptSha256": "943c9be2a2910279bf4440697553d939315b9fda9edd59dc925e4539d5479b36",
       "audioSha256": "f48371af3fc02a78f036659b1dde4a1b9b0f32436f8797a403f26863b0550da9",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "The title now frames the same three narrated strategic choices as a closing decision. Capability, foundations and evidence-led expansion content is unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:industry-evp/slide-19": {
       "clip": "industry-evp/slide-19",
@@ -341,45 +341,45 @@
       "clip": "evp/slide-1",
       "source": "/briefings/fintech-evp/#slide-1",
       "diagrams": [],
-      "contentSha256": "a1960cce54de77fe7acf2386a08bb35b0a9354abf5611cd046f45e686208fe85",
+      "contentSha256": "914165b8a71959f02a94b9901581d7f2e3c4fab29ae15c83bb3652c6d1d1a6d7",
       "scriptSha256": "2680a598bdd61f9c98e30479ad1c855c6c6666339f0dce042a6aa253e8916ebf",
       "audioSha256": "6017d008061f0357662bdadada0d1d7b3162c2b6f6669779207a6e99653653e7",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-2": {
       "clip": "evp/slide-2",
       "source": "/briefings/fintech-evp/#slide-2",
       "diagrams": [],
-      "contentSha256": "c7511c93dff4fff8287b35fe4014abc5f8554db62355c9eeb5778787ee4b9c83",
+      "contentSha256": "8ad303e8b77ca8c103b25d9b7b898fcb937fc26f2b9411b99a671d2d6cc3ace7",
       "scriptSha256": "81c98604c6d7974e07b53da6b9a8b5b1dd67165a3fce5b523756b4d5f2a73372",
       "audioSha256": "35c916307038339b5464b6ac170671a78741861b68fbcce5885a8d9bb250b589",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-3": {
       "clip": "evp/slide-3",
       "source": "/briefings/fintech-evp/#slide-3",
       "diagrams": [],
-      "contentSha256": "df6cbce9ebe81d1f471010c3e6f1d62f628e74cfbd82024425aa87a005ae5e42",
+      "contentSha256": "a345fa92c909b5a96a95b814e9f0a80520c6b73fb23d3607ab7efaf6641550a4",
       "scriptSha256": "e406a7d41a03043dc968d109af0aa426e30c7160974ef5ea27332e14c43b161e",
       "audioSha256": "9d4c3ae1ff2dba9952e9c0d53a5f69c4cf18152f1496c505a44106f5b5f67a78",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-4": {
       "clip": "evp/slide-4",
       "source": "/briefings/fintech-evp/#slide-4",
       "diagrams": [],
-      "contentSha256": "c4f5415d8917b3ca095f9af67b4368867583875dd1846ed09672a7f1fba6f2af",
+      "contentSha256": "5084d02cbbb3f9c1172a11e87d84e9b8d38a4f2b82b6d3bc52ecfa7db69aac8b",
       "scriptSha256": "f23c0d922927df7ad6f8d3703ae6763731670ee1c5e7fb8a0beb472394813020",
       "audioSha256": "169db6592fcd36c042adb3d0c9dfaa83720f345cc22ff1f678e105a1bf0c5a3d",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-5": {
       "clip": "evp/slide-5",
@@ -387,12 +387,12 @@
       "diagrams": [
         "fintech-platform"
       ],
-      "contentSha256": "1ab329fa9ed269a5c825dc0d7d35286f9fd6f3507d10e0dddd5c995510eb5808",
+      "contentSha256": "edcdf87c7cda33ea143db859cfbecae1859f9c70deb7800efbcc274badef9c8c",
       "scriptSha256": "0c4efd5be14db5b32bc78f1bc05bbf6f732c577f8e360561c3a96a159c95abb0",
       "audioSha256": "9e54de8c1559e4fe9e51b79d594bb443d12fdd537f6fcf98e630461a4c6419ae",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-6": {
       "clip": "evp/slide-6",
@@ -400,155 +400,155 @@
       "diagrams": [
         "qe-three-states"
       ],
-      "contentSha256": "4c47de2e162240a0ed6bc4bdbc53279ac70f28732497cf0c58168758f7b0c10c",
+      "contentSha256": "c9960a3af18e34896a04c7306952080e85147fbcf117323bf9d504e587721651",
       "scriptSha256": "79108a58035d79a0970638582276d4247265ba8b9b44cf64ea709560735621cc",
       "audioSha256": "c2fdf6329c6d32a30f1fe94f872a3c874b3107cc8975cfe861c7ae2d8f446340",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-7": {
       "clip": "evp/slide-7",
       "source": "/briefings/fintech-evp/#slide-7",
       "diagrams": [],
-      "contentSha256": "67b945e9122d564c9996e69f8ace249844e0fe1f9ca692191ec0ad820fe7a2ff",
+      "contentSha256": "28c35682d6f71f9783d37c8c54019fd716295da1e79e3c9c913ef80def331f4f",
       "scriptSha256": "cb3df1ad770eb438d1e3d130211a385ea96cb00de7f0d65932ce5a90732e1bdd",
       "audioSha256": "32f4f8e0030fab732b9a1cb3733006a85399b80234d7da9943e13784821dd944",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-8": {
       "clip": "evp/slide-8",
       "source": "/briefings/fintech-evp/#slide-8",
       "diagrams": [],
-      "contentSha256": "148491ded43cad9450b4127fd919aafa3fa2ccb8b591883cd0d4235507938ece",
+      "contentSha256": "826650dfb63ce3e3d94946dc7ee61212fd5ffddabcbef58b200fafcb03e547b1",
       "scriptSha256": "9f5a9b3370768e8a81f72c206f171aede9835ad1dad0edaa561ca233c842e5e9",
       "audioSha256": "5259ec936e489436086afc8cbf924f944e9c1a8a73180a087347871e9eaa9baa",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-9": {
       "clip": "evp/slide-9",
       "source": "/briefings/fintech-evp/#slide-9",
       "diagrams": [],
-      "contentSha256": "798c18297072f13dd96131c07d5abf21b8e47913ca0ba2f56edab5d4a280c6d1",
+      "contentSha256": "ae26d6915d28cc099d8dc48a14cae605dfd06c5cdbe128e4763ac9263e498b45",
       "scriptSha256": "0a6cd9ddae011e07f11292ff81caad16a73073b810bf786514eb71b9107a0b4a",
       "audioSha256": "6d817bc57efcc21e2302ce12aa358f8856a14ba27ba7b4d0329d178b30a58ffe",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-10": {
       "clip": "evp/slide-10",
       "source": "/briefings/fintech-evp/#slide-10",
       "diagrams": [],
-      "contentSha256": "4da03bf59c4953a42ea53b48be0d1546c2369bf1633cb3efb2e9e63c246c301a",
+      "contentSha256": "ec34cf43a7c140a76f12e85d4b0ab357575a235cb5932e55525ab6ff1e1d780e",
       "scriptSha256": "6cadc6dddb9520fd2dcafe1c83e0c6987d56f843a98b933a0a5c44ef655e54f8",
       "audioSha256": "4a0b1de20f759f1a76440a7517888e878dd40484bf2949bba79ce68c84074cba",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-11": {
       "clip": "evp/slide-11",
       "source": "/briefings/fintech-evp/#slide-11",
       "diagrams": [],
-      "contentSha256": "85b86d8979350bee126d62c0c0989f8653d7e26b2088335c53de763b66c9c302",
+      "contentSha256": "d1410a23089f72ca107f99eb7ffe261790da7b21678b6597ee48a15a572fe3e3",
       "scriptSha256": "0e6fe50a574b0f8a77cefe5215dfca7626bb2db2c48dc7b9383c9ba8e7a2dc41",
       "audioSha256": "02d01ad29f945560b840124cf67190a0d51dd286bf892ab03479f1a3e9a42ea8",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-12": {
       "clip": "evp/slide-12",
       "source": "/briefings/fintech-evp/#slide-12",
       "diagrams": [],
-      "contentSha256": "f49ce02d3f63d8ddfb16380b7cff3a358688228c6ef2967e3c0347561fba9979",
+      "contentSha256": "202163764febc97e3a493d38f881aa1afccd355e79f99500161663fbb6ad6aca",
       "scriptSha256": "e024a501c97b426dca66d7ff5f3a6cae65f10feec481e821fbef5ed858d0d470",
       "audioSha256": "4db384239b9a44f4988393f75b1226cc2157e148e42c166eeda807961b738607",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged. The revised close promotes the existing workflow assessment and QA, development and platform owners from its note into the lead. The recording already asks about bottlenecks, repeatability, ownership and use of returned capacity; no new outcome or authority is claimed.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-13": {
       "clip": "evp/slide-13",
       "source": "/briefings/fintech-evp/#slide-13",
       "diagrams": [],
-      "contentSha256": "2bbb1e87443d1997893cbdc780161656fdc2c0f7b500b1babe0add1a97fc5cb1",
+      "contentSha256": "fea5623b35414677b6773c8da9f27efae59b0facf3f2d1e00f58c887d7692f6b",
       "scriptSha256": "9f7e10d9024e3786ee374979626857ac4f113476f04cd04c705eb9a5a955927b",
       "audioSha256": "d1f094ac5c549419a9da62a9edcf457302cf0570b83b27ac619d5f130f8f2cb7",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-14": {
       "clip": "evp/slide-14",
       "source": "/briefings/fintech-evp/#slide-14",
       "diagrams": [],
-      "contentSha256": "5030f42ae6cde4a08bafbecd7dafeb42278a6713848d87be13c8e0aad20c463b",
+      "contentSha256": "45adabf014556a79f16a4427a1d5b3cdd67881b45dfaa60d095c053b1bae90da",
       "scriptSha256": "0d83fe339d2dbc46afcf974b211933174e13582d411f4fea4d021d0fc9c049ed",
       "audioSha256": "8d52514073a72a93c9ad3bfceac22cd7a98f18df53e1c170156055f9a8cd725c",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-15": {
       "clip": "evp/slide-15",
       "source": "/briefings/fintech-evp/#slide-15",
       "diagrams": [],
-      "contentSha256": "da6c1fb563240161395d85a34b02f1b067ea7a4d9d8d2d8efbcb151f716fbd7f",
+      "contentSha256": "c20f0b7e155638d45c4fbef06fa40e5de25fe3c918bcb6e7814d3f5192c3f4d4",
       "scriptSha256": "62ec2c879cd97208484f8aa9a210e8add597bcdee936e8836875bfaa5c6051a6",
       "audioSha256": "d6f38bcd9f808e79021c5ba3c7b0f7ac581805419c6d2d1e836b105aa5dc51c1",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-16": {
       "clip": "evp/slide-16",
       "source": "/briefings/fintech-evp/#slide-16",
       "diagrams": [],
-      "contentSha256": "819052db423fe56082fcfca95dff9753f5991f7299045a5f1797604e3b072bf5",
+      "contentSha256": "8e035ad0cb5a72637a16ba9bec7648326fb63d53c4285b1cf98fcc70f196d0c4",
       "scriptSha256": "92dd355e4702fa894671b929021b0434bedc692d6789259ba5a6c077169bd5ad",
       "audioSha256": "ac0de6d9d15c57e69fcd1f8f857891f5357b004db771297b1655547199610317",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-17": {
       "clip": "evp/slide-17",
       "source": "/briefings/fintech-evp/#slide-17",
       "diagrams": [],
-      "contentSha256": "549950f9132cf5ded6bd45e63f0dd97804c3c9445547459db6deace7bbcef8bb",
+      "contentSha256": "d86d31b2f5a22bfe3b2c3df33551dd4998a1ba831698518a322b0025f853e085",
       "scriptSha256": "3d3653bb4671fab0ab5c0c26c16d744e03280276ad3ffc736249a75f0682e5d0",
       "audioSha256": "cfdab00bdf37f2e380da8abdac65e84fb1cb65579cc4f69f48d2bd3b8298e248",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-18": {
       "clip": "evp/slide-18",
       "source": "/briefings/fintech-evp/#slide-18",
       "diagrams": [],
-      "contentSha256": "4e17475e7a8eab1b50d6b40435779beafec6f35b3b29c9745c53e1291b9fcf86",
+      "contentSha256": "7dcf2b899a01da02f285a18e040ac9ea696b67b417a6cb1230731417c36e4de2",
       "scriptSha256": "1075e79be718960f87e54dd369ad30a0c2df460da433d17bb56947b168fea376",
       "audioSha256": "e468d3a46fac1267e7037ef0e8d4281add54db4a1fecbd769b4f66cb9b980c81",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-19": {
       "clip": "evp/slide-19",
       "source": "/briefings/fintech-evp/#slide-19",
       "diagrams": [],
-      "contentSha256": "b445aae2c2f4ec3ead3ab984b5d2b74f2abfee7f561c170251610d0a495e22e8",
+      "contentSha256": "8e992f880e7bacc0955492af98676c20a21c2707983d948a3afe2687732f88ae",
       "scriptSha256": "5b52c11bbe52988c52cbcc4d40e1bef5580367ffd97d1ad7f2632d44b33469f2",
       "audioSha256": "3576429426c5f2d1f6feb7039fd0da48768aefc7dce819ce638fee66c4268af9",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-20": {
       "clip": "evp/slide-20",
@@ -556,12 +556,12 @@
       "diagrams": [
         "qe-journey"
       ],
-      "contentSha256": "1af7e4893f9a929c9fec61c511c3082f540044286b4bbb798ea5bf4994ba20ec",
+      "contentSha256": "23a473e930256a2e975982a9255a089c2c91385e8bb994cbf38c187bd1ef640d",
       "scriptSha256": "765f20a42c7c1760cbb9d5df83d9023722482261720d3b1b2953ddbff4758a66",
       "audioSha256": "51bff8a242e0c0f414284bfffc7a6c2d1e38d21a8f2955a1a786f99486bc15eb",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:evp/slide-21": {
       "clip": "evp/slide-21",
@@ -569,34 +569,34 @@
       "diagrams": [
         "qe-artifact-trace"
       ],
-      "contentSha256": "c2bb236331f3464b0994137d062e1f72ef023a7d04f7cdfd3da04933edfa6ced",
+      "contentSha256": "45b962ee2848cc15115e0c84fb1208a41d4d3a6bcd7a53c733198715f5a6ed16",
       "scriptSha256": "657c1ffa2c1eec166574a54d04f46000e36c92ee82ea915ec5b633f188eff267",
       "audioSha256": "14277c21eaeea153f4ae57944c636c48e2cb8df3d77e2ef7cdf4d3ac3c170aa0",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-1": {
       "clip": "technical/slide-1",
       "source": "/briefings/fintech-technical/#slide-1",
       "diagrams": [],
-      "contentSha256": "7e51c15f0962cfe7fc775e537d4a6cff086d4d5a8f11a27468db4bb8194d830d",
+      "contentSha256": "46373c1e2f75f04f7f639e01d5ec41fd9d645a655f27f1e6e112992d72f80d52",
       "scriptSha256": "0d210a608facc8d2f567dd4f26711e1194a7aad8c3cedaacbe9bd79813d7f1c5",
       "audioSha256": "dafe6765f022bbd704c5de115181685a996998ddcb5347f20017c8dda636785d",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-2": {
       "clip": "technical/slide-2",
       "source": "/briefings/fintech-technical/#slide-2",
       "diagrams": [],
-      "contentSha256": "217cbc21ac45649b7e36c1ab68997bd974f9882739b5fb7bbff988f01f258c00",
+      "contentSha256": "210483fc5400c3a249e1b206f5b92f855e76f863397c153a410d33a8419042d3",
       "scriptSha256": "3de028c8a6eda14f95ba7d9b0bd979d80a879ec26bcde23e26c42c757f0a6301",
       "audioSha256": "3d832098a20d75316575f57a63b6572c4d0057b2136b5e886a67a2d3e11c05bc",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-3": {
       "clip": "technical/slide-3",
@@ -604,199 +604,199 @@
       "diagrams": [
         "technical-runtime"
       ],
-      "contentSha256": "7a9c78bb483953ec0dd7e8fbbcfffd8fe093b3c76005cc7856e9ee9691fb2b3f",
+      "contentSha256": "0374bf06ada32404887cc49cd42fa2925631ee637bca039fae5f0efa23642d8d",
       "scriptSha256": "13220296de5fd87aa12fca5b66c2c9d2324404cdc2f541f2d84fc361bda6dcea",
       "audioSha256": "33109a1b7ec723255c985869d140784931e34a4a50d6e99a70b713a6c352bca1",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-4": {
       "clip": "technical/slide-4",
       "source": "/briefings/fintech-technical/#slide-4",
       "diagrams": [],
-      "contentSha256": "22415fd6e3487bc96836d0f5a60bec6a5d8bdd1b974053c78599ff5d606fde31",
+      "contentSha256": "1acfb4d58d932bc3b136b84148985e54ceef63289ad57929c330e5800ebf4cb8",
       "scriptSha256": "6ebc99c595cb577159e9ef5d3594adbf769b3aedda9176ea52c17670306272d1",
       "audioSha256": "6829bcbd781813b7c6434ec1c7607586e99ea827f712d07d229f82e464c2ca06",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-5": {
       "clip": "technical/slide-5",
       "source": "/briefings/fintech-technical/#slide-5",
       "diagrams": [],
-      "contentSha256": "474f84e9087a83cfea5660e1eaee84d11726194f10eb3bede5f8cfcf58bc98c3",
+      "contentSha256": "89b3e651fa4da55f674dc38625454753b6182e90c21d71e9aa90c45b45c4e4a4",
       "scriptSha256": "dcd505973aeb7d181ea80063f8aba46facdc0f166d5357e8943d3153a2d028fe",
       "audioSha256": "8843848652b2102855c399ed3963b95010ad438b5b442a6ce9a7aa63631cfdc7",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-6": {
       "clip": "technical/slide-6",
       "source": "/briefings/fintech-technical/#slide-6",
       "diagrams": [],
-      "contentSha256": "386f7629d688c80273099e296d1cbf4b83e3718f3531adbc218475c29e2546d3",
+      "contentSha256": "132843911560fb1e79fc456589a0f613d8a7e4f1e3e1da850b173944cbd75eca",
       "scriptSha256": "5ffa2c0d72178735882128e555e24086c924521daba8f25d3736f204227f969d",
       "audioSha256": "c8fac6a7223aedb67fdf4558170e9ba8eede894d91f8e451e98489940b0314fe",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-7": {
       "clip": "technical/slide-7",
       "source": "/briefings/fintech-technical/#slide-7",
       "diagrams": [],
-      "contentSha256": "36749d689045f25a1f34de8066673826a07eca38075655d2ce0bf95b3abab5c2",
+      "contentSha256": "50bab4aab41ac778b911c84f37f7caec43bcd75071ae5d04574d84735489f3bd",
       "scriptSha256": "15adc08349be927d1adbf04aeef88538424f615591597907cf2e35f09b6242cb",
       "audioSha256": "6f74fbfc23b0dc35c5586b9bc7e98a2d9202bd282462c1c23595f6eecb3cb8da",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-8": {
       "clip": "technical/slide-8",
       "source": "/briefings/fintech-technical/#slide-8",
       "diagrams": [],
-      "contentSha256": "beddddb4c22d652aeb95eb006c591ba03e388e69b575f1752968d5f8a37ca784",
+      "contentSha256": "bb9943869a6a034dbad650c09c534ef9b72d433d04a89f6be18ff3ac3c9a9308",
       "scriptSha256": "147ee8c53e609dd202447b6a6549744d2a6820266e0249d34155825198594885",
       "audioSha256": "635841d9d05ce4854030647f82afa13b459dda783fb3b5df5faf836234efa37a",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-9": {
       "clip": "technical/slide-9",
       "source": "/briefings/fintech-technical/#slide-9",
       "diagrams": [],
-      "contentSha256": "cf08fd8ebf58357b94655f77e8de6e035562790aabe0e7b8f3f7620917a80363",
+      "contentSha256": "d7dd9842af01c86502c86c2bdd506ab218fc4e5b34d6f8b987ac57f046b64796",
       "scriptSha256": "a29d91b9394a1014a4ef6751f70912d42fd3e63d082d68a99dde37c80ed779ee",
       "audioSha256": "f2bc620e93e33f193e37f89a6344ac09e9acf2facc196a6b52a0b968e4f9504a",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-10": {
       "clip": "technical/slide-10",
       "source": "/briefings/fintech-technical/#slide-10",
       "diagrams": [],
-      "contentSha256": "f2d801d3cd173b15debe4d3777457284167f7870f6cb291b2c0a69869d0334b7",
+      "contentSha256": "17a3b66d0c625a0b97db7c09f8bdca47b9ecac5d2236002054495d6693ac188c",
       "scriptSha256": "0a350c68549dff585adfafda27a87674b61fc3fcf97c951369158290cb0fe5bb",
       "audioSha256": "9997afad37a927bba8722323dc9dd8487a10b230466af8ed5ce7a150f17cc06d",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-11": {
       "clip": "technical/slide-11",
       "source": "/briefings/fintech-technical/#slide-11",
       "diagrams": [],
-      "contentSha256": "8c23330b05cfd207831e9536525c0c360aa6a8111322950790f68d562e3e4db9",
+      "contentSha256": "1547976d5f723d238600abffce8080ae02fd805a18b8758c9f9668db2082d995",
       "scriptSha256": "18c8a4b8003b8c31c80cdd0889d9a76f4e84062caba959a4bdb70b41efc173cb",
       "audioSha256": "e63cad9a27e0f557f939ea33a2ddec5d5de59a7766ce63c640e760761f681f2a",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-12": {
       "clip": "technical/slide-12",
       "source": "/briefings/fintech-technical/#slide-12",
       "diagrams": [],
-      "contentSha256": "9c0d52d5f88151e493522316b25389583ab975821646880426f62a9863b32604",
+      "contentSha256": "815ea6c7d903d7393fe026eef9f30a9095f853c2ed186159caa7ebdc1893e0d6",
       "scriptSha256": "9117ed6baec904228fa4d72f99eadb424ed4eeb9568d34bea85db7e2deb56685",
       "audioSha256": "e2cfd0ca68f01b46b00c5929329d819086770e39d44df93fde3df2e4e9584504",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-13": {
       "clip": "technical/slide-13",
       "source": "/briefings/fintech-technical/#slide-13",
       "diagrams": [],
-      "contentSha256": "945b885edf8c209e21d6c24ec25732a9c80519ed0ecbd74b1cc2fadce694263e",
+      "contentSha256": "ec4f31a45c97c37450a6f2e91e326cb92ae547e3a86e3bb120a5ea45e90612fa",
       "scriptSha256": "087f6636e954e23ef9347b547384a80a20d7549310a59e588d21dd7d1093c6b1",
       "audioSha256": "d81e744f6bae1ff3bbf692d7ee5aff7d0b418a2c8f9afe24a563c910d606ac20",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-14": {
       "clip": "technical/slide-14",
       "source": "/briefings/fintech-technical/#slide-14",
       "diagrams": [],
-      "contentSha256": "0db097ee8327ab665652b9ff55b97e724a854cdb7b3530aee7532c711f8a5385",
+      "contentSha256": "14bb416af72ecdb64e0ba0af24274774726fc59ddf4c45a1a0b5cbf4bfac3613",
       "scriptSha256": "b918b9de3db842d9ce543e043956683cb76fe6d5865fd510e9e5a5530d93f89c",
       "audioSha256": "a19d8156cb953d279a0b7330c592e01efe959be2dee29164b00c34abe0cdaa72",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-15": {
       "clip": "technical/slide-15",
       "source": "/briefings/fintech-technical/#slide-15",
       "diagrams": [],
-      "contentSha256": "fedcbd5219ff1ac8bcc5d096b4bf8ce383ed0bf10a44e4aa1da88a66d627fc89",
+      "contentSha256": "f5b121da14d6d6b6313db61718dcc7c1d1bfc7d85d97187e18537f14ee0aa976",
       "scriptSha256": "62d9a45d2875095c5f4ba174db07807dff4978f920ebc318adb259126f0c72e6",
       "audioSha256": "a63b6326b050ec9d596605420c644c271d7e58461da086110b5a06f9e2f63096",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-16": {
       "clip": "technical/slide-16",
       "source": "/briefings/fintech-technical/#slide-16",
       "diagrams": [],
-      "contentSha256": "6ad0291d4bb2770a0d4f7075383ec388b3e89ca5a63e1424b33f2ef972409bcf",
+      "contentSha256": "c2c878ef07ef5705d2c410300b2172785d55c65f30ff6157ea6286f6006724d9",
       "scriptSha256": "697e2fbbad05045925172251524ff02e22ce5239c8e70d9f9fe2eaf5eee42b79",
       "audioSha256": "d8b38a8e91b4e3572d84e12cf9451f81d3d36e509683acbc2b425649de6bbbd4",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-17": {
       "clip": "technical/slide-17",
       "source": "/briefings/fintech-technical/#slide-17",
       "diagrams": [],
-      "contentSha256": "e9b24cc1c4bb16fc5d884caecb6d25f4d3fd3bed83c4122930da2247183ce158",
+      "contentSha256": "6f99a2c8faf2f880b087f67a6f69bc8606a3d4b9e9188a26b96e31806db2a652",
       "scriptSha256": "3cb00cdd6cf331fa575c328d1bd397a4e0873074a85e632086e0587176d2aec2",
       "audioSha256": "562c240d81cde726354b5ddad29144448254927ff552d4a0c33feae89a77abd9",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-18": {
       "clip": "technical/slide-18",
       "source": "/briefings/fintech-technical/#slide-18",
       "diagrams": [],
-      "contentSha256": "2644d6509bbf9ab382cc7e530551a38927f75d5b0f3bed3de3dea4dd9ec2770d",
+      "contentSha256": "c2c8d6e240708689c9277a10473fcd3f71dd110bf9f98a3fa6a8a1a954e75208",
       "scriptSha256": "78d70d724318b5973b5a604eeaa147181a3bef40213c9c8bf756c154ca30c44c",
       "audioSha256": "d3eec86eb1938d815bc20c09cd5afc053cfb6fc4338ca78e3fa80e9bdf24abd4",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged. The closing note restates the four existing contract, oracle, reproducibility and ownership questions, all explained in the retained recording before expanding execution authority.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-19": {
       "clip": "technical/slide-19",
       "source": "/briefings/fintech-technical/#slide-19",
       "diagrams": [],
-      "contentSha256": "8ded70e8db2a805b964b22ab744fcc37a3f2b6dd090e02601242f77bba41e38b",
+      "contentSha256": "ae88c801436dda49fc6e0467162f60e7f6515d042364f2ef6ed19fa31d2786d9",
       "scriptSha256": "e41f85502f404a6d0e2ac6c8df8f7d3d55994371397ae2a81a42722aad74961e",
       "audioSha256": "9c00e6caa0535e58bbbe074d0e0273f55ddf8a6ac7289af11b1a2740b85f7c6d",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-20": {
       "clip": "technical/slide-20",
       "source": "/briefings/fintech-technical/#slide-20",
       "diagrams": [],
-      "contentSha256": "e4b9fa16ba9bea4b74c0b62806e8d46ba0e2b060cc7f80f7130bd7fdc2a44848",
+      "contentSha256": "36b8bc73daba682597a100d30534bf360da7fcc77842aa28609330169e231e6d",
       "scriptSha256": "67c44cfa6c09721803e40bf0a1fb9e8352e4980d5c0f2d7e8f6af2995aa0196d",
       "audioSha256": "10c98b48658f1bf05f2283302be1f1f8db75b83b12941a82268c7c7c35793e6a",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-21": {
       "clip": "technical/slide-21",
@@ -804,23 +804,23 @@
       "diagrams": [
         "modernization-environment"
       ],
-      "contentSha256": "30f05cf29961ed7b4bb1cf5ffcf32e4d5da32609ace14c817a78d39791aaebd1",
+      "contentSha256": "ade88799a7e65c9420e7be0f2e517b6cf1d2e29de7a51c7c272eb8bc9bcd83b2",
       "scriptSha256": "c526ccff0a02e76610ab9e225c8675d77aee948702ecf8b1a083f9d47555b9c3",
       "audioSha256": "6c246b068770275412579af7d9d9a80a3f79c347f00831f01f29223a5b5de9a3",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-22": {
       "clip": "technical/slide-22",
       "source": "/briefings/fintech-technical/#slide-22",
       "diagrams": [],
-      "contentSha256": "1e3a5f36a771910d0d92d20c4a9f996b4ddf956414a9ca1ab561bb6ffd610d69",
+      "contentSha256": "be2726239f84e2c77b220886df9fcaba95ec867022d7f120186cd6222be64148",
       "scriptSha256": "51135284b3c7d84834f9a0a7c2b028fe042caadd62537ae92651d61a6ea161d8",
       "audioSha256": "803813bb8b3e0f5547c63d80bc3cf36320c296769b5d3da44da251079de55de1",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-23": {
       "clip": "technical/slide-23",
@@ -828,23 +828,23 @@
       "diagrams": [
         "fintech-candidate-validation"
       ],
-      "contentSha256": "7d1bd8b70163c07dd506231a82ab507862fb73cfb7ff7721a5a947bb42768924",
+      "contentSha256": "86ad0629fb2aadbad9008e9c4dc19d925127a5c2e5c5b28e9d4fa6238aec835d",
       "scriptSha256": "b4b8cbc3b4f3e6e23d2cef27d0631be709900e161fc174f0a9b2912f9d6ef82a",
       "audioSha256": "ddaa9ebe06216c278f69e5ca33d0842a8be626c4a8eabafd82d974cecfb2d0fd",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-24": {
       "clip": "technical/slide-24",
       "source": "/briefings/fintech-technical/#slide-24",
       "diagrams": [],
-      "contentSha256": "4e58c2484fad655b859b8d0170d47ee7738f7f62f12471ebfd15f0522e87d38b",
+      "contentSha256": "c873c2883503ba4669e339ffe4278de7969a84be22308bc7c13c3ba92c4522c7",
       "scriptSha256": "f7c9d33b35d0ced4ed3d9695410aa87b2cb1ff123f5ad6d1236d011d2da2e77d",
       "audioSha256": "96c7310a050db25eee3f67c3e482f6310a7b0e2d3b99102e849b3c793b8f6693",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-25": {
       "clip": "technical/slide-25",
@@ -852,67 +852,67 @@
       "diagrams": [
         "qe-lifecycle"
       ],
-      "contentSha256": "80abc4160ae776c9c45a9e47f797823c524fbdecb140edf5dd11913f291e9332",
+      "contentSha256": "3012df4439f79ef0c7dd4b5dfd542d0bfa2bfa88bc27e93f659cef8d60db7112",
       "scriptSha256": "960f915501573ee55bf8a00115f791477316dc2b62e404a6ad507d3982402ad1",
       "audioSha256": "e7e517e8849c647448dfe06e5fb1968b6b2e8c3dcf2ca82e0ce8fc9bdf3a4d6d",
       "decision": "retained",
-      "reason": "Reviewed the six lifecycle steps against the existing recording and all eight exact VTT anchors. The explanation remains the normal setup, execution, evidence and cleanup path; new highlights follow it and manual failure exploration pauses it.",
-      "reviewedOn": "2026-09-09"
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-26": {
       "clip": "technical/slide-26",
       "source": "/briefings/fintech-technical/#slide-26",
       "diagrams": [],
-      "contentSha256": "e0f580a7542f86e6654acd5be8ced846b56d1c62dc28897b12eb1c3b0860622c",
+      "contentSha256": "95514a057e8a09dd5926904053d35e7d2a4e1d600762b66cbc614ede741b534e",
       "scriptSha256": "911033e40b712be5f1a8c4b73edd3f00718b25eddc07c8043782281e1054222b",
       "audioSha256": "a8e95ef454f13c734391e627760c39d0f9e3a96efa347ef6ee883b99e4a5a571",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged. The new lead makes existing CI execution and artifact reuse explicit. The retained recording explains the same four owned context, model, runner and evidence contracts; input, output, owner and permission semantics are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-27": {
       "clip": "technical/slide-27",
       "source": "/briefings/fintech-technical/#slide-27",
       "diagrams": [],
-      "contentSha256": "1d0ad01221313335f1ef54017ff82c86fb34c5c2afc485f053ff26b3ea115ea8",
+      "contentSha256": "d041c8def16d836926c6d0d410ba32b7b22bbdd6ecc56a53a4b882374a468b30",
       "scriptSha256": "cd9cc945b22eb3eb4a7ff4c5952fbaf1cf0fd092114227b61a223348cede4e06",
       "audioSha256": "a469b58d27862ba815e98f883f6b92c9b0a3f4e5042147df25ea4cc08997ba39",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-28": {
       "clip": "technical/slide-28",
       "source": "/briefings/fintech-technical/#slide-28",
       "diagrams": [],
-      "contentSha256": "5e3e674206b64f42f1189484fd2744a86c6b50d1e648ff30d3e0045218f5ce31",
+      "contentSha256": "31a8f673ec49402a622e45badbec047af81d0c867b878f06d43cff1edbab152a",
       "scriptSha256": "7e01ba1b1aa73237cc278349810b13af1b682266e1689da7fda2202e4422565a",
       "audioSha256": "5400b33cd4addedb5063cdc0094a09c5c647b2cc83801b9b81133369cd867851",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-29": {
       "clip": "technical/slide-29",
       "source": "/briefings/fintech-technical/#slide-29",
       "diagrams": [],
-      "contentSha256": "7078e4c8fc59b94090d027007366cd9022a17f702fd471f2f00b2e749a67fac3",
+      "contentSha256": "939b42540d3453d4aed71038e6439dc218e9765ab4268b6ee75561bf76b902b4",
       "scriptSha256": "6552180f5d709161010986a97f2d4c6884afe6bd86c26ec27042fa663b36fd81",
       "audioSha256": "a463218e2e8fbb7e7196d5ade9cb6df8a9f99315e2c7b640bb08e444b3b5c83a",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-30": {
       "clip": "technical/slide-30",
       "source": "/briefings/fintech-technical/#slide-30",
       "diagrams": [],
-      "contentSha256": "4924a68fc2de30ca3b65c329b5806bc6369aadc18fc7b059951222f4b1b24d15",
+      "contentSha256": "32e9d8ec2949a9b949bf85ea9c1c5fa425151cd9e3b53df8966063a6c37dcd3e",
       "scriptSha256": "b74773108715bed943a918697dc53af0c94c15c8099d52b1c64dc582a88dad63",
       "audioSha256": "79e3a65a90f2083276c7c22a425af11808d1cacde8712331642f9d468b6c398e",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-31": {
       "clip": "technical/slide-31",
@@ -920,12 +920,12 @@
       "diagrams": [
         "qe-journey"
       ],
-      "contentSha256": "13a579ef76aaae9b1b85dfcf375e6b4a8810dba9ba852daf08a424af2e83c551",
+      "contentSha256": "77cf6df5faa100529b50a6e1e6eb619c9090c54e351465eb8471ecf0baee8b9f",
       "scriptSha256": "54be281eca9f443ab5a520916bf13a1aa07dedad6e2b54e6a8de2e924154fb5d",
       "audioSha256": "a3d24c7646517acd5344a359b294ccb308401b793e8b7edd20d3abb158fbe095",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-32": {
       "clip": "technical/slide-32",
@@ -933,12 +933,12 @@
       "diagrams": [
         "qe-artifact-trace"
       ],
-      "contentSha256": "ca66c1eafb6d709c64826fee49f796e4289d4c24c28b2589601d2e6e12217856",
+      "contentSha256": "debc523de4e32ccf7a94baf6178f7009a02e5b4c33493d67e86c147662fc4a8c",
       "scriptSha256": "74f3b874dafa413b641734116e997d146c5ebf8a354dc478010954143bef63bb",
       "audioSha256": "c692bde7540abeb4bc3f939a1057cf5c7a714f4613bda6ef32183df2f205bdc5",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:technical/slide-33": {
       "clip": "technical/slide-33",
@@ -946,12 +946,12 @@
       "diagrams": [
         "qe-three-states"
       ],
-      "contentSha256": "1851cb7156bc4322a602bcd078b968cf543ec6428842dd0b418c3a8fed67ac31",
+      "contentSha256": "906d7382b4e476dd37bb69a0c83bd62db196963d2239c09b5393ee0896aae9de",
       "scriptSha256": "fded2a4001290c84762934c1ade173a4e4a0acaa0e2d172db391a7b448cd0a16",
       "audioSha256": "7e3426502372771118d6b85186ea10418d88bb59209bd7ee2b7ca9fd6ecf9622",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "Reviewed the rendered slide against its retained script and timed captions. The disclosure changes from Fictional fintech case to Illustrative banking scenario; Our Banking Client, teaching-scenario status, payment facts, workflow, diagram relations and narration cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:industry-technical/slide-1": {
       "clip": "industry-technical/slide-1",
@@ -1224,12 +1224,12 @@
       "clip": "industry-technical/slide-22",
       "source": "/briefings/technical/#slide-22",
       "diagrams": [],
-      "contentSha256": "b2500792b5566e8f48db8eb63a4720d8ff6d8ed97ff7d080f5d7d3a26d652576",
+      "contentSha256": "70905ac33801475149848e7bcf9905b63e76b7ac4cf8f5492de5439511414313",
       "scriptSha256": "d482b269a608a2d7ae355fde7f914d66888cdabeacf15da4d7093f4b512fb917",
       "audioSha256": "e2d5c081f6abe785f62eed1a688f73e17513015712ab542bd7d0bc00bbcb2b38",
-      "decision": "baseline",
-      "reviewedOn": "2026-09-09",
-      "reason": "Accepted v1.22.0 publication baseline: recorded scripts and complete destination walkthroughs were reviewed and validated before this content revision."
+      "decision": "retained",
+      "reason": "The added implementation note recommends reusing CI, identity and artifact storage. It clarifies deployment of the same tool layers; the recording continues to explain their distinct responsibilities and required local proof, with no changed tool claim or diagram.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:industry-technical/slide-23": {
       "clip": "industry-technical/slide-23",
@@ -1246,12 +1246,12 @@
       "clip": "industry-technical/slide-24",
       "source": "/briefings/technical/#slide-24",
       "diagrams": [],
-      "contentSha256": "ced53f4074e5fa8ebb44b5dcb8819f850ecc66c406ee7e9e2bd50d41280d43c0",
+      "contentSha256": "e2a7bb6b34e0147ce081fcaa09335ea1a0d6fd5a54cde536712edf6e88d1d2ff",
       "scriptSha256": "364b1db063f5e7d8d8be6df46bfd072033615df621dbe47dc31725e39a5853c2",
       "audioSha256": "8a404ce2ad3de0fb3775b98d266e8f094f00799012b5608ddf833e8163012fc9",
-      "decision": "refreshed",
-      "reason": "Rewrote and regenerated the pilot decision explanation for sponsor-selected objectives, universal floors and evidence, economic-only effort bands, and Finance validation for cash claims. Reviewed the rendered table against the new script and thirteen measured caption cues.",
-      "reviewedOn": "2026-09-09"
+      "decision": "retained",
+      "reason": "Only the kicker changes to Closing decision. The recorded benefit, effort, quality and control gates and their diagram cues are unchanged.",
+      "reviewedOn": "2026-09-10"
     },
     "slide:industry-technical/slide-25": {
       "clip": "industry-technical/slide-25",

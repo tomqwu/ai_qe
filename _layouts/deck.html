@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.classList.add("js");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="description" content="{{ page.description | escape }}">
@@ -42,24 +43,25 @@
   <header class="deck-header">
     <a href="{{ '/briefings/' | relative_url }}" target="_top" class="deck-brand" aria-label="AI × QE — return to presentation room">{% include brand/mark.svg %}AI × QE <span class="brand-destination">Briefings</span></a>
     <span class="deck-audience">{{ page.audience }}</span>
-    <div class="deck-tools" hidden><button type="button" class="deck-narration-start" data-narration-start hidden aria-pressed="false" title="Narrate from this slide with English subtitles and automatic slide changes">▶ Play narration</button>{% include motion-toggle.html %}{% if page.fintech %}<button type="button" data-guided-route aria-pressed="false">Guided story</button>{% endif %}<button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-diagram-tools hidden aria-expanded="false">Diagram controls</button><button type="button" data-notes>Sources &amp; notes</button><button type="button" data-edition>v{{ site.data.release.version }}</button><button type="button" data-fullscreen>Present ↗</button></div>
+    <div class="deck-tools" hidden><button type="button" class="deck-narration-start" data-narration-start hidden aria-pressed="false" title="Narrate from this slide with English subtitles and automatic slide changes">▶ Play narration</button>{% include motion-toggle.html %}<button type="button" data-guided-route aria-pressed="false">Guided story</button><button type="button" data-reading aria-pressed="false">Read all</button><button type="button" data-diagram-tools hidden aria-expanded="false">Diagram controls</button><button type="button" data-notes>Sources &amp; notes</button><button type="button" data-edition>v{{ site.data.release.version }}</button><button type="button" data-fullscreen>Present ↗</button></div>
   </header>
+  <main id="slides" class="slides" aria-label="{{ page.title }}" tabindex="-1"><h1 class="sr-only">{{ page.title }}</h1>{{ content }}</main>
+  <nav class="deck-navigation" aria-label="Slide navigation" hidden>
+    <div class="deck-nav-controls"><button type="button" data-previous aria-label="Previous slide">←</button><button type="button" data-next aria-label="Next slide">→</button></div>
   <div class="deck-flow-bar" aria-label="Animated flow playback" hidden>
     <button type="button" data-flow-play aria-pressed="false">▶ Play flow</button>
     <button type="button" data-flow-next>Next step →</button>
     <button type="button" data-flow-reset>Overview</button>
     <p data-flow-status role="status" aria-live="polite">Guided architecture walkthrough</p>
   </div>
-  <main id="slides" class="slides" aria-label="{{ page.title }}" tabindex="-1"><h1 class="sr-only">{{ page.title }}</h1>{{ content }}</main>
-  <nav class="deck-navigation" aria-label="Slide navigation" hidden>
-    <div class="deck-nav-controls"><button type="button" data-previous aria-label="Previous slide">←</button><button type="button" data-next aria-label="Next slide">→</button></div>
     <p class="slide-status" aria-live="polite" aria-atomic="true"></p>
     <label class="slide-picker-label">Go to slide <select aria-label="Go to slide"></select></label>
   </nav>
   <aside class="deck-diagram-panel" aria-label="Diagram view and flow controls" hidden></aside>
   <dialog class="deck-drawer" aria-labelledby="drawer-title"><div class="drawer-heading"><h2 id="drawer-title">Slide notes</h2><button type="button" data-close-drawer aria-label="Close notes">Close ×</button></div><p class="drawer-dictionary"><a href="{{ '/dictionary/' | relative_url }}" target="_blank" rel="noopener">Dictionary · terms &amp; acronyms ↗</a> <span>(opens in a new tab)</span></p><div data-drawer-content></div></dialog>
-  <template data-edition-content>{% include release-banner.html %}<p><a href="{{ '/releases/' | relative_url }}" target="_top">Full release history and downloads →</a></p></template>
-  {% if page.fintech %}<script type="application/json" data-guided-slides>{{ site.data.visual_story.routes[page.case_audience] | jsonify }}</script>{% endif %}
+  <template data-edition-content>{% include media-credit.html %}{% include release-banner.html %}<p><a href="{{ '/releases/' | relative_url }}" target="_top">Full release history and downloads →</a></p></template>
+  <script type="application/json" data-guided-slides>{{ site.data.briefing_routes[page.narration_deck].slides | jsonify }}</script>
+  <script type="application/json" data-full-slides>{{ site.data.briefing_routes[page.narration_deck].full_order | jsonify }}</script>
   <p class="deck-message" role="status"></p>
   <noscript><p class="no-script">All slides are shown in reading order. Use your browser’s print command to save a copy.</p></noscript>
 </body>

@@ -100,3 +100,8 @@ for case in fintech_evidence['cases']:
     index[f'fintech-evidence-{case["id"]}']={'doc':'Fintech results and client pilots','title':case['name'],'content':' '.join(case[field] for field in ('headline','unit','finding','change','limit','lesson')),'url':'/ai_qe'+path,'relUrl':path}
 p.write_text(json.dumps(index,ensure_ascii=False))
 print(f'Search finalized: {len(index)} entries including audience slides and {len(dictionary["terms"])} dictionary terms')
+
+# Publish current downloads only; immutable older editions remain in GitHub releases.
+from publication_assets import current_pdfs
+for pdf in (root / 'assets/pdf').glob('*.pdf'):
+    if pdf.name not in current_pdfs(): pdf.unlink()

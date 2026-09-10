@@ -128,28 +128,48 @@
     players.add(controller);
     return controller;
   }
-  Promise.all([loader.dataset.narratorGuides, loader.dataset.manifest].map(async path => {
-    const response = await fetch(path); if (!response.ok) throw new Error('Narrator notes unavailable'); return response.json();
-  })).then(([config, manifest]) => {
-    const annotated = new Set();
-    const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
-    for (const guide of config.guides) {
-      if (guide.path && guide.path !== path) continue;
-      for (const target of document.querySelectorAll(guide.selector)) {
-        if (target.closest('.slide') || annotated.has(target)) continue;
-        if (createGuide(target, guide, manifest)) annotated.add(target);
+  let initialization, initialized = false;
+  function initialize() {
+    if (initialized) return;
+    initialization?.abort();
+    const request = initialization = new AbortController();
+    // Start both metadata requests while this document is active. Chaining a
+    // second fetch after navigation has started is rejected by Linux WebKit.
+    Promise.all([loader.dataset.narratorGuides, loader.dataset.manifest].map(async path => {
+      const response = await fetch(path, {signal: request.signal});
+      if (!response.ok) throw new Error('Narrator notes unavailable');
+      return response.json();
+    })).then(result => {
+      if (request.signal.aborted) return;
+      initialized = true;
+      if (!result) return;
+      const [config, manifest] = result;
+      const annotated = new Set();
+      const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
+      for (const guide of config.guides) {
+        if (guide.path && guide.path !== path) continue;
+        for (const target of document.querySelectorAll(guide.selector)) {
+          if (target.closest('.slide') || annotated.has(target)) continue;
+          if (createGuide(target, guide, manifest)) annotated.add(target);
+        }
       }
-    }
-    const demo = document.querySelector('[data-demo-narrator]');
-    if (demo) {
-      let controller, scenario;
-      const update = id => { if (id === scenario) return; scenario = id; controller?.destroy(); if (config.demo[id]) controller = createGuide(demo, config.demo[id], manifest, true); };
-      update(new URLSearchParams(location.search).get('scenario') || 'generate');
-      const scenarios = document.querySelector('.scenario-tabs');
-      new MutationObserver(() => update(scenarios.querySelector('[aria-pressed="true"]').dataset.scenario)).observe(scenarios, {subtree:true,attributes:true,attributeFilter:['aria-pressed']});
+      const demo = document.querySelector('[data-demo-narrator]');
+      if (demo) {
+        let controller, scenario;
+        const update = id => { if (id === scenario) return; scenario = id; controller?.destroy(); if (config.demo[id]) controller = createGuide(demo, config.demo[id], manifest, true); };
+        update(new URLSearchParams(location.search).get('scenario') || 'generate');
+        const scenarios = document.querySelector('.scenario-tabs');
+        new MutationObserver(() => update(scenarios.querySelector('[aria-pressed="true"]').dataset.scenario)).observe(scenarios, {subtree:true,attributes:true,attributeFilter:['aria-pressed']});
 
-    }
-  }).catch(() => { /* Core diagrams and their existing descriptions remain available. */ });
+      }
+      document.dispatchEvent(new Event('qe:narrator-guides-ready'));
+    }).catch(() => { /* Core diagrams and their existing descriptions remain available. */ });
+  }
+  initialize();
+  // Cancel the deferred manifest fetch when leaving, including a BFCache visit.
+  // A restored page can finish initialization if it was interrupted.
+  window.addEventListener('pagehide', () => initialization?.abort());
+  window.addEventListener('pageshow', event => { if (event.persisted && !initialized) initialize(); });
   function pauseAll() { for (const player of players) player.audio.pause(); }
   document.addEventListener('visibilitychange', () => { if (document.hidden) pauseAll(); });
   window.addEventListener('pagehide', pauseAll);

@@ -46,9 +46,10 @@ callouts:
   evidence:
     title: Evidence quality
     color: purple
-mermaid:
-  version: "10.9.1"
 exclude:
+  - maintainers/
+  - CONTRIBUTING.md
+  - Makefile
   - Gemfile
   - Gemfile.lock
   - vendor/
@@ -61,7 +62,6 @@ exclude:
   - _incoming/
   - package.json
   - package-lock.json
-  - playwright.config.cjs
   - test-results/
   - playwright-report/
   - assets/pdf/ai-qe-appsec-discovery-questionnaire-v2.pdf

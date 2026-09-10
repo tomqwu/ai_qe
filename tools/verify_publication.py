@@ -22,7 +22,9 @@ for audience,count in [(deck['audience'],deck['slides']) for deck in decks]:
     assert f'v{version}' in text
     pdf=PdfReader(ROOT/f'assets/pdf/ai-qe-{audience}-v{edition}.pdf')
     assert len(pdf.pages)==count, f'{audience}: incorrect export length'
-    for i,page in enumerate(pdf.pages):
+    order=json.loads((ROOT/'_data/briefing_routes.json').read_text())['industry-'+audience]['full_order']
+    for page_index,page in enumerate(pdf.pages):
+        i=order[page_index]-1
         words=page.extract_text()
         assert len(words)>100 and f'v{edition}' in words, f'{audience}/{i+1}: missing content or edition'
         section=re.search(r'<section[^>]+id="slide-'+str(i+1)+r'".*?</section>',text,re.S)[0]

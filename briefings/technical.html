@@ -1,7 +1,7 @@
 ---
 layout: deck
 narration_deck: industry-technical
-title: Assurance architecture
+title: "AI assurance architecture"
 description: Research-informed AI and quality engineering — Technical SDs & leads · Architecture.
 audience: Technical SDs & leads · Architecture
 deck_class: technical-deck
@@ -122,7 +122,7 @@ briefing_minutes: "45–60"
 <section class="slide " id="slide-22" data-chapter="Integration and delivery" aria-labelledby="title-22">
 <p class="kicker">22 / Technology composition</p><h2 id="title-22">Tools occupy different assurance layers</h2>
 
-<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Layer</th><th scope="col">Representative tools</th><th scope="col">Local proof</th></tr></thead><tbody><tr><th scope="row">Test assets</th><td data-label="Representative tools">Tosca · Applitools</td><td data-label="Local proof">Test validity; baseline quality</td></tr><tr><th scope="row">Change review</th><td data-label="Representative tools">GitHub Copilot</td><td data-label="Local proof">Issues found and missed; reviewer effort</td></tr><tr><th scope="row">AI evaluation</th><td data-label="Representative tools">LangSmith · Microsoft Foundry</td><td data-label="Local proof">Dataset fit; judge calibration; exportability</td></tr><tr><th scope="row">Adversarial testing</th><td data-label="Representative tools">Promptfoo</td><td data-label="Local proof">Coverage of actual tool authority</td></tr></tbody></table><p class="figure-note">Representative documentation, reviewed September 2026. Not a ranking or independent product benchmark. {% include industry/cite.html ids="T01,T02,T03,T04,T05,T06" %}</p></div>
+<div class="slide-content"><table class="spec-table"><thead><tr><th scope="col">Layer</th><th scope="col">Representative tools</th><th scope="col">Local proof</th></tr></thead><tbody><tr><th scope="row">Test assets</th><td data-label="Representative tools">Tosca · Applitools</td><td data-label="Local proof">Test validity; baseline quality</td></tr><tr><th scope="row">Change review</th><td data-label="Representative tools">GitHub Copilot</td><td data-label="Local proof">Issues found and missed; reviewer effort</td></tr><tr><th scope="row">AI evaluation</th><td data-label="Representative tools">LangSmith · Microsoft Foundry</td><td data-label="Local proof">Dataset fit; judge calibration; exportability</td></tr><tr><th scope="row">Adversarial testing</th><td data-label="Representative tools">Promptfoo</td><td data-label="Local proof">Coverage of actual tool authority</td></tr></tbody></table><p class="figure-note"><strong>Reuse approved CI, identity and artifact storage; add thin adapters and owned evaluation datasets where required.</strong> Representative documentation, reviewed September 2026. Not a ranking or independent product benchmark. {% include industry/cite.html ids="T01,T02,T03,T04,T05,T06" %}</p></div>
 {% include slide-footer.html n="22" source="/docs/industry/landscape/" label="Product sources and selection criteria" %}
 </section>
 <section class="slide" id="slide-23" data-chapter="Integration and delivery" aria-labelledby="title-23">
@@ -132,7 +132,7 @@ briefing_minutes: "45–60"
 {% include slide-footer.html n="23" source="/docs/industry/architecture/" label="Research and design basis" %}
 </section>
 <section class="slide " id="slide-24" data-chapter="Integration and delivery" aria-labelledby="title-24">
-<p class="kicker">24 / Proposed pilot promotion</p><h2 id="title-24">Value within quality and control floors</h2>
+<p class="kicker">24 / Closing decision</p><h2 id="title-24">Value within quality and control floors</h2>
 
 <div class="slide-content">{% include pilot-gates.html %}</div>
 {% include slide-footer.html n="24" source="/docs/method/phased-pilot/" label="Full gate definitions and stop rules" %}

@@ -2,36 +2,110 @@
   {
     "audience": "evp",
     "audience_label": "Executives & sponsors",
-    "series": "Fintech case",
+    "series": "Banking scenario",
     "cover": "The transformation story",
-    "title": "A vision for scalable quality",
-    "description": "Use a fictional fintech with 75 offshore QA staff to connect repetitive manual work, a shared QA platform and a measured path forward.",
+    "title": "Our Banking Client: strategic vision",
+    "description": "Use an illustrative banking scenario with 75 offshore QA staff to connect repetitive manual work, a shared QA platform and a measured path forward.",
     "url": "/briefings/fintech-evp/",
     "pdf_prefix": "ai-qe-fintech-evp",
     "edition": "fintech_edition",
     "slides": 21,
     "time": "25–30 min",
     "outline": [
-      "The payment story and manual-work baseline",
-      "Shared capability and team responsibilities",
-      "Maturity assumptions, value and the next decision",
-      "Client adoption assumptions and foundation ownership",
-      "QE modernization, repeatable environments and virtual services",
-      "Financial-services evidence and a focused client trial",
-      "Guided client route: connected workflows, prerequisites and concrete architecture",
-      "Before / after: manual API work and the target pilot workflow",
-      "Observed time framework for the API pilot and brainstorm questions",
-      "Four AI adoption layers: individual copilots, connected workflows, bounded agents and shared platform services",
-      "Before/after architecture and outcomes beyond hours · slides 18–19",
-      "AI contribution and artifact handoffs · slides 20–21"
-    ]
+      {
+        "label": "Our Banking Client: shared QA platform",
+        "slide": 1
+      },
+      {
+        "label": "The QA organization",
+        "slide": 2
+      },
+      {
+        "label": "QE testing scenario: one timeout, two debits",
+        "slide": 3
+      },
+      {
+        "label": "Where the release work goes",
+        "slide": 4
+      },
+      {
+        "label": "The platform investment",
+        "slide": 5
+      },
+      {
+        "label": "Before / after: separate modernization from AI",
+        "slide": 6
+      },
+      {
+        "label": "Delivery maturity changes the first move",
+        "slide": 7
+      },
+      {
+        "label": "What 78 hours of gross capacity means",
+        "slide": 8
+      },
+      {
+        "label": "Ownership within the offshore model",
+        "slide": 9
+      },
+      {
+        "label": "Observed time framework for the API pilot",
+        "slide": 10
+      },
+      {
+        "label": "The evidence needed to expand",
+        "slide": 11
+      },
+      {
+        "label": "Brainstorm questions",
+        "slide": 12
+      },
+      {
+        "label": "Adoption depends on funded foundations",
+        "slide": 13
+      },
+      {
+        "label": "Modernization enables wider AI adoption",
+        "slide": 14
+      },
+      {
+        "label": "Peer evidence for the payments pilot",
+        "slide": 15
+      },
+      {
+        "label": "Our Banking Client: where to begin",
+        "slide": 16
+      },
+      {
+        "label": "Four layers of AI-assisted QE",
+        "slide": 17
+      },
+      {
+        "label": "Before / after: the shared QE architecture",
+        "slide": 18
+      },
+      {
+        "label": "Outcomes beyond hours",
+        "slide": 19
+      },
+      {
+        "label": "What AI contributes, from requirement to release",
+        "slide": 20
+      },
+      {
+        "label": "Follow one payment test through the handoffs",
+        "slide": 21
+      }
+    ],
+    "name": "Our Banking Client: strategic vision",
+    "key": "evp"
   },
   {
     "audience": "technical",
     "audience_label": "Technical SDs & leads",
-    "series": "Fintech case",
+    "series": "Banking scenario",
     "cover": "The engineering blueprint",
-    "title": "Build and operate the payment test system",
+    "title": "Our Banking Client: engineering blueprint",
     "description": "Inspect API contracts, timeout and retry sequencing, test assertions, isolated environments, CI configuration and evidence schemas.",
     "url": "/briefings/fintech-technical/",
     "pdf_prefix": "ai-qe-fintech-technical",
@@ -39,14 +113,141 @@
     "slides": 33,
     "time": "35–45 min",
     "outline": [
-      "System boundaries and payment API contract · slides 1–5",
-      "Versioned context, fixtures, assertions and CI artifacts · slides 6–12",
-      "Failure injection, readiness proof and promotion rules · slides 13–19",
-      "Virtualization, deployment and candidate validation · slides 20–25",
-      "Adapter contracts, before/after and AI integration layers · slides 26–28",
-      "Before/after architecture and outcomes beyond hours · slides 27, 29–30",
-      "Nine-step workflow, artifact trace and three-state comparison · slides 31–33"
-    ]
+      {
+        "label": "Our Banking Client: engineering blueprint",
+        "slide": 1
+      },
+      {
+        "label": "The application landscape",
+        "slide": 2
+      },
+      {
+        "label": "Separate authoring from test execution",
+        "slide": 3
+      },
+      {
+        "label": "PAY-142: request contract and test oracle",
+        "slide": 4
+      },
+      {
+        "label": "Timeout and retry: the runtime sequence",
+        "slide": 5
+      },
+      {
+        "label": "Version the context before asking for a test",
+        "slide": 6
+      },
+      {
+        "label": "Pin and reset the test environment",
+        "slide": 7
+      },
+      {
+        "label": "Assert money movement, not just HTTP status",
+        "slide": 8
+      },
+      {
+        "label": "The appropriate test layer",
+        "slide": 9
+      },
+      {
+        "label": "Publish raw CI results before AI interpretation",
+        "slide": 10
+      },
+      {
+        "label": "Route failures without rewriting the verdict",
+        "slide": 11
+      },
+      {
+        "label": "Define the run evidence contract",
+        "slide": 12
+      },
+      {
+        "label": "Challenge the test with failure injection",
+        "slide": 13
+      },
+      {
+        "label": "Readiness requires executable proof",
+        "slide": 14
+      },
+      {
+        "label": "Offshore handoff and platform ownership",
+        "slide": 15
+      },
+      {
+        "label": "Correlate a failure across the runtime",
+        "slide": 16
+      },
+      {
+        "label": "Promotion rules for a generated test",
+        "slide": 17
+      },
+      {
+        "label": "Brainstorm questions: API architecture",
+        "slide": 18
+      },
+      {
+        "label": "Map foundation gaps to blocked capabilities",
+        "slide": 19
+      },
+      {
+        "label": "Service virtualization and real integration",
+        "slide": 20
+      },
+      {
+        "label": "Our Banking Client: test environment",
+        "slide": 21
+      },
+      {
+        "label": "Technology roles in the payment pilot",
+        "slide": 22
+      },
+      {
+        "label": "A candidate test must earn acceptance",
+        "slide": 23
+      },
+      {
+        "label": "Instrument the pilot at run level",
+        "slide": 24
+      },
+      {
+        "label": "The runtime from setup to cleanup",
+        "slide": 25
+      },
+      {
+        "label": "Integration adapters have explicit contracts",
+        "slide": 26
+      },
+      {
+        "label": "Before / after: the API test architecture",
+        "slide": 27
+      },
+      {
+        "label": "How the four AI adoption layers connect",
+        "slide": 28
+      },
+      {
+        "label": "Measure test effectiveness and decision evidence",
+        "slide": 29
+      },
+      {
+        "label": "Prove reliability, integration and reuse",
+        "slide": 30
+      },
+      {
+        "label": "Nine AI-assisted steps, with explicit handoffs",
+        "slide": 31
+      },
+      {
+        "label": "PAY-142: requirement, test, failure, fix and proof",
+        "slide": 32
+      },
+      {
+        "label": "Three states: isolate the incremental AI contribution",
+        "slide": 33
+      }
+    ],
+    "name": "Our Banking Client: engineering blueprint",
+    "key": "technical"
   },
   {
     "audience": "evp",
@@ -61,21 +262,120 @@
     "slides": 26,
     "time": "30–40 min",
     "outline": [
-      "Vision and value · slides 1–5",
-      "Industry, capability and ownership · slides 6–14",
-      "Roadmap, leadership and proof · slides 15–21",
-      "Client adoption assumptions and foundation ownership",
-      "QE modernization, repeatable environments and virtual services",
-      "Financial-services evidence and a focused client trial",
-      "AI-assisted banking QE: end-to-end workflow · final slide"
-    ]
+      {
+        "label": "Quality engineering for the AI era",
+        "slide": 1
+      },
+      {
+        "label": "A shared quality capability",
+        "slide": 2
+      },
+      {
+        "label": "The constraints are organizational",
+        "slide": 3
+      },
+      {
+        "label": "Task gains depend on the setting",
+        "slide": 4
+      },
+      {
+        "label": "Capacity and realized value",
+        "slide": 5
+      },
+      {
+        "label": "The industry direction and its limits",
+        "slide": 6
+      },
+      {
+        "label": "Industrial cases reveal reusable patterns",
+        "slide": 7
+      },
+      {
+        "label": "The first workflows need a clear quality check",
+        "slide": 8
+      },
+      {
+        "label": "What the findings change",
+        "slide": 9
+      },
+      {
+        "label": "Quality improves through feedback",
+        "slide": 10
+      },
+      {
+        "label": "Ownership across the quality lifecycle",
+        "slide": 11
+      },
+      {
+        "label": "The quality role gains new disciplines",
+        "slide": 12
+      },
+      {
+        "label": "The platform outlasts a model",
+        "slide": 13
+      },
+      {
+        "label": "Shared foundations and domain expertise",
+        "slide": 14
+      },
+      {
+        "label": "Evidence gates the next horizon",
+        "slide": 15
+      },
+      {
+        "label": "The leadership evidence contract",
+        "slide": 16
+      },
+      {
+        "label": "Governance follows the system lifecycle",
+        "slide": 17
+      },
+      {
+        "label": "The next decision: capability, foundations and scope",
+        "slide": 18
+      },
+      {
+        "label": "Choose the shared assurance model",
+        "slide": 19
+      },
+      {
+        "label": "What changes in a payment-API workflow",
+        "slide": 20
+      },
+      {
+        "label": "Sequence shared assets before wider agency",
+        "slide": 21
+      },
+      {
+        "label": "Client adoption requires funded foundations",
+        "slide": 22
+      },
+      {
+        "label": "QE modernization and AI adoption",
+        "slide": 23
+      },
+      {
+        "label": "Financial-services outcomes",
+        "slide": 24
+      },
+      {
+        "label": "A focused first engagement",
+        "slide": 25
+      },
+      {
+        "label": "What AI contributes, from requirement to release",
+        "slide": 26
+      }
+    ],
+    "name": "Quality engineering in the AI era",
+    "key": "industry-evp"
   },
   {
     "audience": "technical",
     "audience_label": "Technical SDs & leads",
     "series": "Industry perspective",
     "cover": "The assurance architecture",
-    "title": "Design the system behind the AI",
+    "title": "AI assurance architecture",
     "description": "For assurance of AI applications: inspect context, independent evaluation, action controls, deployment and recovery. Use the banking blueprint for AI-assisted payment QA implementation.",
     "url": "/briefings/technical/",
     "pdf_prefix": "ai-qe-technical",
@@ -83,13 +383,152 @@
     "slides": 36,
     "time": "45–60 min",
     "outline": [
-      "Architecture, context and test validity · slides 1–12",
-      "Evaluation, controls and operations · slides 13–21",
-      "Integration, delivery and failure resolution · slides 22–29",
-      "Client adoption assumptions and foundation ownership",
-      "QE modernization, repeatable environments and virtual services",
-      "Financial-services evidence and a focused client trial",
-      "AI-assisted banking QE: end-to-end workflow · final slide"
-    ]
+      {
+        "label": "Assurance across the AI lifecycle",
+        "slide": 1
+      },
+      {
+        "label": "The enterprise assurance platform",
+        "slide": 2
+      },
+      {
+        "label": "A generated payment-API test",
+        "slide": 3
+      },
+      {
+        "label": "Generated tests pass through quality gates",
+        "slide": 4
+      },
+      {
+        "label": "Evaluation, release and feedback",
+        "slide": 5
+      },
+      {
+        "label": "Application evaluation contract",
+        "slide": 6
+      },
+      {
+        "label": "Approved context and retrieval boundaries",
+        "slide": 7
+      },
+      {
+        "label": "The evaluated application has a release identity",
+        "slide": 8
+      },
+      {
+        "label": "The source of expected behavior",
+        "slide": 9
+      },
+      {
+        "label": "Mutation-guided test generation",
+        "slide": 10
+      },
+      {
+        "label": "Failure diagnosis with inspectable evidence",
+        "slide": 11
+      },
+      {
+        "label": "Flaky-test repair and semantic checks",
+        "slide": 12
+      },
+      {
+        "label": "The evaluation corpus lifecycle",
+        "slide": 13
+      },
+      {
+        "label": "Model judges need their own evaluation",
+        "slide": 14
+      },
+      {
+        "label": "The tool authority boundary",
+        "slide": 15
+      },
+      {
+        "label": "A denied action through the gateway",
+        "slide": 16
+      },
+      {
+        "label": "Execution zones and production authority",
+        "slide": 17
+      },
+      {
+        "label": "Release floors and scenario-level decisions",
+        "slide": 18
+      },
+      {
+        "label": "Containment, fallback and recovery",
+        "slide": 19
+      },
+      {
+        "label": "Operational evidence and feedback",
+        "slide": 20
+      },
+      {
+        "label": "Link work, review and outcomes",
+        "slide": 21
+      },
+      {
+        "label": "Tools occupy different assurance layers",
+        "slide": 22
+      },
+      {
+        "label": "Integration contracts preserve replaceability",
+        "slide": 23
+      },
+      {
+        "label": "Value within quality and control floors",
+        "slide": 24
+      },
+      {
+        "label": "A poisoned-document exercise",
+        "slide": 25
+      },
+      {
+        "label": "Architecture decisions with evidence",
+        "slide": 26
+      },
+      {
+        "label": "A payment test has four joined contracts",
+        "slide": 27
+      },
+      {
+        "label": "Failure semantics are part of the contract",
+        "slide": 28
+      },
+      {
+        "label": "Repair the failure or track the exception",
+        "slide": 29
+      },
+      {
+        "label": "Platform prerequisites for the selected workflow",
+        "slide": 30
+      },
+      {
+        "label": "Controlled dependencies and real integration",
+        "slide": 31
+      },
+      {
+        "label": "A repeatable test environment",
+        "slide": 32
+      },
+      {
+        "label": "Containerization, virtualization and contracts",
+        "slide": 33
+      },
+      {
+        "label": "Independent checks for generated tests",
+        "slide": 34
+      },
+      {
+        "label": "Measuring the incremental AI effect",
+        "slide": 35
+      },
+      {
+        "label": "AI-assisted payment QE: the end-to-end workflow",
+        "slide": 36
+      }
+    ],
+    "name": "AI assurance architecture",
+    "key": "industry-technical"
   }
 ]

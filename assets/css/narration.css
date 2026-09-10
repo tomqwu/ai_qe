@@ -48,8 +48,8 @@
   .has-narration:not(.reading-view) .explore-compact .scenario-presets { margin-bottom:.5cqw; }
   /* The panel follows the slide in document flow, so their gap also stays
      consistent when a tall viewport constrains the frame by width. */
-  .deck-page.has-narration { --frame-width:min(calc(100vw - 32px),calc((100dvh - 112px - var(--narration-height,116px) - var(--narration-gap)) * 16 / 9)); padding-bottom:56px; }
-  .deck-page.has-narration.has-flow-controls { --frame-width:min(calc(100vw - 32px),calc((100dvh - 160px - var(--narration-height,116px) - var(--narration-gap)) * 16 / 9)); padding-bottom:104px; }
+  .deck-page.has-narration { --active-narration-gap:var(--narration-gap); --frame-width:min(calc(100vw - 32px),calc((100dvh - 112px - var(--narration-height,116px) - var(--narration-gap)) * 16 / 9)); padding-bottom:56px; }
+
   .has-narration .deck-message { bottom:calc(60px + var(--narration-height,116px)); }
 }
 @media screen and (max-width:700px) {
@@ -64,3 +64,7 @@
   .narration-meta button { min-height:32px; }
 }
 @media print { .narration-panel,.narration-transcript-dialog { display:none!important; } }
+
+@media screen and (min-width:701px) {
+ .deck-page.presentation-mode.has-narration { --frame-width:min(calc(100vw - 24px),calc((100dvh - 86px - var(--narration-height,116px) - var(--narration-gap)) * 16 / 9)); }
+}
