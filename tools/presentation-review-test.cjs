@@ -36,5 +36,27 @@ const base=(process.env.QE_TEST_URL||'http://127.0.0.1:61600/ai_qe').replace(/\/
  await frame.waitForURL(/briefings\/fintech-technical\/.*#slide-1$/);
  assert.match(await p.locator('#briefing-frame').getAttribute('title'),/Our Banking Client: engineering blueprint/);
  assert.equal(await p.locator('script[src*="jsdelivr"]').count(),0);
+ const lifecycle=await browser.newPage();let manifests=0;const lifecycleErrors=[];
+ lifecycle.on('request',r=>{if(/\/narration\.json/.test(r.url()))manifests++});
+ lifecycle.on('pageerror',e=>lifecycleErrors.push(e.message));
+ await lifecycle.addInitScript(()=>{
+  const fetchResource=window.fetch.bind(window);let first=true;
+  window.fetch=async(...args)=>{
+   const response=await fetchResource(...args);
+   if(first&&String(args[0]).includes('narration-guides.json')){
+    first=false;const read=response.json.bind(response);
+    response.json=async()=>{const data=await read();await new Promise(resolve=>{window.finishGuideParsing=resolve});return data};
+   }
+   return response;
+  };
+ });
+ await lifecycle.goto(base+'/');await lifecycle.waitForFunction(()=>Boolean(window.finishGuideParsing));
+ await lifecycle.evaluate(()=>{window.dispatchEvent(new PageTransitionEvent('pagehide',{persisted:true}));window.finishGuideParsing()});
+ await lifecycle.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
+ assert.equal(manifests,0,'Leaving during guide initialization must not start a late manifest fetch');
+ await lifecycle.evaluate(()=>window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true})));
+ await lifecycle.locator('[data-guide-play]').first().waitFor();
+ assert.equal(manifests,1,'Restoring the page resumes interrupted guide initialization once');
+ assert.deepEqual(lifecycleErrors,[]);await lifecycle.close();
  console.log(engine.name()+': stable presentation frame, no eager audio, four closing routes, audience filter and visible utilities passed');
 }finally{await browser.close()}}})().catch(e=>{console.error(e);process.exitCode=1});

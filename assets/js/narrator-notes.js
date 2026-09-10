@@ -128,38 +128,52 @@
     players.add(controller);
     return controller;
   }
-  (async () => {
-    const response = await fetch(loader.dataset.narratorGuides);
-    if (!response.ok) throw new Error('Narrator notes unavailable');
-    const config = await response.json();
-    const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
-    const needed = document.querySelector('[data-demo-narrator]') || config.guides.some(g => (!g.path || g.path === path) && [...document.querySelectorAll(g.selector)].some(t => !t.closest('.slide')));
-    if (!needed) return null;
-    const media = await fetch(loader.dataset.manifest);
-    if (!media.ok) throw new Error('Narrator notes unavailable');
-    return [config, await media.json()];
-  })().then(result => {
-    if (!result) return;
-    const [config, manifest] = result;
-    const annotated = new Set();
-    const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
-    for (const guide of config.guides) {
-      if (guide.path && guide.path !== path) continue;
-      for (const target of document.querySelectorAll(guide.selector)) {
-        if (target.closest('.slide') || annotated.has(target)) continue;
-        if (createGuide(target, guide, manifest)) annotated.add(target);
+  let initialization, initialized = false;
+  function initialize() {
+    if (initialized) return;
+    initialization?.abort();
+    const request = initialization = new AbortController();
+    (async () => {
+      const response = await fetch(loader.dataset.narratorGuides, {signal: request.signal});
+      if (!response.ok) throw new Error('Narrator notes unavailable');
+      const config = await response.json();
+      if (request.signal.aborted) return null;
+      const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
+      const needed = document.querySelector('[data-demo-narrator]') || config.guides.some(g => (!g.path || g.path === path) && [...document.querySelectorAll(g.selector)].some(t => !t.closest('.slide')));
+      if (!needed) return null;
+      const media = await fetch(loader.dataset.manifest, {signal: request.signal});
+      if (!media.ok) throw new Error('Narrator notes unavailable');
+      return [config, await media.json()];
+    })().then(result => {
+      if (request.signal.aborted) return;
+      initialized = true;
+      if (!result) return;
+      const [config, manifest] = result;
+      const annotated = new Set();
+      const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
+      for (const guide of config.guides) {
+        if (guide.path && guide.path !== path) continue;
+        for (const target of document.querySelectorAll(guide.selector)) {
+          if (target.closest('.slide') || annotated.has(target)) continue;
+          if (createGuide(target, guide, manifest)) annotated.add(target);
+        }
       }
-    }
-    const demo = document.querySelector('[data-demo-narrator]');
-    if (demo) {
-      let controller, scenario;
-      const update = id => { if (id === scenario) return; scenario = id; controller?.destroy(); if (config.demo[id]) controller = createGuide(demo, config.demo[id], manifest, true); };
-      update(new URLSearchParams(location.search).get('scenario') || 'generate');
-      const scenarios = document.querySelector('.scenario-tabs');
-      new MutationObserver(() => update(scenarios.querySelector('[aria-pressed="true"]').dataset.scenario)).observe(scenarios, {subtree:true,attributes:true,attributeFilter:['aria-pressed']});
+      const demo = document.querySelector('[data-demo-narrator]');
+      if (demo) {
+        let controller, scenario;
+        const update = id => { if (id === scenario) return; scenario = id; controller?.destroy(); if (config.demo[id]) controller = createGuide(demo, config.demo[id], manifest, true); };
+        update(new URLSearchParams(location.search).get('scenario') || 'generate');
+        const scenarios = document.querySelector('.scenario-tabs');
+        new MutationObserver(() => update(scenarios.querySelector('[aria-pressed="true"]').dataset.scenario)).observe(scenarios, {subtree:true,attributes:true,attributeFilter:['aria-pressed']});
 
-    }
-  }).catch(() => { /* Core diagrams and their existing descriptions remain available. */ });
+      }
+    }).catch(() => { /* Core diagrams and their existing descriptions remain available. */ });
+  }
+  initialize();
+  // Cancel the deferred manifest fetch when leaving, including a BFCache visit.
+  // A restored page can finish initialization if it was interrupted.
+  window.addEventListener('pagehide', () => initialization?.abort());
+  window.addEventListener('pageshow', event => { if (event.persisted && !initialized) initialize(); });
   function pauseAll() { for (const player of players) player.audio.pause(); }
   document.addEventListener('visibilitychange', () => { if (document.hidden) pauseAll(); });
   window.addEventListener('pagehide', pauseAll);

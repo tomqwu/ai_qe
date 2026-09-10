@@ -57,7 +57,7 @@ try {
  await page.goto(`${base}/case-studies/fintech/?audience=technical&slide=slide-3#briefings`);await page.locator('#briefing-frame').scrollIntoViewIfNeeded();
  const frame=page.frameLocator('#briefing-frame');await frame.locator('#slide-3').waitFor({state:'visible'});await frame.locator('[data-next]').click();
  await page.waitForFunction(()=>document.querySelector('[data-deck-link]').hash==='#slide-4');assert.match(await page.locator('[data-deck-link]').getAttribute('href'),/fintech-technical/);
- await page.locator('#tab-evp').click();await frame.locator('#slide-1').waitFor({state:'visible'});assert.match(await page.locator('iframe').getAttribute('title'),/Fintech strategic vision/);
+ await page.locator('#tab-evp').click();await frame.locator('#slide-1').waitFor({state:'visible'});assert.match(await page.locator('iframe').getAttribute('title'),/Our Banking Client: strategic vision/);
  await page.setViewportSize({width:375,height:812});await page.goto(`${base}/case-studies/fintech/`);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  const search=await (await page.request.get(`${base}/assets/js/search-data.json`)).json();assert.equal(Object.values(search).filter(x=>/\/briefings\/fintech-.*\/#slide-/.test(x.url)).length,Object.values(decks).reduce((sum,slides)=>sum+slides.length,0));
  const nojs=await browser.newPage({javaScriptEnabled:false,viewport:{width:375,height:812}});await nojs.goto(`${base}/case-studies/fintech/`);assert.equal(await nojs.locator('[data-workflow-stage]:visible').count(),8);assert.match(await nojs.locator('[data-model-output]').textContent(),/33 usable/);
