@@ -8,7 +8,7 @@
 .deck-page { --narration-gap:12px; }
 .narration-panel { width:var(--frame-width); margin:var(--narration-gap) auto 0; color:#173643; background:#fcfcfa; border:1px solid #b9ceca; border-top:3px solid #087875; border-radius:6px; padding:7px 12px 5px; }
 .narration-panel[hidden] { display:none!important; }
-.narration-caption { display:flex; align-items:center; justify-content:center; text-align:center; margin:0 auto 5px; min-height:48px; max-width:76ch; line-height:1.25; font-size:17px; font-weight:550; color:#fff; background:#173643; border-radius:4px; padding:2px 12px; white-space:pre-line; overflow:hidden; }
+.narration-caption { display:flex; align-items:center; justify-content:center; text-align:center; margin:0 auto 5px; min-height:48px; max-width:none; line-height:1.25; font-size:17px; font-weight:550; color:#fff; background:#173643; border-radius:4px; padding:2px 12px; white-space:normal; overflow-wrap:anywhere; }
 .narration-caption:empty::before { content:'English subtitles'; color:#bed3dd; font-size:13px; font-weight:400; }
 .narration-panel[data-captions=off] .narration-caption:empty::before { content:'English subtitles off · Select CC to show'; }
 .narration-controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }

@@ -5,6 +5,10 @@ nav_order: 9
 permalink: /releases/
 ---
 
+## v1.24.1 · Responsive subtitles
+
+Subtitles use the available blue caption bar instead of preserving the subtitle file's fixed line breaks. Short cues stay on one line when they fit; narrow screens wrap naturally. Slide players and in-page explanations share this behavior. Audio, subtitle timing, and the v1.24.0 PDF editions remain unchanged.
+
 ## v1.24.0 · Presentation and decision clarity
 
 Larger, stable slides; on-demand audio; outcome-first routes with matching PDFs; explicit pilot scope and ownership; separate validation and release publication.
