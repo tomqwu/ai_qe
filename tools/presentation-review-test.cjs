@@ -37,7 +37,7 @@ const base=(process.env.QE_TEST_URL||'http://127.0.0.1:61600/ai_qe').replace(/\/
  assert.match(await p.locator('#briefing-frame').getAttribute('title'),/Our Banking Client: engineering blueprint/);
  assert.equal(await p.locator('script[src*="jsdelivr"]').count(),0);
  for (const visit of [
-  {path:'/', resource:'narration-guides.json', ready:'[data-guide-play]', wrapper:'.narrator-guide', requestsBefore:0},
+  {path:'/', resource:'narration-guides.json', ready:'[data-guide-play]', wrapper:'.narrator-guide', requestsBefore:1},
   {path:'/briefings/technical/', resource:'narration.json', ready:'[data-narration-start]:not([hidden])', wrapper:'.narration-panel', requestsBefore:1}
  ]) {
   const lifecycle=await browser.newPage();let manifests=0;const lifecycleErrors=[];

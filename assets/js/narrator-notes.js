@@ -133,18 +133,13 @@
     if (initialized) return;
     initialization?.abort();
     const request = initialization = new AbortController();
-    (async () => {
-      const response = await fetch(loader.dataset.narratorGuides, {signal: request.signal});
+    // Start both metadata requests while this document is active. Chaining a
+    // second fetch after navigation has started is rejected by Linux WebKit.
+    Promise.all([loader.dataset.narratorGuides, loader.dataset.manifest].map(async path => {
+      const response = await fetch(path, {signal: request.signal});
       if (!response.ok) throw new Error('Narrator notes unavailable');
-      const config = await response.json();
-      if (request.signal.aborted) return null;
-      const path = location.pathname.slice(base.pathname.replace(/\/$/, '').length);
-      const needed = document.querySelector('[data-demo-narrator]') || config.guides.some(g => (!g.path || g.path === path) && [...document.querySelectorAll(g.selector)].some(t => !t.closest('.slide')));
-      if (!needed) return null;
-      const media = await fetch(loader.dataset.manifest, {signal: request.signal});
-      if (!media.ok) throw new Error('Narrator notes unavailable');
-      return [config, await media.json()];
-    })().then(result => {
+      return response.json();
+    })).then(result => {
       if (request.signal.aborted) return;
       initialized = true;
       if (!result) return;
