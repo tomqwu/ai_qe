@@ -14,8 +14,9 @@ const base = process.env.QE_TEST_URL || 'http://127.0.0.1:61600/ai_qe';
     const page = await browser.newPage({viewport:{width:mode==='desktop'?1440:390,height:900},
      hasTouch:mode==='touch',isMobile:mode==='touch'});
     page.setDefaultTimeout(10000);
-    const errors = [];
-    page.on('pageerror', error => errors.push(error.message));
+    const errors = [], requests = [];
+    page.on('request', request => { if (request.url().includes('/assets/data/narration')) { requests.push({url:request.url(),from:request.frame().url()}); if (requests.length>8) requests.shift(); } });
+    page.on('pageerror', error => errors.push({message:error.message,stack:error.stack,page:page.url(),requests:[...requests]}));
     const search = async (query='payment') => {
      await page.goto(base + '/');
      const src = await page.locator('script[src*="/just-the-docs.js"]').getAttribute('src');

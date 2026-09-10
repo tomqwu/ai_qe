@@ -78,7 +78,7 @@
     if (!ui) return;
     const duration = Number.isFinite(audio.duration) ? audio.duration : clip?.duration || 0;
     ui.seek.max = String(duration);
-    ui.seek.disabled = !duration || audioFailed;
+    ui.seek.disabled = !duration || audioFailed || !audio.getAttribute('src');
     ui.seek.value = String(Math.min(audio.currentTime || 0, duration));
     ui.seek.setAttribute('aria-valuetext', `${clock(audio.currentTime)} of ${clock(duration)}`);
     ui.time.textContent = `${clock(audio.currentTime)} / ${clock(duration)}`;
@@ -281,32 +281,47 @@
     window.addEventListener('pagehide', stop);
     window.addEventListener('beforeprint', stop);
   }
-  fetch(manifestPath).then(response => {
-    if (!response.ok) throw new Error('Narration manifest unavailable');
-    return response.json();
-  }).then(manifest => {
-    const slides = manifest?.decks?.[body.dataset.narrationAudience]?.slides;
-    if (!slides || typeof slides !== 'object') return;
-    for (const [id, entry] of Object.entries(slides)) {
-      const audioURL = assetURL(entry?.audio), captionsURL = assetURL(entry?.captions);
-      if (document.getElementById(id)?.classList.contains('slide') && audioURL && captionsURL) entries[id] = {
-        audio: audioURL, captions: captionsURL,
-        transcript: typeof entry.transcript === 'string' ? entry.transcript : '',
-        voice: typeof entry.voice === 'string' ? entry.voice.trim() : '',
-        caption_method: typeof entry.caption_method === 'string' ? entry.caption_method.trim() : ''
-      };
-    }
-    if (!Object.keys(entries).length) return;
-    for (const [id, entry] of Object.entries(entries)) {
-      if (!entry.transcript) continue;
-      const notes = document.createElement('aside'); notes.className = 'slide-narrator-notes'; notes.hidden = true;
-      const heading = document.createElement('h3'); heading.textContent = 'Narrator notes';
-      notes.append(heading);
-      for (const paragraph of entry.transcript.split(/\n\s*\n/)) {
-        const text = document.createElement('p'); text.textContent = paragraph; notes.append(text);
+  let manifestRequest, manifestLoaded = false;
+  function initialize() {
+    if (manifestLoaded) return;
+    manifestRequest?.abort();
+    const request = manifestRequest = new AbortController();
+    fetch(manifestPath, {signal: request.signal}).then(response => {
+      if (!response.ok) throw new Error('Narration manifest unavailable');
+      return response.json();
+    }).then(manifest => {
+      if (request.signal.aborted) return;
+      const slides = manifest?.decks?.[body.dataset.narrationAudience]?.slides;
+      if (!slides || typeof slides !== 'object') return;
+      for (const [id, entry] of Object.entries(slides)) {
+        const audioURL = assetURL(entry?.audio), captionsURL = assetURL(entry?.captions);
+        if (document.getElementById(id)?.classList.contains('slide') && audioURL && captionsURL) entries[id] = {
+          audio: audioURL, captions: captionsURL, duration: Number(entry.duration) || 0,
+          transcript: typeof entry.transcript === 'string' ? entry.transcript : '',
+          voice: typeof entry.voice === 'string' ? entry.voice.trim() : '',
+          caption_method: typeof entry.caption_method === 'string' ? entry.caption_method.trim() : ''
+        };
       }
-      document.getElementById(id).append(notes);
-    }
-    ui = buildPanel(); connectControls(); loadSlide(window.QEDeck.getState());
-  }).catch(() => { /* A missing optional recording never prevents slide navigation. */ });
+      if (!Object.keys(entries).length) return;
+      for (const [id, entry] of Object.entries(entries)) {
+        if (!entry.transcript) continue;
+        const notes = document.createElement('aside'); notes.className = 'slide-narrator-notes'; notes.hidden = true;
+        const heading = document.createElement('h3'); heading.textContent = 'Narrator notes';
+        notes.append(heading);
+        for (const paragraph of entry.transcript.split(/\n\s*\n/)) {
+          const text = document.createElement('p'); text.textContent = paragraph; notes.append(text);
+        }
+        document.getElementById(id).append(notes);
+      }
+      ui = buildPanel(); connectControls(); loadSlide(window.QEDeck.getState());
+      manifestLoaded = true;
+    }).catch(() => { /* A missing optional recording never prevents slide navigation. */ });
+  }
+  initialize();
+  window.addEventListener('pagehide', () => { manifestRequest?.abort(); captionRequest?.abort(); });
+  window.addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+    if (!manifestLoaded) initialize();
+    else if (clip && !cueList.length) loadCaptions(clip, clipVersion);
+  });
 })();
