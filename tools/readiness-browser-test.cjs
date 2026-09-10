@@ -42,6 +42,22 @@ const base=process.env.QE_TEST_URL||'http://127.0.0.1:61600/ai_qe';
    await page.locator('.search-result[href$="/platform-readiness/#dependency-virtualization"]').click();
    await page.waitForURL('**/platform-readiness/**#dependency-virtualization');
    await page.waitForFunction(()=>{const r=document.getElementById('dependency-virtualization')?.getBoundingClientRect();return r&&r.top>=0&&r.top<innerHeight;});
+   // Slow metadata can add an explanation above the target after navigation.
+   // Keep the landing aligned, but never override a reader who has scrolled.
+   for(const manual of [false,true]){
+    let releaseMetadata;const metadataReady=new Promise(resolve=>{releaseMetadata=resolve;});
+    await page.route('**/assets/data/narration.json*',async route=>{await metadataReady;await route.continue();});
+    await page.goto(base+'/platform-readiness/#dependency-virtualization');
+    await page.evaluate(manual=>{
+     window.guideReady=false;document.addEventListener('qe:narrator-guides-ready',()=>{window.guideReady=true;},{once:true});
+     if(manual)window.dispatchEvent(new WheelEvent('wheel',{deltaY:-500}));
+     window.scrollTo({top:0,behavior:'instant'});
+    },manual);
+    releaseMetadata();await page.waitForFunction(()=>window.guideReady);
+    if(manual)assert.equal(await page.evaluate(()=>scrollY),0,'late narration must respect manual scrolling');
+    else await page.waitForFunction(()=>{const r=document.getElementById('dependency-virtualization').getBoundingClientRect();return r.top>=0&&r.top<innerHeight;});
+    await page.unroute('**/assets/data/narration.json*');
+   }
    const nojs=await browser.newPage({javaScriptEnabled:false,viewport:{width:390,height:844}});await nojs.goto(base+'/platform-readiness/');
    assert.equal(await nojs.locator('[data-dependency]:visible').count(),12);assert.ok(await nojs.locator('.readiness-controls').isHidden());
    assert.deepEqual(errors,[]);console.log(`Passed: ${engine.name()} readiness gates, 12 assumptions, workflow links, exported notes, five viewports and no-JS access`);

@@ -162,6 +162,7 @@
         new MutationObserver(() => update(scenarios.querySelector('[aria-pressed="true"]').dataset.scenario)).observe(scenarios, {subtree:true,attributes:true,attributeFilter:['aria-pressed']});
 
       }
+      document.dispatchEvent(new Event('qe:narrator-guides-ready'));
     }).catch(() => { /* Core diagrams and their existing descriptions remain available. */ });
   }
   initialize();

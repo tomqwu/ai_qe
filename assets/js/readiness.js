@@ -34,4 +34,16 @@
   const url=URL.createObjectURL(new Blob([JSON.stringify(sheet,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='ai-qe-adoption-assumptions.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  });
  applyPreset();
+ // Keep an incoming dependency link aligned as controls, fonts and narration
+ // finish rendering. Stop correcting as soon as the reader takes control.
+ const incomingAnchor=location.hash;
+ if(/^#dependency-[a-z-]+$/.test(incomingAnchor)) {
+  let followAnchor=true;
+  const align=()=>{if(followAnchor&&!document.hidden&&location.hash===incomingAnchor)document.getElementById(incomingAnchor.slice(1))?.scrollIntoView({block:'start',behavior:'instant'});};
+  for(const event of ['pointerdown','wheel','touchstart','keydown'])window.addEventListener(event,()=>{followAnchor=false;},{once:true,passive:true});
+  requestAnimationFrame(align);
+  document.fonts.ready.then(align);
+  window.addEventListener('load',align,{once:true});
+  document.addEventListener('qe:narrator-guides-ready',align,{once:true});
+ }
 })();
