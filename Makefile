@@ -17,5 +17,5 @@ site:
 browser:
 	node tools/qa.cjs browser $(GROUP)
 export:
-	node tools/export_decks.cjs
-	node tools/export_decks.cjs --fintech
+	QE_PYTHON=$(PYTHON) node tools/export_decks.cjs
+	QE_PYTHON=$(PYTHON) node tools/export_decks.cjs --fintech
